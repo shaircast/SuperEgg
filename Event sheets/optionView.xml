@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>optionView</name>
+    <events>
+        <include>function</include>
+        <event-block sid="5681735429843299">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9776157468002129" type="Touch">
+                    <param id="0" name="Object">menuButtonPackage</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="49681136266434" type="Function">
+                    <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8849855566155157">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5461243877573941" type="Touch">
+                    <param id="0" name="Object">menuButtonStageView</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="5098426556412714" type="menuButtonPackage">
+                    <param id="0" name="Instance variable">ready</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4326226236193918" type="System">
+                    <param id="0" name="Layout">stageView</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6376737248413822">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2864722721449387" type="Touch">
+                    <param id="0" name="Object">menuButtonCageView</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="1934053151993684" type="menuButtonPackage">
+                    <param id="0" name="Instance variable">ready</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4599291632477743" type="System">
+                    <param id="0" name="Layout">cageView</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3025017364160472">
+            <conditions>
+                <condition id="3" name="On touched object" sid="522670878348338" type="Touch">
+                    <param id="0" name="Object">menuButtonOptionView</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="2950550709910344" type="menuButtonPackage">
+                    <param id="0" name="Instance variable">ready</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="6358419861308133" type="System">
+                    <param id="0" name="Layout">optionView</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

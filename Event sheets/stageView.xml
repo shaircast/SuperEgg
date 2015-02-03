@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>stageView</name>
+    <events>
+        <include>function</include>
+        <comment>mapState&#x0D;&#x0A;0 : idle&#x0D;&#x0A;1 : moving</comment>
+        <variable constant="0" name="mapState" sid="1527712285530095" static="0" type="number">0</variable>
+        <variable constant="0" name="leftLimit" sid="2442168118569261" static="0" type="number">300</variable>
+        <variable constant="0" name="rightLimit" sid="2656393535942194" static="0" type="number">980</variable>
+        <comment>stageLimit : 현재 만들어진 최고 챕터</comment>
+        <variable constant="0" name="chapterLimit" sid="4418648694302212" static="0" type="number">2</variable>
+        <comment>맵의 left, right, middle point</comment>
+        <variable constant="0" name="leftPoint" sid="2920941161847771" static="0" type="number">-640</variable>
+        <variable constant="0" name="middlePoint" sid="13270753159353" static="0" type="number">640</variable>
+        <variable constant="0" name="rightPoint" sid="126729787805573" static="0" type="number">1920</variable>
+        <comment>maxStage: 플레이어가 플레이가능한 최고 챕터. 즉, 완료 스테이지는 maxStage-1</comment>
+        <comment>chapter라는 변수는 webstorage로 관리(마지막 스크롤)</comment>
+        <comment>스테이지 진행상황(maxStage)도 webstorage로 관리</comment>
+        <comment>chapterStage&#x0D;&#x0A;frame0 : locked,  frame1 : unlocked&#x0D;&#x0A;animation : chap_stage</comment>
+        <comment>stageMapChap&#x0D;&#x0A;animation : chap_&#x0D;&#x0A;imagepoint : Stage#(1~9)</comment>
+        <event-block sid="7700455356035">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8104081229085519" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8082899629088252" type="System">
+                    <param id="0" name="Variable">leftPoint</param>
+                    <param id="1" name="Value">-ViewportRight(0)/2</param>
+                </action>
+                <action id="-9" name="Set value" sid="5772145743018752" type="System">
+                    <param id="0" name="Variable">middlePoint</param>
+                    <param id="1" name="Value">ViewportRight(0)/2</param>
+                </action>
+                <action id="-9" name="Set value" sid="6078615463566416" type="System">
+                    <param id="0" name="Variable">rightPoint</param>
+                    <param id="1" name="Value">ViewportRight(0)/2*3</param>
+                </action>
+                <action id="0" name="Call function" sid="6064920682009722" type="Function">
+                    <param id="0" name="Name">&quot;stageNameDBInit&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="1981168684258265" type="Function">
+                    <param id="0" name="Name">&quot;stageButtonOnMap&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="5221150558987895" type="skyLeftCover">
+                    <param id="0" name="Pin to">stageMapChap</param>
+                    <param id="1" name="ImagePoint">&quot;LeftChap&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="5326964246846071" type="skyRightCover">
+                    <param id="0" name="Pin to">stageMapChap</param>
+                    <param id="1" name="ImagePoint">&quot;RightChap&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action id="-3" name="Create object" sid="3834142274892526" type="System">
+                    <param id="0" name="Object to create">henCage</param>
+                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                    <param id="2" name="X">stageSummary.X</param>
+                    <param id="3" name="Y">stageSummary.Y</param>
+                </action>
+                <action id="4" name="Set animation" sid="5626996461535547" type="henCage">
+                    <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),3)</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Set text" sid="6555446567233153" type="powerupHUD">
+                    <param id="0" name="Text">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),2)</param>
+                </action>
+                <action id="-3" name="Set position" sid="5264686435086937" type="powerupHUD">
+                    <param id="0" name="X">self.X+40</param>
+                    <param id="1" name="Y">self.Y-48</param>
+                </action>
+                <action id="-3" name="Create object" sid="6272669490794074" type="System">
+                    <param id="0" name="Object to create">henCage</param>
+                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                    <param id="2" name="X">stageSummary.X+200</param>
+                    <param id="3" name="Y">stageSummary.Y</param>
+                </action>
+                <action id="4" name="Set animation" sid="5409382884867526" type="henCage">
+                    <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),3)</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Set text" sid="8244738681631958" type="powerupHUD">
+                    <param id="0" name="Text">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),2)</param>
+                </action>
+                <action id="-3" name="Set position" sid="522480952996933" type="powerupHUD">
+                    <param id="0" name="X">self.X+40</param>
+                    <param id="1" name="Y">self.Y-48</param>
+                </action>
+                <action id="-3" name="Create object" sid="7752786067068467" type="System">
+                    <param id="0" name="Object to create">henCage</param>
+                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                    <param id="2" name="X">stageSummary.X+400</param>
+                    <param id="3" name="Y">stageSummary.Y</param>
+                </action>
+                <action id="4" name="Set animation" sid="5115091551453503" type="henCage">
+                    <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),3)</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Set text" sid="2200641251314394" type="powerupHUD">
+                    <param id="0" name="Text">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),2)</param>
+                </action>
+                <action id="-3" name="Set position" sid="2750062498018517" type="powerupHUD">
+                    <param id="0" name="X">self.X+40</param>
+                    <param id="1" name="Y">self.Y-48</param>
+                </action>
+                <action id="6" name="Stop" sid="7252452686026915" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="9588644806519086" type="Audio">
+                    <param id="0" name="Audio file">stageView</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;music&quot;))</param>
+                    <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1234611659060571">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4894068347964902" type="Touch">
+                    <param id="0" name="Object">menuButtonPackage</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="480353036311319" type="Function">
+                    <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9090920253699932">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5721463475334609" type="Touch">
+                    <param id="0" name="Object">menuButtonStageView</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="2453629662776809" type="menuButtonPackage">
+                    <param id="0" name="Instance variable">ready</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="1959383621263203" type="System">
+                    <param id="0" name="Layout">stageView</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1088507531179085">
+            <conditions>
+                <condition id="3" name="On touched object" sid="3060708164666306" type="Touch">
+                    <param id="0" name="Object">menuButtonCageView</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="3907631388819921" type="menuButtonPackage">
+                    <param id="0" name="Instance variable">ready</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="3088344993902522" type="System">
+                    <param id="0" name="Layout">cageView</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="942274848499948">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8208940223065778" type="Touch">
+                    <param id="0" name="Object">menuButtonOptionView</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="8344752676912399" type="menuButtonPackage">
+                    <param id="0" name="Instance variable">ready</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="7865513214887555" type="System">
+                    <param id="0" name="Layout">optionView</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>없으면 selection 만들고 있으면 이동후 바꿈. 이미 선택된 경우 battleView로 감.</comment>
+        <event-block sid="3823738099920421">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4115319529912075" type="Touch">
+                    <param id="0" name="Object">chapterStage</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="1547016160221183" type="Function">
+                    <param id="0" name="Name">&quot;touchChapterStage&quot;</param>
+                    <param id="1" name="Parameter {n}">chapterStage.stage</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>도착시 핀</comment>
+        <event-block sid="4953880036996532">
+            <conditions>
+                <condition behavior="MoveTo" id="0" name="On hit target position" sid="5016847428480849" type="skyLeftCover" />
+            </conditions>
+            <actions>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="936472846526721" type="skyLeftCover">
+                    <param id="0" name="Pin to">stageMapChap</param>
+                    <param id="1" name="ImagePoint">&quot;LeftChap&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3641983848556518">
+            <conditions>
+                <condition behavior="MoveTo" id="0" name="On hit target position" sid="3906321888389545" type="skyRightCover" />
+            </conditions>
+            <actions>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="4085564991392824" type="skyRightCover">
+                    <param id="0" name="Pin to">stageMapChap</param>
+                    <param id="1" name="ImagePoint">&quot;RightChap&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>움직이는 동안에는 드래그 못하도록</comment>
+        <event-block any="1" sid="5919491528962962">
+            <conditions>
+                <condition behavior="MoveTo" id="3" name="Is moving" sid="9454243308344603" type="stageMapChap" />
+                <condition behavior="MoveTo" id="3" name="Is moving" sid="7870584894657935" type="skyLeftCover" />
+                <condition behavior="MoveTo" id="3" name="Is moving" sid="7304032672118231" type="skyRightCover" />
+            </conditions>
+            <actions>
+                <action behavior="DragDrop" id="1" name="Drop" sid="9584445732112476" type="stageMapChap" />
+                <action behavior="DragDrop" id="0" name="Set enabled" sid="8033787138967161" type="stageMapChap">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6337386988390856">
+            <conditions>
+                <condition behavior="MoveTo" id="1" name="Compare speed" sid="5072605629796082" type="stageMapChap">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+                <condition behavior="MoveTo" id="1" name="Compare speed" sid="9026789151497412" type="skyLeftCover">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+                <condition behavior="MoveTo" id="1" name="Compare speed" sid="8893193803901433" type="skyRightCover">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="DragDrop" id="0" name="Set enabled" sid="3531306340662749" type="stageMapChap">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>맵 놓을때 움직임.</comment>
+        <event-block sid="8808585719461046">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="8326870939180997" type="stageMapChap" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="9270844369481066" type="Function">
+                    <param id="0" name="Name">&quot;mapDropMove&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5736063398482442">
+            <conditions>
+                <condition behavior="MoveTo" id="0" name="On hit target position" sid="6253535470018182" type="stageMapChap" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>chapter+</comment>
+                <event-block sid="2734502193585266">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="5919086124908779" type="stageMapChap">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="X co-ordinate">leftPoint</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="PinToImagePoint" id="10" name="Unpin" sid="9689016014765608" type="skyLeftCover" />
+                        <action behavior="PinToImagePoint" id="10" name="Unpin" sid="3818973853719818" type="skyRightCover" />
+                        <action id="-9" name="Destroy" sid="1775737011201239" type="stageSelection" />
+                        <action id="-9" name="Destroy" sid="4744354669632809" type="stageMapChap" />
+                        <action id="-9" name="Destroy" sid="660024751544348" type="chapterStage" />
+                        <action id="-3" name="Create object" sid="4418676078800314" type="System">
+                            <param id="0" name="Object to create">stageMapChap</param>
+                            <param id="1" name="Layer">&quot;bg&quot;</param>
+                            <param id="2" name="X">middlePoint</param>
+                            <param id="3" name="Y">ViewportBottom(0)/2</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2865904148763015" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="5176959075847244" type="Function">
+                            <param id="0" name="Name">&quot;stageButtonOnMap&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action behavior="MoveTo" id="4" name="Move to XY" sid="8818807236239806" type="skyLeftCover">
+                            <param id="0" name="X">stageMapChap.ImagePointX(&quot;LeftChap&quot;)</param>
+                            <param id="1" name="Y">stageMapChap.ImagePointY(&quot;LeftChap&quot;)</param>
+                        </action>
+                        <action behavior="MoveTo" id="4" name="Move to XY" sid="1153501491690105" type="skyRightCover">
+                            <param id="0" name="X">stageMapChap.ImagePointX(&quot;RightChap&quot;)</param>
+                            <param id="1" name="Y">stageMapChap.ImagePointY(&quot;RightChap&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>chapter-</comment>
+                <event-block sid="5509772237342862">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="4957039166360495" type="stageMapChap">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="X co-ordinate">rightPoint</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="PinToImagePoint" id="10" name="Unpin" sid="7818491786843518" type="skyLeftCover" />
+                        <action behavior="PinToImagePoint" id="10" name="Unpin" sid="2761592115180677" type="skyRightCover" />
+                        <action id="-9" name="Destroy" sid="5601756273744085" type="stageSelection" />
+                        <action id="-9" name="Destroy" sid="3646032201923462" type="stageMapChap" />
+                        <action id="-9" name="Destroy" sid="343076708293646" type="chapterStage" />
+                        <action id="-3" name="Create object" sid="7820954197747299" type="System">
+                            <param id="0" name="Object to create">stageMapChap</param>
+                            <param id="1" name="Layer">&quot;bg&quot;</param>
+                            <param id="2" name="X">middlePoint</param>
+                            <param id="3" name="Y">ViewportBottom(0)/2</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="422812437115967" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="6341027167363526" type="Function">
+                            <param id="0" name="Name">&quot;stageButtonOnMap&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action behavior="MoveTo" id="4" name="Move to XY" sid="314912408520301" type="skyLeftCover">
+                            <param id="0" name="X">stageMapChap.ImagePointX(&quot;LeftChap&quot;)</param>
+                            <param id="1" name="Y">stageMapChap.ImagePointY(&quot;LeftChap&quot;)</param>
+                        </action>
+                        <action behavior="MoveTo" id="4" name="Move to XY" sid="7734431027505539" type="skyRightCover">
+                            <param id="0" name="X">stageMapChap.ImagePointX(&quot;RightChap&quot;)</param>
+                            <param id="1" name="Y">stageMapChap.ImagePointY(&quot;RightChap&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

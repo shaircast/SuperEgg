@@ -1,0 +1,1030 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>battleView</name>
+    <events>
+        <include>function</include>
+        <variable constant="0" name="stage" sid="6674997048701597" static="0" type="text">1_1</variable>
+        <variable comment="stageGolemDB의 0번째 토큰" constant="0" name="food" sid="4418183236737158" static="0" type="number">0</variable>
+        <variable comment="턴마다 1씩 증가" constant="0" name="turnCount" sid="671116988508257" static="0" type="number">1</variable>
+        <variable comment="동적 scaling" constant="0" name="scrollRate" sid="5994139726447165" static="0" type="number">0.05</variable>
+        <comment>닭 종류. 알이랑 닭 모두 01a/01b/...으로 통일. 골렘도 같다.</comment>
+        <comment>전 시트에서 henList에서 토큰 읽고 따로 떼어서, henType은 여기 넣고 upgrade 상태도 여기 넣은 후 henButton에 넣기</comment>
+        <variable constant="0" name="henSelected" sid="2194517620432025" static="0" type="text"></variable>
+        <variable constant="0" name="henType0" sid="3058770452431309" static="0" type="text">01a</variable>
+        <variable constant="0" name="henType1" sid="6576623055176688" static="0" type="text">02a</variable>
+        <variable constant="0" name="henType2" sid="3613873163314068" static="0" type="text">01c</variable>
+        <variable constant="0" name="henType3" sid="3162110144748247" static="0" type="text">01d</variable>
+        <variable constant="0" name="henUpgrade0" sid="3153748798202789" static="0" type="number">0</variable>
+        <variable constant="0" name="henUpgrade1" sid="6114964348667643" static="0" type="number">0</variable>
+        <variable constant="0" name="henUpgrade2" sid="2651005052182668" static="0" type="number">0</variable>
+        <variable constant="0" name="henUpgrade3" sid="2460099743260373" static="0" type="number">0</variable>
+        <comment>버튼 위치</comment>
+        <variable constant="0" name="henButtonY" sid="4408282120752925" static="0" type="number">0</variable>
+        <variable constant="0" name="henButtonXOri" sid="9840665507466737" static="0" type="number">0</variable>
+        <variable constant="0" name="henButtonX0" sid="152584223238758" static="0" type="number">0</variable>
+        <variable constant="0" name="henButtonX1" sid="8377483212427012" static="0" type="number">0</variable>
+        <variable constant="0" name="henButtonX2" sid="1331802205914653" static="0" type="number">0</variable>
+        <variable constant="0" name="henButtonX3" sid="6604138417354602" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineY0" sid="6360940031656765" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineY1" sid="8839274230292345" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineY2" sid="1404849808136844" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineY3" sid="1490443444685032" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineX0" sid="2973102611460368" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineX1" sid="7276023616536072" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineX2" sid="6069077270344478" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineX3" sid="2766113627612955" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineX4" sid="8221315634756265" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineX5" sid="7890022787539418" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineX6" sid="5597938602092218" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineX7" sid="6841633732097927" static="0" type="number">0</variable>
+        <variable constant="0" name="launchLineX8" sid="2113129269063617" static="0" type="number">0</variable>
+        <comment>gameState&#x0D;&#x0A;0: not Ready(stage starting point)&#x0D;&#x0A;1: waiting for shoot&#x0D;&#x0A;2: shooting ani &amp;calc&#x0D;&#x0A;3: check finish, move golem&#x0D;&#x0A;4: lost&#x0D;&#x0A;5: win</comment>
+        <variable constant="0" name="gameState" sid="8756455970267743" static="0" type="number">0</variable>
+        <comment>stage : 전 단계에서 정해서 오기&#x0D;&#x0A;** 스테이지 재플레이시 망가지는 버그있음. 초기화 잘 진행할 것.</comment>
+        <event-block sid="1239435629214137">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4382354078170552" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1069885727262216" type="System">
+                    <param id="0" name="Variable">gameState</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="7165514771837842" type="System">
+                    <param id="0" name="Variable">turnCount</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Call function" sid="3710590940936069" type="Function">
+                    <param id="0" name="Name">&quot;battleViewLayerScaleReset&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="5573325639662632" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8882282002653057" type="System">
+                    <param id="0" name="Variable">food</param>
+                    <param id="1" name="Value">int(tokenat(stageGolemDB.Get(stage),0,&quot;/&quot;))</param>
+                </action>
+                <action id="0" name="Call function" sid="9451380431179312" type="Function">
+                    <param id="0" name="Name">&quot;battleViewButtonPosSet&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="716086507349619" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="0" name="Call function" sid="6950405149362282" type="Function">
+                    <param id="0" name="Name">&quot;battleViewButtonInit&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="1111408033717128" type="Function">
+                    <param id="0" name="Name">&quot;refreshFood&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-3" name="Create object" sid="7557852152154248" type="System">
+                    <param id="0" name="Object to create">battleViewTimer</param>
+                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                    <param id="2" name="X">ViewportRight(0)/2</param>
+                    <param id="3" name="Y">ViewportBottom(0)/2</param>
+                </action>
+                <action id="6" name="Stop" sid="7268624510931513" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="4926553307167294" type="Audio">
+                    <param id="0" name="Audio file">battleView</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;music&quot;))</param>
+                    <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4163058616545128">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8212883603671455" type="System">
+                    <param id="0" name="Variable">gameState</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2072641300965937">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="2926728926176212" type="battleViewTimer">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="750231418469426" type="battleViewTimer" />
+                        <action id="-9" name="Set value" sid="4526369778345731" type="System">
+                            <param id="0" name="Variable">gameState</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7831613190100401">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2022369605765399" type="System">
+                    <param id="0" name="Variable">gameState</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>골렘생성 및 turn 표시</comment>
+                <variable constant="0" name="flag" sid="4480113149660183" static="1" type="number">0</variable>
+                <event-block sid="9829324267031685">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="5510155040585902" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8224531886540647" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="9799396295469672" type="Function">
+                            <param id="0" name="Name">&quot;golemCreate&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="7656463704468952" type="Function">
+                            <param id="0" name="Name">&quot;golemZOrder&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="2595796012120358" type="turnText" />
+                        <action id="-3" name="Create object" sid="2204532806106861" type="System">
+                            <param id="0" name="Object to create">turnText</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                            <param id="2" name="X">ViewportRight(&quot;hud&quot;)/2</param>
+                            <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4450026276879766" type="turnText">
+                            <param id="0" name="Text">&quot;Turn &quot;&amp;turnCount</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="427781864196892" type="blockTower">
+                            <param id="0" name="Instance variable">turnLeft</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="7152100218998012" type="poison">
+                            <param id="0" name="Instance variable">turnLeft</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6895879010959442" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2983111357784312" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment bookmark="1">매턴 food 충전</comment>
+                        <event-block disabled="1" sid="9625744061729154">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="4788763696935851" type="System">
+                                    <param id="0" name="First value">int(tokenat(stageGolemDB.Get(stage),0,&quot;/&quot;))</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">food</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="9280984054365308" type="System">
+                                    <param id="0" name="Variable">food</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>턴스킵. 독은 적용하고 가자.</comment>
+                <event-block sid="608112150923351">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4222458757991138" type="Touch">
+                            <param id="0" name="Object">turnButton</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6894589747538096" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1298213872717341">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="7435559858565224" type="Function">
+                                    <param id="0" name="Name">&quot;poisonDealsDamage&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-16" name="Wait" sid="724939789541473" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="359202178077101" type="System">
+                                    <param id="0" name="Variable">gameState</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6672481645850253">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="2240256857128339" type="Touch">
+                            <param id="0" name="Object">launchLine</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8407475261259978" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="9758878962771427" type="Function">
+                            <param id="0" name="Name">&quot;touchLaunchLine&quot;</param>
+                            <param id="1" name="Parameter {n}">launchLine.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7196352529718023">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="3528724701036763" type="Touch">
+                            <param id="0" name="Object">henButton</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="687019266778905" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="4018553326262423" type="Function">
+                            <param id="0" name="Name">&quot;touchHenButton&quot;</param>
+                            <param id="1" name="Parameter {n}">henButton.UID</param>
+                        </action>
+                        <action id="0" name="Call function" sid="1260440715415272" type="Function">
+                            <param id="0" name="Name">&quot;golemDestroy&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>남은 턴이 0이면 occupy해제하고 파괴</comment>
+                <event-block sid="6123726555701101">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3794954860646804" type="blockTower">
+                            <param id="0" name="Instance variable">turnLeft</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7387166489367141">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="8786387492664574" type="launchLine">
+                                    <param id="0" name="Instance variable">launchLineIDX</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">blockTower.posX</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="9443407645629896" type="launchLine">
+                                    <param id="0" name="Instance variable">launchLineIDY</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">blockTower.posY</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="4977921848178029" type="launchLine">
+                                    <param id="0" name="Instance variable">occupied</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="446069608308403">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Destroy" sid="5666963682189689" type="blockTower" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>남은 턴이 0이면 파괴. 딜계산은 뒤에서.</comment>
+                <event-block sid="5516109877278147">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1369704770446942" type="poison">
+                            <param id="0" name="Instance variable">turnLeft</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7708998671674729" type="poison" />
+                    </actions>
+                </event-block>
+                <comment>독같은거는 1턴에 계산</comment>
+                <event-block sid="6737966942046641">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Call function" sid="9514390782750622" type="Function">
+                            <param id="0" name="Name">&quot;golemDestroy&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>state 2에서 망가진 초점과 스케일 원상복귀!</comment>
+                <event-block sid="4433696522056398">
+                    <conditions />
+                    <actions>
+                        <action id="-1" name="Set X" sid="6575126465797068" type="focus">
+                            <param id="0" name="X">lerp(self.X,ViewportRight(0)/2,scrollRate)</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="9464142537907541" type="focus">
+                            <param id="0" name="Y">lerp(self.Y,ViewportBottom(0)/2,scrollRate)</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="143195561450013" type="System">
+                            <param id="0" name="Layer">&quot;backBg&quot;</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;backBg&quot;),1,scrollRate)</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="6358563191802717" type="System">
+                            <param id="0" name="Layer">&quot;frontBg&quot;</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;frontBg&quot;),1,scrollRate)</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="2078835173605402" type="System">
+                            <param id="0" name="Layer">&quot;golem&quot;</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;golem&quot;),1,scrollRate)</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="4429226783735366" type="System">
+                            <param id="0" name="Layer">&quot;effect&quot;</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;effect&quot;),1,scrollRate)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="423270365469461">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1404712016642609" type="System">
+                    <param id="0" name="Variable">gameState</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>알 던질때 독 데미지</comment>
+                <event-block sid="599502389408539">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="5728120520909082" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="4480629187107018" type="Function">
+                            <param id="0" name="Name">&quot;poisonDealsDamage&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>touchLanchLine-&gt; lanchEgg-&gt; launchEggFromCannon에서 wait:rotateComplete 시그널 통과.&#x0D;&#x0A;알 충돌해서 파괴되고 데미지 계산 종료시 state3으로</comment>
+                <variable constant="0" name="flag" sid="5215577672228696" static="0" type="number">0</variable>
+                <event-block sid="6140712249679346">
+                    <conditions>
+                        <condition behavior="RotateTo" id="0" name="On hit target angle" sid="1253585371808687" type="cannon" />
+                        <condition id="-14" name="Compare variable" sid="2067942526447437" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2366788065821316" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-42" name="Signal" sid="9022264806122902" type="System">
+                            <param id="0" name="Tag">&quot;rotateComplete&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="8515417054816278" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="-41" name="Wait for signal" sid="8727137720552172" type="System">
+                            <param id="0" name="Tag">&quot;eggDestroyed&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="6846678473484037" type="Function">
+                            <param id="0" name="Name">&quot;golemDestroy&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-41" name="Wait for signal" sid="5118369634265691" type="System">
+                            <param id="0" name="Tag">&quot;explodeFinished&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4394803064830476" type="System">
+                            <param id="0" name="Variable">gameState</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment> launchEggFromCannon 에서 wait:cannonMoved시그널.</comment>
+                <event-block sid="9321738984096278">
+                    <conditions>
+                        <condition behavior="MoveTo" id="0" name="On hit target position" sid="5422583559325003" type="cannon" />
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="5654119739274671" type="System">
+                            <param id="0" name="Tag">&quot;cannonMoved&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>폭파장면 끝나면 턴스킵. 이때 타워닭 비석세우기 확인!</comment>
+                <event-block sid="7939978331846722">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="2953326474887494" type="explode">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">explode.AnimationFrameCount-1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7323345668130972">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7889189680304813" type="explode">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;10&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6021124234890945" type="launchLine">
+                                    <param id="0" name="Instance variable">launchLineIDX</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">explode.posX</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="1760023573878012" type="launchLine">
+                                    <param id="0" name="Instance variable">launchLineIDY</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">explode.posY</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7393192601943754" type="launchLine">
+                                    <param id="0" name="Instance variable">occupied</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="4368556382746054" type="launchLine">
+                                    <param id="0" name="Object">blockTower</param>
+                                    <param id="1" name="Layer">&quot;golem&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="6894677027864835" type="launchLine">
+                                    <param id="0" name="Instance variable">occupied</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="4273300747818255" type="blockTower">
+                                    <param id="0" name="Instance variable">posX</param>
+                                    <param id="1" name="Value">explode.posX</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="9815260393893532" type="blockTower">
+                                    <param id="0" name="Instance variable">posY</param>
+                                    <param id="1" name="Value">explode.posY</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="1088201435956641" type="blockTower">
+                                    <param id="0" name="Instance variable">turnLeft</param>
+                                    <param id="1" name="Value">henDB.Get(explode.kind&amp;&quot;duration&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2337419338875027">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Destroy" sid="9149696161055229" type="explode" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3898576716259156">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1820616239500845" type="System">
+                            <param id="0" name="First value">explode.Count</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="377208586487665" type="System">
+                            <param id="0" name="Tag">&quot;explodeFinished&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <variable constant="0" name="scaleRate" sid="3266546075561834" static="1" type="number">0</variable>
+                <comment>알이 날아가는 동안 동적 scaling, 충돌시 kind에 따라서 다른 기작.</comment>
+                <event-block sid="5197510167084536">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1630375533568909" type="System">
+                            <param id="0" name="First value">eggBullet.Count</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9645735465458937" type="System">
+                            <param id="0" name="Variable">scaleRate</param>
+                            <param id="1" name="Value">(eggBullet.Y/10+720)/1280</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="6326236378896235" type="System">
+                            <param id="0" name="Layer">&quot;backBg&quot;</param>
+                            <param id="1" name="Scale">scaleRate</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="3903761187260222" type="System">
+                            <param id="0" name="Layer">&quot;frontBg&quot;</param>
+                            <param id="1" name="Scale">scaleRate</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="791857535122861" type="System">
+                            <param id="0" name="Layer">&quot;golem&quot;</param>
+                            <param id="1" name="Scale">scaleRate</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="6114104831483873" type="System">
+                            <param id="0" name="Layer">&quot;effect&quot;</param>
+                            <param id="1" name="Scale">scaleRate</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>알이 화면 밖을 벗어나면 텔레포트</comment>
+                        <event-block sid="5533874764932308">
+                            <conditions>
+                                <condition id="-3" inverted="1" name="Is on-screen" sid="3872263448130862" type="eggBullet" />
+                                <condition id="-4" name="Trigger once while true" sid="6468475499288316" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="5719331381967009" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="5808889986337037">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5718256690745031" type="eggBullet">
+                                            <param id="0" name="Instance variable">targetX</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="1979301122183301" type="eggBullet">
+                                            <param id="0" name="X">launchLineX0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9816749336822286">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9859736103854652" type="eggBullet">
+                                            <param id="0" name="Instance variable">targetX</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="5249316841037475" type="eggBullet">
+                                            <param id="0" name="X">launchLineX1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="168682644472299">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9930415177814466" type="eggBullet">
+                                            <param id="0" name="Instance variable">targetX</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="7745007071718591" type="eggBullet">
+                                            <param id="0" name="X">launchLineX2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1006628585725343">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4456891655657364" type="eggBullet">
+                                            <param id="0" name="Instance variable">targetX</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="575420939305861" type="eggBullet">
+                                            <param id="0" name="X">launchLineX3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3601919152590035">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5649751375290809" type="eggBullet">
+                                            <param id="0" name="Instance variable">targetX</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="8760705833460812" type="eggBullet">
+                                            <param id="0" name="X">launchLineX4</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1830702028611684">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2191154355872837" type="eggBullet">
+                                            <param id="0" name="Instance variable">targetX</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="3116540757866145" type="eggBullet">
+                                            <param id="0" name="X">launchLineX5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5076384684692069">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7668095334572873" type="eggBullet">
+                                            <param id="0" name="Instance variable">targetX</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">6</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="5495612317195569" type="eggBullet">
+                                            <param id="0" name="X">launchLineX6</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1324282135308021">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4637556946532868" type="eggBullet">
+                                            <param id="0" name="Instance variable">targetX</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="2717126209001828" type="eggBullet">
+                                            <param id="0" name="X">launchLineX7</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5999773768132082">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5119389048858922" type="eggBullet">
+                                            <param id="0" name="Instance variable">targetX</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="911676858294672" type="eggBullet">
+                                            <param id="0" name="X">launchLineX8</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9356031495747486">
+                                    <conditions />
+                                    <actions>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="9535435793827718" type="eggBullet">
+                                            <param id="0" name="Angle">90</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>땅에서 깨지는 알과 골렘맞고 깨지는 알</comment>
+                        <event-block sid="7785512976718197">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="365556949268466" type="eggBullet">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Y co-ordinate">Function.Call(&quot;launchLineYSet&quot;,eggBullet.targetY)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="6853228119888008" type="Function">
+                                    <param id="0" name="Name">&quot;eggCollidesGround&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="184197821462249">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="6697545702196289" type="eggBullet">
+                                    <param id="0" name="Object">golem</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="2359144838421784" type="Function">
+                                    <param id="0" name="Name">&quot;eggCollidesGolem&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>state3 은 끝난거 아니면 그냥 턴카운트+1, aim해제하고 eating상태 turn+1, 골렘이동.</comment>
+        <event-block sid="7468797667848883">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1740880111558583" type="System">
+                    <param id="0" name="Variable">gameState</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2445677912319106">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="7282539025204121" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>더이상 나올 골렘 없고 다 잡았으면 클리어!</comment>
+                        <event-block sid="6826032319698904">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="4560034501440145" type="System">
+                                    <param id="0" name="First value">turnCount</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">tokencount(stageGolemDB.Get(stage),&quot;/&quot;)-2</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="1799239955162429" type="System">
+                                    <param id="0" name="First value">golem.Count</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9822399156444038" type="System">
+                                    <param id="0" name="Variable">gameState</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <variable constant="0" name="nextChapter" sid="1817001389787919" static="0" type="number">0</variable>
+                                <variable constant="0" name="nextStage" sid="3722009336789411" static="0" type="number">0</variable>
+                                <variable constant="0" name="thisChapter" sid="9611929320096571" static="0" type="number">0</variable>
+                                <variable constant="0" name="thisStage" sid="3339232305024283" static="0" type="number">0</variable>
+                                <variable constant="0" name="maxChapter" sid="3321296208240181" static="0" type="number">0</variable>
+                                <variable constant="0" name="maxStage" sid="5628943979238902" static="0" type="number">0</variable>
+                                <event-block sid="9137769004596908">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="303051579282892" type="System">
+                                            <param id="0" name="Variable">thisChapter</param>
+                                            <param id="1" name="Value">int(left(stage,1))</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="9234725471549942" type="System">
+                                            <param id="0" name="Variable">thisStage</param>
+                                            <param id="1" name="Value">int(right(stage,1))</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="6779576294423834" type="System">
+                                            <param id="0" name="Variable">maxChapter</param>
+                                            <param id="1" name="Value">int(left(WebStorage.LocalValue(&quot;maxStage&quot;),1))</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="2840892420033073" type="System">
+                                            <param id="0" name="Variable">maxStage</param>
+                                            <param id="1" name="Value">int(right(WebStorage.LocalValue(&quot;maxStage&quot;),1))</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="9023643163066666">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="1708827913086048" type="System">
+                                                    <param id="0" name="First value">thisStage</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">10</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="7689072433443618" type="System">
+                                                    <param id="0" name="Variable">nextChapter</param>
+                                                    <param id="1" name="Value">thisChapter+1</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="7646953715724514" type="System">
+                                                    <param id="0" name="Variable">nextStage</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="5642908524473899">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="1194412239576137" type="System">
+                                                    <param id="0" name="First value">thisStage</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Second value">10</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="7696893791446345" type="System">
+                                                    <param id="0" name="Variable">nextChapter</param>
+                                                    <param id="1" name="Value">thisChapter</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="7786459656345643" type="System">
+                                                    <param id="0" name="Variable">nextStage</param>
+                                                    <param id="1" name="Value">thisStage+1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>지금 스테이지가 maxStage면 maxStage+1</comment>
+                                        <event-block sid="7002172697979385">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="7722846940997811" type="System">
+                                                    <param id="0" name="First value">thisChapter*10+thisStage</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">maxChapter*10+maxStage</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set local value" sid="3957457925788503" type="WebStorage">
+                                                    <param id="0" name="Key">&quot;maxStage&quot;</param>
+                                                    <param id="1" name="Value">nextChapter&amp;&quot;_&quot;&amp;nextStage</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8026615998906882">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="2592883838880948" type="System">
+                                                    <param id="0" name="Object to create">turnText</param>
+                                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                    <param id="2" name="X">ViewportRight(&quot;hud&quot;)/2</param>
+                                                    <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="2541924343708251" type="turnText">
+                                                    <param id="0" name="Text">&quot;Stage Clear!&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="6130925871506581" type="System">
+                                                    <param id="0" name="Seconds">2</param>
+                                                </action>
+                                                <action id="-2" name="Go to layout" sid="1852402519972384" type="System">
+                                                    <param id="0" name="Layout">stageView</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>한턴더</comment>
+                        <event-block sid="973660420540721">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6788834157684431" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="2011705474175713" type="Function">
+                                    <param id="0" name="Name">&quot;battleViewTurnOver&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="609410503592765">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="3824212703296889" type="System">
+                                            <param id="0" name="Variable">gameState</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="7644586068022757" type="System">
+                                            <param id="0" name="Variable">gameState</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="9235542984322606" type="System">
+                                            <param id="0" name="Variable">gameState</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="5850089500465408" type="System">
+                                            <param id="0" name="Variable">turnCount</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="012 : idle / 345 : eating / 678 : ready / 2,5,8프레임은 dummy" sid="3985001825215672" title="henButton Ani">
+            <sub-events>
+                <event-block sid="1941144201227151">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4113445573125014" type="henButton">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="8087685966666992" type="henButton">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="8695407272639619" type="henButton">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="3" name="Start" sid="567832857440596" type="henButton">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6058296251907033">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8940022748937449" type="henButton">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="6348392631706427" type="henButton">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="9603802559439623" type="henButton">
+                            <param id="0" name="Frame number">3</param>
+                        </action>
+                        <action id="3" name="Start" sid="6514977482776366" type="henButton">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6983774904203733">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2366617469215216" type="henButton">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="7705290224423621" type="henButton">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="7883692497629702" type="henButton">
+                            <param id="0" name="Frame number">6</param>
+                        </action>
+                        <action id="3" name="Start" sid="6067150452651994" type="henButton">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="7226440847034576">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2700846813471433" type="Touch">
+                    <param id="0" name="Object">pauseButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4124365629596598" type="System">
+                    <param id="0" name="Layout">stageView</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>state4는 여기 두고, state5는 gameState3에 포함.</comment>
+        <event-block sid="7427033876980339">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9783339009374956" type="System">
+                    <param id="0" name="Variable">gameState</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="8232499183885275">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="7139803364535633" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="MoveTo" id="4" name="Move to XY" sid="4788966309608641" type="golem">
+                            <param id="0" name="X">-1000</param>
+                            <param id="1" name="Y">Self.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9300152071853948" type="System">
+                            <param id="0" name="Object to create">turnText</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                            <param id="2" name="X">ViewportRight(&quot;hud&quot;)/2</param>
+                            <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9025137062099726" type="turnText">
+                            <param id="0" name="Text">&quot;Stage Failed!&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6875050856163885" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="4788577622756026" type="System">
+                            <param id="0" name="Layout">stageView</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>opening</name>
+    <events>
+        <include>function</include>
+        <event-block sid="7572007857739591">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5980368405417701" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="200316924085124" type="Function">
+                    <param id="0" name="Name">&quot;henDBInit&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="8587865222754586" type="Function">
+                    <param id="0" name="Name">&quot;stageGolemDBInit&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="1034672320744939" type="Function">
+                    <param id="0" name="Name">&quot;golemDBInit&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="6505130547001485" type="Function">
+                    <param id="0" name="Name">&quot;stageNameDBInit&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="10" name="Request fullscreen" sid="8372771980019694" type="Browser">
+                    <param id="0" name="Mode">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5586964364831085">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="764536671246715" type="WebStorage">
+                            <param id="0" name="Key">&quot;henList&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="6113514876228137" type="WebStorage">
+                            <param id="0" name="Key">&quot;henList&quot;</param>
+                            <param id="1" name="Value">&quot;01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/09d00/10d00/11d00/12d00/&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7165083230970735">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="6436940235334408" type="WebStorage">
+                            <param id="0" name="Key">&quot;chapter&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="6897966046454558" type="WebStorage">
+                            <param id="0" name="Key">&quot;chapter&quot;</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>maxStage: 플레이어가 플레이가능한 최고 챕터. 즉, 완료 스테이지는 maxStage-1</comment>
+                <event-block sid="9456030721021329">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="785984739971805" type="WebStorage">
+                            <param id="0" name="Key">&quot;maxStage&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="2667101939707685" type="WebStorage">
+                            <param id="0" name="Key">&quot;maxStage&quot;</param>
+                            <param id="1" name="Value">&quot;1_1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6506614295556172">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="5199211695289288" type="WebStorage">
+                            <param id="0" name="Key">&quot;gold&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="6615393690561181" type="WebStorage">
+                            <param id="0" name="Key">&quot;gold&quot;</param>
+                            <param id="1" name="Value">10000</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="311909859217395">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="2933821551376295" type="WebStorage">
+                            <param id="0" name="Key">&quot;entry1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="7955529462154196" type="WebStorage">
+                            <param id="0" name="Key">&quot;entry1&quot;</param>
+                            <param id="1" name="Value">&quot;0&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7077267826537284">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="5891208648103396" type="WebStorage">
+                            <param id="0" name="Key">&quot;entry2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="267946707684919" type="WebStorage">
+                            <param id="0" name="Key">&quot;entry2&quot;</param>
+                            <param id="1" name="Value">&quot;1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3950440262919703">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="3458055597382336" type="WebStorage">
+                            <param id="0" name="Key">&quot;entry3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="7414000141746849" type="WebStorage">
+                            <param id="0" name="Key">&quot;entry3&quot;</param>
+                            <param id="1" name="Value">&quot;2&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>볼륨은 0이 최대, -60이 최소</comment>
+                <event-block sid="9730571383796708">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="3441598372111709" type="WebStorage">
+                            <param id="0" name="Key">&quot;music&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="1507219397996195" type="WebStorage">
+                            <param id="0" name="Key">&quot;music&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7480037684934518">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="5006914080665432" type="WebStorage">
+                            <param id="0" name="Key">&quot;sfx&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="887373807021406" type="WebStorage">
+                            <param id="0" name="Key">&quot;sfx&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1968299442200913">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="465917995800202" type="WebStorage">
+                            <param id="0" name="Key">&quot;vibrate&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="4989042954133185" type="WebStorage">
+                            <param id="0" name="Key">&quot;vibrate&quot;</param>
+                            <param id="1" name="Value">&quot;1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4585502503565729">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Play" sid="775278736653529" type="Audio">
+                            <param id="0" name="Audio file">opening</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;music&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7762532426839229">
+            <conditions>
+                <condition id="3" name="On touched object" sid="7719113871777803" type="Touch">
+                    <param id="0" name="Object">openingSprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="5353328075164501" type="System">
+                    <param id="0" name="Layout">stageView</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

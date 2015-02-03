@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">opening</layout>
+        <layout order="1">battleView</layout>
+        <layout active="1" order="7">cageView</layout>
+        <layout order="8">stageView</layout>
+        <layout order="9">sprites</layout>
+        <event-sheet order="2">battleView</event-sheet>
+        <event-sheet order="3">stageView</event-sheet>
+        <event-sheet order="4">opening</event-sheet>
+        <event-sheet order="5">cageView</event-sheet>
+        <event-sheet order="6">function</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="object-folder/plugin/" />
+        <folder expanded="0" path="object-folder/battleView/" />
+        <folder expanded="0" path="object-folder/battleView/hud/" />
+        <folder expanded="0" path="object-folder/battleView/golem/" />
+        <folder expanded="0" path="object-folder/battleView/eggExplode/" />
+        <folder expanded="0" path="object-folder/battleView/bgDeco/" />
+        <folder expanded="0" path="object-folder/battleView/henButton/" />
+        <folder expanded="0" path="object-folder/DBDic/" />
+        <folder expanded="0" path="object-folder/stageView/" />
+        <folder expanded="0" path="object-folder/stageView/modeButton/" />
+        <folder expanded="0" path="object-folder/menuButton/" />
+        <folder expanded="0" path="object-folder/cageView/" />
+        <folder expanded="1" path="object-folder/cageView/textbox/" />
+        <folder expanded="0" path="object-folder/opening/" />
+        <folder expanded="0" path="object-folder/icon/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="0" path="sound-folder/" />
+        <folder expanded="0" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/buttonUIPlate/" />
+        <folder expanded="1" path="animation-folder/guideGrid/" />
+        <folder expanded="1" path="animation-folder/cannon/" />
+        <folder expanded="1" path="animation-folder/turnButton/" />
+        <folder expanded="1" path="animation-folder/golem/" />
+        <folder expanded="1" path="animation-folder/golemHpBar/" />
+        <folder expanded="1" path="animation-folder/golemHpBarFrame/" />
+        <folder expanded="1" path="animation-folder/explode/" />
+        <folder expanded="1" path="animation-folder/poison/" />
+        <folder expanded="1" path="animation-folder/blockTower/" />
+        <folder expanded="1" path="animation-folder/battleViewBg/" />
+        <folder expanded="1" path="animation-folder/battleViewFrontBg/" />
+        <folder expanded="1" path="animation-folder/tower/" />
+        <folder expanded="1" path="animation-folder/foodSprite/" />
+        <folder expanded="1" path="animation-folder/henButton/" />
+        <folder expanded="1" path="animation-folder/henButton/01/" />
+        <folder expanded="1" path="animation-folder/henButton/02/" />
+        <folder expanded="1" path="animation-folder/henButton/03/" />
+        <folder expanded="1" path="animation-folder/henButton/04/" />
+        <folder expanded="1" path="animation-folder/henButton/05/" />
+        <folder expanded="1" path="animation-folder/henButton/06/" />
+        <folder expanded="1" path="animation-folder/henButton/07/" />
+        <folder expanded="1" path="animation-folder/henButton/08/" />
+        <folder expanded="1" path="animation-folder/henButton/09/" />
+        <folder expanded="1" path="animation-folder/henButton/10/" />
+        <folder expanded="1" path="animation-folder/henButton/11/" />
+        <folder expanded="1" path="animation-folder/henButton/12/" />
+        <folder expanded="1" path="animation-folder/launchLine/" />
+        <folder expanded="1" path="animation-folder/henSelection/" />
+        <folder expanded="1" path="animation-folder/eggBullet/" />
+        <folder expanded="1" path="animation-folder/eggBullet/01/" />
+        <folder expanded="1" path="animation-folder/eggBullet/02/" />
+        <folder expanded="1" path="animation-folder/eggBullet/03/" />
+        <folder expanded="1" path="animation-folder/eggBullet/04/" />
+        <folder expanded="1" path="animation-folder/eggBullet/05/" />
+        <folder expanded="1" path="animation-folder/eggBullet/06/" />
+        <folder expanded="1" path="animation-folder/eggBullet/07/" />
+        <folder expanded="1" path="animation-folder/eggBullet/08/" />
+        <folder expanded="1" path="animation-folder/eggBullet/09/" />
+        <folder expanded="1" path="animation-folder/eggBullet/10/" />
+        <folder expanded="1" path="animation-folder/eggBullet/11/" />
+        <folder expanded="1" path="animation-folder/eggBullet/12/" />
+        <folder expanded="1" path="animation-folder/pauseButton/" />
+        <folder expanded="1" path="animation-folder/solidGround/" />
+        <folder expanded="1" path="animation-folder/battleViewTimer/" />
+        <folder expanded="1" path="animation-folder/henButtonBonusEffect/" />
+        <folder expanded="1" path="animation-folder/eggBulletBonusEffect/" />
+        <folder expanded="1" path="animation-folder/focus/" />
+        <folder expanded="1" path="animation-folder/descriptionButton/" />
+        <folder expanded="1" path="animation-folder/entryButton/" />
+        <folder expanded="1" path="animation-folder/reproduceButton/" />
+        <folder expanded="1" path="animation-folder/stageMapChap/" />
+        <folder expanded="1" path="animation-folder/chapterStage/" />
+        <folder expanded="1" path="animation-folder/stageSummary/" />
+        <folder expanded="1" path="animation-folder/stageSelection/" />
+        <folder expanded="1" path="animation-folder/skyLeftCover/" />
+        <folder expanded="1" path="animation-folder/skyRightCover/" />
+        <folder expanded="1" path="animation-folder/menuButtonCageView/" />
+        <folder expanded="1" path="animation-folder/menuButtonPackage/" />
+        <folder expanded="1" path="animation-folder/menuButtonOptionView/" />
+        <folder expanded="1" path="animation-folder/menuButtonStageView/" />
+        <folder expanded="1" path="animation-folder/cageViewBg/" />
+        <folder expanded="1" path="animation-folder/cageSummary/" />
+        <folder expanded="1" path="animation-folder/henCage/" />
+        <folder expanded="1" path="animation-folder/henCage/01/" />
+        <folder expanded="1" path="animation-folder/henCage/02/" />
+        <folder expanded="1" path="animation-folder/henCage/03/" />
+        <folder expanded="1" path="animation-folder/henCage/04/" />
+        <folder expanded="1" path="animation-folder/henCage/05/" />
+        <folder expanded="1" path="animation-folder/henCage/06/" />
+        <folder expanded="1" path="animation-folder/henCage/07/" />
+        <folder expanded="1" path="animation-folder/henCage/08/" />
+        <folder expanded="1" path="animation-folder/henCage/09/" />
+        <folder expanded="1" path="animation-folder/henCage/10/" />
+        <folder expanded="1" path="animation-folder/henCage/11/" />
+        <folder expanded="1" path="animation-folder/henCage/12/" />
+        <folder expanded="1" path="animation-folder/cageSelection/" />
+        <folder expanded="1" path="animation-folder/cageViewOkButton/" />
+        <folder expanded="1" path="animation-folder/entryIndicator/" />
+        <folder expanded="1" path="animation-folder/openingSprite/" />
+        <folder expanded="1" path="animation-folder/iconAtk/" />
+        <folder expanded="1" path="animation-folder/iconCoin/" />
+        <folder expanded="1" path="animation-folder/iconFire/" />
+        <folder expanded="1" path="animation-folder/iconFood/" />
+        <folder expanded="1" path="animation-folder/iconGrass/" />
+        <folder expanded="1" path="animation-folder/iconPowerup/" />
+        <folder expanded="1" path="animation-folder/iconTurn/" />
+        <folder expanded="1" path="animation-folder/iconNotype/" />
+        <folder expanded="1" path="animation-folder/iconWater/" />
+        <folder expanded="1" path="animation-folder/iconType/" />
+        <folder expanded="1" path="animation-folder/iconCoinHUD/" />
+    </folders-expanded>
+</c2uistate>
