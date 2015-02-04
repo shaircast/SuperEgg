@@ -4,6 +4,31 @@
     <name>optionView</name>
     <events>
         <include>function</include>
+        <event-block sid="100357258764611">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2427181214653416" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="9312316557934195" type="Function">
+                    <param id="0" name="Name">&quot;levelHolderYSet&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="620213116165871" type="Function">
+                    <param id="0" name="Name">&quot;levelHolderXSet&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="6" name="Stop" sid="5699203843391094" type="Audio">
+                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="4505848932848303" type="Audio">
+                    <param id="0" name="Audio file">stageView</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
+                    <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>메뉴</comment>
         <event-block sid="5681735429843299">
             <conditions>
                 <condition id="3" name="On touched object" sid="9776157468002129" type="Touch">
@@ -61,6 +86,257 @@
                     <param id="0" name="Layout">optionView</param>
                 </action>
             </actions>
+        </event-block>
+        <event-group description="" sid="1554253604548981" title="volume/vibrate">
+            <sub-events>
+                <comment>잡고 움직이면 값 설정(최대 0, 최소 -60)</comment>
+                <event-block sid="1211146060015401">
+                    <conditions>
+                        <condition behavior="DragDrop" id="0" name="Is dragging" sid="7253328156383843" type="musicLevelHolder" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="3715978937692475" type="Function">
+                            <param id="0" name="Name">&quot;holderMusicVolumeSet&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3585107936094655">
+                    <conditions>
+                        <condition behavior="DragDrop" id="0" name="Is dragging" sid="2462355556780497" type="sfxLevelHolder" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="3607732699238795" type="Function">
+                            <param id="0" name="Name">&quot;holderSfxVolumeSet&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3241149955371827">
+                    <conditions>
+                        <condition behavior="DragDrop" id="2" name="On drop" sid="2595090570716464" type="sfxLevelHolder" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="7499902714995862" type="Audio">
+                            <param id="0" name="Audio file">henCageMode</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))-5</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3570738214437596">
+                    <conditions>
+                        <condition behavior="DragDrop" id="2" name="On drop" sid="9643813135382278" type="vibrateLevelHolder" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="1662366717195442" type="Function">
+                            <param id="0" name="Name">&quot;holderVibrateSet&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>holder 움직임 제한</comment>
+                <event-block sid="5457415107443618">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="8690422149313265" type="musicLevelHolder">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">musicLevelBar.ImagePointX(&quot;Zero&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="8809914085748874" type="musicLevelHolder">
+                            <param id="0" name="X">musicLevelBar.ImagePointX(&quot;Zero&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5310092739457666">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="7997734664134219" type="musicLevelHolder">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">musicLevelBar.ImagePointX(&quot;Full&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="6795153327566611" type="musicLevelHolder">
+                            <param id="0" name="X">musicLevelBar.ImagePointX(&quot;Full&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="839873517495547">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="6396578637228207" type="sfxLevelHolder">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">sfxLevelBar.ImagePointX(&quot;Zero&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="3827909622582945" type="sfxLevelHolder">
+                            <param id="0" name="X">sfxLevelBar.ImagePointX(&quot;Zero&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7651136196772068">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="9754877553853509" type="sfxLevelHolder">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">sfxLevelBar.ImagePointX(&quot;Full&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="3763477934699259" type="sfxLevelHolder">
+                            <param id="0" name="X">sfxLevelBar.ImagePointX(&quot;Full&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8875236897930434">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="4839097766139859" type="vibrateLevelHolder">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">vibrateLevelBar.ImagePointX(&quot;Zero&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="8167085294360241" type="vibrateLevelHolder">
+                            <param id="0" name="X">vibrateLevelBar.ImagePointX(&quot;Zero&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1176218359699266">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="4916884621342356" type="vibrateLevelHolder">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">vibrateLevelBar.ImagePointX(&quot;Full&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="1172715488963409" type="vibrateLevelHolder">
+                            <param id="0" name="X">vibrateLevelBar.ImagePointX(&quot;Full&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>levelBar를 직접 눌렀을 때</comment>
+                <event-block sid="592315031897144">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="1656543537510666" type="Touch">
+                            <param id="0" name="Object">musicLevelBar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="7563994199097906" type="musicLevelHolder">
+                            <param id="0" name="X">touch.X</param>
+                        </action>
+                        <action id="0" name="Call function" sid="5211853312805572" type="Function">
+                            <param id="0" name="Name">&quot;holderMusicVolumeSet&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2524674922295914">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="739170625269056" type="Touch">
+                            <param id="0" name="Object">sfxLevelBar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="6965984650161631" type="sfxLevelHolder">
+                            <param id="0" name="X">Touch.X</param>
+                        </action>
+                        <action id="0" name="Call function" sid="4659286874358982" type="Function">
+                            <param id="0" name="Name">&quot;holderSfxVolumeSet&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4963075219820182">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="1815495670966715" type="Touch">
+                            <param id="0" name="Object">vibrateLevelBar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="8808778657775453" type="vibrateLevelHolder">
+                            <param id="0" name="X">Touch.X</param>
+                        </action>
+                        <action id="0" name="Call function" sid="3777623462697191" type="Function">
+                            <param id="0" name="Name">&quot;holderVibrateSet&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>frame0: 리셋하기 / 1: 정말? / 2: 완료</comment>
+        <event-block sid="1501502020712108">
+            <conditions>
+                <condition id="3" name="On touched object" sid="7149965320936993" type="Touch">
+                    <param id="0" name="Object">resetButton</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="flag" sid="419753691097955" static="0" type="number">0</variable>
+                <event-block sid="2855597674273627">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="4352421642297234" type="resetButton">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="1601835618403511" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8055475301173115" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="1684740958138871" type="resetButton">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="3586391610804934" type="Audio">
+                            <param id="0" name="Audio file">chapterMove</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8461778808555877">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="8317386659553223" type="resetButton">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="62487501701673" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6329652958484161" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="1515735501193686" type="Function">
+                            <param id="0" name="Name">&quot;userDataReset&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="5" name="Set frame" sid="6432475352270578" type="resetButton">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                        <action id="0" name="Play" sid="7538730540007827" type="Audio">
+                            <param id="0" name="Audio file">entryConfirm</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

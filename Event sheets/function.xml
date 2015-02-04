@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>function</name>
     <events>
+        <variable constant="0" name="powerupIndicatorX" sid="487664723975616" static="0" type="number">40</variable>
+        <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">-48</variable>
         <event-group description="" sid="1681297483373011" title="OPENING INIT">
             <sub-events>
                 <comment>henDBInput(kind, name, readyturn, atk, duration, price, foodcost, description)&#x0D;&#x0A;숫자 및 수치</comment>
@@ -49,7 +51,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>stageNameDBInit: 각 스테이지 이름, </comment>
+                <comment>stageNameDBInit() : 각 스테이지 이름, </comment>
                 <event-block sid="6147724126418971">
                     <conditions>
                         <condition id="0" name="On function" sid="2993681330235614" type="Function">
@@ -105,7 +107,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>golemDBInit: Dic에 골렘 DB를 입력.</comment>
+                <comment>golemDBInit() : Dic에 골렘 DB를 입력.</comment>
                 <event-block sid="5476733464728454">
                     <conditions>
                         <condition id="0" name="On function" sid="317972928190894" type="Function">
@@ -153,7 +155,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>henDBInit: Dic에 닭 DB를 입력.</comment>
+                <comment>henDBInit() : Dic에 닭 DB를 입력.</comment>
                 <event-block sid="8727915558087155">
                     <conditions>
                         <condition id="0" name="On function" sid="5763485838438884" type="Function">
@@ -357,7 +359,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>stageGolemDBInit: 각 스테이지에 골렘이 어떻게 나오는지 Dic에 입력. 처음은 모이수, 그담부터 골렘.&#x0D;&#x0A;턴구분:/     같은턴골렘구분:,&#x0D;&#x0A;01a82 : 01a골렘을 X8번째 Y2번째 위치에 소환. 별 일 없으면 X=8로.</comment>
+                <comment>stageGolemDBInit() : 각 스테이지에 골렘이 어떻게 나오는지 Dic에 입력. 처음은 모이수, 그담부터 골렘.&#x0D;&#x0A;턴구분:/     같은턴골렘구분:,&#x0D;&#x0A;01a82 : 01a골렘을 X8번째 Y2번째 위치에 소환. 별 일 없으면 X=8로.</comment>
                 <event-block sid="5152035095472449">
                     <conditions>
                         <condition id="0" name="On function" sid="164704775541574" type="Function">
@@ -376,6 +378,52 @@
                                 <action id="0" name="Add key" sid="3690306016475057" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_2&quot;</param>
                                     <param id="1" name="Value">&quot;10/01d72/02a80/01a80/01a80/02a80/&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>userDataReset() : 유저의 진행상황을 리셋</comment>
+                <event-block sid="9124655611461876">
+                    <conditions>
+                        <condition id="0" name="On function" sid="4123270188096522" type="Function">
+                            <param id="0" name="Name">&quot;userDataReset&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>maxStage: 플레이어가 플레이가능한 최고 챕터. 즉, 완료 스테이지는 maxStage-1</comment>
+                        <comment>볼륨은 0이 최대, -60이 최소</comment>
+                        <event-block sid="4666692716281236">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
+                                    <param id="0" name="Key">&quot;henList&quot;</param>
+                                    <param id="1" name="Value">&quot;01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/09d00/10d00/11d00/12d00/&quot;</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
+                                    <param id="0" name="Key">&quot;chapter&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="3645545715772576" type="WebStorage">
+                                    <param id="0" name="Key">&quot;maxStage&quot;</param>
+                                    <param id="1" name="Value">&quot;1_1&quot;</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="71699616378047" type="WebStorage">
+                                    <param id="0" name="Key">&quot;gold&quot;</param>
+                                    <param id="1" name="Value">10000</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="5464618023177127" type="WebStorage">
+                                    <param id="0" name="Key">&quot;entry1&quot;</param>
+                                    <param id="1" name="Value">&quot;0&quot;</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="2888666611814651" type="WebStorage">
+                                    <param id="0" name="Key">&quot;entry2&quot;</param>
+                                    <param id="1" name="Value">&quot;1&quot;</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="3831784519309117" type="WebStorage">
+                                    <param id="0" name="Key">&quot;entry3&quot;</param>
+                                    <param id="1" name="Value">&quot;2&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -4351,6 +4399,12 @@
                                             <param id="0" name="Key">&quot;chapter&quot;</param>
                                             <param id="1" name="Value">int(WebStorage.LocalValue(&quot;chapter&quot;))+1</param>
                                         </action>
+                                        <action id="0" name="Play" sid="9009438010426116" type="Audio">
+                                            <param id="0" name="Audio file">chapterMove</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -4392,6 +4446,12 @@
                                         <action id="0" name="Set local value" sid="3581217204003603" type="WebStorage">
                                             <param id="0" name="Key">&quot;chapter&quot;</param>
                                             <param id="1" name="Value">int(WebStorage.LocalValue(&quot;chapter&quot;))-1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="7109655878831241" type="Audio">
+                                            <param id="0" name="Audio file">chapterMove</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -5790,9 +5850,9 @@
                                         <action id="0" name="Set text" sid="5245739436627815" type="powerupHUD">
                                             <param id="0" name="Text">henCage.bonus</param>
                                         </action>
-                                        <action id="-3" name="Set position" sid="987498646302349" type="powerupHUD">
-                                            <param id="0" name="X">self.X+40</param>
-                                            <param id="1" name="Y">self.Y-48</param>
+                                        <action id="-3" name="Set position" sid="1348041161152658" type="powerupHUD">
+                                            <param id="0" name="X">self.X+powerupIndicatorX</param>
+                                            <param id="1" name="Y">self.Y+powerupIndicatorY</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -6166,6 +6226,177 @@
                                 </action>
                                 <action id="-15" name="Set visible" sid="9369018618030634" type="systemText">
                                     <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="8981330430939779" title="optionView">
+            <sub-events>
+                <comment>levelHolderYSet() : 레벨홀더를 각 바의 Y좌표</comment>
+                <event-block sid="8447038038864473">
+                    <conditions>
+                        <condition id="0" name="On function" sid="1153415942295408" type="Function">
+                            <param id="0" name="Name">&quot;levelHolderYSet&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7947276397720933">
+                            <conditions />
+                            <actions>
+                                <action id="-2" name="Set Y" sid="1184436644225709" type="musicLevelHolder">
+                                    <param id="0" name="Y">musicLevelBar.Y</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="3728311097392855" type="sfxLevelHolder">
+                                    <param id="0" name="Y">sfxLevelBar.Y</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="8043367341407017" type="vibrateLevelHolder">
+                                    <param id="0" name="Y">vibrateLevelBar.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>levelHolderXSet() : 레벨홀더를 볼륨따라 X좌표로 위치</comment>
+                <event-block sid="8183210880810435">
+                    <conditions>
+                        <condition id="0" name="On function" sid="705493751776101" type="Function">
+                            <param id="0" name="Name">&quot;levelHolderXSet&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6203377438946475">
+                            <conditions />
+                            <actions>
+                                <action id="-1" name="Set X" sid="6737815365994733" type="musicLevelHolder">
+                                    <param id="0" name="X">musicLevelBar.ImagePointX(&quot;Full&quot;)+float(WebStorage.LocalValue(&quot;music&quot;))*(musicLevelBar.ImagePointX(&quot;Full&quot;)-musicLevelBar.ImagePointX(&quot;Zero&quot;))/60</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="4233744467437993" type="sfxLevelHolder">
+                                    <param id="0" name="X">sfxLevelBar.ImagePointX(&quot;Full&quot;)+float(WebStorage.LocalValue(&quot;music&quot;))*(sfxLevelBar.ImagePointX(&quot;Full&quot;)-sfxLevelBar.ImagePointX(&quot;Zero&quot;))/60</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9484433965608398">
+                            <conditions>
+                                <condition id="7" name="Compare key value (as number)" sid="7398912229789161" type="WebStorage">
+                                    <param id="0" name="Key">&quot;vibrate&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="2643972092782018" type="vibrateLevelHolder">
+                                    <param id="0" name="X">vibrateLevelBar.ImagePointX(&quot;Zero&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6456953141642599">
+                            <conditions>
+                                <condition id="7" name="Compare key value (as number)" sid="1836805984579419" type="WebStorage">
+                                    <param id="0" name="Key">&quot;vibrate&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="2454605187538961" type="vibrateLevelHolder">
+                                    <param id="0" name="X">vibrateLevelBar.ImagePointX(&quot;Full&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>holderMusicVolumeSet() : holder의 X좌표에 따라 Music 설정. 실시간으로 bgm 볼륨 변경.</comment>
+                <event-block sid="1255776696725353">
+                    <conditions>
+                        <condition id="0" name="On function" sid="3851195554646679" type="Function">
+                            <param id="0" name="Name">&quot;holderMusicVolumeSet&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5945912380835848">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Set local value" sid="6452974250167831" type="WebStorage">
+                                    <param id="0" name="Key">&quot;music&quot;</param>
+                                    <param id="1" name="Value">(musicLevelHolder.X-musicLevelBar.ImagePointX(&quot;Zero&quot;))*60/(musicLevelBar.ImagePointX(&quot;Full&quot;)-musicLevelBar.ImagePointX(&quot;Zero&quot;))-60</param>
+                                </action>
+                                <action id="3" name="Set volume" sid="6327882929165156" type="Audio">
+                                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                                    <param id="1" name="dB">float(WebStorage.LocalValue(&quot;music&quot;))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>holderSfxVolumeSet() : holder의 X좌표에 따라 Sfx 설정</comment>
+                <event-block sid="7959109502150628">
+                    <conditions>
+                        <condition id="0" name="On function" sid="6764782469607019" type="Function">
+                            <param id="0" name="Name">&quot;holderSfxVolumeSet&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7525853362205117">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Set local value" sid="1856917087513801" type="WebStorage">
+                                    <param id="0" name="Key">&quot;sfx&quot;</param>
+                                    <param id="1" name="Value">(sfxLevelHolder.X-sfxLevelBar.ImagePointX(&quot;Zero&quot;))*60/(sfxLevelBar.ImagePointX(&quot;Full&quot;)-sfxLevelBar.ImagePointX(&quot;Zero&quot;))-60</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>holderViberateSet() : holder의 X좌표에 따라 vibrate 설정</comment>
+                <event-block sid="5095217661139681">
+                    <conditions>
+                        <condition id="0" name="On function" sid="5805871255887645" type="Function">
+                            <param id="0" name="Name">&quot;holderVibrateSet&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4027492961141247">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="6463095962993709" type="vibrateLevelHolder">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="X co-ordinate">vibrateLevelBar.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="5858510959729643" type="WebStorage">
+                                    <param id="0" name="Key">&quot;vibrate&quot;</param>
+                                    <param id="1" name="Value">&quot;1&quot;</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="6653962926812211" type="vibrateLevelHolder">
+                                    <param id="0" name="X">vibrateLevelBar.ImagePointX(&quot;Full&quot;)</param>
+                                </action>
+                                <action id="12" name="Vibrate" sid="5906210499921977" type="Browser">
+                                    <param id="0" name="Pattern">&quot;500&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6494362557297447">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="4622636093066499" type="vibrateLevelHolder">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">vibrateLevelBar.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="3691850490196498" type="WebStorage">
+                                    <param id="0" name="Key">&quot;vibrate&quot;</param>
+                                    <param id="1" name="Value">&quot;0&quot;</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="7987579809187944" type="vibrateLevelHolder">
+                                    <param id="0" name="X">vibrateLevelBar.ImagePointX(&quot;Zero&quot;)</param>
                                 </action>
                             </actions>
                         </event-block>

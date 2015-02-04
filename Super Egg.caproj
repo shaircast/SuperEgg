@@ -4545,6 +4545,107 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-folder name="optionView">
+            <object-type name="optionViewBg" sid="6812866851791398">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4889054812986401" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="musicLevelHolder" sid="3690180571117028">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="DragDrop" sid="9455767702919854">
+                        <behavior id="DragnDrop" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5808043086656952" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="sfxLevelHolder" sid="5737855128076694">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="DragDrop" sid="9829167707270044">
+                        <behavior id="DragnDrop" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8327361184855371" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="vibrateLevelHolder" sid="8701046116306106">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="DragDrop" sid="6221280874913466">
+                        <behavior id="DragnDrop" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5539460597669758" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="musicLevelBar" sid="6625148450768924">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3614023790380666" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.533333">
+                            <image-point name="Zero" x="0.1" y="0.533333" />
+                            <image-point name="Full" x="0.9" y="0.533333" />
+                            <collision-poly>
+                                <point x="0" y="0.266667" />
+                                <point x="1" y="0.266667" />
+                                <point x="1" y="0.766667" />
+                                <point x="0" y="0.766667" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="sfxLevelBar" sid="6656173786823136">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5750765499828986" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.533333">
+                            <image-point name="Zero" x="0.1" y="0.533333" />
+                            <image-point name="Full" x="0.9" y="0.533333" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="vibrateLevelBar" sid="2649820590294009">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4130246917841592" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.533333">
+                            <image-point name="Zero" x="0.1" y="0.533333" />
+                            <image-point name="Full" x="0.9" y="0.533333" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="optionViewTitles" sid="8821012781111382">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="resetButton" sid="8711664683804167">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5881977466938529" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="Text" sid="8857583874981368">
             <plugin id="Text" />
         </object-type>
@@ -4621,12 +4722,14 @@
         <file name="entryConfirm.ogg" />
         <file name="mateConfirm.m4a" />
         <file name="mateConfirm.ogg" />
-        <file name="click.m4a" />
-        <file name="click.ogg" />
+        <file name="henCageMode.m4a" />
+        <file name="henCageMode.ogg" />
         <file name="menuOpen.m4a" />
         <file name="menuOpen.ogg" />
         <file name="menuClose.m4a" />
         <file name="menuClose.ogg" />
+        <file name="chapterMove.m4a" />
+        <file name="chapterMove.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="stageView.m4a" />
