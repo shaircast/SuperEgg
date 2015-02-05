@@ -13,10 +13,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="0">opening</layout>
         <layout order="2">sprites</layout>
         <layout order="4">optionView</layout>
+        <layout active="1" order="6">battleView</layout>
+        <layout order="8">cageView</layout>
         <event-sheet order="1">opening</event-sheet>
-        <event-sheet active="1" order="3">optionView</event-sheet>
-        <event-sheet order="5">function</event-sheet>
-        <event-sheet order="6">stageView</event-sheet>
+        <event-sheet order="3">optionView</event-sheet>
+        <event-sheet order="5">battleView</event-sheet>
+        <event-sheet order="7">function</event-sheet>
+        <event-sheet order="9">cageView</event-sheet>
+        <event-sheet order="10">stageView</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -28,9 +32,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/plugin/" />
-        <folder expanded="0" path="object-folder/battleView/" />
+        <folder expanded="1" path="object-folder/battleView/" />
         <folder expanded="0" path="object-folder/battleView/hud/" />
-        <folder expanded="0" path="object-folder/battleView/golem/" />
+        <folder expanded="1" path="object-folder/battleView/golem/" />
         <folder expanded="0" path="object-folder/battleView/eggExplode/" />
         <folder expanded="0" path="object-folder/battleView/bgDeco/" />
         <folder expanded="0" path="object-folder/battleView/henButton/" />
@@ -42,13 +46,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/cageView/textbox/" />
         <folder expanded="0" path="object-folder/opening/" />
         <folder expanded="0" path="object-folder/icon/" />
-        <folder expanded="1" path="object-folder/optionView/" />
-        <folder expanded="1" path="layout-folder/" />
-        <folder expanded="1" path="event-folder/" />
+        <folder expanded="0" path="object-folder/optionView/" />
+        <folder expanded="0" path="layout-folder/" />
+        <folder expanded="0" path="event-folder/" />
         <folder expanded="0" path="file-folder/" />
-        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="0" path="sound-folder/" />
         <folder expanded="0" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="sound-folder/eggExplode/" />
         <folder expanded="1" path="animation-folder/buttonUIPlate/" />
         <folder expanded="1" path="animation-folder/guideGrid/" />
         <folder expanded="1" path="animation-folder/cannon/" />
@@ -56,6 +61,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/golem/" />
         <folder expanded="1" path="animation-folder/golemHpBar/" />
         <folder expanded="1" path="animation-folder/golemHpBarFrame/" />
+        <folder expanded="1" path="animation-folder/destroyedGolem/" />
+        <folder expanded="1" path="animation-folder/golemDestroyEffect/" />
         <folder expanded="1" path="animation-folder/explode/" />
         <folder expanded="1" path="animation-folder/poison/" />
         <folder expanded="1" path="animation-folder/blockTower/" />
@@ -148,5 +155,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/sfxLevelBar/" />
         <folder expanded="1" path="animation-folder/vibrateLevelBar/" />
         <folder expanded="1" path="animation-folder/resetButton/" />
+        <folder expanded="1" path="animation-folder/poisonDamage/" />
     </folders-expanded>
 </c2uistate>

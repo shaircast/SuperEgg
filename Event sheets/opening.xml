@@ -26,7 +26,7 @@
                     <param id="1" name="Parameter {n}"></param>
                 </action>
                 <action id="10" name="Request fullscreen" sid="8372771980019694" type="Browser">
-                    <param id="0" name="Mode">0</param>
+                    <param id="0" name="Mode">3</param>
                 </action>
             </actions>
             <sub-events>

@@ -41,12 +41,32 @@
         <variable constant="0" name="launchLineX8" sid="2113129269063617" static="0" type="number">0</variable>
         <comment>gameState&#x0D;&#x0A;0: not Ready(stage starting point)&#x0D;&#x0A;1: waiting for shoot&#x0D;&#x0A;2: shooting ani &amp;calc&#x0D;&#x0A;3: check finish, move golem&#x0D;&#x0A;4: lost&#x0D;&#x0A;5: win</comment>
         <variable constant="0" name="gameState" sid="8756455970267743" static="0" type="number">0</variable>
-        <comment>stage : 전 단계에서 정해서 오기&#x0D;&#x0A;** 스테이지 재플레이시 망가지는 버그있음. 초기화 잘 진행할 것.</comment>
+        <comment>stage : 전 단계에서 정해서 오기</comment>
         <event-block sid="1239435629214137">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="4382354078170552" type="System" />
             </conditions>
             <actions>
+                <action id="-3" name="Create object" sid="7903410175042246" type="System">
+                    <param id="0" name="Object to create">skyLeftCover</param>
+                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                    <param id="2" name="X">ViewportRight(&quot;hud&quot;)/2</param>
+                    <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                </action>
+                <action id="-3" name="Create object" sid="658916617299127" type="System">
+                    <param id="0" name="Object to create">skyRightCover</param>
+                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                    <param id="2" name="X">ViewportRight(&quot;hud&quot;)/2</param>
+                    <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                </action>
+                <action behavior="MoveTo" id="8" name="Move to distance-angle" sid="597322634753425" type="skyLeftCover">
+                    <param id="0" name="Distance">self.Width</param>
+                    <param id="1" name="Angle">180</param>
+                </action>
+                <action behavior="MoveTo" id="8" name="Move to distance-angle" sid="3216778921422777" type="skyRightCover">
+                    <param id="0" name="Distance">self.Width</param>
+                    <param id="1" name="Angle">0</param>
+                </action>
                 <action id="-9" name="Set value" sid="1069885727262216" type="System">
                     <param id="0" name="Variable">gameState</param>
                     <param id="1" name="Value">0</param>
@@ -87,14 +107,30 @@
                     <param id="2" name="X">ViewportRight(0)/2</param>
                     <param id="3" name="Y">ViewportBottom(0)/2</param>
                 </action>
+                <action id="-24" name="Move to top" sid="6452252867064236" type="skyLeftCover" />
+                <action id="-24" name="Move to top" sid="752473950550115" type="skyRightCover" />
+                <action id="2" name="Stop" sid="8197932946038776" type="battleViewTimer" />
                 <action id="6" name="Stop" sid="7268624510931513" type="Audio">
                     <param id="0" name="Tag">&quot;bgm&quot;</param>
                 </action>
                 <action id="0" name="Play" sid="4926553307167294" type="Audio">
                     <param id="0" name="Audio file">battleView</param>
                     <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;music&quot;))</param>
+                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="6413064589434787">
+            <conditions>
+                <condition behavior="MoveTo" id="0" name="On hit target position" sid="7003493645694591" type="skyLeftCover" />
+                <condition behavior="MoveTo" id="0" name="On hit target position" sid="4967314145329939" type="skyRightCover" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7365907661830559" type="skyLeftCover" />
+                <action id="-9" name="Destroy" sid="8583099189811968" type="skyRightCover" />
+                <action id="3" name="Start" sid="8118834679325163" type="battleViewTimer">
+                    <param id="0" name="From">0</param>
                 </action>
             </actions>
         </event-block>
@@ -1026,5 +1062,21 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-group description="" sid="1785241180238617" title="Visuality">
+            <sub-events>
+                <comment>돌들 파괴</comment>
+                <event-block sid="7419827461072852">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="6389993004687891" type="golemDestroyEffect">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">Function.Call(&quot;launchLineYSet&quot;,self.golemY)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9494943854058005" type="golemDestroyEffect" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

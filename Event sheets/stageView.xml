@@ -65,7 +65,7 @@
                     <param id="1" name="From">1</param>
                 </action>
                 <action id="0" name="Set text" sid="6555446567233153" type="powerupHUD">
-                    <param id="0" name="Text">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),2)</param>
+                    <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),2)</param>
                 </action>
                 <action id="-3" name="Set position" sid="5264686435086937" type="powerupHUD">
                     <param id="0" name="X">self.X+powerupIndicatorX</param>
@@ -82,7 +82,7 @@
                     <param id="1" name="From">1</param>
                 </action>
                 <action id="0" name="Set text" sid="8244738681631958" type="powerupHUD">
-                    <param id="0" name="Text">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),2)</param>
+                    <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),2)</param>
                 </action>
                 <action id="-3" name="Set position" sid="8336773860163263" type="powerupHUD">
                     <param id="0" name="X">self.X+powerupIndicatorX</param>
@@ -99,19 +99,21 @@
                     <param id="1" name="From">1</param>
                 </action>
                 <action id="0" name="Set text" sid="2200641251314394" type="powerupHUD">
-                    <param id="0" name="Text">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),2)</param>
+                    <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),2)</param>
                 </action>
                 <action id="-3" name="Set position" sid="7902554100564033" type="powerupHUD">
                     <param id="0" name="X">self.X+powerupIndicatorX</param>
                     <param id="1" name="Y">self.Y+powerupIndicatorY</param>
                 </action>
+                <action id="-24" name="Move to top" sid="4553084560145742" type="skyLeftCover" />
+                <action id="-24" name="Move to top" sid="5578123919375276" type="skyRightCover" />
                 <action id="6" name="Stop" sid="7252452686026915" type="Audio">
                     <param id="0" name="Tag">&quot;bgm&quot;</param>
                 </action>
                 <action id="0" name="Play" sid="9588644806519086" type="Audio">
                     <param id="0" name="Audio file">stageView</param>
                     <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;music&quot;))</param>
+                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
                 </action>
             </actions>
@@ -188,30 +190,72 @@
                 </action>
             </actions>
         </event-block>
-        <comment>도착시 핀</comment>
+        <comment>도착시 핀. 도착시 signal. 중앙으로 움직이는 경우는 battleView로 이동하는 경우. coverMoved하고 나면 이동함. Else는 챕터이동 시.</comment>
         <event-block sid="4953880036996532">
             <conditions>
                 <condition behavior="MoveTo" id="0" name="On hit target position" sid="5016847428480849" type="skyLeftCover" />
             </conditions>
-            <actions>
-                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="936472846526721" type="skyLeftCover">
-                    <param id="0" name="Pin to">stageMapChap</param>
-                    <param id="1" name="ImagePoint">&quot;LeftChap&quot;</param>
-                    <param id="2" name="Mode">0</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="734679215889833">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="6912671606077918" type="skyLeftCover">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="X co-ordinate">ViewportRight(&quot;hud&quot;)/2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="6653665306614489" type="System">
+                            <param id="0" name="Tag">&quot;coverMoved&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1157035668600015">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="4842798828201491" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="936472846526721" type="skyLeftCover">
+                            <param id="0" name="Pin to">stageMapChap</param>
+                            <param id="1" name="ImagePoint">&quot;LeftChap&quot;</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="3641983848556518">
             <conditions>
                 <condition behavior="MoveTo" id="0" name="On hit target position" sid="3906321888389545" type="skyRightCover" />
             </conditions>
-            <actions>
-                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="4085564991392824" type="skyRightCover">
-                    <param id="0" name="Pin to">stageMapChap</param>
-                    <param id="1" name="ImagePoint">&quot;RightChap&quot;</param>
-                    <param id="2" name="Mode">0</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="2486078073973278">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="4736865944974054" type="skyRightCover">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="X co-ordinate">ViewportRight(&quot;hud&quot;)/2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="4571885319648524" type="System">
+                            <param id="0" name="Tag">&quot;coverMoved&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7097416646177292">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="38262251413733" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="4085564991392824" type="skyRightCover">
+                            <param id="0" name="Pin to">stageMapChap</param>
+                            <param id="1" name="ImagePoint">&quot;RightChap&quot;</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <comment>움직이는 동안에는 드래그 못하도록</comment>
         <event-block any="1" sid="5919491528962962">
@@ -248,7 +292,7 @@
                 </action>
             </actions>
         </event-block>
-        <comment>맵 놓을때 움직임.</comment>
+        <comment>맵 놓을때 움직임. mapDropMove에서 Map움직이고 webstorage도 +-함.</comment>
         <event-block sid="8808585719461046">
             <conditions>
                 <condition behavior="DragDrop" id="2" name="On drop" sid="8326870939180997" type="stageMapChap" />

@@ -3,8 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>function</name>
     <events>
-        <variable constant="0" name="powerupIndicatorX" sid="487664723975616" static="0" type="number">40</variable>
-        <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">-48</variable>
+        <variable constant="0" name="powerupIndicatorX" sid="487664723975616" static="0" type="number">-48</variable>
+        <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">-60</variable>
         <event-group description="" sid="1681297483373011" title="OPENING INIT">
             <sub-events>
                 <comment>henDBInput(kind, name, readyturn, atk, duration, price, foodcost, description)&#x0D;&#x0A;숫자 및 수치</comment>
@@ -399,7 +399,7 @@
                             <actions>
                                 <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
                                     <param id="0" name="Key">&quot;henList&quot;</param>
-                                    <param id="1" name="Value">&quot;01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/09d00/10d00/11d00/12d00/&quot;</param>
+                                    <param id="1" name="Value">&quot;01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/09d00/10d00/11d00/12d00/01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/09d00/10d00/11d00/12d00/01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
                                     <param id="0" name="Key">&quot;chapter&quot;</param>
@@ -1546,6 +1546,12 @@
                                                                     <param id="0" name="Name">&quot;refreshFood&quot;</param>
                                                                     <param id="1" name="Parameter {n}"></param>
                                                                 </action>
+                                                                <action id="0" name="Play" sid="5903854709466217" type="Audio">
+                                                                    <param id="0" name="Audio file">henFeed</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+5</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
                                                             </actions>
                                                         </event-block>
                                                         <event-block sid="7741127979556559">
@@ -1937,6 +1943,12 @@
                                                             <param id="0" name="X">launchLine.X</param>
                                                             <param id="1" name="Y">launchLine.Y</param>
                                                         </action>
+                                                        <action id="0" name="Play" sid="2008491178228933" type="Audio">
+                                                            <param id="0" name="Audio file">golemStep</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
                                                         <action id="0" name="Call function" sid="1366243373838252" type="Function">
                                                             <param id="0" name="Name">&quot;launchLineOccupyAtXY&quot;</param>
                                                             <param id="1" name="Parameter {n}">golem.posX{###}golem.posY{###}1</param>
@@ -2245,9 +2257,13 @@
                             <actions>
                                 <action id="-3" name="Create object" sid="135957642490403" type="System">
                                     <param id="0" name="Object to create">explode</param>
-                                    <param id="1" name="Layer">&quot;effect&quot;</param>
+                                    <param id="1" name="Layer">&quot;golem&quot;</param>
                                     <param id="2" name="X">launchLine.X</param>
                                     <param id="3" name="Y">launchLine.Y</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="2652137870890837" type="explode">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">launchLine</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="8725686066534627" type="explode">
                                     <param id="0" name="Animation">&quot;Explode01&quot;</param>
@@ -3619,6 +3635,45 @@
                             </conditions>
                             <actions />
                             <sub-events>
+                                <comment>이펙트 생성. 회전과 bullet 정지는 battleView 시트에서</comment>
+                                <event-block sid="4285725193239978">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="6222340374901702" type="System">
+                                            <param id="0" name="Count">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="2180349026716553" type="System">
+                                            <param id="0" name="Object to create">golemDestroyEffect</param>
+                                            <param id="1" name="Layer">&quot;golem&quot;</param>
+                                            <param id="2" name="X">golem.X</param>
+                                            <param id="3" name="Y">golem.Y-golem.Height/2</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="2769297310664838" type="golemDestroyEffect" />
+                                        <action id="-10" name="Set value" sid="3109138797075553" type="golemDestroyEffect">
+                                            <param id="0" name="Instance variable">golemY</param>
+                                            <param id="1" name="Value">golem.posY</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="921883116732748" type="golemDestroyEffect">
+                                            <param id="0" name="Frame number">int(random(Self.AnimationFrameCount))</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="6023007187007705" type="golemDestroyEffect">
+                                            <param id="0" name="Angle">random(360)</param>
+                                        </action>
+                                        <action behavior="Rotate" id="0" name="Set speed" sid="9656809185104566" type="golemDestroyEffect">
+                                            <param id="0" name="Speed">random(-180,180)</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="2487459885976056" type="golemDestroyEffect">
+                                            <param id="0" name="Scale">random(1,2)</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="3394531994724964" type="golemDestroyEffect">
+                                            <param id="0" name="Angle">random(205,335)</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="4109947595621657" type="golemDestroyEffect">
+                                            <param id="0" name="Speed">random(50,200)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="5947363272074985">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="7895178078781097" type="launchLine">
@@ -3657,10 +3712,26 @@
                                         <action id="-9" name="Destroy" sid="6632546018467454" type="golemHpBarFrame" />
                                     </actions>
                                 </event-block>
-                                <event-block sid="4285725193239978">
+                                <event-block sid="5723892283323787">
                                     <conditions />
                                     <actions>
-                                        <action id="-9" name="Destroy" sid="8438529303699668" type="golem" />
+                                        <action id="-3" name="Create object" sid="4250010086885982" type="System">
+                                            <param id="0" name="Object to create">destroyedGolem</param>
+                                            <param id="1" name="Layer">&quot;golem&quot;</param>
+                                            <param id="2" name="X">golem.X</param>
+                                            <param id="3" name="Y">golem.Y</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="6278565052751941" type="destroyedGolem">
+                                            <param id="0" name="Frame number">int(random(destroyedGolem.AnimationFrameCount))</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="6855576206645371" type="destroyedGolem" />
+                                        <action id="-9" name="Destroy" sid="291681025019216" type="golem" />
+                                        <action id="0" name="Play" sid="6068826051485465" type="Audio">
+                                            <param id="0" name="Audio file">golemCollapse </param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <comment>게임스테이트 2일 때,  키라닭있고 그게 선택되어 있으면 리셋.</comment>
@@ -4161,7 +4232,16 @@
                                     <param id="2" name="Second value">0</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="6039878321240149" type="poison">
+                                    <param id="0" name="Object">poisonDamage</param>
+                                    <param id="1" name="Layer">&quot;golem&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="6588820980552215" type="poisonDamage">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                            </actions>
                             <sub-events>
                                 <event-block sid="3525905336422082">
                                     <conditions>
@@ -4608,61 +4688,81 @@
                                             <param id="0" name="Variable">henUpgrade3</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
+                                        <action behavior="PinToImagePoint" id="10" name="Unpin" sid="4124434254547404" type="skyLeftCover" />
+                                        <action behavior="PinToImagePoint" id="10" name="Unpin" sid="6574255243265968" type="skyRightCover" />
+                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="5796315680870378" type="skyLeftCover">
+                                            <param id="0" name="X">ViewportRight(&quot;hud&quot;)/2</param>
+                                            <param id="1" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                                        </action>
+                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="6197850480663941" type="skyRightCover">
+                                            <param id="0" name="X">ViewportRight(&quot;hud&quot;)/2</param>
+                                            <param id="1" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="3237504459154622" type="Audio">
+                                            <param id="0" name="Audio file">stageStart</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))-5</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="6351498232886979">
-                                            <conditions>
-                                                <condition id="-23" name="While" sid="4291546074744309" type="System" />
-                                            </conditions>
+                                        <event-block sid="9423947656732501">
+                                            <conditions />
                                             <actions>
-                                                <action id="-9" name="Set value" sid="2372117207762511" type="System">
-                                                    <param id="0" name="Variable">randomPick</param>
-                                                    <param id="1" name="Value">floor(random(tokencount(WebStorage.LocalValue(&quot;henList&quot;),&quot;/&quot;)-1))</param>
+                                                <action id="-41" name="Wait for signal" sid="8758649131637779" type="System">
+                                                    <param id="0" name="Tag">&quot;coverMoved&quot;</param>
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block sid="5708539338917812">
+                                                <event-block sid="6351498232886979">
                                                     <conditions>
-                                                        <condition id="7" name="Compare key value (as number)" sid="4956957520322883" type="WebStorage">
-                                                            <param id="0" name="Key">&quot;entry1&quot;</param>
-                                                            <param id="1" name="Comparison">1</param>
-                                                            <param id="2" name="Value">randomPick</param>
-                                                        </condition>
-                                                        <condition id="7" name="Compare key value (as number)" sid="1975866644967266" type="WebStorage">
-                                                            <param id="0" name="Key">&quot;entry2&quot;</param>
-                                                            <param id="1" name="Comparison">1</param>
-                                                            <param id="2" name="Value">randomPick</param>
-                                                        </condition>
-                                                        <condition id="7" name="Compare key value (as number)" sid="7543340799604926" type="WebStorage">
-                                                            <param id="0" name="Key">&quot;entry3&quot;</param>
-                                                            <param id="1" name="Comparison">1</param>
-                                                            <param id="2" name="Value">randomPick</param>
-                                                        </condition>
+                                                        <condition id="-23" name="While" sid="4291546074744309" type="System" />
                                                     </conditions>
                                                     <actions>
-                                                        <action id="-9" name="Set value" sid="6027733866375671" type="System">
-                                                            <param id="0" name="Variable">henType3</param>
-                                                            <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),randomPick,&quot;/&quot;),3)</param>
-                                                        </action>
-                                                        <action id="-9" name="Set value" sid="8693063168406667" type="System">
-                                                            <param id="0" name="Variable">henUpgrade3</param>
-                                                            <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),randomPick,&quot;/&quot;),2)</param>
-                                                        </action>
-                                                        <action id="-9" name="Set value" sid="5908412262524663" type="System">
-                                                            <param id="0" name="Variable">stage</param>
-                                                            <param id="1" name="Value">chapterStage.AnimationName</param>
-                                                        </action>
-                                                        <action id="-24" name="Stop loop" sid="7487179566595038" type="System" />
-                                                        <action id="-2" name="Go to layout" sid="5210828823880145" type="System">
-                                                            <param id="0" name="Layout">battleView</param>
-                                                        </action>
-                                                        <action id="0" name="Play" sid="3237504459154622" type="Audio">
-                                                            <param id="0" name="Audio file">stageStart</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))-5</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        <action id="-9" name="Set value" sid="2372117207762511" type="System">
+                                                            <param id="0" name="Variable">randomPick</param>
+                                                            <param id="1" name="Value">floor(random(tokencount(WebStorage.LocalValue(&quot;henList&quot;),&quot;/&quot;)-1))</param>
                                                         </action>
                                                     </actions>
+                                                    <sub-events>
+                                                        <event-block sid="5708539338917812">
+                                                            <conditions>
+                                                                <condition id="7" name="Compare key value (as number)" sid="4956957520322883" type="WebStorage">
+                                                                    <param id="0" name="Key">&quot;entry1&quot;</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Value">randomPick</param>
+                                                                </condition>
+                                                                <condition id="7" name="Compare key value (as number)" sid="1975866644967266" type="WebStorage">
+                                                                    <param id="0" name="Key">&quot;entry2&quot;</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Value">randomPick</param>
+                                                                </condition>
+                                                                <condition id="7" name="Compare key value (as number)" sid="7543340799604926" type="WebStorage">
+                                                                    <param id="0" name="Key">&quot;entry3&quot;</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Value">randomPick</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="6027733866375671" type="System">
+                                                                    <param id="0" name="Variable">henType3</param>
+                                                                    <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),randomPick,&quot;/&quot;),3)</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="8693063168406667" type="System">
+                                                                    <param id="0" name="Variable">henUpgrade3</param>
+                                                                    <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),randomPick,&quot;/&quot;),2)</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="5908412262524663" type="System">
+                                                                    <param id="0" name="Variable">stage</param>
+                                                                    <param id="1" name="Value">chapterStage.AnimationName</param>
+                                                                </action>
+                                                                <action id="-24" name="Stop loop" sid="7487179566595038" type="System" />
+                                                                <action id="-2" name="Go to layout" sid="5210828823880145" type="System">
+                                                                    <param id="0" name="Layout">battleView</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
@@ -4725,6 +4825,10 @@
                                                             <param id="0" name="Pin to">stageMapChap</param>
                                                             <param id="1" name="ImagePoint">self.selected</param>
                                                             <param id="2" name="Mode">0</param>
+                                                        </action>
+                                                        <action id="-29" name="Move to object" sid="1376116523817637" type="stageSelection">
+                                                            <param id="0" name="Where">1</param>
+                                                            <param id="1" name="Object">skyLeftCover</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -5803,11 +5907,11 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="4690158209684039" type="System">
                                     <param id="0" name="Variable">x</param>
-                                    <param id="1" name="Value">ViewportRight(0)/16+ViewportRight(0)/8*(loopindex%8)</param>
+                                    <param id="1" name="Value">ViewportRight(0)/24*4.5+ViewportRight(0)/11*(loopindex%8)</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="120383289113602" type="System">
                                     <param id="0" name="Variable">y</param>
-                                    <param id="1" name="Value">floor(loopindex/8)*ViewportBottom(0)/5+ViewportBottom(0)/10</param>
+                                    <param id="1" name="Value">floor(loopindex/8)*ViewportBottom(0)/6.5+ViewportBottom(0)/14*2</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -5848,7 +5952,7 @@
                                             <param id="1" name="Value">int(right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),loopindex,&quot;/&quot;),2))</param>
                                         </action>
                                         <action id="0" name="Set text" sid="5245739436627815" type="powerupHUD">
-                                            <param id="0" name="Text">henCage.bonus</param>
+                                            <param id="0" name="Text">&quot;+&quot;&amp;henCage.bonus</param>
                                         </action>
                                         <action id="-3" name="Set position" sid="1348041161152658" type="powerupHUD">
                                             <param id="0" name="X">self.X+powerupIndicatorX</param>
@@ -6326,9 +6430,14 @@
                                     <param id="0" name="Key">&quot;music&quot;</param>
                                     <param id="1" name="Value">(musicLevelHolder.X-musicLevelBar.ImagePointX(&quot;Zero&quot;))*60/(musicLevelBar.ImagePointX(&quot;Full&quot;)-musicLevelBar.ImagePointX(&quot;Zero&quot;))-60</param>
                                 </action>
-                                <action id="3" name="Set volume" sid="6327882929165156" type="Audio">
+                                <action id="6" name="Stop" sid="8859009483517883" type="Audio">
                                     <param id="0" name="Tag">&quot;bgm&quot;</param>
-                                    <param id="1" name="dB">float(WebStorage.LocalValue(&quot;music&quot;))</param>
+                                </action>
+                                <action id="0" name="Play" sid="4137761058474007" type="Audio">
+                                    <param id="0" name="Audio file">optionView</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
