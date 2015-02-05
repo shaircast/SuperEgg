@@ -32,7 +32,6 @@
         <behavior author="Rex.Rainbow" id="Rex_RotateTo" version="0.100000001">RotateTo</behavior>
         <behavior author="Rex.Rainbow" id="Rex_pin2imgpt" version="1">Pin to image point</behavior>
         <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
-        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
@@ -263,41 +262,6 @@
                             <behavior id="Fade" />
                         </behavior-type>
                     </behaviors>
-                </object-type>
-                <object-type name="destroyedGolem" sid="6471575903417179">
-                    <plugin id="Sprite" />
-                    <behaviors>
-                        <behavior-type name="Fade" sid="6310480417539053">
-                            <behavior id="Fade" />
-                        </behavior-type>
-                    </behaviors>
-                    <animation-folder>
-                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4914819671983176" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        </animation>
-                    </animation-folder>
-                </object-type>
-                <object-type name="golemDestroyEffect" sid="1598194951575307">
-                    <plugin id="Sprite" />
-                    <instance-variables>
-                        <instance-variable name="golemY" sid="2372468987411263" type="number" />
-                    </instance-variables>
-                    <behaviors>
-                        <behavior-type name="Rotate" sid="6521651301247864">
-                            <behavior id="Rotate" />
-                        </behavior-type>
-                        <behavior-type name="Bullet" sid="3669327470570256">
-                            <behavior id="Bullet" />
-                        </behavior-type>
-                    </behaviors>
-                    <animation-folder>
-                        <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7932860964334259" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        </animation>
-                    </animation-folder>
                 </object-type>
             </object-folder>
             <object-folder name="eggExplode">
@@ -4703,25 +4667,6 @@
         <object-type global="1" name="Sort" sid="4024892501151649">
             <plugin id="Arr" />
         </object-type>
-        <object-type name="poisonDamage" sid="6173454516336458">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Fade" sid="3351259909342453">
-                    <behavior id="Fade" />
-                </behavior-type>
-                <behavior-type name="Bullet" sid="3766338942307775">
-                    <behavior id="Bullet" />
-                </behavior-type>
-                <behavior-type name="Sine" sid="8357140736917587">
-                    <behavior id="Sin" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5123362855521794" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -4769,7 +4714,6 @@
         </global-instance>
     </global-instances>
     <sounds-folder>
-        <sound-folder name="eggExplode" />
         <file name="stageStart.m4a" />
         <file name="stageStart.ogg" />
         <file name="coinClatter.m4a" />
@@ -4786,12 +4730,6 @@
         <file name="menuClose.ogg" />
         <file name="chapterMove.m4a" />
         <file name="chapterMove.ogg" />
-        <file name="golemCollapse .m4a" />
-        <file name="golemCollapse .ogg" />
-        <file name="golemStep.m4a" />
-        <file name="golemStep.ogg" />
-        <file name="henFeed.m4a" />
-        <file name="henFeed.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="stageView.m4a" />
@@ -4802,8 +4740,6 @@
         <file name="battleView.ogg" />
         <file name="cageView.m4a" />
         <file name="cageView.ogg" />
-        <file name="optionView.m4a" />
-        <file name="optionView.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">

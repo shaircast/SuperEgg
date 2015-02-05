@@ -21,7 +21,7 @@
                     <param id="0" name="Tag">&quot;bgm&quot;</param>
                 </action>
                 <action id="0" name="Play" sid="4505848932848303" type="Audio">
-                    <param id="0" name="Audio file">optionView</param>
+                    <param id="0" name="Audio file">stageView</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
