@@ -4359,6 +4359,9 @@
                                     <param id="0" name="dX">0</param>
                                     <param id="1" name="dY">-96</param>
                                 </action>
+                                <action id="-25" name="Move to bottom" sid="5332627406521637" type="menuButtonCageView" />
+                                <action id="-25" name="Move to bottom" sid="3524429651224384" type="menuButtonOptionView" />
+                                <action id="-25" name="Move to bottom" sid="6645712121114605" type="menuButtonStageView" />
                                 <action id="-24" name="Move to top" sid="9696954445360977" type="menuButtonPackage" />
                                 <action id="0" name="Play" sid="737368223417684" type="Audio">
                                     <param id="0" name="Audio file">menuOpen</param>
@@ -4369,6 +4372,7 @@
                                 <action id="-16" name="Wait" sid="1026875087850935" type="System">
                                     <param id="0" name="Seconds">0.5</param>
                                 </action>
+                                <action id="-25" name="Move to bottom" sid="2068729684227355" type="menuButtonPackage" />
                                 <action id="-13" name="Set boolean" sid="2624457489829486" type="menuButtonPackage">
                                     <param id="0" name="Instance variable">ready</param>
                                     <param id="1" name="Value">1</param>
