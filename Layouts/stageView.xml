@@ -151,7 +151,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Text" uid="50">
+                <instance type="stageInfoText" uid="50">
                     <properties>
                         <text>안녕하세요</text>
                         <initial-visibility>Visible</initial-visibility>

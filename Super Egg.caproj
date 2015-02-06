@@ -44,9 +44,9 @@
         <height>720</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
-    <preview-effects>1</preview-effects>
+    <preview-effects>0</preview-effects>
     <first-layout>opening</first-layout>
-    <use-loader-layout>0</use-loader-layout>
+    <use-loader-layout>1</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">No</prop>
         <prop name="Downscaling">Medium quality</prop>
@@ -54,10 +54,10 @@
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
-        <prop name="Orientations">Any</prop>
-        <prop name="Pause on unfocus">No</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">Yes</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
-        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preload sounds">No</prop>
         <prop name="Preview browser">Chrome</prop>
         <prop name="Sampling">Point</prop>
         <prop name="Use high-DPI display">Yes</prop>
@@ -84,6 +84,9 @@
             </object-type>
             <object-type name="Audio" sid="2534074457585238">
                 <plugin id="Audio" />
+            </object-type>
+            <object-type global="1" name="Sort" sid="4024892501151649">
+                <plugin id="Arr" />
             </object-type>
         </object-folder>
         <object-folder name="battleView">
@@ -3979,6 +3982,14 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="turnText" sid="3318910413245149">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="1757164724466687">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
         </object-folder>
         <object-folder name="DBDic">
             <object-type global="1" name="golemDB" sid="1480243055815972">
@@ -4223,6 +4234,9 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
+            </object-type>
+            <object-type name="stageInfoText" sid="8857583874981368">
+                <plugin id="Text" />
             </object-type>
         </object-folder>
         <object-folder name="menuButton">
@@ -4773,22 +4787,19 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-type name="Text" sid="8857583874981368">
-            <plugin id="Text" />
-        </object-type>
+        <object-folder name="test">
+            <object-type name="alpha" sid="5888354361640028">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="beta" sid="7553700159070432">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="gamma" sid="4387448500929776">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
         <object-type name="Text2" sid="9244127702308912">
             <plugin id="Text" />
-        </object-type>
-        <object-type name="turnText" sid="3318910413245149">
-            <plugin id="Text" />
-            <behaviors>
-                <behavior-type name="Fade" sid="1757164724466687">
-                    <behavior id="Fade" />
-                </behavior-type>
-            </behaviors>
-        </object-type>
-        <object-type global="1" name="Sort" sid="4024892501151649">
-            <plugin id="Arr" />
         </object-type>
     </object-folder>
     <families />
@@ -4807,6 +4818,7 @@
         <event-sheet>opening.xml</event-sheet>
         <event-sheet>cageView.xml</event-sheet>
         <event-sheet>optionView.xml</event-sheet>
+        <event-sheet>orientation.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="0">
@@ -4838,6 +4850,18 @@
     </global-instances>
     <sounds-folder>
         <sound-folder name="eggExplode" />
+        <sound-folder name="music">
+            <file name="battleView2.m4a" />
+            <file name="battleView2.ogg" />
+            <file name="cageView2.m4a" />
+            <file name="cageView2.ogg" />
+            <file name="opening2.m4a" />
+            <file name="opening2.ogg" />
+            <file name="optionView2.m4a" />
+            <file name="optionView2.ogg" />
+            <file name="stageView2.m4a" />
+            <file name="stageView2.ogg" />
+        </sound-folder>
         <file name="stageStart.m4a" />
         <file name="stageStart.ogg" />
         <file name="coinClatter.m4a" />
@@ -4864,6 +4888,8 @@
         <file name="battleWin.ogg" />
         <file name="turnOverTicktick.m4a" />
         <file name="turnOverTicktick.ogg" />
+        <file name="battleLose.m4a" />
+        <file name="battleLose.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="stageView.m4a" />
@@ -4880,6 +4906,16 @@
     <files-folder>
         <file-folder name="Icons">
             <file name="loading-logo.png" />
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+        </file-folder>
+        <file-folder name="jua">
+            <file name="jua.css" />
+            <file name="jua.eot" />
+            <file name="jua.woff" />
         </file-folder>
     </files-folder>
 </c2project>

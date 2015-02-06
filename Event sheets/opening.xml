@@ -91,7 +91,7 @@
                     <conditions />
                     <actions>
                         <action id="0" name="Play" sid="775278736653529" type="Audio">
-                            <param id="0" name="Audio file">opening</param>
+                            <param id="0" name="Audio file">opening2</param>
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;music&quot;))</param>
                             <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>

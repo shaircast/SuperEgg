@@ -245,7 +245,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Text" uid="34">
+                <instance type="stageInfoText" uid="34">
                     <properties>
                         <text>안녕하세요</text>
                         <initial-visibility>Visible</initial-visibility>
@@ -611,8 +611,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-2</x>
-                        <y>384</y>
+                        <x>-126</x>
+                        <y>226</y>
                         <z>0</z>
                         <width>128</width>
                         <height>128</height>

@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>function</name>
     <events>
+        <include>orientation</include>
         <variable constant="0" name="powerupIndicatorX" sid="487664723975616" static="0" type="number">-48</variable>
         <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">-60</variable>
         <event-group description="" sid="1681297483373011" title="OPENING INIT">
@@ -621,6 +622,10 @@
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="Image point">&quot;FoodText&quot;</param>
                                 </action>
+                                <action id="5" name="Set web font" sid="1093505533350135" type="henInfo">
+                                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                </action>
                                 <action id="0" name="Set text" sid="1496175772099679" type="henInfo">
                                     <param id="0" name="Text">henDB.Get(left(henButton.AnimationName,2)&amp;&quot;foodcost&quot;)</param>
                                 </action>
@@ -633,6 +638,10 @@
                                     <param id="0" name="Object">henInfo</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="Image point">&quot;TurnText&quot;</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="1281212894671744" type="henInfo">
+                                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                 </action>
                                 <action id="0" name="Set text" sid="4609505264638519" type="henInfo">
                                     <param id="0" name="Text">henDB.Get(left(henButton.AnimationName,2)&amp;&quot;readyturn&quot;)</param>
@@ -658,6 +667,10 @@
                                             <param id="1" name="Layer">&quot;hud&quot;</param>
                                             <param id="2" name="Image point">&quot;PowerupText&quot;</param>
                                         </action>
+                                        <action id="5" name="Set web font" sid="2844727093300898" type="henInfo">
+                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                        </action>
                                         <action id="0" name="Set text" sid="7027341738979717" type="henInfo">
                                             <param id="0" name="Text">henUpgrade0*5&amp;&quot;%&quot;</param>
                                         </action>
@@ -681,6 +694,10 @@
                                             <param id="0" name="Object">henInfo</param>
                                             <param id="1" name="Layer">&quot;hud&quot;</param>
                                             <param id="2" name="Image point">&quot;PowerupText&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set web font" sid="2315931169536571" type="henInfo">
+                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                         </action>
                                         <action id="0" name="Set text" sid="1086320182253539" type="henInfo">
                                             <param id="0" name="Text">henUpgrade1*5&amp;&quot;%&quot;</param>
@@ -706,6 +723,10 @@
                                             <param id="1" name="Layer">&quot;hud&quot;</param>
                                             <param id="2" name="Image point">&quot;PowerupText&quot;</param>
                                         </action>
+                                        <action id="5" name="Set web font" sid="4238859718557456" type="henInfo">
+                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                        </action>
                                         <action id="0" name="Set text" sid="2880219016995797" type="henInfo">
                                             <param id="0" name="Text">henUpgrade2*5&amp;&quot;%&quot;</param>
                                         </action>
@@ -729,6 +750,10 @@
                                             <param id="0" name="Object">henInfo</param>
                                             <param id="1" name="Layer">&quot;hud&quot;</param>
                                             <param id="2" name="Image point">&quot;PowerupText&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set web font" sid="2994619230189849" type="henInfo">
+                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                         </action>
                                         <action id="0" name="Set text" sid="4566446274303177" type="henInfo">
                                             <param id="0" name="Text">henUpgrade3*5&amp;&quot;%&quot;</param>
@@ -757,6 +782,10 @@
                                             <param id="1" name="Layer">&quot;hud&quot;</param>
                                             <param id="2" name="Image point">&quot;TypeText&quot;</param>
                                         </action>
+                                        <action id="5" name="Set web font" sid="8061259358907727" type="henInfo">
+                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                        </action>
                                         <action id="0" name="Set text" sid="6088748690947266" type="henInfo">
                                             <param id="0" name="Text">&quot;무속성&quot;</param>
                                         </action>
@@ -783,6 +812,10 @@
                                             <param id="0" name="Object">henInfo</param>
                                             <param id="1" name="Layer">&quot;hud&quot;</param>
                                             <param id="2" name="Image point">&quot;TypeText&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set web font" sid="8340169085620752" type="henInfo">
+                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                         </action>
                                         <action id="0" name="Set text" sid="7543285610848027" type="henInfo">
                                             <param id="0" name="Text">&quot;불속성&quot;</param>
@@ -811,6 +844,10 @@
                                             <param id="1" name="Layer">&quot;hud&quot;</param>
                                             <param id="2" name="Image point">&quot;TypeText&quot;</param>
                                         </action>
+                                        <action id="5" name="Set web font" sid="1542218845673543" type="henInfo">
+                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                        </action>
                                         <action id="0" name="Set text" sid="6016896807620131" type="henInfo">
                                             <param id="0" name="Text">&quot;물속성&quot;</param>
                                         </action>
@@ -837,6 +874,10 @@
                                             <param id="0" name="Object">henInfo</param>
                                             <param id="1" name="Layer">&quot;hud&quot;</param>
                                             <param id="2" name="Image point">&quot;TypeText&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set web font" sid="4938872441497315" type="henInfo">
+                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                         </action>
                                         <action id="0" name="Set text" sid="3844497638927112" type="henInfo">
                                             <param id="0" name="Text">&quot;풀속성&quot;</param>
@@ -1549,7 +1590,7 @@
                                                                 <action id="0" name="Play" sid="5903854709466217" type="Audio">
                                                                     <param id="0" name="Audio file">henFeed</param>
                                                                     <param id="2" name="Loop">0</param>
-                                                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+5</param>
+                                                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+10</param>
                                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                 </action>
                                                             </actions>
@@ -3620,7 +3661,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>golemDestroy() : 모든 골렘 hp 체크해서 0이하면 파괴. 키라닭 리셋도 포함.</comment>
+                <comment>golemDestroy(golem.UID) : 골렘 파괴하고 . 키라닭 리셋도 포함.</comment>
                 <event-block sid="3968440250640735">
                     <conditions>
                         <condition id="0" name="On function" sid="3435382915995086" type="Function">
@@ -3631,13 +3672,8 @@
                     <sub-events>
                         <event-block sid="4331779337076609">
                             <conditions>
-                                <condition id="-11" name="For Each" sid="4889815457676957" type="System">
-                                    <param id="0" name="Object">golem</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="2508624707843256" type="golem">
-                                    <param id="0" name="Instance variable">hp</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
+                                <condition id="-14" name="Pick by unique ID" sid="4889815457676957" type="golem">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -3735,7 +3771,7 @@
                                         <action id="0" name="Play" sid="6068826051485465" type="Audio">
                                             <param id="0" name="Audio file">golemCollapse </param>
                                             <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+5</param>
+                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+10</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
                                         <action id="-9" name="Destroy" sid="291681025019216" type="golem" />
@@ -4169,6 +4205,10 @@
                                             <param id="1" name="Layer">&quot;effect&quot;</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
+                                        <action id="5" name="Set web font" sid="5781163692955183" type="damageText">
+                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                        </action>
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="5415781994249121" type="damageText">
                                             <param id="0" name="Angle">270</param>
                                         </action>
@@ -4186,6 +4226,23 @@
                                             <param id="1" name="Parameter {n}">Function.Param(0)</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="4701461621884651">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="3655074221563512" type="golem">
+                                                    <param id="0" name="Instance variable">hp</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="4965128197567803" type="Function">
+                                                    <param id="0" name="Name">&quot;golemDestroy&quot;</param>
+                                                    <param id="1" name="Parameter {n}">golem.UID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <comment>힐인 경우</comment>
                                 <event-block sid="4453611771353207">
@@ -4206,6 +4263,10 @@
                                             <param id="1" name="Layer">&quot;effect&quot;</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
+                                        <action id="5" name="Set web font" sid="3804514646402918" type="damageText">
+                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                        </action>
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="9604795613795009" type="damageText">
                                             <param id="0" name="Angle">270</param>
                                         </action>
@@ -4223,6 +4284,23 @@
                                             <param id="1" name="Parameter {n}">Function.Param(0)</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="3075817821889734">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="6000728885079507" type="golem">
+                                                    <param id="0" name="Instance variable">hp</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">Self.maxHp</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="8052217857871526" type="golem">
+                                                    <param id="0" name="Instance variable">hp</param>
+                                                    <param id="1" name="Value">Self.maxHp</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -4805,7 +4883,7 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Set text" sid="9489471624732432" type="Text">
+                                                <action id="0" name="Set text" sid="9489471624732432" type="stageInfoText">
                                                     <param id="0" name="Text">&quot;이전 스테이지를 클리어해야 합니다.&quot;</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="7776802337688072" type="stageSelection" />
@@ -4866,7 +4944,7 @@
                                                             <param id="1" name="ImagePoint">self.selected</param>
                                                             <param id="2" name="Mode">0</param>
                                                         </action>
-                                                        <action id="0" name="Set text" sid="538749667570829" type="Text">
+                                                        <action id="0" name="Set text" sid="538749667570829" type="stageInfoText">
                                                             <param id="0" name="Text">&quot;Chapter &quot;&amp;left(chapterStage.AnimationName,1)&amp;&quot;. Stage &quot;&amp;chapterStage.stage&amp;newline&amp;stageNameDB.Get(chapterStage.AnimationName)</param>
                                                         </action>
                                                     </actions>
@@ -5974,6 +6052,10 @@
                                         <action id="-3" name="Set position" sid="1348041161152658" type="powerupHUD">
                                             <param id="0" name="X">self.X+powerupIndicatorX</param>
                                             <param id="1" name="Y">self.Y+powerupIndicatorY</param>
+                                        </action>
+                                        <action id="5" name="Set web font" sid="5682912111170838" type="powerupHUD">
+                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>

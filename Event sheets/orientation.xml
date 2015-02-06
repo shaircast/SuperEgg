@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>orientation</name>
+    <events>
+        <event-block sid="9651244264892679">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="9150771652485473" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="3761221265527116" type="alpha">
+                    <param id="0" name="Text">Touch.Alpha</param>
+                </action>
+                <action id="0" name="Set text" sid="4810910487975839" type="beta">
+                    <param id="0" name="Text">Touch.Beta</param>
+                </action>
+                <action id="0" name="Set text" sid="2628586889800418" type="gamma">
+                    <param id="0" name="Text">Touch.Gamma</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1805455520731274">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="9928698981778854" type="System">
+                    <param id="0" name="First value">Touch.Gamma</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="18" name="Lock orientation" sid="1143234550954371" type="Browser">
+                    <param id="0" name="Orientation">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8052651345565197">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="1785478883168753" type="System">
+                    <param id="0" name="First value">Touch.Gamma</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="18" name="Lock orientation" sid="378266881562701" type="Browser">
+                    <param id="0" name="Orientation">4</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

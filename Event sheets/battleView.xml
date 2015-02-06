@@ -59,6 +59,10 @@
                     <param id="2" name="X">ViewportRight(&quot;hud&quot;)/2</param>
                     <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
                 </action>
+                <action id="5" name="Set web font" sid="7304233392096089" type="foodText">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
                 <action behavior="MoveTo" id="8" name="Move to distance-angle" sid="597322634753425" type="skyLeftCover">
                     <param id="0" name="Distance">self.Width</param>
                     <param id="1" name="Angle">180</param>
@@ -114,7 +118,7 @@
                     <param id="0" name="Tag">&quot;bgm&quot;</param>
                 </action>
                 <action id="0" name="Play" sid="4926553307167294" type="Audio">
-                    <param id="0" name="Audio file">battleView</param>
+                    <param id="0" name="Audio file">battleView2</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
@@ -199,6 +203,10 @@
                         <action id="0" name="Set text" sid="4450026276879766" type="turnText">
                             <param id="0" name="Text">&quot;Turn &quot;&amp;turnCount</param>
                         </action>
+                        <action id="5" name="Set web font" sid="7548483319285501" type="turnText">
+                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                        </action>
                         <action id="-12" name="Subtract from" sid="427781864196892" type="blockTower">
                             <param id="0" name="Instance variable">turnLeft</param>
                             <param id="1" name="Value">1</param>
@@ -273,6 +281,10 @@
                                 <action id="0" name="Set text" sid="5800091701740118" type="turnText">
                                     <param id="0" name="Text">&quot;Turn Over&quot;</param>
                                 </action>
+                                <action id="5" name="Set web font" sid="1811466165598448" type="turnText">
+                                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="359202178077101" type="System">
                                     <param id="0" name="Variable">gameState</param>
                                     <param id="1" name="Value">3</param>
@@ -314,10 +326,6 @@
                         <action id="0" name="Call function" sid="4018553326262423" type="Function">
                             <param id="0" name="Name">&quot;touchHenButton&quot;</param>
                             <param id="1" name="Parameter {n}">henButton.UID</param>
-                        </action>
-                        <action id="0" name="Call function" sid="1260440715415272" type="Function">
-                            <param id="0" name="Name">&quot;golemDestroy&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -371,16 +379,6 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="7708998671674729" type="poison" />
-                    </actions>
-                </event-block>
-                <comment>독같은거는 1턴에 계산</comment>
-                <event-block sid="6737966942046641">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Call function" sid="9514390782750622" type="Function">
-                            <param id="0" name="Name">&quot;golemDestroy&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
                     </actions>
                 </event-block>
                 <comment>state 2에서 망가진 초점과 스케일 원상복귀!</comment>
@@ -459,10 +457,6 @@
                         </action>
                         <action id="-41" name="Wait for signal" sid="8727137720552172" type="System">
                             <param id="0" name="Tag">&quot;eggDestroyed&quot;</param>
-                        </action>
-                        <action id="0" name="Call function" sid="6846678473484037" type="Function">
-                            <param id="0" name="Name">&quot;golemDestroy&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
                         </action>
                         <action id="-41" name="Wait for signal" sid="5118369634265691" type="System">
                             <param id="0" name="Tag">&quot;explodeFinished&quot;</param>
@@ -920,6 +914,10 @@
                                                 <action id="0" name="Set text" sid="2541924343708251" type="turnText">
                                                     <param id="0" name="Text">&quot;Stage Clear!&quot;</param>
                                                 </action>
+                                                <action id="5" name="Set web font" sid="1734768405099478" type="turnText">
+                                                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="6130925871506581" type="System">
                                                     <param id="0" name="Seconds">5</param>
                                                 </action>
@@ -1079,17 +1077,36 @@
                             <param id="0" name="X">-1000</param>
                             <param id="1" name="Y">Self.Y</param>
                         </action>
+                        <action id="6" name="Stop" sid="7171991829252785" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm&quot;</param>
+                        </action>
                         <action id="-3" name="Create object" sid="9300152071853948" type="System">
                             <param id="0" name="Object to create">turnText</param>
                             <param id="1" name="Layer">&quot;hud&quot;</param>
                             <param id="2" name="X">ViewportRight(&quot;hud&quot;)/2</param>
                             <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
                         </action>
+                        <action behavior="Fade" id="3" name="Set wait time" sid="5695767622246263" type="turnText">
+                            <param id="0" name="Wait time">3</param>
+                        </action>
                         <action id="0" name="Set text" sid="9025137062099726" type="turnText">
                             <param id="0" name="Text">&quot;Stage Failed!&quot;</param>
                         </action>
+                        <action id="5" name="Set web font" sid="4980603754845835" type="turnText">
+                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="3247790413369558" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="4883306064349298" type="Audio">
+                            <param id="0" name="Audio file">battleLose</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+5</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action id="-16" name="Wait" sid="6875050856163885" type="System">
-                            <param id="0" name="Seconds">2</param>
+                            <param id="0" name="Seconds">2.5</param>
                         </action>
                         <action id="-2" name="Go to layout" sid="4788577622756026" type="System">
                             <param id="0" name="Layout">stageView</param>

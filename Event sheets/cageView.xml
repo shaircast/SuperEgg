@@ -19,6 +19,46 @@
                 <condition id="-2" name="On start of layout" sid="1853205482628116" type="System" />
             </conditions>
             <actions>
+                <action id="5" name="Set web font" sid="7563081717835034" type="atkText">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="1743335666129296" type="descriptionText">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="4413585557212765" type="foodcostText">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="3884068104161704" type="goldHUD">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="5442546604973792" type="goldText">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="4001125914925057" type="nameText">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="2519273922904409" type="powerupHUD">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="3641490601728686" type="powerupText">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="520374646978843" type="readyturnText">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="9588265264604721" type="systemText">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
                 <action id="0" name="Call function" sid="8035344323355794" type="Function">
                     <param id="0" name="Name">&quot;henCageCreate&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
@@ -39,9 +79,9 @@
                     <param id="0" name="Tag">&quot;bgm&quot;</param>
                 </action>
                 <action id="0" name="Play" sid="6101864994988934" type="Audio">
-                    <param id="0" name="Audio file">cageView</param>
+                    <param id="0" name="Audio file">cageView2</param>
                     <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;music&quot;))-5</param>
+                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))-5</param>
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
                 </action>
             </actions>

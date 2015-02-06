@@ -9,6 +9,10 @@
                 <condition id="-2" name="On start of layout" sid="2427181214653416" type="System" />
             </conditions>
             <actions>
+                <action id="5" name="Set web font" sid="1483217009862704" type="optionViewTitles">
+                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                </action>
                 <action id="0" name="Call function" sid="9312316557934195" type="Function">
                     <param id="0" name="Name">&quot;levelHolderYSet&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
@@ -21,7 +25,7 @@
                     <param id="0" name="Tag">&quot;bgm&quot;</param>
                 </action>
                 <action id="0" name="Play" sid="4505848932848303" type="Audio">
-                    <param id="0" name="Audio file">optionView</param>
+                    <param id="0" name="Audio file">optionView2</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
@@ -124,7 +128,7 @@
                             <param id="0" name="Seconds">0</param>
                         </action>
                         <action id="0" name="Play" sid="3046992951303743" type="Audio">
-                            <param id="0" name="Audio file">optionView</param>
+                            <param id="0" name="Audio file">optionView2</param>
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                             <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
