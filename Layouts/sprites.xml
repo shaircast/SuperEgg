@@ -349,6 +349,15 @@
                                 <deceleration>0</deceleration>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0.5</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>0</fade-out-time>
+                                <destroy>No</destroy>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -357,7 +366,7 @@
                         <y>446</y>
                         <z>0</z>
                         <width>96</width>
-                        <height>192</height>
+                        <height>96</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>1</hotspotY>
@@ -404,7 +413,7 @@
                             <properties>
                                 <active-at-start>Yes</active-at-start>
                                 <fade-in-time>0</fade-in-time>
-                                <wait-time>0.5</wait-time>
+                                <wait-time>1</wait-time>
                                 <fade-out-time>0.5</fade-out-time>
                                 <destroy>After fade out</destroy>
                             </properties>
@@ -477,28 +486,6 @@
                         <height>8</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="solidGround" uid="24">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>593</x>
-                        <y>931</y>
-                        <z>0</z>
-                        <width>1280</width>
-                        <height>100</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -599,7 +586,7 @@
                 </instance>
                 <instance type="eggDestroyedEffect" uid="39">
                     <properties>
-                        <rate>12</rate>
+                        <rate>6</rate>
                         <spray-cone>360</spray-cone>
                         <type>One-shot</type>
                         <initial-particle-properties></initial-particle-properties>
@@ -647,7 +634,7 @@
                         <behavior-instance type="MoveTo">
                             <properties>
                                 <activated>Yes</activated>
-                                <max-speed>1000</max-speed>
+                                <max-speed>1500</max-speed>
                                 <acceleration>0</acceleration>
                                 <deceleration>0</deceleration>
                             </properties>
@@ -659,8 +646,8 @@
                         <x>-126</x>
                         <y>110</y>
                         <z>0</z>
-                        <width>96</width>
-                        <height>96</height>
+                        <width>128</width>
+                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -679,7 +666,7 @@
                         <behavior-instance type="MoveTo">
                             <properties>
                                 <activated>Yes</activated>
-                                <max-speed>1000</max-speed>
+                                <max-speed>1500</max-speed>
                                 <acceleration>0</acceleration>
                                 <deceleration>0</deceleration>
                             </properties>
@@ -691,8 +678,8 @@
                         <x>-134</x>
                         <y>345</y>
                         <z>0</z>
-                        <width>96</width>
-                        <height>96</height>
+                        <width>128</width>
+                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -711,7 +698,7 @@
                         <behavior-instance type="MoveTo">
                             <properties>
                                 <activated>Yes</activated>
-                                <max-speed>1000</max-speed>
+                                <max-speed>1500</max-speed>
                                 <acceleration>0</acceleration>
                                 <deceleration>0</deceleration>
                             </properties>
@@ -723,8 +710,8 @@
                         <x>-142</x>
                         <y>568</y>
                         <z>0</z>
-                        <width>96</width>
-                        <height>96</height>
+                        <width>128</width>
+                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -748,8 +735,8 @@
                         <x>-145</x>
                         <y>804</y>
                         <z>0</z>
-                        <width>96</width>
-                        <height>96</height>
+                        <width>128</width>
+                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1044,7 +1031,7 @@
                         <posX>0</posX>
                         <posY>0</posY>
                         <bonus>0</bonus>
-                        <turnLeft>4</turnLeft>
+                        <turnLeft>5</turnLeft>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1071,7 +1058,7 @@
                     <instance-variables>
                         <posX>0</posX>
                         <posY>0</posY>
-                        <turnLeft>4</turnLeft>
+                        <turnLeft>5</turnLeft>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1313,7 +1300,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="SpriteFont" uid="88">
+                <instance type="damageTextPlus" uid="88">
                     <properties>
                         <character-width>12</character-width>
                         <character-height>16</character-height>
@@ -1331,11 +1318,32 @@
                         <vertical-spacing>0</vertical-spacing>
                         <effect>(none)</effect>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>50</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0.5</wait-time>
+                                <fade-out-time>0.25</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-30</x>
-                        <y>-39</y>
+                        <x>-349</x>
+                        <y>-264</y>
                         <z>0</z>
                         <width>252</width>
                         <height>80</height>
@@ -1544,6 +1552,93 @@
                     <world>
                         <x>498</x>
                         <y>6</y>
+                        <z>0</z>
+                        <width>96</width>
+                        <height>96</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="damageTextMinus" uid="121">
+                    <properties>
+                        <character-width>12</character-width>
+                        <character-height>16</character-height>
+                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
+                        <text>shaircast presents</text>
+                        <text-wrap>By word</text-wrap>
+                        <text-scale>1</text-scale>
+                        <resize-mode>No resize</resize-mode>
+                        <max-length>40</max-length>
+                        <max-lines>1</max-lines>
+                        <horizontal-align>Center</horizontal-align>
+                        <vertical-align>Middle</vertical-align>
+                        <force-point-sampling>No</force-point-sampling>
+                        <horizontal-spacing>-3</horizontal-spacing>
+                        <vertical-spacing>0</vertical-spacing>
+                        <effect>(none)</effect>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>50</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0.5</wait-time>
+                                <fade-out-time>0.25</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-343</x>
+                        <y>-126</y>
+                        <z>0</z>
+                        <width>252</width>
+                        <height>80</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="golemCreateEffect" uid="122">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>1</wait-time>
+                                <fade-out-time>0.5</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1374</x>
+                        <y>537</y>
                         <z>0</z>
                         <width>96</width>
                         <height>96</height>

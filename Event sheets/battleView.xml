@@ -255,8 +255,23 @@
                                     <param id="0" name="Name">&quot;poisonDealsDamage&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
+                                <action id="0" name="Play" sid="4295355421831739" type="Audio">
+                                    <param id="0" name="Audio file">turnOverTicktick</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-16" name="Wait" sid="724939789541473" type="System">
                                     <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="6647081970919151" type="System">
+                                    <param id="0" name="Object to create">turnText</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="X">ViewportRight(&quot;hud&quot;)/2</param>
+                                    <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                                </action>
+                                <action id="0" name="Set text" sid="5800091701740118" type="turnText">
+                                    <param id="0" name="Text">&quot;Turn Over&quot;</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="359202178077101" type="System">
                                     <param id="0" name="Variable">gameState</param>
@@ -791,9 +806,21 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-16" name="Wait" sid="8242015803321082" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="9822399156444038" type="System">
                                     <param id="0" name="Variable">gameState</param>
                                     <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="6" name="Stop" sid="9523170741905331" type="Audio">
+                                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="2187288021831389" type="Audio">
+                                    <param id="0" name="Audio file">battleWin</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -887,11 +914,14 @@
                                                     <param id="2" name="X">ViewportRight(&quot;hud&quot;)/2</param>
                                                     <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
                                                 </action>
+                                                <action behavior="Fade" id="3" name="Set wait time" sid="3653569819368586" type="turnText">
+                                                    <param id="0" name="Wait time">3</param>
+                                                </action>
                                                 <action id="0" name="Set text" sid="2541924343708251" type="turnText">
                                                     <param id="0" name="Text">&quot;Stage Clear!&quot;</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="6130925871506581" type="System">
-                                                    <param id="0" name="Seconds">2</param>
+                                                    <param id="0" name="Seconds">5</param>
                                                 </action>
                                                 <action id="-2" name="Go to layout" sid="1852402519972384" type="System">
                                                     <param id="0" name="Layout">stageView</param>
@@ -908,6 +938,9 @@
                                 <condition id="-22" name="Else" sid="6788834157684431" type="System" />
                             </conditions>
                             <actions>
+                                <action id="-16" name="Wait" sid="6736343871967044" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
                                 <action id="0" name="Call function" sid="2011705474175713" type="Function">
                                     <param id="0" name="Name">&quot;battleViewTurnOver&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -928,6 +961,9 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-16" name="Wait" sid="7794742806693772" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
                                         <action id="-9" name="Set value" sid="9235542984322606" type="System">
                                             <param id="0" name="Variable">gameState</param>
                                             <param id="1" name="Value">1</param>

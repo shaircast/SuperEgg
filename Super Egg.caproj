@@ -166,6 +166,9 @@
                         <behavior-type name="MoveTo" sid="4558298103621171">
                             <behavior id="Rex_MoveTo" />
                         </behavior-type>
+                        <behavior-type name="Fade" sid="1090947618444224">
+                            <behavior id="Fade" />
+                        </behavior-type>
                     </behaviors>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="01a" pingpong="0" repeatcount="1" repeatto="0" sid="1814022913169197" speed="5">
@@ -299,6 +302,67 @@
                         </animation>
                     </animation-folder>
                 </object-type>
+                <object-type name="damageTextPlus" sid="1580285586319104">
+                    <plugin id="SpriteFont" />
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="4296531316150852">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                        <behavior-type name="Fade" sid="9424834392925248">
+                            <behavior id="Fade" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture />
+                </object-type>
+                <object-type name="damageTextMinus" sid="1514949784618569">
+                    <plugin id="SpriteFont" />
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="9192932452556867">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                        <behavior-type name="Fade" sid="8659962722605406">
+                            <behavior id="Fade" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture />
+                </object-type>
+                <object-type name="golemCreateEffect" sid="6331587354910353">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Fade" sid="8630165975536991">
+                            <behavior id="Fade" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="409068177342822" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
             <object-folder name="eggExplode">
                 <object-type name="explode" sid="9488261618380134">
@@ -311,7 +375,23 @@
                         <instance-variable name="posY" sid="1953330453824686" type="number" />
                     </instance-variables>
                     <animation-folder>
-                        <animation framecount="3" loop="0" name="Explode01" pingpong="0" repeatcount="1" repeatto="0" sid="5683957166589021" speed="5">
+                        <animation framecount="5" loop="0" name="Explode01" pingpong="0" repeatcount="1" repeatto="0" sid="5683957166589021" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.104167" y="0.104167" />
+                                    <point x="0.895833" y="0.104167" />
+                                    <point x="0.895833" y="0.895833" />
+                                    <point x="0.104167" y="0.895833" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.104167" y="0.104167" />
+                                    <point x="0.895833" y="0.104167" />
+                                    <point x="0.895833" y="0.895833" />
+                                    <point x="0.104167" y="0.895833" />
+                                </collision-poly>
+                            </frame>
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                                 <collision-poly>
                                     <point x="0.104167" y="0.104167" />
@@ -368,13 +448,32 @@
                         </animation>
                     </animation-folder>
                 </object-type>
+                <object-type name="poisonDamage" sid="6173454516336458">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Fade" sid="3351259909342453">
+                            <behavior id="Fade" />
+                        </behavior-type>
+                        <behavior-type name="Bullet" sid="3766338942307775">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                        <behavior-type name="Sine" sid="8357140736917587">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5123362855521794" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
             <object-folder name="bgDeco">
                 <object-type name="battleViewBg" sid="2200094870917414">
                     <plugin id="Sprite" />
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4723000001028638" speed="5">
-                            <frame duration="1" hotspotX="0.500469" hotspotY="0.500415" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\BG.png">
+                            <frame duration="1" hotspotX="0.500588" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\BG.png">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -389,7 +488,7 @@
                     <plugin id="Sprite" />
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9321903829603314" speed="5">
-                            <frame duration="1" hotspotX="0.500375" hotspotY="0.500469" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\BG Shrubs.png">
+                            <frame duration="1" hotspotX="0.500588" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\BG Shrubs.png">
                                 <collision-poly>
                                     <point x="0" y="0" />
                                     <point x="0.999063" y="0.00468604" />
@@ -3819,14 +3918,6 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="solidGround" sid="3564965791205796">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6842372359151838" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
             <object-type name="battleViewTimer" sid="3686755254771514">
                 <plugin id="Sprite" />
                 <animation-folder>
@@ -4696,31 +4787,8 @@
                 </behavior-type>
             </behaviors>
         </object-type>
-        <object-type name="SpriteFont" sid="1580285586319104">
-            <plugin id="SpriteFont" />
-            <texture />
-        </object-type>
         <object-type global="1" name="Sort" sid="4024892501151649">
             <plugin id="Arr" />
-        </object-type>
-        <object-type name="poisonDamage" sid="6173454516336458">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Fade" sid="3351259909342453">
-                    <behavior id="Fade" />
-                </behavior-type>
-                <behavior-type name="Bullet" sid="3766338942307775">
-                    <behavior id="Bullet" />
-                </behavior-type>
-                <behavior-type name="Sine" sid="8357140736917587">
-                    <behavior id="Sin" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5123362855521794" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
     </object-folder>
     <families />
@@ -4792,6 +4860,10 @@
         <file name="golemStep.ogg" />
         <file name="henFeed.m4a" />
         <file name="henFeed.ogg" />
+        <file name="battleWin.m4a" />
+        <file name="battleWin.ogg" />
+        <file name="turnOverTicktick.m4a" />
+        <file name="turnOverTicktick.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="stageView.m4a" />
@@ -4807,11 +4879,6 @@
     </music-folder>
     <files-folder>
         <file-folder name="Icons">
-            <file name="icon-16.png" />
-            <file name="icon-32.png" />
-            <file name="icon-114.png" />
-            <file name="icon-128.png" />
-            <file name="icon-256.png" />
             <file name="loading-logo.png" />
         </file-folder>
     </files-folder>
