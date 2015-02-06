@@ -6430,15 +6430,6 @@
                                     <param id="0" name="Key">&quot;music&quot;</param>
                                     <param id="1" name="Value">(musicLevelHolder.X-musicLevelBar.ImagePointX(&quot;Zero&quot;))*60/(musicLevelBar.ImagePointX(&quot;Full&quot;)-musicLevelBar.ImagePointX(&quot;Zero&quot;))-60</param>
                                 </action>
-                                <action id="6" name="Stop" sid="8859009483517883" type="Audio">
-                                    <param id="0" name="Tag">&quot;bgm&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="4137761058474007" type="Audio">
-                                    <param id="0" name="Audio file">optionView</param>
-                                    <param id="2" name="Loop">1</param>
-                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
-                                    <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
-                                </action>
                             </actions>
                         </event-block>
                     </sub-events>

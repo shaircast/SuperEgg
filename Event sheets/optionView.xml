@@ -112,6 +112,22 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="3287629021562669">
+                    <conditions>
+                        <condition behavior="DragDrop" id="2" name="On drop" sid="1482478635424736" type="musicLevelHolder" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Stop" sid="6218158030061878" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="3046992951303743" type="Audio">
+                            <param id="0" name="Audio file">optionView</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="3241149955371827">
                     <conditions>
                         <condition behavior="DragDrop" id="2" name="On drop" sid="2595090570716464" type="sfxLevelHolder" />
