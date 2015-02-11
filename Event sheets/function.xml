@@ -4,8 +4,222 @@
     <name>function</name>
     <events>
         <include>orientation</include>
-        <variable constant="0" name="powerupIndicatorX" sid="487664723975616" static="0" type="number">-48</variable>
-        <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">-60</variable>
+        <variable constant="0" name="powerupIndicatorX" sid="487664723975616" static="0" type="number">-36</variable>
+        <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">-50</variable>
+        <event-group description="" sid="3206342493633997" title="general">
+            <sub-events>
+                <event-block sid="5506097390536903">
+                    <conditions>
+                        <condition id="0" name="On function" sid="4282919050382882" type="Function">
+                            <param id="0" name="Name">&quot;SetGroupActive&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7795498765552928">
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" sid="6097700709490197" type="System">
+                                    <param id="0" name="Group name">&quot;OPENING INIT&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="2955280797539834" type="System">
+                                    <param id="0" name="Group name">&quot;battleView&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="2994342781836942" type="System">
+                                    <param id="0" name="Group name">&quot;stageView&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="9411423595350853" type="System">
+                                    <param id="0" name="Group name">&quot;cageView&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="7723164493354968" type="System">
+                                    <param id="0" name="Group name">&quot;optionView&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="6168931321260209" type="System">
+                                    <param id="0" name="Group name">Function.Param(0)</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>userDataReset() : 유저의 진행상황을 리셋</comment>
+                <event-block sid="9124655611461876">
+                    <conditions>
+                        <condition id="0" name="On function" sid="4123270188096522" type="Function">
+                            <param id="0" name="Name">&quot;userDataReset&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>maxStage: 플레이어가 플레이가능한 최고 챕터. 즉, 완료 스테이지는 maxStage-1</comment>
+                        <comment>볼륨은 0이 최대, -60이 최소</comment>
+                        <event-block sid="4666692716281236">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
+                                    <param id="0" name="Key">&quot;henList&quot;</param>
+                                    <param id="1" name="Value">&quot;01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/09d00/10d00/11d00/12d00/01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/09d00/10d00/11d00/12d00/01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/&quot;</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
+                                    <param id="0" name="Key">&quot;chapter&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="3645545715772576" type="WebStorage">
+                                    <param id="0" name="Key">&quot;maxStage&quot;</param>
+                                    <param id="1" name="Value">&quot;1_1&quot;</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="71699616378047" type="WebStorage">
+                                    <param id="0" name="Key">&quot;gold&quot;</param>
+                                    <param id="1" name="Value">10000</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="5464618023177127" type="WebStorage">
+                                    <param id="0" name="Key">&quot;entry1&quot;</param>
+                                    <param id="1" name="Value">&quot;0&quot;</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="2888666611814651" type="WebStorage">
+                                    <param id="0" name="Key">&quot;entry2&quot;</param>
+                                    <param id="1" name="Value">&quot;1&quot;</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="3831784519309117" type="WebStorage">
+                                    <param id="0" name="Key">&quot;entry3&quot;</param>
+                                    <param id="1" name="Value">&quot;2&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>menuButtonPackageTouched() : 말그대로 메뉴버튼패키지 눌렀을 때. 닫혔으면 열고 열렸으면 닫는다.</comment>
+                <event-block sid="3287509869921554">
+                    <conditions>
+                        <condition id="0" name="On function" sid="7176630516910665" type="Function">
+                            <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="flag" sid="9965939789458771" static="1" type="number">0</variable>
+                        <event-block sid="9235774951376589">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="3478538910372993" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>열기</comment>
+                        <event-block sid="5316763733426882">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="6304426100497193" type="menuButtonPackage">
+                                    <param id="0" name="Animation">&quot;Closed&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="1902541400791524" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="2468688747900675" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8623054340771759" type="menuButtonPackage">
+                                    <param id="0" name="Instance variable">ready</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="8769972729070546" type="menuButtonPackage">
+                                    <param id="0" name="Animation">&quot;Opened&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="8939299538999408" type="menuButtonPackage">
+                                    <param id="0" name="Object">menuButtonStageView</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action behavior="MoveTo" id="7" name="Move to delta XY" sid="6815768361961256" type="menuButtonStageView">
+                                    <param id="0" name="dX">0</param>
+                                    <param id="1" name="dY">-menuButtonPackage.Height*3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="8880121363622862" type="menuButtonPackage">
+                                    <param id="0" name="Object">menuButtonCageView</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action behavior="MoveTo" id="7" name="Move to delta XY" sid="6326577554501469" type="menuButtonCageView">
+                                    <param id="0" name="dX">0</param>
+                                    <param id="1" name="dY">-menuButtonPackage.Height*2</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="2650017537701211" type="menuButtonPackage">
+                                    <param id="0" name="Object">menuButtonOptionView</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action behavior="MoveTo" id="7" name="Move to delta XY" sid="7204239811425785" type="menuButtonOptionView">
+                                    <param id="0" name="dX">0</param>
+                                    <param id="1" name="dY">-menuButtonPackage.Height</param>
+                                </action>
+                                <action id="-25" name="Move to bottom" sid="5332627406521637" type="menuButtonCageView" />
+                                <action id="-25" name="Move to bottom" sid="3524429651224384" type="menuButtonOptionView" />
+                                <action id="-25" name="Move to bottom" sid="6645712121114605" type="menuButtonStageView" />
+                                <action id="-24" name="Move to top" sid="9696954445360977" type="menuButtonPackage" />
+                                <action id="-16" name="Wait" sid="1026875087850935" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="-25" name="Move to bottom" sid="2068729684227355" type="menuButtonPackage" />
+                                <action id="-13" name="Set boolean" sid="2624457489829486" type="menuButtonPackage">
+                                    <param id="0" name="Instance variable">ready</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="6167422371824168" type="Audio">
+                                    <param id="0" name="Audio file">menuOpen</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>닫기</comment>
+                        <event-block sid="4697425237668341">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="3996364390410228" type="menuButtonPackage">
+                                    <param id="0" name="Animation">&quot;Opened&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="8031419584843031" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="1669107807598568" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="4675816864608891" type="menuButtonPackage">
+                                    <param id="0" name="Animation">&quot;Closed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="5817700319433299" type="menuButtonStageView" />
+                                <action id="-9" name="Destroy" sid="7678481126613485" type="menuButtonCageView" />
+                                <action id="-9" name="Destroy" sid="843552281984533" type="menuButtonOptionView" />
+                                <action id="0" name="Play" sid="8121077740350282" type="Audio">
+                                    <param id="0" name="Audio file">menuClose</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="1681297483373011" title="OPENING INIT">
             <sub-events>
                 <comment>henDBInput(kind, name, readyturn, atk, duration, price, foodcost, description)&#x0D;&#x0A;숫자 및 수치</comment>
@@ -384,83 +598,69 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>userDataReset() : 유저의 진행상황을 리셋</comment>
-                <event-block sid="9124655611461876">
-                    <conditions>
-                        <condition id="0" name="On function" sid="4123270188096522" type="Function">
-                            <param id="0" name="Name">&quot;userDataReset&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <comment>maxStage: 플레이어가 플레이가능한 최고 챕터. 즉, 완료 스테이지는 maxStage-1</comment>
-                        <comment>볼륨은 0이 최대, -60이 최소</comment>
-                        <event-block sid="4666692716281236">
-                            <conditions />
-                            <actions>
-                                <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
-                                    <param id="0" name="Key">&quot;henList&quot;</param>
-                                    <param id="1" name="Value">&quot;01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/09d00/10d00/11d00/12d00/01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/09d00/10d00/11d00/12d00/01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/&quot;</param>
-                                </action>
-                                <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
-                                    <param id="0" name="Key">&quot;chapter&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Set local value" sid="3645545715772576" type="WebStorage">
-                                    <param id="0" name="Key">&quot;maxStage&quot;</param>
-                                    <param id="1" name="Value">&quot;1_1&quot;</param>
-                                </action>
-                                <action id="0" name="Set local value" sid="71699616378047" type="WebStorage">
-                                    <param id="0" name="Key">&quot;gold&quot;</param>
-                                    <param id="1" name="Value">10000</param>
-                                </action>
-                                <action id="0" name="Set local value" sid="5464618023177127" type="WebStorage">
-                                    <param id="0" name="Key">&quot;entry1&quot;</param>
-                                    <param id="1" name="Value">&quot;0&quot;</param>
-                                </action>
-                                <action id="0" name="Set local value" sid="2888666611814651" type="WebStorage">
-                                    <param id="0" name="Key">&quot;entry2&quot;</param>
-                                    <param id="1" name="Value">&quot;1&quot;</param>
-                                </action>
-                                <action id="0" name="Set local value" sid="3831784519309117" type="WebStorage">
-                                    <param id="0" name="Key">&quot;entry3&quot;</param>
-                                    <param id="1" name="Value">&quot;2&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="2194056518924521" title="battleView">
             <sub-events>
-                <comment>battleViewLayerScaleReset() : 전부 1로!</comment>
-                <event-block sid="1089356857895274">
+                <comment>(deprecated)battleViewLayerScaleReset() : 전부 1로!</comment>
+                <event-block disabled="1" sid="9958394990609455">
                     <conditions>
-                        <condition id="0" name="On function" sid="5231134389488908" type="Function">
+                        <condition id="0" name="On function" sid="1753876709677728" type="Function">
                             <param id="0" name="Name">&quot;battleViewLayerScaleReset&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="2185694390359028">
+                        <event-block sid="4937717520294164">
                             <conditions />
                             <actions>
-                                <action id="-17" name="Set layer scale" sid="8593914982294067" type="System">
+                                <action id="-17" name="Set layer scale" sid="5992454429782918" type="System">
                                     <param id="0" name="Layer">&quot;backBg&quot;</param>
                                     <param id="1" name="Scale">1</param>
                                 </action>
-                                <action id="-17" name="Set layer scale" sid="1338723299348804" type="System">
+                                <action id="-17" name="Set layer scale" sid="2031993164212237" type="System">
                                     <param id="0" name="Layer">&quot;frontBg&quot;</param>
                                     <param id="1" name="Scale">1</param>
                                 </action>
-                                <action id="-17" name="Set layer scale" sid="3654878214690798" type="System">
+                                <action id="-17" name="Set layer scale" sid="3395540248363769" type="System">
                                     <param id="0" name="Layer">&quot;golem&quot;</param>
                                     <param id="1" name="Scale">1</param>
                                 </action>
-                                <action id="-17" name="Set layer scale" sid="2000473777844085" type="System">
+                                <action id="-17" name="Set layer scale" sid="6369745629569348" type="System">
                                     <param id="0" name="Layer">&quot;effect&quot;</param>
                                     <param id="1" name="Scale">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>(deprecated) battleViewLayerScrollBack() : 처음 상태로 스크롤 백</comment>
+                <event-block disabled="1" sid="1089356857895274">
+                    <conditions>
+                        <condition disabled="1" id="0" name="On function" sid="5231134389488908" type="Function">
+                            <param id="0" name="Name">&quot;battleViewLayerScrollBack&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="2185694390359028">
+                            <conditions />
+                            <actions>
+                                <action id="-17" name="Set layer scale" sid="6283852464627376" type="System">
+                                    <param id="0" name="Layer">&quot;backBg&quot;</param>
+                                    <param id="1" name="Scale">lerp(LayerScale(&quot;backBg&quot;),1,scaleLerpRate)</param>
+                                </action>
+                                <action id="-17" name="Set layer scale" sid="8435073581624138" type="System">
+                                    <param id="0" name="Layer">&quot;frontBg&quot;</param>
+                                    <param id="1" name="Scale">lerp(LayerScale(&quot;frontBg&quot;),1,scaleLerpRate)</param>
+                                </action>
+                                <action id="-17" name="Set layer scale" sid="5415290725968349" type="System">
+                                    <param id="0" name="Layer">&quot;golem&quot;</param>
+                                    <param id="1" name="Scale">lerp(LayerScale(&quot;golem&quot;),1,scaleLerpRate)</param>
+                                </action>
+                                <action id="-17" name="Set layer scale" sid="6106693397401875" type="System">
+                                    <param id="0" name="Layer">&quot;effect&quot;</param>
+                                    <param id="1" name="Scale">lerp(LayerScale(&quot;effect&quot;),1,scaleLerpRate)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1033,13 +1233,28 @@
                             <param id="0" name="Name">&quot;touchLaunchLine&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="4200324703405533" type="launchLine">
-                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
+                        <event-block sid="6496650839772808">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="4772117116566346" type="System">
+                                    <param id="0" name="Object">launchLine</param>
+                                    <param id="1" name="Expression">launchLine.UID</param>
+                                    <param id="2" name="Comparison">1</param>
+                                    <param id="3" name="Value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="4200324703405533" type="launchLine">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="5991481546513991" type="launchLine">
+                                    <param id="0" name="Instance variable">aimed</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <variable constant="0" name="flag" sid="1726121690278514" static="0" type="number">0</variable>
                         <event-block sid="3143457935351799">
                             <conditions>
@@ -1232,7 +1447,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="7024823255720201" type="Function">
                                             <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
-                                            <param id="1" name="Parameter {n}">280{###}500{###}Function.Param(0){###}Function.Param(1)</param>
+                                            <param id="1" name="Parameter {n}">272{###}700{###}Function.Param(0){###}Function.Param(1)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1332,14 +1547,9 @@
                                 </action>
                                 <action id="-3" name="Create object" sid="5925763060550796" type="System">
                                     <param id="0" name="Object to create">eggBullet</param>
-                                    <param id="1" name="Layer">&quot;golem&quot;</param>
+                                    <param id="1" name="Layer">&quot;effect&quot;</param>
                                     <param id="2" name="X">cannon.ImagePointX(&quot;launchPoint&quot;)</param>
                                     <param id="3" name="Y">cannon.ImagePointY(&quot;launchPoint&quot;)</param>
-                                </action>
-                                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="5005087358907583" type="focus">
-                                    <param id="0" name="Pin to">focus</param>
-                                    <param id="1" name="ImagePoint">&quot;Origin&quot;</param>
-                                    <param id="2" name="Mode">0</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="5089967527608578" type="eggBullet">
                                     <param id="0" name="Animation">henSelected</param>
@@ -1587,10 +1797,10 @@
                                                                     <param id="0" name="Name">&quot;refreshFood&quot;</param>
                                                                     <param id="1" name="Parameter {n}"></param>
                                                                 </action>
-                                                                <action id="0" name="Play" sid="5903854709466217" type="Audio">
+                                                                <action id="0" name="Play" sid="1695119422253258" type="Audio">
                                                                     <param id="0" name="Audio file">henFeed</param>
                                                                     <param id="2" name="Loop">0</param>
-                                                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+10</param>
+                                                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+50</param>
                                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                 </action>
                                                             </actions>
@@ -1984,15 +2194,20 @@
                                                             <param id="0" name="X">launchLine.X</param>
                                                             <param id="1" name="Y">launchLine.Y</param>
                                                         </action>
-                                                        <action id="0" name="Play" sid="2008491178228933" type="Audio">
-                                                            <param id="0" name="Audio file">golemStep</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                        </action>
                                                         <action id="0" name="Call function" sid="1366243373838252" type="Function">
                                                             <param id="0" name="Name">&quot;launchLineOccupyAtXY&quot;</param>
                                                             <param id="1" name="Parameter {n}">golem.posX{###}golem.posY{###}1</param>
+                                                        </action>
+                                                        <action behavior="ScrollTo" id="0" name="Shake" sid="1009515800271658" type="focus">
+                                                            <param id="0" name="Magnitude">golem.Count*4</param>
+                                                            <param id="1" name="Duration">1</param>
+                                                            <param id="2" name="Mode">0</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="54289065776468" type="Audio">
+                                                            <param id="0" name="Audio file">golemStep</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3642,7 +3857,6 @@
                         <event-block sid="4462818567572642">
                             <conditions />
                             <actions>
-                                <action behavior="PinToImagePoint" id="10" name="Unpin" sid="5666961096255151" type="focus" />
                                 <action id="-9" name="Destroy" sid="7649342513716955" type="eggBulletBonusEffect" />
                                 <action id="0" name="Spawn another object" sid="1016731312154163" type="eggBullet">
                                     <param id="0" name="Object">eggDestroyedEffect</param>
@@ -3656,6 +3870,11 @@
                                 <action id="-9" name="Destroy" sid="1778353924769913" type="eggBullet" />
                                 <action id="-42" name="Signal" sid="5146502209334007" type="System">
                                     <param id="0" name="Tag">&quot;eggDestroyed&quot;</param>
+                                </action>
+                                <action behavior="ScrollTo" id="0" name="Shake" sid="9644584336810081" type="focus">
+                                    <param id="0" name="Magnitude">30</param>
+                                    <param id="1" name="Duration">0.4</param>
+                                    <param id="2" name="Mode">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -3693,10 +3912,6 @@
                                             <param id="3" name="Y">golem.Y-golem.Height/2</param>
                                         </action>
                                         <action id="-25" name="Move to bottom" sid="2769297310664838" type="golemDestroyEffect" />
-                                        <action id="-10" name="Set value" sid="3109138797075553" type="golemDestroyEffect">
-                                            <param id="0" name="Instance variable">golemY</param>
-                                            <param id="1" name="Value">golem.posY</param>
-                                        </action>
                                         <action id="5" name="Set frame" sid="921883116732748" type="golemDestroyEffect">
                                             <param id="0" name="Frame number">int(random(Self.AnimationFrameCount))</param>
                                         </action>
@@ -3768,13 +3983,13 @@
                                             <param id="0" name="Frame number">int(random(destroyedGolem.AnimationFrameCount))</param>
                                         </action>
                                         <action id="-25" name="Move to bottom" sid="6855576206645371" type="destroyedGolem" />
-                                        <action id="0" name="Play" sid="6068826051485465" type="Audio">
+                                        <action id="-9" name="Destroy" sid="291681025019216" type="golem" />
+                                        <action id="0" name="Play" sid="701141319492633" type="Audio">
                                             <param id="0" name="Audio file">golemCollapse </param>
                                             <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+10</param>
+                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
-                                        <action id="-9" name="Destroy" sid="291681025019216" type="golem" />
                                     </actions>
                                 </event-block>
                                 <comment>게임스테이트 2일 때,  키라닭있고 그게 선택되어 있으면 리셋.</comment>
@@ -4377,135 +4592,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="3206342493633997" title="general">
-            <sub-events>
-                <comment>menuButtonPackageTouched() : 말그대로 메뉴버튼패키지 눌렀을 때. 닫혔으면 열고 열렸으면 닫는다.</comment>
-                <event-block sid="3287509869921554">
-                    <conditions>
-                        <condition id="0" name="On function" sid="7176630516910665" type="Function">
-                            <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <variable constant="0" name="flag" sid="9965939789458771" static="1" type="number">0</variable>
-                        <event-block sid="9235774951376589">
-                            <conditions />
-                            <actions>
-                                <action id="-9" name="Set value" sid="3478538910372993" type="System">
-                                    <param id="0" name="Variable">flag</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment>열기</comment>
-                        <event-block sid="5316763733426882">
-                            <conditions>
-                                <condition id="2" name="Is playing" sid="6304426100497193" type="menuButtonPackage">
-                                    <param id="0" name="Animation">&quot;Closed&quot;</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="1902541400791524" type="System">
-                                    <param id="0" name="Variable">flag</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="2468688747900675" type="System">
-                                    <param id="0" name="Variable">flag</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-13" name="Set boolean" sid="8623054340771759" type="menuButtonPackage">
-                                    <param id="0" name="Instance variable">ready</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="8769972729070546" type="menuButtonPackage">
-                                    <param id="0" name="Animation">&quot;Opened&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action id="0" name="Spawn another object" sid="8939299538999408" type="menuButtonPackage">
-                                    <param id="0" name="Object">menuButtonStageView</param>
-                                    <param id="1" name="Layer">&quot;hud&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action behavior="MoveTo" id="7" name="Move to delta XY" sid="6815768361961256" type="menuButtonStageView">
-                                    <param id="0" name="dX">0</param>
-                                    <param id="1" name="dY">-menuButtonPackage.Height*3</param>
-                                </action>
-                                <action id="0" name="Spawn another object" sid="8880121363622862" type="menuButtonPackage">
-                                    <param id="0" name="Object">menuButtonCageView</param>
-                                    <param id="1" name="Layer">&quot;hud&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action behavior="MoveTo" id="7" name="Move to delta XY" sid="6326577554501469" type="menuButtonCageView">
-                                    <param id="0" name="dX">0</param>
-                                    <param id="1" name="dY">-menuButtonPackage.Height*2</param>
-                                </action>
-                                <action id="0" name="Spawn another object" sid="2650017537701211" type="menuButtonPackage">
-                                    <param id="0" name="Object">menuButtonOptionView</param>
-                                    <param id="1" name="Layer">&quot;hud&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action behavior="MoveTo" id="7" name="Move to delta XY" sid="7204239811425785" type="menuButtonOptionView">
-                                    <param id="0" name="dX">0</param>
-                                    <param id="1" name="dY">-menuButtonPackage.Height</param>
-                                </action>
-                                <action id="-25" name="Move to bottom" sid="5332627406521637" type="menuButtonCageView" />
-                                <action id="-25" name="Move to bottom" sid="3524429651224384" type="menuButtonOptionView" />
-                                <action id="-25" name="Move to bottom" sid="6645712121114605" type="menuButtonStageView" />
-                                <action id="-24" name="Move to top" sid="9696954445360977" type="menuButtonPackage" />
-                                <action id="0" name="Play" sid="737368223417684" type="Audio">
-                                    <param id="0" name="Audio file">menuOpen</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="1026875087850935" type="System">
-                                    <param id="0" name="Seconds">0.5</param>
-                                </action>
-                                <action id="-25" name="Move to bottom" sid="2068729684227355" type="menuButtonPackage" />
-                                <action id="-13" name="Set boolean" sid="2624457489829486" type="menuButtonPackage">
-                                    <param id="0" name="Instance variable">ready</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment>닫기</comment>
-                        <event-block sid="4697425237668341">
-                            <conditions>
-                                <condition id="2" name="Is playing" sid="3996364390410228" type="menuButtonPackage">
-                                    <param id="0" name="Animation">&quot;Opened&quot;</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="8031419584843031" type="System">
-                                    <param id="0" name="Variable">flag</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="1669107807598568" type="System">
-                                    <param id="0" name="Variable">flag</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="4675816864608891" type="menuButtonPackage">
-                                    <param id="0" name="Animation">&quot;Closed&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action id="-9" name="Destroy" sid="5817700319433299" type="menuButtonStageView" />
-                                <action id="-9" name="Destroy" sid="7678481126613485" type="menuButtonCageView" />
-                                <action id="-9" name="Destroy" sid="843552281984533" type="menuButtonOptionView" />
-                                <action id="0" name="Play" sid="8373364068489813" type="Audio">
-                                    <param id="0" name="Audio file">menuClose</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-group>
         <event-group description="" sid="4234025495338973" title="stageView">
             <sub-events>
                 <comment>mapDropMove() : map 드래그하다 놓을 때 기작</comment>
@@ -4574,10 +4660,10 @@
                                             <param id="0" name="Key">&quot;chapter&quot;</param>
                                             <param id="1" name="Value">int(WebStorage.LocalValue(&quot;chapter&quot;))+1</param>
                                         </action>
-                                        <action id="0" name="Play" sid="9009438010426116" type="Audio">
+                                        <action id="0" name="Play" sid="6094632983335994" type="Audio">
                                             <param id="0" name="Audio file">chapterMove</param>
                                             <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
                                     </actions>
@@ -4622,10 +4708,10 @@
                                             <param id="0" name="Key">&quot;chapter&quot;</param>
                                             <param id="1" name="Value">int(WebStorage.LocalValue(&quot;chapter&quot;))-1</param>
                                         </action>
-                                        <action id="0" name="Play" sid="7109655878831241" type="Audio">
+                                        <action id="0" name="Play" sid="6640423097694568" type="Audio">
                                             <param id="0" name="Audio file">chapterMove</param>
                                             <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
                                     </actions>
@@ -4786,17 +4872,17 @@
                                         <action behavior="PinToImagePoint" id="10" name="Unpin" sid="4124434254547404" type="skyLeftCover" />
                                         <action behavior="PinToImagePoint" id="10" name="Unpin" sid="6574255243265968" type="skyRightCover" />
                                         <action behavior="MoveTo" id="4" name="Move to XY" sid="5796315680870378" type="skyLeftCover">
-                                            <param id="0" name="X">ViewportRight(&quot;hud&quot;)/2</param>
-                                            <param id="1" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                                            <param id="0" name="X">middlePoint</param>
+                                            <param id="1" name="Y">self.Y</param>
                                         </action>
                                         <action behavior="MoveTo" id="4" name="Move to XY" sid="6197850480663941" type="skyRightCover">
-                                            <param id="0" name="X">ViewportRight(&quot;hud&quot;)/2</param>
-                                            <param id="1" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                                            <param id="0" name="X">middlePoint</param>
+                                            <param id="1" name="Y">self.Y</param>
                                         </action>
-                                        <action id="0" name="Play" sid="3237504459154622" type="Audio">
+                                        <action id="0" name="Play" sid="7389175895713594" type="Audio">
                                             <param id="0" name="Audio file">stageStart</param>
                                             <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))-5</param>
+                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
                                     </actions>
@@ -4908,7 +4994,7 @@
                                                     <actions>
                                                         <action id="-3" name="Create object" sid="5997591673906043" type="System">
                                                             <param id="0" name="Object to create">stageSelection</param>
-                                                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                            <param id="1" name="Layer">&quot;effect&quot;</param>
                                                             <param id="2" name="X">chapterStage.X</param>
                                                             <param id="3" name="Y">chapterStage.Y</param>
                                                         </action>
@@ -5050,7 +5136,7 @@
                                                     <actions>
                                                         <action id="-3" name="Create object" sid="6748636129557933" type="System">
                                                             <param id="0" name="Object to create">cageSelection</param>
-                                                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                            <param id="1" name="Layer">&quot;effect&quot;</param>
                                                             <param id="2" name="X">henCage.X</param>
                                                             <param id="3" name="Y">henCage.Y</param>
                                                         </action>
@@ -5197,7 +5283,7 @@
                                                         </action>
                                                         <action id="-3" name="Create object" sid="4277483066905826" type="System">
                                                             <param id="0" name="Object to create">cageSelection</param>
-                                                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                            <param id="1" name="Layer">&quot;effect&quot;</param>
                                                             <param id="2" name="X">henCage.X</param>
                                                             <param id="3" name="Y">henCage.Y</param>
                                                         </action>
@@ -5235,7 +5321,7 @@
                                                         </action>
                                                         <action id="-3" name="Create object" sid="5558285460508716" type="System">
                                                             <param id="0" name="Object to create">cageSelection</param>
-                                                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                            <param id="1" name="Layer">&quot;effect&quot;</param>
                                                             <param id="2" name="X">henCage.X</param>
                                                             <param id="3" name="Y">henCage.Y</param>
                                                         </action>
@@ -5297,7 +5383,7 @@
                                                         </action>
                                                         <action id="-3" name="Create object" sid="7360973445765274" type="System">
                                                             <param id="0" name="Object to create">cageSelection</param>
-                                                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                            <param id="1" name="Layer">&quot;effect&quot;</param>
                                                             <param id="2" name="X">henCage.X</param>
                                                             <param id="3" name="Y">henCage.Y</param>
                                                         </action>
@@ -5350,7 +5436,7 @@
                                                                 </action>
                                                                 <action id="-3" name="Create object" sid="7620604298674225" type="System">
                                                                     <param id="0" name="Object to create">cageSelection</param>
-                                                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                                    <param id="1" name="Layer">&quot;effect&quot;</param>
                                                                     <param id="2" name="X">henCage.X</param>
                                                                     <param id="3" name="Y">henCage.Y</param>
                                                                 </action>
@@ -5420,7 +5506,7 @@
                                                                 </action>
                                                                 <action id="-3" name="Create object" sid="1749032839871879" type="System">
                                                                     <param id="0" name="Object to create">cageSelection</param>
-                                                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                                    <param id="1" name="Layer">&quot;effect&quot;</param>
                                                                     <param id="2" name="X">henCage.X</param>
                                                                     <param id="3" name="Y">henCage.Y</param>
                                                                 </action>
@@ -5518,6 +5604,12 @@
                                     <param id="0" name="Name">&quot;infoModeShowHide&quot;</param>
                                     <param id="1" name="Parameter {n}">0</param>
                                 </action>
+                                <action id="0" name="Play" sid="1870071290344964" type="Audio">
+                                    <param id="0" name="Audio file">click</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="9193962272233081">
@@ -5575,6 +5667,12 @@
                                     <param id="0" name="Name">&quot;infoModeShowHide&quot;</param>
                                     <param id="1" name="Parameter {n}">0</param>
                                 </action>
+                                <action id="0" name="Play" sid="2340105069835156" type="Audio">
+                                    <param id="0" name="Audio file">click</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="814565179130709">
@@ -5631,6 +5729,12 @@
                                 <action id="0" name="Call function" sid="625681452741795" type="Function">
                                     <param id="0" name="Name">&quot;infoModeShowHide&quot;</param>
                                     <param id="1" name="Parameter {n}">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="7710719336731791" type="Audio">
+                                    <param id="0" name="Audio file">click</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -5727,10 +5831,10 @@
                                                         <action id="-15" name="Set visible" sid="8769085461970987" type="cageViewOkButton">
                                                             <param id="0" name="Visibility">0</param>
                                                         </action>
-                                                        <action id="0" name="Play" sid="173932406756738" type="Audio">
+                                                        <action id="0" name="Play" sid="4786888213718445" type="Audio">
                                                             <param id="0" name="Audio file">coinClatter</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                         </action>
                                                     </actions>
@@ -5896,10 +6000,10 @@
                                                             <param id="0" name="Variable">reproduceSelect2</param>
                                                             <param id="1" name="Value">-1</param>
                                                         </action>
-                                                        <action id="0" name="Play" sid="5743034506467347" type="Audio">
+                                                        <action id="0" name="Play" sid="7121163143696818" type="Audio">
                                                             <param id="0" name="Audio file">mateConfirm</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                         </action>
                                                     </actions>
@@ -5968,10 +6072,10 @@
                                     <param id="0" name="Variable">entrySelect3</param>
                                     <param id="1" name="Value">-1</param>
                                 </action>
-                                <action id="0" name="Play" sid="7221990897987739" type="Audio">
+                                <action id="0" name="Play" sid="9026747336903937" type="Audio">
                                     <param id="0" name="Audio file">entryConfirm</param>
                                     <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
@@ -6002,11 +6106,11 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="4690158209684039" type="System">
                                     <param id="0" name="Variable">x</param>
-                                    <param id="1" name="Value">ViewportRight(0)/24*4.5+ViewportRight(0)/11*(loopindex%8)</param>
+                                    <param id="1" name="Value">(ViewportLeft(0)+ViewportRight(0))/24*4.5+(ViewportLeft(0)+ViewportRight(0))/11*(loopindex%8)</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="120383289113602" type="System">
                                     <param id="0" name="Variable">y</param>
-                                    <param id="1" name="Value">floor(loopindex/8)*ViewportBottom(0)/6.5+ViewportBottom(0)/14*2</param>
+                                    <param id="1" name="Value">floor(loopindex/8)*(-ViewportTop(0)+ViewportBottom(0))/8+(ViewportBottom(0))/100+150</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -6022,7 +6126,7 @@
                                     <actions>
                                         <action id="-3" name="Create object" sid="4732715338583993" type="System">
                                             <param id="0" name="Object to create">henCage</param>
-                                            <param id="1" name="Layer">&quot;bg&quot;</param>
+                                            <param id="1" name="Layer">&quot;hud&quot;</param>
                                             <param id="2" name="X">x</param>
                                             <param id="3" name="Y">y</param>
                                         </action>
@@ -6080,9 +6184,9 @@
                                     <actions>
                                         <action id="-3" name="Create object" sid="7709592231079044" type="System">
                                             <param id="0" name="Object to create">entryIndicator</param>
-                                            <param id="1" name="Layer">&quot;effect&quot;</param>
-                                            <param id="2" name="X">x+48</param>
-                                            <param id="3" name="Y">y-48</param>
+                                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                                            <param id="2" name="X">x+36</param>
+                                            <param id="3" name="Y">y-36</param>
                                         </action>
                                     </actions>
                                 </event-block>

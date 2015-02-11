@@ -24,21 +24,28 @@
                 <condition id="-2" name="On start of layout" sid="8104081229085519" type="System" />
             </conditions>
             <actions>
+                <action id="0" name="Call function" sid="2406653907151949" type="Function">
+                    <param id="0" name="Name">&quot;SetGroupActive&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;stageView&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="4261842742774352" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
                 <action id="5" name="Set web font" sid="6168750104164535" type="stageInfoText">
                     <param id="0" name="Family name">&quot;jua&quot;</param>
                     <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                 </action>
                 <action id="-9" name="Set value" sid="8082899629088252" type="System">
                     <param id="0" name="Variable">leftPoint</param>
-                    <param id="1" name="Value">-ViewportRight(0)/2</param>
+                    <param id="1" name="Value">-(ViewportLeft(0)+ViewportRight(0))/2</param>
                 </action>
                 <action id="-9" name="Set value" sid="5772145743018752" type="System">
                     <param id="0" name="Variable">middlePoint</param>
-                    <param id="1" name="Value">ViewportRight(0)/2</param>
+                    <param id="1" name="Value">(ViewportLeft(0)+ViewportRight(0))/2</param>
                 </action>
                 <action id="-9" name="Set value" sid="6078615463566416" type="System">
                     <param id="0" name="Variable">rightPoint</param>
-                    <param id="1" name="Value">ViewportRight(0)/2*3</param>
+                    <param id="1" name="Value">(ViewportLeft(0)+ViewportRight(0))/2*3</param>
                 </action>
                 <action id="0" name="Call function" sid="6064920682009722" type="Function">
                     <param id="0" name="Name">&quot;stageNameDBInit&quot;</param>
@@ -79,6 +86,12 @@
                     <param id="0" name="X">self.X+powerupIndicatorX</param>
                     <param id="1" name="Y">self.Y+powerupIndicatorY</param>
                 </action>
+                <action behavior="Anchor" id="0" name="Set enabled" sid="2862168153249911" type="henCage">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Anchor" id="0" name="Set enabled" sid="9598708390916611" type="powerupHUD">
+                    <param id="0" name="State">1</param>
+                </action>
                 <action id="-3" name="Create object" sid="6272669490794074" type="System">
                     <param id="0" name="Object to create">henCage</param>
                     <param id="1" name="Layer">&quot;hud&quot;</param>
@@ -99,6 +112,12 @@
                 <action id="-3" name="Set position" sid="8336773860163263" type="powerupHUD">
                     <param id="0" name="X">self.X+powerupIndicatorX</param>
                     <param id="1" name="Y">self.Y+powerupIndicatorY</param>
+                </action>
+                <action behavior="Anchor" id="0" name="Set enabled" sid="6448080391243625" type="henCage">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Anchor" id="0" name="Set enabled" sid="3096913443355949" type="powerupHUD">
+                    <param id="0" name="State">1</param>
                 </action>
                 <action id="-3" name="Create object" sid="7752786067068467" type="System">
                     <param id="0" name="Object to create">henCage</param>
@@ -121,13 +140,19 @@
                     <param id="0" name="X">self.X+powerupIndicatorX</param>
                     <param id="1" name="Y">self.Y+powerupIndicatorY</param>
                 </action>
+                <action behavior="Anchor" id="0" name="Set enabled" sid="5322482316779161" type="henCage">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Anchor" id="0" name="Set enabled" sid="2711001231404048" type="powerupHUD">
+                    <param id="0" name="State">1</param>
+                </action>
                 <action id="-24" name="Move to top" sid="4553084560145742" type="skyLeftCover" />
                 <action id="-24" name="Move to top" sid="5578123919375276" type="skyRightCover" />
                 <action id="6" name="Stop" sid="7252452686026915" type="Audio">
                     <param id="0" name="Tag">&quot;bgm&quot;</param>
                 </action>
-                <action id="0" name="Play" sid="9588644806519086" type="Audio">
-                    <param id="0" name="Audio file">stageView2</param>
+                <action id="0" name="Play" sid="8815364963856827" type="Audio">
+                    <param id="0" name="Audio file">stageView</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
@@ -344,7 +369,7 @@
                             <param id="0" name="Object to create">stageMapChap</param>
                             <param id="1" name="Layer">&quot;bg&quot;</param>
                             <param id="2" name="X">middlePoint</param>
-                            <param id="3" name="Y">ViewportBottom(0)/2</param>
+                            <param id="3" name="Y">(ViewportTop(0)+ViewportBottom(0))/2</param>
                         </action>
                         <action id="-16" name="Wait" sid="2865904148763015" type="System">
                             <param id="0" name="Seconds">0</param>
@@ -381,7 +406,7 @@
                             <param id="0" name="Object to create">stageMapChap</param>
                             <param id="1" name="Layer">&quot;bg&quot;</param>
                             <param id="2" name="X">middlePoint</param>
-                            <param id="3" name="Y">ViewportBottom(0)/2</param>
+                            <param id="3" name="Y">(ViewportTop(0)+ViewportBottom(0))/2</param>
                         </action>
                         <action id="-16" name="Wait" sid="422812437115967" type="System">
                             <param id="0" name="Seconds">0</param>

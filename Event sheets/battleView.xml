@@ -7,7 +7,7 @@
         <variable constant="0" name="stage" sid="6674997048701597" static="0" type="text">1_1</variable>
         <variable comment="stageGolemDB의 0번째 토큰" constant="0" name="food" sid="4418183236737158" static="0" type="number">0</variable>
         <variable comment="턴마다 1씩 증가" constant="0" name="turnCount" sid="671116988508257" static="0" type="number">1</variable>
-        <variable comment="동적 scaling" constant="0" name="scrollRate" sid="5994139726447165" static="0" type="number">0.05</variable>
+        <variable comment="동적 scaling" constant="0" name="scaleLerpRate" sid="5994139726447165" static="0" type="number">0.05</variable>
         <comment>닭 종류. 알이랑 닭 모두 01a/01b/...으로 통일. 골렘도 같다.</comment>
         <comment>전 시트에서 henList에서 토큰 읽고 따로 떼어서, henType은 여기 넣고 upgrade 상태도 여기 넣은 후 henButton에 넣기</comment>
         <variable constant="0" name="henSelected" sid="2194517620432025" static="0" type="text"></variable>
@@ -50,14 +50,21 @@
                 <action id="-3" name="Create object" sid="7903410175042246" type="System">
                     <param id="0" name="Object to create">skyLeftCover</param>
                     <param id="1" name="Layer">&quot;hud&quot;</param>
-                    <param id="2" name="X">ViewportRight(&quot;hud&quot;)/2</param>
-                    <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
                 </action>
                 <action id="-3" name="Create object" sid="658916617299127" type="System">
                     <param id="0" name="Object to create">skyRightCover</param>
                     <param id="1" name="Layer">&quot;hud&quot;</param>
-                    <param id="2" name="X">ViewportRight(&quot;hud&quot;)/2</param>
-                    <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
+                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
+                </action>
+                <action id="0" name="Call function" sid="8111986708484133" type="Function">
+                    <param id="0" name="Name">&quot;SetGroupActive&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;battleView&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="2592755419902297" type="System">
+                    <param id="0" name="Seconds">0</param>
                 </action>
                 <action id="5" name="Set web font" sid="7304233392096089" type="foodText">
                     <param id="0" name="Family name">&quot;jua&quot;</param>
@@ -79,7 +86,7 @@
                     <param id="0" name="Variable">turnCount</param>
                     <param id="1" name="Value">1</param>
                 </action>
-                <action id="0" name="Call function" sid="3710590940936069" type="Function">
+                <action disabled="1" id="0" name="Call function" sid="3710590940936069" type="Function">
                     <param id="0" name="Name">&quot;battleViewLayerScaleReset&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
@@ -117,8 +124,8 @@
                 <action id="6" name="Stop" sid="7268624510931513" type="Audio">
                     <param id="0" name="Tag">&quot;bgm&quot;</param>
                 </action>
-                <action id="0" name="Play" sid="4926553307167294" type="Audio">
-                    <param id="0" name="Audio file">battleView2</param>
+                <action id="0" name="Play" sid="8121238337652505" type="Audio">
+                    <param id="0" name="Audio file">battleView</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
@@ -263,12 +270,6 @@
                                     <param id="0" name="Name">&quot;poisonDealsDamage&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
-                                <action id="0" name="Play" sid="4295355421831739" type="Audio">
-                                    <param id="0" name="Audio file">turnOverTicktick</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
                                 <action id="-16" name="Wait" sid="724939789541473" type="System">
                                     <param id="0" name="Seconds">0</param>
                                 </action>
@@ -284,6 +285,12 @@
                                 <action id="5" name="Set web font" sid="1811466165598448" type="turnText">
                                     <param id="0" name="Family name">&quot;jua&quot;</param>
                                     <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="6577916948711246" type="Audio">
+                                    <param id="0" name="Audio file">turnOverTicktick</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="359202178077101" type="System">
                                     <param id="0" name="Variable">gameState</param>
@@ -385,27 +392,9 @@
                 <event-block sid="4433696522056398">
                     <conditions />
                     <actions>
-                        <action id="-1" name="Set X" sid="6575126465797068" type="focus">
-                            <param id="0" name="X">lerp(self.X,ViewportRight(0)/2,scrollRate)</param>
-                        </action>
-                        <action id="-2" name="Set Y" sid="9464142537907541" type="focus">
-                            <param id="0" name="Y">lerp(self.Y,ViewportBottom(0)/2,scrollRate)</param>
-                        </action>
-                        <action id="-17" name="Set layer scale" sid="143195561450013" type="System">
-                            <param id="0" name="Layer">&quot;backBg&quot;</param>
-                            <param id="1" name="Scale">lerp(LayerScale(&quot;backBg&quot;),1,scrollRate)</param>
-                        </action>
-                        <action id="-17" name="Set layer scale" sid="6358563191802717" type="System">
-                            <param id="0" name="Layer">&quot;frontBg&quot;</param>
-                            <param id="1" name="Scale">lerp(LayerScale(&quot;frontBg&quot;),1,scrollRate)</param>
-                        </action>
-                        <action id="-17" name="Set layer scale" sid="2078835173605402" type="System">
-                            <param id="0" name="Layer">&quot;golem&quot;</param>
-                            <param id="1" name="Scale">lerp(LayerScale(&quot;golem&quot;),1,scrollRate)</param>
-                        </action>
-                        <action id="-17" name="Set layer scale" sid="4429226783735366" type="System">
-                            <param id="0" name="Layer">&quot;effect&quot;</param>
-                            <param id="1" name="Scale">lerp(LayerScale(&quot;effect&quot;),1,scrollRate)</param>
+                        <action id="0" name="Call function" sid="7110224542697411" type="Function">
+                            <param id="0" name="Name">&quot;battleViewLayerScrollBack&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -555,7 +544,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <variable constant="0" name="scaleRate" sid="3266546075561834" static="1" type="number">0</variable>
+                <variable constant="0" name="scaleRateByEgg" sid="3266546075561834" static="1" type="number">1</variable>
                 <comment>알이 날아가는 동안 동적 scaling, 충돌시 kind에 따라서 다른 기작.</comment>
                 <event-block sid="5197510167084536">
                     <conditions>
@@ -566,37 +555,46 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="9645735465458937" type="System">
-                            <param id="0" name="Variable">scaleRate</param>
-                            <param id="1" name="Value">(eggBullet.Y/10+720)/1280</param>
+                        <action disabled="1" id="-9" name="Set value" sid="9645735465458937" type="System">
+                            <param id="0" name="Variable">scaleRateByEgg</param>
+                            <param id="1" name="Value">(1280-eggBullet.Y/4)/1280</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="6326236378896235" type="System">
+                        <action disabled="1" id="-17" name="Set layer scale" sid="6326236378896235" type="System">
                             <param id="0" name="Layer">&quot;backBg&quot;</param>
-                            <param id="1" name="Scale">scaleRate</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;backBg&quot;),scaleRateByEgg,scaleLerpRate)</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="3903761187260222" type="System">
+                        <action disabled="1" id="-17" name="Set layer scale" sid="3903761187260222" type="System">
                             <param id="0" name="Layer">&quot;frontBg&quot;</param>
-                            <param id="1" name="Scale">scaleRate</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;frontBg&quot;),scaleRateByEgg,scaleLerpRate)</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="791857535122861" type="System">
+                        <action disabled="1" id="-17" name="Set layer scale" sid="791857535122861" type="System">
                             <param id="0" name="Layer">&quot;golem&quot;</param>
-                            <param id="1" name="Scale">scaleRate</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;golem&quot;),scaleRateByEgg,scaleLerpRate)</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="6114104831483873" type="System">
+                        <action disabled="1" id="-17" name="Set layer scale" sid="6114104831483873" type="System">
                             <param id="0" name="Layer">&quot;effect&quot;</param>
-                            <param id="1" name="Scale">scaleRate</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;effect&quot;),scaleRateByEgg,scaleLerpRate)</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="2173170722995933" type="focus">
+                            <param id="0" name="Y">(eggBullet.Y*3+(ViewportBottom(&quot;hud&quot;)+ViewportTop(&quot;hud&quot;))/2)/4</param>
                         </action>
                     </actions>
                     <sub-events>
                         <comment>알이 화면 밖을 벗어나면 텔레포트</comment>
+                        <variable constant="0" name="eggLerpRate" sid="3371866763539894" static="0" type="number">0.25</variable>
+                        <variable constant="0" name="groundCollidesAtY" sid="916654319569024" static="1" type="number">0</variable>
                         <event-block sid="5533874764932308">
                             <conditions>
-                                <condition id="-3" inverted="1" name="Is on-screen" sid="3872263448130862" type="eggBullet" />
+                                <condition id="-4" name="Is outside layout" sid="3872263448130862" type="eggBullet" />
                                 <condition id="-4" name="Trigger once while true" sid="6468475499288316" type="System" />
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="1355829300060452" type="System">
+                                    <param id="0" name="Variable">groundCollidesAtY</param>
+                                    <param id="1" name="Value">Function.Call(&quot;launchLineYSet&quot;,eggBullet.targetY)</param>
+                                </action>
                                 <action id="-16" name="Wait" sid="5719331381967009" type="System">
-                                    <param id="0" name="Seconds">1.0</param>
+                                    <param id="0" name="Seconds">1.5</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -741,7 +739,7 @@
                             <conditions>
                                 <condition id="-2" name="Compare Y" sid="365556949268466" type="eggBullet">
                                     <param id="0" name="Comparison">5</param>
-                                    <param id="1" name="Y co-ordinate">Function.Call(&quot;launchLineYSet&quot;,eggBullet.targetY)</param>
+                                    <param id="1" name="Y co-ordinate">groundCollidesAtY</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -766,6 +764,25 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>알 깨지고 나면 원래대로</comment>
+                <event-block sid="9288597990711929">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9139931054793749" type="System">
+                            <param id="0" name="First value">eggBullet.Count</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="0" name="Call function" sid="3757106600179861" type="Function">
+                            <param id="0" name="Name">&quot;battleViewLayerScrollBack&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="2741998652923665" type="focus">
+                            <param id="0" name="Y">lerp(self.Y,(ViewportBottom(&quot;hud&quot;)+ViewportTop(&quot;hud&quot;))/2,scaleLerpRate)</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
         <comment>state3 은 끝난거 아니면 그냥 턴카운트+1, aim해제하고 eating상태 turn+1, 골렘이동.</comment>
@@ -777,7 +794,15 @@
                     <param id="2" name="Value">3</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action disabled="1" id="0" name="Call function" sid="7653958388104778" type="Function">
+                    <param id="0" name="Name">&quot;battleViewLayerScrollBack&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-2" name="Set Y" sid="8738901212169215" type="focus">
+                    <param id="0" name="Y">lerp(self.Y,(ViewportBottom(&quot;hud&quot;)+ViewportTop(&quot;hud&quot;))/2,scaleLerpRate)</param>
+                </action>
+            </actions>
             <sub-events>
                 <event-block sid="2445677912319106">
                     <conditions>
@@ -809,12 +834,6 @@
                                 </action>
                                 <action id="6" name="Stop" sid="9523170741905331" type="Audio">
                                     <param id="0" name="Tag">&quot;bgm&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="2187288021831389" type="Audio">
-                                    <param id="0" name="Audio file">battleWin</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -917,6 +936,12 @@
                                                 <action id="5" name="Set web font" sid="1734768405099478" type="turnText">
                                                     <param id="0" name="Family name">&quot;jua&quot;</param>
                                                     <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="7604559368032906" type="Audio">
+                                                    <param id="0" name="Audio file">battleWin</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="6130925871506581" type="System">
                                                     <param id="0" name="Seconds">5</param>
@@ -1080,6 +1105,12 @@
                         <action id="6" name="Stop" sid="7171991829252785" type="Audio">
                             <param id="0" name="Tag">&quot;bgm&quot;</param>
                         </action>
+                        <action id="0" name="Play" sid="3578928752502844" type="Audio">
+                            <param id="0" name="Audio file">battleLose</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action id="-3" name="Create object" sid="9300152071853948" type="System">
                             <param id="0" name="Object to create">turnText</param>
                             <param id="1" name="Layer">&quot;hud&quot;</param>
@@ -1087,7 +1118,7 @@
                             <param id="3" name="Y">ViewportBottom(&quot;hud&quot;)/2</param>
                         </action>
                         <action behavior="Fade" id="3" name="Set wait time" sid="5695767622246263" type="turnText">
-                            <param id="0" name="Wait time">3</param>
+                            <param id="0" name="Wait time">4</param>
                         </action>
                         <action id="0" name="Set text" sid="9025137062099726" type="turnText">
                             <param id="0" name="Text">&quot;Stage Failed!&quot;</param>
@@ -1097,16 +1128,7 @@
                             <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                         </action>
                         <action id="-16" name="Wait" sid="3247790413369558" type="System">
-                            <param id="0" name="Seconds">1</param>
-                        </action>
-                        <action id="0" name="Play" sid="4883306064349298" type="Audio">
-                            <param id="0" name="Audio file">battleLose</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+5</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="6875050856163885" type="System">
-                            <param id="0" name="Seconds">2.5</param>
+                            <param id="0" name="Seconds">5</param>
                         </action>
                         <action id="-2" name="Go to layout" sid="4788577622756026" type="System">
                             <param id="0" name="Layout">stageView</param>
@@ -1115,21 +1137,5 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group description="" sid="1785241180238617" title="Visuality">
-            <sub-events>
-                <comment>돌들 파괴</comment>
-                <event-block sid="7419827461072852">
-                    <conditions>
-                        <condition id="-2" name="Compare Y" sid="6389993004687891" type="golemDestroyEffect">
-                            <param id="0" name="Comparison">5</param>
-                            <param id="1" name="Y co-ordinate">Function.Call(&quot;launchLineYSet&quot;,self.golemY)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="9494943854058005" type="golemDestroyEffect" />
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
     </events>
 </c2eventsheet>

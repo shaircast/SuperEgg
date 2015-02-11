@@ -9,27 +9,45 @@
                 <condition id="-2" name="On start of layout" sid="5980368405417701" type="System" />
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="200316924085124" type="Function">
-                    <param id="0" name="Name">&quot;henDBInit&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
+                <action id="0" name="Call function" sid="7759312065561914" type="Function">
+                    <param id="0" name="Name">&quot;SetGroupActive&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;OPENING INIT&quot;</param>
                 </action>
-                <action id="0" name="Call function" sid="8587865222754586" type="Function">
-                    <param id="0" name="Name">&quot;stageGolemDBInit&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-                <action id="0" name="Call function" sid="1034672320744939" type="Function">
-                    <param id="0" name="Name">&quot;golemDBInit&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-                <action id="0" name="Call function" sid="6505130547001485" type="Function">
-                    <param id="0" name="Name">&quot;stageNameDBInit&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-                <action id="10" name="Request fullscreen" sid="8372771980019694" type="Browser">
-                    <param id="0" name="Mode">3</param>
+                <action id="-16" name="Wait" sid="9895037538262008" type="System">
+                    <param id="0" name="Seconds">0</param>
                 </action>
             </actions>
             <sub-events>
+                <event-block sid="5026051870691951">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Call function" sid="200316924085124" type="Function">
+                            <param id="0" name="Name">&quot;henDBInit&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="8587865222754586" type="Function">
+                            <param id="0" name="Name">&quot;stageGolemDBInit&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="1034672320744939" type="Function">
+                            <param id="0" name="Name">&quot;golemDBInit&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="6505130547001485" type="Function">
+                            <param id="0" name="Name">&quot;stageNameDBInit&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="10" name="Request fullscreen" sid="8372771980019694" type="Browser">
+                            <param id="0" name="Mode">3</param>
+                        </action>
+                        <action id="0" name="Play" sid="3249641608266469" type="Audio">
+                            <param id="0" name="Audio file">opening</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="5586964364831085">
                     <conditions>
                         <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="764536671246715" type="WebStorage">
@@ -84,17 +102,6 @@
                         <action id="0" name="Set local value" sid="20299140455983" type="WebStorage">
                             <param id="0" name="Key">&quot;vibrate&quot;</param>
                             <param id="1" name="Value">&quot;1&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="4585502503565729">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Play" sid="775278736653529" type="Audio">
-                            <param id="0" name="Audio file">opening2</param>
-                            <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">int(WebStorage.LocalValue(&quot;music&quot;))</param>
-                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
                         </action>
                     </actions>
                 </event-block>

@@ -19,6 +19,13 @@
                 <condition id="-2" name="On start of layout" sid="1853205482628116" type="System" />
             </conditions>
             <actions>
+                <action id="0" name="Call function" sid="274911720932635" type="Function">
+                    <param id="0" name="Name">&quot;SetGroupActive&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;cageView&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="1948706841817988" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
                 <action id="5" name="Set web font" sid="7563081717835034" type="atkText">
                     <param id="0" name="Family name">&quot;jua&quot;</param>
                     <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
@@ -78,10 +85,10 @@
                 <action id="6" name="Stop" sid="5793928719191954" type="Audio">
                     <param id="0" name="Tag">&quot;bgm&quot;</param>
                 </action>
-                <action id="0" name="Play" sid="6101864994988934" type="Audio">
-                    <param id="0" name="Audio file">cageView2</param>
+                <action id="0" name="Play" sid="2310874006356677" type="Audio">
+                    <param id="0" name="Audio file">cageView</param>
                     <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))-5</param>
+                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
                 </action>
             </actions>
@@ -155,12 +162,6 @@
                     <param id="0" name="Name">&quot;touchCageViewModeButton&quot;</param>
                     <param id="1" name="Parameter {n}">0</param>
                 </action>
-                <action id="0" name="Play" sid="7282063680424517" type="Audio">
-                    <param id="0" name="Audio file">henCageMode</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))-5</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
             </actions>
         </event-block>
         <event-block sid="9106691444107838">
@@ -174,12 +175,6 @@
                     <param id="0" name="Name">&quot;touchCageViewModeButton&quot;</param>
                     <param id="1" name="Parameter {n}">1</param>
                 </action>
-                <action id="0" name="Play" sid="5927736861641078" type="Audio">
-                    <param id="0" name="Audio file">henCageMode</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))-5</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
             </actions>
         </event-block>
         <event-block sid="3362237701084624">
@@ -192,12 +187,6 @@
                 <action id="0" name="Call function" sid="7737805076865489" type="Function">
                     <param id="0" name="Name">&quot;touchCageViewModeButton&quot;</param>
                     <param id="1" name="Parameter {n}">2</param>
-                </action>
-                <action id="0" name="Play" sid="8224048932179249" type="Audio">
-                    <param id="0" name="Audio file">henCageMode</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))-5</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
             </actions>
         </event-block>

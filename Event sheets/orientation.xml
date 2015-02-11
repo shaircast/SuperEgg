@@ -5,17 +5,20 @@
     <events>
         <event-block sid="9651244264892679">
             <conditions>
-                <condition id="-1" name="Every tick" sid="9150771652485473" type="System" />
+                <condition id="-18" name="Is in preview" sid="9150771652485473" type="System" />
             </conditions>
             <actions>
                 <action id="0" name="Set text" sid="3761221265527116" type="alpha">
-                    <param id="0" name="Text">Touch.Alpha</param>
+                    <param id="0" name="Text">int(Touch.Alpha)&amp;&quot;,&quot;&amp;int(Touch.AccelerationXWithG)&amp;&quot;,&quot;&amp;WindowWidth</param>
                 </action>
                 <action id="0" name="Set text" sid="4810910487975839" type="beta">
-                    <param id="0" name="Text">Touch.Beta</param>
+                    <param id="0" name="Text">int(Touch.Beta)&amp;&quot;,&quot;&amp;int(Touch.AccelerationYWithG)&amp;&quot;,&quot;&amp;WindowHeight</param>
                 </action>
                 <action id="0" name="Set text" sid="2628586889800418" type="gamma">
-                    <param id="0" name="Text">Touch.Gamma</param>
+                    <param id="0" name="Text">int(Touch.Gamma)&amp;&quot;,&quot;&amp;int(Touch.AccelerationZWithG)</param>
+                </action>
+                <action id="0" name="Set text" sid="3455023388396399" type="Text2">
+                    <param id="0" name="Text">int(mouse.X)&amp;&quot; &quot;&amp;int(Mouse.Y)</param>
                 </action>
             </actions>
         </event-block>
@@ -26,12 +29,35 @@
                     <param id="1" name="Comparison">4</param>
                     <param id="2" name="Second value">0</param>
                 </condition>
+                <condition id="-4" name="Trigger once while true" sid="9254160916005191" type="System" />
             </conditions>
-            <actions>
-                <action id="18" name="Lock orientation" sid="1143234550954371" type="Browser">
-                    <param id="0" name="Orientation">5</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="5363193251420609">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2282799277201331" type="System">
+                            <param id="0" name="First value">Touch.AccelerationZWithG</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="18" name="Lock orientation" sid="1143234550954371" type="Browser">
+                            <param id="0" name="Orientation">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6963619054510702">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="6515079295013125" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="18" name="Lock orientation" sid="679809899319657" type="Browser">
+                            <param id="0" name="Orientation">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="8052651345565197">
             <conditions>
@@ -40,10 +66,46 @@
                     <param id="1" name="Comparison">3</param>
                     <param id="2" name="Second value">0</param>
                 </condition>
+                <condition id="-4" name="Trigger once while true" sid="9649706287925989" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1301248286259094">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9049993093107554" type="System">
+                            <param id="0" name="First value">Touch.AccelerationZWithG</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="18" name="Lock orientation" sid="378266881562701" type="Browser">
+                            <param id="0" name="Orientation">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="879683092975503">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="9534871614684953" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="18" name="Lock orientation" sid="6395948310720175" type="Browser">
+                            <param id="0" name="Orientation">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2051457413045695">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="72825977746074" type="System" />
             </conditions>
             <actions>
-                <action id="18" name="Lock orientation" sid="378266881562701" type="Browser">
-                    <param id="0" name="Orientation">4</param>
+                <action id="-3" name="Create object" sid="9036023539654192" type="System">
+                    <param id="0" name="Object to create">Text2</param>
+                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                    <param id="2" name="X">50</param>
+                    <param id="3" name="Y">50</param>
                 </action>
             </actions>
         </event-block>
