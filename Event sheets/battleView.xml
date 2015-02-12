@@ -63,6 +63,10 @@
                     <param id="0" name="Name">&quot;SetGroupActive&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;battleView&quot;</param>
                 </action>
+                <action id="-9" name="Set value" sid="1069885727262216" type="System">
+                    <param id="0" name="Variable">gameState</param>
+                    <param id="1" name="Value">0</param>
+                </action>
                 <action id="-16" name="Wait" sid="2592755419902297" type="System">
                     <param id="0" name="Seconds">0</param>
                 </action>
@@ -77,10 +81,6 @@
                 <action behavior="MoveTo" id="8" name="Move to distance-angle" sid="3216778921422777" type="skyRightCover">
                     <param id="0" name="Distance">self.Width</param>
                     <param id="1" name="Angle">0</param>
-                </action>
-                <action id="-9" name="Set value" sid="1069885727262216" type="System">
-                    <param id="0" name="Variable">gameState</param>
-                    <param id="1" name="Value">0</param>
                 </action>
                 <action id="-9" name="Set value" sid="7165514771837842" type="System">
                     <param id="0" name="Variable">turnCount</param>

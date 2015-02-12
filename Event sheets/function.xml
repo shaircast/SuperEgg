@@ -63,7 +63,7 @@
                             <actions>
                                 <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
                                     <param id="0" name="Key">&quot;henList&quot;</param>
-                                    <param id="1" name="Value">&quot;01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/09d00/10d00/11d00/12d00/01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/09d00/10d00/11d00/12d00/01a10/02a00/03c00/04d00/05d00/06d00/07d00/08d00/&quot;</param>
+                                    <param id="1" name="Value">&quot;01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10a09/11a10/12a11/01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10a09/11a10/12a11/&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
                                     <param id="0" name="Key">&quot;chapter&quot;</param>
@@ -812,6 +812,9 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="6" name="Set speed" sid="8720379039241101" type="henButton">
+                                    <param id="0" name="Speed">random(1.5,3)</param>
+                                </action>
                                 <action id="0" name="Spawn another object" sid="6181682496591287" type="henButton">
                                     <param id="0" name="Object">iconFood</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
