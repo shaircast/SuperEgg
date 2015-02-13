@@ -10,16 +10,17 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">opening</layout>
-        <layout order="1">stageView</layout>
-        <layout order="2">battleView</layout>
+        <layout order="0">opening</layout>
+        <layout order="4">stageView</layout>
+        <layout order="1">battleView</layout>
         <layout order="3">optionView</layout>
-        <layout order="4">cageView</layout>
-        <layout order="5">sprites</layout>
+        <layout active="1" order="2">sprites</layout>
+        <layout order="7">cageView</layout>
+        <event-sheet order="5">stageView</event-sheet>
         <event-sheet order="6">cageView</event-sheet>
-        <event-sheet order="7">stageView</event-sheet>
         <event-sheet order="8">function</event-sheet>
         <event-sheet order="9">battleView</event-sheet>
+        <event-sheet order="10">general</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -33,17 +34,17 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/plugin/" />
-        <folder expanded="1" path="object-folder/battleView/" />
+        <folder expanded="0" path="object-folder/battleView/" />
         <folder expanded="0" path="object-folder/battleView/hud/" />
         <folder expanded="0" path="object-folder/battleView/golem/" />
         <folder expanded="0" path="object-folder/battleView/eggExplode/" />
-        <folder expanded="0" path="object-folder/battleView/bgDeco/" />
-        <folder expanded="1" path="object-folder/battleView/henButton/" />
+        <folder expanded="1" path="object-folder/battleView/bgDeco/" />
+        <folder expanded="0" path="object-folder/battleView/henButton/" />
         <folder expanded="0" path="object-folder/DBDic/" />
         <folder expanded="0" path="object-folder/stageView/" />
         <folder expanded="0" path="object-folder/menuButton/" />
-        <folder expanded="0" path="object-folder/cageView/" />
-        <folder expanded="0" path="object-folder/cageView/textbox/" />
+        <folder expanded="1" path="object-folder/cageView/" />
+        <folder expanded="1" path="object-folder/cageView/textbox/" />
         <folder expanded="0" path="object-folder/cageView/modeButton/" />
         <folder expanded="0" path="object-folder/opening/" />
         <folder expanded="0" path="object-folder/icon/" />
@@ -140,6 +141,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/cageSelection/" />
         <folder expanded="1" path="animation-folder/cageViewOkButton/" />
         <folder expanded="1" path="animation-folder/entryIndicator/" />
+        <folder expanded="1" path="animation-folder/cageViewHome/" />
+        <folder expanded="1" path="animation-folder/cageViewCloud/" />
         <folder expanded="1" path="animation-folder/openingSprite/" />
         <folder expanded="1" path="animation-folder/iconAtk/" />
         <folder expanded="1" path="animation-folder/iconCoin/" />

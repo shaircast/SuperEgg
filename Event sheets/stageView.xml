@@ -65,99 +65,145 @@
                     <param id="1" name="ImagePoint">&quot;RightChap&quot;</param>
                     <param id="2" name="Mode">0</param>
                 </action>
-                <action id="-3" name="Create object" sid="3834142274892526" type="System">
-                    <param id="0" name="Object to create">henCage</param>
-                    <param id="1" name="Layer">&quot;hud&quot;</param>
-                    <param id="2" name="X">stageSummary.X</param>
-                    <param id="3" name="Y">stageSummary.Y</param>
-                </action>
-                <action id="5" name="Set web font" sid="2999934957796364" type="powerupHUD">
-                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                </action>
-                <action id="4" name="Set animation" sid="5626996461535547" type="henCage">
-                    <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),3)</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="0" name="Set text" sid="6555446567233153" type="powerupHUD">
-                    <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),2)</param>
-                </action>
-                <action id="-3" name="Set position" sid="5264686435086937" type="powerupHUD">
-                    <param id="0" name="X">self.X+powerupIndicatorX</param>
-                    <param id="1" name="Y">self.Y+powerupIndicatorY</param>
-                </action>
-                <action behavior="Anchor" id="0" name="Set enabled" sid="2862168153249911" type="henCage">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action behavior="Anchor" id="0" name="Set enabled" sid="9598708390916611" type="powerupHUD">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action id="-3" name="Create object" sid="6272669490794074" type="System">
-                    <param id="0" name="Object to create">henCage</param>
-                    <param id="1" name="Layer">&quot;hud&quot;</param>
-                    <param id="2" name="X">stageSummary.X+200</param>
-                    <param id="3" name="Y">stageSummary.Y</param>
-                </action>
-                <action id="5" name="Set web font" sid="4800383455412194" type="powerupHUD">
-                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                </action>
-                <action id="4" name="Set animation" sid="5409382884867526" type="henCage">
-                    <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),3)</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="0" name="Set text" sid="8244738681631958" type="powerupHUD">
-                    <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),2)</param>
-                </action>
-                <action id="-3" name="Set position" sid="8336773860163263" type="powerupHUD">
-                    <param id="0" name="X">self.X+powerupIndicatorX</param>
-                    <param id="1" name="Y">self.Y+powerupIndicatorY</param>
-                </action>
-                <action behavior="Anchor" id="0" name="Set enabled" sid="6448080391243625" type="henCage">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action behavior="Anchor" id="0" name="Set enabled" sid="3096913443355949" type="powerupHUD">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action id="-3" name="Create object" sid="7752786067068467" type="System">
-                    <param id="0" name="Object to create">henCage</param>
-                    <param id="1" name="Layer">&quot;hud&quot;</param>
-                    <param id="2" name="X">stageSummary.X+400</param>
-                    <param id="3" name="Y">stageSummary.Y</param>
-                </action>
-                <action id="5" name="Set web font" sid="2621345948070441" type="powerupHUD">
-                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                </action>
-                <action id="4" name="Set animation" sid="5115091551453503" type="henCage">
-                    <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),3)</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="0" name="Set text" sid="2200641251314394" type="powerupHUD">
-                    <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),2)</param>
-                </action>
-                <action id="-3" name="Set position" sid="7902554100564033" type="powerupHUD">
-                    <param id="0" name="X">self.X+powerupIndicatorX</param>
-                    <param id="1" name="Y">self.Y+powerupIndicatorY</param>
-                </action>
-                <action behavior="Anchor" id="0" name="Set enabled" sid="5322482316779161" type="henCage">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action behavior="Anchor" id="0" name="Set enabled" sid="2711001231404048" type="powerupHUD">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action id="-24" name="Move to top" sid="4553084560145742" type="skyLeftCover" />
-                <action id="-24" name="Move to top" sid="5578123919375276" type="skyRightCover" />
-                <action id="6" name="Stop" sid="7252452686026915" type="Audio">
-                    <param id="0" name="Tag">&quot;bgm&quot;</param>
-                </action>
-                <action id="0" name="Play" sid="8815364963856827" type="Audio">
-                    <param id="0" name="Audio file">stageView</param>
-                    <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
-                    <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
-                </action>
             </actions>
+            <sub-events>
+                <event-block sid="770215602023579">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="8939107076620353" type="henCage">
+                            <param id="0" name="Unique ID">133</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-3" name="Create object" sid="6190045976349169" type="System">
+                            <param id="0" name="Object to create">henCage</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                            <param id="2" name="X">stageSummary.ImagePointX(&quot;Entry1&quot;)</param>
+                            <param id="3" name="Y">stageSummary.ImagePointY(&quot;Entry1&quot;)</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="4428030474368838" type="powerupHUD">
+                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="5170188448726535" type="henCage">
+                            <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),3)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="1003121973845137" type="powerupHUD">
+                            <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),2)</param>
+                        </action>
+                        <action behavior="Anchor" id="0" name="Set enabled" sid="7907369366459323" type="henCage">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="917886731915791" type="powerupHUD">
+                            <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)+powerupIndicatorX</param>
+                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)+powerupIndicatorY</param>
+                        </action>
+                        <action id="0" name="Call function" sid="5399263660961733" type="Function">
+                            <param id="0" name="Name">&quot;powerupHUDColorPick&quot;</param>
+                            <param id="1" name="Parameter {n}">henCage.UID</param>
+                        </action>
+                        <action behavior="Anchor" id="0" name="Set enabled" sid="4723183337302696" type="powerupHUD">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3183660632377561">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="8397015384142384" type="henCage">
+                            <param id="0" name="Unique ID">134</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-3" name="Create object" sid="1840345232585821" type="System">
+                            <param id="0" name="Object to create">henCage</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                            <param id="2" name="X">stageSummary.ImagePointX(&quot;Entry2&quot;)</param>
+                            <param id="3" name="Y">stageSummary.ImagePointY(&quot;Entry2&quot;)</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="4048084003816442" type="powerupHUD">
+                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="2160799486226955" type="henCage">
+                            <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),3)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="2284822126224817" type="powerupHUD">
+                            <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),2)</param>
+                        </action>
+                        <action behavior="Anchor" id="0" name="Set enabled" sid="5479414366116965" type="henCage">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="7477134244706862" type="powerupHUD">
+                            <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)+powerupIndicatorX</param>
+                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)+powerupIndicatorY</param>
+                        </action>
+                        <action id="0" name="Call function" sid="6006832137826129" type="Function">
+                            <param id="0" name="Name">&quot;powerupHUDColorPick&quot;</param>
+                            <param id="1" name="Parameter {n}">henCage.UID</param>
+                        </action>
+                        <action behavior="Anchor" id="0" name="Set enabled" sid="188493870209864" type="powerupHUD">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6252716890939115">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="5656448083357854" type="henCage">
+                            <param id="0" name="Unique ID">135</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-3" name="Create object" sid="6929296922313758" type="System">
+                            <param id="0" name="Object to create">henCage</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                            <param id="2" name="X">stageSummary.ImagePointX(&quot;Entry3&quot;)</param>
+                            <param id="3" name="Y">stageSummary.ImagePointY(&quot;Entry3&quot;)</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="1078333775399014" type="powerupHUD">
+                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="602530592199792" type="henCage">
+                            <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),3)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="3939487497467056" type="powerupHUD">
+                            <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),2)</param>
+                        </action>
+                        <action behavior="Anchor" id="0" name="Set enabled" sid="8030780734289193" type="henCage">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="5010757062011038" type="powerupHUD">
+                            <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)+powerupIndicatorX</param>
+                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)+powerupIndicatorY</param>
+                        </action>
+                        <action id="0" name="Call function" sid="7326526173152828" type="Function">
+                            <param id="0" name="Name">&quot;powerupHUDColorPick&quot;</param>
+                            <param id="1" name="Parameter {n}">henCage.UID</param>
+                        </action>
+                        <action behavior="Anchor" id="0" name="Set enabled" sid="2885390931162377" type="powerupHUD">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6932237198665048">
+                    <conditions />
+                    <actions>
+                        <action id="-24" name="Move to top" sid="8084796665866679" type="skyLeftCover" />
+                        <action id="-24" name="Move to top" sid="5823330484106966" type="skyRightCover" />
+                        <action id="6" name="Stop" sid="4920948654970147" type="Audio">
+                            <param id="0" name="Tag">&quot;bgm&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="1359800542240915" type="Audio">
+                            <param id="0" name="Audio file">stageView</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="1234611659060571">
             <conditions>

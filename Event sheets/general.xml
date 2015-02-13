@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>orientation</name>
+    <name>general</name>
     <events>
         <event-block sid="9651244264892679">
             <conditions>
@@ -17,7 +17,7 @@
                 <action id="0" name="Set text" sid="2628586889800418" type="gamma">
                     <param id="0" name="Text">int(Touch.Gamma)&amp;&quot;,&quot;&amp;int(Touch.AccelerationZWithG)</param>
                 </action>
-                <action id="0" name="Set text" sid="3455023388396399" type="Text2">
+                <action disabled="1" id="0" name="Set text" sid="3455023388396399" type="Text2">
                     <param id="0" name="Text">int(mouse.X)&amp;&quot; &quot;&amp;int(Mouse.Y)</param>
                 </action>
             </actions>
@@ -106,6 +106,33 @@
                     <param id="1" name="Layer">&quot;hud&quot;</param>
                     <param id="2" name="X">50</param>
                     <param id="3" name="Y">50</param>
+                </action>
+                <action id="-34" name="Set layer background color" sid="1349496234790254" type="System">
+                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                    <param id="1" name="Color">rgb(0, 0, 0)</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="7838107808011212" type="System">
+                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+                <action id="-35" name="Set layer transparent" sid="3941169211647859" type="System">
+                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8624111914443111">
+            <conditions>
+                <condition id="-17" name="Compare opacity" sid="7135631366156247" type="System">
+                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Opacity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Set layer opacity" sid="7175916689260618" type="System">
+                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                    <param id="1" name="Opacity">LayerOpacity(&quot;fade&quot;)-200*dt</param>
                 </action>
             </actions>
         </event-block>

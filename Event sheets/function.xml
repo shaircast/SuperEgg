@@ -3,11 +3,88 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>function</name>
     <events>
-        <include>orientation</include>
-        <variable constant="0" name="powerupIndicatorX" sid="487664723975616" static="0" type="number">-36</variable>
-        <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">-50</variable>
+        <include>general</include>
+        <variable constant="0" name="powerupIndicatorX" sid="487664723975616" static="0" type="number">0</variable>
+        <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">-48</variable>
         <event-group description="" sid="3206342493633997" title="general">
             <sub-events>
+                <comment>powerupHUDColorPick(henCage.uid) : 해당 henCage의 powerupHUD에 type따라 색을 부여.</comment>
+                <event-block sid="8754752758490102">
+                    <conditions>
+                        <condition id="0" name="On function" sid="9756370452516177" type="Function">
+                            <param id="0" name="Name">&quot;powerupHUDColorPick&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2952791805358128">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="2838695037217573" type="henCage">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="4364264602460347">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="5820503394867167" type="System">
+                                            <param id="0" name="First value">right(henCage.AnimationName,1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;a&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="4934776799956" type="powerupHUD">
+                                            <param id="0" name="Color">rgb(200, 200, 200)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1612580935888937">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="8212575365906156" type="System">
+                                            <param id="0" name="First value">right(henCage.AnimationName,1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;b&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="5583338212049997" type="powerupHUD">
+                                            <param id="0" name="Color">rgb(200, 0, 0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7997538398337363">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="4982551990830356" type="System">
+                                            <param id="0" name="First value">right(henCage.AnimationName,1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;c&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="8140328343204188" type="powerupHUD">
+                                            <param id="0" name="Color">rgb(0, 0, 200)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2036702095685484">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="8021294621055507" type="System">
+                                            <param id="0" name="First value">right(henCage.AnimationName,1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;d&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="1615177213236743" type="powerupHUD">
+                                            <param id="0" name="Color">rgb(0, 200, 0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="5506097390536903">
                     <conditions>
                         <condition id="0" name="On function" sid="4282919050382882" type="Function">
@@ -63,7 +140,7 @@
                             <actions>
                                 <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
                                     <param id="0" name="Key">&quot;henList&quot;</param>
-                                    <param id="1" name="Value">&quot;01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10a09/11a10/12a11/01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10a09/11a10/12a11/&quot;</param>
+                                    <param id="1" name="Value">&quot;01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10a09/11a10/12a11/01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10b09/11c10/12d11/&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
                                     <param id="0" name="Key">&quot;chapter&quot;</param>
@@ -334,37 +411,149 @@
                         <event-block sid="4349662757955595">
                             <conditions />
                             <actions>
-                                <action id="0" name="Add key" sid="2431648390305367" type="golemDB">
+                                <action id="0" name="Add key" sid="1285599719285674" type="golemDB">
                                     <param id="0" name="Key">&quot;01hp&quot;</param>
                                     <param id="1" name="Value">3</param>
                                 </action>
-                                <action id="0" name="Add key" sid="6163572428668964" type="golemDB">
+                                <action id="0" name="Add key" sid="1841525570128168" type="golemDB">
                                     <param id="0" name="Key">&quot;01atk&quot;</param>
                                     <param id="1" name="Value">2</param>
                                 </action>
-                                <action id="0" name="Add key" sid="3896135499716034" type="golemDB">
+                                <action id="0" name="Add key" sid="5270351669574313" type="golemDB">
                                     <param id="0" name="Key">&quot;01speed&quot;</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="0" name="Add key" sid="2243036055144637" type="golemDB">
+                                <action id="0" name="Add key" sid="7005888120938667" type="golemDB">
                                     <param id="0" name="Key">&quot;01reward&quot;</param>
                                     <param id="1" name="Value">10</param>
                                 </action>
-                                <action id="0" name="Add key" sid="6239028996706786" type="golemDB">
+                                <action id="0" name="Add key" sid="6502909702265766" type="golemDB">
                                     <param id="0" name="Key">&quot;02hp&quot;</param>
-                                    <param id="1" name="Value">5</param>
+                                    <param id="1" name="Value">2</param>
                                 </action>
-                                <action id="0" name="Add key" sid="4293525849335817" type="golemDB">
+                                <action id="0" name="Add key" sid="1226391692943638" type="golemDB">
                                     <param id="0" name="Key">&quot;02atk&quot;</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="0" name="Add key" sid="7483641737112484" type="golemDB">
+                                <action id="0" name="Add key" sid="120385204111399" type="golemDB">
                                     <param id="0" name="Key">&quot;02speed&quot;</param>
                                     <param id="1" name="Value">2</param>
                                 </action>
-                                <action id="0" name="Add key" sid="287816781400589" type="golemDB">
+                                <action id="0" name="Add key" sid="4874432580362756" type="golemDB">
                                     <param id="0" name="Key">&quot;02reward&quot;</param>
-                                    <param id="1" name="Value">50</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="0" name="Add key" sid="928311241698164" type="golemDB">
+                                    <param id="0" name="Key">&quot;03hp&quot;</param>
+                                    <param id="1" name="Value">6</param>
+                                </action>
+                                <action id="0" name="Add key" sid="2268060435706582" type="golemDB">
+                                    <param id="0" name="Key">&quot;03atk&quot;</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="0" name="Add key" sid="2602383588300662" type="golemDB">
+                                    <param id="0" name="Key">&quot;03speed&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4907016133221924" type="golemDB">
+                                    <param id="0" name="Key">&quot;03reward&quot;</param>
+                                    <param id="1" name="Value">20</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7352249364547536" type="golemDB">
+                                    <param id="0" name="Key">&quot;04hp&quot;</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="0" name="Add key" sid="771086988476218" type="golemDB">
+                                    <param id="0" name="Key">&quot;04atk&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="158687791384931" type="golemDB">
+                                    <param id="0" name="Key">&quot;04speed&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="6718030720197994" type="golemDB">
+                                    <param id="0" name="Key">&quot;04reward&quot;</param>
+                                    <param id="1" name="Value">15</param>
+                                </action>
+                                <action id="0" name="Add key" sid="6432266429770523" type="golemDB">
+                                    <param id="0" name="Key">&quot;05hp&quot;</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4044716117689972" type="golemDB">
+                                    <param id="0" name="Key">&quot;05atk&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="9848540799614128" type="golemDB">
+                                    <param id="0" name="Key">&quot;05speed&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="2302920537313871" type="golemDB">
+                                    <param id="0" name="Key">&quot;05reward&quot;</param>
+                                    <param id="1" name="Value">15</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1541086117683978" type="golemDB">
+                                    <param id="0" name="Key">&quot;06hp&quot;</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7844806516267293" type="golemDB">
+                                    <param id="0" name="Key">&quot;06atk&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1168668926556843" type="golemDB">
+                                    <param id="0" name="Key">&quot;06speed&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4948485569752671" type="golemDB">
+                                    <param id="0" name="Key">&quot;06reward&quot;</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="0" name="Add key" sid="8328942610179241" type="golemDB">
+                                    <param id="0" name="Key">&quot;07hp&quot;</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                                <action id="0" name="Add key" sid="8362423539452731" type="golemDB">
+                                    <param id="0" name="Key">&quot;07atk&quot;</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7690060300969217" type="golemDB">
+                                    <param id="0" name="Key">&quot;07speed&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="8469308259293271" type="golemDB">
+                                    <param id="0" name="Key">&quot;07reward&quot;</param>
+                                    <param id="1" name="Value">20</param>
+                                </action>
+                                <action id="0" name="Add key" sid="5543840948292529" type="golemDB">
+                                    <param id="0" name="Key">&quot;08hp&quot;</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1780366422868444" type="golemDB">
+                                    <param id="0" name="Key">&quot;08atk&quot;</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="0" name="Add key" sid="5793290405534017" type="golemDB">
+                                    <param id="0" name="Key">&quot;08speed&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1331855402408118" type="golemDB">
+                                    <param id="0" name="Key">&quot;08reward&quot;</param>
+                                    <param id="1" name="Value">15</param>
+                                </action>
+                                <action id="0" name="Add key" sid="457230003270429" type="golemDB">
+                                    <param id="0" name="Key">&quot;09hp&quot;</param>
+                                    <param id="1" name="Value">4</param>
+                                </action>
+                                <action id="0" name="Add key" sid="3556156893004211" type="golemDB">
+                                    <param id="0" name="Key">&quot;09atk&quot;</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="0" name="Add key" sid="2408675464135403" type="golemDB">
+                                    <param id="0" name="Key">&quot;09speed&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="6825144802993058" type="golemDB">
+                                    <param id="0" name="Key">&quot;09reward&quot;</param>
+                                    <param id="1" name="Value">15</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -586,13 +775,85 @@
                         <event-block sid="4534441308261623">
                             <conditions />
                             <actions>
-                                <action id="0" name="Add key" sid="2677961898514308" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="9542269241396298" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_1&quot;</param>
-                                    <param id="1" name="Value">&quot;20/01d83,01d82,01d81,01d80/01d83,01d82,01d81,01d80/01d83,01d82,01d81,01d80/01d83,01d82,01d81,01d80/01d83,01d82,01d81,01d80/01d83,01d82,01d81,01d80/01d83,01d82,01d81,01d80/01d83,01d82,01d81,01d80/&quot;</param>
+                                    <param id="1" name="Value">&quot;20/01d82/01a82/01b81/01c83/01d70,01a80/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="3690306016475057" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="4876000751259549" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_2&quot;</param>
                                     <param id="1" name="Value">&quot;10/01d72/02a80/01a80/01a80/02a80/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="9752453896156319" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;1_3&quot;</param>
+                                    <param id="1" name="Value">&quot;15/01a83/01a80,02b73/01a82/01c83/02a70,02a71/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7234045437215191" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;1_4&quot;</param>
+                                    <param id="1" name="Value">&quot;15/02d81,02b82/01a81,01a82/02a81,02a82/01a80/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4954824611611475" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;1_5&quot;</param>
+                                    <param id="1" name="Value">&quot;20/01a81,01b82/02b80,02d83/03b80/01a80/02a82/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="5780142854004191" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;1_6&quot;</param>
+                                    <param id="1" name="Value">&quot;8/01a80,01b83/03a80/02a80,02c81&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="3044657980014319" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;1_7&quot;</param>
+                                    <param id="1" name="Value">&quot;15/01a81,01a82/02b83/04a82/03a80/02a83/01a81/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="9284802046223453" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;1_8&quot;</param>
+                                    <param id="1" name="Value">&quot;15/04a80,04a81/03a80,03b81/02d82,02c83/01a80,01b82/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="3061592900492802" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;1_9&quot;</param>
+                                    <param id="1" name="Value">&quot;10/01b82/02a81,02a82,02a83/04b82/02c80/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4712664993275694" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;1_10&quot;</param>
+                                    <param id="1" name="Value">&quot;30/04a82,03b83/02a81,02a83/05a80/02b80,02b81,02c82,02c83/01a81,boss82/03b80,02b81,01d82/05c82/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="6305825496891021" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;2_1&quot;</param>
+                                    <param id="1" name="Value">&quot;15/01b81,01b82/04a80/03b82,03b83/02a80/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1564139548319079" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;2_2&quot;</param>
+                                    <param id="1" name="Value">&quot;20/03b81,01b82,02a83/03b81,01b82,03a83//02b80,01b81,02b82,01b83/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1924733684879066" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;2_3&quot;</param>
+                                    <param id="1" name="Value">&quot;15/06b81/02a80,02a81/04b82/01c82,01b83/06a80/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4887831234120306" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;2_4&quot;</param>
+                                    <param id="1" name="Value">&quot;12/02a80,02b81/05b82/06a80/06b80/06c80,02b82,02b83/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="2361120619790479" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;2_5&quot;</param>
+                                    <param id="1" name="Value">&quot;20//01a80,01b81,01a82,01b83//02b80,03b81,02b82,03b83//04b80,02a81,04b82,02a83&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="5386015549720469" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;2_6&quot;</param>
+                                    <param id="1" name="Value">&quot;10/03b80,03b82/05b83/01a80,01b82/02a81,02b82,01b83&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4773189244963898" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;2_7&quot;</param>
+                                    <param id="1" name="Value">&quot;15/07a81,01b82/03d80,02b83/01b80,02b83//03b81,07b82,03b83/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4545846430971794" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;2_8&quot;</param>
+                                    <param id="1" name="Value">&quot;18/06b81//02b80,02b82/02a80,02b82/02b80,02a82/07b81,01a83/03b82,01a83/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="6134432735335844" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;2_9&quot;</param>
+                                    <param id="1" name="Value">&quot;8/01b80/04a81/01a82/02c81/02b80,02b82/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4167907496848703" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;2_10&quot;</param>
+                                    <param id="1" name="Value">&quot;30/01a80,02b81,02c82,02b83/07a80,05b82/04b81/02b80,02b82/02b80,02a82/02c80,02b82/boss81/04b82,03b83&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -5140,8 +5401,8 @@
                                                         <action id="-3" name="Create object" sid="6748636129557933" type="System">
                                                             <param id="0" name="Object to create">cageSelection</param>
                                                             <param id="1" name="Layer">&quot;effect&quot;</param>
-                                                            <param id="2" name="X">henCage.X</param>
-                                                            <param id="3" name="Y">henCage.Y</param>
+                                                            <param id="2" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                                            <param id="3" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
                                                         </action>
                                                         <action id="-10" name="Set value" sid="3976233776490893" type="cageSelection">
                                                             <param id="0" name="Instance variable">select</param>
@@ -5157,8 +5418,8 @@
                                                             <param id="1" name="Value">henCage.id</param>
                                                         </action>
                                                         <action id="-3" name="Set position" sid="9304518284594172" type="cageSelection">
-                                                            <param id="0" name="X">henCage.X</param>
-                                                            <param id="1" name="Y">henCage.Y</param>
+                                                            <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
                                                         </action>
                                                         <action id="0" name="Call function" sid="4457681043795513" type="Function">
                                                             <param id="0" name="Name">&quot;infoModeShowHide&quot;</param>
@@ -5287,8 +5548,8 @@
                                                         <action id="-3" name="Create object" sid="4277483066905826" type="System">
                                                             <param id="0" name="Object to create">cageSelection</param>
                                                             <param id="1" name="Layer">&quot;effect&quot;</param>
-                                                            <param id="2" name="X">henCage.X</param>
-                                                            <param id="3" name="Y">henCage.Y</param>
+                                                            <param id="2" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                                            <param id="3" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
                                                         </action>
                                                         <action id="-9" name="Set value" sid="2589786802927715" type="System">
                                                             <param id="0" name="Variable">reproduceSelect1</param>
@@ -5325,8 +5586,8 @@
                                                         <action id="-3" name="Create object" sid="5558285460508716" type="System">
                                                             <param id="0" name="Object to create">cageSelection</param>
                                                             <param id="1" name="Layer">&quot;effect&quot;</param>
-                                                            <param id="2" name="X">henCage.X</param>
-                                                            <param id="3" name="Y">henCage.Y</param>
+                                                            <param id="2" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                                            <param id="3" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
                                                         </action>
                                                         <action id="-9" name="Set value" sid="7669453712930107" type="System">
                                                             <param id="0" name="Variable">reproduceSelect2</param>
@@ -5387,8 +5648,8 @@
                                                         <action id="-3" name="Create object" sid="7360973445765274" type="System">
                                                             <param id="0" name="Object to create">cageSelection</param>
                                                             <param id="1" name="Layer">&quot;effect&quot;</param>
-                                                            <param id="2" name="X">henCage.X</param>
-                                                            <param id="3" name="Y">henCage.Y</param>
+                                                            <param id="2" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                                            <param id="3" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
                                                         </action>
                                                         <action id="-9" name="Set value" sid="9026533416987448" type="System">
                                                             <param id="0" name="Variable">entrySelect1</param>
@@ -5437,11 +5698,11 @@
                                                                     <param id="0" name="Variable">flag</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
-                                                                <action id="-3" name="Create object" sid="7620604298674225" type="System">
+                                                                <action id="-3" name="Create object" sid="6702718012907148" type="System">
                                                                     <param id="0" name="Object to create">cageSelection</param>
                                                                     <param id="1" name="Layer">&quot;effect&quot;</param>
-                                                                    <param id="2" name="X">henCage.X</param>
-                                                                    <param id="3" name="Y">henCage.Y</param>
+                                                                    <param id="2" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                                                    <param id="3" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
                                                                 </action>
                                                                 <action id="-9" name="Set value" sid="4270174587546016" type="System">
                                                                     <param id="0" name="Variable">entrySelect2</param>
@@ -5507,11 +5768,11 @@
                                                                     <param id="0" name="Variable">flag</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
-                                                                <action id="-3" name="Create object" sid="1749032839871879" type="System">
+                                                                <action id="-3" name="Create object" sid="258240724003164" type="System">
                                                                     <param id="0" name="Object to create">cageSelection</param>
                                                                     <param id="1" name="Layer">&quot;effect&quot;</param>
-                                                                    <param id="2" name="X">henCage.X</param>
-                                                                    <param id="3" name="Y">henCage.Y</param>
+                                                                    <param id="2" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                                                    <param id="3" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
                                                                 </action>
                                                                 <action id="-9" name="Set value" sid="4786639508455818" type="System">
                                                                     <param id="0" name="Variable">entrySelect3</param>
@@ -5591,7 +5852,7 @@
                                 </action>
                                 <action id="-9" name="Destroy" sid="4824153002558588" type="cageSelection" />
                                 <action id="0" name="Set text" sid="157871016433122" type="systemText">
-                                    <param id="0" name="Text">&quot;[설명/판매]알고 싶은 닭을 눌러보세요.&quot;</param>
+                                    <param id="0" name="Text">&quot;[설명/판매] 정보를 알고 싶은 닭을 눌러보세요.&quot;</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="7252828232889597" type="cageViewOkButton">
                                     <param id="0" name="Animation">&quot;Sell&quot;</param>
@@ -5654,7 +5915,7 @@
                                     <param id="1" name="Value">-1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="2379355547203711" type="systemText">
-                                    <param id="0" name="Text">&quot;[교배] 닭 두마리를 눌러보세요.&quot;</param>
+                                    <param id="0" name="Text">&quot;[교배] 닭 두 마리를 교배러서 새로운 닭을 만듭니다. 일정 확률로 강화됩니다.&quot;</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="3010562210040054" type="cageViewOkButton">
                                     <param id="0" name="Animation">&quot;Reproduce&quot;</param>
@@ -6109,11 +6370,15 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="4690158209684039" type="System">
                                     <param id="0" name="Variable">x</param>
-                                    <param id="1" name="Value">(ViewportLeft(0)+ViewportRight(0))/24*4.5+(ViewportLeft(0)+ViewportRight(0))/11*(loopindex%8)</param>
+                                    <param id="1" name="Value">(ViewportLeft(0)+ViewportRight(0))/26*6+(ViewportLeft(0)+ViewportRight(0))/13*(loopindex%8)</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="120383289113602" type="System">
+                                <action disabled="1" id="-9" name="Set value" sid="120383289113602" type="System">
                                     <param id="0" name="Variable">y</param>
                                     <param id="1" name="Value">floor(loopindex/8)*(-ViewportTop(0)+ViewportBottom(0))/8+(ViewportBottom(0))/100+150</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9594062657136804" type="System">
+                                    <param id="0" name="Variable">y</param>
+                                    <param id="1" name="Value">cageViewHome.ImagePointY((&quot;Floor&quot;&amp;floor(loopindex/8)))</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -6153,12 +6418,16 @@
                                             <param id="0" name="Instance variable">bonus</param>
                                             <param id="1" name="Value">int(right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),loopindex,&quot;/&quot;),2))</param>
                                         </action>
+                                        <action id="0" name="Call function" sid="7953047309158654" type="Function">
+                                            <param id="0" name="Name">&quot;powerupHUDColorPick&quot;</param>
+                                            <param id="1" name="Parameter {n}">henCage.UID</param>
+                                        </action>
                                         <action id="0" name="Set text" sid="5245739436627815" type="powerupHUD">
                                             <param id="0" name="Text">&quot;+&quot;&amp;henCage.bonus</param>
                                         </action>
                                         <action id="-3" name="Set position" sid="1348041161152658" type="powerupHUD">
-                                            <param id="0" name="X">self.X+powerupIndicatorX</param>
-                                            <param id="1" name="Y">self.Y+powerupIndicatorY</param>
+                                            <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)+powerupIndicatorX</param>
+                                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)+powerupIndicatorY</param>
                                         </action>
                                         <action id="5" name="Set web font" sid="5682912111170838" type="powerupHUD">
                                             <param id="0" name="Family name">&quot;jua&quot;</param>
@@ -6188,8 +6457,8 @@
                                         <action id="-3" name="Create object" sid="7709592231079044" type="System">
                                             <param id="0" name="Object to create">entryIndicator</param>
                                             <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="X">x+36</param>
-                                            <param id="3" name="Y">y-36</param>
+                                            <param id="2" name="X">x</param>
+                                            <param id="3" name="Y">y</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -6536,6 +6805,40 @@
                                 </action>
                                 <action id="-15" name="Set visible" sid="9369018618030634" type="systemText">
                                     <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>cloudCreate() : bg에 뒷쪽으로</comment>
+                <event-block sid="4826885486871658">
+                    <conditions>
+                        <condition id="0" name="On function" sid="5334761691761495" type="Function">
+                            <param id="0" name="Name">&quot;cloudCreate&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="206119575611693">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="416839296321283" type="System">
+                                    <param id="0" name="Object to create">cageViewCloud</param>
+                                    <param id="1" name="Layer">&quot;bg&quot;</param>
+                                    <param id="2" name="X">random(ViewportLeft(&quot;bg&quot;),(ViewportLeft(&quot;bg&quot;)+ViewportRight(&quot;bg&quot;))/2)</param>
+                                    <param id="3" name="Y">random(ViewportTop(&quot;bg&quot;),(ViewportTop(&quot;bg&quot;)+ViewportBottom(&quot;bg&quot;))/2)</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="2024101324627442" type="cageViewCloud">
+                                    <param id="0" name="Frame number">int(random(Self.AnimationFrameCount))</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="9197129986811585" type="cageViewCloud">
+                                    <param id="0" name="Speed">random(25,75)</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="764984348828317" type="cageViewCloud">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="8611449987177091" type="cageViewCloud">
+                                    <param id="0" name="Scale">random(0.5,1)</param>
                                 </action>
                             </actions>
                         </event-block>

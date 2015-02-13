@@ -91,6 +91,24 @@
                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
                 </action>
+                <action id="0" name="Call function" sid="8567886186427582" type="Function">
+                    <param id="0" name="Name">&quot;cloudCreate&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="3614087411626605" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="0" name="Call function" sid="1596314037344154" type="Function">
+                    <param id="0" name="Name">&quot;cloudCreate&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="6287117556252321" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="0" name="Call function" sid="7127964879961859" type="Function">
+                    <param id="0" name="Name">&quot;cloudCreate&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="5054090553302602">
@@ -307,6 +325,22 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <comment>구름!</comment>
+        <event-block sid="9659391303050531">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="364226138531499" type="System">
+                    <param id="0" name="First value">cageViewCloud.Count</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="6636568486326832" type="Function">
+                    <param id="0" name="Name">&quot;cloudCreate&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
