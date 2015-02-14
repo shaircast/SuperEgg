@@ -8,11 +8,11 @@
         <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">-48</variable>
         <event-group description="" sid="3206342493633997" title="general">
             <sub-events>
-                <comment>powerupHUDColorPick(henCage.uid) : 해당 henCage의 powerupHUD에 type따라 색을 부여.</comment>
+                <comment>typeEffectColorPick(henCage.uid) : 해당 henCage의 typeEffect에 type따라 색을 부여하고 정리.</comment>
                 <event-block sid="8754752758490102">
                     <conditions>
                         <condition id="0" name="On function" sid="9756370452516177" type="Function">
-                            <param id="0" name="Name">&quot;powerupHUDColorPick&quot;</param>
+                            <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -34,8 +34,9 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set font color" sid="4934776799956" type="powerupHUD">
-                                            <param id="0" name="Color">rgb(200, 200, 200)</param>
+                                        <action id="4" name="Set animation" sid="4934776799956" type="typeEffect">
+                                            <param id="0" name="Animation">&quot;None&quot;</param>
+                                            <param id="1" name="From">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -48,8 +49,9 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set font color" sid="5583338212049997" type="powerupHUD">
-                                            <param id="0" name="Color">rgb(200, 0, 0)</param>
+                                        <action id="4" name="Set animation" sid="659102455909548" type="typeEffect">
+                                            <param id="0" name="Animation">&quot;Fire&quot;</param>
+                                            <param id="1" name="From">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -62,8 +64,9 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set font color" sid="8140328343204188" type="powerupHUD">
-                                            <param id="0" name="Color">rgb(0, 0, 200)</param>
+                                        <action id="4" name="Set animation" sid="741456897906007" type="typeEffect">
+                                            <param id="0" name="Animation">&quot;Water&quot;</param>
+                                            <param id="1" name="From">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -76,8 +79,25 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set font color" sid="1615177213236743" type="powerupHUD">
-                                            <param id="0" name="Color">rgb(0, 200, 0)</param>
+                                        <action id="4" name="Set animation" sid="4158549657630196" type="typeEffect">
+                                            <param id="0" name="Animation">&quot;Grass&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7554250760978448">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="1230732911643937" type="typeEffect">
+                                            <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
+                                        </action>
+                                        <action id="-29" name="Move to object" sid="3091931867651286" type="typeEffect">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Object">henCage</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="907890364096594" type="typeEffect">
+                                            <param id="0" name="Frame number">floor(random(self.AnimationFrameCount))</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -85,6 +105,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>SetGroupActive(&quot;그룹명&quot;) : 선택한 것만 activate 나머지는 general 빼고 disable</comment>
                 <event-block sid="5506097390536903">
                     <conditions>
                         <condition id="0" name="On function" sid="4282919050382882" type="Function">
@@ -140,7 +161,7 @@
                             <actions>
                                 <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
                                     <param id="0" name="Key">&quot;henList&quot;</param>
-                                    <param id="1" name="Value">&quot;01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10a09/11a10/12a11/01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10b09/11c10/12d11/&quot;</param>
+                                    <param id="1" name="Value">&quot;01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10a09/11a10/12a11/01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10b09/11c10/12d11/01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
                                     <param id="0" name="Key">&quot;chapter&quot;</param>
@@ -214,41 +235,50 @@
                                     <param id="0" name="Animation">&quot;Opened&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
+                                <action id="0" name="Spawn another object" sid="417014111884721" type="menuButtonPackage">
+                                    <param id="0" name="Object">menuPole</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
                                 <action id="0" name="Spawn another object" sid="8939299538999408" type="menuButtonPackage">
                                     <param id="0" name="Object">menuButtonStageView</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="Image point">0</param>
-                                </action>
-                                <action behavior="MoveTo" id="7" name="Move to delta XY" sid="6815768361961256" type="menuButtonStageView">
-                                    <param id="0" name="dX">0</param>
-                                    <param id="1" name="dY">-menuButtonPackage.Height*3</param>
                                 </action>
                                 <action id="0" name="Spawn another object" sid="8880121363622862" type="menuButtonPackage">
                                     <param id="0" name="Object">menuButtonCageView</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action behavior="MoveTo" id="7" name="Move to delta XY" sid="6326577554501469" type="menuButtonCageView">
-                                    <param id="0" name="dX">0</param>
-                                    <param id="1" name="dY">-menuButtonPackage.Height*2</param>
-                                </action>
                                 <action id="0" name="Spawn another object" sid="2650017537701211" type="menuButtonPackage">
                                     <param id="0" name="Object">menuButtonOptionView</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
+                                <action behavior="MoveTo" id="7" name="Move to delta XY" sid="6815768361961256" type="menuButtonStageView">
+                                    <param id="0" name="dX">0</param>
+                                    <param id="1" name="dY">-menuButtonPackage.Height/2-menuButtonOptionView.Height-menuButtonCageView.Height-menuButtonStageView.Height/2</param>
+                                </action>
+                                <action behavior="MoveTo" id="7" name="Move to delta XY" sid="6326577554501469" type="menuButtonCageView">
+                                    <param id="0" name="dX">0</param>
+                                    <param id="1" name="dY">-menuButtonPackage.Height/2-menuButtonOptionView.Height-menuButtonCageView.Height/2</param>
+                                </action>
                                 <action behavior="MoveTo" id="7" name="Move to delta XY" sid="7204239811425785" type="menuButtonOptionView">
                                     <param id="0" name="dX">0</param>
-                                    <param id="1" name="dY">-menuButtonPackage.Height</param>
+                                    <param id="1" name="dY">-menuButtonPackage.Height/2-menuButtonOptionView.Height/2</param>
                                 </action>
                                 <action id="-25" name="Move to bottom" sid="5332627406521637" type="menuButtonCageView" />
                                 <action id="-25" name="Move to bottom" sid="3524429651224384" type="menuButtonOptionView" />
                                 <action id="-25" name="Move to bottom" sid="6645712121114605" type="menuButtonStageView" />
-                                <action id="-24" name="Move to top" sid="9696954445360977" type="menuButtonPackage" />
+                                <action id="-25" name="Move to bottom" sid="2358627064949037" type="menuPole" />
+                                <action id="-24" name="Move to top" sid="7405510780256731" type="menuButtonPackage" />
                                 <action id="-16" name="Wait" sid="1026875087850935" type="System">
                                     <param id="0" name="Seconds">0.5</param>
                                 </action>
-                                <action id="-25" name="Move to bottom" sid="2068729684227355" type="menuButtonPackage" />
+                                <action id="-29" name="Move to object" sid="2068729684227355" type="menuButtonPackage">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">menuPole</param>
+                                </action>
                                 <action id="-13" name="Set boolean" sid="2624457489829486" type="menuButtonPackage">
                                     <param id="0" name="Instance variable">ready</param>
                                     <param id="1" name="Value">1</param>
@@ -285,6 +315,7 @@
                                 <action id="-9" name="Destroy" sid="5817700319433299" type="menuButtonStageView" />
                                 <action id="-9" name="Destroy" sid="7678481126613485" type="menuButtonCageView" />
                                 <action id="-9" name="Destroy" sid="843552281984533" type="menuButtonOptionView" />
+                                <action id="-9" name="Destroy" sid="21059776967087" type="menuPole" />
                                 <action id="0" name="Play" sid="8121077740350282" type="Audio">
                                     <param id="0" name="Audio file">menuClose</param>
                                     <param id="2" name="Loop">0</param>
@@ -590,7 +621,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="270145973332774" type="Function">
                                             <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;걍닭&quot;{###}1{###}3{###}0{###}10{###}1{###}&quot;잘난 것도 못난 것도 없이 평범한 닭이었지만, 이젠 아니다! 투척 지점에 3의 데미지를 준다.&quot;</param>
+                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;걍닭&quot;{###}1{###}3{###}0{###}10{###}2{###}&quot;잘난 것도 못난 것도 없이 평범한 닭이었지만, 이젠 아니다! 투척 지점에 3의 데미지를 준다.&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -605,7 +636,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="3779834439312639" type="Function">
                                             <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;개돌닭&quot;{###}2{###}3{###}0{###}28{###}2{###}&quot;한 때 돌격대장을 맡았고 한다. 근육질에 무대뽀 성격이다. 투척 지점과 뒤로 2칸까지 3의 데미지를 준다.&quot;</param>
+                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;개돌닭&quot;{###}2{###}3{###}0{###}28{###}6{###}&quot;한 때 돌격대장을 맡았고 한다. 근육질에 무대뽀 성격이다. 투척 지점과 뒤로 2칸까지 3의 데미지를 준다.&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -620,7 +651,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="268146624585319" type="Function">
                                             <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;샤샤샥닭&quot;{###}1{###}3{###}0{###}24{###}3{###}&quot;샤프한 인상의 닭. 목이 잘 돌아가 넓은 시야를 볼 수 있다고 한다. 투척 지점과 위아래로 3의 데미지를 준다.&quot;</param>
+                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;샤샤샥닭&quot;{###}2{###}3{###}0{###}24{###}6{###}&quot;샤프한 인상의 닭. 목이 잘 돌아가 넓은 시야를 볼 수 있다고 한다. 투척 지점과 위아래로 3의 데미지를 준다.&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -695,7 +726,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="779603362567843" type="Function">
                                             <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;둠닭&quot;{###}4{###}6{###}0{###}30{###}3{###}&quot;스파이복에 방독면을 낀 닭이다. 정체는 알 수 없지만 엄청나게 전투적이다. 투척 지점에 6의 데미지를 준다.&quot;</param>
+                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;둠닭&quot;{###}2{###}6{###}0{###}30{###}4{###}&quot;스파이복에 방독면을 낀 닭이다. 정체는 알 수 없지만 엄청나게 전투적이다. 투척 지점에 6의 데미지를 준다.&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -755,7 +786,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="2233861818837083" type="Function">
                                             <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;키라닭&quot;{###}4{###}4{###}0{###}50{###}5{###}&quot;왠지 후드를 쓰고 있는 닭. 간지나는 듯 하나 폭주하면 멈출 수가 없다고 한다. 투척 지점에 4의 데미지를 준다. 키라닭이 적을 파괴했을 경우 바로 다음 턴부터 다시 공격이 가능하다.&quot;</param>
+                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;키라닭&quot;{###}4{###}3{###}0{###}50{###}5{###}&quot;왠지 후드를 쓰고 있는 닭. 간지나는 듯 하나 폭주하면 멈출 수가 없다고 한다. 투척 지점에 4의 데미지를 준다. 키라닭이 적을 파괴했을 경우 바로 다음 턴부터 다시 공격이 가능하다.&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -777,7 +808,7 @@
                             <actions>
                                 <action id="0" name="Add key" sid="9542269241396298" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_1&quot;</param>
-                                    <param id="1" name="Value">&quot;20/01d82/01a82/01b81/01c83/01d70,01a80/&quot;</param>
+                                    <param id="1" name="Value">&quot;20/07d82/01a82/01b81/01c83/01d70,01a80/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="4876000751259549" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_2&quot;</param>
@@ -2193,7 +2224,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>battleViewTurnOver() : 생산 1턴, 골렘이동 및 생산, 런치라인 초기화, 보너스</comment>
+                <comment>battleViewTurnOver() : 생산 1턴, 골렘이동 및 생산, 런치라인 초기화, 보너스. 특수골렘의 도 들어감.</comment>
                 <event-block sid="6401460603776026">
                     <conditions>
                         <condition id="0" name="On function" sid="4090963470823063" type="Function">
@@ -2483,7 +2514,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>golemCreateWithData(golemAnimationName,X,Y) : 01a,8,2 면 01a골렘을 x8번째 y2번째 라인에 생성</comment>
+                <comment>golemCreateWithData(golemAnimationName,X,Y) : 01a,8,2 면 01a골렘을 x8번째 y2번째 라인에 생성.&#x0D;&#x0A;5번 골렘은 생성시 invul:True</comment>
                 <event-block sid="5409204586435181">
                     <conditions>
                         <condition id="0" name="On function" sid="484211474080849" type="Function">
@@ -2530,6 +2561,10 @@
                                 <action id="-10" name="Set value" sid="8393855144760266" type="golem">
                                     <param id="0" name="Instance variable">reward</param>
                                     <param id="1" name="Value">golemDB.Get(left(golem.AnimationName,2)&amp;&quot;reward&quot;)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="2926365896128495" type="golem">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Value">left(golem.AnimationName,2)</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="2119466361728109" type="golem">
                                     <param id="0" name="Instance variable">type</param>
@@ -2580,6 +2615,21 @@
                                 <action id="-24" name="Move to top" sid="8419903839462323" type="golemCreateEffect" />
                             </actions>
                             <sub-events>
+                                <event-block sid="5859681081737402">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="8235587845079799" type="golem">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;05&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="7043653425891282" type="golem">
+                                            <param id="0" name="Instance variable">invulnerable</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="600198319263495">
                                     <conditions>
                                         <condition id="-11" name="For Each" sid="9111362435730226" type="System">
@@ -3690,7 +3740,7 @@
                                         </action>
                                         <action id="-10" name="Set value" sid="3006039925535646" type="poison">
                                             <param id="0" name="Instance variable">turnLeft</param>
-                                            <param id="1" name="Value">henDB.Get(&quot;09duration&quot;)</param>
+                                            <param id="1" name="Value">henDB.Get(&quot;09duration&quot;)+1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -4383,7 +4433,7 @@
                                             <param id="1" name="Parameter {n}">golem.UID{###}damage</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="3876265228908325" type="System">
-                                            <param id="0" name="Seconds">0.3</param>
+                                            <param id="0" name="Seconds">0.5</param>
                                         </action>
                                         <action id="0" name="Call function" sid="7949958837953772" type="Function">
                                             <param id="0" name="Name">&quot;dealingDamage&quot;</param>
@@ -4648,7 +4698,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>dealingDamage(golem.UID, damage) : 골렘 체력 데미지만큼 까고 깐거 효과줌. 힐도 가능!. 끝나면서 golemHpRefresh().</comment>
+                <comment>dealingDamage(golem.UID, damage) : 골렘 체력 데미지만큼 까고 깐거 효과줌. 힐도 가능!. 끝나면서 golemHpRefresh().&#x0D;&#x0A;5번골렘 관련.</comment>
                 <event-block sid="2617312889528887">
                     <conditions>
                         <condition id="0" name="On function" sid="6953295442724369" type="Function">
@@ -4665,119 +4715,223 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <comment>데미지인 경우</comment>
-                                <event-block sid="695526133906845">
+                                <comment>골렘 효과로 인해 무적인 경우</comment>
+                                <event-block sid="6148533575267014">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="133202404304948" type="System">
-                                            <param id="0" name="First value">float(Function.Param(1))</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">0</param>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="7600317551423571" type="golem">
+                                            <param id="0" name="Instance variable">invulnerable</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-12" name="Subtract from" sid="6403624314469239" type="golem">
-                                            <param id="0" name="Instance variable">hp</param>
-                                            <param id="1" name="Value">float(Function.Param(1))</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="3051626185578225" type="golem">
+                                        <action id="0" name="Spawn another object" sid="9201120520490726" type="golem">
                                             <param id="0" name="Object">damageText</param>
                                             <param id="1" name="Layer">&quot;effect&quot;</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="5" name="Set web font" sid="5781163692955183" type="damageText">
+                                        <action id="5" name="Set web font" sid="3850694941019905" type="damageText">
                                             <param id="0" name="Family name">&quot;jua&quot;</param>
                                             <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5415781994249121" type="damageText">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1126320053413934" type="damageText">
                                             <param id="0" name="Angle">270</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="1770864713835656" type="damageText">
-                                            <param id="0" name="Text">Function.Param(1)</param>
+                                        <action id="0" name="Set text" sid="5196623413855719" type="damageText">
+                                            <param id="0" name="Text">&quot;방어!&quot;</param>
                                         </action>
-                                        <action id="3" name="Set font size" sid="1550383117671472" type="damageText">
-                                            <param id="0" name="Size (pt)">50</param>
+                                        <action id="3" name="Set font size" sid="5674546011347664" type="damageText">
+                                            <param id="0" name="Size (pt)">30</param>
                                         </action>
-                                        <action id="4" name="Set font color" sid="6931149025255646" type="damageText">
-                                            <param id="0" name="Color">rgb(150, 0, 0)</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="4706181676053016" type="Function">
-                                            <param id="0" name="Name">&quot;golemHpRefresh&quot;</param>
-                                            <param id="1" name="Parameter {n}">Function.Param(0)</param>
+                                        <action id="4" name="Set font color" sid="7351297042284488" type="damageText">
+                                            <param id="0" name="Color">rgb(0, 0, 150)</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="4701461621884651">
+                                        <comment>5번골렘은 1회용</comment>
+                                        <event-block sid="9410591247571429">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="3655074221563512" type="golem">
-                                                    <param id="0" name="Instance variable">hp</param>
-                                                    <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Value">0</param>
+                                                <condition id="-7" name="Compare instance variable" sid="5940229942602881" type="golem">
+                                                    <param id="0" name="Instance variable">kind</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;05&quot;</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Call function" sid="4965128197567803" type="Function">
-                                                    <param id="0" name="Name">&quot;golemDestroy&quot;</param>
-                                                    <param id="1" name="Parameter {n}">golem.UID</param>
+                                                <action id="-13" name="Set boolean" sid="4002084475388513" type="golem">
+                                                    <param id="0" name="Instance variable">invulnerable</param>
+                                                    <param id="1" name="Value">0</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <comment>힐인 경우</comment>
-                                <event-block sid="4453611771353207">
+                                <event-block sid="8209102401486227">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="7401865346924899" type="System">
-                                            <param id="0" name="First value">float(Function.Param(1))</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">0</param>
-                                        </condition>
+                                        <condition id="-22" name="Else" sid="832159872360884" type="System" />
                                     </conditions>
-                                    <actions>
-                                        <action id="-11" name="Add to" sid="6763764249316209" type="golem">
-                                            <param id="0" name="Instance variable">hp</param>
-                                            <param id="1" name="Value">-float(Function.Param(1))</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="5610257877175083" type="golem">
-                                            <param id="0" name="Object">damageText</param>
-                                            <param id="1" name="Layer">&quot;effect&quot;</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action id="5" name="Set web font" sid="3804514646402918" type="damageText">
-                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                        </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="9604795613795009" type="damageText">
-                                            <param id="0" name="Angle">270</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="3385570050445299" type="damageText">
-                                            <param id="0" name="Text">Function.Param(1)</param>
-                                        </action>
-                                        <action id="3" name="Set font size" sid="1955675440796534" type="damageText">
-                                            <param id="0" name="Size (pt)">50</param>
-                                        </action>
-                                        <action id="4" name="Set font color" sid="5631633508876767" type="damageText">
-                                            <param id="0" name="Color">rgb(0, 150, 0)</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="9127854213631871" type="Function">
-                                            <param id="0" name="Name">&quot;golemHpRefresh&quot;</param>
-                                            <param id="1" name="Parameter {n}">Function.Param(0)</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
                                     <sub-events>
-                                        <event-block sid="3075817821889734">
+                                        <comment>데미지인 경우</comment>
+                                        <event-block sid="695526133906845">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="6000728885079507" type="golem">
-                                                    <param id="0" name="Instance variable">hp</param>
+                                                <condition id="-8" name="Compare two values" sid="133202404304948" type="System">
+                                                    <param id="0" name="First value">float(Function.Param(1))</param>
                                                     <param id="1" name="Comparison">4</param>
-                                                    <param id="2" name="Value">Self.maxHp</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <comment>7번골렘일 경우 데미지 1로 계산</comment>
+                                                <event-block sid="9224004252363434">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="4276509429131758" type="golem">
+                                                            <param id="0" name="Instance variable">kind</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;07&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-12" name="Subtract from" sid="6403624314469239" type="golem">
+                                                            <param id="0" name="Instance variable">hp</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="3051626185578225" type="golem">
+                                                            <param id="0" name="Object">damageText</param>
+                                                            <param id="1" name="Layer">&quot;effect&quot;</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                        <action id="5" name="Set web font" sid="5781163692955183" type="damageText">
+                                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5415781994249121" type="damageText">
+                                                            <param id="0" name="Angle">270</param>
+                                                        </action>
+                                                        <action id="0" name="Set text" sid="1770864713835656" type="damageText">
+                                                            <param id="0" name="Text">1</param>
+                                                        </action>
+                                                        <action id="3" name="Set font size" sid="1550383117671472" type="damageText">
+                                                            <param id="0" name="Size (pt)">50</param>
+                                                        </action>
+                                                        <action id="4" name="Set font color" sid="6931149025255646" type="damageText">
+                                                            <param id="0" name="Color">rgb(150, 0, 0)</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="4706181676053016" type="Function">
+                                                            <param id="0" name="Name">&quot;golemHpRefresh&quot;</param>
+                                                            <param id="1" name="Parameter {n}">Function.Param(0)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="3609521986654035">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="5527661382403947" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-12" name="Subtract from" sid="8434521721964991" type="golem">
+                                                            <param id="0" name="Instance variable">hp</param>
+                                                            <param id="1" name="Value">float(Function.Param(1))</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="2958217461225766" type="golem">
+                                                            <param id="0" name="Object">damageText</param>
+                                                            <param id="1" name="Layer">&quot;effect&quot;</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                        <action id="5" name="Set web font" sid="7877697394159577" type="damageText">
+                                                            <param id="0" name="Family name">&quot;jua&quot;</param>
+                                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="9632947578329696" type="damageText">
+                                                            <param id="0" name="Angle">270</param>
+                                                        </action>
+                                                        <action id="0" name="Set text" sid="6147249407830839" type="damageText">
+                                                            <param id="0" name="Text">Function.Param(1)</param>
+                                                        </action>
+                                                        <action id="3" name="Set font size" sid="5890287968307965" type="damageText">
+                                                            <param id="0" name="Size (pt)">50</param>
+                                                        </action>
+                                                        <action id="4" name="Set font color" sid="2858580533138604" type="damageText">
+                                                            <param id="0" name="Color">rgb(150, 0, 0)</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="3483378901633279" type="Function">
+                                                            <param id="0" name="Name">&quot;golemHpRefresh&quot;</param>
+                                                            <param id="1" name="Parameter {n}">Function.Param(0)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="4701461621884651">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="3655074221563512" type="golem">
+                                                            <param id="0" name="Instance variable">hp</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="4965128197567803" type="Function">
+                                                            <param id="0" name="Name">&quot;golemDestroy&quot;</param>
+                                                            <param id="1" name="Parameter {n}">golem.UID</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <comment>힐인 경우</comment>
+                                        <event-block sid="4453611771353207">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="7401865346924899" type="System">
+                                                    <param id="0" name="First value">float(Function.Param(1))</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Second value">0</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="-10" name="Set value" sid="8052217857871526" type="golem">
+                                                <action id="-11" name="Add to" sid="6763764249316209" type="golem">
                                                     <param id="0" name="Instance variable">hp</param>
-                                                    <param id="1" name="Value">Self.maxHp</param>
+                                                    <param id="1" name="Value">-float(Function.Param(1))</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="5610257877175083" type="golem">
+                                                    <param id="0" name="Object">damageText</param>
+                                                    <param id="1" name="Layer">&quot;effect&quot;</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="5" name="Set web font" sid="3804514646402918" type="damageText">
+                                                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                                </action>
+                                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="9604795613795009" type="damageText">
+                                                    <param id="0" name="Angle">270</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="3385570050445299" type="damageText">
+                                                    <param id="0" name="Text">-Function.Param(1)</param>
+                                                </action>
+                                                <action id="3" name="Set font size" sid="1955675440796534" type="damageText">
+                                                    <param id="0" name="Size (pt)">50</param>
+                                                </action>
+                                                <action id="4" name="Set font color" sid="5631633508876767" type="damageText">
+                                                    <param id="0" name="Color">rgb(0, 150, 0)</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="9127854213631871" type="Function">
+                                                    <param id="0" name="Name">&quot;golemHpRefresh&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Function.Param(0)</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="3075817821889734">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="6000728885079507" type="golem">
+                                                            <param id="0" name="Instance variable">hp</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Self.maxHp</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="8052217857871526" type="golem">
+                                                            <param id="0" name="Instance variable">hp</param>
+                                                            <param id="1" name="Value">Self.maxHp</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -4851,6 +5005,113 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>golemHealEffect(golem.UID) : 골렘 주위에 힐되는 이펙트 생성</comment>
+                <event-block sid="3243084420231935">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8869243302214717" type="Function">
+                            <param id="0" name="Name">&quot;golemHealEffect&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="8347448319086856">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="5647855660673681" type="golem">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="3995437888726458" type="System">
+                                    <param id="0" name="Object to create">effectHeal</param>
+                                    <param id="1" name="Layer">&quot;effect&quot;</param>
+                                    <param id="2" name="X">golem.X+random(-golem.Width,golem.Width)</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="8341918110935173" type="effectHeal">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="9947999104029165" type="effectHeal">
+                                    <param id="0" name="Speed">random(30,60)</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="2998337569329324" type="effectHeal">
+                                    <param id="0" name="Scale">random(0.7,1.3)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="6409599103280765" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="3645311930192128" type="System">
+                                    <param id="0" name="Object to create">effectHeal</param>
+                                    <param id="1" name="Layer">&quot;effect&quot;</param>
+                                    <param id="2" name="X">golem.X+random(-golem.Width,golem.Width)</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2549522659390344" type="effectHeal">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="2488554790181927" type="effectHeal">
+                                    <param id="0" name="Speed">random(30,60)</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="2154435346885517" type="effectHeal">
+                                    <param id="0" name="Scale">random(0.7,1.3)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="6084161587810288" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="9309563049584144" type="System">
+                                    <param id="0" name="Object to create">effectHeal</param>
+                                    <param id="1" name="Layer">&quot;effect&quot;</param>
+                                    <param id="2" name="X">golem.X+random(-golem.Width,golem.Width)</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="8452964536495586" type="effectHeal">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="7283349803011192" type="effectHeal">
+                                    <param id="0" name="Speed">random(30,60)</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="1565483585740119" type="effectHeal">
+                                    <param id="0" name="Scale">random(0.7,1.3)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="5417059243186562" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="2813836745398328" type="System">
+                                    <param id="0" name="Object to create">effectHeal</param>
+                                    <param id="1" name="Layer">&quot;effect&quot;</param>
+                                    <param id="2" name="X">golem.X+random(-golem.Width,golem.Width)</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="9141252195728703" type="effectHeal">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="5275464833296228" type="effectHeal">
+                                    <param id="0" name="Speed">random(30,60)</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="7558303063903224" type="effectHeal">
+                                    <param id="0" name="Scale">random(0.7,1.3)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="1960994208169868" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="2468922057328428" type="System">
+                                    <param id="0" name="Object to create">effectHeal</param>
+                                    <param id="1" name="Layer">&quot;effect&quot;</param>
+                                    <param id="2" name="X">golem.X+random(-golem.Width,golem.Width)</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="8577275452221223" type="effectHeal">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="3911212171012118" type="effectHeal">
+                                    <param id="0" name="Speed">random(30,60)</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="747058505122741" type="effectHeal">
+                                    <param id="0" name="Scale">random(0.7,1.3)</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -6152,7 +6413,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="4905499517654048" type="systemText">
-                                            <param id="0" name="Text">&quot;[교배] 더 이상 교배할 수 없습니다.&quot;</param>
+                                            <param id="0" name="Text">&quot;[교배] 닭장이 꽉 차서 더 이상 교배할 수 없습니다. 필요없는 닭을 판매하세요.&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -6314,6 +6575,7 @@
                                 <action id="-9" name="Destroy" sid="1413214994963107" type="cageSelection" />
                                 <action id="-9" name="Destroy" sid="858141440857433" type="henCage" />
                                 <action id="-9" name="Destroy" sid="5936979028622956" type="entryIndicator" />
+                                <action id="-9" name="Destroy" sid="5501136024397109" type="typeEffect" />
                                 <action id="0" name="Call function" sid="2219739389729701" type="Function">
                                     <param id="0" name="Name">&quot;henCageCreate&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -6418,9 +6680,8 @@
                                             <param id="0" name="Instance variable">bonus</param>
                                             <param id="1" name="Value">int(right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),loopindex,&quot;/&quot;),2))</param>
                                         </action>
-                                        <action id="0" name="Call function" sid="7953047309158654" type="Function">
-                                            <param id="0" name="Name">&quot;powerupHUDColorPick&quot;</param>
-                                            <param id="1" name="Parameter {n}">henCage.UID</param>
+                                        <action behavior="Sine" id="0" name="Set active" sid="6260997246789362" type="henCage">
+                                            <param id="0" name="State">1</param>
                                         </action>
                                         <action id="0" name="Set text" sid="5245739436627815" type="powerupHUD">
                                             <param id="0" name="Text">&quot;+&quot;&amp;henCage.bonus</param>
@@ -6432,6 +6693,10 @@
                                         <action id="5" name="Set web font" sid="5682912111170838" type="powerupHUD">
                                             <param id="0" name="Family name">&quot;jua&quot;</param>
                                             <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="7953047309158654" type="Function">
+                                            <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
+                                            <param id="1" name="Parameter {n}">henCage.UID</param>
                                         </action>
                                     </actions>
                                 </event-block>

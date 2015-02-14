@@ -5,6 +5,7 @@
     <events>
         <include>function</include>
         <variable constant="0" name="stage" sid="6674997048701597" static="0" type="text">1_1</variable>
+        <variable constant="0" name="maxFood" sid="6539099087053054" static="0" type="number">0</variable>
         <variable comment="stageGolemDB의 0번째 토큰" constant="0" name="food" sid="4418183236737158" static="0" type="number">0</variable>
         <variable comment="턴마다 1씩 증가" constant="0" name="turnCount" sid="671116988508257" static="0" type="number">1</variable>
         <variable comment="동적 scaling" constant="0" name="scaleLerpRate" sid="5994139726447165" static="0" type="number">0.05</variable>
@@ -94,9 +95,13 @@
                 <action id="-16" name="Wait" sid="5573325639662632" type="System">
                     <param id="0" name="Seconds">0</param>
                 </action>
+                <action id="-9" name="Set value" sid="4202967625011962" type="System">
+                    <param id="0" name="Variable">maxFood</param>
+                    <param id="1" name="Value">int(tokenat(stageGolemDB.Get(stage),0,&quot;/&quot;))</param>
+                </action>
                 <action id="-9" name="Set value" sid="8882282002653057" type="System">
                     <param id="0" name="Variable">food</param>
-                    <param id="1" name="Value">int(tokenat(stageGolemDB.Get(stage),0,&quot;/&quot;))</param>
+                    <param id="1" name="Value">maxFood</param>
                 </action>
                 <action id="0" name="Call function" sid="9451380431179312" type="Function">
                     <param id="0" name="Name">&quot;battleViewButtonPosSet&quot;</param>
@@ -172,6 +177,7 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>state1에 턴스킵 독데미지 / 4번골렘 힐</comment>
         <event-block sid="7831613190100401">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="2022369605765399" type="System">
@@ -188,55 +194,59 @@
                     <conditions>
                         <condition id="-4" name="Trigger once while true" sid="5510155040585902" type="System" />
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="8224531886540647" type="System">
-                            <param id="0" name="Variable">flag</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="0" name="Call function" sid="9799396295469672" type="Function">
-                            <param id="0" name="Name">&quot;golemCreate&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="0" name="Call function" sid="7656463704468952" type="Function">
-                            <param id="0" name="Name">&quot;golemZOrder&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="2595796012120358" type="turnText" />
-                        <action id="-3" name="Create object" sid="2204532806106861" type="System">
-                            <param id="0" name="Object to create">turnText</param>
-                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                            <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
-                            <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
-                        </action>
-                        <action id="0" name="Set text" sid="4450026276879766" type="turnText">
-                            <param id="0" name="Text">&quot;Turn &quot;&amp;turnCount</param>
-                        </action>
-                        <action id="5" name="Set web font" sid="7548483319285501" type="turnText">
-                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                        </action>
-                        <action id="-12" name="Subtract from" sid="427781864196892" type="blockTower">
-                            <param id="0" name="Instance variable">turnLeft</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-12" name="Subtract from" sid="7152100218998012" type="poison">
-                            <param id="0" name="Instance variable">turnLeft</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="6895879010959442" type="System">
-                            <param id="0" name="Seconds">0.5</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="2983111357784312" type="System">
-                            <param id="0" name="Variable">flag</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
+                        <event-block sid="3087253535405028">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="8224531886540647" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="9799396295469672" type="Function">
+                                    <param id="0" name="Name">&quot;golemCreate&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="7656463704468952" type="Function">
+                                    <param id="0" name="Name">&quot;golemZOrder&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="2595796012120358" type="turnText" />
+                                <action id="-3" name="Create object" sid="2204532806106861" type="System">
+                                    <param id="0" name="Object to create">turnText</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
+                                </action>
+                                <action id="0" name="Set text" sid="4450026276879766" type="turnText">
+                                    <param id="0" name="Text">&quot;Turn &quot;&amp;turnCount</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="7548483319285501" type="turnText">
+                                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="427781864196892" type="blockTower">
+                                    <param id="0" name="Instance variable">turnLeft</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="7152100218998012" type="poison">
+                                    <param id="0" name="Instance variable">turnLeft</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="6895879010959442" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="2983111357784312" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <comment bookmark="1">매턴 food 충전</comment>
-                        <event-block disabled="1" sid="9625744061729154">
+                        <event-block sid="9625744061729154">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="4788763696935851" type="System">
-                                    <param id="0" name="First value">int(tokenat(stageGolemDB.Get(stage),0,&quot;/&quot;))</param>
+                                    <param id="0" name="First value">maxFood</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Second value">food</param>
                                 </condition>
@@ -245,6 +255,38 @@
                                 <action id="-10" name="Add to" sid="9280984054365308" type="System">
                                     <param id="0" name="Variable">food</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="8554368118499941" type="Function">
+                                    <param id="0" name="Name">&quot;refreshFood&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>4번골렘 체력회복</comment>
+                        <event-block sid="9956803510707261">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="4047328395083791" type="System">
+                                    <param id="0" name="Object">golem</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="4852722080720507" type="golem">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;04&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6134245139497599" type="golem">
+                                    <param id="0" name="Instance variable">hp</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">self.maxHp</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="7063485332682364" type="Function">
+                                    <param id="0" name="Name">&quot;dealingDamage&quot;</param>
+                                    <param id="1" name="Parameter {n}">golem.UID{###}-1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="1246293631379766" type="Function">
+                                    <param id="0" name="Name">&quot;golemHealEffect&quot;</param>
+                                    <param id="1" name="Parameter {n}">golem.UID</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -401,6 +443,7 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>state2에 알 던질 때 독 데미지. 타워닭 타워.</comment>
         <event-block sid="423270365469461">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="1404712016642609" type="System">
@@ -468,7 +511,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>폭파장면 끝나면 턴스킵. 이때 타워닭 비석세우기 확인!</comment>
+                <comment>폭파장면 끝나면 턴스킵. 이때 타워닭 타워세우기 확인!</comment>
                 <event-block sid="7939978331846722">
                     <conditions>
                         <condition id="3" name="Compare frame" sid="2953326474887494" type="explode">

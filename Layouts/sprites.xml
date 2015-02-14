@@ -379,10 +379,13 @@
                         <atk>0</atk>
                         <speed>0</speed>
                         <reward>0</reward>
+                        <invulnerable>false</invulnerable>
+                        <kind></kind>
                         <type></type>
                         <targeted>false</targeted>
                         <posX>0</posX>
                         <posY>0</posY>
+                        <innerCounter>0</innerCounter>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="MoveTo">
@@ -690,10 +693,10 @@
                         <x>-126</x>
                         <y>110</y>
                         <z>0</z>
-                        <width>128</width>
-                        <height>128</height>
+                        <width>173</width>
+                        <height>100</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>0.50289017</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -722,8 +725,8 @@
                         <x>-134</x>
                         <y>345</y>
                         <z>0</z>
-                        <width>128</width>
-                        <height>128</height>
+                        <width>174</width>
+                        <height>120</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -754,8 +757,8 @@
                         <x>-142</x>
                         <y>568</y>
                         <z>0</z>
-                        <width>128</width>
-                        <height>128</height>
+                        <width>182</width>
+                        <height>100</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -790,10 +793,10 @@
                         <x>-145</x>
                         <y>804</y>
                         <z>0</z>
-                        <width>128</width>
-                        <height>128</height>
+                        <width>155</width>
+                        <height>168</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>0.503225803</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -878,6 +881,19 @@
                                 <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <movement>Angle</movement>
+                                <wave>Sine</wave>
+                                <period>10</period>
+                                <period-random>1</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>10</period-offset-random>
+                                <magnitude>5</magnitude>
+                                <magnitude-random>1</magnitude-random>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -885,8 +901,8 @@
                         <x>181</x>
                         <y>-155</y>
                         <z>0</z>
-                        <width>72</width>
-                        <height>74</height>
+                        <width>80</width>
+                        <height>82</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>1</hotspotY>
@@ -1065,7 +1081,7 @@
                         <y>-312</y>
                         <z>0</z>
                         <width>32</width>
-                        <height>48</height>
+                        <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -1234,11 +1250,11 @@
                         <x>376</x>
                         <y>-134</y>
                         <z>0</z>
-                        <width>32</width>
-                        <height>32</height>
+                        <width>33</width>
+                        <height>33</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.515151501</hotspotX>
+                        <hotspotY>0.515151501</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -1603,7 +1619,7 @@
                     <properties>
                         <text>안녕하세요</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-29,700,0</font>
+                        <font>배달의민족 주아,-27,400,0</font>
                         <color>240,240,240</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -1941,6 +1957,170 @@
                         <depth>0</depth>
                         <hotspotX>0.500598788</hotspotX>
                         <hotspotY>0.502994001</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="effectHeal" uid="136">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>400</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1229</x>
+                        <y>46</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="typeEffect" uid="137">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Anchor">
+                            <properties>
+                                <left-edge>None</left-edge>
+                                <top-edge>Window bottom</top-edge>
+                                <right-edge>None</right-edge>
+                                <bottom-edge>None</bottom-edge>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1035</x>
+                        <y>-78</y>
+                        <z>0</z>
+                        <width>192</width>
+                        <height>192</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="menuPole" uid="138">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>899</x>
+                        <y>225</y>
+                        <z>0</z>
+                        <width>117</width>
+                        <height>375</height>
+                        <depth>0</depth>
+                        <hotspotX>0.504273534</hotspotX>
+                        <hotspotY>1.133333325</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="goldTemplete" uid="139">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Anchor">
+                            <properties>
+                                <left-edge>Window left</left-edge>
+                                <top-edge>Window top</top-edge>
+                                <right-edge>None</right-edge>
+                                <bottom-edge>None</bottom-edge>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1065</x>
+                        <y>180</y>
+                        <z>0</z>
+                        <width>201</width>
+                        <height>65</height>
+                        <depth>0</depth>
+                        <hotspotX>0.50248754</hotspotX>
+                        <hotspotY>0.507692337</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="iconCoinHUD" uid="57">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Anchor">
+                            <properties>
+                                <left-edge>None</left-edge>
+                                <top-edge>Window top</top-edge>
+                                <right-edge>None</right-edge>
+                                <bottom-edge>None</bottom-edge>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-269</x>
+                        <y>16</y>
+                        <z>0</z>
+                        <width>48</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

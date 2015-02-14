@@ -227,10 +227,10 @@
                         <x>80</x>
                         <y>640</y>
                         <z>0</z>
-                        <width>128</width>
-                        <height>128</height>
+                        <width>155</width>
+                        <height>168</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>0.503225803</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -330,6 +330,19 @@
                                 <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <movement>Angle</movement>
+                                <wave>Sine</wave>
+                                <period>10</period>
+                                <period-random>1</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>10</period-offset-random>
+                                <magnitude>5</magnitude>
+                                <magnitude-random>1</magnitude-random>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -337,8 +350,8 @@
                         <x>710</x>
                         <y>676</y>
                         <z>0</z>
-                        <width>72</width>
-                        <height>74</height>
+                        <width>80</width>
+                        <height>82</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>1</hotspotY>
@@ -369,6 +382,19 @@
                                 <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <movement>Angle</movement>
+                                <wave>Sine</wave>
+                                <period>10</period>
+                                <period-random>1</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>10</period-offset-random>
+                                <magnitude>5</magnitude>
+                                <magnitude-random>1</magnitude-random>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -376,8 +402,8 @@
                         <x>910</x>
                         <y>676</y>
                         <z>0</z>
-                        <width>72</width>
-                        <height>74</height>
+                        <width>80</width>
+                        <height>82</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>1</hotspotY>
@@ -408,6 +434,19 @@
                                 <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <movement>Angle</movement>
+                                <wave>Sine</wave>
+                                <period>10</period>
+                                <period-random>1</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>10</period-offset-random>
+                                <magnitude>5</magnitude>
+                                <magnitude-random>1</magnitude-random>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -415,8 +454,8 @@
                         <x>1110</x>
                         <y>676</y>
                         <z>0</z>
-                        <width>72</width>
-                        <height>74</height>
+                        <width>80</width>
+                        <height>82</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>1</hotspotY>

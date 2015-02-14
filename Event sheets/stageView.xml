@@ -67,6 +67,7 @@
                 </action>
             </actions>
             <sub-events>
+                <comment>엔트리닭들 표시</comment>
                 <event-block sid="770215602023579">
                     <conditions>
                         <condition id="-14" name="Pick by unique ID" sid="8939107076620353" type="henCage">
@@ -99,10 +100,16 @@
                             <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)+powerupIndicatorY</param>
                         </action>
                         <action id="0" name="Call function" sid="5399263660961733" type="Function">
-                            <param id="0" name="Name">&quot;powerupHUDColorPick&quot;</param>
+                            <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
                             <param id="1" name="Parameter {n}">henCage.UID</param>
                         </action>
                         <action behavior="Anchor" id="0" name="Set enabled" sid="4723183337302696" type="powerupHUD">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="2658053938940017" type="henCage">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Anchor" id="0" name="Set enabled" sid="9790030498047207" type="typeEffect">
                             <param id="0" name="State">1</param>
                         </action>
                     </actions>
@@ -139,10 +146,16 @@
                             <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)+powerupIndicatorY</param>
                         </action>
                         <action id="0" name="Call function" sid="6006832137826129" type="Function">
-                            <param id="0" name="Name">&quot;powerupHUDColorPick&quot;</param>
+                            <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
                             <param id="1" name="Parameter {n}">henCage.UID</param>
                         </action>
                         <action behavior="Anchor" id="0" name="Set enabled" sid="188493870209864" type="powerupHUD">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="2953565534660106" type="henCage">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Anchor" id="0" name="Set enabled" sid="3090870075145784" type="typeEffect">
                             <param id="0" name="State">1</param>
                         </action>
                     </actions>
@@ -179,10 +192,16 @@
                             <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)+powerupIndicatorY</param>
                         </action>
                         <action id="0" name="Call function" sid="7326526173152828" type="Function">
-                            <param id="0" name="Name">&quot;powerupHUDColorPick&quot;</param>
+                            <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
                             <param id="1" name="Parameter {n}">henCage.UID</param>
                         </action>
                         <action behavior="Anchor" id="0" name="Set enabled" sid="2885390931162377" type="powerupHUD">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="7414342331057858" type="henCage">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Anchor" id="0" name="Set enabled" sid="2107255661883051" type="typeEffect">
                             <param id="0" name="State">1</param>
                         </action>
                     </actions>
@@ -277,7 +296,7 @@
                 </action>
             </actions>
         </event-block>
-        <comment>도착시 핀. 도착시 signal. 중앙으로 움직이는 경우는 battleView로 이동하는 경우. coverMoved하고 나면 이동함. Else는 챕터이동 시.</comment>
+        <comment>도착시 핀. 도착시 signal. middlepoint으로 움직이는 경우는 battleView로 이동하는 경우. coverMoved하고 나면 이동함. Else는 챕터이동 시.</comment>
         <event-block sid="4953880036996532">
             <conditions>
                 <condition behavior="MoveTo" id="0" name="On hit target position" sid="5016847428480849" type="skyLeftCover" />
@@ -288,7 +307,7 @@
                     <conditions>
                         <condition id="-1" name="Compare X" sid="6912671606077918" type="skyLeftCover">
                             <param id="0" name="Comparison">0</param>
-                            <param id="1" name="X co-ordinate">ViewportRight(&quot;hud&quot;)/2</param>
+                            <param id="1" name="X co-ordinate">middlePoint</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -321,7 +340,7 @@
                     <conditions>
                         <condition id="-1" name="Compare X" sid="4736865944974054" type="skyRightCover">
                             <param id="0" name="Comparison">0</param>
-                            <param id="1" name="X co-ordinate">ViewportRight(&quot;hud&quot;)/2</param>
+                            <param id="1" name="X co-ordinate">middlePoint</param>
                         </condition>
                     </conditions>
                     <actions>

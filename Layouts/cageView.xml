@@ -215,21 +215,18 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="menuButtonPackage" uid="54">
+                <instance type="goldTemplete" uid="140">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Close</initial-animation>
+                        <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <instance-variables>
-                        <ready>false</ready>
-                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Anchor">
                             <properties>
                                 <left-edge>None</left-edge>
-                                <top-edge>Window bottom</top-edge>
+                                <top-edge>Window top</top-edge>
                                 <right-edge>None</right-edge>
                                 <bottom-edge>None</bottom-edge>
                                 <initial-state>Enabled</initial-state>
@@ -239,14 +236,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>80</x>
-                        <y>640</y>
+                        <x>110</x>
+                        <y>38</y>
                         <z>0</z>
-                        <width>128</width>
-                        <height>128</height>
+                        <width>201</width>
+                        <height>65</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.50248754</hotspotX>
+                        <hotspotY>0.507692337</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -275,10 +272,46 @@
                         <x>640</x>
                         <y>640</y>
                         <z>0</z>
-                        <width>960</width>
-                        <height>128</height>
+                        <width>965</width>
+                        <height>135</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>0.500518143</hotspotX>
+                        <hotspotY>0.503703713</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="menuButtonPackage" uid="54">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Close</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <ready>false</ready>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Anchor">
+                            <properties>
+                                <left-edge>None</left-edge>
+                                <top-edge>Window bottom</top-edge>
+                                <right-edge>None</right-edge>
+                                <bottom-edge>None</bottom-edge>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>80</x>
+                        <y>640</y>
+                        <z>0</z>
+                        <width>155</width>
+                        <height>168</height>
+                        <depth>0</depth>
+                        <hotspotX>0.503225803</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -288,8 +321,8 @@
                     <properties>
                         <text>Text</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-35,400,0</font>
-                        <color>0,0,0</color>
+                        <font>배달의민족 주아,-27,400,0</font>
+                        <color>240,240,240</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
@@ -310,8 +343,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>170</x>
-                        <y>38</y>
+                        <x>162</x>
+                        <y>45</y>
                         <z>0</z>
                         <width>200</width>
                         <height>44</height>
@@ -454,6 +487,44 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="systemText" uid="95">
+                    <properties>
+                        <text>안녕하세요</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-29,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Anchor">
+                            <properties>
+                                <left-edge>None</left-edge>
+                                <top-edge>Window bottom</top-edge>
+                                <right-edge>None</right-edge>
+                                <bottom-edge>None</bottom-edge>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>640</x>
+                        <y>640</y>
+                        <z>0</z>
+                        <width>960</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
                 <instance type="nameText" uid="90">
                     <properties>
                         <text>안녕하세요</text>
@@ -556,7 +627,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1093</x>
+                        <x>443</x>
                         <y>597</y>
                         <z>0</z>
                         <width>53</width>
@@ -572,7 +643,7 @@
                     <properties>
                         <text>안녕하세요</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-21,400,0</font>
+                        <font>배달의민족 주아,-23,400,0</font>
                         <color>0,0,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -595,51 +666,13 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>506</x>
-                        <y>585</y>
+                        <y>588</y>
                         <z>0</z>
-                        <width>500</width>
-                        <height>113</height>
+                        <width>570</width>
+                        <height>116</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="systemText" uid="95">
-                    <properties>
-                        <text>안녕하세요</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-27,400,0</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Center</vertical-alignment>
-                        <hotspot>Center</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Anchor">
-                            <properties>
-                                <left-edge>None</left-edge>
-                                <top-edge>Window bottom</top-edge>
-                                <right-edge>None</right-edge>
-                                <bottom-edge>None</bottom-edge>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>640</x>
-                        <y>640</y>
-                        <z>0</z>
-                        <width>960</width>
-                        <height>128</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -769,7 +802,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1046</x>
+                        <x>396</x>
                         <y>597</y>
                         <z>0</z>
                         <width>32</width>
@@ -881,11 +914,11 @@
                         <x>339</x>
                         <y>672</y>
                         <z>0</z>
-                        <width>32</width>
-                        <height>32</height>
+                        <width>33</width>
+                        <height>33</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.515151501</hotspotX>
+                        <hotspotY>0.515151501</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -949,39 +982,6 @@
                         <z>0</z>
                         <width>32</width>
                         <height>32</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="iconCoinHUD" uid="57">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Anchor">
-                            <properties>
-                                <left-edge>None</left-edge>
-                                <top-edge>Window top</top-edge>
-                                <right-edge>None</right-edge>
-                                <bottom-edge>None</bottom-edge>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>40</x>
-                        <y>38</y>
-                        <z>0</z>
-                        <width>48</width>
-                        <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
