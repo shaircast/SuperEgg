@@ -40,12 +40,12 @@
                         <behavior-instance type="DragDrop">
                             <properties>
                                 <axes>Horizontal only</axes>
-                                <initial-state>Enabled</initial-state>
+                                <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="MoveTo">
                             <properties>
-                                <activated>Yes</activated>
+                                <activated>No</activated>
                                 <max-speed>2000</max-speed>
                                 <acceleration>0</acceleration>
                                 <deceleration>0</deceleration>
@@ -210,7 +210,7 @@
                         <color>0,0,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
+                        <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
                     </properties>
@@ -228,14 +228,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>185</x>
-                        <y>592</y>
+                        <x>710</x>
+                        <y>640</y>
                         <z>0</z>
-                        <width>278</width>
+                        <width>1030</width>
                         <height>105</height>
                         <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -280,8 +280,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>710</x>
-                        <y>676</y>
+                        <x>973</x>
+                        <y>100</y>
                         <z>0</z>
                         <width>80</width>
                         <height>82</height>
@@ -332,8 +332,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>910</x>
-                        <y>676</y>
+                        <x>1094</x>
+                        <y>102</y>
                         <z>0</z>
                         <width>80</width>
                         <height>82</height>
@@ -384,8 +384,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1110</x>
-                        <y>676</y>
+                        <x>1223</x>
+                        <y>105</y>
                         <z>0</z>
                         <width>80</width>
                         <height>82</height>
@@ -451,6 +451,44 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1920</x>
+                        <y>360</y>
+                        <z>0</z>
+                        <width>1280</width>
+                        <height>1280</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="stageViewTransparentCover" uid="83">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="DragDrop">
+                            <properties>
+                                <axes>Horizontal only</axes>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="MoveTo">
+                            <properties>
+                                <activated>Yes</activated>
+                                <max-speed>2000</max-speed>
+                                <acceleration>0</acceleration>
+                                <deceleration>0</deceleration>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>640</x>
                         <y>360</y>
                         <z>0</z>
                         <width>1280</width>

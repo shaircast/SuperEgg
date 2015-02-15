@@ -8,11 +8,11 @@
         <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">-48</variable>
         <event-group description="" sid="3206342493633997" title="general">
             <sub-events>
-                <comment>typeEffectColorPick(henCage.uid) : 해당 henCage의 typeEffect에 type따라 색을 부여하고 정리.</comment>
+                <comment>typeIconPick(henCage.uid) : 해당 henCage의 iconTypeHUD에 type따라 색을 부여하고 정리.</comment>
                 <event-block sid="8754752758490102">
                     <conditions>
                         <condition id="0" name="On function" sid="9756370452516177" type="Function">
-                            <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
+                            <param id="0" name="Name">&quot;typeIconPick&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -27,14 +27,14 @@
                             <sub-events>
                                 <event-block sid="4364264602460347">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="5820503394867167" type="System">
-                                            <param id="0" name="First value">right(henCage.AnimationName,1)</param>
+                                        <condition id="-7" name="Compare instance variable" sid="5820503394867167" type="henCage">
+                                            <param id="0" name="Instance variable">type</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;a&quot;</param>
+                                            <param id="2" name="Value">&quot;a&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set animation" sid="4934776799956" type="typeEffect">
+                                        <action id="4" name="Set animation" sid="6542557778867951" type="iconTypeHUD">
                                             <param id="0" name="Animation">&quot;None&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
@@ -42,14 +42,14 @@
                                 </event-block>
                                 <event-block sid="1612580935888937">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="8212575365906156" type="System">
-                                            <param id="0" name="First value">right(henCage.AnimationName,1)</param>
+                                        <condition id="-7" name="Compare instance variable" sid="4331510549645294" type="henCage">
+                                            <param id="0" name="Instance variable">type</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;b&quot;</param>
+                                            <param id="2" name="Value">&quot;b&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set animation" sid="659102455909548" type="typeEffect">
+                                        <action id="4" name="Set animation" sid="563309930474287" type="iconTypeHUD">
                                             <param id="0" name="Animation">&quot;Fire&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
@@ -57,14 +57,14 @@
                                 </event-block>
                                 <event-block sid="7997538398337363">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="4982551990830356" type="System">
-                                            <param id="0" name="First value">right(henCage.AnimationName,1)</param>
+                                        <condition id="-7" name="Compare instance variable" sid="293763552701021" type="henCage">
+                                            <param id="0" name="Instance variable">type</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;c&quot;</param>
+                                            <param id="2" name="Value">&quot;c&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set animation" sid="741456897906007" type="typeEffect">
+                                        <action id="4" name="Set animation" sid="2704115549998229" type="iconTypeHUD">
                                             <param id="0" name="Animation">&quot;Water&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
@@ -72,14 +72,14 @@
                                 </event-block>
                                 <event-block sid="2036702095685484">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="8021294621055507" type="System">
-                                            <param id="0" name="First value">right(henCage.AnimationName,1)</param>
+                                        <condition id="-7" name="Compare instance variable" sid="7203496095965829" type="henCage">
+                                            <param id="0" name="Instance variable">type</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;d&quot;</param>
+                                            <param id="2" name="Value">&quot;d&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set animation" sid="4158549657630196" type="typeEffect">
+                                        <action id="4" name="Set animation" sid="8308837042621789" type="iconTypeHUD">
                                             <param id="0" name="Animation">&quot;Grass&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
@@ -88,16 +88,9 @@
                                 <event-block sid="7554250760978448">
                                     <conditions />
                                     <actions>
-                                        <action id="-3" name="Set position" sid="1230732911643937" type="typeEffect">
-                                            <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
-                                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
-                                        </action>
-                                        <action id="-29" name="Move to object" sid="3091931867651286" type="typeEffect">
-                                            <param id="0" name="Where">1</param>
-                                            <param id="1" name="Object">henCage</param>
-                                        </action>
-                                        <action id="5" name="Set frame" sid="907890364096594" type="typeEffect">
-                                            <param id="0" name="Frame number">floor(random(self.AnimationFrameCount))</param>
+                                        <action id="-3" name="Set position" sid="1230732911643937" type="iconTypeHUD">
+                                            <param id="0" name="X">henCage.X-self.Width/2</param>
+                                            <param id="1" name="Y">henCage.Y</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1012,7 +1005,7 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="4549750369119469" type="System">
                                     <param id="0" name="Variable">henButtonY</param>
-                                    <param id="1" name="Value">630</param>
+                                    <param id="1" name="Value">buttonUIPlate.Y</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="4818628651737208" type="System">
                                     <param id="0" name="Variable">henButtonXOri</param>
@@ -1849,16 +1842,16 @@
                                     <param id="3" name="Y">cannon.ImagePointY(&quot;launchPoint&quot;)</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="5089967527608578" type="eggBullet">
-                                    <param id="0" name="Animation">henSelected</param>
+                                    <param id="0" name="Animation">left(henSelected,2)&amp;&quot;_&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="5034148500871358" type="eggBullet">
                                     <param id="0" name="Instance variable">kind</param>
-                                    <param id="1" name="Value">left(self.AnimationName,2)</param>
+                                    <param id="1" name="Value">left(henSelected,2)</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="1052751569918945" type="eggBullet">
                                     <param id="0" name="Instance variable">type</param>
-                                    <param id="1" name="Value">right(self.AnimationName,1)</param>
+                                    <param id="1" name="Value">right(henSelected,1)</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="8762853158643017" type="eggBullet">
                                     <param id="0" name="Instance variable">targetX</param>
@@ -5311,17 +5304,17 @@
                         <comment>chapter 보존</comment>
                         <event-block sid="6475006391097985">
                             <conditions>
-                                <condition id="-1" name="Compare X" sid="9567044262191257" type="stageMapChap">
+                                <condition id="-1" name="Compare X" sid="9567044262191257" type="stageViewTransparentCover">
                                     <param id="0" name="Comparison">5</param>
                                     <param id="1" name="X co-ordinate">leftLimit</param>
                                 </condition>
-                                <condition id="-1" name="Compare X" sid="6859509579566958" type="stageMapChap">
+                                <condition id="-1" name="Compare X" sid="6859509579566958" type="stageViewTransparentCover">
                                     <param id="0" name="Comparison">3</param>
                                     <param id="1" name="X co-ordinate">rightLimit</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="MoveTo" id="4" name="Move to XY" sid="6135344306694319" type="stageMapChap">
+                                <action behavior="MoveTo" id="4" name="Move to XY" sid="6135344306694319" type="stageViewTransparentCover">
                                     <param id="0" name="X">middlePoint</param>
                                     <param id="1" name="Y">self.Y</param>
                                 </action>
@@ -5330,7 +5323,7 @@
                         <comment>chapter+</comment>
                         <event-block sid="5423805054868478">
                             <conditions>
-                                <condition id="-1" name="Compare X" sid="5750195988203926" type="stageMapChap">
+                                <condition id="-1" name="Compare X" sid="5750195988203926" type="stageViewTransparentCover">
                                     <param id="0" name="Comparison">2</param>
                                     <param id="1" name="X co-ordinate">leftLimit</param>
                                 </condition>
@@ -5346,7 +5339,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="6586338947273193" type="stageMapChap">
+                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="6586338947273193" type="stageViewTransparentCover">
                                             <param id="0" name="X">middlePoint</param>
                                             <param id="1" name="Y">self.Y</param>
                                         </action>
@@ -5357,7 +5350,7 @@
                                         <condition id="-22" name="Else" sid="3855975677695287" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="6784381508600096" type="stageMapChap">
+                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="6784381508600096" type="stageViewTransparentCover">
                                             <param id="0" name="X">leftPoint</param>
                                             <param id="1" name="Y">self.Y</param>
                                         </action>
@@ -5378,7 +5371,7 @@
                         <comment>chapter-</comment>
                         <event-block sid="6151143797907638">
                             <conditions>
-                                <condition id="-1" name="Compare X" sid="2131313686511915" type="stageMapChap">
+                                <condition id="-1" name="Compare X" sid="2131313686511915" type="stageViewTransparentCover">
                                     <param id="0" name="Comparison">4</param>
                                     <param id="1" name="X co-ordinate">rightLimit</param>
                                 </condition>
@@ -5394,7 +5387,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="9473106452847723" type="stageMapChap">
+                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="9473106452847723" type="stageViewTransparentCover">
                                             <param id="0" name="X">middlePoint</param>
                                             <param id="1" name="Y">self.Y</param>
                                         </action>
@@ -5405,7 +5398,7 @@
                                         <condition id="-22" name="Else" sid="6917663924695923" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="3614695508272239" type="stageMapChap">
+                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="3614695508272239" type="stageViewTransparentCover">
                                             <param id="0" name="X">rightPoint</param>
                                             <param id="1" name="Y">self.Y</param>
                                         </action>
@@ -5440,6 +5433,9 @@
                                 <action id="4" name="Set animation" sid="8934569660151647" type="stageMapChap">
                                     <param id="0" name="Animation">WebStorage.LocalValue(&quot;chapter&quot;)&amp;&quot;_&quot;</param>
                                     <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8247679354070881" type="stageInfoText">
+                                    <param id="0" name="Text">WebStorage.LocalValue(&quot;chapter&quot;)&amp;&quot;번 작전구역입니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -5699,7 +5695,7 @@
                                             </conditions>
                                             <actions>
                                                 <action id="0" name="Set text" sid="9489471624732432" type="stageInfoText">
-                                                    <param id="0" name="Text">&quot;이전 스테이지를 클리어해야 합니다.&quot;</param>
+                                                    <param id="0" name="Text">&quot;이전 거점을 먼저 통과해야 합니다.&quot;</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="7776802337688072" type="stageSelection" />
                                                 <action id="-16" name="Wait" sid="9725104469783688" type="System">
@@ -5767,7 +5763,7 @@
                                                             <param id="2" name="Mode">0</param>
                                                         </action>
                                                         <action id="0" name="Set text" sid="538749667570829" type="stageInfoText">
-                                                            <param id="0" name="Text">&quot;Chapter &quot;&amp;left(chapterStage.AnimationName,1)&amp;&quot;. Stage &quot;&amp;chapterStage.stage&amp;newline&amp;stageNameDB.Get(chapterStage.AnimationName)</param>
+                                                            <param id="0" name="Text">left(chapterStage.AnimationName,1)&amp;&quot;번 작전구역, 거점 &quot;&amp;chapterStage.stage&amp;&quot;.&quot;&amp;newline&amp;&quot;일명, &apos;&quot;&amp;stageNameDB.Get(chapterStage.AnimationName)&amp;&quot;&apos;.&quot;</param>
                                                         </action>
                                                         <action id="0" name="Call function" sid="9454760701560319" type="Function">
                                                             <param id="0" name="Name">&quot;stageButtonSelectedEffect&quot;</param>
@@ -6886,6 +6882,7 @@
                     <sub-events>
                         <variable constant="0" name="x" sid="7509581951710784" static="0" type="number">0</variable>
                         <variable constant="0" name="y" sid="9807419949250389" static="0" type="number">0</variable>
+                        <variable constant="0" name="tempKindType" sid="1189807223023881" static="0" type="text"></variable>
                         <event-block sid="2620932096942006">
                             <conditions>
                                 <condition id="-10" name="For" sid="8382713712853685" type="System">
@@ -6925,17 +6922,21 @@
                                             <param id="2" name="X">x</param>
                                             <param id="3" name="Y">y</param>
                                         </action>
+                                        <action id="-9" name="Set value" sid="6056246218207185" type="System">
+                                            <param id="0" name="Variable">tempKindType</param>
+                                            <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),loopindex,&quot;/&quot;),3)</param>
+                                        </action>
                                         <action id="4" name="Set animation" sid="1834575810064161" type="henCage">
-                                            <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),loopindex,&quot;/&quot;),3)</param>
+                                            <param id="0" name="Animation">left(tempKindType,2)&amp;&quot;_&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="9381273094955179" type="henCage">
                                             <param id="0" name="Instance variable">kind</param>
-                                            <param id="1" name="Value">left(self.AnimationName,2)</param>
+                                            <param id="1" name="Value">left(tempKindType,2)</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="7381810625855205" type="henCage">
                                             <param id="0" name="Instance variable">type</param>
-                                            <param id="1" name="Value">right(self.AnimationName,1)</param>
+                                            <param id="1" name="Value">right(tempKindType,1)</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="2164461517150466" type="henCage">
                                             <param id="0" name="Instance variable">id</param>
@@ -6964,7 +6965,7 @@
                                             <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                         </action>
                                         <action id="0" name="Call function" sid="7953047309158654" type="Function">
-                                            <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
+                                            <param id="0" name="Name">&quot;typeIconPick&quot;</param>
                                             <param id="1" name="Parameter {n}">henCage.UID</param>
                                         </action>
                                     </actions>
@@ -7250,18 +7251,6 @@
                                 <action id="-15" name="Set visible" sid="5722701762910248" type="iconType">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="9398322110433238" type="iconNotype">
-                                    <param id="0" name="Visibility">0</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="7511425488408902" type="iconFire">
-                                    <param id="0" name="Visibility">0</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="280403943087242" type="iconWater">
-                                    <param id="0" name="Visibility">0</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="8818265603453863" type="iconGrass">
-                                    <param id="0" name="Visibility">0</param>
-                                </action>
                                 <action id="-15" name="Set visible" sid="4853280056234565" type="iconFood">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
@@ -7314,18 +7303,6 @@
                                     <param id="0" name="Visibility">1</param>
                                 </action>
                                 <action id="-15" name="Set visible" sid="8986193320851341" type="iconType">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="1737456525860712" type="iconNotype">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="2976721430305459" type="iconFire">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="8903946194367212" type="iconWater">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="5340193932583746" type="iconGrass">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
                                 <action id="-15" name="Set visible" sid="551727885794907" type="iconFood">

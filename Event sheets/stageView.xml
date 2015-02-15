@@ -6,8 +6,8 @@
         <include>function</include>
         <comment>mapState&#x0D;&#x0A;0 : idle&#x0D;&#x0A;1 : moving</comment>
         <variable constant="0" name="mapState" sid="1527712285530095" static="0" type="number">0</variable>
-        <variable constant="0" name="leftLimit" sid="2442168118569261" static="0" type="number">300</variable>
-        <variable constant="0" name="rightLimit" sid="2656393535942194" static="0" type="number">980</variable>
+        <variable constant="0" name="leftLimit" sid="2442168118569261" static="0" type="number">200</variable>
+        <variable constant="0" name="rightLimit" sid="2656393535942194" static="0" type="number">1080</variable>
         <comment>stageLimit : 현재 만들어진 최고 챕터</comment>
         <variable constant="0" name="chapterLimit" sid="4418648694302212" static="0" type="number">3</variable>
         <comment>맵의 left, right, middle point</comment>
@@ -18,7 +18,7 @@
         <comment>chapter라는 변수는 webstorage로 관리(마지막 스크롤)</comment>
         <comment>스테이지 진행상황(maxStage)도 webstorage로 관리</comment>
         <comment>chapterStage&#x0D;&#x0A;frame0 : locked,  frame1 : unlocked&#x0D;&#x0A;animation : chap_stage</comment>
-        <comment>stageMapChap&#x0D;&#x0A;animation : chap_&#x0D;&#x0A;imagepoint : Stage#(1~9)</comment>
+        <comment>stageMapChap&#x0D;&#x0A;animation : chap_&#x0D;&#x0A;imagepoint : Stage#(1~10)</comment>
         <event-block sid="7700455356035">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="8104081229085519" type="System" />
@@ -55,19 +55,30 @@
                     <param id="0" name="Name">&quot;stageButtonOnMap&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="5221150558987895" type="skyLeftCover">
+                <action behavior="PinToImagePoint" disabled="1" id="1" name="Pin to image point" sid="5221150558987895" type="skyLeftCover">
                     <param id="0" name="Pin to">stageMapChap</param>
                     <param id="1" name="ImagePoint">&quot;LeftChap&quot;</param>
                     <param id="2" name="Mode">0</param>
                 </action>
-                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="5326964246846071" type="skyRightCover">
+                <action behavior="PinToImagePoint" disabled="1" id="1" name="Pin to image point" sid="5326964246846071" type="skyRightCover">
                     <param id="0" name="Pin to">stageMapChap</param>
+                    <param id="1" name="ImagePoint">&quot;RightChap&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="2360209687416397" type="skyLeftCover">
+                    <param id="0" name="Pin to">stageViewTransparentCover</param>
+                    <param id="1" name="ImagePoint">&quot;LeftChap&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="7661799620007036" type="skyRightCover">
+                    <param id="0" name="Pin to">stageViewTransparentCover</param>
                     <param id="1" name="ImagePoint">&quot;RightChap&quot;</param>
                     <param id="2" name="Mode">0</param>
                 </action>
             </actions>
             <sub-events>
                 <comment>엔트리닭들 표시</comment>
+                <variable constant="0" name="entryText1" sid="400604657493878" static="0" type="text"></variable>
                 <event-block sid="770215602023579">
                     <conditions>
                         <condition id="-14" name="Pick by unique ID" sid="8939107076620353" type="henCage">
@@ -75,49 +86,48 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action disabled="1" id="-3" name="Create object" sid="6190045976349169" type="System">
-                            <param id="0" name="Object to create">henCage</param>
-                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                            <param id="2" name="X">stageSummary.ImagePointX(&quot;Entry1&quot;)</param>
-                            <param id="3" name="Y">stageSummary.ImagePointY(&quot;Entry1&quot;)</param>
+                        <action id="-9" name="Set value" sid="5978017089429855" type="System">
+                            <param id="0" name="Variable">entryText1</param>
+                            <param id="1" name="Value">tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;)</param>
                         </action>
                         <action id="5" name="Set web font" sid="4428030474368838" type="powerupHUD">
                             <param id="0" name="Family name">&quot;jua&quot;</param>
                             <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                         </action>
                         <action id="4" name="Set animation" sid="5170188448726535" type="henCage">
-                            <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),3)</param>
+                            <param id="0" name="Animation">left(entryText1,2)&amp;&quot;_&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
+                        <action id="-10" name="Set value" sid="8312768358640264" type="henCage">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Value">mid(entryText1,2,1)</param>
+                        </action>
                         <action id="0" name="Set text" sid="1003121973845137" type="powerupHUD">
-                            <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),2)</param>
+                            <param id="0" name="Text">&quot;+&quot;&amp;right(entryText1,2)</param>
                         </action>
-                        <action behavior="Anchor" id="0" name="Set enabled" sid="7907369366459323" type="henCage">
+                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="7907369366459323" type="henCage">
                             <param id="0" name="State">1</param>
-                        </action>
-                        <action disabled="1" id="-3" name="Set position" sid="917886731915791" type="powerupHUD">
-                            <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)+powerupIndicatorX</param>
-                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
                         </action>
                         <action id="-3" name="Set position" sid="5208060166981236" type="powerupHUD">
                             <param id="0" name="X">henCage.X+powerupIndicatorX</param>
                             <param id="1" name="Y">henCage.Y</param>
                         </action>
                         <action id="0" name="Call function" sid="5399263660961733" type="Function">
-                            <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
+                            <param id="0" name="Name">&quot;typeIconPick&quot;</param>
                             <param id="1" name="Parameter {n}">henCage.UID</param>
                         </action>
-                        <action behavior="Anchor" id="0" name="Set enabled" sid="4723183337302696" type="powerupHUD">
+                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="4723183337302696" type="powerupHUD">
                             <param id="0" name="State">1</param>
                         </action>
                         <action behavior="Sine" id="0" name="Set active" sid="2658053938940017" type="henCage">
                             <param id="0" name="State">0</param>
                         </action>
-                        <action behavior="Anchor" id="0" name="Set enabled" sid="9790030498047207" type="typeEffect">
+                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="1412409785881574" type="iconTypeHUD">
                             <param id="0" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>
+                <variable constant="0" name="entryText2" sid="6268674884558681" static="0" type="text"></variable>
                 <event-block sid="3183660632377561">
                     <conditions>
                         <condition id="-14" name="Pick by unique ID" sid="8397015384142384" type="henCage">
@@ -125,49 +135,48 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action disabled="1" id="-3" name="Create object" sid="1840345232585821" type="System">
-                            <param id="0" name="Object to create">henCage</param>
-                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                            <param id="2" name="X">stageSummary.ImagePointX(&quot;Entry2&quot;)</param>
-                            <param id="3" name="Y">stageSummary.ImagePointY(&quot;Entry2&quot;)</param>
+                        <action id="-9" name="Set value" sid="8701931564157918" type="System">
+                            <param id="0" name="Variable">entryText2</param>
+                            <param id="1" name="Value">tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;)</param>
                         </action>
                         <action id="5" name="Set web font" sid="4048084003816442" type="powerupHUD">
                             <param id="0" name="Family name">&quot;jua&quot;</param>
                             <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                         </action>
-                        <action id="4" name="Set animation" sid="2160799486226955" type="henCage">
-                            <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),3)</param>
+                        <action id="4" name="Set animation" sid="615596724082635" type="henCage">
+                            <param id="0" name="Animation">left(entryText2,2)&amp;&quot;_&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                        <action id="0" name="Set text" sid="2284822126224817" type="powerupHUD">
-                            <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),2)</param>
+                        <action id="-10" name="Set value" sid="1535264506196263" type="henCage">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Value">mid(entryText2,2,1)</param>
                         </action>
-                        <action behavior="Anchor" id="0" name="Set enabled" sid="5479414366116965" type="henCage">
+                        <action id="0" name="Set text" sid="3611483885217978" type="powerupHUD">
+                            <param id="0" name="Text">&quot;+&quot;&amp;right(entryText2,2)</param>
+                        </action>
+                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="5479414366116965" type="henCage">
                             <param id="0" name="State">1</param>
-                        </action>
-                        <action disabled="1" id="-3" name="Set position" sid="7140584811335594" type="powerupHUD">
-                            <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)+powerupIndicatorX</param>
-                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
                         </action>
                         <action id="-3" name="Set position" sid="4751990636731957" type="powerupHUD">
                             <param id="0" name="X">henCage.X+powerupIndicatorX</param>
                             <param id="1" name="Y">henCage.Y</param>
                         </action>
-                        <action id="0" name="Call function" sid="6006832137826129" type="Function">
-                            <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
+                        <action id="0" name="Call function" sid="3802550795406213" type="Function">
+                            <param id="0" name="Name">&quot;typeIconPick&quot;</param>
                             <param id="1" name="Parameter {n}">henCage.UID</param>
                         </action>
-                        <action behavior="Anchor" id="0" name="Set enabled" sid="188493870209864" type="powerupHUD">
+                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="188493870209864" type="powerupHUD">
                             <param id="0" name="State">1</param>
                         </action>
                         <action behavior="Sine" id="0" name="Set active" sid="2953565534660106" type="henCage">
                             <param id="0" name="State">0</param>
                         </action>
-                        <action behavior="Anchor" id="0" name="Set enabled" sid="3090870075145784" type="typeEffect">
+                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="9355273093969469" type="iconTypeHUD">
                             <param id="0" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>
+                <variable constant="0" name="entryText3" sid="2758640973757775" static="0" type="text"></variable>
                 <event-block sid="6252716890939115">
                     <conditions>
                         <condition id="-14" name="Pick by unique ID" sid="5656448083357854" type="henCage">
@@ -175,45 +184,43 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action disabled="1" id="-3" name="Create object" sid="6929296922313758" type="System">
-                            <param id="0" name="Object to create">henCage</param>
-                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                            <param id="2" name="X">stageSummary.ImagePointX(&quot;Entry3&quot;)</param>
-                            <param id="3" name="Y">stageSummary.ImagePointY(&quot;Entry3&quot;)</param>
+                        <action id="-9" name="Set value" sid="5588066611843031" type="System">
+                            <param id="0" name="Variable">entryText3</param>
+                            <param id="1" name="Value">tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;)</param>
                         </action>
                         <action id="5" name="Set web font" sid="1078333775399014" type="powerupHUD">
                             <param id="0" name="Family name">&quot;jua&quot;</param>
                             <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                         </action>
-                        <action id="4" name="Set animation" sid="602530592199792" type="henCage">
-                            <param id="0" name="Animation">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),3)</param>
+                        <action id="4" name="Set animation" sid="8339171771831033" type="henCage">
+                            <param id="0" name="Animation">left(entryText3,2)&amp;&quot;_&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                        <action id="0" name="Set text" sid="3939487497467056" type="powerupHUD">
-                            <param id="0" name="Text">&quot;+&quot;&amp;right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),2)</param>
+                        <action id="-10" name="Set value" sid="7551382865032123" type="henCage">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Value">mid(entryText3,2,1)</param>
                         </action>
-                        <action behavior="Anchor" id="0" name="Set enabled" sid="8030780734289193" type="henCage">
+                        <action id="0" name="Set text" sid="7112792607579372" type="powerupHUD">
+                            <param id="0" name="Text">&quot;+&quot;&amp;right(entryText3,2)</param>
+                        </action>
+                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="8030780734289193" type="henCage">
                             <param id="0" name="State">1</param>
-                        </action>
-                        <action disabled="1" id="-3" name="Set position" sid="1779030403736296" type="powerupHUD">
-                            <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)+powerupIndicatorX</param>
-                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
                         </action>
                         <action id="-3" name="Set position" sid="2473648163225985" type="powerupHUD">
                             <param id="0" name="X">henCage.X+powerupIndicatorX</param>
                             <param id="1" name="Y">henCage.Y</param>
                         </action>
-                        <action id="0" name="Call function" sid="7326526173152828" type="Function">
-                            <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
+                        <action id="0" name="Call function" sid="7732670239850963" type="Function">
+                            <param id="0" name="Name">&quot;typeIconPick&quot;</param>
                             <param id="1" name="Parameter {n}">henCage.UID</param>
                         </action>
-                        <action behavior="Anchor" id="0" name="Set enabled" sid="2885390931162377" type="powerupHUD">
+                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="2885390931162377" type="powerupHUD">
                             <param id="0" name="State">1</param>
                         </action>
                         <action behavior="Sine" id="0" name="Set active" sid="7414342331057858" type="henCage">
                             <param id="0" name="State">0</param>
                         </action>
-                        <action behavior="Anchor" id="0" name="Set enabled" sid="2107255661883051" type="typeEffect">
+                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="8463163119156859" type="iconTypeHUD">
                             <param id="0" name="State">1</param>
                         </action>
                     </actions>
@@ -334,7 +341,7 @@
                     </conditions>
                     <actions>
                         <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="936472846526721" type="skyLeftCover">
-                            <param id="0" name="Pin to">stageMapChap</param>
+                            <param id="0" name="Pin to">stageViewTransparentCover</param>
                             <param id="1" name="ImagePoint">&quot;LeftChap&quot;</param>
                             <param id="2" name="Mode">0</param>
                         </action>
@@ -367,7 +374,7 @@
                     </conditions>
                     <actions>
                         <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="4085564991392824" type="skyRightCover">
-                            <param id="0" name="Pin to">stageMapChap</param>
+                            <param id="0" name="Pin to">stageViewTransparentCover</param>
                             <param id="1" name="ImagePoint">&quot;RightChap&quot;</param>
                             <param id="2" name="Mode">0</param>
                         </action>
@@ -375,23 +382,46 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="402951720653099">
+            <conditions>
+                <condition behavior="DragDrop" id="0" name="Is dragging" sid="9415270766767377" type="stageViewTransparentCover" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block any="1" sid="3902580487646555">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="5175246534579688" type="skyLeftCover">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">middlePoint</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="6117459462028747" type="skyRightCover">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">middlePoint</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="DragDrop" id="1" name="Drop" sid="2394533675120123" type="stageViewTransparentCover" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
         <comment>움직이는 동안에는 드래그 못하도록</comment>
         <event-block any="1" sid="5919491528962962">
             <conditions>
-                <condition behavior="MoveTo" id="3" name="Is moving" sid="9454243308344603" type="stageMapChap" />
+                <condition behavior="MoveTo" id="3" name="Is moving" sid="9454243308344603" type="stageViewTransparentCover" />
                 <condition behavior="MoveTo" id="3" name="Is moving" sid="7870584894657935" type="skyLeftCover" />
                 <condition behavior="MoveTo" id="3" name="Is moving" sid="7304032672118231" type="skyRightCover" />
             </conditions>
             <actions>
-                <action behavior="DragDrop" id="1" name="Drop" sid="9584445732112476" type="stageMapChap" />
-                <action behavior="DragDrop" id="0" name="Set enabled" sid="8033787138967161" type="stageMapChap">
+                <action behavior="DragDrop" id="1" name="Drop" sid="9584445732112476" type="stageViewTransparentCover" />
+                <action behavior="DragDrop" id="0" name="Set enabled" sid="8033787138967161" type="stageViewTransparentCover">
                     <param id="0" name="State">0</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="6337386988390856">
             <conditions>
-                <condition behavior="MoveTo" id="1" name="Compare speed" sid="5072605629796082" type="stageMapChap">
+                <condition behavior="MoveTo" id="1" name="Compare speed" sid="5072605629796082" type="stageViewTransparentCover">
                     <param id="0" name="Comparison">0</param>
                     <param id="1" name="Speed">0</param>
                 </condition>
@@ -405,7 +435,7 @@
                 </condition>
             </conditions>
             <actions>
-                <action behavior="DragDrop" id="0" name="Set enabled" sid="3531306340662749" type="stageMapChap">
+                <action behavior="DragDrop" id="0" name="Set enabled" sid="3531306340662749" type="stageViewTransparentCover">
                     <param id="0" name="State">1</param>
                 </action>
             </actions>
@@ -413,7 +443,7 @@
         <comment>맵 놓을때 움직임. mapDropMove에서 Map움직이고 webstorage도 +-함.</comment>
         <event-block sid="8808585719461046">
             <conditions>
-                <condition behavior="DragDrop" id="2" name="On drop" sid="8326870939180997" type="stageMapChap" />
+                <condition behavior="DragDrop" id="2" name="On drop" sid="8326870939180997" type="stageViewTransparentCover" />
             </conditions>
             <actions>
                 <action id="0" name="Call function" sid="9270844369481066" type="Function">
@@ -424,14 +454,14 @@
         </event-block>
         <event-block sid="5736063398482442">
             <conditions>
-                <condition behavior="MoveTo" id="0" name="On hit target position" sid="6253535470018182" type="stageMapChap" />
+                <condition behavior="MoveTo" id="0" name="On hit target position" sid="6253535470018182" type="stageViewTransparentCover" />
             </conditions>
             <actions />
             <sub-events>
                 <comment>chapter+</comment>
                 <event-block sid="2734502193585266">
                     <conditions>
-                        <condition id="-1" name="Compare X" sid="5919086124908779" type="stageMapChap">
+                        <condition id="-1" name="Compare X" sid="5919086124908779" type="stageViewTransparentCover">
                             <param id="0" name="Comparison">0</param>
                             <param id="1" name="X co-ordinate">leftPoint</param>
                         </condition>
@@ -440,11 +470,18 @@
                         <action behavior="PinToImagePoint" id="10" name="Unpin" sid="9689016014765608" type="skyLeftCover" />
                         <action behavior="PinToImagePoint" id="10" name="Unpin" sid="3818973853719818" type="skyRightCover" />
                         <action id="-9" name="Destroy" sid="1775737011201239" type="stageSelection" />
+                        <action id="-9" name="Destroy" sid="4909748952344393" type="stageViewTransparentCover" />
                         <action id="-9" name="Destroy" sid="4744354669632809" type="stageMapChap" />
                         <action id="-9" name="Destroy" sid="660024751544348" type="chapterStage" />
                         <action id="-3" name="Create object" sid="4418676078800314" type="System">
                             <param id="0" name="Object to create">stageMapChap</param>
                             <param id="1" name="Layer">&quot;bg&quot;</param>
+                            <param id="2" name="X">middlePoint</param>
+                            <param id="3" name="Y">(ViewportTop(0)+ViewportBottom(0))/2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8016059663882998" type="System">
+                            <param id="0" name="Object to create">stageViewTransparentCover</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
                             <param id="2" name="X">middlePoint</param>
                             <param id="3" name="Y">(ViewportTop(0)+ViewportBottom(0))/2</param>
                         </action>
@@ -456,19 +493,19 @@
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                         <action behavior="MoveTo" id="4" name="Move to XY" sid="8818807236239806" type="skyLeftCover">
-                            <param id="0" name="X">stageMapChap.ImagePointX(&quot;LeftChap&quot;)</param>
-                            <param id="1" name="Y">stageMapChap.ImagePointY(&quot;LeftChap&quot;)</param>
+                            <param id="0" name="X">stageViewTransparentCover.ImagePointX(&quot;LeftChap&quot;)</param>
+                            <param id="1" name="Y">stageViewTransparentCover.ImagePointY(&quot;LeftChap&quot;)</param>
                         </action>
                         <action behavior="MoveTo" id="4" name="Move to XY" sid="1153501491690105" type="skyRightCover">
-                            <param id="0" name="X">stageMapChap.ImagePointX(&quot;RightChap&quot;)</param>
-                            <param id="1" name="Y">stageMapChap.ImagePointY(&quot;RightChap&quot;)</param>
+                            <param id="0" name="X">stageViewTransparentCover.ImagePointX(&quot;RightChap&quot;)</param>
+                            <param id="1" name="Y">stageViewTransparentCover.ImagePointY(&quot;RightChap&quot;)</param>
                         </action>
                     </actions>
                 </event-block>
                 <comment>chapter-</comment>
                 <event-block sid="5509772237342862">
                     <conditions>
-                        <condition id="-1" name="Compare X" sid="4957039166360495" type="stageMapChap">
+                        <condition id="-1" name="Compare X" sid="4957039166360495" type="stageViewTransparentCover">
                             <param id="0" name="Comparison">0</param>
                             <param id="1" name="X co-ordinate">rightPoint</param>
                         </condition>
@@ -477,11 +514,18 @@
                         <action behavior="PinToImagePoint" id="10" name="Unpin" sid="7818491786843518" type="skyLeftCover" />
                         <action behavior="PinToImagePoint" id="10" name="Unpin" sid="2761592115180677" type="skyRightCover" />
                         <action id="-9" name="Destroy" sid="5601756273744085" type="stageSelection" />
+                        <action id="-9" name="Destroy" sid="3481455545075601" type="stageViewTransparentCover" />
                         <action id="-9" name="Destroy" sid="3646032201923462" type="stageMapChap" />
                         <action id="-9" name="Destroy" sid="343076708293646" type="chapterStage" />
                         <action id="-3" name="Create object" sid="7820954197747299" type="System">
                             <param id="0" name="Object to create">stageMapChap</param>
                             <param id="1" name="Layer">&quot;bg&quot;</param>
+                            <param id="2" name="X">middlePoint</param>
+                            <param id="3" name="Y">(ViewportTop(0)+ViewportBottom(0))/2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1889983667126278" type="System">
+                            <param id="0" name="Object to create">stageViewTransparentCover</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
                             <param id="2" name="X">middlePoint</param>
                             <param id="3" name="Y">(ViewportTop(0)+ViewportBottom(0))/2</param>
                         </action>
@@ -493,12 +537,12 @@
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                         <action behavior="MoveTo" id="4" name="Move to XY" sid="314912408520301" type="skyLeftCover">
-                            <param id="0" name="X">stageMapChap.ImagePointX(&quot;LeftChap&quot;)</param>
-                            <param id="1" name="Y">stageMapChap.ImagePointY(&quot;LeftChap&quot;)</param>
+                            <param id="0" name="X">stageViewTransparentCover.ImagePointX(&quot;LeftChap&quot;)</param>
+                            <param id="1" name="Y">stageViewTransparentCover.ImagePointY(&quot;LeftChap&quot;)</param>
                         </action>
                         <action behavior="MoveTo" id="4" name="Move to XY" sid="7734431027505539" type="skyRightCover">
-                            <param id="0" name="X">stageMapChap.ImagePointX(&quot;RightChap&quot;)</param>
-                            <param id="1" name="Y">stageMapChap.ImagePointY(&quot;RightChap&quot;)</param>
+                            <param id="0" name="X">stageViewTransparentCover.ImagePointX(&quot;RightChap&quot;)</param>
+                            <param id="1" name="Y">stageViewTransparentCover.ImagePointY(&quot;RightChap&quot;)</param>
                         </action>
                     </actions>
                 </event-block>

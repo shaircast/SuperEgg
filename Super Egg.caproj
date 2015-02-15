@@ -899,6 +899,8 @@
                         <instance-variable name="bonus" sid="8871217369708036" type="boolean" />
                         <instance-variable comment="0-idle, 1-eating, 2-ready" name="state" sid="5248091855550993" type="number" />
                         <instance-variable name="eating" sid="5135200737292878" type="number" />
+                        <instance-variable name="kind" sid="7374823560282457" type="string" />
+                        <instance-variable name="type" sid="33870600895145" type="string" />
                     </instance-variables>
                     <behaviors>
                         <behavior-type name="Anchor" sid="7124157206007039">
@@ -5415,510 +5417,126 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation-folder name="01">
-                        <animation framecount="1" loop="0" name="01a" pingpong="0" repeatcount="1" repeatto="0" sid="6373878700653659" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\Egg (to throw).png">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="01b" pingpong="0" repeatcount="1" repeatto="0" sid="8669902683568093" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="01c" pingpong="0" repeatcount="1" repeatto="0" sid="1488094013550928" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="01d" pingpong="0" repeatcount="1" repeatto="0" sid="4895473596712654" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="02">
-                        <animation framecount="1" loop="0" name="02a" pingpong="0" repeatcount="1" repeatto="0" sid="1093045494804914" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="02b" pingpong="0" repeatcount="1" repeatto="0" sid="8005380725510866" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="02c" pingpong="0" repeatcount="1" repeatto="0" sid="6663156323063287" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="02d" pingpong="0" repeatcount="1" repeatto="0" sid="9525959063549451" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="03">
-                        <animation framecount="1" loop="0" name="03a" pingpong="0" repeatcount="1" repeatto="0" sid="8644448127449451" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="03b" pingpong="0" repeatcount="1" repeatto="0" sid="752945532983984" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="03c" pingpong="0" repeatcount="1" repeatto="0" sid="3624214710029575" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="03d" pingpong="0" repeatcount="1" repeatto="0" sid="8614045928014219" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="04">
-                        <animation framecount="1" loop="0" name="04a" pingpong="0" repeatcount="1" repeatto="0" sid="5345521558660811" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="04b" pingpong="0" repeatcount="1" repeatto="0" sid="8001933711245601" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="04c" pingpong="0" repeatcount="1" repeatto="0" sid="9866190669632761" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="04d" pingpong="0" repeatcount="1" repeatto="0" sid="9044629984219079" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="05">
-                        <animation framecount="1" loop="0" name="05a" pingpong="0" repeatcount="1" repeatto="0" sid="5240110744708661" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="05b" pingpong="0" repeatcount="1" repeatto="0" sid="444655223886985" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="05c" pingpong="0" repeatcount="1" repeatto="0" sid="4703423053667228" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="05d" pingpong="0" repeatcount="1" repeatto="0" sid="74665345570365" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="06">
-                        <animation framecount="1" loop="0" name="06a" pingpong="0" repeatcount="1" repeatto="0" sid="243543866984801" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="06b" pingpong="0" repeatcount="1" repeatto="0" sid="5442499858596564" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="06c" pingpong="0" repeatcount="1" repeatto="0" sid="4714716449591982" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="06d" pingpong="0" repeatcount="1" repeatto="0" sid="1063427487649624" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="07">
-                        <animation framecount="1" loop="0" name="07a" pingpong="0" repeatcount="1" repeatto="0" sid="9249602457767974" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="07b" pingpong="0" repeatcount="1" repeatto="0" sid="7895939284959533" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="07c" pingpong="0" repeatcount="1" repeatto="0" sid="2223655808327994" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="07d" pingpong="0" repeatcount="1" repeatto="0" sid="8553789783776059" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="08">
-                        <animation framecount="1" loop="0" name="08a" pingpong="0" repeatcount="1" repeatto="0" sid="8885697621730577" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="08b" pingpong="0" repeatcount="1" repeatto="0" sid="2266135619963735" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="08c" pingpong="0" repeatcount="1" repeatto="0" sid="8799200717779134" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="08d" pingpong="0" repeatcount="1" repeatto="0" sid="9779027875742584" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="09">
-                        <animation framecount="1" loop="0" name="09a" pingpong="0" repeatcount="1" repeatto="0" sid="427884327528649" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="09b" pingpong="0" repeatcount="1" repeatto="0" sid="2690374755017131" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="09c" pingpong="0" repeatcount="1" repeatto="0" sid="1020828131798021" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="09d" pingpong="0" repeatcount="1" repeatto="0" sid="9474854275614213" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="10">
-                        <animation framecount="1" loop="0" name="10a" pingpong="0" repeatcount="1" repeatto="0" sid="7884932209482899" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="10b" pingpong="0" repeatcount="1" repeatto="0" sid="2249098339523786" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="10c" pingpong="0" repeatcount="1" repeatto="0" sid="3953474415269639" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="10d" pingpong="0" repeatcount="1" repeatto="0" sid="3450908520088925" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="11">
-                        <animation framecount="1" loop="0" name="11a" pingpong="0" repeatcount="1" repeatto="0" sid="4324886859730945" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="11b" pingpong="0" repeatcount="1" repeatto="0" sid="2947571210390665" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="11c" pingpong="0" repeatcount="1" repeatto="0" sid="5582853650883438" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="11d" pingpong="0" repeatcount="1" repeatto="0" sid="774712421820101" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="12">
-                        <animation framecount="1" loop="0" name="12a" pingpong="0" repeatcount="1" repeatto="0" sid="7375992099667007" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="12b" pingpong="0" repeatcount="1" repeatto="0" sid="8641693683549528" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="12c" pingpong="0" repeatcount="1" repeatto="0" sid="6574500423477698" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="12d" pingpong="0" repeatcount="1" repeatto="0" sid="2055879296607181" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0.4375" y="0.4375" />
-                                    <point x="0.5625" y="0.4375" />
-                                    <point x="0.5625" y="0.5625" />
-                                    <point x="0.4375" y="0.5625" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
+                    <animation framecount="1" loop="0" name="01_" pingpong="0" repeatcount="1" repeatto="0" sid="6373878700653659" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\Egg (to throw).png">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="02_" pingpong="0" repeatcount="1" repeatto="0" sid="1093045494804914" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="03_" pingpong="0" repeatcount="1" repeatto="0" sid="8644448127449451" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="04_" pingpong="0" repeatcount="1" repeatto="0" sid="5345521558660811" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="05_" pingpong="0" repeatcount="1" repeatto="0" sid="5240110744708661" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="06_" pingpong="0" repeatcount="1" repeatto="0" sid="243543866984801" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="07_" pingpong="0" repeatcount="1" repeatto="0" sid="9249602457767974" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="08_" pingpong="0" repeatcount="1" repeatto="0" sid="8885697621730577" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="09_" pingpong="0" repeatcount="1" repeatto="0" sid="427884327528649" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="10_" pingpong="0" repeatcount="1" repeatto="0" sid="7884932209482899" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="11_" pingpong="0" repeatcount="1" repeatto="0" sid="4324886859730945" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="12_" pingpong="0" repeatcount="1" repeatto="0" sid="7375992099667007" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="pauseButton" sid="1176948810963397">
@@ -5978,19 +5596,6 @@
             <object-type name="eggDestroyedEffect" sid="533790726821284">
                 <plugin id="Particles" />
                 <texture format="png8" />
-            </object-type>
-            <object-type name="focus" sid="6997083605112545">
-                <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="ScrollTo" sid="1868886312298108">
-                        <behavior id="scrollto" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4232872001806188" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
             </object-type>
             <object-type name="turnText" sid="3318910413245149">
                 <plugin id="Text" />
@@ -6294,6 +5899,25 @@
                     </behavior-type>
                 </behaviors>
             </object-type>
+            <object-type name="stageViewTransparentCover" sid="8352054972731375">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="DragDrop" sid="8457597351366888">
+                        <behavior id="DragnDrop" />
+                    </behavior-type>
+                    <behavior-type name="MoveTo" sid="87893529009221">
+                        <behavior id="Rex_MoveTo" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8261215227513411" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="LeftChap" x="-0.5" y="0.5" />
+                            <image-point name="RightChap" x="1.5" y="0.5" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="menuButton">
             <object-type name="menuButtonCageView" sid="444282798174282">
@@ -6451,6 +6075,7 @@
                         <type>henCage</type>
                         <type>powerupHUD</type>
                         <type>typeEffect</type>
+                        <type>iconTypeHUD</type>
                     </container>
                 </object-type>
             </object-folder>
@@ -6545,715 +6170,177 @@
                     <type>henCage</type>
                     <type>powerupHUD</type>
                     <type>typeEffect</type>
+                    <type>iconTypeHUD</type>
                 </container>
                 <animation-folder>
-                    <animation-folder name="01">
-                        <animation framecount="1" loop="0" name="01a" pingpong="0" repeatcount="1" repeatto="0" sid="7712919499338095" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 1.png">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                                <collision-poly>
-                                    <point x="0.166667" y="0.162162" />
-                                    <point x="0.5" y="0.283784" />
-                                    <point x="0.597222" y="0.391892" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.861111" y="0.864865" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.864865" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="01b" pingpong="0" repeatcount="1" repeatto="0" sid="4069734130439024" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                                <collision-poly>
-                                    <point x="0.166667" y="0.162162" />
-                                    <point x="0.5" y="0.283784" />
-                                    <point x="0.597222" y="0.391892" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.861111" y="0.864865" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.864865" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="01c" pingpong="0" repeatcount="1" repeatto="0" sid="203502699706361" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                                <collision-poly>
-                                    <point x="0.166667" y="0.162162" />
-                                    <point x="0.5" y="0.283784" />
-                                    <point x="0.597222" y="0.391892" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.861111" y="0.864865" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.864865" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="01d" pingpong="0" repeatcount="1" repeatto="0" sid="5007560043829508" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                                <collision-poly>
-                                    <point x="0.166667" y="0.162162" />
-                                    <point x="0.5" y="0.283784" />
-                                    <point x="0.597222" y="0.391892" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.861111" y="0.864865" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.864865" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="02">
-                        <animation framecount="1" loop="0" name="02a" pingpong="0" repeatcount="1" repeatto="0" sid="9657623426585062" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                                <collision-poly>
-                                    <point x="0.194444" y="0.186667" />
-                                    <point x="0.5" y="0.266667" />
-                                    <point x="0.611111" y="0.373333" />
-                                    <point x="0.986111" y="0.493333" />
-                                    <point x="0.861111" y="0.866667" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.866667" />
-                                    <point x="0" y="0.493333" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="02b" pingpong="0" repeatcount="1" repeatto="0" sid="2745313421595815" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                                <collision-poly>
-                                    <point x="0.194444" y="0.186667" />
-                                    <point x="0.5" y="0.266667" />
-                                    <point x="0.611111" y="0.373333" />
-                                    <point x="0.986111" y="0.493333" />
-                                    <point x="0.861111" y="0.866667" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.866667" />
-                                    <point x="0" y="0.493333" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="02c" pingpong="0" repeatcount="1" repeatto="0" sid="9240010465664461" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                                <collision-poly>
-                                    <point x="0.194444" y="0.186667" />
-                                    <point x="0.5" y="0.266667" />
-                                    <point x="0.611111" y="0.373333" />
-                                    <point x="0.986111" y="0.493333" />
-                                    <point x="0.861111" y="0.866667" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.866667" />
-                                    <point x="0" y="0.493333" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="02d" pingpong="0" repeatcount="1" repeatto="0" sid="3141789908118777" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                                <collision-poly>
-                                    <point x="0.194444" y="0.186667" />
-                                    <point x="0.5" y="0.266667" />
-                                    <point x="0.611111" y="0.373333" />
-                                    <point x="0.986111" y="0.493333" />
-                                    <point x="0.861111" y="0.866667" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.866667" />
-                                    <point x="0" y="0.493333" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="03">
-                        <animation framecount="1" loop="0" name="03a" pingpong="0" repeatcount="1" repeatto="0" sid="8998260361388765" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.505495" />
-                                <collision-poly>
-                                    <point x="0.166667" y="0.148148" />
-                                    <point x="0.5" y="0.45679" />
-                                    <point x="0.5" y="0.444444" />
-                                    <point x="0.527778" y="0.493827" />
-                                    <point x="0.875" y="0.888889" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.876543" />
-                                    <point x="0.0277778" y="0.493827" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="03b" pingpong="0" repeatcount="1" repeatto="0" sid="2999177508636793" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.505495" />
-                                <collision-poly>
-                                    <point x="0.166667" y="0.148148" />
-                                    <point x="0.5" y="0.45679" />
-                                    <point x="0.5" y="0.444444" />
-                                    <point x="0.527778" y="0.493827" />
-                                    <point x="0.875" y="0.888889" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.876543" />
-                                    <point x="0.0277778" y="0.493827" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="03c" pingpong="0" repeatcount="1" repeatto="0" sid="8871371294808144" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.505495" />
-                                <collision-poly>
-                                    <point x="0.166667" y="0.148148" />
-                                    <point x="0.5" y="0.45679" />
-                                    <point x="0.5" y="0.444444" />
-                                    <point x="0.527778" y="0.493827" />
-                                    <point x="0.875" y="0.888889" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.876543" />
-                                    <point x="0.0277778" y="0.493827" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="03d" pingpong="0" repeatcount="1" repeatto="0" sid="7604759466639501" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.505495" />
-                                <collision-poly>
-                                    <point x="0.166667" y="0.148148" />
-                                    <point x="0.5" y="0.45679" />
-                                    <point x="0.5" y="0.444444" />
-                                    <point x="0.527778" y="0.493827" />
-                                    <point x="0.875" y="0.888889" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.876543" />
-                                    <point x="0.0277778" y="0.493827" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="04">
-                        <animation framecount="1" loop="0" name="04a" pingpong="0" repeatcount="1" repeatto="0" sid="2198609863323154" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.506024" />
-                                <collision-poly>
-                                    <point x="0.194444" y="0.186667" />
-                                    <point x="0.5" y="0.266667" />
-                                    <point x="0.611111" y="0.373333" />
-                                    <point x="0.986111" y="0.493333" />
-                                    <point x="0.861111" y="0.866667" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.866667" />
-                                    <point x="0" y="0.493333" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="04b" pingpong="0" repeatcount="1" repeatto="0" sid="2172677704609607" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.506024" />
-                                <collision-poly>
-                                    <point x="0.194444" y="0.186667" />
-                                    <point x="0.5" y="0.266667" />
-                                    <point x="0.611111" y="0.373333" />
-                                    <point x="0.986111" y="0.493333" />
-                                    <point x="0.861111" y="0.866667" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.866667" />
-                                    <point x="0" y="0.493333" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="04c" pingpong="0" repeatcount="1" repeatto="0" sid="7791095553685202" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.506024" />
-                                <collision-poly>
-                                    <point x="0.194444" y="0.186667" />
-                                    <point x="0.5" y="0.266667" />
-                                    <point x="0.611111" y="0.373333" />
-                                    <point x="0.986111" y="0.493333" />
-                                    <point x="0.861111" y="0.866667" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.866667" />
-                                    <point x="0" y="0.493333" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="04d" pingpong="0" repeatcount="1" repeatto="0" sid="8750049253077337" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.506024" />
-                                <collision-poly>
-                                    <point x="0.194444" y="0.186667" />
-                                    <point x="0.5" y="0.266667" />
-                                    <point x="0.611111" y="0.373333" />
-                                    <point x="0.986111" y="0.493333" />
-                                    <point x="0.861111" y="0.866667" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.866667" />
-                                    <point x="0" y="0.493333" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="05">
-                        <animation framecount="1" loop="0" name="05a" pingpong="0" repeatcount="1" repeatto="0" sid="6380119827133479" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.975309" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 1.png">
-                                <image-point name="Center" x="0.5" y="0.506173" />
-                                <collision-poly>
-                                    <point x="0.2125" y="0.209877" />
-                                    <point x="0.5" y="0.037037" />
-                                    <point x="0.6625" y="0.333333" />
-                                    <point x="0.9875" y="0.493827" />
-                                    <point x="0.875" y="0.876543" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.125" y="0.876543" />
-                                    <point x="0.0125" y="0.493827" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="05b" pingpong="0" repeatcount="1" repeatto="0" sid="1663303186958316" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.975309">
-                                <image-point name="Center" x="0.5" y="0.506173" />
-                                <collision-poly>
-                                    <point x="0.2125" y="0.209877" />
-                                    <point x="0.5" y="0.037037" />
-                                    <point x="0.6625" y="0.333333" />
-                                    <point x="0.9875" y="0.493827" />
-                                    <point x="0.875" y="0.876543" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.125" y="0.876543" />
-                                    <point x="0.0125" y="0.493827" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="05c" pingpong="0" repeatcount="1" repeatto="0" sid="6540219831168294" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.975309">
-                                <image-point name="Center" x="0.5" y="0.506173" />
-                                <collision-poly>
-                                    <point x="0.2125" y="0.209877" />
-                                    <point x="0.5" y="0.037037" />
-                                    <point x="0.6625" y="0.333333" />
-                                    <point x="0.9875" y="0.493827" />
-                                    <point x="0.875" y="0.876543" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.125" y="0.876543" />
-                                    <point x="0.0125" y="0.493827" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="05d" pingpong="0" repeatcount="1" repeatto="0" sid="3706127582222695" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.975309">
-                                <image-point name="Center" x="0.5" y="0.506173" />
-                                <collision-poly>
-                                    <point x="0.2125" y="0.209877" />
-                                    <point x="0.5" y="0.037037" />
-                                    <point x="0.6625" y="0.333333" />
-                                    <point x="0.9875" y="0.493827" />
-                                    <point x="0.875" y="0.876543" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.125" y="0.876543" />
-                                    <point x="0.0125" y="0.493827" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="06">
-                        <animation framecount="1" loop="0" name="06a" pingpong="0" repeatcount="1" repeatto="0" sid="3756160307462643" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\RoboChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.506024" />
-                                <collision-poly>
-                                    <point x="0.1625" y="0.156627" />
-                                    <point x="0.5" y="0.289157" />
-                                    <point x="0.5875" y="0.39759" />
-                                    <point x="1" y="0.493976" />
-                                    <point x="0.8625" y="0.86747" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.1375" y="0.86747" />
-                                    <point x="0" y="0.493976" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="06b" pingpong="0" repeatcount="1" repeatto="0" sid="8686332036011215" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.506024" />
-                                <collision-poly>
-                                    <point x="0.1625" y="0.156627" />
-                                    <point x="0.5" y="0.289157" />
-                                    <point x="0.5875" y="0.39759" />
-                                    <point x="1" y="0.493976" />
-                                    <point x="0.8625" y="0.86747" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.1375" y="0.86747" />
-                                    <point x="0" y="0.493976" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="06c" pingpong="0" repeatcount="1" repeatto="0" sid="5794544080820612" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.506024" />
-                                <collision-poly>
-                                    <point x="0.1625" y="0.156627" />
-                                    <point x="0.5" y="0.289157" />
-                                    <point x="0.5875" y="0.39759" />
-                                    <point x="1" y="0.493976" />
-                                    <point x="0.8625" y="0.86747" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.1375" y="0.86747" />
-                                    <point x="0" y="0.493976" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="06d" pingpong="0" repeatcount="1" repeatto="0" sid="1168908328618318" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.506024" />
-                                <collision-poly>
-                                    <point x="0.1625" y="0.156627" />
-                                    <point x="0.5" y="0.289157" />
-                                    <point x="0.5875" y="0.39759" />
-                                    <point x="1" y="0.493976" />
-                                    <point x="0.8625" y="0.86747" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.1375" y="0.86747" />
-                                    <point x="0" y="0.493976" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="07">
-                        <animation framecount="1" loop="0" name="07a" pingpong="0" repeatcount="1" repeatto="0" sid="3627830700157795" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\PeaChicks 2.png">
-                                <image-point name="Center" x="0.5" y="0.511111" />
-                                <collision-poly>
-                                    <point x="0.208333" y="0.365854" />
-                                    <point x="0.5" y="0.317073" />
-                                    <point x="0.791667" y="0.365854" />
-                                    <point x="1" y="0.487805" />
-                                    <point x="0.930556" y="0.878049" />
-                                    <point x="0.5" y="0.658537" />
-                                    <point x="0.0694444" y="0.878049" />
-                                    <point x="0" y="0.487805" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="07b" pingpong="0" repeatcount="1" repeatto="0" sid="2546664459251846" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.511111" />
-                                <collision-poly>
-                                    <point x="0.208333" y="0.365854" />
-                                    <point x="0.5" y="0.317073" />
-                                    <point x="0.791667" y="0.365854" />
-                                    <point x="1" y="0.487805" />
-                                    <point x="0.930556" y="0.878049" />
-                                    <point x="0.5" y="0.658537" />
-                                    <point x="0.0694444" y="0.878049" />
-                                    <point x="0" y="0.487805" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="07c" pingpong="0" repeatcount="1" repeatto="0" sid="1312001380619087" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.511111" />
-                                <collision-poly>
-                                    <point x="0.208333" y="0.365854" />
-                                    <point x="0.5" y="0.317073" />
-                                    <point x="0.791667" y="0.365854" />
-                                    <point x="1" y="0.487805" />
-                                    <point x="0.930556" y="0.878049" />
-                                    <point x="0.5" y="0.658537" />
-                                    <point x="0.0694444" y="0.878049" />
-                                    <point x="0" y="0.487805" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="07d" pingpong="0" repeatcount="1" repeatto="0" sid="4043720004780522" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.511111" />
-                                <collision-poly>
-                                    <point x="0.208333" y="0.365854" />
-                                    <point x="0.5" y="0.317073" />
-                                    <point x="0.791667" y="0.365854" />
-                                    <point x="1" y="0.487805" />
-                                    <point x="0.930556" y="0.878049" />
-                                    <point x="0.5" y="0.658537" />
-                                    <point x="0.0694444" y="0.878049" />
-                                    <point x="0" y="0.487805" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="08">
-                        <animation framecount="1" loop="0" name="08a" pingpong="0" repeatcount="1" repeatto="0" sid="3648171119727456" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 1.png">
-                                <image-point name="Center" x="0.5" y="0.509434" />
-                                <collision-poly>
-                                    <point x="0.152778" y="0.229167" />
-                                    <point x="0.5" y="0.3125" />
-                                    <point x="0.763889" y="0.354167" />
-                                    <point x="0.833333" y="0.5" />
-                                    <point x="0.972222" y="0.958333" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.166667" y="0.75" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="08b" pingpong="0" repeatcount="1" repeatto="0" sid="8578609796619606" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.509434" />
-                                <collision-poly>
-                                    <point x="0.152778" y="0.229167" />
-                                    <point x="0.5" y="0.3125" />
-                                    <point x="0.763889" y="0.354167" />
-                                    <point x="0.833333" y="0.5" />
-                                    <point x="0.972222" y="0.958333" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.166667" y="0.75" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="08c" pingpong="0" repeatcount="1" repeatto="0" sid="5928696853228865" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.509434" />
-                                <collision-poly>
-                                    <point x="0.152778" y="0.229167" />
-                                    <point x="0.5" y="0.3125" />
-                                    <point x="0.763889" y="0.354167" />
-                                    <point x="0.833333" y="0.5" />
-                                    <point x="0.972222" y="0.958333" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.166667" y="0.75" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="08d" pingpong="0" repeatcount="1" repeatto="0" sid="2758505494053267" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.509434" />
-                                <collision-poly>
-                                    <point x="0.152778" y="0.229167" />
-                                    <point x="0.5" y="0.3125" />
-                                    <point x="0.763889" y="0.354167" />
-                                    <point x="0.833333" y="0.5" />
-                                    <point x="0.972222" y="0.958333" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.166667" y="0.75" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="09">
-                        <animation framecount="1" loop="0" name="09a" pingpong="0" repeatcount="1" repeatto="0" sid="5932587680456206" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SickChick 3.png">
-                                <image-point name="Center" x="0.5" y="0.507937" />
-                                <collision-poly>
-                                    <point x="0.111111" y="0.142857" />
-                                    <point x="0.5" y="0.0357143" />
-                                    <point x="0.680556" y="0.410714" />
-                                    <point x="0.986111" y="0.5" />
-                                    <point x="0.875" y="0.839286" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.821429" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="09b" pingpong="0" repeatcount="1" repeatto="0" sid="3861249150845953" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.507937" />
-                                <collision-poly>
-                                    <point x="0.111111" y="0.142857" />
-                                    <point x="0.5" y="0.0357143" />
-                                    <point x="0.680556" y="0.410714" />
-                                    <point x="0.986111" y="0.5" />
-                                    <point x="0.875" y="0.839286" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.821429" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="09c" pingpong="0" repeatcount="1" repeatto="0" sid="9176830301044742" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.507937" />
-                                <collision-poly>
-                                    <point x="0.111111" y="0.142857" />
-                                    <point x="0.5" y="0.0357143" />
-                                    <point x="0.680556" y="0.410714" />
-                                    <point x="0.986111" y="0.5" />
-                                    <point x="0.875" y="0.839286" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.821429" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="09d" pingpong="0" repeatcount="1" repeatto="0" sid="5458721742947661" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.507937" />
-                                <collision-poly>
-                                    <point x="0.111111" y="0.142857" />
-                                    <point x="0.5" y="0.0357143" />
-                                    <point x="0.680556" y="0.410714" />
-                                    <point x="0.986111" y="0.5" />
-                                    <point x="0.875" y="0.839286" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.821429" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="10">
-                        <animation framecount="1" loop="0" name="10a" pingpong="0" repeatcount="1" repeatto="0" sid="9050540481178174" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\TowerChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.509615" />
-                                <collision-poly>
-                                    <point x="0.0833333" y="0.0638298" />
-                                    <point x="0.5" y="0" />
-                                    <point x="0.611111" y="0.297872" />
-                                    <point x="0.777778" y="0.5" />
-                                    <point x="0.875" y="0.904255" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.893617" />
-                                    <point x="0.0972222" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="10b" pingpong="0" repeatcount="1" repeatto="0" sid="9860922523528424" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.509615" />
-                                <collision-poly>
-                                    <point x="0.0833333" y="0.0638298" />
-                                    <point x="0.5" y="0" />
-                                    <point x="0.611111" y="0.297872" />
-                                    <point x="0.777778" y="0.5" />
-                                    <point x="0.875" y="0.904255" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.893617" />
-                                    <point x="0.0972222" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="10c" pingpong="0" repeatcount="1" repeatto="0" sid="8142698764322679" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.509615" />
-                                <collision-poly>
-                                    <point x="0.0833333" y="0.0638298" />
-                                    <point x="0.5" y="0" />
-                                    <point x="0.611111" y="0.297872" />
-                                    <point x="0.777778" y="0.5" />
-                                    <point x="0.875" y="0.904255" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.893617" />
-                                    <point x="0.0972222" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="10d" pingpong="0" repeatcount="1" repeatto="0" sid="701156759049443" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.509615" />
-                                <collision-poly>
-                                    <point x="0.0833333" y="0.0638298" />
-                                    <point x="0.5" y="0" />
-                                    <point x="0.611111" y="0.297872" />
-                                    <point x="0.777778" y="0.5" />
-                                    <point x="0.875" y="0.904255" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.138889" y="0.893617" />
-                                    <point x="0.0972222" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="11">
-                        <animation framecount="1" loop="0" name="11a" pingpong="0" repeatcount="1" repeatto="0" sid="6232333162175724" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="11b" pingpong="0" repeatcount="1" repeatto="0" sid="8610279894933325" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="11c" pingpong="0" repeatcount="1" repeatto="0" sid="9680287165023319" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="11d" pingpong="0" repeatcount="1" repeatto="0" sid="9954286808129031" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation-folder name="12">
-                        <animation framecount="1" loop="0" name="12a" pingpong="0" repeatcount="1" repeatto="0" sid="8610245174087057" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.509434" />
-                                <collision-poly>
-                                    <point x="0.0875" y="0.132075" />
-                                    <point x="0.5" y="0.264151" />
-                                    <point x="0.8" y="0.301887" />
-                                    <point x="0.8375" y="0.490566" />
-                                    <point x="0.975" y="0.962264" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.1" y="0.849057" />
-                                    <point x="0.0125" y="0.490566" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="12b" pingpong="0" repeatcount="1" repeatto="0" sid="1703007951039151" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.509434" />
-                                <collision-poly>
-                                    <point x="0.0875" y="0.132075" />
-                                    <point x="0.5" y="0.264151" />
-                                    <point x="0.8" y="0.301887" />
-                                    <point x="0.8375" y="0.490566" />
-                                    <point x="0.975" y="0.962264" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.1" y="0.849057" />
-                                    <point x="0.0125" y="0.490566" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="12c" pingpong="0" repeatcount="1" repeatto="0" sid="1762749763239935" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.509434" />
-                                <collision-poly>
-                                    <point x="0.0875" y="0.132075" />
-                                    <point x="0.5" y="0.264151" />
-                                    <point x="0.8" y="0.301887" />
-                                    <point x="0.8375" y="0.490566" />
-                                    <point x="0.975" y="0.962264" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.1" y="0.849057" />
-                                    <point x="0.0125" y="0.490566" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="0" name="12d" pingpong="0" repeatcount="1" repeatto="0" sid="7168016519310256" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.509434" />
-                                <collision-poly>
-                                    <point x="0.0875" y="0.132075" />
-                                    <point x="0.5" y="0.264151" />
-                                    <point x="0.8" y="0.301887" />
-                                    <point x="0.8375" y="0.490566" />
-                                    <point x="0.975" y="0.962264" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.1" y="0.849057" />
-                                    <point x="0.0125" y="0.490566" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                    <animation framecount="1" loop="0" name="Locked" pingpong="0" repeatcount="1" repeatto="0" sid="7181999496244391" speed="5">
+                    <animation framecount="1" loop="0" name="01_" pingpong="0" repeatcount="1" repeatto="0" sid="7712919499338095" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 1.png">
+                            <image-point name="Center" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="0.166667" y="0.162162" />
+                                <point x="0.5" y="0.283784" />
+                                <point x="0.597222" y="0.391892" />
+                                <point x="1" y="0.5" />
+                                <point x="0.861111" y="0.864865" />
+                                <point x="0.5" y="1" />
+                                <point x="0.138889" y="0.864865" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="02_" pingpong="0" repeatcount="1" repeatto="0" sid="9657623426585062" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 2.png">
+                            <image-point name="Center" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="0.194444" y="0.186667" />
+                                <point x="0.5" y="0.266667" />
+                                <point x="0.611111" y="0.373333" />
+                                <point x="0.986111" y="0.493333" />
+                                <point x="0.861111" y="0.866667" />
+                                <point x="0.5" y="1" />
+                                <point x="0.138889" y="0.866667" />
+                                <point x="0" y="0.493333" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="03_" pingpong="0" repeatcount="1" repeatto="0" sid="8998260361388765" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 2.png">
+                            <image-point name="Center" x="0.5" y="0.505495" />
+                            <collision-poly>
+                                <point x="0.166667" y="0.148148" />
+                                <point x="0.5" y="0.45679" />
+                                <point x="0.5" y="0.444444" />
+                                <point x="0.527778" y="0.493827" />
+                                <point x="0.875" y="0.888889" />
+                                <point x="0.5" y="1" />
+                                <point x="0.138889" y="0.876543" />
+                                <point x="0.0277778" y="0.493827" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="04_" pingpong="0" repeatcount="1" repeatto="0" sid="2198609863323154" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 2.png">
+                            <image-point name="Center" x="0.5" y="0.506024" />
+                            <collision-poly>
+                                <point x="0.194444" y="0.186667" />
+                                <point x="0.5" y="0.266667" />
+                                <point x="0.611111" y="0.373333" />
+                                <point x="0.986111" y="0.493333" />
+                                <point x="0.861111" y="0.866667" />
+                                <point x="0.5" y="1" />
+                                <point x="0.138889" y="0.866667" />
+                                <point x="0" y="0.493333" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="05_" pingpong="0" repeatcount="1" repeatto="0" sid="6380119827133479" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.975309" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 1.png">
+                            <image-point name="Center" x="0.5" y="0.506173" />
+                            <collision-poly>
+                                <point x="0.2125" y="0.209877" />
+                                <point x="0.5" y="0.037037" />
+                                <point x="0.6625" y="0.333333" />
+                                <point x="0.9875" y="0.493827" />
+                                <point x="0.875" y="0.876543" />
+                                <point x="0.5" y="1" />
+                                <point x="0.125" y="0.876543" />
+                                <point x="0.0125" y="0.493827" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="06_" pingpong="0" repeatcount="1" repeatto="0" sid="3756160307462643" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\RoboChick 2.png">
+                            <image-point name="Center" x="0.5" y="0.506024" />
+                            <collision-poly>
+                                <point x="0.1625" y="0.156627" />
+                                <point x="0.5" y="0.289157" />
+                                <point x="0.5875" y="0.39759" />
+                                <point x="1" y="0.493976" />
+                                <point x="0.8625" y="0.86747" />
+                                <point x="0.5" y="1" />
+                                <point x="0.1375" y="0.86747" />
+                                <point x="0" y="0.493976" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="07_" pingpong="0" repeatcount="1" repeatto="0" sid="3627830700157795" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\PeaChicks 2.png">
+                            <image-point name="Center" x="0.5" y="0.511111" />
+                            <collision-poly>
+                                <point x="0.208333" y="0.365854" />
+                                <point x="0.5" y="0.317073" />
+                                <point x="0.791667" y="0.365854" />
+                                <point x="1" y="0.487805" />
+                                <point x="0.930556" y="0.878049" />
+                                <point x="0.5" y="0.658537" />
+                                <point x="0.0694444" y="0.878049" />
+                                <point x="0" y="0.487805" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="08_" pingpong="0" repeatcount="1" repeatto="0" sid="3648171119727456" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 1.png">
+                            <image-point name="Center" x="0.5" y="0.509434" />
+                            <collision-poly>
+                                <point x="0.152778" y="0.229167" />
+                                <point x="0.5" y="0.3125" />
+                                <point x="0.763889" y="0.354167" />
+                                <point x="0.833333" y="0.5" />
+                                <point x="0.972222" y="0.958333" />
+                                <point x="0.5" y="1" />
+                                <point x="0.166667" y="0.75" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="09_" pingpong="0" repeatcount="1" repeatto="0" sid="5932587680456206" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SickChick 3.png">
+                            <image-point name="Center" x="0.5" y="0.507937" />
+                            <collision-poly>
+                                <point x="0.111111" y="0.142857" />
+                                <point x="0.5" y="0.0357143" />
+                                <point x="0.680556" y="0.410714" />
+                                <point x="0.986111" y="0.5" />
+                                <point x="0.875" y="0.839286" />
+                                <point x="0.5" y="1" />
+                                <point x="0.138889" y="0.821429" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="10_" pingpong="0" repeatcount="1" repeatto="0" sid="9050540481178174" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\TowerChick 2.png">
+                            <image-point name="Center" x="0.5" y="0.509615" />
+                            <collision-poly>
+                                <point x="0.0833333" y="0.0638298" />
+                                <point x="0.5" y="0" />
+                                <point x="0.611111" y="0.297872" />
+                                <point x="0.777778" y="0.5" />
+                                <point x="0.875" y="0.904255" />
+                                <point x="0.5" y="1" />
+                                <point x="0.138889" y="0.893617" />
+                                <point x="0.0972222" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="11_" pingpong="0" repeatcount="1" repeatto="0" sid="6232333162175724" speed="5">
                         <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
                             <image-point name="Center" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="12_" pingpong="0" repeatcount="1" repeatto="0" sid="8610245174087057" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 2.png">
+                            <image-point name="Center" x="0.5" y="0.509434" />
+                            <collision-poly>
+                                <point x="0.0875" y="0.132075" />
+                                <point x="0.5" y="0.264151" />
+                                <point x="0.8" y="0.301887" />
+                                <point x="0.8375" y="0.490566" />
+                                <point x="0.975" y="0.962264" />
+                                <point x="0.5" y="1" />
+                                <point x="0.1" y="0.849057" />
+                                <point x="0.0125" y="0.490566" />
+                            </collision-poly>
                         </frame>
                     </animation>
                 </animation-folder>
@@ -7292,7 +6379,14 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9612581035645919" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.0833333">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.888889" />
+                                <point x="0" y="0.888889" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -7351,25 +6445,13 @@
                     <type>henCage</type>
                     <type>powerupHUD</type>
                     <type>typeEffect</type>
+                    <type>iconTypeHUD</type>
                 </container>
                 <animation-folder>
                     <animation framecount="1" loop="1" name="None" pingpong="0" repeatcount="1" repeatto="0" sid="8699244259362039" speed="12">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
-                    <animation framecount="45" loop="1" name="Fire" pingpong="0" repeatcount="1" repeatto="0" sid="1370132706964948" speed="12">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="32" loop="1" name="Fire" pingpong="0" repeatcount="1" repeatto="0" sid="1370132706964948" speed="12">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -7497,6 +6579,53 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
+                    <animation framecount="45" loop="1" name="Animation2" pingpong="0" repeatcount="1" repeatto="0" sid="2252866623788374" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="goldTemplete" sid="4422669365395433">
@@ -7551,27 +6680,11 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="iconFire" sid="8791001459657244">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3617056457795641" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
             <object-type name="iconFood" sid="2257049035197549">
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7643483999463385" speed="5">
                         <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\SUPER FEED.png" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="iconGrass" sid="15404366868377">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1671205013455052" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -7591,30 +6704,20 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="iconNotype" sid="6861195766163579">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1047387643197962" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="iconWater" sid="8575519645772134">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6425465047267161" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
             <object-type name="iconType" sid="7519577382622556">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8354541119795884" speed="0">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="1" loop="0" name="None" pingpong="0" repeatcount="1" repeatto="0" sid="8354541119795884" speed="0">
+                        <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.53125" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Fire" pingpong="0" repeatcount="1" repeatto="0" sid="9406778354740655" speed="0">
+                        <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.53125" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Water" pingpong="0" repeatcount="1" repeatto="0" sid="5949226201590051" speed="0">
+                        <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.53125" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Grass" pingpong="0" repeatcount="1" repeatto="0" sid="5822102482992427" speed="0">
+                        <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.53125" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -7628,6 +6731,29 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9811724862086665" speed="5">
                         <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\gold.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="iconTypeHUD" sid="634035834661415">
+                <plugin id="Sprite" />
+                <container>
+                    <type>henCage</type>
+                    <type>powerupHUD</type>
+                    <type>typeEffect</type>
+                    <type>iconTypeHUD</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="None" pingpong="0" repeatcount="1" repeatto="0" sid="3914538816665243" speed="0">
+                        <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.53125" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Fire" pingpong="0" repeatcount="1" repeatto="0" sid="1006467800623527" speed="0">
+                        <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.53125" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Water" pingpong="0" repeatcount="1" repeatto="0" sid="3641366298407352" speed="0">
+                        <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.53125" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Grass" pingpong="0" repeatcount="1" repeatto="0" sid="1482833275632948" speed="0">
+                        <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.53125" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -7747,20 +6873,30 @@
         <object-type name="Text2" sid="9244127702308912">
             <plugin id="Text" />
         </object-type>
+        <object-type name="focus" sid="6997083605112545">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="1868886312298108">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4232872001806188" speed="5">
+                    <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="battleViewIcon" plugin-id="Sprite" sid="1262988126807568">
             <members>
                 <member>iconAtk</member>
                 <member>iconCoin</member>
-                <member>iconFire</member>
                 <member>iconFood</member>
-                <member>iconGrass</member>
-                <member>iconNotype</member>
                 <member>iconPowerup</member>
                 <member>iconTurn</member>
                 <member>iconType</member>
-                <member>iconWater</member>
+                <member>iconTypeHUD</member>
             </members>
             <behaviors>
                 <behavior-type name="Anchor" sid="3017053762273693">
