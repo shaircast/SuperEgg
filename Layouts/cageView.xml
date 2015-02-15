@@ -476,10 +476,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1200</x>
-                        <y>640</y>
+                        <y>630</y>
                         <z>0</z>
-                        <width>128</width>
-                        <height>128</height>
+                        <width>152</width>
+                        <height>152</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

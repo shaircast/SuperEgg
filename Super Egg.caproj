@@ -5633,7 +5633,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="1_" pingpong="0" repeatcount="1" repeatto="0" sid="1524254645620309" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\stage\chapter1.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\imsibaegyoung.jpg">
                             <image-point name="Stage1" x="0.348437" y="0.378906" />
                             <image-point name="Stage2" x="0.466406" y="0.354688" />
                             <image-point name="Stage3" x="0.4875" y="0.447656" />
@@ -5646,10 +5646,13 @@
                             <image-point name="Stage10" x="0.7875" y="0.499219" />
                             <image-point name="LeftChap" x="-0.5" y="0.5" />
                             <image-point name="RightChap" x="1.5" y="0.5" />
+                            <image-point name="Entry1" x="0.76875" y="0.298438" />
+                            <image-point name="Entry2" x="0.859375" y="0.315625" />
+                            <image-point name="Entry3" x="0.95" y="0.33125" />
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="2_" pingpong="0" repeatcount="1" repeatto="0" sid="5244658119647453" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\stage\chapter2.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\chapter2.jpg">
                             <image-point name="Stage1" x="0.370313" y="0.354688" />
                             <image-point name="Stage2" x="0.484375" y="0.363281" />
                             <image-point name="Stage3" x="0.520312" y="0.463281" />
@@ -5662,10 +5665,13 @@
                             <image-point name="Stage10" x="0.594531" y="0.498437" />
                             <image-point name="LeftChap" x="-0.5" y="0.5" />
                             <image-point name="RightChap" x="1.5" y="0.5" />
+                            <image-point name="Entry1" x="0.76875" y="0.298438" />
+                            <image-point name="Entry2" x="0.859375" y="0.315625" />
+                            <image-point name="Entry3" x="0.95" y="0.33125" />
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="3_" pingpong="0" repeatcount="1" repeatto="0" sid="9724900894304967" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\stage\chapter3.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\chapter3.jpg">
                             <image-point name="Stage1" x="0.401563" y="0.30625" />
                             <image-point name="Stage2" x="0.442187" y="0.3875" />
                             <image-point name="Stage3" x="0.403125" y="0.484375" />
@@ -5678,6 +5684,9 @@
                             <image-point name="Stage10" x="0.626562" y="0.482812" />
                             <image-point name="LeftChap" x="-0.5" y="0.5" />
                             <image-point name="RightChap" x="1.5" y="0.5" />
+                            <image-point name="Entry1" x="0.76875" y="0.298438" />
+                            <image-point name="Entry2" x="0.859375" y="0.315625" />
+                            <image-point name="Entry3" x="0.95" y="0.33125" />
                         </frame>
                     </animation>
                 </animation-folder>
@@ -5945,10 +5954,10 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Closed" pingpong="0" repeatcount="1" repeatto="0" sid="1805533533097934" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.503226" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\menu\menuClosed.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.503226" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150215_234538112.jpg" />
                     </animation>
                     <animation framecount="1" loop="0" name="Opened" pingpong="0" repeatcount="1" repeatto="0" sid="9956881346411017" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.503226" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\menu\menuOpened.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.503226" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\menuOpened.jpg" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -6365,7 +6374,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Sell" pingpong="0" repeatcount="1" repeatto="0" sid="756567891213147" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\cage\okButton.jpg" />
                     </animation>
                     <animation framecount="1" loop="0" name="Reproduce" pingpong="0" repeatcount="1" repeatto="0" sid="6296124089662844" speed="5">
                         <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />

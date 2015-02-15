@@ -1005,7 +1005,7 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="4549750369119469" type="System">
                                     <param id="0" name="Variable">henButtonY</param>
-                                    <param id="1" name="Value">buttonUIPlate.Y</param>
+                                    <param id="1" name="Value">630</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="4818628651737208" type="System">
                                     <param id="0" name="Variable">henButtonXOri</param>
@@ -1117,7 +1117,7 @@
                                     <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                 </action>
                                 <action id="0" name="Set text" sid="1496175772099679" type="henInfo">
-                                    <param id="0" name="Text">henDB.Get(left(henButton.AnimationName,2)&amp;&quot;foodcost&quot;)</param>
+                                    <param id="0" name="Text">henDB.Get(henButton.kind&amp;&quot;foodcost&quot;)</param>
                                 </action>
                                 <action id="0" name="Spawn another object" sid="9861039935757363" type="henButton">
                                     <param id="0" name="Object">iconTurn</param>
@@ -1134,7 +1134,7 @@
                                     <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                 </action>
                                 <action id="0" name="Set text" sid="4609505264638519" type="henInfo">
-                                    <param id="0" name="Text">henDB.Get(left(henButton.AnimationName,2)&amp;&quot;readyturn&quot;)</param>
+                                    <param id="0" name="Text">henDB.Get(henButton.kind&amp;&quot;readyturn&quot;)</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -1252,10 +1252,10 @@
                                 </event-block>
                                 <event-block sid="4430214374039703">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="6873371102561027" type="System">
-                                            <param id="0" name="First value">right(henButton.AnimationName,1)</param>
+                                        <condition id="-7" name="Compare instance variable" sid="6873371102561027" type="henButton">
+                                            <param id="0" name="Instance variable">type</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;a&quot;</param>
+                                            <param id="2" name="Value">&quot;a&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -1283,10 +1283,10 @@
                                 </event-block>
                                 <event-block sid="5272623333554274">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="1350288540127363" type="System">
-                                            <param id="0" name="First value">right(henButton.AnimationName,1)</param>
+                                        <condition id="-7" name="Compare instance variable" sid="7812369019371688" type="henButton">
+                                            <param id="0" name="Instance variable">type</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;b&quot;</param>
+                                            <param id="2" name="Value">&quot;b&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -1314,10 +1314,10 @@
                                 </event-block>
                                 <event-block sid="7552151054747384">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="9420359178594594" type="System">
-                                            <param id="0" name="First value">right(henButton.AnimationName,1)</param>
+                                        <condition id="-7" name="Compare instance variable" sid="5273945801018744" type="henButton">
+                                            <param id="0" name="Instance variable">type</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;c&quot;</param>
+                                            <param id="2" name="Value">&quot;c&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -1345,10 +1345,10 @@
                                 </event-block>
                                 <event-block sid="1890092916650711">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="5374533501032745" type="System">
-                                            <param id="0" name="First value">right(henButton.AnimationName,1)</param>
+                                        <condition id="-7" name="Compare instance variable" sid="872239175263269" type="henButton">
+                                            <param id="0" name="Instance variable">type</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;d&quot;</param>
+                                            <param id="2" name="Value">&quot;d&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -1404,6 +1404,14 @@
                                     <param id="0" name="Instance variable">buttonID</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="4807599339393069" type="henButton">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Value">left(henType0,2)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3974131953544922" type="henButton">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Value">right(henType0,1)</param>
+                                </action>
                                 <action id="0" name="Call function" sid="6521305750857077" type="Function">
                                     <param id="0" name="Name">&quot;henButtonSet&quot;</param>
                                     <param id="1" name="Parameter {n}">henButton.UID</param>
@@ -1421,6 +1429,14 @@
                                 <action id="-10" name="Set value" sid="3961607729929864" type="henButton">
                                     <param id="0" name="Instance variable">buttonID</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="519972826960004" type="henButton">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Value">left(henType1,2)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8859112606349512" type="henButton">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Value">right(henType1,1)</param>
                                 </action>
                                 <action id="0" name="Call function" sid="1345775545047602" type="Function">
                                     <param id="0" name="Name">&quot;henButtonSet&quot;</param>
@@ -1440,6 +1456,14 @@
                                     <param id="0" name="Instance variable">buttonID</param>
                                     <param id="1" name="Value">2</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="5097044194619841" type="henButton">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Value">left(henType2,2)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3753170722253432" type="henButton">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Value">right(henType2,1)</param>
+                                </action>
                                 <action id="0" name="Call function" sid="9947390024165684" type="Function">
                                     <param id="0" name="Name">&quot;henButtonSet&quot;</param>
                                     <param id="1" name="Parameter {n}">henButton.UID</param>
@@ -1457,6 +1481,14 @@
                                 <action id="-10" name="Set value" sid="400838690660671" type="henButton">
                                     <param id="0" name="Instance variable">buttonID</param>
                                     <param id="1" name="Value">3</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="2214804427212648" type="henButton">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Value">left(henType3,2)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="734218214730364" type="henButton">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Value">right(henType3,1)</param>
                                 </action>
                                 <action id="0" name="Call function" sid="2139759856752779" type="Function">
                                     <param id="0" name="Name">&quot;henButtonSet&quot;</param>
@@ -1688,7 +1720,7 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="1856708809433397" type="System">
                                     <param id="0" name="Variable">henSelected</param>
-                                    <param id="1" name="Value">henButton.AnimationName</param>
+                                    <param id="1" name="Value">henButton.kind&amp;henButton.type</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="8743887259303427" type="henSelection">
                                     <param id="0" name="Instance variable">select</param>
@@ -2068,13 +2100,13 @@
                                                                 <condition id="-14" name="Compare variable" sid="7928743429934922" type="System">
                                                                     <param id="0" name="Variable">food</param>
                                                                     <param id="1" name="Comparison">5</param>
-                                                                    <param id="2" name="Value">henDB.Get(left(henButton.AnimationName,2)&amp;&quot;foodcost&quot;)</param>
+                                                                    <param id="2" name="Value">henDB.Get(henButton.kind&amp;&quot;foodcost&quot;)</param>
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
                                                                 <action id="-11" name="Subtract from" sid="5299278537791978" type="System">
                                                                     <param id="0" name="Variable">food</param>
-                                                                    <param id="1" name="Value">henDB.Get(str(left(henButton.AnimationName,2)&amp;&quot;foodcost&quot;))</param>
+                                                                    <param id="1" name="Value">henDB.Get(str(henButton.kind&amp;&quot;foodcost&quot;))</param>
                                                                 </action>
                                                                 <action id="-10" name="Set value" sid="7446289937977604" type="henButton">
                                                                     <param id="0" name="Instance variable">state</param>
@@ -2341,7 +2373,7 @@
                                                 <condition id="-7" name="Compare instance variable" sid="9093584103472153" type="henButton">
                                                     <param id="0" name="Instance variable">eating</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">int(henDB.Get(left(henButton.AnimationName,2)&amp;&quot;readyturn&quot;))</param>
+                                                    <param id="2" name="Value">int(henDB.Get(henButton.kind&amp;&quot;readyturn&quot;))</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -4492,10 +4524,10 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">henSelection.select</param>
                                         </condition>
-                                        <condition id="-8" name="Compare two values" sid="5890532004825692" type="System">
-                                            <param id="0" name="First value">left(henButton.AnimationName,2)</param>
+                                        <condition id="-7" name="Compare instance variable" sid="4345563938377644" type="henButton">
+                                            <param id="0" name="Instance variable">kind</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;12&quot;</param>
+                                            <param id="2" name="Value">&quot;12&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -6120,7 +6152,7 @@
                                                             <param id="1" name="Value">henDB.Get(left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect1,&quot;/&quot;),2)&amp;&quot;price&quot;)*henDB.Get(left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect2,&quot;/&quot;),2)&amp;&quot;price&quot;)</param>
                                                         </action>
                                                         <action id="0" name="Set text" sid="2650428616149346" type="systemText">
-                                                            <param id="0" name="Text">&quot;[교배] &quot;&amp;reproduceCost&amp;&quot;원이 필요합니다. 교배할거에요?&quot;</param>
+                                                            <param id="0" name="Text">&quot;[교배] &quot;&amp;reproduceCost&amp;&quot;원이 필요합니다. 계속할까요?&quot;</param>
                                                         </action>
                                                         <action id="-15" name="Set visible" sid="6314686126617124" type="cageViewOkButton">
                                                             <param id="0" name="Visibility">1</param>
@@ -6301,7 +6333,7 @@
                                                                     <param id="1" name="Value">henCage.id</param>
                                                                 </action>
                                                                 <action id="0" name="Set text" sid="3254466907905591" type="systemText">
-                                                                    <param id="0" name="Text">&quot;[엔트리] 이 닭들로 확정하시겠습니까? 나머지 한 마리는 랜덤으로 정해집니다.&quot;</param>
+                                                                    <param id="0" name="Text">&quot;[엔트리] 이 닭들로 정할래요? 나머지 한 마리는 현장에서 랜덤으로  뽑을 거에요.&quot;</param>
                                                                 </action>
                                                                 <action id="-15" name="Set visible" sid="9278416350872303" type="cageViewOkButton">
                                                                     <param id="0" name="Visibility">1</param>
@@ -6374,7 +6406,7 @@
                                 </action>
                                 <action id="-9" name="Destroy" sid="4824153002558588" type="cageSelection" />
                                 <action id="0" name="Set text" sid="157871016433122" type="systemText">
-                                    <param id="0" name="Text">&quot;[설명/판매] 정보를 알고 싶은 닭을 눌러보세요.&quot;</param>
+                                    <param id="0" name="Text">&quot;[판매] 판매하고 싶은 닭을 고르세요. 설명도 해줍니다.&quot;</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="7252828232889597" type="cageViewOkButton">
                                     <param id="0" name="Animation">&quot;Sell&quot;</param>
@@ -6500,7 +6532,7 @@
                                     <param id="1" name="Value">-1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="7518242613786269" type="systemText">
-                                    <param id="0" name="Text">&quot;[엔트리] 전투에 사용할 닭을 골라주세요(1/3)&quot;</param>
+                                    <param id="0" name="Text">&quot;[엔트리] 전투에 사용할 닭을 골라주세요(1/3).&quot;</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="2811275833551949" type="cageViewOkButton">
                                     <param id="0" name="Animation">&quot;Entry&quot;</param>
