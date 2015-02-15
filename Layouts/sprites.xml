@@ -811,9 +811,24 @@
                     </properties>
                     <instance-variables>
                         <stage>0</stage>
+                        <oriWidth>0</oriWidth>
+                        <oriHeight>0</oriHeight>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="PinToImagePoint" />
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <movement>Size</movement>
+                                <wave>Sine</wave>
+                                <period>1.2</period>
+                                <period-random>0</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>0</period-offset-random>
+                                <magnitude>10</magnitude>
+                                <magnitude-random>0</magnitude-random>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -821,11 +836,11 @@
                         <x>1419</x>
                         <y>156</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>48</height>
+                        <width>64</width>
+                        <height>96</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.4375</hotspotX>
+                        <hotspotY>0.708333313</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -849,11 +864,11 @@
                         <x>1419</x>
                         <y>157</y>
                         <z>0</z>
-                        <width>72</width>
-                        <height>72</height>
+                        <width>5</width>
+                        <height>5</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.600000024</hotspotX>
+                        <hotspotY>0.600000024</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -960,7 +975,7 @@
                         <y>-336</y>
                         <z>0</z>
                         <width>128</width>
-                        <height>48</height>
+                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -992,8 +1007,8 @@
                         <x>1170</x>
                         <y>-334</y>
                         <z>0</z>
-                        <width>128</width>
-                        <height>48</height>
+                        <width>132</width>
+                        <height>132</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1026,10 +1041,10 @@
                         <y>-337</y>
                         <z>0</z>
                         <width>128</width>
-                        <height>48</height>
+                        <height>128</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.5078125</hotspotX>
+                        <hotspotY>0.5078125</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -1619,8 +1634,8 @@
                     <properties>
                         <text>안녕하세요</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-27,400,0</font>
-                        <color>240,240,240</color>
+                        <font>배달의민족 주아,-21,700,0</font>
+                        <color>225,225,225</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
@@ -1630,7 +1645,7 @@
                     <behavior-instances>
                         <behavior-instance type="Sine">
                             <properties>
-                                <active-on-start>Yes</active-on-start>
+                                <active-on-start>No</active-on-start>
                                 <movement>Vertical</movement>
                                 <wave>Sine</wave>
                                 <period>5</period>

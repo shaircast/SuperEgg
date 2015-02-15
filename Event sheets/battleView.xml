@@ -225,11 +225,11 @@
                                     <param id="0" name="Family name">&quot;jua&quot;</param>
                                     <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                 </action>
-                                <action id="-12" name="Subtract from" sid="427781864196892" type="blockTower">
+                                <action disabled="1" id="-12" name="Subtract from" sid="427781864196892" type="blockTower">
                                     <param id="0" name="Instance variable">turnLeft</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-12" name="Subtract from" sid="7152100218998012" type="poison">
+                                <action disabled="1" id="-12" name="Subtract from" sid="7152100218998012" type="poison">
                                     <param id="0" name="Instance variable">turnLeft</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
@@ -379,8 +379,8 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>남은 턴이 0이면 occupy해제하고 파괴</comment>
-                <event-block sid="6123726555701101">
+                <comment>남은 턴이 0이면 occupy해제하고 파괴-&gt;배틀뷰턴오버</comment>
+                <event-block disabled="1" sid="6123726555701101">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="3794954860646804" type="blockTower">
                             <param id="0" name="Instance variable">turnLeft</param>
@@ -390,7 +390,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="7387166489367141">
+                        <event-block disabled="1" sid="7387166489367141">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="8786387492664574" type="launchLine">
                                     <param id="0" name="Instance variable">launchLineIDX</param>
@@ -410,7 +410,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="446069608308403">
+                        <event-block disabled="1" sid="446069608308403">
                             <conditions />
                             <actions>
                                 <action id="-9" name="Destroy" sid="5666963682189689" type="blockTower" />
@@ -418,8 +418,8 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>남은 턴이 0이면 파괴. 딜계산은 뒤에서.</comment>
-                <event-block sid="5516109877278147">
+                <comment>남은 턴이 0이면 파괴. 딜계산은 뒤에서.-&gt;배틀뷰턴오버</comment>
+                <event-block disabled="1" sid="5516109877278147">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="1369704770446942" type="poison">
                             <param id="0" name="Instance variable">turnLeft</param>
@@ -560,9 +560,13 @@
                                     <param id="0" name="Instance variable">posY</param>
                                     <param id="1" name="Value">explode.posY</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="1088201435956641" type="blockTower">
+                                <action disabled="1" id="-10" name="Set value" sid="1088201435956641" type="blockTower">
                                     <param id="0" name="Instance variable">turnLeft</param>
                                     <param id="1" name="Value">henDB.Get(explode.kind&amp;&quot;duration&quot;)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3893760492248655" type="blockTower">
+                                    <param id="0" name="Instance variable">turnLeft</param>
+                                    <param id="1" name="Value">floor((9-explode.posX)/2)+1</param>
                                 </action>
                             </actions>
                         </event-block>

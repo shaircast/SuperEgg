@@ -9,7 +9,7 @@
         <variable constant="0" name="leftLimit" sid="2442168118569261" static="0" type="number">300</variable>
         <variable constant="0" name="rightLimit" sid="2656393535942194" static="0" type="number">980</variable>
         <comment>stageLimit : 현재 만들어진 최고 챕터</comment>
-        <variable constant="0" name="chapterLimit" sid="4418648694302212" static="0" type="number">2</variable>
+        <variable constant="0" name="chapterLimit" sid="4418648694302212" static="0" type="number">3</variable>
         <comment>맵의 left, right, middle point</comment>
         <variable constant="0" name="leftPoint" sid="2920941161847771" static="0" type="number">-640</variable>
         <variable constant="0" name="middlePoint" sid="13270753159353" static="0" type="number">640</variable>
@@ -95,9 +95,13 @@
                         <action behavior="Anchor" id="0" name="Set enabled" sid="7907369366459323" type="henCage">
                             <param id="0" name="State">1</param>
                         </action>
-                        <action id="-3" name="Set position" sid="917886731915791" type="powerupHUD">
+                        <action disabled="1" id="-3" name="Set position" sid="917886731915791" type="powerupHUD">
                             <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)+powerupIndicatorX</param>
-                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)+powerupIndicatorY</param>
+                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="5208060166981236" type="powerupHUD">
+                            <param id="0" name="X">henCage.X+powerupIndicatorX</param>
+                            <param id="1" name="Y">henCage.Y</param>
                         </action>
                         <action id="0" name="Call function" sid="5399263660961733" type="Function">
                             <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
@@ -141,9 +145,13 @@
                         <action behavior="Anchor" id="0" name="Set enabled" sid="5479414366116965" type="henCage">
                             <param id="0" name="State">1</param>
                         </action>
-                        <action id="-3" name="Set position" sid="7477134244706862" type="powerupHUD">
+                        <action disabled="1" id="-3" name="Set position" sid="7140584811335594" type="powerupHUD">
                             <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)+powerupIndicatorX</param>
-                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)+powerupIndicatorY</param>
+                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="4751990636731957" type="powerupHUD">
+                            <param id="0" name="X">henCage.X+powerupIndicatorX</param>
+                            <param id="1" name="Y">henCage.Y</param>
                         </action>
                         <action id="0" name="Call function" sid="6006832137826129" type="Function">
                             <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>
@@ -187,9 +195,13 @@
                         <action behavior="Anchor" id="0" name="Set enabled" sid="8030780734289193" type="henCage">
                             <param id="0" name="State">1</param>
                         </action>
-                        <action id="-3" name="Set position" sid="5010757062011038" type="powerupHUD">
+                        <action disabled="1" id="-3" name="Set position" sid="1779030403736296" type="powerupHUD">
                             <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)+powerupIndicatorX</param>
-                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)+powerupIndicatorY</param>
+                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="2473648163225985" type="powerupHUD">
+                            <param id="0" name="X">henCage.X+powerupIndicatorX</param>
+                            <param id="1" name="Y">henCage.Y</param>
                         </action>
                         <action id="0" name="Call function" sid="7326526173152828" type="Function">
                             <param id="0" name="Name">&quot;typeEffectColorPick&quot;</param>

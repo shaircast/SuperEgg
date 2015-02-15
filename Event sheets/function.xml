@@ -272,6 +272,8 @@
                                 <action id="-25" name="Move to bottom" sid="6645712121114605" type="menuButtonStageView" />
                                 <action id="-25" name="Move to bottom" sid="2358627064949037" type="menuPole" />
                                 <action id="-24" name="Move to top" sid="7405510780256731" type="menuButtonPackage" />
+                                <action id="-24" name="Move to top" sid="8228497041295665" type="skyLeftCover" />
+                                <action id="-24" name="Move to top" sid="4953144348489117" type="skyRightCover" />
                                 <action id="-16" name="Wait" sid="1026875087850935" type="System">
                                     <param id="0" name="Seconds">0.5</param>
                                 </action>
@@ -808,7 +810,7 @@
                             <actions>
                                 <action id="0" name="Add key" sid="9542269241396298" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_1&quot;</param>
-                                    <param id="1" name="Value">&quot;20/07d82/01a82/01b81/01c83/01d70,01a80/&quot;</param>
+                                    <param id="1" name="Value">&quot;20/08a82,01a81/01a82/01b81/01c83/01d70,01a80/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="4876000751259549" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_2&quot;</param>
@@ -2224,7 +2226,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>battleViewTurnOver() : 생산 1턴, 골렘이동 및 생산, 런치라인 초기화, 보너스. 특수골렘의 도 들어감.</comment>
+                <comment>battleViewTurnOver() : 생산 1턴, 골렘이동 및 생산, 런치라인 초기화, 보너스. 8번골렘 구현. 독, 타워 파괴</comment>
                 <event-block sid="6401460603776026">
                     <conditions>
                         <condition id="0" name="On function" sid="4090963470823063" type="Function">
@@ -2233,6 +2235,71 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="2252337618864436">
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="8747642771030744" type="blockTower">
+                                    <param id="0" name="Instance variable">turnLeft</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="1368499867962236" type="poison">
+                                    <param id="0" name="Instance variable">turnLeft</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>남은 턴이 0이면 occupy해제하고 파괴</comment>
+                        <event-block sid="8984501543210087">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6537854142725085" type="blockTower">
+                                    <param id="0" name="Instance variable">turnLeft</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="7909422913558946">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4015686916757577" type="launchLine">
+                                            <param id="0" name="Instance variable">launchLineIDX</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">blockTower.posX</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="8297415848727715" type="launchLine">
+                                            <param id="0" name="Instance variable">launchLineIDY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">blockTower.posY</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="383893638618546" type="launchLine">
+                                            <param id="0" name="Instance variable">occupied</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3509468363824406">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="3454857208732355" type="blockTower" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>남은 턴이 0이면 파괴. 딜계산은 뒤에서.</comment>
+                        <event-block sid="2590518779857873">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5353892926217324" type="poison">
+                                    <param id="0" name="Instance variable">turnLeft</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="2294903583993225" type="poison" />
+                            </actions>
+                        </event-block>
                         <event-block sid="7060139512009821">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="1757903633658233" type="System">
@@ -2426,8 +2493,62 @@
                                     <param id="2" name="Order">0</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="-11" name="Add to" sid="2333318238263026" type="golem">
+                                    <param id="0" name="Instance variable">innerCounter</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
                             <sub-events>
+                                <comment>8번 골렘 구현. 임시이미지. innerCounter&gt;n : n턴마다 한번씩 공격받기 가능.</comment>
+                                <event-block sid="5533512691816349">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="8776644355655501" type="golem">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;08&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="2286347265628417">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="4305350049174966" type="golem">
+                                                    <param id="0" name="Instance variable">innerCounter</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="9293944705893265" type="golem">
+                                                    <param id="0" name="Instance variable">invulnerable</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="2364239712252504" type="golem">
+                                                    <param id="0" name="Instance variable">innerCounter</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="1494724223670241" type="golem">
+                                                    <param id="0" name="Frame number">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="7425341170032557">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="8232823195710921" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="6250824223129723" type="golem">
+                                                    <param id="0" name="Instance variable">invulnerable</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="3293386692571911" type="golem">
+                                                    <param id="0" name="Frame number">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
                                 <event-block sid="6440554770522787">
                                     <conditions>
                                         <condition id="-12" name="Repeat" sid="5686925783577209" type="System">
@@ -4194,7 +4315,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>golemDestroy(golem.UID) : 골렘 파괴하고 . 키라닭 리셋도 포함.</comment>
+                <comment>golemDestroy(golem.UID) : 골렘 파괴하고 . 키라닭 리셋도 포함. 6번골렘(샴골렘) 처리.</comment>
                 <event-block sid="3968440250640735">
                     <conditions>
                         <condition id="0" name="On function" sid="3435382915995086" type="Function">
@@ -4211,6 +4332,65 @@
                             </conditions>
                             <actions />
                             <sub-events>
+                                <comment>6번골렘(샴골렘) 처리.</comment>
+                                <event-block sid="765791761066262">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7434498014022007" type="golem">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;06&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="4800390807434092">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2932074064784661" type="launchLine">
+                                                    <param id="0" name="Instance variable">launchLineIDX</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">golem.posX</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="9545312549173919" type="launchLine">
+                                                    <param id="0" name="Instance variable">launchLineIDY</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">golem.posY-1</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6992825398568853" type="launchLine">
+                                                    <param id="0" name="Instance variable">occupied</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="553730257344714" type="Function">
+                                                    <param id="0" name="Name">&quot;golemCreateWithData&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;01&quot;&amp;golem.type{###}launchLine.launchLineIDX{###}launchLine.launchLineIDY</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8404079972525111">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7014826305889751" type="launchLine">
+                                                    <param id="0" name="Instance variable">launchLineIDX</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">golem.posX</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="9151612476754363" type="launchLine">
+                                                    <param id="0" name="Instance variable">launchLineIDY</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">golem.posY+1</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9806473401292711" type="launchLine">
+                                                    <param id="0" name="Instance variable">occupied</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="380126648564211" type="Function">
+                                                    <param id="0" name="Name">&quot;golemCreateWithData&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;01&quot;&amp;golem.type{###}launchLine.launchLineIDX{###}launchLine.launchLineIDY</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
                                 <comment>이펙트 생성. 회전과 bullet 정지는 battleView 시트에서</comment>
                                 <event-block sid="4285725193239978">
                                     <conditions>
@@ -5278,6 +5458,14 @@
                                     <param id="1" name="Layer">&quot;bg&quot;</param>
                                     <param id="2" name="Image point">&quot;Stage&quot;&amp;loopindex</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="4581414727325411" type="chapterStage">
+                                    <param id="0" name="Instance variable">oriWidth</param>
+                                    <param id="1" name="Value">Self.Width</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="829824202187472" type="chapterStage">
+                                    <param id="0" name="Instance variable">oriHeight</param>
+                                    <param id="1" name="Value">Self.Height</param>
+                                </action>
                                 <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="4215135249019089" type="chapterStage">
                                     <param id="0" name="Pin to">stageMapChap</param>
                                     <param id="1" name="ImagePoint">&quot;Stage&quot;&amp;loopindex</param>
@@ -5307,6 +5495,14 @@
                                         <action id="5" name="Set frame" sid="6377486103334599" type="chapterStage">
                                             <param id="0" name="Frame number">1</param>
                                         </action>
+                                        <action id="-10" name="Set value" sid="4351621549706444" type="chapterStage">
+                                            <param id="0" name="Instance variable">oriWidth</param>
+                                            <param id="1" name="Value">Self.Width</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="7612092556831413" type="chapterStage">
+                                            <param id="0" name="Instance variable">oriHeight</param>
+                                            <param id="1" name="Value">Self.Height</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="7412197709937275">
@@ -5325,6 +5521,14 @@
                                     <actions>
                                         <action id="5" name="Set frame" sid="1713147276777046" type="chapterStage">
                                             <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="2261783397348435" type="chapterStage">
+                                            <param id="0" name="Instance variable">oriWidth</param>
+                                            <param id="1" name="Value">Self.Width</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="9382332949654621" type="chapterStage">
+                                            <param id="0" name="Instance variable">oriHeight</param>
+                                            <param id="1" name="Value">Self.Height</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -5498,6 +5702,13 @@
                                                     <param id="0" name="Text">&quot;이전 스테이지를 클리어해야 합니다.&quot;</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="7776802337688072" type="stageSelection" />
+                                                <action id="-16" name="Wait" sid="9725104469783688" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="3920609641978192" type="Function">
+                                                    <param id="0" name="Name">&quot;stageButtonSelectedEffect&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
                                             </actions>
                                         </event-block>
                                         <comment>안잠겨있으면</comment>
@@ -5558,11 +5769,65 @@
                                                         <action id="0" name="Set text" sid="538749667570829" type="stageInfoText">
                                                             <param id="0" name="Text">&quot;Chapter &quot;&amp;left(chapterStage.AnimationName,1)&amp;&quot;. Stage &quot;&amp;chapterStage.stage&amp;newline&amp;stageNameDB.Get(chapterStage.AnimationName)</param>
                                                         </action>
+                                                        <action id="0" name="Call function" sid="9454760701560319" type="Function">
+                                                            <param id="0" name="Name">&quot;stageButtonSelectedEffect&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
                                     </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>stageButtonSelectedEffect() : 선택된 버튼은 sine 활성화</comment>
+                <event-block sid="845640886873146">
+                    <conditions>
+                        <condition id="0" name="On function" sid="7145869506510773" type="Function">
+                            <param id="0" name="Name">&quot;stageButtonSelectedEffect&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2156763227063343">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="238276146389174" type="System">
+                                    <param id="0" name="Object">chapterStage</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9759689801909398">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="5102245758609912" type="chapterStage">
+                                            <param id="0" name="Object">stageSelection</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Sine" id="0" name="Set active" sid="4993265196168587" type="chapterStage">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7933706419931407">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="7775238695107558" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Sine" id="5" name="Set cycle position" sid="6272580715012802" type="chapterStage">
+                                            <param id="0" name="Cycle position">0</param>
+                                        </action>
+                                        <action behavior="Sine" id="0" name="Set active" sid="504035871188351" type="chapterStage">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="6647570399438001" type="chapterStage">
+                                            <param id="0" name="Width">self.oriWidth</param>
+                                            <param id="1" name="Height">self.oriHeight</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -6176,7 +6441,7 @@
                                     <param id="1" name="Value">-1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="2379355547203711" type="systemText">
-                                    <param id="0" name="Text">&quot;[교배] 닭 두 마리를 교배러서 새로운 닭을 만듭니다. 일정 확률로 강화됩니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;[교배] 닭 두 마리를 교배해서 새로운 닭을 만듭니다. 일정 확률로 강화됩니다.&quot;</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="3010562210040054" type="cageViewOkButton">
                                     <param id="0" name="Animation">&quot;Reproduce&quot;</param>
@@ -6686,9 +6951,13 @@
                                         <action id="0" name="Set text" sid="5245739436627815" type="powerupHUD">
                                             <param id="0" name="Text">&quot;+&quot;&amp;henCage.bonus</param>
                                         </action>
-                                        <action id="-3" name="Set position" sid="1348041161152658" type="powerupHUD">
+                                        <action disabled="1" id="-3" name="Set position" sid="1348041161152658" type="powerupHUD">
                                             <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)+powerupIndicatorX</param>
-                                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)+powerupIndicatorY</param>
+                                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="3539155675610543" type="powerupHUD">
+                                            <param id="0" name="X">henCage.X+powerupIndicatorX</param>
+                                            <param id="1" name="Y">henCage.Y</param>
                                         </action>
                                         <action id="5" name="Set web font" sid="5682912111170838" type="powerupHUD">
                                             <param id="0" name="Family name">&quot;jua&quot;</param>

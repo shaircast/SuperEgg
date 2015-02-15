@@ -376,11 +376,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>798</x>
-                        <y>40</y>
+                        <x>1200</x>
+                        <y>80</y>
                         <z>0</z>
                         <width>128</width>
-                        <height>48</height>
+                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -409,11 +409,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>998</x>
-                        <y>40</y>
+                        <x>1200</x>
+                        <y>210</y>
                         <z>0</z>
                         <width>128</width>
-                        <height>48</height>
+                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -442,14 +442,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1198</x>
-                        <y>40</y>
+                        <x>1200</x>
+                        <y>340</y>
                         <z>0</z>
                         <width>128</width>
-                        <height>48</height>
+                        <height>128</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.5078125</hotspotX>
+                        <hotspotY>0.5078125</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
