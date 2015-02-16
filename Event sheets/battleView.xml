@@ -242,7 +242,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <comment bookmark="1">매턴 food 충전</comment>
+                        <comment>매턴 food 충전</comment>
                         <event-block sid="9625744061729154">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="4788763696935851" type="System">

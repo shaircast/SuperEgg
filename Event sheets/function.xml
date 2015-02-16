@@ -1099,8 +1099,59 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="6" name="Set speed" sid="8720379039241101" type="henButton">
-                                    <param id="0" name="Speed">random(1.5,3)</param>
+                                <action id="0" name="Spawn another object" sid="4630513763273669" type="henButton">
+                                    <param id="0" name="Object">henCage</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="Image point">&quot;HenCage&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="2208788200575127" type="henCage">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Value">henButton.kind</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8803155871855048" type="henCage">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Value">henButton.type</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="7901712054533302" type="henCage">
+                                    <param id="0" name="Animation">self.kind&amp;&quot;idle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="6" name="Set speed" sid="3526335115104037" type="henCage">
+                                    <param id="0" name="Speed">random(0.7,1.3)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="701756770218676" type="Function">
+                                    <param id="0" name="Name">&quot;typeIconPick&quot;</param>
+                                    <param id="1" name="Parameter {n}">henCage.UID</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="7885875799478025" type="powerupHUD">
+                                    <param id="0" name="X">henCage.X+powerupIndicatorX</param>
+                                    <param id="1" name="Y">henCage.Y</param>
+                                </action>
+                                <action behavior="Anchor" id="0" name="Set enabled" sid="6423837893021128" type="powerupHUD">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Anchor" id="0" name="Set enabled" sid="2225128577846395" type="henCage">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Anchor" id="0" name="Set enabled" sid="8497765217263193" type="iconTypeHUD">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="5918551634705505" type="henButton">
+                                    <param id="0" name="Object">iconAtk</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="Image point">&quot;Atk&quot;</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="6026862381813196" type="henButton">
+                                    <param id="0" name="Object">henInfo</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="Image point">&quot;AtkText&quot;</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="6743657649838726" type="henInfo">
+                                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="1229140665308497" type="henInfo">
+                                    <param id="0" name="Text">henDB.Get(henButton.kind&amp;&quot;atk&quot;)</param>
                                 </action>
                                 <action id="0" name="Spawn another object" sid="6181682496591287" type="henButton">
                                     <param id="0" name="Object">iconFood</param>
@@ -1147,22 +1198,8 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Spawn another object" sid="1851797828816827" type="henButton">
-                                            <param id="0" name="Object">iconPowerup</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;Powerup&quot;</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="7845996986339342" type="henButton">
-                                            <param id="0" name="Object">henInfo</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;PowerupText&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set web font" sid="2844727093300898" type="henInfo">
-                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="7027341738979717" type="henInfo">
-                                            <param id="0" name="Text">henUpgrade0*5&amp;&quot;%&quot;</param>
+                                        <action id="0" name="Set text" sid="7027341738979717" type="powerupHUD">
+                                            <param id="0" name="Text">&quot;+&quot;&amp;henUpgrade0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1175,22 +1212,8 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Spawn another object" sid="7218051304849185" type="henButton">
-                                            <param id="0" name="Object">iconPowerup</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;Powerup&quot;</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="3411304446551844" type="henButton">
-                                            <param id="0" name="Object">henInfo</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;PowerupText&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set web font" sid="2315931169536571" type="henInfo">
-                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="1086320182253539" type="henInfo">
-                                            <param id="0" name="Text">henUpgrade1*5&amp;&quot;%&quot;</param>
+                                        <action id="0" name="Set text" sid="6119947944434103" type="powerupHUD">
+                                            <param id="0" name="Text">&quot;+&quot;&amp;henUpgrade1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1203,22 +1226,8 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Spawn another object" sid="7831318715335018" type="henButton">
-                                            <param id="0" name="Object">iconPowerup</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;Powerup&quot;</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="5612276962985928" type="henButton">
-                                            <param id="0" name="Object">henInfo</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;PowerupText&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set web font" sid="4238859718557456" type="henInfo">
-                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="2880219016995797" type="henInfo">
-                                            <param id="0" name="Text">henUpgrade2*5&amp;&quot;%&quot;</param>
+                                        <action id="0" name="Set text" sid="2363527987976793" type="powerupHUD">
+                                            <param id="0" name="Text">&quot;+&quot;&amp;henUpgrade2</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1231,146 +1240,8 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Spawn another object" sid="6984404875477194" type="henButton">
-                                            <param id="0" name="Object">iconPowerup</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;Powerup&quot;</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="1107980757629539" type="henButton">
-                                            <param id="0" name="Object">henInfo</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;PowerupText&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set web font" sid="2994619230189849" type="henInfo">
-                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="4566446274303177" type="henInfo">
-                                            <param id="0" name="Text">henUpgrade3*5&amp;&quot;%&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="4430214374039703">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="6873371102561027" type="henButton">
-                                            <param id="0" name="Instance variable">type</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">&quot;a&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Spawn another object" sid="290708554171413" type="henButton">
-                                            <param id="0" name="Object">iconType</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;Type&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set frame" sid="6466923971850492" type="iconType">
-                                            <param id="0" name="Frame number">0</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="9280261165145125" type="henButton">
-                                            <param id="0" name="Object">henInfo</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;TypeText&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set web font" sid="8061259358907727" type="henInfo">
-                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="6088748690947266" type="henInfo">
-                                            <param id="0" name="Text">&quot;무속성&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="5272623333554274">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="7812369019371688" type="henButton">
-                                            <param id="0" name="Instance variable">type</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">&quot;b&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Spawn another object" sid="539828794219905" type="henButton">
-                                            <param id="0" name="Object">iconType</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;Type&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set frame" sid="9611627051468155" type="iconType">
-                                            <param id="0" name="Frame number">1</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="9905728234124198" type="henButton">
-                                            <param id="0" name="Object">henInfo</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;TypeText&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set web font" sid="8340169085620752" type="henInfo">
-                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="7543285610848027" type="henInfo">
-                                            <param id="0" name="Text">&quot;불속성&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="7552151054747384">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="5273945801018744" type="henButton">
-                                            <param id="0" name="Instance variable">type</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">&quot;c&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Spawn another object" sid="4820913450763848" type="henButton">
-                                            <param id="0" name="Object">iconType</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;Type&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set frame" sid="2688288876552046" type="iconType">
-                                            <param id="0" name="Frame number">2</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="4669864133057056" type="henButton">
-                                            <param id="0" name="Object">henInfo</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;TypeText&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set web font" sid="1542218845673543" type="henInfo">
-                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="6016896807620131" type="henInfo">
-                                            <param id="0" name="Text">&quot;물속성&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="1890092916650711">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="872239175263269" type="henButton">
-                                            <param id="0" name="Instance variable">type</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">&quot;d&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Spawn another object" sid="7294458570445803" type="henButton">
-                                            <param id="0" name="Object">iconType</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;Type&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set frame" sid="5179461944880087" type="iconType">
-                                            <param id="0" name="Frame number">3</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="7672880105242282" type="henButton">
-                                            <param id="0" name="Object">henInfo</param>
-                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                            <param id="2" name="Image point">&quot;TypeText&quot;</param>
-                                        </action>
-                                        <action id="5" name="Set web font" sid="4938872441497315" type="henInfo">
-                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="3844497638927112" type="henInfo">
-                                            <param id="0" name="Text">&quot;풀속성&quot;</param>
+                                        <action id="0" name="Set text" sid="7314862815434666" type="powerupHUD">
+                                            <param id="0" name="Text">&quot;+&quot;&amp;henUpgrade3</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1396,10 +1267,6 @@
                                     <param id="2" name="X">henButtonX0</param>
                                     <param id="3" name="Y">henButtonY</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="8531997812640966" type="henButton">
-                                    <param id="0" name="Animation">henType0</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
                                 <action id="-10" name="Set value" sid="8782118716847917" type="henButton">
                                     <param id="0" name="Instance variable">buttonID</param>
                                     <param id="1" name="Value">0</param>
@@ -1421,10 +1288,6 @@
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="X">henButtonX1</param>
                                     <param id="3" name="Y">henButtonY</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="7863929031342342" type="henButton">
-                                    <param id="0" name="Animation">henType1</param>
-                                    <param id="1" name="From">1</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="3961607729929864" type="henButton">
                                     <param id="0" name="Instance variable">buttonID</param>
@@ -1448,10 +1311,6 @@
                                     <param id="2" name="X">henButtonX2</param>
                                     <param id="3" name="Y">henButtonY</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="979739196479849" type="henButton">
-                                    <param id="0" name="Animation">henType2</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
                                 <action id="-10" name="Set value" sid="7314242572498317" type="henButton">
                                     <param id="0" name="Instance variable">buttonID</param>
                                     <param id="1" name="Value">2</param>
@@ -1473,10 +1332,6 @@
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="X">henButtonX3</param>
                                     <param id="3" name="Y">henButtonY</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="263757252754305" type="henButton">
-                                    <param id="0" name="Animation">henType3</param>
-                                    <param id="1" name="From">1</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="400838690660671" type="henButton">
                                     <param id="0" name="Instance variable">buttonID</param>
@@ -1931,11 +1786,24 @@
                                             <param id="0" name="Instance variable">eating</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
-                                        <action id="5" name="Set frame" sid="8811739130522925" type="henButton">
-                                            <param id="0" name="Frame number">0</param>
-                                        </action>
                                     </actions>
                                     <sub-events>
+                                        <event-block sid="655310421575159">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="8271921944679025" type="henCage">
+                                                    <param id="0" name="Object">henButton</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="1379562070810091" type="henCage">
+                                                    <param id="0" name="Animation">self.kind&amp;&quot;idle&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="6" name="Set speed" sid="5236973752522277" type="henCage">
+                                                    <param id="0" name="Speed">random(0.7,1.3)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
                                         <comment>보너스면 보너스 표식만들고 붙이기.</comment>
                                         <event-block sid="484853847980953">
                                             <conditions>
@@ -2112,9 +1980,6 @@
                                                                     <param id="0" name="Instance variable">state</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
-                                                                <action id="5" name="Set frame" sid="4541811196159449" type="henButton">
-                                                                    <param id="0" name="Frame number">3</param>
-                                                                </action>
                                                                 <action id="0" name="Call function" sid="7071647831878094" type="Function">
                                                                     <param id="0" name="Name">&quot;refreshFood&quot;</param>
                                                                     <param id="1" name="Parameter {n}"></param>
@@ -2126,6 +1991,24 @@
                                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                 </action>
                                                             </actions>
+                                                            <sub-events>
+                                                                <event-block sid="285576116072984">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="9803480853178478" type="henCage">
+                                                                            <param id="0" name="Object">henButton</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="4" name="Set animation" sid="5353517387953387" type="henCage">
+                                                                            <param id="0" name="Animation">self.kind&amp;&quot;eating&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="6" name="Set speed" sid="9810983297694416" type="henCage">
+                                                                            <param id="0" name="Speed">random(0.7,1.3)</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
                                                         </event-block>
                                                         <event-block sid="7741127979556559">
                                                             <conditions>
@@ -2381,11 +2264,24 @@
                                                     <param id="0" name="Instance variable">state</param>
                                                     <param id="1" name="Value">2</param>
                                                 </action>
-                                                <action id="5" name="Set frame" sid="4235429548665232" type="henButton">
-                                                    <param id="0" name="Frame number">6</param>
-                                                </action>
                                             </actions>
                                             <sub-events>
+                                                <event-block sid="2479503031969621">
+                                                    <conditions>
+                                                        <condition id="1" name="Is overlapping another object" sid="9393089760131761" type="henCage">
+                                                            <param id="0" name="Object">henButton</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="6157069108185757" type="henCage">
+                                                            <param id="0" name="Animation">self.kind&amp;&quot;ready&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="6" name="Set speed" sid="427088253263035" type="henCage">
+                                                            <param id="0" name="Speed">random(0.7,1.3)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
                                                 <comment>보너스 확률받으면 보너스!</comment>
                                                 <event-block sid="2397184048017521">
                                                     <conditions>
@@ -6959,7 +6855,7 @@
                                             <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),loopindex,&quot;/&quot;),3)</param>
                                         </action>
                                         <action id="4" name="Set animation" sid="1834575810064161" type="henCage">
-                                            <param id="0" name="Animation">left(tempKindType,2)&amp;&quot;_&quot;</param>
+                                            <param id="0" name="Animation">left(tempKindType,2)&amp;&quot;eyeclosed&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="9381273094955179" type="henCage">
@@ -7027,6 +6923,7 @@
                                             <param id="2" name="X">x</param>
                                             <param id="3" name="Y">y</param>
                                         </action>
+                                        <action id="-25" name="Move to bottom" sid="2399750088909887" type="entryIndicator" />
                                     </actions>
                                 </event-block>
                                 <comment>맨끝 이후 빈칸</comment>

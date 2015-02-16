@@ -14,9 +14,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="3">battleView</layout>
         <layout order="4">stageView</layout>
         <layout order="6">cageView</layout>
+        <layout order="7">sprites</layout>
         <event-sheet order="1">battleView</event-sheet>
-        <event-sheet order="5">function</event-sheet>
         <event-sheet order="2">stageView</event-sheet>
+        <event-sheet order="5">function</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -30,18 +31,18 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/plugin/" />
-        <folder expanded="1" path="object-folder/battleView/" />
-        <folder expanded="0" path="object-folder/battleView/hud/" />
+        <folder expanded="0" path="object-folder/battleView/" />
+        <folder expanded="1" path="object-folder/battleView/hud/" />
         <folder expanded="0" path="object-folder/battleView/golem/" />
         <folder expanded="1" path="object-folder/battleView/golem/kindEffect/" />
         <folder expanded="0" path="object-folder/battleView/eggExplode/" />
         <folder expanded="0" path="object-folder/battleView/bgDeco/" />
-        <folder expanded="1" path="object-folder/battleView/henButton/" />
+        <folder expanded="0" path="object-folder/battleView/henButton/" />
         <folder expanded="0" path="object-folder/DBDic/" />
         <folder expanded="1" path="object-folder/stageView/" />
         <folder expanded="0" path="object-folder/menuButton/" />
-        <folder expanded="0" path="object-folder/cageView/" />
-        <folder expanded="1" path="object-folder/cageView/textbox/" />
+        <folder expanded="1" path="object-folder/cageView/" />
+        <folder expanded="0" path="object-folder/cageView/textbox/" />
         <folder expanded="0" path="object-folder/cageView/modeButton/" />
         <folder expanded="0" path="object-folder/opening/" />
         <folder expanded="1" path="object-folder/icon/" />
@@ -89,18 +90,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/tower/" />
         <folder expanded="1" path="animation-folder/foodSprite/" />
         <folder expanded="1" path="animation-folder/henButton/" />
-        <folder expanded="1" path="animation-folder/henButton/01/" />
-        <folder expanded="1" path="animation-folder/henButton/02/" />
-        <folder expanded="1" path="animation-folder/henButton/03/" />
-        <folder expanded="1" path="animation-folder/henButton/04/" />
-        <folder expanded="1" path="animation-folder/henButton/05/" />
-        <folder expanded="1" path="animation-folder/henButton/06/" />
-        <folder expanded="1" path="animation-folder/henButton/07/" />
-        <folder expanded="1" path="animation-folder/henButton/08/" />
-        <folder expanded="1" path="animation-folder/henButton/09/" />
-        <folder expanded="1" path="animation-folder/henButton/10/" />
-        <folder expanded="1" path="animation-folder/henButton/11/" />
-        <folder expanded="1" path="animation-folder/henButton/12/" />
         <folder expanded="1" path="animation-folder/launchLine/" />
         <folder expanded="1" path="animation-folder/henSelection/" />
         <folder expanded="1" path="animation-folder/eggBullet/" />
@@ -129,6 +118,18 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/cageViewBg/" />
         <folder expanded="1" path="animation-folder/cageSummary/" />
         <folder expanded="1" path="animation-folder/henCage/" />
+        <folder expanded="1" path="animation-folder/henCage/01/" />
+        <folder expanded="1" path="animation-folder/henCage/02/" />
+        <folder expanded="1" path="animation-folder/henCage/03/" />
+        <folder expanded="1" path="animation-folder/henCage/04/" />
+        <folder expanded="1" path="animation-folder/henCage/05/" />
+        <folder expanded="1" path="animation-folder/henCage/06/" />
+        <folder expanded="1" path="animation-folder/henCage/07/" />
+        <folder expanded="1" path="animation-folder/henCage/08/" />
+        <folder expanded="1" path="animation-folder/henCage/09/" />
+        <folder expanded="1" path="animation-folder/henCage/10/" />
+        <folder expanded="1" path="animation-folder/henCage/11/" />
+        <folder expanded="1" path="animation-folder/henCage/12/" />
         <folder expanded="1" path="animation-folder/cageSelection/" />
         <folder expanded="1" path="animation-folder/cageViewOkButton/" />
         <folder expanded="1" path="animation-folder/entryIndicator/" />

@@ -104,7 +104,7 @@
                             <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                         </action>
                         <action id="4" name="Set animation" sid="5170188448726535" type="henCage">
-                            <param id="0" name="Animation">left(entryText1,2)&amp;&quot;_&quot;</param>
+                            <param id="0" name="Animation">left(entryText1,2)&amp;&quot;eyeopened&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action id="-10" name="Set value" sid="8312768358640264" type="henCage">
@@ -160,7 +160,7 @@
                             <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                         </action>
                         <action id="4" name="Set animation" sid="615596724082635" type="henCage">
-                            <param id="0" name="Animation">left(entryText2,2)&amp;&quot;_&quot;</param>
+                            <param id="0" name="Animation">left(entryText2,2)&amp;&quot;eyeopened&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action id="-10" name="Set value" sid="1535264506196263" type="henCage">
@@ -216,7 +216,7 @@
                             <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                         </action>
                         <action id="4" name="Set animation" sid="8339171771831033" type="henCage">
-                            <param id="0" name="Animation">left(entryText3,2)&amp;&quot;_&quot;</param>
+                            <param id="0" name="Animation">left(entryText3,2)&amp;&quot;eyeopened&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action id="-10" name="Set value" sid="7551382865032123" type="henCage">
