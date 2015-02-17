@@ -200,8 +200,8 @@
                         <x>199</x>
                         <y>282</y>
                         <z>0</z>
-                        <width>108</width>
-                        <height>64</height>
+                        <width>112</width>
+                        <height>112</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -405,6 +405,14 @@
                                 <wait-time>0</wait-time>
                                 <fade-out-time>0</fade-out-time>
                                 <destroy>No</destroy>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="RotateTo">
+                            <properties>
+                                <activated>Yes</activated>
+                                <max-speed>180</max-speed>
+                                <acceleration>0</acceleration>
+                                <deceleration>0</deceleration>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -1882,39 +1890,6 @@
                         <z>0</z>
                         <width>32</width>
                         <height>32</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="typeEffect" uid="137">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Anchor">
-                            <properties>
-                                <left-edge>None</left-edge>
-                                <top-edge>Window bottom</top-edge>
-                                <right-edge>None</right-edge>
-                                <bottom-edge>None</bottom-edge>
-                                <initial-state>Disabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>1035</x>
-                        <y>-78</y>
-                        <z>0</z>
-                        <width>192</width>
-                        <height>192</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

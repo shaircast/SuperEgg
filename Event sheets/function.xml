@@ -369,6 +369,42 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>golemDBInput(kind, name, hp, speed, reward, description)&#x0D;&#x0A;숫자 및 수치</comment>
+                <event-block sid="353319959376766">
+                    <conditions>
+                        <condition id="0" name="On function" sid="1663528197935779" type="Function">
+                            <param id="0" name="Name">&quot;golemDBInput&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6394125209808408">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" sid="7380896411115449" type="golemDB">
+                                    <param id="0" name="Key">zeropad(Function.Param(0),2)&amp;&quot;name&quot;</param>
+                                    <param id="1" name="Value">Function.Param(1)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="5837572587251073" type="golemDB">
+                                    <param id="0" name="Key">zeropad(Function.Param(0),2)&amp;&quot;hp&quot;</param>
+                                    <param id="1" name="Value">Function.Param(2)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="9513464256274191" type="golemDB">
+                                    <param id="0" name="Key">zeropad(Function.Param(0),2)&amp;&quot;speed&quot;</param>
+                                    <param id="1" name="Value">Function.Param(3)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="5605287486828516" type="golemDB">
+                                    <param id="0" name="Key">zeropad(Function.Param(0),2)&amp;&quot;reward&quot;</param>
+                                    <param id="1" name="Value">Function.Param(4)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="6014383617273946" type="golemDB">
+                                    <param id="0" name="Key">zeropad(Function.Param(0),2)&amp;&quot;description&quot;</param>
+                                    <param id="1" name="Value">Function.Param(5)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <comment>stageNameDBInit() : 각 스테이지 이름, </comment>
                 <event-block sid="6147724126418971">
                     <conditions>
@@ -425,166 +461,6 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>golemDBInit() : Dic에 골렘 DB를 입력.</comment>
-                <event-block sid="5476733464728454">
-                    <conditions>
-                        <condition id="0" name="On function" sid="317972928190894" type="Function">
-                            <param id="0" name="Name">&quot;golemDBInit&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="4349662757955595">
-                            <conditions />
-                            <actions>
-                                <action id="0" name="Add key" sid="1285599719285674" type="golemDB">
-                                    <param id="0" name="Key">&quot;01hp&quot;</param>
-                                    <param id="1" name="Value">3</param>
-                                </action>
-                                <action id="0" name="Add key" sid="1841525570128168" type="golemDB">
-                                    <param id="0" name="Key">&quot;01atk&quot;</param>
-                                    <param id="1" name="Value">2</param>
-                                </action>
-                                <action id="0" name="Add key" sid="5270351669574313" type="golemDB">
-                                    <param id="0" name="Key">&quot;01speed&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="7005888120938667" type="golemDB">
-                                    <param id="0" name="Key">&quot;01reward&quot;</param>
-                                    <param id="1" name="Value">10</param>
-                                </action>
-                                <action id="0" name="Add key" sid="6502909702265766" type="golemDB">
-                                    <param id="0" name="Key">&quot;02hp&quot;</param>
-                                    <param id="1" name="Value">2</param>
-                                </action>
-                                <action id="0" name="Add key" sid="1226391692943638" type="golemDB">
-                                    <param id="0" name="Key">&quot;02atk&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="120385204111399" type="golemDB">
-                                    <param id="0" name="Key">&quot;02speed&quot;</param>
-                                    <param id="1" name="Value">2</param>
-                                </action>
-                                <action id="0" name="Add key" sid="4874432580362756" type="golemDB">
-                                    <param id="0" name="Key">&quot;02reward&quot;</param>
-                                    <param id="1" name="Value">10</param>
-                                </action>
-                                <action id="0" name="Add key" sid="928311241698164" type="golemDB">
-                                    <param id="0" name="Key">&quot;03hp&quot;</param>
-                                    <param id="1" name="Value">6</param>
-                                </action>
-                                <action id="0" name="Add key" sid="2268060435706582" type="golemDB">
-                                    <param id="0" name="Key">&quot;03atk&quot;</param>
-                                    <param id="1" name="Value">2</param>
-                                </action>
-                                <action id="0" name="Add key" sid="2602383588300662" type="golemDB">
-                                    <param id="0" name="Key">&quot;03speed&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="4907016133221924" type="golemDB">
-                                    <param id="0" name="Key">&quot;03reward&quot;</param>
-                                    <param id="1" name="Value">20</param>
-                                </action>
-                                <action id="0" name="Add key" sid="7352249364547536" type="golemDB">
-                                    <param id="0" name="Key">&quot;04hp&quot;</param>
-                                    <param id="1" name="Value">5</param>
-                                </action>
-                                <action id="0" name="Add key" sid="771086988476218" type="golemDB">
-                                    <param id="0" name="Key">&quot;04atk&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="158687791384931" type="golemDB">
-                                    <param id="0" name="Key">&quot;04speed&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="6718030720197994" type="golemDB">
-                                    <param id="0" name="Key">&quot;04reward&quot;</param>
-                                    <param id="1" name="Value">15</param>
-                                </action>
-                                <action id="0" name="Add key" sid="6432266429770523" type="golemDB">
-                                    <param id="0" name="Key">&quot;05hp&quot;</param>
-                                    <param id="1" name="Value">3</param>
-                                </action>
-                                <action id="0" name="Add key" sid="4044716117689972" type="golemDB">
-                                    <param id="0" name="Key">&quot;05atk&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="9848540799614128" type="golemDB">
-                                    <param id="0" name="Key">&quot;05speed&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="2302920537313871" type="golemDB">
-                                    <param id="0" name="Key">&quot;05reward&quot;</param>
-                                    <param id="1" name="Value">15</param>
-                                </action>
-                                <action id="0" name="Add key" sid="1541086117683978" type="golemDB">
-                                    <param id="0" name="Key">&quot;06hp&quot;</param>
-                                    <param id="1" name="Value">5</param>
-                                </action>
-                                <action id="0" name="Add key" sid="7844806516267293" type="golemDB">
-                                    <param id="0" name="Key">&quot;06atk&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="1168668926556843" type="golemDB">
-                                    <param id="0" name="Key">&quot;06speed&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="4948485569752671" type="golemDB">
-                                    <param id="0" name="Key">&quot;06reward&quot;</param>
-                                    <param id="1" name="Value">10</param>
-                                </action>
-                                <action id="0" name="Add key" sid="8328942610179241" type="golemDB">
-                                    <param id="0" name="Key">&quot;07hp&quot;</param>
-                                    <param id="1" name="Value">3</param>
-                                </action>
-                                <action id="0" name="Add key" sid="8362423539452731" type="golemDB">
-                                    <param id="0" name="Key">&quot;07atk&quot;</param>
-                                    <param id="1" name="Value">2</param>
-                                </action>
-                                <action id="0" name="Add key" sid="7690060300969217" type="golemDB">
-                                    <param id="0" name="Key">&quot;07speed&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="8469308259293271" type="golemDB">
-                                    <param id="0" name="Key">&quot;07reward&quot;</param>
-                                    <param id="1" name="Value">20</param>
-                                </action>
-                                <action id="0" name="Add key" sid="5543840948292529" type="golemDB">
-                                    <param id="0" name="Key">&quot;08hp&quot;</param>
-                                    <param id="1" name="Value">2</param>
-                                </action>
-                                <action id="0" name="Add key" sid="1780366422868444" type="golemDB">
-                                    <param id="0" name="Key">&quot;08atk&quot;</param>
-                                    <param id="1" name="Value">2</param>
-                                </action>
-                                <action id="0" name="Add key" sid="5793290405534017" type="golemDB">
-                                    <param id="0" name="Key">&quot;08speed&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="1331855402408118" type="golemDB">
-                                    <param id="0" name="Key">&quot;08reward&quot;</param>
-                                    <param id="1" name="Value">15</param>
-                                </action>
-                                <action id="0" name="Add key" sid="457230003270429" type="golemDB">
-                                    <param id="0" name="Key">&quot;09hp&quot;</param>
-                                    <param id="1" name="Value">4</param>
-                                </action>
-                                <action id="0" name="Add key" sid="3556156893004211" type="golemDB">
-                                    <param id="0" name="Key">&quot;09atk&quot;</param>
-                                    <param id="1" name="Value">2</param>
-                                </action>
-                                <action id="0" name="Add key" sid="2408675464135403" type="golemDB">
-                                    <param id="0" name="Key">&quot;09speed&quot;</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Add key" sid="6825144802993058" type="golemDB">
-                                    <param id="0" name="Key">&quot;09reward&quot;</param>
-                                    <param id="1" name="Value">15</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
                 <comment>henDBInit() : Dic에 닭 DB를 입력.</comment>
                 <event-block sid="8727915558087155">
                     <conditions>
@@ -595,197 +471,111 @@
                     <actions />
                     <sub-events>
                         <comment>henDBInput(kind, name, readyturn, atk, duration, price, foodcost, description)</comment>
-                        <event-block sid="964925031171231">
-                            <conditions>
-                                <condition id="-10" name="For" sid="7688996799715748" type="System">
-                                    <param id="0" name="Name">&quot;kind&quot;</param>
-                                    <param id="1" name="Start index">1</param>
-                                    <param id="2" name="End index">12</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="9642312426411903">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="876411034989491" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="270145973332774" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;걍닭&quot;{###}1{###}3{###}0{###}10{###}2{###}&quot;잘난 것도 못난 것도 없이 평범한 닭이었지만, 이젠 아니다! 투척 지점에 3의 데미지를 준다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="796359510950416">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="4882528057450924" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">2</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="3779834439312639" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;개돌닭&quot;{###}2{###}3{###}0{###}28{###}6{###}&quot;한 때 돌격대장을 맡았고 한다. 근육질에 무대뽀 성격이다. 투척 지점과 뒤로 2칸까지 3의 데미지를 준다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="7502776557696974">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="4811359494031623" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">3</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="268146624585319" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;샤샤샥닭&quot;{###}2{###}3{###}0{###}24{###}6{###}&quot;샤프한 인상의 닭. 목이 잘 돌아가 넓은 시야를 볼 수 있다고 한다. 투척 지점과 위아래로 3의 데미지를 준다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="2187936801632463">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="2082323797943892" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">4</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="8578501785045015" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;십자군닭&quot;{###}2{###}2{###}0{###}30{###}5{###}&quot;십자모양 흉터가 있는, 구워진 흔적이 있는 닭이다. 구워질 뻔했다고. 투척 지점을 중심으로 십자 범위에  2의 데미지를 준다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="7337693984301017">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="2840899314055937" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">5</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="1829161111992367" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;삼삼한닭&quot;{###}3{###}2{###}0{###}32{###}6{###}&quot;모든 것에 시큰둥하고 불만인 닭. 움직이지 않아서 윤기가 흐르고 굉장히 포동포동하다. 투척 지점을 중심으로 3X3 범위에 2의 데미지를 준다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="8735298468932641">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="1943333475054305" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">6</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="7334099457064215" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;비임닭&quot;{###}3{###}1{###}0{###}35{###}3{###}&quot;생명연장의 꿈에 성공, 날개가 기계인 사이보그닭. 투척 지점 라인 전체에 1의 데미지를 준다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="1064421106564823">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="9298291916821955" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">7</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="8653076026058326" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;콩닭&quot;{###}2{###}2{###}0{###}22{###}2{###}&quot;콩만 먹으며 2년을 자란 쌍둥이. 알이 아니라 콩을 낳는다고 한다. 2의 데미지를 2번 나누어 준다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="8636573330584146">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="8519780270420037" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">8</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="779603362567843" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;둠닭&quot;{###}2{###}6{###}0{###}30{###}4{###}&quot;스파이복에 방독면을 낀 닭이다. 정체는 알 수 없지만 엄청나게 전투적이다. 투척 지점에 6의 데미지를 준다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="3581779570345077">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="2270446329095986" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">9</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="7028957203484454" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;톡식닭&quot;{###}3{###}2{###}3{###}35{###}4{###}&quot;독이 든 사료를 먹고 나서 항상 입냄새가 난다. 한번 배면 3일을 갈 정도로 독하다고. 투척 지점에 2의 데미지를 주고 3턴 동안 지속되는 독구름을 만든다. 다음 턴 발사 때에 독구름은 그 자리에 2의 데미지를 준다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="860910181557566">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="9531592450824846" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">10</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="1104877106861839" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;타워닭&quot;{###}3{###}2{###}3{###}42{###}4{###}&quot;머리에 타워모양 관을 쓰고 있는 닭. 도도하고 거만한 성격이지만 의외로 여린 성격이라고. 투척 지점에 3의 데미지를 주고, 칸이 비었을 경우 3턴 동안 적의 이동을 막는 타워를 생성한다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="4370754097157058">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="6508482783605247" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">11</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="4007793346471823" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;반삭닭&quot;{###}3{###}&quot;50% HP&quot;{###}0{###}45{###}4{###}&quot;털이 반 쯤 뽑혀있다. 안습한 외모에서 삭힌 분노는 상대를 반토막낸다. 투척 지점에 있는 적의 체력을 반으로 깎는다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="2584533410835853">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="1210200644221987" type="System">
-                                            <param id="0" name="First value">loopindex</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">12</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="2233861818837083" type="Function">
-                                            <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                            <param id="1" name="Parameter {n}">loopindex{###}&quot;키라닭&quot;{###}4{###}3{###}0{###}50{###}5{###}&quot;왠지 후드를 쓰고 있는 닭. 간지나는 듯 하나 폭주하면 멈출 수가 없다고 한다. 투척 지점에 4의 데미지를 준다. 키라닭이 적을 파괴했을 경우 바로 다음 턴부터 다시 공격이 가능하다.&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
+                        <event-block sid="4233462929001459">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="270145973332774" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;01&quot;{###}&quot;걍닭&quot;{###}1{###}3{###}0{###}10{###}2{###}&quot;잘난 것도 못난 것도 없이 평범한 닭이었지만, 이젠 아니다! 투척 지점에 3의 데미지를 준다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="3779834439312639" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;02&quot;{###}&quot;개돌닭&quot;{###}2{###}3{###}0{###}28{###}6{###}&quot;한 때 돌격대장을 맡았고 한다. 근육질에 무대뽀 성격이다. 투척 지점과 뒤로 2칸까지 3의 데미지를 준다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="268146624585319" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;03&quot;{###}&quot;샤샤샥닭&quot;{###}2{###}3{###}0{###}24{###}6{###}&quot;샤프한 인상의 닭. 목이 잘 돌아가 넓은 시야를 볼 수 있다고 한다. 투척 지점과 위아래로 3의 데미지를 준다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="8578501785045015" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;04&quot;{###}&quot;십자군닭&quot;{###}2{###}2{###}0{###}30{###}5{###}&quot;십자모양 흉터가 있는, 구워진 흔적이 있는 닭이다. 구워질 뻔했다고. 투척 지점을 중심으로 십자 범위에  2의 데미지를 준다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="1829161111992367" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;05&quot;{###}&quot;삼삼한닭&quot;{###}3{###}2{###}0{###}32{###}6{###}&quot;모든 것에 시큰둥하고 불만인 닭. 움직이지 않아서 윤기가 흐르고 굉장히 포동포동하다. 투척 지점을 중심으로 3X3 범위에 2의 데미지를 준다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="7334099457064215" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;06&quot;{###}&quot;비임닭&quot;{###}3{###}1{###}0{###}35{###}3{###}&quot;생명연장의 꿈에 성공, 날개가 기계인 사이보그닭. 투척 지점 라인 전체에 1의 데미지를 준다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="8653076026058326" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;07&quot;{###}&quot;콩닭&quot;{###}2{###}2{###}0{###}22{###}2{###}&quot;콩만 먹으며 2년을 자란 쌍둥이. 알이 아니라 콩을 낳는다고 한다. 2의 데미지를 2번 나누어 준다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="779603362567843" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;08&quot;{###}&quot;둠닭&quot;{###}2{###}6{###}0{###}30{###}4{###}&quot;스파이복에 방독면을 낀 닭이다. 정체는 알 수 없지만 엄청나게 전투적이다. 투척 지점에 6의 데미지를 준다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="7028957203484454" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;09&quot;{###}&quot;톡식닭&quot;{###}3{###}2{###}3{###}35{###}4{###}&quot;독이 든 사료를 먹고 나서 항상 입냄새가 난다. 한번 배면 3일을 갈 정도로 독하다고. 투척 지점에 2의 데미지를 주고 3턴 동안 지속되는 독구름을 만든다. 다음 턴 발사 때에 독구름은 그 자리에 2의 데미지를 준다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="1104877106861839" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;10&quot;{###}&quot;타워닭&quot;{###}3{###}2{###}3{###}42{###}4{###}&quot;머리에 타워모양 관을 쓰고 있는 닭. 도도하고 거만한 성격이지만 의외로 여린 성격이라고. 투척 지점에 3의 데미지를 주고, 칸이 비었을 경우 3턴 동안 적의 이동을 막는 타워를 생성한다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="4007793346471823" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;11&quot;{###}&quot;반삭닭&quot;{###}3{###}&quot;50% HP&quot;{###}0{###}45{###}4{###}&quot;털이 반 쯤 뽑혀있다. 안습한 외모에서 삭힌 분노는 상대를 반토막낸다. 투척 지점에 있는 적의 체력을 반으로 깎는다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="2233861818837083" type="Function">
+                                    <param id="0" name="Name">&quot;henDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;12&quot;{###}&quot;키라닭&quot;{###}4{###}3{###}0{###}50{###}5{###}&quot;왠지 후드를 쓰고 있는 닭. 간지나는 듯 하나 폭주하면 멈출 수가 없다고 한다. 투척 지점에 4의 데미지를 준다. 키라닭이 적을 파괴했을 경우 바로 다음 턴부터 다시 공격이 가능하다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>golemDBInit() : Dic에 골렘 DB를 입력.</comment>
+                <event-block sid="5476733464728454">
+                    <conditions>
+                        <condition id="0" name="On function" sid="317972928190894" type="Function">
+                            <param id="0" name="Name">&quot;golemDBInit&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>golemDBInput(kind, name, hp, speed, reward, description)</comment>
+                        <event-block sid="4349662757955595">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="1726506184322182" type="Function">
+                                    <param id="0" name="Name">&quot;golemDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;01&quot;{###}&quot;골렘이름&quot;{###}3{###}1{###}10{###}&quot;설명충의 설명&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="8323005003992493" type="Function">
+                                    <param id="0" name="Name">&quot;golemDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;02&quot;{###}&quot;골렘이름&quot;{###}2{###}2{###}10{###}&quot;설명충의 설명&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="8468221085405606" type="Function">
+                                    <param id="0" name="Name">&quot;golemDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;03&quot;{###}&quot;골렘이름&quot;{###}6{###}1{###}20{###}&quot;설명충의 설명&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="2398610906734005" type="Function">
+                                    <param id="0" name="Name">&quot;golemDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;04&quot;{###}&quot;골렘이름&quot;{###}5{###}1{###}15{###}&quot;설명충의 설명&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="2258632639513847" type="Function">
+                                    <param id="0" name="Name">&quot;golemDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;05&quot;{###}&quot;골렘이름&quot;{###}3{###}1{###}15{###}&quot;설명충의 설명&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="5004757837266746" type="Function">
+                                    <param id="0" name="Name">&quot;golemDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;06&quot;{###}&quot;골렘이름&quot;{###}5{###}1{###}10{###}&quot;설명충의 설명&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="3499226688486515" type="Function">
+                                    <param id="0" name="Name">&quot;golemDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;07&quot;{###}&quot;골렘이름&quot;{###}3{###}1{###}20{###}&quot;설명충의 설명&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="8625091292601523" type="Function">
+                                    <param id="0" name="Name">&quot;golemDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;08&quot;{###}&quot;골렘이름&quot;{###}2{###}1{###}15{###}&quot;설명충의 설명&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="4240115431485415" type="Function">
+                                    <param id="0" name="Name">&quot;golemDBInput&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;09&quot;{###}&quot;골렘이름&quot;{###}4{###}1{###}15{###}&quot;설명충의 설명&quot;</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -803,7 +593,7 @@
                             <actions>
                                 <action id="0" name="Add key" sid="9542269241396298" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_1&quot;</param>
-                                    <param id="1" name="Value">&quot;20/08a82,01a81/01a82/01b81/01c83/01d70,01a80/&quot;</param>
+                                    <param id="1" name="Value">&quot;20/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="4876000751259549" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_2&quot;</param>
@@ -966,7 +756,7 @@
                             <conditions />
                             <actions>
                                 <action id="1" name="Set return value" sid="4158214869303011" type="Function">
-                                    <param id="0" name="Value">ViewportRight(&quot;hud&quot;)/10*(Function.Param(0)+1)+ViewportRight(&quot;hud&quot;)/20</param>
+                                    <param id="0" name="Value">ViewportRight(&quot;hud&quot;)/10.5*(Function.Param(0)+1)+ViewportRight(&quot;hud&quot;)/12</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1387,6 +1177,13 @@
                                                     <param id="2" name="X">Function.Call(&quot;launchLineXSet&quot;,posX)</param>
                                                     <param id="3" name="Y">Function.Call(&quot;launchLineYSet&quot;,posY)</param>
                                                 </action>
+                                                <action id="4" name="Set animation" sid="14147026729478" type="launchLine">
+                                                    <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Default&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="4800063436086741" type="launchLine">
+                                                    <param id="0" name="Frame number">floor(random(Self.AnimationFrameCount))</param>
+                                                </action>
                                                 <action id="-10" name="Set value" sid="9083725769077112" type="launchLine">
                                                     <param id="0" name="Instance variable">launchLineIDX</param>
                                                     <param id="1" name="Value">posX</param>
@@ -1394,6 +1191,10 @@
                                                 <action id="-10" name="Set value" sid="5382073897482583" type="launchLine">
                                                     <param id="0" name="Instance variable">launchLineIDY</param>
                                                     <param id="1" name="Value">posY</param>
+                                                </action>
+                                                <action id="-7" name="Set size" sid="7921725177078547" type="launchLine">
+                                                    <param id="0" name="Width">100</param>
+                                                    <param id="1" name="Height">100</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -1422,9 +1223,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="4200324703405533" type="launchLine">
-                                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                                    <param id="1" name="From">1</param>
+                                <action id="4" name="Set animation" sid="4632996503602159" type="launchLine">
+                                    <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Default&quot;</param>
+                                    <param id="1" name="From">0</param>
                                 </action>
                                 <action id="-13" name="Set boolean" sid="5991481546513991" type="launchLine">
                                     <param id="0" name="Instance variable">aimed</param>
@@ -1459,9 +1260,9 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set animation" sid="8730200395237741" type="launchLine">
-                                            <param id="0" name="Animation">&quot;Aimed&quot;</param>
-                                            <param id="1" name="From">1</param>
+                                        <action id="4" name="Set animation" sid="9789395851720702" type="launchLine">
+                                            <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Aimed&quot;</param>
+                                            <param id="1" name="From">0</param>
                                         </action>
                                         <action id="-13" name="Set boolean" sid="1638344653177465" type="launchLine">
                                             <param id="0" name="Instance variable">aimed</param>
@@ -1507,9 +1308,9 @@
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="4" name="Set animation" sid="4719534575559095" type="launchLine">
-                                                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                                                            <param id="1" name="From">1</param>
+                                                        <action id="4" name="Set animation" sid="8859432942762102" type="launchLine">
+                                                            <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Default&quot;</param>
+                                                            <param id="1" name="From">0</param>
                                                         </action>
                                                         <action id="-13" name="Set boolean" sid="951977824458072" type="launchLine">
                                                             <param id="0" name="Instance variable">aimed</param>
@@ -1535,9 +1336,9 @@
                                                         <condition id="-22" name="Else" sid="9088408800886161" type="System" />
                                                     </conditions>
                                                     <actions>
-                                                        <action id="4" name="Set animation" sid="1432011092998041" type="launchLine">
-                                                            <param id="0" name="Animation">&quot;Aimed&quot;</param>
-                                                            <param id="1" name="From">1</param>
+                                                        <action id="4" name="Set animation" sid="7430470647081424" type="launchLine">
+                                                            <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Aimed&quot;</param>
+                                                            <param id="1" name="From">0</param>
                                                         </action>
                                                         <action id="-13" name="Set boolean" sid="4566186597615664" type="launchLine">
                                                             <param id="0" name="Instance variable">aimed</param>
@@ -2215,9 +2016,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="2959412116408238" type="launchLine">
-                                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                                    <param id="1" name="From">1</param>
+                                <action id="4" name="Set animation" sid="8447323591715516" type="launchLine">
+                                    <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Default&quot;</param>
+                                    <param id="1" name="From">0</param>
                                 </action>
                                 <action id="-13" name="Set boolean" sid="248725643176907" type="launchLine">
                                     <param id="0" name="Instance variable">aimed</param>
@@ -2488,6 +2289,11 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action behavior="ScrollTo" id="0" name="Shake" sid="4837983176481755" type="focus">
+                                                    <param id="0" name="Magnitude">10+golem.Count*2</param>
+                                                    <param id="1" name="Duration">1</param>
+                                                    <param id="2" name="Mode">0</param>
+                                                </action>
                                                 <action id="-9" name="Set value" sid="8128953598989583" type="System">
                                                     <param id="0" name="Variable">gameState</param>
                                                     <param id="1" name="Value">4</param>
@@ -2536,7 +2342,7 @@
                                                             <param id="1" name="Parameter {n}">golem.posX{###}golem.posY{###}1</param>
                                                         </action>
                                                         <action behavior="ScrollTo" id="0" name="Shake" sid="1009515800271658" type="focus">
-                                                            <param id="0" name="Magnitude">golem.Count*4</param>
+                                                            <param id="0" name="Magnitude">10+golem.Count*2</param>
                                                             <param id="1" name="Duration">1</param>
                                                             <param id="2" name="Mode">0</param>
                                                         </action>
@@ -4228,7 +4034,7 @@
                                     <param id="0" name="Tag">&quot;eggDestroyed&quot;</param>
                                 </action>
                                 <action behavior="ScrollTo" id="0" name="Shake" sid="9644584336810081" type="focus">
-                                    <param id="0" name="Magnitude">30</param>
+                                    <param id="0" name="Magnitude">20</param>
                                     <param id="1" name="Duration">0.4</param>
                                     <param id="2" name="Mode">0</param>
                                 </action>
@@ -6764,7 +6570,6 @@
                                 <action id="-9" name="Destroy" sid="1413214994963107" type="cageSelection" />
                                 <action id="-9" name="Destroy" sid="858141440857433" type="henCage" />
                                 <action id="-9" name="Destroy" sid="5936979028622956" type="entryIndicator" />
-                                <action id="-9" name="Destroy" sid="5501136024397109" type="typeEffect" />
                                 <action id="0" name="Call function" sid="2219739389729701" type="Function">
                                     <param id="0" name="Name">&quot;henCageCreate&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>

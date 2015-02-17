@@ -137,6 +137,13 @@
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
                 </action>
             </actions>
+            <sub-events>
+                <comment>stage참조해서 chapter/stage마다 battleViewBg 바꿔주기. &quot;01_&quot;</comment>
+                <event-block sid="7563832931083745">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block any="1" sid="6413064589434787">
             <conditions>
