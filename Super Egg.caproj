@@ -31,6 +31,7 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
         <behavior author="Rex.Rainbow" id="Rex_RotateTo" version="0.100000001">RotateTo</behavior>
         <behavior author="Rex.Rainbow" id="Rex_pin2imgpt" version="1">Pin to image point</behavior>
@@ -211,6 +212,9 @@
                         </behavior-type>
                         <behavior-type name="RotateTo" sid="3198606313404326">
                             <behavior id="Rex_RotateTo" />
+                        </behavior-type>
+                        <behavior-type name="Rotate" sid="1432605469209576">
+                            <behavior id="Rotate" />
                         </behavior-type>
                     </behaviors>
                     <container>
@@ -402,7 +406,21 @@
                             </animation>
                         </animation-folder>
                         <animation-folder name="08">
-                            <animation framecount="2" loop="0" name="08a" pingpong="0" repeatcount="1" repeatto="0" sid="2395950033671089" speed="0">
+                            <animation framecount="3" loop="0" name="08a" pingpong="0" repeatcount="1" repeatto="0" sid="2395950033671089" speed="0">
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.859375">
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
+                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                </frame>
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.859375">
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
+                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                </frame>
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.859375">
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
+                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                </frame>
+                            </animation>
+                            <animation framecount="2" loop="0" name="08b" pingpong="0" repeatcount="1" repeatto="0" sid="7659527675109964" speed="5">
                                 <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.859375">
                                     <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
                                     <image-point name="HpBar" x="-0.125" y="-0.15625" />
@@ -412,19 +430,21 @@
                                     <image-point name="HpBar" x="-0.125" y="-0.15625" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="08b" pingpong="0" repeatcount="1" repeatto="0" sid="7659527675109964" speed="5">
+                            <animation framecount="2" loop="0" name="08c" pingpong="0" repeatcount="1" repeatto="0" sid="1745443989481202" speed="5">
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.859375">
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
+                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                </frame>
                                 <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.859375">
                                     <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
                                     <image-point name="HpBar" x="-0.125" y="-0.15625" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="08c" pingpong="0" repeatcount="1" repeatto="0" sid="1745443989481202" speed="5">
+                            <animation framecount="2" loop="0" name="08d" pingpong="0" repeatcount="1" repeatto="0" sid="6026696307470054" speed="5">
                                 <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.859375">
                                     <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
                                     <image-point name="HpBar" x="-0.125" y="-0.15625" />
                                 </frame>
-                            </animation>
-                            <animation framecount="1" loop="0" name="08d" pingpong="0" repeatcount="1" repeatto="0" sid="6026696307470054" speed="5">
                                 <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.859375">
                                     <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
                                     <image-point name="HpBar" x="-0.125" y="-0.15625" />
@@ -715,6 +735,18 @@
                             </frame>
                         </animation>
                     </animation-folder>
+                </object-type>
+                <object-type name="golemMovingSmoke" sid="8419324885742653">
+                    <plugin id="Particles" />
+                    <instance-variables>
+                        <instance-variable name="golemUID" sid="8301619966118572" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="5609124395533407">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture />
                 </object-type>
             </object-folder>
             <object-folder name="eggExplode">

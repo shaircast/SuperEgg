@@ -1698,6 +1698,9 @@
                                             <param id="2" name="X">henButton.X</param>
                                             <param id="3" name="Y">henButton.Y</param>
                                         </action>
+                                        <action id="-16" name="Wait" sid="2847244214014049" type="System">
+                                            <param id="0" name="Seconds">0</param>
+                                        </action>
                                         <action id="0" name="Call function" sid="5899893132886328" type="Function">
                                             <param id="0" name="Name">&quot;henSelectionChange&quot;</param>
                                             <param id="1" name="Parameter {n}">henButton.UID</param>
@@ -1932,6 +1935,55 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>golemMovesToXY(golem.UID, X, Y) : 골렘을 실제 캔버스의 X,Y 좌표로 이동시키고 그에 따른 애니메이션도 다 처리하는 부분.</comment>
+                <event-block sid="5094457168090596">
+                    <conditions>
+                        <condition id="0" name="On function" sid="7823712190769141" type="Function">
+                            <param id="0" name="Name">&quot;golemMovesToXY&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="moveSpeed" sid="8620687194682803" static="0" type="number">100</variable>
+                        <variable constant="0" name="rotateSpeed" sid="617675628282516" static="0" type="number">720</variable>
+                        <event-block sid="3589035119186226">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="466099088091262" type="golem">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="7395843611939887" type="golem">
+                                    <param id="0" name="Frame number">golemMovingFrameStart</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="749035880680649" type="System">
+                                    <param id="0" name="Object to create">golemMovingSmoke</param>
+                                    <param id="1" name="Layer">&quot;frontBg&quot;</param>
+                                    <param id="2" name="X">golem.X</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="9949846638994902" type="golemMovingSmoke">
+                                    <param id="0" name="Pin to">golem</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="7985942502022598" type="golemMovingSmoke">
+                                    <param id="0" name="Instance variable">golemUID</param>
+                                    <param id="1" name="Value">golem.UID</param>
+                                </action>
+                                <action behavior="Rotate" id="0" name="Set speed" sid="6431414393756056" type="golem">
+                                    <param id="0" name="Speed">-rotateSpeed*golem.speed</param>
+                                </action>
+                                <action behavior="MoveTo" id="4" name="Move to XY" sid="429602982995614" type="golem">
+                                    <param id="0" name="X">Function.Param(1)</param>
+                                    <param id="1" name="Y">Function.Param(2)</param>
+                                </action>
+                                <action behavior="MoveTo" id="5" name="Set current speed" sid="4220781275458233" type="golem">
+                                    <param id="0" name="Current speed">moveSpeed*golem.speed</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -2255,6 +2307,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
+                                        <comment>여기서 프레임은 숨어있는 프레임이어야 한다.</comment>
                                         <event-block sid="7425341170032557">
                                             <conditions>
                                                 <condition id="-22" name="Else" sid="8232823195710921" type="System" />
@@ -2265,7 +2318,7 @@
                                                     <param id="1" name="Value">1</param>
                                                 </action>
                                                 <action id="5" name="Set frame" sid="3293386692571911" type="golem">
-                                                    <param id="0" name="Frame number">1</param>
+                                                    <param id="0" name="Frame number">2</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -2291,7 +2344,7 @@
                                             <actions>
                                                 <action behavior="ScrollTo" id="0" name="Shake" sid="4837983176481755" type="focus">
                                                     <param id="0" name="Magnitude">10+golem.Count*2</param>
-                                                    <param id="1" name="Duration">1</param>
+                                                    <param id="1" name="Duration">3</param>
                                                     <param id="2" name="Mode">0</param>
                                                 </action>
                                                 <action id="-9" name="Set value" sid="8128953598989583" type="System">
@@ -2307,7 +2360,7 @@
                                             </conditions>
                                             <actions />
                                             <sub-events>
-                                                <comment>빈자리라면</comment>
+                                                <comment>빈자리라면. golem moving frame으로 바꿔주기</comment>
                                                 <event-block sid="9983376941578209">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="6189956860648893" type="launchLine">
@@ -2333,9 +2386,9 @@
                                                             <param id="0" name="Instance variable">posX</param>
                                                             <param id="1" name="Value">self.posX-1</param>
                                                         </action>
-                                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="211074234087198" type="golem">
-                                                            <param id="0" name="X">launchLine.X</param>
-                                                            <param id="1" name="Y">launchLine.Y</param>
+                                                        <action id="0" name="Call function" sid="2918510670285092" type="Function">
+                                                            <param id="0" name="Name">&quot;golemMovesToXY&quot;</param>
+                                                            <param id="1" name="Parameter {n}">golem.UID{###}launchLine.X{###}launchLine.Y</param>
                                                         </action>
                                                         <action id="0" name="Call function" sid="1366243373838252" type="Function">
                                                             <param id="0" name="Name">&quot;launchLineOccupyAtXY&quot;</param>
@@ -2426,31 +2479,17 @@
                                     <param id="0" name="Instance variable">posY</param>
                                     <param id="1" name="Value">Function.Param(2)</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="1719677512346721" type="System">
-                                    <param id="0" name="Object to create">golemHpBarFrame</param>
-                                    <param id="1" name="Layer">&quot;golem&quot;</param>
-                                    <param id="2" name="X">golem.ImagePointX(&quot;HpBar&quot;)</param>
-                                    <param id="3" name="Y">golem.ImagePointY(&quot;HpBar&quot;)</param>
-                                </action>
-                                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="5652190645778734" type="golemHpBarFrame">
-                                    <param id="0" name="Pin to">golem</param>
-                                    <param id="1" name="ImagePoint">&quot;HpBarFrame&quot;</param>
-                                    <param id="2" name="Mode">0</param>
+                                <action id="-4" name="Set position to another object" sid="7447565076416236" type="golemHpBarFrame">
+                                    <param id="0" name="Object">golem</param>
+                                    <param id="1" name="Image point (optional)">&quot;HpBarFrame&quot;</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="714931839225919" type="golemHpBarFrame">
                                     <param id="0" name="Instance variable">golemUID</param>
                                     <param id="1" name="Value">golem.UID</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="19661130474112" type="System">
-                                    <param id="0" name="Object to create">golemHpBar</param>
-                                    <param id="1" name="Layer">&quot;golem&quot;</param>
-                                    <param id="2" name="X">golemHpBarFrame.ImagePointX(&quot;HpBar&quot;)</param>
-                                    <param id="3" name="Y">golemHpBarFrame.ImagePointY(&quot;HpBar&quot;)</param>
-                                </action>
-                                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="5539575478171497" type="golemHpBar">
-                                    <param id="0" name="Pin to">golem</param>
-                                    <param id="1" name="ImagePoint">&quot;HpBar&quot;</param>
-                                    <param id="2" name="Mode">0</param>
+                                <action id="-4" name="Set position to another object" sid="6487664785767319" type="golemHpBar">
+                                    <param id="0" name="Object">golem</param>
+                                    <param id="1" name="Image point (optional)">&quot;HpBar&quot;</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="6092067203479714" type="golemHpBar">
                                     <param id="0" name="Instance variable">golemUID</param>
@@ -2459,6 +2498,10 @@
                                 <action id="-10" name="Set value" sid="3827006727613578" type="golemHpBar">
                                     <param id="0" name="Instance variable">originWidth</param>
                                     <param id="1" name="Value">golemHpBar.Width</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="9698594218556981" type="golemHpBar">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">golemHpBarFrame</param>
                                 </action>
                                 <action id="-24" name="Move to top" sid="8419903839462323" type="golemCreateEffect" />
                             </actions>
@@ -2531,27 +2574,9 @@
                             </conditions>
                             <actions>
                                 <action id="-24" name="Move to top" sid="8052119828571378" type="golem" />
+                                <action id="-24" name="Move to top" sid="8157430525013795" type="golemHpBarFrame" />
+                                <action id="-24" name="Move to top" sid="965945634816005" type="golemHpBar" />
                             </actions>
-                            <sub-events>
-                                <event-block sid="2173466000698958">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="404479827486066" type="golemHpBarFrame">
-                                            <param id="0" name="Instance variable">golemUID</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">golem.UID</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="8836211934403327" type="golemHpBar">
-                                            <param id="0" name="Instance variable">golemUID</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">golem.UID</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-24" name="Move to top" sid="8157430525013795" type="golemHpBarFrame" />
-                                        <action id="-24" name="Move to top" sid="965945634816005" type="golemHpBar" />
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -2620,11 +2645,6 @@
                                 <condition id="-14" name="Pick by unique ID" sid="6595144914797957" type="golem">
                                     <param id="0" name="Unique ID">Function.Param(0)</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="8197486915797645" type="golemHpBar">
-                                    <param id="0" name="Instance variable">golemUID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">Function.Param(0)</param>
-                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -2653,6 +2673,32 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>golemHpBarLocateX(golem.UID) : 골렘이 구를 때, 해당 골렘의 hpbar랑 frame을 golem의 위치로 수평이동.</comment>
+                <event-block sid="6394425377187038">
+                    <conditions>
+                        <condition id="0" name="On function" sid="6512764341773207" type="Function">
+                            <param id="0" name="Name">&quot;golemHpBarLocateX&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="552395081089829">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="8874479593877191" type="golem">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="3149145861102869" type="golemHpBarFrame">
+                                    <param id="0" name="X">golem.X</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="9830329727103775" type="golemHpBar">
+                                    <param id="0" name="X">golem.X-self.originWidth/2</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -4171,24 +4217,6 @@
                                             <param id="0" name="Instance variable">occupied</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="7512163960489039">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="3373205759258276" type="golemHpBar">
-                                            <param id="0" name="Instance variable">golemUID</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">golem.UID</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="3693296647850423" type="golemHpBarFrame">
-                                            <param id="0" name="Instance variable">golemUID</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">golem.UID</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Destroy" sid="2719322564080807" type="golemHpBar" />
-                                        <action id="-9" name="Destroy" sid="6632546018467454" type="golemHpBarFrame" />
                                     </actions>
                                 </event-block>
                                 <event-block sid="5723892283323787">
@@ -5716,8 +5744,9 @@
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
-                                                                <action id="5" name="Set frame" sid="8726701723772113" type="iconType">
-                                                                    <param id="0" name="Frame number">0</param>
+                                                                <action id="4" name="Set animation" sid="8726701723772113" type="iconType">
+                                                                    <param id="0" name="Animation">&quot;None&quot;</param>
+                                                                    <param id="1" name="From">1</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
@@ -5730,8 +5759,9 @@
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
-                                                                <action id="5" name="Set frame" sid="2416080097684288" type="iconType">
-                                                                    <param id="0" name="Frame number">1</param>
+                                                                <action id="4" name="Set animation" sid="7391022946693919" type="iconType">
+                                                                    <param id="0" name="Animation">&quot;Fire&quot;</param>
+                                                                    <param id="1" name="From">1</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
@@ -5744,8 +5774,9 @@
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
-                                                                <action id="5" name="Set frame" sid="2501807376124881" type="iconType">
-                                                                    <param id="0" name="Frame number">2</param>
+                                                                <action id="4" name="Set animation" sid="7129118471104445" type="iconType">
+                                                                    <param id="0" name="Animation">&quot;Water&quot;</param>
+                                                                    <param id="1" name="From">1</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
@@ -5758,8 +5789,9 @@
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
-                                                                <action id="5" name="Set frame" sid="1344923959254499" type="iconType">
-                                                                    <param id="0" name="Frame number">3</param>
+                                                                <action id="4" name="Set animation" sid="343039251284921" type="iconType">
+                                                                    <param id="0" name="Animation">&quot;Grass&quot;</param>
+                                                                    <param id="1" name="From">1</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>

@@ -28,6 +28,11 @@
                     <param id="0" name="Name">&quot;SetGroupActive&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;stageView&quot;</param>
                 </action>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="4455518112506032" type="focus">
+                    <param id="0" name="Magnitude">0</param>
+                    <param id="1" name="Duration">0.5</param>
+                    <param id="2" name="Mode">1</param>
+                </action>
                 <action id="-3" name="Set position" sid="2325929342472733" type="stageViewTransparentCover">
                     <param id="0" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
                     <param id="1" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>

@@ -43,6 +43,11 @@
         <variable constant="0" name="launchLineX8" sid="2113129269063617" static="0" type="number">0</variable>
         <comment>gameState&#x0D;&#x0A;0: not Ready(stage starting point)&#x0D;&#x0A;1: waiting for shoot&#x0D;&#x0A;2: shooting ani &amp;calc&#x0D;&#x0A;3: check finish, move golem&#x0D;&#x0A;4: lost&#x0D;&#x0A;5: win</comment>
         <variable constant="0" name="gameState" sid="8756455970267743" static="0" type="number">0</variable>
+        <comment>골렘 애니메이션 변수. 닭은 다 나뉘어져 있어서 할 필요 X.</comment>
+        <variable constant="0" name="golemIdleFrameStart" sid="6648952167722388" static="0" type="number">0</variable>
+        <variable constant="0" name="golemIdleFrameEnd" sid="5451193856181061" static="0" type="number">0</variable>
+        <variable constant="0" name="golemMovingFrameStart" sid="1026416991810081" static="0" type="number">1</variable>
+        <variable constant="0" name="golemMovingFrameEnd" sid="6504824674708408" static="0" type="number">1</variable>
         <comment>stage : 전 단계에서 정해서 오기</comment>
         <event-block sid="1239435629214137">
             <conditions>
@@ -155,6 +160,18 @@
                 <action id="-9" name="Destroy" sid="8583099189811968" type="skyRightCover" />
                 <action id="3" name="Start" sid="8118834679325163" type="battleViewTimer">
                     <param id="0" name="From">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7226440847034576">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2700846813471433" type="Touch">
+                    <param id="0" name="Object">pauseButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4124365629596598" type="System">
+                    <param id="0" name="Layout">stageView</param>
                 </action>
             </actions>
         </event-block>
@@ -856,10 +873,6 @@
                 </condition>
             </conditions>
             <actions>
-                <action disabled="1" id="0" name="Call function" sid="7653958388104778" type="Function">
-                    <param id="0" name="Name">&quot;battleViewLayerScrollBack&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
                 <action id="-2" name="Set Y" sid="8738901212169215" type="focus">
                     <param id="0" name="Y">lerp(self.Y,(ViewportBottom(&quot;hud&quot;)+ViewportTop(&quot;hud&quot;))/2,scaleLerpRate)</param>
                 </action>
@@ -1045,6 +1058,9 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-41" name="Wait for signal" sid="915551388921825" type="System">
+                                            <param id="0" name="Tag">&quot;golemMovingComplete&quot;</param>
+                                        </action>
                                         <action id="-16" name="Wait" sid="7794742806693772" type="System">
                                             <param id="0" name="Seconds">1.0</param>
                                         </action>
@@ -1064,85 +1080,6 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group description="012 : idle / 345 : eating / 678 : ready / 2,5,8프레임은 dummy" sid="3985001825215672" title="henButton Ani">
-            <sub-events>
-                <event-block sid="1941144201227151">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="4113445573125014" type="henButton">
-                            <param id="0" name="Instance variable">state</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                        <condition id="3" name="Compare frame" sid="8087685966666992" type="henButton">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Number">2</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="8695407272639619" type="henButton">
-                            <param id="0" name="Frame number">0</param>
-                        </action>
-                        <action id="3" name="Start" sid="567832857440596" type="henButton">
-                            <param id="0" name="From">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="6058296251907033">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="8940022748937449" type="henButton">
-                            <param id="0" name="Instance variable">state</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                        <condition id="3" name="Compare frame" sid="6348392631706427" type="henButton">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Number">5</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="9603802559439623" type="henButton">
-                            <param id="0" name="Frame number">3</param>
-                        </action>
-                        <action id="3" name="Start" sid="6514977482776366" type="henButton">
-                            <param id="0" name="From">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="6983774904203733">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="2366617469215216" type="henButton">
-                            <param id="0" name="Instance variable">state</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">2</param>
-                        </condition>
-                        <condition id="3" name="Compare frame" sid="7705290224423621" type="henButton">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Number">8</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="7883692497629702" type="henButton">
-                            <param id="0" name="Frame number">6</param>
-                        </action>
-                        <action id="3" name="Start" sid="6067150452651994" type="henButton">
-                            <param id="0" name="From">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-block sid="7226440847034576">
-            <conditions>
-                <condition id="3" name="On touched object" sid="2700846813471433" type="Touch">
-                    <param id="0" name="Object">pauseButton</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="4124365629596598" type="System">
-                    <param id="0" name="Layout">stageView</param>
-                </action>
-            </actions>
-        </event-block>
         <comment>state4는 여기 두고, state5는 gameState3에 포함.</comment>
         <event-block sid="7427033876980339">
             <conditions>
@@ -1158,45 +1095,150 @@
                     <conditions>
                         <condition id="-4" name="Trigger once while true" sid="7139803364535633" type="System" />
                     </conditions>
-                    <actions>
-                        <action behavior="MoveTo" id="4" name="Move to XY" sid="4788966309608641" type="golem">
-                            <param id="0" name="X">-1000</param>
-                            <param id="1" name="Y">Self.Y</param>
-                        </action>
-                        <action id="6" name="Stop" sid="7171991829252785" type="Audio">
-                            <param id="0" name="Tag">&quot;bgm&quot;</param>
-                        </action>
-                        <action id="0" name="Play" sid="3578928752502844" type="Audio">
-                            <param id="0" name="Audio file">battleLose</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="9300152071853948" type="System">
-                            <param id="0" name="Object to create">turnText</param>
-                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                            <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
-                            <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
-                        </action>
-                        <action behavior="Fade" id="3" name="Set wait time" sid="5695767622246263" type="turnText">
-                            <param id="0" name="Wait time">4</param>
-                        </action>
-                        <action id="0" name="Set text" sid="9025137062099726" type="turnText">
-                            <param id="0" name="Text">&quot;Stage Failed!&quot;</param>
-                        </action>
-                        <action id="5" name="Set web font" sid="4980603754845835" type="turnText">
-                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="3247790413369558" type="System">
-                            <param id="0" name="Seconds">5</param>
-                        </action>
-                        <action id="-2" name="Go to layout" sid="4788577622756026" type="System">
-                            <param id="0" name="Layout">stageView</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9532840059507622">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="2052628398147445" type="System">
+                                    <param id="0" name="Object">golem</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="1983187770001269" type="Function">
+                                    <param id="0" name="Name">&quot;golemMovesToXY&quot;</param>
+                                    <param id="1" name="Parameter {n}">golem.UID{###}-1000{###}golem.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="825006764932611">
+                            <conditions />
+                            <actions>
+                                <action id="6" name="Stop" sid="7171991829252785" type="Audio">
+                                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="3578928752502844" type="Audio">
+                                    <param id="0" name="Audio file">battleLose</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="9300152071853948" type="System">
+                                    <param id="0" name="Object to create">turnText</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
+                                </action>
+                                <action behavior="Fade" id="3" name="Set wait time" sid="5695767622246263" type="turnText">
+                                    <param id="0" name="Wait time">4</param>
+                                </action>
+                                <action id="0" name="Set text" sid="9025137062099726" type="turnText">
+                                    <param id="0" name="Text">&quot;Stage Failed!&quot;</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="4980603754845835" type="turnText">
+                                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="3247790413369558" type="System">
+                                    <param id="0" name="Seconds">5</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="4788577622756026" type="System">
+                                    <param id="0" name="Layout">stageView</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
+        <event-group description="golem =&gt; frame 0 : idle / 1 : moving(rolling) / 그 외 다른 모션 있는 골렘은 주의. 맨 끝에다 둡시다." sid="9464684361467692" title="golem Ani">
+            <sub-events>
+                <comment>움직이는 골렘 hpbar횡이동</comment>
+                <event-block sid="3585931961983332">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="71906408587429" type="System">
+                            <param id="0" name="Object">golem</param>
+                        </condition>
+                        <condition behavior="MoveTo" id="3" name="Is moving" sid="5306592338695836" type="golem" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="9037717334189647" type="Function">
+                            <param id="0" name="Name">&quot;golemHpBarLocateX&quot;</param>
+                            <param id="1" name="Parameter {n}">golem.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>골렘 애니메이션 돌리기</comment>
+                <event-block sid="2516843951633541">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="242504764429837" type="golem">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">golemIdleFrameEnd</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="5234546622167575" type="golem">
+                            <param id="0" name="Frame number">golemIdleFrameStart</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7734544671038524">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="8279516036311753" type="golem">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">golemMovingFrameEnd</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="3184810263286994" type="golem">
+                            <param id="0" name="Frame number">golemMovingFrameStart</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>골렘 도착하면 frame idle로 바꾸고 rotate 끝. turnover 함수에서는 moving frame으로 바꿈. 연기도 파괴.</comment>
+                <event-block sid="1286923118960888">
+                    <conditions>
+                        <condition behavior="MoveTo" id="0" name="On hit target position" sid="7730507768475072" type="golem" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="4428360980416932" type="golem">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8825851144290709" type="golem">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="4804205072261757" type="Function">
+                            <param id="0" name="Name">&quot;golemHpBarLocateX&quot;</param>
+                            <param id="1" name="Parameter {n}">golem.UID</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="5240683504942912" type="golem">
+                            <param id="0" name="Frame number">golemIdleFrameStart</param>
+                        </action>
+                        <action id="-42" name="Signal" sid="1863631318543817" type="System">
+                            <param id="0" name="Tag">&quot;golemMovingComplete&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4169472442918057">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9703341699306187" type="golemMovingSmoke">
+                                    <param id="0" name="Instance variable">golemUID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">golem.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set spraying" sid="9463633371695715" type="golemMovingSmoke">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="2134704793647351" type="System">
+                                    <param id="0" name="Seconds">2</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="80430304545338" type="golemMovingSmoke" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
