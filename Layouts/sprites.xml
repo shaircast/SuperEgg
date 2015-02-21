@@ -29,28 +29,6 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="guideGrid" uid="26">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>649</x>
-                        <y>282</y>
-                        <z>0</z>
-                        <width>1280</width>
-                        <height>540</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="cannon" uid="27">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -106,39 +84,6 @@
                         <z>0</z>
                         <width>128</width>
                         <height>440</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="buttonUIPlate" uid="29">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Anchor">
-                            <properties>
-                                <left-edge>Window left</left-edge>
-                                <top-edge>Window top</top-edge>
-                                <right-edge>None</right-edge>
-                                <bottom-edge>None</bottom-edge>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>649</x>
-                        <y>641</y>
-                        <z>0</z>
-                        <width>1280</width>
-                        <height>180</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -596,11 +541,11 @@
                         <x>19</x>
                         <y>-139</y>
                         <z>0</z>
-                        <width>96</width>
-                        <height>96</height>
+                        <width>128</width>
+                        <height>128</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.53125</hotspotX>
+                        <hotspotY>0.8046875</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -1158,7 +1103,7 @@
                         <behavior-instance type="Bullet">
                             <properties>
                                 <speed>50</speed>
-                                <acceleration>0</acceleration>
+                                <acceleration>-20</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
                                 <set-angle>No</set-angle>
@@ -1169,8 +1114,8 @@
                             <properties>
                                 <active-at-start>Yes</active-at-start>
                                 <fade-in-time>0</fade-in-time>
-                                <wait-time>0.5</wait-time>
-                                <fade-out-time>0.25</fade-out-time>
+                                <wait-time>0.9</wait-time>
+                                <fade-out-time>0.3</fade-out-time>
                                 <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
@@ -1190,7 +1135,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="poison" uid="75">
+                <instance type="poisonEgg" uid="75">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -1210,11 +1155,11 @@
                         <x>400</x>
                         <y>-8</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
+                        <width>160</width>
+                        <height>160</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.518750012</hotspotX>
+                        <hotspotY>0.625</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -1449,60 +1394,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="damageTextPlus" uid="88">
-                    <properties>
-                        <character-width>12</character-width>
-                        <character-height>16</character-height>
-                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>shaircast presents</text>
-                        <text-wrap>By word</text-wrap>
-                        <text-scale>1</text-scale>
-                        <resize-mode>No resize</resize-mode>
-                        <max-length>40</max-length>
-                        <max-lines>1</max-lines>
-                        <horizontal-align>Center</horizontal-align>
-                        <vertical-align>Middle</vertical-align>
-                        <force-point-sampling>No</force-point-sampling>
-                        <horizontal-spacing>-3</horizontal-spacing>
-                        <vertical-spacing>0</vertical-spacing>
-                        <effect>(none)</effect>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Bullet">
-                            <properties>
-                                <speed>50</speed>
-                                <acceleration>0</acceleration>
-                                <gravity>0</gravity>
-                                <bounce-off-solids>No</bounce-off-solids>
-                                <set-angle>No</set-angle>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Fade">
-                            <properties>
-                                <active-at-start>Yes</active-at-start>
-                                <fade-in-time>0</fade-in-time>
-                                <wait-time>0.5</wait-time>
-                                <fade-out-time>0.25</fade-out-time>
-                                <destroy>After fade out</destroy>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-349</x>
-                        <y>-264</y>
-                        <z>0</z>
-                        <width>252</width>
-                        <height>80</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="iconType" uid="108">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -1706,87 +1597,10 @@
                     <behavior-instances>
                         <behavior-instance type="Fade">
                             <properties>
-                                <active-at-start>No</active-at-start>
-                                <fade-in-time>0</fade-in-time>
-                                <wait-time>1.5</wait-time>
-                                <fade-out-time>0.1</fade-out-time>
-                                <destroy>After fade out</destroy>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Bullet">
-                            <properties>
-                                <speed>100</speed>
-                                <acceleration>0</acceleration>
-                                <gravity>0</gravity>
-                                <bounce-off-solids>No</bounce-off-solids>
-                                <set-angle>No</set-angle>
-                                <initial-state>Disabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Sine">
-                            <properties>
-                                <active-on-start>No</active-on-start>
-                                <movement>Horizontal</movement>
-                                <wave>Sine</wave>
-                                <period>0.5</period>
-                                <period-random>0</period-random>
-                                <period-offset>0</period-offset>
-                                <period-offset-random>0</period-offset-random>
-                                <magnitude>10</magnitude>
-                                <magnitude-random>0</magnitude-random>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>1</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>498</x>
-                        <y>6</y>
-                        <z>0</z>
-                        <width>96</width>
-                        <height>96</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="damageTextMinus" uid="121">
-                    <properties>
-                        <character-width>12</character-width>
-                        <character-height>16</character-height>
-                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>shaircast presents</text>
-                        <text-wrap>By word</text-wrap>
-                        <text-scale>1</text-scale>
-                        <resize-mode>No resize</resize-mode>
-                        <max-length>40</max-length>
-                        <max-lines>1</max-lines>
-                        <horizontal-align>Center</horizontal-align>
-                        <vertical-align>Middle</vertical-align>
-                        <force-point-sampling>No</force-point-sampling>
-                        <horizontal-spacing>-3</horizontal-spacing>
-                        <vertical-spacing>0</vertical-spacing>
-                        <effect>(none)</effect>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Bullet">
-                            <properties>
-                                <speed>50</speed>
-                                <acceleration>0</acceleration>
-                                <gravity>0</gravity>
-                                <bounce-off-solids>No</bounce-off-solids>
-                                <set-angle>No</set-angle>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Fade">
-                            <properties>
                                 <active-at-start>Yes</active-at-start>
                                 <fade-in-time>0</fade-in-time>
-                                <wait-time>0.5</wait-time>
-                                <fade-out-time>0.25</fade-out-time>
+                                <wait-time>0.6</wait-time>
+                                <fade-out-time>0.2</fade-out-time>
                                 <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
@@ -1794,14 +1608,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-343</x>
-                        <y>-126</y>
+                        <x>498</x>
+                        <y>6</y>
                         <z>0</z>
-                        <width>252</width>
-                        <height>80</height>
+                        <width>256</width>
+                        <height>256</height>
                         <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
+                        <hotspotX>0.5078125</hotspotX>
+                        <hotspotY>0.578125</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -2288,6 +2102,97 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.755208313</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="goldReward" uid="12">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>80</speed>
+                                <acceleration>-20</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0.9</wait-time>
+                                <fade-out-time>0.3</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>966</x>
+                        <y>-42</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>1</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="goldRewardText" uid="13">
+                    <properties>
+                        <text>-50</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-16,700,1</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>80</speed>
+                                <acceleration>-20</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0.9</wait-time>
+                                <fade-out-time>0.3</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>997</x>
+                        <y>-48.5</y>
+                        <z>0</z>
+                        <width>74</width>
+                        <height>116</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

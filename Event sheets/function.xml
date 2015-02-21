@@ -508,7 +508,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="7028957203484454" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;09&quot;{###}&quot;톡식닭&quot;{###}3{###}2{###}3{###}35{###}4{###}&quot;독이 든 사료를 먹고 나서 항상 입냄새가 난다. 한번 배면 3일을 갈 정도로 독하다고. 투척 지점에 2의 데미지를 주고 3턴 동안 지속되는 독구름을 만든다. 다음 턴 발사 때에 독구름은 그 자리에 2의 데미지를 준다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;09&quot;{###}&quot;톡식닭&quot;{###}3{###}2{###}3{###}35{###}4{###}&quot;독이 든 사료를 먹고 나서 항상 입냄새가 난다. 한번 배면 3일을 갈 정도로 독하다고. 투척 지점에 2의 데미지를 주고 3턴 동안 지속되는 독달걀을 만든다. 다음 턴 발사 때에 독달걀은 그 자리에 2의 데미지를 준다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="1104877106861839" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
@@ -1393,7 +1393,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="7024823255720201" type="Function">
                                             <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
-                                            <param id="1" name="Parameter {n}">272{###}2000{###}Function.Param(0){###}Function.Param(1)</param>
+                                            <param id="1" name="Parameter {n}">272{###}2100{###}Function.Param(0){###}Function.Param(1)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1975,7 +1975,7 @@
                                     <param id="0" name="Instance variable">turnLeft</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-12" name="Subtract from" sid="1368499867962236" type="poison">
+                                <action id="-12" name="Subtract from" sid="1368499867962236" type="poisonEgg">
                                     <param id="0" name="Instance variable">turnLeft</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
@@ -2023,14 +2023,14 @@
                         <comment>남은 턴이 0이면 파괴. 딜계산은 뒤에서.</comment>
                         <event-block sid="2590518779857873">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="5353892926217324" type="poison">
+                                <condition id="-7" name="Compare instance variable" sid="5353892926217324" type="poisonEgg">
                                     <param id="0" name="Instance variable">turnLeft</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Destroy" sid="2294903583993225" type="poison" />
+                                <action id="-9" name="Destroy" sid="2294903583993225" type="poisonEgg" />
                             </actions>
                         </event-block>
                         <event-block sid="7060139512009821">
@@ -2083,6 +2083,7 @@
                                     </actions>
                                     <sub-events>
                                         <comment>eat 다했으면 state바꿈</comment>
+                                        <variable constant="1" name="CRITICALCHANCEPERBONUS" sid="7144938706705872" static="0" type="number">1</variable>
                                         <event-block sid="25628338651128">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="9093584103472153" type="henButton">
@@ -2125,7 +2126,7 @@
                                                         <condition id="-8" name="Compare two values" sid="974337689042747" type="System">
                                                             <param id="0" name="First value">random(100)</param>
                                                             <param id="1" name="Comparison">2</param>
-                                                            <param id="2" name="Second value">henUpgrade0*5</param>
+                                                            <param id="2" name="Second value">henUpgrade0*CRITICALCHANCEPERBONUS</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
@@ -2154,7 +2155,7 @@
                                                         <condition id="-8" name="Compare two values" sid="1075250169121826" type="System">
                                                             <param id="0" name="First value">random(100)</param>
                                                             <param id="1" name="Comparison">2</param>
-                                                            <param id="2" name="Second value">henUpgrade1*5</param>
+                                                            <param id="2" name="Second value">henUpgrade1*CRITICALCHANCEPERBONUS</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
@@ -2183,7 +2184,7 @@
                                                         <condition id="-8" name="Compare two values" sid="7960341765900248" type="System">
                                                             <param id="0" name="First value">random(100)</param>
                                                             <param id="1" name="Comparison">2</param>
-                                                            <param id="2" name="Second value">henUpgrade2*5</param>
+                                                            <param id="2" name="Second value">henUpgrade2*CRITICALCHANCEPERBONUS</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
@@ -2212,7 +2213,7 @@
                                                         <condition id="-8" name="Compare two values" sid="3121426861467533" type="System">
                                                             <param id="0" name="First value">random(100)</param>
                                                             <param id="1" name="Comparison">2</param>
-                                                            <param id="2" name="Second value">henUpgrade3*5</param>
+                                                            <param id="2" name="Second value">henUpgrade3*CRITICALCHANCEPERBONUS</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
@@ -2737,10 +2738,95 @@
                                     <param id="0" name="Instance variable">posY</param>
                                     <param id="1" name="Value">Function.Param(1)</param>
                                 </action>
-                                <action id="-42" name="Signal" sid="3454282756176431" type="System">
-                                    <param id="0" name="Tag">&quot;pang&quot;</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block any="1" sid="5962046176212981">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="172024539049794" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;01&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="7791780495803111" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;02&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="8485431633033116" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;03&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="7399574126254663" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;04&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="53461138043805" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;05&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="5154090955114184" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;06&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="9025481807103295" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;07&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="1959026785466861" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;08&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="2108571805844135" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;09&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="6960315154209942" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;10&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="9135954903330502" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;11&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set blend mode" sid="4517635611617246" type="explode">
+                                            <param id="0" name="Blend mode">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="13627522472811">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3851471176318197" type="explode">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;12&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set blend mode" sid="856910809803801" type="explode">
+                                            <param id="0" name="Blend mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6338800703397747">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-42" name="Signal" sid="3454282756176431" type="System">
+                                            <param id="0" name="Tag">&quot;pang&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -3589,27 +3675,27 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Spawn another object" sid="7824336708216974" type="launchLine">
-                                            <param id="0" name="Object">poison</param>
+                                            <param id="0" name="Object">poisonEgg</param>
                                             <param id="1" name="Layer">&quot;frontBg&quot;</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="841288713033773" type="poison">
+                                        <action id="-10" name="Set value" sid="841288713033773" type="poisonEgg">
                                             <param id="0" name="Instance variable">bonus</param>
                                             <param id="1" name="Value">eggBullet.bonus</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="8692086738918884" type="poison">
+                                        <action id="-10" name="Set value" sid="8692086738918884" type="poisonEgg">
                                             <param id="0" name="Instance variable">atk</param>
                                             <param id="1" name="Value">int(henDB.Get(&quot;09atk&quot;))*self.bonus</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="1757107581565738" type="poison">
+                                        <action id="-10" name="Set value" sid="1757107581565738" type="poisonEgg">
                                             <param id="0" name="Instance variable">posX</param>
                                             <param id="1" name="Value">eggBullet.targetX</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="400596323652094" type="poison">
+                                        <action id="-10" name="Set value" sid="400596323652094" type="poisonEgg">
                                             <param id="0" name="Instance variable">posY</param>
                                             <param id="1" name="Value">eggBullet.targetY</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="3006039925535646" type="poison">
+                                        <action id="-10" name="Set value" sid="3006039925535646" type="poisonEgg">
                                             <param id="0" name="Instance variable">turnLeft</param>
                                             <param id="1" name="Value">henDB.Get(&quot;09duration&quot;)+1</param>
                                         </action>
@@ -3968,6 +4054,10 @@
                                 <event-block sid="5723892283323787">
                                     <conditions />
                                     <actions>
+                                        <action id="0" name="Call function" sid="367242904908388" type="Function">
+                                            <param id="0" name="Name">&quot;golemGoldReward&quot;</param>
+                                            <param id="1" name="Parameter {n}">golem.UID</param>
+                                        </action>
                                         <action id="-3" name="Create object" sid="4250010086885982" type="System">
                                             <param id="0" name="Object to create">destroyedGolem</param>
                                             <param id="1" name="Layer">&quot;golem&quot;</param>
@@ -4652,48 +4742,45 @@
                         <event-block sid="2437716372044021">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="8376985295164389" type="System">
-                                    <param id="0" name="First value">poison.Count</param>
+                                    <param id="0" name="First value">poisonEgg.Count</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Second value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="6039878321240149" type="poison">
+                                <action id="0" name="Spawn another object" sid="6039878321240149" type="poisonEgg">
                                     <param id="0" name="Object">poisonDamage</param>
-                                    <param id="1" name="Layer">&quot;golem&quot;</param>
+                                    <param id="1" name="Layer">&quot;effect&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="3426698176291096" type="poisonDamage">
+                                <action disabled="1" id="4" name="Set animation" sid="3426698176291096" type="poisonDamage">
                                     <param id="0" name="Animation">&quot;Test&quot;</param>
                                     <param id="1" name="From">1</param>
-                                </action>
-                                <action behavior="Bullet" disabled="1" id="3" name="Set angle of motion" sid="6588820980552215" type="poisonDamage">
-                                    <param id="0" name="Angle">270</param>
                                 </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="3525905336422082">
                                     <conditions>
                                         <condition id="-24" name="For Each (ordered)" sid="7576314625875722" type="System">
-                                            <param id="0" name="Object">poison</param>
-                                            <param id="1" name="Expression">poison.uid</param>
+                                            <param id="0" name="Object">poisonEgg</param>
+                                            <param id="1" name="Expression">poisonEgg.uid</param>
                                             <param id="2" name="Order">0</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="2246502492732746" type="golem">
                                             <param id="0" name="Instance variable">posX</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">poison.posX</param>
+                                            <param id="2" name="Value">poisonEgg.posX</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="4248132801481995" type="golem">
                                             <param id="0" name="Instance variable">posY</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">poison.posY</param>
+                                            <param id="2" name="Value">poisonEgg.posY</param>
                                         </condition>
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Call function" sid="6192335817137839" type="Function">
                                             <param id="0" name="Name">&quot;dealingDamage&quot;</param>
-                                            <param id="1" name="Parameter {n}">golem.UID{###}poison.atk</param>
+                                            <param id="1" name="Parameter {n}">golem.UID{###}poisonEgg.atk</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -4710,6 +4797,61 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>golemGoldReward(golem.UID) : 부서지는 골렘 reward를 골드에 추가하고 이펙트도 생성.</comment>
+                <event-block sid="6086590374814064">
+                    <conditions>
+                        <condition id="0" name="On function" sid="6976395595609756" type="Function">
+                            <param id="0" name="Name">&quot;golemGoldReward&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4783366344623203">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="8909516881785914" type="golem">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="5476776188594042" type="System">
+                                    <param id="0" name="Object to create">goldRewardText</param>
+                                    <param id="1" name="Layer">&quot;effect&quot;</param>
+                                    <param id="2" name="X">golem.X-24</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="4001838961376741" type="System">
+                                    <param id="0" name="Object to create">goldReward</param>
+                                    <param id="1" name="Layer">&quot;effect&quot;</param>
+                                    <param id="2" name="X">golem.X-24</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="9525174222061569" type="goldReward">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="2892787780053704" type="WebStorage">
+                                    <param id="0" name="Key">&quot;gold&quot;</param>
+                                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;gold&quot;))+golem.reward</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="6561907590739991" type="goldRewardText">
+                                    <param id="0" name="Family name">&quot;jua&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="7001537162212395" type="goldRewardText">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                                <action id="0" name="Set text" sid="9128203165387837" type="goldRewardText">
+                                    <param id="0" name="Text">&quot;+&quot;&amp;golem.reward</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="4341058679758599" type="goldRewardText">
+                                    <param id="0" name="Size (pt)">32</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="7480893444368212" type="goldRewardText">
+                                    <param id="0" name="Color">rgb(250, 250, 0)</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -5422,6 +5564,8 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <variable constant="1" name="PRICEPERBONUS" sid="2216424190765371" static="0" type="number">5</variable>
+                        <variable constant="1" name="MAtecostdivide" sid="8864027170854174" static="0" type="number">5</variable>
                         <event-block sid="4494833180591104">
                             <conditions>
                                 <condition id="-14" name="Pick by unique ID" sid="1826590481011001" type="henCage">
@@ -5448,6 +5592,7 @@
                                             </conditions>
                                             <actions />
                                             <sub-events>
+                                                <variable constant="1" name="CRITICALCHANCEPERBONUS" sid="1923734655557216" static="0" type="number">1</variable>
                                                 <event-block sid="4165048545728656">
                                                     <conditions>
                                                         <condition id="-8" name="Compare two values" sid="2094513368459892" type="System">
@@ -5497,10 +5642,10 @@
                                                             <param id="0" name="Text">henDB.Get(henCage.kind&amp;&quot;readyturn&quot;)</param>
                                                         </action>
                                                         <action id="0" name="Set text" sid="4421237444430063" type="powerupText">
-                                                            <param id="0" name="Text">henCage.bonus*5&amp;&quot;%&quot;</param>
+                                                            <param id="0" name="Text">henCage.bonus*CRITICALCHANCEPERBONUS&amp;&quot;%&quot;</param>
                                                         </action>
                                                         <action id="0" name="Set text" sid="1200027854761927" type="goldText">
-                                                            <param id="0" name="Text">henDB.Get(henCage.kind&amp;&quot;price&quot;)</param>
+                                                            <param id="0" name="Text">henDB.Get(henCage.kind&amp;&quot;price&quot;)+henCage.bonus*PRICEPERBONUS</param>
                                                         </action>
                                                         <action id="0" name="Set text" sid="7374851964963933" type="descriptionText">
                                                             <param id="0" name="Text">henDB.Get(henCage.kind&amp;&quot;description&quot;)</param>
@@ -5623,6 +5768,10 @@
                                                         </action>
                                                     </actions>
                                                 </event-block>
+                                                <variable constant="0" name="hen1Price" sid="5353913642712176" static="0" type="number">0</variable>
+                                                <variable constant="0" name="hen2Price" sid="1159992122894259" static="0" type="number">0</variable>
+                                                <variable constant="0" name="hen1Bonus" sid="6160473381179015" static="0" type="number">0</variable>
+                                                <variable constant="0" name="hen2Bonus" sid="8848258297314354" static="0" type="number">0</variable>
                                                 <event-block sid="2329636088474229">
                                                     <conditions>
                                                         <condition id="-14" name="Compare variable" sid="4674179073680312" type="System">
@@ -5656,9 +5805,25 @@
                                                             <param id="0" name="Variable">reproduceSelect2</param>
                                                             <param id="1" name="Value">henCage.id</param>
                                                         </action>
+                                                        <action id="-9" name="Set value" sid="5121786540952499" type="System">
+                                                            <param id="0" name="Variable">hen1Price</param>
+                                                            <param id="1" name="Value">henDB.Get(left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect1,&quot;/&quot;),2)&amp;&quot;price&quot;)</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="4945361892624098" type="System">
+                                                            <param id="0" name="Variable">hen1Bonus</param>
+                                                            <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect1,&quot;/&quot;),2)</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="6730478552022241" type="System">
+                                                            <param id="0" name="Variable">hen2Price</param>
+                                                            <param id="1" name="Value">henDB.Get(left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect2,&quot;/&quot;),2)&amp;&quot;price&quot;)</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="8514918748644299" type="System">
+                                                            <param id="0" name="Variable">hen2Bonus</param>
+                                                            <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect2,&quot;/&quot;),2)</param>
+                                                        </action>
                                                         <action id="-9" name="Set value" sid="7004954785337271" type="System">
                                                             <param id="0" name="Variable">reproduceCost</param>
-                                                            <param id="1" name="Value">henDB.Get(left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect1,&quot;/&quot;),2)&amp;&quot;price&quot;)*henDB.Get(left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect2,&quot;/&quot;),2)&amp;&quot;price&quot;)</param>
+                                                            <param id="1" name="Value">int((hen1Price+hen1Bonus)*(hen2Price+hen2Bonus)/MATECOSTDIVIDE)</param>
                                                         </action>
                                                         <action id="0" name="Set text" sid="2650428616149346" type="systemText">
                                                             <param id="0" name="Text">&quot;[교배] &quot;&amp;reproduceCost&amp;&quot;원이 필요합니다. 계속할까요?&quot;</param>
@@ -6081,6 +6246,7 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <variable constant="1" name="PRICEPERBONUS" sid="9487627290618534" static="0" type="number">5</variable>
                         <event-block sid="787831285290674">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="3167500280391157" type="System">
@@ -6137,7 +6303,7 @@
                                                     <actions>
                                                         <action id="0" name="Call function" sid="2907677563636982" type="Function">
                                                             <param id="0" name="Name">&quot;addGold&quot;</param>
-                                                            <param id="1" name="Parameter {n}">henDB.Get(henCage.kind&amp;&quot;price&quot;)</param>
+                                                            <param id="1" name="Parameter {n}">henDB.Get(henCage.kind&amp;&quot;price&quot;)+henCage.bonus*PRICEPERBONUS</param>
                                                         </action>
                                                         <action id="0" name="Set local value" sid="1600474039016114" type="WebStorage">
                                                             <param id="0" name="Key">&quot;henList&quot;</param>
@@ -6204,7 +6370,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <comment>교배 최대수 넘은 경우</comment>
+                                <comment>닭장 최대수 넘은 경우</comment>
                                 <event-block sid="6123841274137312">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="6158567773397384" type="System">
@@ -6295,13 +6461,14 @@
                                                         </action>
                                                     </actions>
                                                 </event-block>
-                                                <comment>reproduceBonusChance% 확률로 두 닭중 보너스 minimum+1로 강화. kind와 type은 반반확률.</comment>
+                                                <comment>reproduceBonusChance% 확률로 두 닭중 보너스 minimum+1로 강화. kind와 type은 반반확률. 최대 99강</comment>
+                                                <variable constant="1" name="bonusmax" sid="4062944000144989" static="0" type="number">99</variable>
                                                 <event-block sid="8876398839924265">
                                                     <conditions />
                                                     <actions>
                                                         <action id="0" name="Set local value" sid="685436281042786" type="WebStorage">
                                                             <param id="0" name="Key">&quot;henList&quot;</param>
-                                                            <param id="1" name="Value">WebStorage.LocalValue(&quot;henList&quot;)&amp;choose(kind1,kind2)&amp;choose(type1,type2)&amp;zeropad((bonusRandom&lt;reproduceBonusChance?min(bonus1,bonus2)+1:min(bonus1,bonus2)),2)&amp;&quot;/&quot;</param>
+                                                            <param id="1" name="Value">WebStorage.LocalValue(&quot;henList&quot;)&amp;choose(kind1,kind2)&amp;choose(type1,type2)&amp;zeropad(      min((bonusRandom&lt;reproduceBonusChance?min(bonus1,bonus2)+1:min(bonus1,bonus2)),BONUSMAX)        ,2)&amp;&quot;/&quot;</param>
                                                         </action>
                                                         <action id="0" name="Call function" sid="6530566717600632" type="Function">
                                                             <param id="0" name="Name">&quot;addGold&quot;</param>

@@ -252,7 +252,7 @@
                                     <param id="0" name="Instance variable">turnLeft</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action disabled="1" id="-12" name="Subtract from" sid="7152100218998012" type="poison">
+                                <action disabled="1" id="-12" name="Subtract from" sid="7152100218998012" type="poisonEgg">
                                     <param id="0" name="Instance variable">turnLeft</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
@@ -445,14 +445,14 @@
                 <comment>남은 턴이 0이면 파괴. 딜계산은 뒤에서.-&gt;배틀뷰턴오버</comment>
                 <event-block disabled="1" sid="5516109877278147">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="1369704770446942" type="poison">
+                        <condition id="-7" name="Compare instance variable" sid="1369704770446942" type="poisonEgg">
                             <param id="0" name="Instance variable">turnLeft</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="7708998671674729" type="poison" />
+                        <action id="-9" name="Destroy" sid="7708998671674729" type="poisonEgg" />
                     </actions>
                 </event-block>
                 <comment>state 2에서 망가진 초점과 스케일 원상복귀!</comment>
@@ -539,10 +539,6 @@
                 <event-block sid="7939978331846722">
                     <conditions>
                         <condition id="5" name="On any finished" sid="7831210850090395" type="explode" />
-                        <condition disabled="1" id="3" name="Compare frame" sid="2953326474887494" type="explode">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Number">explode.AnimationFrameCount-1</param>
-                        </condition>
                     </conditions>
                     <actions />
                     <sub-events>
@@ -584,10 +580,6 @@
                                 <action id="-10" name="Set value" sid="9815260393893532" type="blockTower">
                                     <param id="0" name="Instance variable">posY</param>
                                     <param id="1" name="Value">explode.posY</param>
-                                </action>
-                                <action disabled="1" id="-10" name="Set value" sid="1088201435956641" type="blockTower">
-                                    <param id="0" name="Instance variable">turnLeft</param>
-                                    <param id="1" name="Value">henDB.Get(explode.kind&amp;&quot;duration&quot;)</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="3893760492248655" type="blockTower">
                                     <param id="0" name="Instance variable">turnLeft</param>
