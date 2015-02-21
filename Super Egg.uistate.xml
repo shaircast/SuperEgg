@@ -14,8 +14,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="2">optionView</layout>
         <layout active="1" order="4">opening</layout>
         <event-sheet order="1">opening</event-sheet>
-        <event-sheet order="5">battleView</event-sheet>
         <event-sheet order="3">optionView</event-sheet>
+        <event-sheet order="5">battleView</event-sheet>
         <event-sheet order="6">function</event-sheet>
     </open-tabs>
     <properties>
