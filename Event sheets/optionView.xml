@@ -54,8 +54,8 @@
                     <conditions>
                         <condition id="7" name="Compare key value (as number)" sid="6840643381969857" type="WebStorage">
                             <param id="0" name="Key">&quot;music&quot;</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Value">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-60</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -92,8 +92,8 @@
                     <conditions>
                         <condition id="7" name="Compare key value (as number)" sid="3530178159229323" type="WebStorage">
                             <param id="0" name="Key">&quot;sfx&quot;</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Value">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-60</param>
                         </condition>
                     </conditions>
                     <actions>
