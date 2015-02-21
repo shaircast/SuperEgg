@@ -20,6 +20,7 @@
         <plugin author="Rex.Rainbow" id="Rex_TimeAway" version="0.100000001">Time away</plugin>
         <plugin author="Rex.Rainbow" id="Rex_audio_helper" version="0.100000001">Audio helper</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Miha Petelin" id="SpriteFont" version="8">Sprite Font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
@@ -734,6 +735,30 @@
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                     </animation-folder>
+                </object-type>
+                <object-type name="damageTextPlus" sid="1580285586319104">
+                    <plugin id="SpriteFont" />
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="4296531316150852">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                        <behavior-type name="Fade" sid="9424834392925248">
+                            <behavior id="Fade" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture format="png8" />
+                </object-type>
+                <object-type name="damageTextMinus" sid="1514949784618569">
+                    <plugin id="SpriteFont" />
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="9192932452556867">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                        <behavior-type name="Fade" sid="8659962722605406">
+                            <behavior id="Fade" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture format="png8" />
                 </object-type>
                 <object-type name="golemCreateEffect" sid="6331587354910353">
                     <plugin id="Sprite" />
