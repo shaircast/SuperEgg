@@ -13,6 +13,13 @@
                     <param id="0" name="Name">&quot;SetGroupActive&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;OPENING INIT&quot;</param>
                 </action>
+                <action id="0" name="Set text" sid="4729545664414779" type="openingText">
+                    <param id="0" name="Text">&quot;Touch to Start!&quot;</param>
+                </action>
+                <action id="2" name="Set font face" sid="7606348465260339" type="openingText">
+                    <param id="0" name="Font face">&quot;jua&quot;</param>
+                    <param id="1" name="Style">1</param>
+                </action>
                 <action id="-16" name="Wait" sid="9895037538262008" type="System">
                     <param id="0" name="Seconds">0</param>
                 </action>
@@ -65,7 +72,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>볼륨 최소 -60 최대 0</comment>
+                <comment>볼륨 최소 -60 최대 0 : on이 0, off가 -60</comment>
                 <event-block sid="4743405970216497">
                     <conditions>
                         <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="473784033701567" type="WebStorage">
@@ -92,20 +99,15 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="5461107224056335">
-                    <conditions>
-                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="7123456362908715" type="WebStorage">
-                            <param id="0" name="Key">&quot;vibrate&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Set local value" sid="20299140455983" type="WebStorage">
-                            <param id="0" name="Key">&quot;vibrate&quot;</param>
-                            <param id="1" name="Value">&quot;1&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="8704295055922575">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade-out finished" sid="450640735446845" type="openingText" />
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="0" name="Restart fade" sid="1239556331432751" type="openingText" />
+            </actions>
         </event-block>
         <event-block sid="7762532426839229">
             <conditions>
@@ -114,6 +116,15 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Set text" sid="1713921543495639" type="openingText">
+                    <param id="0" name="Text">&quot;닭 꾀는 중...&quot;</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="2975033464959497" type="openingText">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-16" name="Wait" sid="6640228444129158" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
                 <action id="-2" name="Go to layout" sid="5353328075164501" type="System">
                     <param id="0" name="Layout">stageView</param>
                 </action>

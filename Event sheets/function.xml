@@ -593,7 +593,7 @@
                             <actions>
                                 <action id="0" name="Add key" sid="9542269241396298" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_1&quot;</param>
-                                    <param id="1" name="Value">&quot;20/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/&quot;</param>
+                                    <param id="1" name="Value">&quot;20/03a80,04a81,05a82,03a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="4876000751259549" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_2&quot;</param>
@@ -1158,7 +1158,8 @@
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="978690097908193">
+                                        <comment>launchLine 사이즈 변경시 이부분 변경</comment>
+                                        <event-block bookmark="1" sid="978690097908193">
                                             <conditions>
                                                 <condition id="-10" name="For" sid="5919787612066021" type="System">
                                                     <param id="0" name="Name">&quot;setPosY&quot;</param>
@@ -1176,6 +1177,9 @@
                                                     <param id="1" name="Layer">&quot;frontBg&quot;</param>
                                                     <param id="2" name="X">Function.Call(&quot;launchLineXSet&quot;,posX)</param>
                                                     <param id="3" name="Y">Function.Call(&quot;launchLineYSet&quot;,posY)</param>
+                                                </action>
+                                                <action behavior="Sine" id="0" name="Set active" sid="5338148168370364" type="launchLine">
+                                                    <param id="0" name="State">0</param>
                                                 </action>
                                                 <action id="4" name="Set animation" sid="14147026729478" type="launchLine">
                                                     <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Default&quot;</param>
@@ -1196,6 +1200,14 @@
                                                     <param id="0" name="Width">100</param>
                                                     <param id="1" name="Height">100</param>
                                                 </action>
+                                                <action id="-10" name="Set value" sid="7787286454449652" type="launchLine">
+                                                    <param id="0" name="Instance variable">originalWidth</param>
+                                                    <param id="1" name="Value">self.Width</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="4643602120696358" type="launchLine">
+                                                    <param id="0" name="Instance variable">originalHeight</param>
+                                                    <param id="1" name="Value">self.Height</param>
+                                                </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
@@ -1205,7 +1217,7 @@
                     </sub-events>
                 </event-block>
                 <comment>touchLaunchLine(launchLine.UID) : launchLine 터치할 때 처리. 조준 안되어있으면 조준시키고&#x0D;&#x0A;조준되어있고 state도 준비되었으면 gameState 2로만들고 발사.</comment>
-                <event-block sid="9703322141573464">
+                <event-block bookmark="1" sid="9703322141573464">
                     <conditions>
                         <condition id="0" name="On function" sid="1164895677241204" type="Function">
                             <param id="0" name="Name">&quot;touchLaunchLine&quot;</param>
@@ -1223,13 +1235,20 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="4632996503602159" type="launchLine">
+                                <action disabled="1" id="4" name="Set animation" sid="4632996503602159" type="launchLine">
                                     <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Default&quot;</param>
                                     <param id="1" name="From">0</param>
                                 </action>
                                 <action id="-13" name="Set boolean" sid="5991481546513991" type="launchLine">
                                     <param id="0" name="Instance variable">aimed</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="6121736472179098" type="launchLine">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="9021673264932163" type="launchLine">
+                                    <param id="0" name="Width">self.originalWidth</param>
+                                    <param id="1" name="Height">self.originalHeight</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1260,13 +1279,16 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set animation" sid="9789395851720702" type="launchLine">
+                                        <action disabled="1" id="4" name="Set animation" sid="9789395851720702" type="launchLine">
                                             <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Aimed&quot;</param>
                                             <param id="1" name="From">0</param>
                                         </action>
                                         <action id="-13" name="Set boolean" sid="1638344653177465" type="launchLine">
                                             <param id="0" name="Instance variable">aimed</param>
                                             <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Sine" id="0" name="Set active" sid="4106658409478846" type="launchLine">
+                                            <param id="0" name="State">1</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="1714276769149552" type="System">
                                             <param id="0" name="Variable">flag</param>
@@ -1308,13 +1330,20 @@
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="4" name="Set animation" sid="8859432942762102" type="launchLine">
+                                                        <action disabled="1" id="4" name="Set animation" sid="8859432942762102" type="launchLine">
                                                             <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Default&quot;</param>
                                                             <param id="1" name="From">0</param>
                                                         </action>
                                                         <action id="-13" name="Set boolean" sid="951977824458072" type="launchLine">
                                                             <param id="0" name="Instance variable">aimed</param>
                                                             <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action behavior="Sine" id="0" name="Set active" sid="2998719790075029" type="launchLine">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="632219265658944" type="launchLine">
+                                                            <param id="0" name="Width">self.originalWidth</param>
+                                                            <param id="1" name="Height">self.originalHeight</param>
                                                         </action>
                                                         <action id="-9" name="Set value" sid="2829567107066541" type="System">
                                                             <param id="0" name="Variable">gameState</param>
@@ -1336,13 +1365,16 @@
                                                         <condition id="-22" name="Else" sid="9088408800886161" type="System" />
                                                     </conditions>
                                                     <actions>
-                                                        <action id="4" name="Set animation" sid="7430470647081424" type="launchLine">
+                                                        <action disabled="1" id="4" name="Set animation" sid="7430470647081424" type="launchLine">
                                                             <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Aimed&quot;</param>
                                                             <param id="1" name="From">0</param>
                                                         </action>
                                                         <action id="-13" name="Set boolean" sid="4566186597615664" type="launchLine">
                                                             <param id="0" name="Instance variable">aimed</param>
                                                             <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action behavior="Sine" id="0" name="Set active" sid="3643457663380012" type="launchLine">
+                                                            <param id="0" name="State">1</param>
                                                         </action>
                                                         <action id="-9" name="Set value" sid="6175897228713499" type="System">
                                                             <param id="0" name="Variable">flag</param>
@@ -1425,7 +1457,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="7024823255720201" type="Function">
                                             <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
-                                            <param id="1" name="Parameter {n}">272{###}700{###}Function.Param(0){###}Function.Param(1)</param>
+                                            <param id="1" name="Parameter {n}">272{###}2000{###}Function.Param(0){###}Function.Param(1)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1490,7 +1522,7 @@
                         <variable constant="0" name="saveAng" sid="1422743967825123" static="1" type="number">0</variable>
                         <variable constant="0" name="saveTarX" sid="1982098391791707" static="1" type="number">0</variable>
                         <variable constant="0" name="saveTarY" sid="6565362918623627" static="1" type="number">0</variable>
-                        <event-block sid="3228183936828598">
+                        <event-block bookmark="1" sid="3228183936828598">
                             <conditions />
                             <actions>
                                 <action id="-9" name="Set value" sid="246281461782894" type="System">
@@ -1556,11 +1588,15 @@
                                     <param id="0" name="Angle">saveAng</param>
                                 </action>
                                 <action behavior="Bullet" id="2" name="Set gravity" sid="8166504466228815" type="eggBullet">
-                                    <param id="0" name="Gravity">100</param>
+                                    <param id="0" name="Gravity">1000</param>
                                 </action>
-                                <action id="-14" name="Set object time scale" sid="8950985540772212" type="System">
+                                <action disabled="1" id="-14" name="Set object time scale" sid="8950985540772212" type="System">
                                     <param id="0" name="Object">eggBullet</param>
                                     <param id="1" name="Time scale">savePow/200</param>
+                                </action>
+                                <action disabled="1" id="-14" name="Set object time scale" sid="8210156206011765" type="System">
+                                    <param id="0" name="Object">eggBullet</param>
+                                    <param id="1" name="Time scale">1</param>
                                 </action>
                                 <action id="-24" name="Move to top" sid="4023753864354215" type="eggBullet" />
                                 <action behavior="RotateTo" id="4" name="Rotate to angle" sid="676711663241181" type="cannon">
@@ -2068,13 +2104,20 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="8447323591715516" type="launchLine">
+                                <action disabled="1" id="4" name="Set animation" sid="8447323591715516" type="launchLine">
                                     <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Default&quot;</param>
                                     <param id="1" name="From">0</param>
                                 </action>
                                 <action id="-13" name="Set boolean" sid="248725643176907" type="launchLine">
                                     <param id="0" name="Instance variable">aimed</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="3832917534670619" type="launchLine">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="3869166133028687" type="launchLine">
+                                    <param id="0" name="Width">self.originalWidth</param>
+                                    <param id="1" name="Height">self.originalHeight</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2361,6 +2404,7 @@
                                             <actions />
                                             <sub-events>
                                                 <comment>빈자리라면. golem moving frame으로 바꿔주기</comment>
+                                                <variable constant="0" name="golemStepY" sid="8759568643862649" static="0" type="number">20</variable>
                                                 <event-block sid="9983376941578209">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="6189956860648893" type="launchLine">
@@ -2388,7 +2432,7 @@
                                                         </action>
                                                         <action id="0" name="Call function" sid="2918510670285092" type="Function">
                                                             <param id="0" name="Name">&quot;golemMovesToXY&quot;</param>
-                                                            <param id="1" name="Parameter {n}">golem.UID{###}launchLine.X{###}launchLine.Y</param>
+                                                            <param id="1" name="Parameter {n}">golem.UID{###}launchLine.X{###}launchLine.Y+golemStepY</param>
                                                         </action>
                                                         <action id="0" name="Call function" sid="1366243373838252" type="Function">
                                                             <param id="0" name="Name">&quot;launchLineOccupyAtXY&quot;</param>
@@ -2424,6 +2468,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <variable constant="0" name="golemStepY" sid="1485361630656812" static="0" type="number">20</variable>
                         <event-block sid="8135116056559687">
                             <conditions />
                             <actions>
@@ -2437,7 +2482,7 @@
                                     <param id="0" name="Object to create">golem</param>
                                     <param id="1" name="Layer">&quot;golem&quot;</param>
                                     <param id="2" name="X">Function.Call(&quot;launchLineXSet&quot;,int(Function.Param(1)))</param>
-                                    <param id="3" name="Y">Function.Call(&quot;launchLineYSet&quot;,int(Function.Param(2)))</param>
+                                    <param id="3" name="Y">Function.Call(&quot;launchLineYSet&quot;,int(Function.Param(2)))+golemStepY</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="1001150660043823" type="golem">
                                     <param id="0" name="Animation">Function.Param(0)</param>
@@ -2728,16 +2773,12 @@
                             <actions>
                                 <action id="-3" name="Create object" sid="135957642490403" type="System">
                                     <param id="0" name="Object to create">explode</param>
-                                    <param id="1" name="Layer">&quot;golem&quot;</param>
+                                    <param id="1" name="Layer">&quot;effect&quot;</param>
                                     <param id="2" name="X">launchLine.X</param>
                                     <param id="3" name="Y">launchLine.Y</param>
                                 </action>
-                                <action id="-29" name="Move to object" sid="2652137870890837" type="explode">
-                                    <param id="0" name="Where">0</param>
-                                    <param id="1" name="Object">launchLine</param>
-                                </action>
                                 <action id="4" name="Set animation" sid="8725686066534627" type="explode">
-                                    <param id="0" name="Animation">&quot;Explode01&quot;</param>
+                                    <param id="0" name="Animation">&quot;Explode&quot;&amp;eggBullet.kind</param>
                                     <param id="1" name="From">1</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="7598695024627652" type="explode">
@@ -4062,16 +4103,16 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="4462818567572642">
+                        <event-block bookmark="1" sid="4462818567572642">
                             <conditions />
                             <actions>
                                 <action id="-9" name="Destroy" sid="7649342513716955" type="eggBulletBonusEffect" />
-                                <action id="0" name="Spawn another object" sid="1016731312154163" type="eggBullet">
+                                <action disabled="1" id="0" name="Spawn another object" sid="1016731312154163" type="eggBullet">
                                     <param id="0" name="Object">eggDestroyedEffect</param>
                                     <param id="1" name="Layer">&quot;effect&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action id="-14" name="Set object time scale" sid="3167948870696692" type="System">
+                                <action disabled="1" id="-14" name="Set object time scale" sid="3167948870696692" type="System">
                                     <param id="0" name="Object">eggDestroyedEffect</param>
                                     <param id="1" name="Time scale">3</param>
                                 </action>
@@ -4266,6 +4307,21 @@
                                             <param id="1" name="Value">2</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="3227691913680568">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="9322257281975331" type="henCage">
+                                                    <param id="0" name="Object">henButton</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="311737244255218" type="henCage">
+                                                    <param id="0" name="Animation">&quot;12ready&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -4658,6 +4714,11 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="0" name="Spawn another object" sid="9879364250131893" type="golem">
+                                            <param id="0" name="Object">effectShield</param>
+                                            <param id="1" name="Layer">&quot;effect&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
                                         <action id="0" name="Spawn another object" sid="9201120520490726" type="golem">
                                             <param id="0" name="Object">damageText</param>
                                             <param id="1" name="Layer">&quot;effect&quot;</param>
@@ -4897,7 +4958,11 @@
                                     <param id="1" name="Layer">&quot;golem&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="6588820980552215" type="poisonDamage">
+                                <action id="4" name="Set animation" sid="3426698176291096" type="poisonDamage">
+                                    <param id="0" name="Animation">&quot;Test&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Bullet" disabled="1" id="3" name="Set angle of motion" sid="6588820980552215" type="poisonDamage">
                                     <param id="0" name="Angle">270</param>
                                 </action>
                             </actions>
@@ -4959,6 +5024,11 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Spawn another object" sid="6114804823354" type="golem">
+                                    <param id="0" name="Object">effectHeal2</param>
+                                    <param id="1" name="Layer">&quot;effect&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="3995437888726458" type="System">
                                     <param id="0" name="Object to create">effectHeal</param>
                                     <param id="1" name="Layer">&quot;effect&quot;</param>
@@ -7125,164 +7195,37 @@
         </event-group>
         <event-group description="" sid="8981330430939779" title="optionView">
             <sub-events>
-                <comment>levelHolderYSet() : 레벨홀더를 각 바의 Y좌표</comment>
-                <event-block sid="8447038038864473">
+                <comment>golemDicView() : 제작중</comment>
+                <event-block sid="2761905639279051">
                     <conditions>
-                        <condition id="0" name="On function" sid="1153415942295408" type="Function">
-                            <param id="0" name="Name">&quot;levelHolderYSet&quot;</param>
+                        <condition id="0" name="On function" sid="8006578973781133" type="Function">
+                            <param id="0" name="Name">&quot;golemDicView&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="7947276397720933">
+                        <variable constant="0" name="golemKind" sid="9962964920492024" static="0" type="text"></variable>
+                        <event-block sid="3284512514865599">
                             <conditions />
                             <actions>
-                                <action id="-2" name="Set Y" sid="1184436644225709" type="musicLevelHolder">
-                                    <param id="0" name="Y">musicLevelBar.Y</param>
+                                <action id="-9" name="Set value" sid="6192137916166365" type="System">
+                                    <param id="0" name="Variable">golemKind</param>
+                                    <param id="1" name="Value">&quot;&quot;</param>
                                 </action>
-                                <action id="-2" name="Set Y" sid="3728311097392855" type="sfxLevelHolder">
-                                    <param id="0" name="Y">sfxLevelBar.Y</param>
+                                <action id="0" name="Set text" sid="8068936572776624" type="golemName">
+                                    <param id="0" name="Text">golemDB.Get(golemKind&amp;&quot;name&quot;)</param>
                                 </action>
-                                <action id="-2" name="Set Y" sid="8043367341407017" type="vibrateLevelHolder">
-                                    <param id="0" name="Y">vibrateLevelBar.Y</param>
+                                <action id="0" name="Set text" sid="5659706427914973" type="golemHp">
+                                    <param id="0" name="Text">golemDB.Get(golemKind&amp;&quot;hp&quot;)</param>
                                 </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <comment>levelHolderXSet() : 레벨홀더를 볼륨따라 X좌표로 위치</comment>
-                <event-block sid="8183210880810435">
-                    <conditions>
-                        <condition id="0" name="On function" sid="705493751776101" type="Function">
-                            <param id="0" name="Name">&quot;levelHolderXSet&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="6203377438946475">
-                            <conditions />
-                            <actions>
-                                <action id="-1" name="Set X" sid="6737815365994733" type="musicLevelHolder">
-                                    <param id="0" name="X">musicLevelBar.ImagePointX(&quot;Full&quot;)+float(WebStorage.LocalValue(&quot;music&quot;))*(musicLevelBar.ImagePointX(&quot;Full&quot;)-musicLevelBar.ImagePointX(&quot;Zero&quot;))/60</param>
+                                <action id="0" name="Set text" sid="8335749874168944" type="golemSpeed">
+                                    <param id="0" name="Text">golemDB.Get(golemKind&amp;&quot;speed&quot;)</param>
                                 </action>
-                                <action id="-1" name="Set X" sid="4233744467437993" type="sfxLevelHolder">
-                                    <param id="0" name="X">sfxLevelBar.ImagePointX(&quot;Full&quot;)+float(WebStorage.LocalValue(&quot;music&quot;))*(sfxLevelBar.ImagePointX(&quot;Full&quot;)-sfxLevelBar.ImagePointX(&quot;Zero&quot;))/60</param>
+                                <action id="0" name="Set text" sid="4251558273953028" type="golemReward">
+                                    <param id="0" name="Text">golemDB.Get(golemKind&amp;&quot;reward&quot;)</param>
                                 </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="9484433965608398">
-                            <conditions>
-                                <condition id="7" name="Compare key value (as number)" sid="7398912229789161" type="WebStorage">
-                                    <param id="0" name="Key">&quot;vibrate&quot;</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="2643972092782018" type="vibrateLevelHolder">
-                                    <param id="0" name="X">vibrateLevelBar.ImagePointX(&quot;Zero&quot;)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="6456953141642599">
-                            <conditions>
-                                <condition id="7" name="Compare key value (as number)" sid="1836805984579419" type="WebStorage">
-                                    <param id="0" name="Key">&quot;vibrate&quot;</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="2454605187538961" type="vibrateLevelHolder">
-                                    <param id="0" name="X">vibrateLevelBar.ImagePointX(&quot;Full&quot;)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <comment>holderMusicVolumeSet() : holder의 X좌표에 따라 Music 설정. 실시간으로 bgm 볼륨 변경.</comment>
-                <event-block sid="1255776696725353">
-                    <conditions>
-                        <condition id="0" name="On function" sid="3851195554646679" type="Function">
-                            <param id="0" name="Name">&quot;holderMusicVolumeSet&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="5945912380835848">
-                            <conditions />
-                            <actions>
-                                <action id="0" name="Set local value" sid="6452974250167831" type="WebStorage">
-                                    <param id="0" name="Key">&quot;music&quot;</param>
-                                    <param id="1" name="Value">(musicLevelHolder.X-musicLevelBar.ImagePointX(&quot;Zero&quot;))*60/(musicLevelBar.ImagePointX(&quot;Full&quot;)-musicLevelBar.ImagePointX(&quot;Zero&quot;))-60</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <comment>holderSfxVolumeSet() : holder의 X좌표에 따라 Sfx 설정</comment>
-                <event-block sid="7959109502150628">
-                    <conditions>
-                        <condition id="0" name="On function" sid="6764782469607019" type="Function">
-                            <param id="0" name="Name">&quot;holderSfxVolumeSet&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="7525853362205117">
-                            <conditions />
-                            <actions>
-                                <action id="0" name="Set local value" sid="1856917087513801" type="WebStorage">
-                                    <param id="0" name="Key">&quot;sfx&quot;</param>
-                                    <param id="1" name="Value">(sfxLevelHolder.X-sfxLevelBar.ImagePointX(&quot;Zero&quot;))*60/(sfxLevelBar.ImagePointX(&quot;Full&quot;)-sfxLevelBar.ImagePointX(&quot;Zero&quot;))-60</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <comment>holderViberateSet() : holder의 X좌표에 따라 vibrate 설정</comment>
-                <event-block sid="5095217661139681">
-                    <conditions>
-                        <condition id="0" name="On function" sid="5805871255887645" type="Function">
-                            <param id="0" name="Name">&quot;holderVibrateSet&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="4027492961141247">
-                            <conditions>
-                                <condition id="-1" name="Compare X" sid="6463095962993709" type="vibrateLevelHolder">
-                                    <param id="0" name="Comparison">5</param>
-                                    <param id="1" name="X co-ordinate">vibrateLevelBar.X</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set local value" sid="5858510959729643" type="WebStorage">
-                                    <param id="0" name="Key">&quot;vibrate&quot;</param>
-                                    <param id="1" name="Value">&quot;1&quot;</param>
-                                </action>
-                                <action id="-1" name="Set X" sid="6653962926812211" type="vibrateLevelHolder">
-                                    <param id="0" name="X">vibrateLevelBar.ImagePointX(&quot;Full&quot;)</param>
-                                </action>
-                                <action id="12" name="Vibrate" sid="5906210499921977" type="Browser">
-                                    <param id="0" name="Pattern">&quot;500&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="6494362557297447">
-                            <conditions>
-                                <condition id="-1" name="Compare X" sid="4622636093066499" type="vibrateLevelHolder">
-                                    <param id="0" name="Comparison">2</param>
-                                    <param id="1" name="X co-ordinate">vibrateLevelBar.X</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set local value" sid="3691850490196498" type="WebStorage">
-                                    <param id="0" name="Key">&quot;vibrate&quot;</param>
-                                    <param id="1" name="Value">&quot;0&quot;</param>
-                                </action>
-                                <action id="-1" name="Set X" sid="7987579809187944" type="vibrateLevelHolder">
-                                    <param id="0" name="X">vibrateLevelBar.ImagePointX(&quot;Zero&quot;)</param>
+                                <action id="0" name="Set text" sid="4386697272486714" type="golemDescription">
+                                    <param id="0" name="Text">golemDB.Get(golemKind&amp;&quot;description&quot;)</param>
                                 </action>
                             </actions>
                         </event-block>

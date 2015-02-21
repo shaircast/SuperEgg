@@ -10,17 +10,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">opening</layout>
-        <layout order="3">sprites</layout>
-        <layout order="4">optionView</layout>
-        <layout order="7">battleView</layout>
-        <layout order="9">cageView</layout>
+        <layout order="0">sprites</layout>
+        <layout order="2">optionView</layout>
+        <layout active="1" order="4">opening</layout>
         <event-sheet order="1">opening</event-sheet>
-        <event-sheet order="2">optionView</event-sheet>
         <event-sheet order="5">battleView</event-sheet>
+        <event-sheet order="3">optionView</event-sheet>
         <event-sheet order="6">function</event-sheet>
-        <event-sheet order="8">general</event-sheet>
-        <event-sheet order="10">stageView</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -33,27 +29,28 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="1" path="object-folder/plugin/" />
+        <folder expanded="0" path="object-folder/plugin/" />
         <folder expanded="1" path="object-folder/battleView/" />
-        <folder expanded="0" path="object-folder/battleView/hud/" />
+        <folder expanded="1" path="object-folder/battleView/hud/" />
         <folder expanded="1" path="object-folder/battleView/golem/" />
         <folder expanded="1" path="object-folder/battleView/golem/kindEffect/" />
-        <folder expanded="0" path="object-folder/battleView/eggExplode/" />
+        <folder expanded="1" path="object-folder/battleView/eggExplode/" />
         <folder expanded="0" path="object-folder/battleView/bgDeco/" />
         <folder expanded="0" path="object-folder/battleView/henButton/" />
         <folder expanded="0" path="object-folder/DBDic/" />
         <folder expanded="0" path="object-folder/stageView/" />
         <folder expanded="0" path="object-folder/menuButton/" />
-        <folder expanded="0" path="object-folder/cageView/" />
+        <folder expanded="1" path="object-folder/cageView/" />
         <folder expanded="0" path="object-folder/cageView/textbox/" />
         <folder expanded="0" path="object-folder/cageView/modeButton/" />
         <folder expanded="0" path="object-folder/opening/" />
         <folder expanded="0" path="object-folder/icon/" />
         <folder expanded="0" path="object-folder/optionView/" />
+        <folder expanded="1" path="object-folder/optionView/textbox/" />
         <folder expanded="0" path="object-folder/test/" />
-        <folder expanded="1" path="layout-folder/" />
-        <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
+        <folder expanded="0" path="layout-folder/" />
+        <folder expanded="0" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
         <folder expanded="0" path="sound-folder/" />
         <folder expanded="0" path="music-folder/" />
         <folder expanded="1" path="file-folder/Icons/" />
@@ -65,6 +62,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/cannon/" />
         <folder expanded="1" path="animation-folder/turnButton/" />
         <folder expanded="1" path="animation-folder/effectHeal/" />
+        <folder expanded="1" path="animation-folder/effectShield/" />
+        <folder expanded="1" path="animation-folder/effectHeal2/" />
         <folder expanded="1" path="animation-folder/golem/" />
         <folder expanded="1" path="animation-folder/golem/01/" />
         <folder expanded="1" path="animation-folder/golem/02/" />
@@ -149,13 +148,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/iconCoinHUD/" />
         <folder expanded="1" path="animation-folder/iconTypeHUD/" />
         <folder expanded="1" path="animation-folder/optionViewBg/" />
-        <folder expanded="1" path="animation-folder/musicLevelHolder/" />
-        <folder expanded="1" path="animation-folder/sfxLevelHolder/" />
-        <folder expanded="1" path="animation-folder/vibrateLevelHolder/" />
-        <folder expanded="1" path="animation-folder/musicLevelBar/" />
-        <folder expanded="1" path="animation-folder/sfxLevelBar/" />
-        <folder expanded="1" path="animation-folder/vibrateLevelBar/" />
         <folder expanded="1" path="animation-folder/resetButton/" />
+        <folder expanded="1" path="animation-folder/musicButton/" />
+        <folder expanded="1" path="animation-folder/sfxButton/" />
         <folder expanded="1" path="animation-folder/focus/" />
     </folders-expanded>
 </c2uistate>
