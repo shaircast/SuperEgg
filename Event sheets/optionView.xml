@@ -4,6 +4,8 @@
     <name>optionView</name>
     <events>
         <include>function</include>
+        <comment>optionViewState&#x0D;&#x0A;0:노멀&#x0D;&#x0A;1:크레딧 책 편 상태&#x0D;&#x0A;2:골렘도감 책 편 상태</comment>
+        <variable constant="0" name="optionViewState" sid="1824942259418091" static="0" type="number">0</variable>
         <event-block sid="100357258764611">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="2427181214653416" type="System" />
@@ -12,6 +14,10 @@
                 <action id="0" name="Call function" sid="9327995054939773" type="Function">
                     <param id="0" name="Name">&quot;SetGroupActive&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;optionView&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="9304510864681336" type="System">
+                    <param id="0" name="Variable">optionViewState</param>
+                    <param id="1" name="Value">0</param>
                 </action>
                 <action id="-16" name="Wait" sid="6155883095521508" type="System">
                     <param id="0" name="Seconds">0</param>
@@ -107,243 +113,337 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="9755183853507965">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="8372902772124188" type="optionViewTitles">
+                            <param id="0" name="Unique ID">113</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="9651352020667459" type="optionViewTitles">
+                            <param id="0" name="Pin to">musicButton</param>
+                            <param id="1" name="ImagePoint">&quot;Center&quot;</param>
+                            <param id="2" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9278036132053487">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="2598595269120962" type="optionViewTitles">
+                            <param id="0" name="Unique ID">114</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="310572965318017" type="optionViewTitles">
+                            <param id="0" name="Pin to">sfxButton</param>
+                            <param id="1" name="ImagePoint">&quot;Center&quot;</param>
+                            <param id="2" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
-        <comment>메뉴</comment>
-        <event-block sid="5681735429843299">
+        <event-block sid="1247640183915357">
             <conditions>
-                <condition id="3" name="On touched object" sid="9776157468002129" type="Touch">
-                    <param id="0" name="Object">menuButtonPackage</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="49681136266434" type="Function">
-                    <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="8849855566155157">
-            <conditions>
-                <condition id="3" name="On touched object" sid="5461243877573941" type="Touch">
-                    <param id="0" name="Object">menuButtonStageView</param>
-                </condition>
-                <condition id="-8" name="Is boolean instance variable set" sid="5098426556412714" type="menuButtonPackage">
-                    <param id="0" name="Instance variable">ready</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="4326226236193918" type="System">
-                    <param id="0" name="Layout">stageView</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="6376737248413822">
-            <conditions>
-                <condition id="3" name="On touched object" sid="2864722721449387" type="Touch">
-                    <param id="0" name="Object">menuButtonCageView</param>
-                </condition>
-                <condition id="-8" name="Is boolean instance variable set" sid="1934053151993684" type="menuButtonPackage">
-                    <param id="0" name="Instance variable">ready</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="4599291632477743" type="System">
-                    <param id="0" name="Layout">cageView</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="3025017364160472">
-            <conditions>
-                <condition id="3" name="On touched object" sid="522670878348338" type="Touch">
-                    <param id="0" name="Object">menuButtonOptionView</param>
-                </condition>
-                <condition id="-8" name="Is boolean instance variable set" sid="2950550709910344" type="menuButtonPackage">
-                    <param id="0" name="Instance variable">ready</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="6358419861308133" type="System">
-                    <param id="0" name="Layout">optionView</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment>frame0: 리셋하기 / 1: 정말? / 2: 완료</comment>
-        <event-block sid="1501502020712108">
-            <conditions>
-                <condition id="3" name="On touched object" sid="7149965320936993" type="Touch">
-                    <param id="0" name="Object">resetButton</param>
+                <condition id="-14" name="Compare variable" sid="594063051454701" type="System">
+                    <param id="0" name="Variable">optionViewState</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
             <actions />
             <sub-events>
-                <variable constant="0" name="flag" sid="419753691097955" static="0" type="number">0</variable>
-                <event-block sid="2855597674273627">
+                <comment>메뉴</comment>
+                <event-block sid="5681735429843299">
                     <conditions>
-                        <condition id="3" name="Compare frame" sid="4352421642297234" type="resetButton">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Number">0</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="1601835618403511" type="System">
-                            <param id="0" name="Variable">flag</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
+                        <condition id="3" name="On touched object" sid="9776157468002129" type="Touch">
+                            <param id="0" name="Object">menuButtonPackage</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="8055475301173115" type="System">
-                            <param id="0" name="Variable">flag</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="1684740958138871" type="resetButton">
-                            <param id="0" name="Frame number">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="8461778808555877">
-                    <conditions>
-                        <condition id="3" name="Compare frame" sid="8317386659553223" type="resetButton">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Number">1</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="62487501701673" type="System">
-                            <param id="0" name="Variable">flag</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="6329652958484161" type="System">
-                            <param id="0" name="Variable">flag</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="0" name="Call function" sid="1515735501193686" type="Function">
-                            <param id="0" name="Name">&quot;userDataReset&quot;</param>
+                        <action id="0" name="Call function" sid="49681136266434" type="Function">
+                            <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
-                        <action id="5" name="Set frame" sid="6432475352270578" type="resetButton">
-                            <param id="0" name="Frame number">2</param>
+                    </actions>
+                </event-block>
+                <event-block sid="8849855566155157">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="5461243877573941" type="Touch">
+                            <param id="0" name="Object">menuButtonStageView</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="5098426556412714" type="menuButtonPackage">
+                            <param id="0" name="Instance variable">ready</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="4326226236193918" type="System">
+                            <param id="0" name="Layout">stageView</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6376737248413822">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="2864722721449387" type="Touch">
+                            <param id="0" name="Object">menuButtonCageView</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="1934053151993684" type="menuButtonPackage">
+                            <param id="0" name="Instance variable">ready</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="4599291632477743" type="System">
+                            <param id="0" name="Layout">cageView</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3025017364160472">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="522670878348338" type="Touch">
+                            <param id="0" name="Object">menuButtonOptionView</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="2950550709910344" type="menuButtonPackage">
+                            <param id="0" name="Instance variable">ready</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="6358419861308133" type="System">
+                            <param id="0" name="Layout">optionView</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>frame0: 리셋하기 / 1: 정말? / 2: 완료</comment>
+                <event-block sid="1501502020712108">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="7149965320936993" type="Touch">
+                            <param id="0" name="Object">resetButton</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="flag" sid="419753691097955" static="0" type="number">0</variable>
+                        <event-block sid="2855597674273627">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="4352421642297234" type="resetButton">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="1601835618403511" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="8055475301173115" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="1684740958138871" type="resetButton">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8461778808555877">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="8317386659553223" type="resetButton">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="62487501701673" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="6329652958484161" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="1515735501193686" type="Function">
+                                    <param id="0" name="Name">&quot;userDataReset&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="5" name="Set frame" sid="6580173754637338" type="resetButton">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="3393506270007608" type="Audio">
+                                    <param id="0" name="Audio file">turnOverTicktick</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>음량버튼</comment>
+                <event-block sid="8628042001719345">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="3436983789057148" type="Touch">
+                            <param id="0" name="Object">musicButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Toggle boolean" sid="6705597085784648" type="musicButton">
+                            <param id="0" name="Instance variable">on</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4604051904462094">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="6949644664505094" type="musicButton">
+                                    <param id="0" name="Instance variable">on</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="7908231927746796" type="musicButton">
+                                    <param id="0" name="Animation">&quot;On&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="8762222814756047" type="WebStorage">
+                                    <param id="0" name="Key">&quot;music&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="6" name="Stop" sid="793056185679516" type="Audio">
+                                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9760580851593861" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="5009503249962821" type="Audio">
+                                    <param id="0" name="Audio file">optionView</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9561804250946344">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="86547624338016" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="8486971023571046" type="musicButton">
+                                    <param id="0" name="Animation">&quot;Off&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="2158143136487359" type="WebStorage">
+                                    <param id="0" name="Key">&quot;music&quot;</param>
+                                    <param id="1" name="Value">-60</param>
+                                </action>
+                                <action id="6" name="Stop" sid="7251799668685506" type="Audio">
+                                    <param id="0" name="Tag">&quot;bgm&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5085610854788783">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="1879639941317664" type="Touch">
+                            <param id="0" name="Object">sfxButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Toggle boolean" sid="8034192788232363" type="sfxButton">
+                            <param id="0" name="Instance variable">on</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8510655927969303">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="6144276095848535" type="sfxButton">
+                                    <param id="0" name="Instance variable">on</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="1948310762225298" type="sfxButton">
+                                    <param id="0" name="Animation">&quot;On&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="9542307708373338" type="WebStorage">
+                                    <param id="0" name="Key">&quot;sfx&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9537844251878545" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="2744485090835727" type="Audio">
+                                    <param id="0" name="Audio file">click</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="773380122195269">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6020433619141365" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="7926810335883594" type="sfxButton">
+                                    <param id="0" name="Animation">&quot;Off&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="2272604429765042" type="WebStorage">
+                                    <param id="0" name="Key">&quot;sfx&quot;</param>
+                                    <param id="1" name="Value">-60</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>크레딧</comment>
+                <event-block sid="3088987396920915">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="2893910451562377" type="Touch">
+                            <param id="0" name="Object">oprionViewCredit</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4003737907329036" type="System">
+                            <param id="0" name="Variable">optionViewState</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>크레딧</comment>
+                <event-block sid="5293371794939354">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="2725841658716806" type="Touch">
+                            <param id="0" name="Object">optionViewGolemDic</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4419985051043147" type="System">
+                            <param id="0" name="Variable">optionViewState</param>
+                            <param id="1" name="Value">2</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>음량버튼</comment>
-        <event-block sid="8628042001719345">
+        <event-block sid="252022110537286">
             <conditions>
-                <condition id="3" name="On touched object" sid="3436983789057148" type="Touch">
-                    <param id="0" name="Object">musicButton</param>
+                <condition id="-14" name="Compare variable" sid="9476072302633865" type="System">
+                    <param id="0" name="Variable">optionViewState</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="-14" name="Toggle boolean" sid="6705597085784648" type="musicButton">
-                    <param id="0" name="Instance variable">on</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block sid="4604051904462094">
-                    <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="6949644664505094" type="musicButton">
-                            <param id="0" name="Instance variable">on</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="7908231927746796" type="musicButton">
-                            <param id="0" name="Animation">&quot;On&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="0" name="Set local value" sid="8762222814756047" type="WebStorage">
-                            <param id="0" name="Key">&quot;music&quot;</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="6" name="Stop" sid="793056185679516" type="Audio">
-                            <param id="0" name="Tag">&quot;bgm&quot;</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="9760580851593861" type="System">
-                            <param id="0" name="Seconds">0</param>
-                        </action>
-                        <action id="0" name="Play" sid="5009503249962821" type="Audio">
-                            <param id="0" name="Audio file">optionView</param>
-                            <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
-                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="9561804250946344">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="86547624338016" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="8486971023571046" type="musicButton">
-                            <param id="0" name="Animation">&quot;Off&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="0" name="Set local value" sid="2158143136487359" type="WebStorage">
-                            <param id="0" name="Key">&quot;music&quot;</param>
-                            <param id="1" name="Value">-60</param>
-                        </action>
-                        <action id="6" name="Stop" sid="7251799668685506" type="Audio">
-                            <param id="0" name="Tag">&quot;bgm&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
+            <actions />
         </event-block>
-        <event-block sid="5085610854788783">
+        <event-block sid="4332894524603847">
             <conditions>
-                <condition id="3" name="On touched object" sid="1879639941317664" type="Touch">
-                    <param id="0" name="Object">sfxButton</param>
+                <condition id="-14" name="Compare variable" sid="3987946673369022" type="System">
+                    <param id="0" name="Variable">optionViewState</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="-14" name="Toggle boolean" sid="8034192788232363" type="sfxButton">
-                    <param id="0" name="Instance variable">on</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block sid="8510655927969303">
-                    <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="6144276095848535" type="sfxButton">
-                            <param id="0" name="Instance variable">on</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="1948310762225298" type="sfxButton">
-                            <param id="0" name="Animation">&quot;On&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="0" name="Set local value" sid="9542307708373338" type="WebStorage">
-                            <param id="0" name="Key">&quot;sfx&quot;</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="9537844251878545" type="System">
-                            <param id="0" name="Seconds">0</param>
-                        </action>
-                        <action id="0" name="Play" sid="2744485090835727" type="Audio">
-                            <param id="0" name="Audio file">click</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="773380122195269">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="6020433619141365" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="7926810335883594" type="sfxButton">
-                            <param id="0" name="Animation">&quot;Off&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="0" name="Set local value" sid="2272604429765042" type="WebStorage">
-                            <param id="0" name="Key">&quot;sfx&quot;</param>
-                            <param id="1" name="Value">-60</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>

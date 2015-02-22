@@ -2770,11 +2770,11 @@
             </object-type>
         </object-folder>
         <object-folder name="opening">
-            <object-type name="openingSprite" sid="5286496555411055">
+            <object-type name="openingBg" sid="5286496555411055">
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2605656723992902" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150216_042100318.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150222_084052491.jpg" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2788,6 +2788,64 @@
                         <behavior id="Fade" />
                     </behavior-type>
                 </behaviors>
+            </object-type>
+            <object-type name="openingTitle" sid="2766433432181759">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="3575460127942005">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1813951620278962" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150222_084053720.jpg">
+                            <collision-poly>
+                                <point x="0.379687" y="0.50625" />
+                                <point x="0.5" y="0.215625" />
+                                <point x="0.776563" y="0.297917" />
+                                <point x="0.864844" y="0.5" />
+                                <point x="0.697656" y="0.596875" />
+                                <point x="0.5" y="0.615625" />
+                                <point x="0.378906" y="0.494792" />
+                                <point x="0.378906" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="openingFox" sid="4227479507286225">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6384706179431089" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150222_084052975.jpg">
+                            <collision-poly>
+                                <point x="0.895312" y="0.139583" />
+                                <point x="1" y="0.5" />
+                                <point x="1" y="1" />
+                                <point x="0.574219" y="0.234375" />
+                                <point x="0.679688" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="openingHen" sid="673294309531598">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7408095623221124" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150222_084054079.jpg">
+                            <collision-poly>
+                                <point x="0.208594" y="0.278125" />
+                                <point x="0.5" y="0.778125" />
+                                <point x="0.4875" y="0.5" />
+                                <point x="0.921094" y="0.894792" />
+                                <point x="0.5" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
         <object-folder name="icon">
@@ -2906,20 +2964,38 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4889054812986401" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_084102828.jpg" />
                     </animation>
                 </animation-folder>
             </object-type>
             <object-type name="optionViewTitles" sid="8821012781111382">
                 <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="PinToImagePoint" sid="4242422346322695">
+                        <behavior id="Rex_pin2imgpt" />
+                    </behavior-type>
+                </behaviors>
             </object-type>
             <object-type name="resetButton" sid="8711664683804167">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5881977466938529" speed="0">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5881977466938529" speed="0">
+                        <frame duration="1" format="png8" hotspotX="0.501247" hotspotY="0.500759" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130936157.jpg">
+                            <collision-poly>
+                                <point x="0.00498753" y="0.0273141" />
+                                <point x="0.950125" y="0" />
+                                <point x="0.839724" y="1" />
+                                <point x="0.265514" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" format="png8" hotspotX="0.501253" hotspotY="0.500761" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130936480.jpg">
+                            <collision-poly>
+                                <point x="0.00498753" y="0.0273141" />
+                                <point x="0.950125" y="0" />
+                                <point x="0.839724" y="1" />
+                                <point x="0.265514" y="1" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2928,12 +3004,35 @@
                 <instance-variables>
                     <instance-variable name="on" sid="5073926328241015" type="boolean" />
                 </instance-variables>
+                <behaviors>
+                    <behavior-type name="Sine" sid="301368735207854">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="On" pingpong="0" repeatcount="1" repeatto="0" sid="8423777970921827" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.334842" hotspotY="0.00129366" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130935767.jpg">
+                            <image-point name="Center" x="0.39819" y="0.904269" />
+                            <collision-poly>
+                                <point x="0.0452489" y="0.737387" />
+                                <point x="0.513575" y="0.730918" />
+                                <point x="0.927602" y="0.789133" />
+                                <point x="0.909502" y="0.958603" />
+                                <point x="0.0995475" y="0.989651" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="Off" pingpong="0" repeatcount="1" repeatto="0" sid="6474941527545831" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.334842" hotspotY="0.00129366" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130935447.jpg">
+                            <image-point name="Center" x="0.39819" y="0.904269" />
+                            <collision-poly>
+                                <point x="0.0452489" y="0.737387" />
+                                <point x="0.513575" y="0.730918" />
+                                <point x="0.909502" y="0.85899" />
+                                <point x="0.909502" y="0.958603" />
+                                <point x="0.0995475" y="0.989651" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2942,12 +3041,68 @@
                 <instance-variables>
                     <instance-variable name="on" sid="8202627245484836" type="boolean" />
                 </instance-variables>
+                <behaviors>
+                    <behavior-type name="Sine" sid="5757993956534186">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="On" pingpong="0" repeatcount="1" repeatto="0" sid="9601378438611571" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.373333" hotspotY="0.00259403" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130934762.jpg">
+                            <image-point name="Center" x="0.417778" y="0.911803" />
+                            <collision-poly>
+                                <point x="0.08" y="0.754864" />
+                                <point x="0.553333" y="0.723735" />
+                                <point x="0.955555" y="0.80415" />
+                                <point x="0.973333" y="0.98703" />
+                                <point x="0.0888889" y="0.98703" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="Off" pingpong="0" repeatcount="1" repeatto="0" sid="6396501145562852" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.373333" hotspotY="0.00259403" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130934294.jpg">
+                            <image-point name="Center" x="0.417778" y="0.911803" />
+                            <collision-poly>
+                                <point x="0.08" y="0.754864" />
+                                <point x="0.553333" y="0.723735" />
+                                <point x="0.911111" y="0.879378" />
+                                <point x="0.724444" y="0.989624" />
+                                <point x="0.0888889" y="0.98703" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="optionViewBarBg" sid="8385868444119998">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3610132365727856" speed="5">
+                        <frame duration="1" hotspotX="0.500409" hotspotY="0.504587" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130932964.jpg">
+                            <collision-poly>
+                                <point x="0.736719" y="0.736719" />
+                                <point x="0.257031" y="0.742969" />
+                                <point x="0.785937" y="0.785937" />
+                                <point x="0.213281" y="0.786719" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="optionViewBook" sid="4514681550254206">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7833248351851198" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_132945847.jpg">
+                            <collision-poly>
+                                <point x="0.199219" y="0.199219" />
+                                <point x="0.5" y="0.232812" />
+                                <point x="0.803125" y="0.196875" />
+                                <point x="0.957812" y="0.5" />
+                                <point x="0.785937" y="0.785937" />
+                                <point x="0.211719" y="0.788281" />
+                                <point x="0.046875" y="0.5" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2976,6 +3131,22 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4232872001806188" speed="5">
                     <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="optionViewGolemDic" sid="9146642456102786">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4983868482588988" speed="5">
+                    <frame duration="1" hotspotX="0.502959" hotspotY="0.500832" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933579.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="oprionViewCredit" sid="5967480280917035">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8151491050315544" speed="5">
+                    <frame duration="1" hotspotX="0.503185" hotspotY="0.500826" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933968.jpg" />
                 </animation>
             </animation-folder>
         </object-type>

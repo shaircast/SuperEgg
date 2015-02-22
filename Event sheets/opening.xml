@@ -13,10 +13,22 @@
                     <param id="0" name="Name">&quot;SetGroupActive&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;OPENING INIT&quot;</param>
                 </action>
-                <action id="0" name="Set text" sid="4729545664414779" type="openingText">
-                    <param id="0" name="Text">&quot;Touch to Start!&quot;</param>
+                <action id="-3" name="Set position" sid="4501017409578334" type="openingFox">
+                    <param id="0" name="X">2000</param>
+                    <param id="1" name="Y">440</param>
                 </action>
-                <action id="2" name="Set font face" sid="7606348465260339" type="openingText">
+                <action id="-3" name="Set position" sid="331241326860672" type="openingHen">
+                    <param id="0" name="X">640</param>
+                    <param id="1" name="Y">2000</param>
+                </action>
+                <action id="-3" name="Set position" sid="9892886223268476" type="openingTitle">
+                    <param id="0" name="X">670</param>
+                    <param id="1" name="Y">-2000</param>
+                </action>
+                <action id="0" name="Set text" sid="4729545664414779" type="openingText">
+                    <param id="0" name="Text">&quot;화면을 터치해서 게임을 시작해 봅시닭!&quot;</param>
+                </action>
+                <action disabled="1" id="2" name="Set font face" sid="7606348465260339" type="openingText">
                     <param id="0" name="Font face">&quot;jua&quot;</param>
                     <param id="1" name="Style">1</param>
                 </action>
@@ -52,7 +64,7 @@
                     <actions>
                         <action id="0" name="Set local value" sid="7143371914270855" type="WebStorage">
                             <param id="0" name="Key">&quot;music&quot;</param>
-                            <param id="1" name="Value">-60</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -101,44 +113,102 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="8704295055922575">
+        <event-block sid="4704736329733838">
             <conditions>
-                <condition behavior="Fade" id="0" name="On fade-out finished" sid="450640735446845" type="openingText" />
+                <condition id="-1" name="Every tick" sid="774814628154638" type="System" />
             </conditions>
-            <actions>
-                <action behavior="Fade" id="0" name="Restart fade" sid="1239556331432751" type="openingText" />
-            </actions>
-        </event-block>
-        <event-block sid="7762532426839229">
-            <conditions>
-                <condition id="3" name="On touched object" sid="7719113871777803" type="Touch">
-                    <param id="0" name="Object">openingSprite</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-16" name="Set opacity" sid="2975033464959497" type="openingText">
-                    <param id="0" name="Opacity">100</param>
-                </action>
-                <action behavior="Fade" id="2" name="Set fade-in time" sid="8287386271575777" type="openingText">
-                    <param id="0" name="Fade-in time">0</param>
-                </action>
-                <action behavior="Fade" id="3" name="Set wait time" sid="170085635832642" type="openingText">
-                    <param id="0" name="Wait time">10</param>
-                </action>
-                <action id="-16" name="Set opacity" sid="9568997556138597" type="openingText">
-                    <param id="0" name="Opacity">100</param>
-                </action>
-                <action behavior="Fade" id="0" name="Restart fade" sid="6368561510178491" type="openingText" />
-                <action id="0" name="Set text" sid="1713921543495639" type="openingText">
-                    <param id="0" name="Text">&quot;닭 꾀는 중...&quot;</param>
-                </action>
-                <action id="-16" name="Wait" sid="6640228444129158" type="System">
-                    <param id="0" name="Seconds">0.1</param>
-                </action>
-                <action id="-2" name="Go to layout" sid="5353328075164501" type="System">
-                    <param id="0" name="Layout">stageView</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="lerpRatio" sid="8352422227423254" static="0" type="number">0.05</variable>
+                <variable constant="0" name="flag" sid="2734035933738806" static="1" type="number">0</variable>
+                <event-block sid="3362834930066147">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="6757646763095106" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4517474681307061" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6070352455574189">
+                    <conditions />
+                    <actions>
+                        <action id="-1" name="Set X" sid="5080594324374514" type="openingFox">
+                            <param id="0" name="X">lerp(self.X,700,lerpRatio)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2205663712688645" type="System">
+                            <param id="0" name="Seconds">0.6</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="2342075647955131" type="openingHen">
+                            <param id="0" name="Y">lerp(self.Y,360,lerpRatio)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="5197060748013564" type="System">
+                            <param id="0" name="Seconds">0.6</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="4814296621668229" type="openingTitle">
+                            <param id="0" name="Y">lerp(self.Y,400,lerpRatio)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="1382324199658332" type="System">
+                            <param id="0" name="Seconds">1.2</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="138248365503802" type="openingText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2677123860154863" type="System">
+                            <param id="0" name="Variable">flag</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8704295055922575">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade-out finished" sid="450640735446845" type="openingText" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="1239556331432751" type="openingText" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="7762532426839229">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="7719113871777803" type="Touch">
+                                    <param id="0" name="Object">openingBg</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="2428172854397415" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="2975033464959497" type="openingText">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action behavior="Fade" id="2" name="Set fade-in time" sid="8287386271575777" type="openingText">
+                                    <param id="0" name="Fade-in time">0</param>
+                                </action>
+                                <action behavior="Fade" id="3" name="Set wait time" sid="170085635832642" type="openingText">
+                                    <param id="0" name="Wait time">10</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9568997556138597" type="openingText">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="6368561510178491" type="openingText" />
+                                <action id="0" name="Set text" sid="1713921543495639" type="openingText">
+                                    <param id="0" name="Text">&quot;닭 꾀는 중...&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="6640228444129158" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="5353328075164501" type="System">
+                                    <param id="0" name="Layout">stageView</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
