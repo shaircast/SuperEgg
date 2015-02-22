@@ -35,8 +35,123 @@
                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
                 </action>
+                <action id="0" name="Set text" sid="9373895425326217" type="credit1">
+                    <param id="0" name="Text">&quot;슈퍼 에그&quot;&amp;newline&amp;newline&amp;&quot;&apos;14 겨울&quot;&amp;newline&amp;&quot;SNUGDC&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="7506538788314958" type="credit2">
+                    <param id="0" name="Text">&quot;PM&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;박성환&quot;&amp;newline&amp;newline&amp;&#x0D;&#x0A;&#x0D;&#x0A;&quot;기획&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;박성환, 김주현&quot;&amp;newline&amp;newline&amp;&#x0D;&#x0A;&#x0D;&#x0A;&quot;닭/골렘&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;김지윤&quot;&amp;newline&amp;newline&amp;&#x0D;&#x0A;&#x0D;&#x0A;&quot;스테이지 디자인&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;김주현&quot;&amp;newline&amp;newline&amp;&#x0D;&#x0A;&#x0D;&#x0A;&quot;프로그래밍&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;박성환&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="9727193618095821" type="credit3">
+                    <param id="0" name="Text">&quot;배경/컷씬&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;김찬영&quot;&amp;newline&amp;newline&amp;&#x0D;&#x0A;&#x0D;&#x0A;&quot;레이아웃/UI&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;김찬영&quot;&amp;newline&amp;newline&amp;&#x0D;&#x0A;&#x0D;&#x0A;&quot;배경음악/효과음&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;박성환&quot;&amp;newline&amp;newline&amp;&#x0D;&#x0A;&#x0D;&#x0A;&quot;이펙트&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;PowStudios&quot;</param>
+                </action>
+                <action behavior="PinToImagePoint2" id="1" name="Pin to image point" sid="2141861567482237" type="credit1">
+                    <param id="0" name="Pin to">optionViewBook</param>
+                    <param id="1" name="ImagePoint">&quot;CreditLeft&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint2" id="1" name="Pin to image point" sid="6318259517220833" type="credit2">
+                    <param id="0" name="Pin to">optionViewBook</param>
+                    <param id="1" name="ImagePoint">&quot;CreditRight&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint2" id="1" name="Pin to image point" sid="9526692132464128" type="credit3">
+                    <param id="0" name="Pin to">optionViewBook</param>
+                    <param id="1" name="ImagePoint">&quot;CreditRight&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="8192269976721355" type="golemName">
+                    <param id="0" name="Pin to">optionViewBook</param>
+                    <param id="1" name="ImagePoint">&quot;GolemName&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="2312151315324169" type="golemHp">
+                    <param id="0" name="Pin to">optionViewBook</param>
+                    <param id="1" name="ImagePoint">&quot;GolemHp&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="81260946258621" type="golemSpeed">
+                    <param id="0" name="Pin to">optionViewBook</param>
+                    <param id="1" name="ImagePoint">&quot;GolemSpeed&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="5707438558413703" type="golemDescription">
+                    <param id="0" name="Pin to">optionViewBook</param>
+                    <param id="1" name="ImagePoint">&quot;GolemDescription&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="7613267522405149" type="golemReward">
+                    <param id="0" name="Pin to">optionViewBook</param>
+                    <param id="1" name="ImagePoint">&quot;GolemReward&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="7205026084585432" type="optionViewReward">
+                    <param id="0" name="Pin to">optionViewBook</param>
+                    <param id="1" name="ImagePoint">&quot;GolemReward&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="5054355646328479" type="golemSpritePage">
+                    <param id="0" name="Pin to">optionViewBook</param>
+                    <param id="1" name="ImagePoint">&quot;GolemSpritePage&quot;</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
             </actions>
             <sub-events>
+                <variable constant="0" name="row" sid="4011628691854775" static="0" type="number">4</variable>
+                <variable constant="0" name="column" sid="5988743692431219" static="0" type="number">3</variable>
+                <variable constant="0" name="golemKindCount" sid="4221804290793351" static="0" type="number">8</variable>
+                <comment>golemSpritePage에서 ImagePoint 바꿔서 정렬하면 됨.</comment>
+                <event-block sid="9025545163743178">
+                    <conditions>
+                        <condition id="-10" name="For" sid="9795986271529697" type="System">
+                            <param id="0" name="Name">&quot;golem&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">golemKindCount</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="1492059382405806" type="golemSpritePage">
+                            <param id="0" name="Object">golem</param>
+                            <param id="1" name="Layer">&quot;effect&quot;</param>
+                            <param id="2" name="Image point">loopindex</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="1065152350044316" type="golem">
+                            <param id="0" name="Animation">zeropad(loopindex,2)&amp;&quot;a&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3510613652694264" type="golem">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Value">golemDB.Get(left(golem.AnimationName,2)&amp;&quot;hp&quot;)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="30781067433993" type="golem">
+                            <param id="0" name="Instance variable">atk</param>
+                            <param id="1" name="Value">golemDB.Get(left(golem.AnimationName,2)&amp;&quot;atk&quot;)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4344860338435242" type="golem">
+                            <param id="0" name="Instance variable">speed</param>
+                            <param id="1" name="Value">golemDB.Get(left(golem.AnimationName,2)&amp;&quot;speed&quot;)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4240958245966883" type="golem">
+                            <param id="0" name="Instance variable">reward</param>
+                            <param id="1" name="Value">golemDB.Get(left(golem.AnimationName,2)&amp;&quot;reward&quot;)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7292005570812239" type="golem">
+                            <param id="0" name="Instance variable">kind</param>
+                            <param id="1" name="Value">left(golem.AnimationName,2)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8579062616787971" type="golem">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Value">right(golem.AnimationName,1)</param>
+                        </action>
+                        <action behavior="BreathSine" id="0" name="Set active" sid="6883374131631055" type="golem">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="4164541372389634" type="golem">
+                            <param id="0" name="Pin to">golemSpritePage</param>
+                            <param id="1" name="ImagePoint">loopindex</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="8007764697804263">
                     <conditions>
                         <condition id="7" name="Compare key value (as number)" sid="1459329443971258" type="WebStorage">
@@ -143,6 +258,7 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>보통모드</comment>
         <event-block sid="1247640183915357">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="594063051454701" type="System">
@@ -153,6 +269,14 @@
             </conditions>
             <actions />
             <sub-events>
+                <event-block sid="6039394445726144">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Set Y" sid="7897424294326095" type="optionViewBook">
+                            <param id="0" name="Y">lerp(self.y,1500,0.05)</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>메뉴</comment>
                 <event-block sid="5681735429843299">
                     <conditions>
@@ -242,6 +366,12 @@
                                 <action id="5" name="Set frame" sid="1684740958138871" type="resetButton">
                                     <param id="0" name="Frame number">1</param>
                                 </action>
+                                <action id="0" name="Play" sid="1182689546472352" type="Audio">
+                                    <param id="0" name="Audio file">resetAsk</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="8461778808555877">
@@ -268,8 +398,8 @@
                                 <action id="5" name="Set frame" sid="6580173754637338" type="resetButton">
                                     <param id="0" name="Frame number">0</param>
                                 </action>
-                                <action id="0" name="Play" sid="3393506270007608" type="Audio">
-                                    <param id="0" name="Audio file">turnOverTicktick</param>
+                                <action id="0" name="Play" sid="7355225911937584" type="Audio">
+                                    <param id="0" name="Audio file">resetDone</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
@@ -278,11 +408,27 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="5067271824332303">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="6722604755460694" type="Touch" />
+                        <condition id="4" inverted="1" name="Is touching object" sid="9712736959477441" type="Touch">
+                            <param id="0" name="Object">resetButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="737361685728838" type="resetButton">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>음량버튼</comment>
                 <event-block sid="8628042001719345">
                     <conditions>
                         <condition id="3" name="On touched object" sid="3436983789057148" type="Touch">
                             <param id="0" name="Object">musicButton</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="1870549111866103" type="menuButtonPackage">
+                            <param id="0" name="Animation">&quot;Closed&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -395,7 +541,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>크레딧</comment>
+                <comment>크레딧으로</comment>
                 <event-block sid="3088987396920915">
                     <conditions>
                         <condition id="3" name="On touched object" sid="2893910451562377" type="Touch">
@@ -409,7 +555,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>크레딧</comment>
+                <comment>골렘도감으로</comment>
                 <event-block sid="5293371794939354">
                     <conditions>
                         <condition id="3" name="On touched object" sid="2725841658716806" type="Touch">
@@ -425,6 +571,7 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>크레딧</comment>
         <event-block sid="252022110537286">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="9476072302633865" type="System">
@@ -434,7 +581,63 @@
                 </condition>
             </conditions>
             <actions />
+            <sub-events>
+                <event-block sid="2071709652708497">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="6325736750129023" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="3767399498449844" type="optionViewCreditText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="1764464090296604" type="optionViewGolemDicText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3030758620666194" type="golem">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4194112453621876" type="optionViewReward">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="8814484535026858" type="Audio">
+                            <param id="0" name="Audio file">bookOpen</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3450519971549399">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Set Y" sid="869463150365603" type="optionViewBook">
+                            <param id="0" name="Y">lerp(self.y,focus.Y,0.1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1263378883597387">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="2419615597260604" type="Touch" />
+                        <condition id="4" inverted="1" name="Is touching object" sid="8257979425007402" type="Touch">
+                            <param id="0" name="Object">optionViewBook</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6048253706719827" type="System">
+                            <param id="0" name="Variable">optionViewState</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="9393714051473642" type="Audio">
+                            <param id="0" name="Audio file">bookClose</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
+        <comment>골렘도감</comment>
         <event-block sid="4332894524603847">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="3987946673369022" type="System">
@@ -444,6 +647,124 @@
                 </condition>
             </conditions>
             <actions />
+            <sub-events>
+                <event-block sid="7913767410585627">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="83418779887531" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="955246353187657" type="optionViewCreditText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9860318034014885" type="optionViewGolemDicText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9771377601393698" type="golem">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2395644605935195" type="optionViewReward">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="5610609425525344" type="golemName">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="2059298281653594" type="golemHp">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9135451722145314" type="golemSpeed">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="8450579508653164" type="golemReward">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4565334437445823" type="golemDescription">
+                            <param id="0" name="Text">&quot;알고 싶은 골렘을 선택하세요.&quot;</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="9184018192786778" type="golemReward">
+                            <param id="0" name="Angle">340</param>
+                        </action>
+                        <action id="0" name="Play" sid="1266686868063191" type="Audio">
+                            <param id="0" name="Audio file">bookOpen</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="121315639448374">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Set Y" sid="1453582655013235" type="optionViewBook">
+                            <param id="0" name="Y">lerp(self.y,focus.Y,0.1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7324574634247701">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="664030904740061" type="Touch" />
+                        <condition id="4" inverted="1" name="Is touching object" sid="9926164861388125" type="Touch">
+                            <param id="0" name="Object">optionViewBook</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1417541421500129" type="System">
+                            <param id="0" name="Variable">optionViewState</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="3142165460385821" type="Audio">
+                            <param id="0" name="Audio file">bookClose</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4605895438906299">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4486227579950798" type="Touch">
+                            <param id="0" name="Object">golem</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="589711110462879">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="1342776560924479" type="System">
+                                    <param id="0" name="Object">golem</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="BreathSine" id="0" name="Set active" sid="2638066029996354" type="golem">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2730584383251146">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Set text" sid="4100498943853525" type="golemName">
+                                    <param id="0" name="Text">&quot;이름 : &quot;&amp;golemDB.Get(golem.kind&amp;&quot;name&quot;)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="5775626454331909" type="golemHp">
+                                    <param id="0" name="Text">&quot;체력 : &quot;&amp;golem.hp</param>
+                                </action>
+                                <action id="0" name="Set text" sid="7061417546620992" type="golemSpeed">
+                                    <param id="0" name="Text">&quot;속도 : 1턴에 &quot;&amp;golem.speed&amp;&quot;칸&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="5327488958902342" type="golemReward">
+                                    <param id="0" name="Text">golem.reward&amp;&quot;골드&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="182772459559944" type="golemDescription">
+                                    <param id="0" name="Text">golemDB.Get(golem.kind&amp;&quot;description&quot;)</param>
+                                </action>
+                                <action behavior="BreathSine" id="0" name="Set active" sid="4646205962577612" type="golem">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

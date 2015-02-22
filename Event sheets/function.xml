@@ -154,7 +154,7 @@
                             <actions>
                                 <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
                                     <param id="0" name="Key">&quot;henList&quot;</param>
-                                    <param id="1" name="Value">&quot;01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10a09/11a10/12a11/01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/09a08/10b09/11c10/12d11/01a00/02a01/03a02/04a03/05a04/06a05/07a06/08a07/&quot;</param>
+                                    <param id="1" name="Value">&quot;01a00/02a01/03c02/04a03/05a04/06d05/07a06/08a07/09a08/10b09/03a02/04a03/05c04/06a05/07a06/08a07/09c08/12d11/01a00/02d01/03a02/04a03/05a04/06b05/07a06/08a07/&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
                                     <param id="0" name="Key">&quot;chapter&quot;</param>
@@ -162,7 +162,7 @@
                                 </action>
                                 <action id="0" name="Set local value" sid="3645545715772576" type="WebStorage">
                                     <param id="0" name="Key">&quot;maxStage&quot;</param>
-                                    <param id="1" name="Value">&quot;1_1&quot;</param>
+                                    <param id="1" name="Value">&quot;1_5&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="71699616378047" type="WebStorage">
                                     <param id="0" name="Key">&quot;gold&quot;</param>
@@ -591,85 +591,125 @@
                         <event-block sid="4534441308261623">
                             <conditions />
                             <actions>
-                                <action id="0" name="Add key" sid="9542269241396298" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="9139319082273348" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_1&quot;</param>
-                                    <param id="1" name="Value">&quot;20/03a80,04a81,05a82,03a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/08a80,01a81,01a82,01a83/&quot;</param>
+                                    <param id="1" name="Value">&quot;12/01d82/01a82/01b81/01c83/01d70,01a80/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="4876000751259549" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="7477238434283555" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_2&quot;</param>
-                                    <param id="1" name="Value">&quot;10/01d72/02a80/01a80/01a80/02a80/&quot;</param>
+                                    <param id="1" name="Value">&quot;20/01a81,01b83/01a81,01c82,01a83/01a81,01b83/01a80/01a81,01c82,01a83/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="9752453896156319" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="5530429269686621" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_3&quot;</param>
-                                    <param id="1" name="Value">&quot;15/01a83/01a80,02b73/01a82/01c83/02a70,02a71/&quot;</param>
+                                    <param id="1" name="Value">&quot;12/01a80/02b82/01b81,01a83/02b81,01b82,02b83/02b82/01b80,02a82/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="7234045437215191" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="5758820727621216" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_4&quot;</param>
-                                    <param id="1" name="Value">&quot;15/02d81,02b82/01a81,01a82/02a81,02a82/01a80/&quot;</param>
+                                    <param id="1" name="Value">&quot;14/02a80,02a81,02a82/01b81/01a80,01a82,02b83/02a81/02a82/02a80/02b83/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="4954824611611475" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="8864523107865982" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_5&quot;</param>
-                                    <param id="1" name="Value">&quot;20/01a81,01b82/02b80,02d83/03b80/01a80/02a82/&quot;</param>
+                                    <param id="1" name="Value">&quot;12/01b80/03b81/02b82,02a83/01a81/03a82,01b83/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="5780142854004191" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="4641143037604156" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_6&quot;</param>
-                                    <param id="1" name="Value">&quot;8/01a80,01b83/03a80/02a80,02c81&quot;</param>
+                                    <param id="1" name="Value">&quot;8/01a80/03b81/03b82/01b83/02b80,02b81,02b82/02a80,02a81,02a82/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="3044657980014319" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="9613596204223245" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_7&quot;</param>
-                                    <param id="1" name="Value">&quot;15/01a81,01a82/02b83/04a82/03a80/02a83/01a81/&quot;</param>
+                                    <param id="1" name="Value">&quot;24/01b80,03a82/03a81,01b83/02b80,02b81,02b82,02b83/02a80,02a82/01c81/02b81,03b83/03a80,02b83/01b80,01a83/02a80,02a83/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="9284802046223453" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="5938900119704161" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_8&quot;</param>
-                                    <param id="1" name="Value">&quot;15/04a80,04a81/03a80,03b81/02d82,02c83/01a80,01b82/&quot;</param>
+                                    <param id="1" name="Value">&quot;12/01b80,01a82/04b81/03b83/02a80,02b81,01a82/02b81/04a82/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="3061592900492802" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="5787024954805071" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_9&quot;</param>
-                                    <param id="1" name="Value">&quot;10/01b82/02a81,02a82,02a83/04b82/02c80/&quot;</param>
+                                    <param id="1" name="Value">&quot;15/01b80,02b81,01b82,02a83/02a80,01b81,02b82,01b83//02a80,04a81,02a82,04c83/03b81,03b82/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="4712664993275694" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="9588045624706632" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_10&quot;</param>
-                                    <param id="1" name="Value">&quot;30/04a82,03b83/02a81,02a83/05a80/02b80,02b81,02c82,02c83/01a81,boss82/03b80,02b81,01d82/05c82/&quot;</param>
+                                    <param id="1" name="Value">&quot;30/01a80/02c81,03d83/02b80,04a81/02b80,02a82,03c83/02a80,02b82/02c80,02c82/02d80,02b82/04d81,03d83///01a80/03c82/bossa81/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="6305825496891021" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="8305192369604502" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;2_1&quot;</param>
-                                    <param id="1" name="Value">&quot;15/01b81,01b82/04a80/03b82,03b83/02a80/&quot;</param>
+                                    <param id="1" name="Value">&quot;18/01a80,02a82/04c81,04b82/02a82,01a83/03d80/04a82,02a83/02d80,02c81,02b82/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="1564139548319079" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="5525666036090871" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;2_2&quot;</param>
-                                    <param id="1" name="Value">&quot;20/03b81,01b82,02a83/03b81,01b82,03a83//02b80,01b81,02b82,01b83/&quot;</param>
+                                    <param id="1" name="Value">&quot;10/01a80,04c81,01c82/04a80,01a81,04c82/02b80,04c81,02a82,02d83/02a83/02a83/02d83/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="1924733684879066" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="5200332590767345" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;2_3&quot;</param>
-                                    <param id="1" name="Value">&quot;15/06b81/02a80,02a81/04b82/01c82,01b83/06a80/&quot;</param>
+                                    <param id="1" name="Value">&quot;16/01c80,02a82/05c81,04c82,01a83//02a80,02c81,01c83/03c82/01c80,05a81/01c80,01c81,03c82,01c83/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="4887831234120306" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="2711757628646486" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;2_4&quot;</param>
-                                    <param id="1" name="Value">&quot;12/02a80,02b81/05b82/06a80/06b80/06c80,02b82,02b83/&quot;</param>
+                                    <param id="1" name="Value">&quot;18/05a80/02b81,01a82,02c83/05d81/04b80,03c81,04a82/01d81,02a83/02a83/05c83/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="2361120619790479" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="3508343405680822" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;2_5&quot;</param>
-                                    <param id="1" name="Value">&quot;20//01a80,01b81,01a82,01b83//02b80,03b81,02b82,03b83//04b80,02a81,04b82,02a83&quot;</param>
+                                    <param id="1" name="Value">&quot;15/05b8003b81,05b82/02a80,02b81,02a82/02a80,02b81,02a82,04b83/05b80,03b82,05b02,02a83//02c80,02b81,02b82,02c83/02a81,02a82/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="5386015549720469" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="7771069325204619" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;2_6&quot;</param>
-                                    <param id="1" name="Value">&quot;10/03b80,03b82/05b83/01a80,01b82/02a81,02b82,01b83&quot;</param>
+                                    <param id="1" name="Value">&quot;25/01a80,01a82/04b81,02b82,02c83/06a81/02d80,02c82,03b83/02d80,02c82/05a80,05b82,01a80//01b80,06c82/02a81,02a82,02a83/04a80,03c81,02b82/01d82/05a81,01c83/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="4773189244963898" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="8783558649172865" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;2_7&quot;</param>
-                                    <param id="1" name="Value">&quot;15/07a81,01b82/03d80,02b83/01b80,02b83//03b81,07b82,03b83/&quot;</param>
+                                    <param id="1" name="Value">&quot;18/01c80,06c82/05a80/02c83/05c80,02c81,01c82,02c83/02c80,02c81,02c83/02c80,02c81,02c83/02c80,02a81,02a83/02a80,02c81,02a83/02c80,04c81,03a83/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="4545846430971794" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="8197138838697037" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;2_8&quot;</param>
-                                    <param id="1" name="Value">&quot;18/06b81//02b80,02b82/02a80,02b82/02b80,02a82/07b81,01a83/03b82,01a83/&quot;</param>
+                                    <param id="1" name="Value">&quot;16/01a80,02c82/07c81/06c81,02a83/01c82/03b80,04c83/06c81/01a80,07c82/05c83/07c80/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="6134432735335844" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="3482688825173815" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;2_9&quot;</param>
-                                    <param id="1" name="Value">&quot;8/01b80/04a81/01a82/02c81/02b80,02b82/&quot;</param>
+                                    <param id="1" name="Value">&quot;10/06c81/02c80,02c82/02c80,02c82/02c80,02c82/02c80,06a81,01c82,07c83/02c80/02c80/01c80,04a82/07a80/02c80/02c80,05a83/02c80/&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="4167907496848703" type="stageGolemDB">
+                                <action id="0" name="Add key" sid="7542505829030165" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;2_10&quot;</param>
-                                    <param id="1" name="Value">&quot;30/01a80,02b81,02c82,02b83/07a80,05b82/04b81/02b80,02b82/02b80,02a82/02c80,02b82/boss81/04b82,03b83&quot;</param>
+                                    <param id="1" name="Value">&quot;35/06c81,05c83/02c80,04c81,02a82,01a83/03c80,07a81,03a82,07c83/02c80,02c82,01c83/04a81,01a83/07c80,06c81,01a82,03c83/02c80,07a81,02c82,02b83/05b80,05a81,05a82,05b83/bossc81,05c82&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="8713128394100924" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;3_1&quot;</param>
+                                    <param id="1" name="Value">&quot;18/01d80,06d82/02a81,02d82,04a83/02d82/07d80,02d82,03d83/07d81,02d82/07a80,02d82,01d83/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="6824229632418438" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;3_2&quot;</param>
+                                    <param id="1" name="Value">&quot;20//01a82/02d80,01b82,05a83/02c80,08a81/06a82//07d82/02b81/03b83//08c01,08c02//06a82/08d81,08a83/08c82/04b80/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="770269686605325" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;3_3&quot;</param>
+                                    <param id="1" name="Value">&quot;18/07d80,03d81,04d82,05d83/06d81,08d83/02c80/02a81,01d82,01d83/05a80,02d81,06d82/08d81,08d82/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4494958338513353" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;3_4&quot;</param>
+                                    <param id="1" name="Value">&quot;12/06d81,05d83/08d80,08d81,08d82,05d83/02a80,02a81,02a82///07a80,08d81,01d82,01d83/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="130651118516912" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;3_5&quot;</param>
+                                    <param id="1" name="Value">&quot;20/05d81,05d82/06d81,08d83/02d80,08a81,02d82/08a81,04d83/07a80,03a82//06d81,07d83/03d81,02a83/02d83/04d81,08d83/05a80,05d82/bossd81/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="318886291792306" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;3_6&quot;</param>
+                                    <param id="1" name="Value">&quot;32/07b80,07c81,05b82,05c83//02d80,02d81,02a82,02a83/08a80,08a81,08d82,08d83//01b80,08d81,08d82,01b83/06a81/06a82/02d80,02c81,02c82,02d83/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1125592834734063" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;3_7&quot;</param>
+                                    <param id="1" name="Value">&quot;18/01d80,01d82,07d82/02d80,05d83/08a80,06d82//04d80,03d81,08d82/08d82,02d83/06a81,02d83//07a80,08d82,02d82/01d81,08d82,02d83/01d81,08d82,08d83/01d81,08d82,02d83/08d82,02a83/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="2328166300815681" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;3_8&quot;</param>
+                                    <param id="1" name="Value">&quot;10/01d80,01d82,07d82//02d80,05d83//08a80,06d82//04d80,03d81,08d82//08d82,02d83//06a81,02d83//07a80,08d82,02d82//01d81,08d82,02d83//01d81,08d82,08d83//01d81,08d82,02d83//08d82,02a83/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7296546208449223" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;3_9&quot;</param>
+                                    <param id="1" name="Value">&quot;21/06a81/08a80,05a82,07a83/08b80,08c82/02c80,08b82/01d81/08a80,04d81,02a83/08c80,03c82,02a83/01b80,01a83/07d81/bossa82/&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7086887819065798" type="stageGolemDB">
+                                    <param id="0" name="Key">&quot;3_10&quot;</param>
+                                    <param id="1" name="Value">&quot;42/01a80/02b80,01a81/03a80,02b81,01a82/04c80,03a81,02b82,01a83/05d81,05d82//05a81,05b82/07c80,08c81,08d82,07a83/02d81,02b82/07c82/07d81//01a81/02a82/03a83/04b82/06c81/05d80/07a81/08d82//05a81,05a82/07a80,07a83/bossa82/&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1171,10 +1211,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action disabled="1" id="4" name="Set animation" sid="4632996503602159" type="launchLine">
-                                    <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Default&quot;</param>
-                                    <param id="1" name="From">0</param>
-                                </action>
                                 <action id="-13" name="Set boolean" sid="5991481546513991" type="launchLine">
                                     <param id="0" name="Instance variable">aimed</param>
                                     <param id="1" name="Value">0</param>
@@ -1215,10 +1251,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action disabled="1" id="4" name="Set animation" sid="9789395851720702" type="launchLine">
-                                            <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Aimed&quot;</param>
-                                            <param id="1" name="From">0</param>
-                                        </action>
                                         <action id="-13" name="Set boolean" sid="1638344653177465" type="launchLine">
                                             <param id="0" name="Instance variable">aimed</param>
                                             <param id="1" name="Value">1</param>
@@ -1266,10 +1298,6 @@
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action disabled="1" id="4" name="Set animation" sid="8859432942762102" type="launchLine">
-                                                            <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Default&quot;</param>
-                                                            <param id="1" name="From">0</param>
-                                                        </action>
                                                         <action id="-13" name="Set boolean" sid="951977824458072" type="launchLine">
                                                             <param id="0" name="Instance variable">aimed</param>
                                                             <param id="1" name="Value">0</param>
@@ -1301,10 +1329,6 @@
                                                         <condition id="-22" name="Else" sid="9088408800886161" type="System" />
                                                     </conditions>
                                                     <actions>
-                                                        <action disabled="1" id="4" name="Set animation" sid="7430470647081424" type="launchLine">
-                                                            <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Aimed&quot;</param>
-                                                            <param id="1" name="From">0</param>
-                                                        </action>
                                                         <action id="-13" name="Set boolean" sid="4566186597615664" type="launchLine">
                                                             <param id="0" name="Instance variable">aimed</param>
                                                             <param id="1" name="Value">1</param>
@@ -1526,18 +1550,16 @@
                                 <action behavior="Bullet" id="2" name="Set gravity" sid="8166504466228815" type="eggBullet">
                                     <param id="0" name="Gravity">1000</param>
                                 </action>
-                                <action disabled="1" id="-14" name="Set object time scale" sid="8950985540772212" type="System">
-                                    <param id="0" name="Object">eggBullet</param>
-                                    <param id="1" name="Time scale">savePow/200</param>
-                                </action>
-                                <action disabled="1" id="-14" name="Set object time scale" sid="8210156206011765" type="System">
-                                    <param id="0" name="Object">eggBullet</param>
-                                    <param id="1" name="Time scale">1</param>
-                                </action>
                                 <action id="-24" name="Move to top" sid="4023753864354215" type="eggBullet" />
                                 <action behavior="RotateTo" id="4" name="Rotate to angle" sid="676711663241181" type="cannon">
                                     <param id="0" name="Angle">0</param>
                                     <param id="1" name="Clockwise">2</param>
+                                </action>
+                                <action id="0" name="Play" sid="30819096347633" type="Audio">
+                                    <param id="0" name="Audio file">launch</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -2040,10 +2062,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action disabled="1" id="4" name="Set animation" sid="8447323591715516" type="launchLine">
-                                    <param id="0" name="Animation">zeropad(int(left(stage,1)),2)&amp;&quot;Default&quot;</param>
-                                    <param id="1" name="From">0</param>
-                                </action>
                                 <action id="-13" name="Set boolean" sid="248725643176907" type="launchLine">
                                     <param id="0" name="Instance variable">aimed</param>
                                     <param id="1" name="Value">0</param>
@@ -2853,6 +2871,12 @@
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
                                     <param id="1" name="Parameter {n}">eggBullet.targetX{###}eggBullet.targetY</param>
                                 </action>
+                                <action id="0" name="Play" sid="2922363219186582" type="Audio">
+                                    <param id="0" name="Audio file">01boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <comment>타겟될 골렘을 targeted true.</comment>
@@ -2908,6 +2932,12 @@
                                 <action id="0" name="Call function" sid="1031086211408159" type="Function">
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
                                     <param id="1" name="Parameter {n}">eggBullet.targetX+2{###}eggBullet.targetY+0</param>
+                                </action>
+                                <action id="0" name="Play" sid="9937742210961621" type="Audio">
+                                    <param id="0" name="Audio file">02boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -3004,6 +3034,12 @@
                                 <action id="0" name="Call function" sid="2420610916921841" type="Function">
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
                                     <param id="1" name="Parameter {n}">eggBullet.targetX+0{###}eggBullet.targetY+1</param>
+                                </action>
+                                <action id="0" name="Play" sid="9235647383498239" type="Audio">
+                                    <param id="0" name="Audio file">03boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -3108,6 +3144,12 @@
                                 <action id="0" name="Call function" sid="6055380270767055" type="Function">
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
                                     <param id="1" name="Parameter {n}">eggBullet.targetX-1{###}eggBullet.targetY+0</param>
+                                </action>
+                                <action id="0" name="Play" sid="3932663819224509" type="Audio">
+                                    <param id="0" name="Audio file">04boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -3268,6 +3310,12 @@
                                 <action id="0" name="Call function" sid="1780920106307243" type="Function">
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
                                     <param id="1" name="Parameter {n}">eggBullet.targetX-1{###}eggBullet.targetY-1</param>
+                                </action>
+                                <action id="0" name="Play" sid="1857799656050308" type="Audio">
+                                    <param id="0" name="Audio file">05boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -3472,7 +3520,14 @@
                                     <param id="2" name="Value">&quot;06&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="0" name="Play" sid="756606031852592" type="Audio">
+                                    <param id="0" name="Audio file">06boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
                             <sub-events>
                                 <event-block sid="6605498181738909">
                                     <conditions>
@@ -3530,6 +3585,12 @@
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
                                     <param id="1" name="Parameter {n}">eggBullet.targetX{###}eggBullet.targetY</param>
                                 </action>
+                                <action id="0" name="Play" sid="2803314810181547" type="Audio">
+                                    <param id="0" name="Audio file">07boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <comment>타겟될 골렘을 targeted true.</comment>
@@ -3578,6 +3639,12 @@
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
                                     <param id="1" name="Parameter {n}">eggBullet.targetX{###}eggBullet.targetY</param>
                                 </action>
+                                <action id="0" name="Play" sid="8982802789374937" type="Audio">
+                                    <param id="0" name="Audio file">08boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <comment>타겟될 골렘을 targeted true.</comment>
@@ -3625,6 +3692,12 @@
                                 <action id="0" name="Call function" sid="5100878220016187" type="Function">
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
                                     <param id="1" name="Parameter {n}">eggBullet.targetX{###}eggBullet.targetY</param>
+                                </action>
+                                <action id="0" name="Play" sid="8502280961142353" type="Audio">
+                                    <param id="0" name="Audio file">09boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -3716,6 +3789,12 @@
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
                                     <param id="1" name="Parameter {n}">eggBullet.targetX{###}eggBullet.targetY</param>
                                 </action>
+                                <action id="0" name="Play" sid="8701258578510232" type="Audio">
+                                    <param id="0" name="Audio file">10boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <comment>타겟될 골렘을 targeted true.</comment>
@@ -3764,6 +3843,12 @@
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
                                     <param id="1" name="Parameter {n}">eggBullet.targetX{###}eggBullet.targetY</param>
                                 </action>
+                                <action id="0" name="Play" sid="7867370672963509" type="Audio">
+                                    <param id="0" name="Audio file">11boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <comment>타겟될 골렘을 targeted true.</comment>
@@ -3811,6 +3896,12 @@
                                 <action id="0" name="Call function" sid="1422159250965436" type="Function">
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
                                     <param id="1" name="Parameter {n}">eggBullet.targetX{###}eggBullet.targetY</param>
+                                </action>
+                                <action id="0" name="Play" sid="9144672750819857" type="Audio">
+                                    <param id="0" name="Audio file">12boom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -4753,9 +4844,11 @@
                                     <param id="1" name="Layer">&quot;effect&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action disabled="1" id="4" name="Set animation" sid="3426698176291096" type="poisonDamage">
-                                    <param id="0" name="Animation">&quot;Test&quot;</param>
-                                    <param id="1" name="From">1</param>
+                                <action id="0" name="Play" sid="8483374714853707" type="Audio">
+                                    <param id="0" name="Audio file">09poison</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>

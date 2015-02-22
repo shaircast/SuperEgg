@@ -248,14 +248,6 @@
                                     <param id="0" name="Family name">&quot;jua&quot;</param>
                                     <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                 </action>
-                                <action disabled="1" id="-12" name="Subtract from" sid="427781864196892" type="blockTower">
-                                    <param id="0" name="Instance variable">turnLeft</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action disabled="1" id="-12" name="Subtract from" sid="7152100218998012" type="poisonEgg">
-                                    <param id="0" name="Instance variable">turnLeft</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
                                 <action id="-16" name="Wait" sid="6895879010959442" type="System">
                                     <param id="0" name="Seconds">0.5</param>
                                 </action>
@@ -403,58 +395,6 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>남은 턴이 0이면 occupy해제하고 파괴-&gt;배틀뷰턴오버</comment>
-                <event-block disabled="1" sid="6123726555701101">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="3794954860646804" type="blockTower">
-                            <param id="0" name="Instance variable">turnLeft</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="7387166489367141">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="8786387492664574" type="launchLine">
-                                    <param id="0" name="Instance variable">launchLineIDX</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">blockTower.posX</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="9443407645629896" type="launchLine">
-                                    <param id="0" name="Instance variable">launchLineIDY</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">blockTower.posY</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-13" name="Set boolean" sid="4977921848178029" type="launchLine">
-                                    <param id="0" name="Instance variable">occupied</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="446069608308403">
-                            <conditions />
-                            <actions>
-                                <action id="-9" name="Destroy" sid="5666963682189689" type="blockTower" />
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <comment>남은 턴이 0이면 파괴. 딜계산은 뒤에서.-&gt;배틀뷰턴오버</comment>
-                <event-block disabled="1" sid="5516109877278147">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="1369704770446942" type="poisonEgg">
-                            <param id="0" name="Instance variable">turnLeft</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="7708998671674729" type="poisonEgg" />
-                    </actions>
-                </event-block>
                 <comment>state 2에서 망가진 초점과 스케일 원상복귀!</comment>
                 <event-block sid="4433696522056398">
                     <conditions />
@@ -585,6 +525,12 @@
                                     <param id="0" name="Instance variable">turnLeft</param>
                                     <param id="1" name="Value">floor((9-explode.posX)/2)+1</param>
                                 </action>
+                                <action id="0" name="Play" sid="6754308888217413" type="Audio">
+                                    <param id="0" name="Audio file">10tower</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="2337419338875027">
@@ -620,26 +566,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action disabled="1" id="-9" name="Set value" sid="9645735465458937" type="System">
-                            <param id="0" name="Variable">scaleRateByEgg</param>
-                            <param id="1" name="Value">(1280-eggBullet.Y/4)/1280</param>
-                        </action>
-                        <action disabled="1" id="-17" name="Set layer scale" sid="6326236378896235" type="System">
-                            <param id="0" name="Layer">&quot;backBg&quot;</param>
-                            <param id="1" name="Scale">lerp(LayerScale(&quot;backBg&quot;),scaleRateByEgg,scaleLerpRate)</param>
-                        </action>
-                        <action disabled="1" id="-17" name="Set layer scale" sid="3903761187260222" type="System">
-                            <param id="0" name="Layer">&quot;frontBg&quot;</param>
-                            <param id="1" name="Scale">lerp(LayerScale(&quot;frontBg&quot;),scaleRateByEgg,scaleLerpRate)</param>
-                        </action>
-                        <action disabled="1" id="-17" name="Set layer scale" sid="791857535122861" type="System">
-                            <param id="0" name="Layer">&quot;golem&quot;</param>
-                            <param id="1" name="Scale">lerp(LayerScale(&quot;golem&quot;),scaleRateByEgg,scaleLerpRate)</param>
-                        </action>
-                        <action disabled="1" id="-17" name="Set layer scale" sid="6114104831483873" type="System">
-                            <param id="0" name="Layer">&quot;effect&quot;</param>
-                            <param id="1" name="Scale">lerp(LayerScale(&quot;effect&quot;),scaleRateByEgg,scaleLerpRate)</param>
-                        </action>
                         <action id="-2" name="Set Y" sid="2173170722995933" type="focus">
                             <param id="0" name="Y">(eggBullet.Y*3+(ViewportBottom(&quot;hud&quot;)+ViewportTop(&quot;hud&quot;))/2)/4</param>
                         </action>
@@ -820,19 +746,6 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block disabled="1" sid="184197821462249">
-                            <conditions>
-                                <condition id="0" name="On collision with another object" sid="6697545702196289" type="eggBullet">
-                                    <param id="0" name="Object">golem</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="2359144838421784" type="Function">
-                                    <param id="0" name="Name">&quot;eggCollidesGolem&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
                     </sub-events>
                 </event-block>
                 <comment>알 깨지고 나면 원래대로</comment>
@@ -845,10 +758,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action disabled="1" id="0" name="Call function" sid="3757106600179861" type="Function">
-                            <param id="0" name="Name">&quot;battleViewLayerScrollBack&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
                         <action id="-2" name="Set Y" sid="2741998652923665" type="focus">
                             <param id="0" name="Y">lerp(self.Y,(ViewportBottom(&quot;hud&quot;)+ViewportTop(&quot;hud&quot;))/2,scaleLerpRate)</param>
                         </action>

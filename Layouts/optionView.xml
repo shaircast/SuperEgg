@@ -9,7 +9,7 @@
     </size>
     <margins>
         <horizontal>500</horizontal>
-        <vertical>500</vertical>
+        <vertical>1500</vertical>
     </margins>
     <unbounded-scrolling>1</unbounded-scrolling>
     <layers>
@@ -90,7 +90,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1029</x>
+                        <x>1049</x>
                         <y>377</y>
                         <z>0</z>
                         <width>169</width>
@@ -112,7 +112,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>868</x>
+                        <x>888</x>
                         <y>376</y>
                         <z>0</z>
                         <width>157</width>
@@ -152,7 +152,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>118</x>
+                        <x>138</x>
                         <y>-291</y>
                         <z>0</z>
                         <width>221</width>
@@ -192,7 +192,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>342</x>
+                        <x>362</x>
                         <y>-294</y>
                         <z>0</z>
                         <width>225</width>
@@ -200,69 +200,6 @@
                         <depth>0</depth>
                         <hotspotX>0.373333335</hotspotX>
                         <hotspotY>0.002594034</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-            </instances>
-            <effects />
-        </layer>
-        <layer name="effect" sid="3720248037046974">
-            <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
-            <transparent>1</transparent>
-            <parallax>
-                <x>1</x>
-                <y>1</y>
-            </parallax>
-            <zoom-rate>1</zoom-rate>
-            <opacity>1</opacity>
-            <force-own-texture>0</force-own-texture>
-            <global>0</global>
-            <use-render-cells>0</use-render-cells>
-            <blend-mode>0</blend-mode>
-            <effect-fallback>0</effect-fallback>
-            <instances>
-                <instance type="optionViewBarBg" uid="88">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>626</x>
-                        <y>679</y>
-                        <z>0</z>
-                        <width>1221</width>
-                        <height>109</height>
-                        <depth>0</depth>
-                        <hotspotX>0.500409484</hotspotX>
-                        <hotspotY>0.504587173</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="resetButton" uid="116">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>612</x>
-                        <y>336</y>
-                        <z>0</z>
-                        <width>401</width>
-                        <height>659</height>
-                        <depth>0</depth>
-                        <hotspotX>0.50124687</hotspotX>
-                        <hotspotY>0.500758708</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -285,7 +222,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>141</x>
+                        <x>161</x>
                         <y>421</y>
                         <z>0</z>
                         <width>119</width>
@@ -315,7 +252,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>363</x>
+                        <x>383</x>
                         <y>417</y>
                         <z>0</z>
                         <width>102</width>
@@ -327,6 +264,69 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="resetButton" uid="116">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>632</x>
+                        <y>336</y>
+                        <z>0</z>
+                        <width>401</width>
+                        <height>659</height>
+                        <depth>0</depth>
+                        <hotspotX>0.50124687</hotspotX>
+                        <hotspotY>0.500758708</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="optionViewBarBg" uid="88">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>626</x>
+                        <y>679</y>
+                        <z>0</z>
+                        <width>1221</width>
+                        <height>109</height>
+                        <depth>0</depth>
+                        <hotspotX>0.500409484</hotspotX>
+                        <hotspotY>0.504587173</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="effect" sid="3720248037046974">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
                 <instance type="optionViewBook" uid="121">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -337,14 +337,304 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-673</x>
-                        <y>711</y>
+                        <x>640</x>
+                        <y>1500</y>
                         <z>0</z>
-                        <width>1280</width>
-                        <height>1280</height>
+                        <width>1090.128173828</width>
+                        <height>690.678405762</height>
+                        <depth>0</depth>
+                        <hotspotX>0.500403523</hotspotX>
+                        <hotspotY>0.500636935</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="optionViewReward" uid="157">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="PinToImagePoint" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1049</x>
+                        <y>1089</y>
+                        <z>0</z>
+                        <width>144</width>
+                        <height>144</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="golemSpritePage" uid="156">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="PinToImagePoint" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>389</x>
+                        <y>2153</y>
+                        <z>0</z>
+                        <width>400</width>
+                        <height>600</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="credit3" uid="155">
+                    <properties>
+                        <text>Credit3</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-29,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="PinToImagePoint2" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1367</x>
+                        <y>1526</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>600</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="credit1" uid="153">
+                    <properties>
+                        <text>Credit1</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-64,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="PinToImagePoint2" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-115</x>
+                        <y>1528</y>
+                        <z>0</z>
+                        <width>400</width>
+                        <height>600</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="credit2" uid="154">
+                    <properties>
+                        <text>Credit2</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-29,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Right</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="PinToImagePoint2" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1391</x>
+                        <y>1523</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>600</height>
+                        <depth>0</depth>
+                        <hotspotX>1</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="golemName" uid="148">
+                    <properties>
+                        <text>golemName</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-37,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="PinToImagePoint" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-466</x>
+                        <y>600</y>
+                        <z>0</z>
+                        <width>317</width>
+                        <height>96</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="golemHp" uid="149">
+                    <properties>
+                        <text>golemHp</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-37,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="PinToImagePoint" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-444</x>
+                        <y>672.5</y>
+                        <z>0</z>
+                        <width>332</width>
+                        <height>105</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="golemSpeed" uid="150">
+                    <properties>
+                        <text>golemSpeed</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-37,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="PinToImagePoint" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-462</x>
+                        <y>768</y>
+                        <z>0</z>
+                        <width>348</width>
+                        <height>91</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="golemReward" uid="151">
+                    <properties>
+                        <text>golemReward</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-85,700,1</font>
+                        <color>204,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="PinToImagePoint" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1066</x>
+                        <y>1088</y>
+                        <z>0</z>
+                        <width>402</width>
+                        <height>125</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>-0.349994063</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="golemDescription" uid="152">
+                    <properties>
+                        <text>golemDescription</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-37,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="PinToImagePoint" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-444</x>
+                        <y>838</y>
+                        <z>0</z>
+                        <width>350</width>
+                        <height>350</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -400,141 +690,6 @@
                         <depth>0</depth>
                         <hotspotX>0.503225803</hotspotX>
                         <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="golemName" uid="148">
-                    <properties>
-                        <text>golemName</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-29,400,0</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>385</x>
-                        <y>1057</y>
-                        <z>0</z>
-                        <width>200</width>
-                        <height>37</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="golemHp" uid="149">
-                    <properties>
-                        <text>golemHp</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-29,400,0</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>374</x>
-                        <y>1120</y>
-                        <z>0</z>
-                        <width>200</width>
-                        <height>37</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="golemSpeed" uid="150">
-                    <properties>
-                        <text>golemSpeed</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-29,400,0</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>599</x>
-                        <y>1048</y>
-                        <z>0</z>
-                        <width>200</width>
-                        <height>37</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="golemReward" uid="151">
-                    <properties>
-                        <text>golemReward</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-29,400,0</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>604</x>
-                        <y>1126</y>
-                        <z>0</z>
-                        <width>200</width>
-                        <height>37</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="golemDescription" uid="152">
-                    <properties>
-                        <text>golemDescription</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-29,400,0</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>384</x>
-                        <y>1232</y>
-                        <z>0</z>
-                        <width>200</width>
-                        <height>37</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

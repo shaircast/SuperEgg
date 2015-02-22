@@ -248,6 +248,9 @@
                         <behavior-type name="BreathSine" sid="6430378641910605">
                             <behavior id="Sin" />
                         </behavior-type>
+                        <behavior-type name="PinToImagePoint" sid="9724632605320955">
+                            <behavior id="Rex_pin2imgpt" />
+                        </behavior-type>
                     </behaviors>
                     <container>
                         <type>golem</type>
@@ -1449,17 +1452,8 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034959474.jpg" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_035130818.jpg" />
                     </animation>
-                    <animation framecount="4" loop="0" name="01Aimed" pingpong="0" repeatcount="1" repeatto="0" sid="3827630161920043" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
                     <animation framecount="1" loop="0" name="02Default" pingpong="0" repeatcount="1" repeatto="0" sid="8968254526537589" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_065237885.jpg" />
-                    </animation>
-                    <animation framecount="1" loop="0" name="02Aimed" pingpong="0" repeatcount="1" repeatto="0" sid="5023525834761234" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2943,7 +2937,7 @@
             </object-type>
         </object-folder>
         <object-folder name="optionView">
-            <object-folder name="textbox">
+            <object-folder name="golemDic">
                 <object-type name="golemName" sid="4450710612506483">
                     <plugin id="Text" />
                 </object-type>
@@ -2957,6 +2951,40 @@
                     <plugin id="Text" />
                 </object-type>
                 <object-type name="golemReward" sid="1999877296990647">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="golemSpritePage" sid="5545631360205361">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="PinToImagePoint" sid="7701348078063368">
+                            <behavior id="Rex_pin2imgpt" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2914596772468899" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="Imagepoint 1" x="0.2525" y="0.258333" />
+                                <image-point name="Imagepoint 2" x="0.5025" y="0.291667" />
+                                <image-point name="Imagepoint 3" x="0.7275" y="0.301667" />
+                                <image-point name="Imagepoint 4" x="0.2025" y="0.505" />
+                                <image-point name="Imagepoint 5" x="0.4825" y="0.485" />
+                                <image-point name="Imagepoint 6" x="0.7875" y="0.491667" />
+                                <image-point name="Imagepoint 7" x="0.2225" y="0.725" />
+                                <image-point name="Imagepoint 8" x="0.5025" y="0.731667" />
+                                <image-point name="Imagepoint 9" x="0.7975" y="0.718333" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="credit">
+                <object-type name="credit1" sid="632449964399079">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="credit2" sid="1947862804778936">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="credit3" sid="3377197779520591">
                     <plugin id="Text" />
                 </object-type>
             </object-folder>
@@ -3092,15 +3120,54 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7833248351851198" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_132945847.jpg">
+                        <frame duration="1" hotspotX="0.500404" hotspotY="0.500637" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_132945847.jpg">
+                            <image-point name="CreditLeft" x="0.290557" y="0.500637" />
+                            <image-point name="CreditRight" x="0.71025" y="0.500637" />
+                            <image-point name="GolemName" x="0.569007" y="0.191083" />
+                            <image-point name="GolemHp" x="0.569007" y="0.280255" />
+                            <image-point name="GolemSpeed" x="0.569007" y="0.369427" />
+                            <image-point name="GolemDescription" x="0.569007" y="0.433121" />
+                            <image-point name="GolemReward" x="0.779661" y="0.778344" />
+                            <image-point name="GolemSpritePage" x="0.286521" y="0.473885" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="oprionViewCredit" sid="5967480280917035">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8151491050315544" speed="5">
+                        <frame duration="1" hotspotX="0.503185" hotspotY="0.500826" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933968.jpg" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="optionViewGolemDic" sid="9146642456102786">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4983868482588988" speed="5">
+                        <frame duration="1" hotspotX="0.502959" hotspotY="0.500832" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933579.jpg" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="optionViewReward" sid="2021271796558979">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="PinToImagePoint" sid="4930447999144112">
+                        <behavior id="Rex_pin2imgpt" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4170838313828885" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\cage\gold.png">
                             <collision-poly>
-                                <point x="0.199219" y="0.199219" />
-                                <point x="0.5" y="0.232812" />
-                                <point x="0.803125" y="0.196875" />
-                                <point x="0.957812" y="0.5" />
-                                <point x="0.785937" y="0.785937" />
-                                <point x="0.211719" y="0.788281" />
-                                <point x="0.046875" y="0.5" />
+                                <point x="0.183333" y="0.183333" />
+                                <point x="0.5" y="0.0666667" />
+                                <point x="0.816667" y="0.183333" />
+                                <point x="0.983333" y="0.5" />
+                                <point x="0.85" y="0.85" />
+                                <point x="0.5" y="0.983333" />
+                                <point x="0.166667" y="0.833333" />
+                                <point x="0.0333333" y="0.5" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -3134,22 +3201,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="optionViewGolemDic" sid="9146642456102786">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4983868482588988" speed="5">
-                    <frame duration="1" hotspotX="0.502959" hotspotY="0.500832" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933579.jpg" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="oprionViewCredit" sid="5967480280917035">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8151491050315544" speed="5">
-                    <frame duration="1" hotspotX="0.503185" hotspotY="0.500826" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933968.jpg" />
-                </animation>
-            </animation-folder>
-        </object-type>
     </object-folder>
     <families>
         <family name="battleViewIcon" plugin-id="Sprite" sid="1262988126807568">
@@ -3165,6 +3216,32 @@
             <behaviors>
                 <behavior-type name="Anchor" sid="3017053762273693">
                     <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="optionViewGolemDicText" plugin-id="Text" sid="1525847636453163">
+            <members>
+                <member>golemDescription</member>
+                <member>golemHp</member>
+                <member>golemName</member>
+                <member>golemReward</member>
+                <member>golemSpeed</member>
+            </members>
+            <behaviors>
+                <behavior-type name="PinToImagePoint" sid="6528477088069327">
+                    <behavior id="Rex_pin2imgpt" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="optionViewCreditText" plugin-id="Text" sid="366323615263642">
+            <members>
+                <member>credit1</member>
+                <member>credit2</member>
+                <member>credit3</member>
+            </members>
+            <behaviors>
+                <behavior-type name="PinToImagePoint2" sid="6839717102852093">
+                    <behavior id="Rex_pin2imgpt" />
                 </behavior-type>
             </behaviors>
         </family>
@@ -3216,7 +3293,36 @@
         <global-instance type="Mouse" uid="126" />
     </global-instances>
     <sounds-folder>
-        <sound-folder name="eggExplode" />
+        <sound-folder name="eggExplode">
+            <file name="01boom.m4a" />
+            <file name="01boom.ogg" />
+            <file name="02boom.m4a" />
+            <file name="02boom.ogg" />
+            <file name="03boom.m4a" />
+            <file name="03boom.ogg" />
+            <file name="04boom.m4a" />
+            <file name="04boom.ogg" />
+            <file name="05boom.m4a" />
+            <file name="05boom.ogg" />
+            <file name="06boom.m4a" />
+            <file name="06boom.ogg" />
+            <file name="07boom.m4a" />
+            <file name="07boom.ogg" />
+            <file name="08boom.m4a" />
+            <file name="08boom.ogg" />
+            <file name="09boom.m4a" />
+            <file name="09boom.ogg" />
+            <file name="09poison.m4a" />
+            <file name="09poison.ogg" />
+            <file name="10boom.m4a" />
+            <file name="10boom.ogg" />
+            <file name="10tower.m4a" />
+            <file name="10tower.ogg" />
+            <file name="11boom.m4a" />
+            <file name="11boom.ogg" />
+            <file name="12boom.m4a" />
+            <file name="12boom.ogg" />
+        </sound-folder>
         <sound-folder name="music">
             <file name="optionView.m4a" />
             <file name="optionView.ogg" />
@@ -3249,6 +3355,16 @@
         <file name="stageStart.ogg" />
         <file name="turnOverTicktick.m4a" />
         <file name="turnOverTicktick.ogg" />
+        <file name="launch.m4a" />
+        <file name="launch.ogg" />
+        <file name="bookClose.m4a" />
+        <file name="bookClose.ogg" />
+        <file name="bookOpen.m4a" />
+        <file name="bookOpen.ogg" />
+        <file name="resetAsk.m4a" />
+        <file name="resetAsk.ogg" />
+        <file name="resetDone.m4a" />
+        <file name="resetDone.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="battleView.m4a" />
