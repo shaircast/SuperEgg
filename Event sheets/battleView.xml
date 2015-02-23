@@ -48,7 +48,7 @@
         <variable constant="0" name="golemIdleFrameEnd" sid="5451193856181061" static="0" type="number">0</variable>
         <variable constant="0" name="golemMovingFrameStart" sid="1026416991810081" static="0" type="number">1</variable>
         <variable constant="0" name="golemMovingFrameEnd" sid="6504824674708408" static="0" type="number">1</variable>
-        <comment>stage : 전 단계에서 정해서 오기</comment>
+        <comment>stage : 전 단계에서 정해서 오기. eggCollideGround는 몸풀기용, explode 화면 밑에 뒀다가 .</comment>
         <event-block sid="1239435629214137">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="4382354078170552" type="System" />
@@ -76,10 +76,6 @@
                 </action>
                 <action id="-16" name="Wait" sid="2592755419902297" type="System">
                     <param id="0" name="Seconds">0</param>
-                </action>
-                <action id="5" name="Set web font" sid="7304233392096089" type="foodText">
-                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                 </action>
                 <action behavior="MoveTo" id="8" name="Move to distance-angle" sid="597322634753425" type="skyLeftCover">
                     <param id="0" name="Distance">self.Width</param>
@@ -140,6 +136,20 @@
                 <action id="-13" name="Set time scale" sid="4075256169237309" type="System">
                     <param id="0" name="Time scale">1</param>
                 </action>
+                <action id="0" name="Call function" sid="8310347602503095" type="Function">
+                    <param id="0" name="Name">&quot;eggCollidesGround&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-3" name="Create object" sid="7301252629669957" type="System">
+                    <param id="0" name="Object to create">explode</param>
+                    <param id="1" name="Layer">&quot;effect&quot;</param>
+                    <param id="2" name="X">640</param>
+                    <param id="3" name="Y">1200</param>
+                </action>
+                <action id="-16" name="Wait" sid="3529066822744097" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="4307882768605751" type="explode" />
             </actions>
             <sub-events>
                 <comment>stage참조해서 chapter/stage마다 battleViewBg 바꿔주기. &quot;01_&quot;</comment>
@@ -173,6 +183,46 @@
                     <param id="0" name="Layout">stageView</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="2496403703335713">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2219427642184897" type="Touch">
+                    <param id="0" name="Object">timeScaleButton</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7803887134647026">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="9763550669102114" type="timeScaleButton">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="8476487635573502" type="timeScaleButton">
+                            <param id="0" name="Animation">&quot;Fast&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="3152582382913172" type="System">
+                            <param id="0" name="Time scale">1.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8970397135991959">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="7580472020461184" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="3151881277964346" type="timeScaleButton">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="9867168939425781" type="System">
+                            <param id="0" name="Time scale">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="4163058616545128">
             <conditions>
@@ -243,10 +293,6 @@
                                 </action>
                                 <action id="0" name="Set text" sid="4450026276879766" type="turnText">
                                     <param id="0" name="Text">&quot;Turn &quot;&amp;turnCount</param>
-                                </action>
-                                <action id="5" name="Set web font" sid="7548483319285501" type="turnText">
-                                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="6895879010959442" type="System">
                                     <param id="0" name="Seconds">0.5</param>
@@ -340,10 +386,6 @@
                                 </action>
                                 <action id="0" name="Set text" sid="5800091701740118" type="turnText">
                                     <param id="0" name="Text">&quot;Turn Over&quot;</param>
-                                </action>
-                                <action id="5" name="Set web font" sid="1811466165598448" type="turnText">
-                                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                 </action>
                                 <action id="0" name="Play" sid="6577916948711246" type="Audio">
                                     <param id="0" name="Audio file">turnOverTicktick</param>
@@ -909,10 +951,6 @@
                                                 <action id="0" name="Set text" sid="2541924343708251" type="turnText">
                                                     <param id="0" name="Text">&quot;Stage Clear!&quot;</param>
                                                 </action>
-                                                <action id="5" name="Set web font" sid="1734768405099478" type="turnText">
-                                                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                                </action>
                                                 <action id="0" name="Play" sid="7604559368032906" type="Audio">
                                                     <param id="0" name="Audio file">battleWin</param>
                                                     <param id="2" name="Loop">0</param>
@@ -1035,10 +1073,6 @@
                                 </action>
                                 <action id="0" name="Set text" sid="9025137062099726" type="turnText">
                                     <param id="0" name="Text">&quot;Stage Failed!&quot;</param>
-                                </action>
-                                <action id="5" name="Set web font" sid="4980603754845835" type="turnText">
-                                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="3247790413369558" type="System">
                                     <param id="0" name="Seconds">5</param>

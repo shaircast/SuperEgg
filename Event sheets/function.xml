@@ -162,7 +162,7 @@
                                 </action>
                                 <action id="0" name="Set local value" sid="3645545715772576" type="WebStorage">
                                     <param id="0" name="Key">&quot;maxStage&quot;</param>
-                                    <param id="1" name="Value">&quot;1_5&quot;</param>
+                                    <param id="1" name="Value">&quot;3_10&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="71699616378047" type="WebStorage">
                                     <param id="0" name="Key">&quot;gold&quot;</param>
@@ -912,10 +912,6 @@
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="Image point">&quot;AtkText&quot;</param>
                                 </action>
-                                <action id="5" name="Set web font" sid="6743657649838726" type="henInfo">
-                                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                </action>
                                 <action id="0" name="Set text" sid="1229140665308497" type="henInfo">
                                     <param id="0" name="Text">henDB.Get(henButton.kind&amp;&quot;atk&quot;)</param>
                                 </action>
@@ -929,10 +925,6 @@
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="Image point">&quot;FoodText&quot;</param>
                                 </action>
-                                <action id="5" name="Set web font" sid="1093505533350135" type="henInfo">
-                                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                </action>
                                 <action id="0" name="Set text" sid="1496175772099679" type="henInfo">
                                     <param id="0" name="Text">henDB.Get(henButton.kind&amp;&quot;foodcost&quot;)</param>
                                 </action>
@@ -945,10 +937,6 @@
                                     <param id="0" name="Object">henInfo</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="Image point">&quot;TurnText&quot;</param>
-                                </action>
-                                <action id="5" name="Set web font" sid="1281212894671744" type="henInfo">
-                                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                 </action>
                                 <action id="0" name="Set text" sid="4609505264638519" type="henInfo">
                                     <param id="0" name="Text">henDB.Get(henButton.kind&amp;&quot;readyturn&quot;)</param>
@@ -2615,6 +2603,11 @@
                                             <param id="1" name="Comparison">4</param>
                                             <param id="2" name="Second value">turnCount</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="2225399206261531" type="System">
+                                            <param id="0" name="Variable">golemInThisTurn</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="9309857068681866" type="System">
@@ -2702,7 +2695,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>explodeEffectCreate(X, Y) : explode만들고 속성부여. eggBullet은 어차피 하나니까 걱정 ㄴㄴ</comment>
+                <comment>explodeEffectCreate(launchLineX, launchLineY) : explode만들고 속성부여. eggBullet은 어차피 하나니까 걱정 ㄴㄴ</comment>
                 <event-block sid="8729163103694692">
                     <conditions>
                         <condition id="0" name="On function" sid="2728741646818039" type="Function">
@@ -3989,15 +3982,6 @@
                             <conditions />
                             <actions>
                                 <action id="-9" name="Destroy" sid="7649342513716955" type="eggBulletBonusEffect" />
-                                <action disabled="1" id="0" name="Spawn another object" sid="1016731312154163" type="eggBullet">
-                                    <param id="0" name="Object">eggDestroyedEffect</param>
-                                    <param id="1" name="Layer">&quot;effect&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action disabled="1" id="-14" name="Set object time scale" sid="3167948870696692" type="System">
-                                    <param id="0" name="Object">eggDestroyedEffect</param>
-                                    <param id="1" name="Time scale">3</param>
-                                </action>
                                 <action id="-9" name="Destroy" sid="1778353924769913" type="eggBullet" />
                                 <action id="-42" name="Signal" sid="5146502209334007" type="System">
                                     <param id="0" name="Tag">&quot;eggDestroyed&quot;</param>
@@ -4610,10 +4594,6 @@
                                             <param id="1" name="Layer">&quot;effect&quot;</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="5" name="Set web font" sid="3850694941019905" type="damageText">
-                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                        </action>
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="1126320053413934" type="damageText">
                                             <param id="0" name="Angle">270</param>
                                         </action>
@@ -4682,10 +4662,6 @@
                                                             <param id="1" name="Layer">&quot;effect&quot;</param>
                                                             <param id="2" name="Image point">0</param>
                                                         </action>
-                                                        <action id="5" name="Set web font" sid="5781163692955183" type="damageText">
-                                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
-                                                        </action>
                                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="5415781994249121" type="damageText">
                                                             <param id="0" name="Angle">270</param>
                                                         </action>
@@ -4717,10 +4693,6 @@
                                                             <param id="0" name="Object">damageText</param>
                                                             <param id="1" name="Layer">&quot;effect&quot;</param>
                                                             <param id="2" name="Image point">0</param>
-                                                        </action>
-                                                        <action id="5" name="Set web font" sid="7877697394159577" type="damageText">
-                                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                                         </action>
                                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="9632947578329696" type="damageText">
                                                             <param id="0" name="Angle">270</param>
@@ -4775,10 +4747,6 @@
                                                     <param id="0" name="Object">damageText</param>
                                                     <param id="1" name="Layer">&quot;effect&quot;</param>
                                                     <param id="2" name="Image point">0</param>
-                                                </action>
-                                                <action id="5" name="Set web font" sid="3804514646402918" type="damageText">
-                                                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                                 </action>
                                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="9604795613795009" type="damageText">
                                                     <param id="0" name="Angle">270</param>
@@ -4927,10 +4895,6 @@
                                 <action id="0" name="Set local value" sid="2892787780053704" type="WebStorage">
                                     <param id="0" name="Key">&quot;gold&quot;</param>
                                     <param id="1" name="Value">int(WebStorage.LocalValue(&quot;gold&quot;))+golem.reward</param>
-                                </action>
-                                <action id="5" name="Set web font" sid="6561907590739991" type="goldRewardText">
-                                    <param id="0" name="Family name">&quot;jua&quot;</param>
-                                    <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                 </action>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="7001537162212395" type="goldRewardText">
                                     <param id="0" name="Angle">270</param>
@@ -6759,10 +6723,6 @@
                                         <action id="-3" name="Set position" sid="3539155675610543" type="powerupHUD">
                                             <param id="0" name="X">henCage.X+powerupIndicatorX</param>
                                             <param id="1" name="Y">henCage.Y</param>
-                                        </action>
-                                        <action id="5" name="Set web font" sid="5682912111170838" type="powerupHUD">
-                                            <param id="0" name="Family name">&quot;jua&quot;</param>
-                                            <param id="1" name="CSS URL">&quot;jua.css&quot;</param>
                                         </action>
                                         <action id="0" name="Call function" sid="7953047309158654" type="Function">
                                             <param id="0" name="Name">&quot;typeIconPick&quot;</param>

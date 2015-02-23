@@ -22,7 +22,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="1805455520731274">
+        <event-block disabled="1" sid="1805455520731274">
             <conditions>
                 <condition id="-8" name="Compare two values" sid="9928698981778854" type="System">
                     <param id="0" name="First value">Touch.Gamma</param>
@@ -33,7 +33,7 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="5363193251420609">
+                <event-block disabled="1" sid="5363193251420609">
                     <conditions>
                         <condition id="-8" name="Compare two values" sid="2282799277201331" type="System">
                             <param id="0" name="First value">Touch.AccelerationZWithG</param>
@@ -47,7 +47,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="6963619054510702">
+                <event-block disabled="1" sid="6963619054510702">
                     <conditions>
                         <condition id="-22" name="Else" sid="6515079295013125" type="System" />
                     </conditions>
@@ -59,7 +59,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="8052651345565197">
+        <event-block disabled="1" sid="8052651345565197">
             <conditions>
                 <condition id="-8" name="Compare two values" sid="1785478883168753" type="System">
                     <param id="0" name="First value">Touch.Gamma</param>
@@ -70,7 +70,7 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="1301248286259094">
+                <event-block disabled="1" sid="1301248286259094">
                     <conditions>
                         <condition id="-8" name="Compare two values" sid="9049993093107554" type="System">
                             <param id="0" name="First value">Touch.AccelerationZWithG</param>
@@ -84,7 +84,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="879683092975503">
+                <event-block disabled="1" sid="879683092975503">
                     <conditions>
                         <condition id="-22" name="Else" sid="9534871614684953" type="System" />
                     </conditions>
@@ -133,6 +133,17 @@
                 <action id="-18" name="Set layer opacity" sid="7175916689260618" type="System">
                     <param id="0" name="Layer">&quot;fade&quot;</param>
                     <param id="1" name="Opacity">LayerOpacity(&quot;fade&quot;)-200*dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5272297691216364">
+            <conditions>
+                <condition id="-18" name="On created" sid="7074201641259914" type="alltheText" />
+            </conditions>
+            <actions>
+                <action id="2" name="Set font face" sid="2208596749273776" type="alltheText">
+                    <param id="0" name="Font face">&quot;jua&quot;</param>
+                    <param id="1" name="Style">0</param>
                 </action>
             </actions>
         </event-block>

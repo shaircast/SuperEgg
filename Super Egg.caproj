@@ -1679,6 +1679,22 @@
                     </behavior-type>
                 </behaviors>
             </object-type>
+            <object-type name="timeScaleButton" sid="5467760425990307">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="895403354676684">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4942981947109659" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Fast" pingpong="0" repeatcount="1" repeatto="0" sid="726715567616416" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="DBDic">
             <object-type global="1" name="golemDB" sid="1480243055815972">
@@ -3127,8 +3143,14 @@
                             <image-point name="GolemHp" x="0.569007" y="0.280255" />
                             <image-point name="GolemSpeed" x="0.569007" y="0.369427" />
                             <image-point name="GolemDescription" x="0.569007" y="0.433121" />
-                            <image-point name="GolemReward" x="0.779661" y="0.778344" />
+                            <image-point name="GolemReward" x="0.794996" y="0.782166" />
                             <image-point name="GolemSpritePage" x="0.286521" y="0.473885" />
+                            <collision-poly>
+                                <point x="0.00645682" y="0" />
+                                <point x="0.988701" y="0" />
+                                <point x="0.967716" y="0.982166" />
+                                <point x="0.0274415" y="0.982166" />
+                            </collision-poly>
                         </frame>
                     </animation>
                 </animation-folder>
@@ -3158,18 +3180,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4170838313828885" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\cage\gold.png">
-                            <collision-poly>
-                                <point x="0.183333" y="0.183333" />
-                                <point x="0.5" y="0.0666667" />
-                                <point x="0.816667" y="0.183333" />
-                                <point x="0.983333" y="0.5" />
-                                <point x="0.85" y="0.85" />
-                                <point x="0.5" y="0.983333" />
-                                <point x="0.166667" y="0.833333" />
-                                <point x="0.0333333" y="0.5" />
-                            </collision-poly>
-                        </frame>
+                        <frame duration="1" hotspotX="0.533333" hotspotY="0.566667" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\cage\gold.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -3244,6 +3255,40 @@
                     <behavior id="Rex_pin2imgpt" />
                 </behavior-type>
             </behaviors>
+        </family>
+        <family name="alltheText" plugin-id="Text" sid="6224042162170558">
+            <members>
+                <member>alpha</member>
+                <member>atkText</member>
+                <member>beta</member>
+                <member>credit1</member>
+                <member>credit2</member>
+                <member>credit3</member>
+                <member>damageText</member>
+                <member>descriptionText</member>
+                <member>foodcostText</member>
+                <member>foodText</member>
+                <member>gamma</member>
+                <member>goldHUD</member>
+                <member>goldRewardText</member>
+                <member>goldText</member>
+                <member>golemDescription</member>
+                <member>golemHp</member>
+                <member>golemName</member>
+                <member>golemReward</member>
+                <member>golemSpeed</member>
+                <member>henInfo</member>
+                <member>nameText</member>
+                <member>openingText</member>
+                <member>optionViewTitles</member>
+                <member>powerupHUD</member>
+                <member>powerupText</member>
+                <member>readyturnText</member>
+                <member>stageInfoText</member>
+                <member>systemText</member>
+                <member>Text2</member>
+                <member>turnText</member>
+            </members>
         </family>
     </families>
     <layout-folder>
