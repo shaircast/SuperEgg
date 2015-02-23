@@ -17,7 +17,7 @@
                 <action id="0" name="Set text" sid="2628586889800418" type="gamma">
                     <param id="0" name="Text">int(Touch.Gamma)&amp;&quot;,&quot;&amp;int(Touch.AccelerationZWithG)</param>
                 </action>
-                <action id="0" name="Set text" sid="3455023388396399" type="Text2">
+                <action disabled="1" id="0" name="Set text" sid="3455023388396399" type="Text2">
                     <param id="0" name="Text">WindowWidth&amp;&quot;,&quot;&amp;WindowHeight</param>
                 </action>
             </actions>

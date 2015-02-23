@@ -60,7 +60,7 @@
                     <actions>
                         <action id="0" name="Set local value" sid="7143371914270855" type="WebStorage">
                             <param id="0" name="Key">&quot;music&quot;</param>
-                            <param id="1" name="Value">0</param>
+                            <param id="1" name="Value">-60</param>
                         </action>
                     </actions>
                 </event-block>
@@ -93,7 +93,7 @@
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                         <action id="0" name="Call function" sid="6505130547001485" type="Function">
-                            <param id="0" name="Name">&quot;stageNameDBInit&quot;</param>
+                            <param id="0" name="Name">&quot;stageDBInit&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                         <action id="10" name="Request fullscreen" sid="8372771980019694" type="Browser">

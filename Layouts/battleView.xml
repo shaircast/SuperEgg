@@ -29,22 +29,24 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="skyTile1" uid="124">
+                <instance type="skySprite" uid="84">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
                     </properties>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>0</x>
-                        <y>-623</y>
+                        <x>640</x>
+                        <y>-935</y>
                         <z>0</z>
-                        <width>1280</width>
-                        <height>512</height>
+                        <width>1373</width>
+                        <height>1335</height>
                         <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -67,86 +69,6 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="skyTile2" uid="142">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>0</x>
-                        <y>-1065</y>
-                        <z>0</z>
-                        <width>1280</width>
-                        <height>512</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="skyTile3" uid="84">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>0</x>
-                        <y>-1513</y>
-                        <z>0</z>
-                        <width>1280</width>
-                        <height>512</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="skyTile4" uid="85">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>0</x>
-                        <y>-2001</y>
-                        <z>0</z>
-                        <width>1280</width>
-                        <height>512</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="skyTile5" uid="137">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>0</x>
-                        <y>-2510</y>
-                        <z>0</z>
-                        <width>1280</width>
-                        <height>512</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -359,11 +281,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1229</x>
-                        <y>49</y>
+                        <x>1230</x>
+                        <y>50</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
+                        <width>48</width>
+                        <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -392,11 +314,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>91</x>
-                        <y>672</y>
+                        <x>1205</x>
+                        <y>643</y>
                         <z>0</z>
-                        <width>144</width>
-                        <height>64</height>
+                        <width>152</width>
+                        <height>152</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -408,7 +330,7 @@
                     <properties>
                         <text>0 / 0</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-27,400,0</font>
+                        <font>배달의민족 주아,-29,400,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
@@ -420,7 +342,7 @@
                         <behavior-instance type="Anchor">
                             <properties>
                                 <left-edge>None</left-edge>
-                                <top-edge>Window bottom</top-edge>
+                                <top-edge>Window top</top-edge>
                                 <right-edge>None</right-edge>
                                 <bottom-edge>None</bottom-edge>
                                 <initial-state>Enabled</initial-state>
@@ -430,8 +352,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>105</x>
-                        <y>609</y>
+                        <x>650</x>
+                        <y>45</y>
                         <z>0</z>
                         <width>161</width>
                         <height>45</height>
@@ -453,7 +375,7 @@
                         <behavior-instance type="Anchor">
                             <properties>
                                 <left-edge>None</left-edge>
-                                <top-edge>Window bottom</top-edge>
+                                <top-edge>Window top</top-edge>
                                 <right-edge>None</right-edge>
                                 <bottom-edge>None</bottom-edge>
                                 <initial-state>Enabled</initial-state>
@@ -463,8 +385,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>38</x>
-                        <y>608</y>
+                        <x>575</x>
+                        <y>44</y>
                         <z>0</z>
                         <width>48</width>
                         <height>58</height>
@@ -485,6 +407,44 @@
                     <behavior-instances>
                         <behavior-instance type="Anchor">
                             <properties>
+                                <left-edge>Window right</left-edge>
+                                <top-edge>Window bottom</top-edge>
+                                <right-edge>None</right-edge>
+                                <bottom-edge>None</bottom-edge>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>76</x>
+                        <y>644</y>
+                        <z>0</z>
+                        <width>152</width>
+                        <height>152</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="stageText" uid="85">
+                    <properties>
+                        <text>스테이지</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-35,700,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Anchor">
+                            <properties>
                                 <left-edge>Window left</left-edge>
                                 <top-edge>Window top</top-edge>
                                 <right-edge>None</right-edge>
@@ -496,14 +456,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>53</x>
-                        <y>39</y>
+                        <x>43</x>
+                        <y>30</y>
                         <z>0</z>
-                        <width>96</width>
-                        <height>72</height>
+                        <width>241</width>
+                        <height>74</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

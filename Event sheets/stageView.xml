@@ -56,22 +56,12 @@
                     <param id="1" name="Value">(ViewportLeft(0)+ViewportRight(0))/2*3</param>
                 </action>
                 <action id="0" name="Call function" sid="6064920682009722" type="Function">
-                    <param id="0" name="Name">&quot;stageNameDBInit&quot;</param>
+                    <param id="0" name="Name">&quot;stageDBInit&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
                 <action id="0" name="Call function" sid="1981168684258265" type="Function">
                     <param id="0" name="Name">&quot;stageButtonOnMap&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
-                </action>
-                <action behavior="PinToImagePoint" disabled="1" id="1" name="Pin to image point" sid="5221150558987895" type="skyLeftCover">
-                    <param id="0" name="Pin to">stageMapChap</param>
-                    <param id="1" name="ImagePoint">&quot;LeftChap&quot;</param>
-                    <param id="2" name="Mode">0</param>
-                </action>
-                <action behavior="PinToImagePoint" disabled="1" id="1" name="Pin to image point" sid="5326964246846071" type="skyRightCover">
-                    <param id="0" name="Pin to">stageMapChap</param>
-                    <param id="1" name="ImagePoint">&quot;RightChap&quot;</param>
-                    <param id="2" name="Mode">0</param>
                 </action>
                 <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="2360209687416397" type="skyLeftCover">
                     <param id="0" name="Pin to">stageViewTransparentCover</param>
@@ -128,15 +118,6 @@
                         <action id="9" name="Set scale" sid="8868855267799566" type="henCage">
                             <param id="0" name="Scale">henCageScale</param>
                         </action>
-                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="4723183337302696" type="powerupHUD">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="7907369366459323" type="henCage">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="1412409785881574" type="iconTypeHUD">
-                            <param id="0" name="State">1</param>
-                        </action>
                     </actions>
                 </event-block>
                 <variable constant="0" name="entryText2" sid="6268674884558681" static="0" type="text"></variable>
@@ -180,15 +161,6 @@
                         <action id="9" name="Set scale" sid="8140319383269683" type="henCage">
                             <param id="0" name="Scale">henCageScale</param>
                         </action>
-                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="5479414366116965" type="henCage">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="188493870209864" type="powerupHUD">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="9355273093969469" type="iconTypeHUD">
-                            <param id="0" name="State">1</param>
-                        </action>
                     </actions>
                 </event-block>
                 <variable constant="0" name="entryText3" sid="2758640973757775" static="0" type="text"></variable>
@@ -231,15 +203,6 @@
                         </action>
                         <action id="9" name="Set scale" sid="9149921231120823" type="henCage">
                             <param id="0" name="Scale">henCageScale</param>
-                        </action>
-                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="8030780734289193" type="henCage">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="2885390931162377" type="powerupHUD">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action behavior="Anchor" disabled="1" id="0" name="Set enabled" sid="8463163119156859" type="iconTypeHUD">
-                            <param id="0" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>

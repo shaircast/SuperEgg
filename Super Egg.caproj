@@ -134,9 +134,24 @@
                     </behaviors>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9409025723892355" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0.282895" y="0.263158" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                     </animation-folder>
+                </object-type>
+                <object-type name="stageText" sid="4690566127402484">
+                    <plugin id="Text" />
+                    <behaviors>
+                        <behavior-type name="Anchor" sid="9554608420095247">
+                            <behavior id="Anchor" />
+                        </behavior-type>
+                    </behaviors>
                 </object-type>
             </object-folder>
             <object-folder name="golem">
@@ -1390,6 +1405,14 @@
                     <plugin id="TiledBg" />
                     <texture format="png8" />
                 </object-type>
+                <object-type name="skySprite" sid="1294478346725572">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7535486446742942" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
             <object-folder name="henButton">
                 <object-type name="henButton" sid="8615354906477477">
@@ -1688,10 +1711,24 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4942981947109659" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="Fast" pingpong="0" repeatcount="1" repeatto="0" sid="726715567616416" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1706,7 +1743,7 @@
             <object-type global="1" name="henDB" sid="2072481770894795">
                 <plugin id="Dictionary" />
             </object-type>
-            <object-type global="1" name="stageNameDB" sid="4576822275179456">
+            <object-type global="1" name="stageDB" sid="4576822275179456">
                 <plugin id="Dictionary" />
             </object-type>
         </object-folder>

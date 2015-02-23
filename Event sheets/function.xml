@@ -405,11 +405,11 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>stageNameDBInit() : 각 스테이지 이름, </comment>
+                <comment>stageDBInit() : 각 스테이지 이름과 설명</comment>
                 <event-block sid="6147724126418971">
                     <conditions>
                         <condition id="0" name="On function" sid="2993681330235614" type="Function">
-                            <param id="0" name="Name">&quot;stageNameDBInit&quot;</param>
+                            <param id="0" name="Name">&quot;stageDBInit&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -417,45 +417,125 @@
                         <event-block sid="3783805508521718">
                             <conditions />
                             <actions>
-                                <action id="0" name="Add key" sid="2646229435257739" type="stageNameDB">
+                                <action id="0" name="Add key" sid="2646229435257739" type="stageDB">
                                     <param id="0" name="Key">&quot;1_1&quot;</param>
-                                    <param id="1" name="Value">&quot;시작&quot;</param>
+                                    <param id="1" name="Value">&quot;첫 소동/어느날 갑자기 농장에 들이닥친 이상한 돌무더기들… 대체 뭐지?&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="2655456160273303" type="stageNameDB">
+                                <action id="0" name="Add key" sid="2655456160273303" type="stageDB">
                                     <param id="0" name="Key">&quot;1_2&quot;</param>
-                                    <param id="1" name="Value">&quot;2탄&quot;</param>
+                                    <param id="1" name="Value">&quot;시련의 시작/본격적인 골렘들과의 전쟁 시작!&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="6181242300428315" type="stageNameDB">
+                                <action id="0" name="Add key" sid="6181242300428315" type="stageDB">
                                     <param id="0" name="Key">&quot;1_3&quot;</param>
-                                    <param id="1" name="Value">&quot;3탄&quot;</param>
+                                    <param id="1" name="Value">&quot;재빠른 녀석들/처음 보는 날쌘돌이 골렘의 등장! 너무 빠른거 아니야?&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="5086247515489195" type="stageNameDB">
+                                <action id="0" name="Add key" sid="5086247515489195" type="stageDB">
                                     <param id="0" name="Key">&quot;1_4&quot;</param>
-                                    <param id="1" name="Value">&quot;4탄&quot;</param>
+                                    <param id="1" name="Value">&quot;알 도둑/아직 남아있는 날쌘돌이 골렘들이 알을 노리는데…&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="9876319082979012" type="stageNameDB">
+                                <action id="0" name="Add key" sid="9876319082979012" type="stageDB">
                                     <param id="0" name="Key">&quot;1_5&quot;</param>
-                                    <param id="1" name="Value">&quot;5탄&quot;</param>
+                                    <param id="1" name="Value">&quot;숲으로 들어가는 길/도둑맞은 알을 찾기 위해 숲으로 진격하는 닭들! 처음 마주한건 다름아닌 거대 골렘!&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="9211900149679967" type="stageNameDB">
+                                <action id="0" name="Add key" sid="9211900149679967" type="stageDB">
                                     <param id="0" name="Key">&quot;1_6&quot;</param>
-                                    <param id="1" name="Value">&quot;6탄&quot;</param>
+                                    <param id="1" name="Value">&quot;미로숲/그만 숲에서 길을 잃어버린 닭들! 사료는 점점 떨어져 가는데...&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="8669284499627381" type="stageNameDB">
+                                <action id="0" name="Add key" sid="8669284499627381" type="stageDB">
                                     <param id="0" name="Key">&quot;1_7&quot;</param>
-                                    <param id="1" name="Value">&quot;7탄&quot;</param>
+                                    <param id="1" name="Value">&quot;나뭇잎 농장/미로를 벗어나 친구 농장에 도착! 하지막 이윽고 들이닥친 골렘들이 들이닥치는데..&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="6318897292592975" type="stageNameDB">
+                                <action id="0" name="Add key" sid="6318897292592975" type="stageDB">
                                     <param id="0" name="Key">&quot;1_8&quot;</param>
-                                    <param id="1" name="Value">&quot;8탄&quot;</param>
+                                    <param id="1" name="Value">&quot;자라나는 새싹/머리에 새싹이 달린 골렘 등장! 음? 근데 왜 공격해도 계속 체력이 차는거지…?&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="7587842652521095" type="stageNameDB">
+                                <action id="0" name="Add key" sid="7587842652521095" type="stageDB">
                                     <param id="0" name="Key">&quot;1_9&quot;</param>
-                                    <param id="1" name="Value">&quot;9탄&quot;</param>
+                                    <param id="1" name="Value">&quot;오솔길/숲속 깊은 곳을 향한 여정은 계속되고…&quot;</param>
                                 </action>
-                                <action id="0" name="Add key" sid="3033377501725338" type="stageNameDB">
+                                <action id="0" name="Add key" sid="3033377501725338" type="stageDB">
                                     <param id="0" name="Key">&quot;1_10&quot;</param>
-                                    <param id="1" name="Value">&quot;10탄&quot;</param>
+                                    <param id="1" name="Value">&quot;보이지 않는 위협/빛이 들지 않는 깊은 숲속. 그리고 덤불 속에서 반짝이는 여우의 눈동자…&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4295321258220968" type="stageDB">
+                                    <param id="0" name="Key">&quot;2_1&quot;</param>
+                                    <param id="1" name="Value">&quot;숲 속 호숫가/간신히 여우를 물리치고 잠시 호숫가로 쉬러나온 닭들!&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1290323931910783" type="stageDB">
+                                    <param id="0" name="Key">&quot;2_2&quot;</param>
+                                    <param id="1" name="Value">&quot;뗏목을 타고/닭들은 몰아닥친 골렘들을 피해 간신히 뗏목을 타고 호숫가로 피하는데…&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="8677123673125224" type="stageDB">
+                                    <param id="0" name="Key">&quot;2_3&quot;</param>
+                                    <param id="1" name="Value">&quot;딱딱한 등껍질/호수 한가운데 보이는 거북이! 근데 호수에 거북이가 살았던가?&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="3644875835783125" type="stageDB">
+                                    <param id="0" name="Key">&quot;2_4&quot;</param>
+                                    <param id="1" name="Value">&quot;젖어버린 깃털/다시 뭍에 닿은 닭들. 잠시 쉬면서 깃털을 말리자!&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1688531549300462" type="stageDB">
+                                    <param id="0" name="Key">&quot;2_5&quot;</param>
+                                    <param id="1" name="Value">&quot;통나무를 지고/고장난 뗏목을 고치기 위해 나무가 필요해! &quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="284616021306815" type="stageDB">
+                                    <param id="0" name="Key">&quot;2_6&quot;</param>
+                                    <param id="1" name="Value">&quot;호숫가 농장/우연히 만난 친구의 농장! 그런데 농장에 이상한 골렘들이 있다…?&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="9024246811128473" type="stageDB">
+                                    <param id="0" name="Key">&quot;2_7&quot;</param>
+                                    <param id="1" name="Value">&quot;다시 호수로/호숫가 농장 친구들에게서 들은 이야기를 바탕으로 호수 한가운데 사는 여우를 찾아 나서는데…&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="411073747907121" type="stageDB">
+                                    <param id="0" name="Key">&quot;2_8&quot;</param>
+                                    <param id="1" name="Value">&quot;철통 방어/닭들의 뗏목을 가로막는 단단한 갑옷을 입은 골렘들 등장!&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="3426834246315373" type="stageDB">
+                                    <param id="0" name="Key">&quot;2_9&quot;</param>
+                                    <param id="1" name="Value">&quot;세이렌의 노래/그만 함정에 빠진 닭들! 사료는 어디로??&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4101757132190016" type="stageDB">
+                                    <param id="0" name="Key">&quot;2_10&quot;</param>
+                                    <param id="1" name="Value">&quot;호수 한 가운데/호수 한 가운데, 가장 깊은 곳에 도착한 닭들. 그리고 뗏목 아래에서 반짝이는 여우의 눈동자…&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="2289897958312817" type="stageDB">
+                                    <param id="0" name="Key">&quot;3_1&quot;</param>
+                                    <param id="1" name="Value">&quot;화산 지대/호수를 건넌 닭들이 다다른 곳은 다름아닌 화산지대! 골렘들이 뜨겁다??&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1979860207913482" type="stageDB">
+                                    <param id="0" name="Key">&quot;3_2&quot;</param>
+                                    <param id="1" name="Value">&quot;꿈틀거리는 잿더미/잿더미를 건너는 닭들 근데 잿더미들 밑에서 무언가 꿈틀거리는데?&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7615932318525205" type="stageDB">
+                                    <param id="0" name="Key">&quot;3_3&quot;</param>
+                                    <param id="1" name="Value">&quot;타오르는 골렘 I/골렘들이 불타고 있다...?&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7160463835798493" type="stageDB">
+                                    <param id="0" name="Key">&quot;3_4&quot;</param>
+                                    <param id="1" name="Value">&quot;타오르는 골렘 II/불타는 골렘들 때문에 불타버린 사료들! 그리고 더욱 더 몰려오는 골렘들!&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="9955218139940595" type="stageDB">
+                                    <param id="0" name="Key">&quot;3_5&quot;</param>
+                                    <param id="1" name="Value">&quot;섭씨 300도!/섭씨 300도의 뜨거움! 음…? 나 통닭이 되는거 아냐?&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7260684893510291" type="stageDB">
+                                    <param id="0" name="Key">&quot;3_6&quot;</param>
+                                    <param id="1" name="Value">&quot;불타버린 농장/드디어 도착한 친구의 농장! 하지만 농장은 이미 불타버린듯 한데…&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="9056979095074001" type="stageDB">
+                                    <param id="0" name="Key">&quot;3_7&quot;</param>
+                                    <param id="1" name="Value">&quot;흔적을 쫓아/쪽지의 내용과 골렘들의 발자국을 쫓아 여우굴 본거지로 향하는 닭들!&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7308246831119498" type="stageDB">
+                                    <param id="0" name="Key">&quot;3_8&quot;</param>
+                                    <param id="1" name="Value">&quot;불 구덩이/아슬아슬 불 구덩이를 피해서… 어째 같은 곳을 돌고 있는것 같다??&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="6907208421146073" type="stageDB">
+                                    <param id="0" name="Key">&quot;3_9&quot;</param>
+                                    <param id="1" name="Value">&quot;계란으로 바위치기/용암지대를 지나 닭들이 도착한 곳은 어두컴컴한 동굴… 하지만 사방이 적!&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7806391139979839" type="stageDB">
+                                    <param id="0" name="Key">&quot;3_10&quot;</param>
+                                    <param id="1" name="Value">&quot;슈퍼 에그/슈퍼 에그!&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -775,23 +855,23 @@
                                 </action>
                                 <action id="-9" name="Set value" sid="4818628651737208" type="System">
                                     <param id="0" name="Variable">henButtonXOri</param>
-                                    <param id="1" name="Value">ViewportRight(&quot;hud&quot;)/5*0+ViewportRight(&quot;hud&quot;)/10</param>
+                                    <param id="1" name="Value">ViewportRight(&quot;hud&quot;)/6*0+ViewportRight(&quot;hud&quot;)/12</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="7053712535788695" type="System">
                                     <param id="0" name="Variable">henButtonX0</param>
-                                    <param id="1" name="Value">ViewportRight(&quot;hud&quot;)/5*1+ViewportRight(&quot;hud&quot;)/10</param>
+                                    <param id="1" name="Value">ViewportRight(&quot;hud&quot;)/6*1+ViewportRight(&quot;hud&quot;)/12</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="9670401323209299" type="System">
                                     <param id="0" name="Variable">henButtonX1</param>
-                                    <param id="1" name="Value">ViewportRight(&quot;hud&quot;)/5*2+ViewportRight(&quot;hud&quot;)/10</param>
+                                    <param id="1" name="Value">ViewportRight(&quot;hud&quot;)/6*2+ViewportRight(&quot;hud&quot;)/12</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="2517628010291082" type="System">
                                     <param id="0" name="Variable">henButtonX2</param>
-                                    <param id="1" name="Value">ViewportRight(&quot;hud&quot;)/5*3+ViewportRight(&quot;hud&quot;)/10</param>
+                                    <param id="1" name="Value">ViewportRight(&quot;hud&quot;)/6*3+ViewportRight(&quot;hud&quot;)/12</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="5586937621870287" type="System">
                                     <param id="0" name="Variable">henButtonX3</param>
-                                    <param id="1" name="Value">ViewportRight(&quot;hud&quot;)/5*4+ViewportRight(&quot;hud&quot;)/10</param>
+                                    <param id="1" name="Value">ViewportRight(&quot;hud&quot;)/6*4+ViewportRight(&quot;hud&quot;)/12</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="5808538516488511" type="System">
                                     <param id="0" name="Variable">launchLineY0</param>
@@ -1405,7 +1485,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="7024823255720201" type="Function">
                                             <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
-                                            <param id="1" name="Parameter {n}">272{###}2100{###}Function.Param(0){###}Function.Param(1)</param>
+                                            <param id="1" name="Parameter {n}">272{###}1800{###}Function.Param(0){###}Function.Param(1)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -5176,6 +5256,7 @@
                             </actions>
                         </event-block>
                         <comment>일단 만드는데</comment>
+                        <variable constant="0" name="stageButtonUID" sid="6607843103752504" static="0" type="number">0</variable>
                         <event-block sid="6494261719449449">
                             <conditions>
                                 <condition id="-10" name="For" sid="9585663040600592" type="System">
@@ -5189,6 +5270,10 @@
                                     <param id="0" name="Object">chapterStage</param>
                                     <param id="1" name="Layer">&quot;bg&quot;</param>
                                     <param id="2" name="Image point">&quot;Stage&quot;&amp;loopindex</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8914244182866713" type="System">
+                                    <param id="0" name="Variable">stageButtonUID</param>
+                                    <param id="1" name="Value">chapterStage.UID</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="4581414727325411" type="chapterStage">
                                     <param id="0" name="Instance variable">oriWidth</param>
@@ -5220,7 +5305,7 @@
                                         <condition id="-8" name="Compare two values" sid="689351190372572" type="System">
                                             <param id="0" name="First value">int(WebStorage.LocalValue(&quot;chapter&quot;))</param>
                                             <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">int(left(WebStorage.LocalValue(&quot;maxStage&quot;),1))</param>
+                                            <param id="2" name="Second value">int(tokenat(WebStorage.LocalValue(&quot;maxStage&quot;),0,&quot;_&quot;))</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -5235,6 +5320,9 @@
                                             <param id="0" name="Instance variable">oriHeight</param>
                                             <param id="1" name="Value">Self.Height</param>
                                         </action>
+                                        <action id="0" name="Set text" sid="7419993245374153" type="Text2">
+                                            <param id="0" name="Text">int(WebStorage.LocalValue(&quot;chapter&quot;))&amp;&quot;,&quot;&amp;int(left(WebStorage.LocalValue(&quot;maxStage&quot;),1))</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="7412197709937275">
@@ -5242,12 +5330,12 @@
                                         <condition id="-8" name="Compare two values" sid="5154523815242314" type="System">
                                             <param id="0" name="First value">int(WebStorage.LocalValue(&quot;chapter&quot;))</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">int(left(WebStorage.LocalValue(&quot;maxStage&quot;),1))</param>
+                                            <param id="2" name="Second value">int(tokenat(WebStorage.LocalValue(&quot;maxStage&quot;),0,&quot;_&quot;))</param>
                                         </condition>
                                         <condition id="-8" name="Compare two values" sid="1790197782666267" type="System">
                                             <param id="0" name="First value">loopindex</param>
                                             <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">int(right(WebStorage.LocalValue(&quot;maxStage&quot;),1))</param>
+                                            <param id="2" name="Second value">int(tokenat(WebStorage.LocalValue(&quot;maxStage&quot;),1,&quot;_&quot;))</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -5261,6 +5349,9 @@
                                         <action id="-10" name="Set value" sid="9382332949654621" type="chapterStage">
                                             <param id="0" name="Instance variable">oriHeight</param>
                                             <param id="1" name="Value">Self.Height</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="8372371668045897" type="Text2">
+                                            <param id="0" name="Text">int(WebStorage.LocalValue(&quot;chapter&quot;))&amp;&quot;,&quot;&amp;int(left(WebStorage.LocalValue(&quot;maxStage&quot;),1))&amp;&quot;,&quot;&amp;loopindex</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -5499,7 +5590,7 @@
                                                             <param id="2" name="Mode">0</param>
                                                         </action>
                                                         <action id="0" name="Set text" sid="538749667570829" type="stageInfoText">
-                                                            <param id="0" name="Text">left(chapterStage.AnimationName,1)&amp;&quot;번 작전구역, 거점 &quot;&amp;chapterStage.stage&amp;&quot;.&quot;&amp;newline&amp;&quot;일명, &apos;&quot;&amp;stageNameDB.Get(chapterStage.AnimationName)&amp;&quot;&apos;.&quot;</param>
+                                                            <param id="0" name="Text">left(chapterStage.AnimationName,1)&amp;&quot;번 작전구역, 거점 &quot;&amp;chapterStage.stage&amp;&quot;.&quot;&amp;newline&amp;&quot;일명, &apos;&quot;&amp;tokenat(stageDB.Get(chapterStage.AnimationName),0,&quot;/&quot;)&amp;&quot;&apos;.&quot;&amp;newline&amp;tokenat(stageDB.Get(chapterStage.AnimationName),1,&quot;/&quot;)</param>
                                                         </action>
                                                         <action id="0" name="Call function" sid="9454760701560319" type="Function">
                                                             <param id="0" name="Name">&quot;stageButtonSelectedEffect&quot;</param>

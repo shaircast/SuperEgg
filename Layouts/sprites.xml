@@ -321,8 +321,8 @@
                         <x>790</x>
                         <y>773</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
+                        <width>48</width>
+                        <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -2219,7 +2219,7 @@
     </layers>
     <nonworld-instances>
         <instance type="henDB" uid="33" />
-        <instance type="stageNameDB" uid="47" />
+        <instance type="stageDB" uid="47" />
     </nonworld-instances>
     <effects />
 </c2layout>
