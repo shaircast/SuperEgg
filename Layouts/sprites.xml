@@ -288,10 +288,10 @@
                         <x>366</x>
                         <y>844</y>
                         <z>0</z>
-                        <width>192</width>
+                        <width>225</width>
                         <height>135</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>0.50222224</hotspotX>
                         <hotspotY>0.503703713</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -318,8 +318,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>790</x>
-                        <y>773</y>
+                        <x>939</x>
+                        <y>640</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -415,8 +415,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>686</x>
-                        <y>820</y>
+                        <x>562</x>
+                        <y>811</y>
                         <z>0</z>
                         <width>256</width>
                         <height>256</height>
@@ -1362,7 +1362,7 @@
                         <text>henInfo</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>배달의민족 주아,-27,400,0</font>
-                        <color>0,0,0</color>
+                        <color>255,255,204</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
@@ -1433,7 +1433,7 @@
                         <text>+01</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>배달의민족 주아,-21,700,0</font>
-                        <color>240,240,240</color>
+                        <color>255,255,204</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Left</hotspot>
@@ -2208,6 +2208,66 @@
                         <height>116</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="heartTimer" uid="142">
+                    <properties>
+                        <text>00:00</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>배달의민족 주아,-24,700,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Anchor">
+                            <properties>
+                                <left-edge>None</left-edge>
+                                <top-edge>Window bottom</top-edge>
+                                <right-edge>None</right-edge>
+                                <bottom-edge>None</bottom-edge>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>922</x>
+                        <y>47</y>
+                        <z>0</z>
+                        <width>125</width>
+                        <height>49</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="heart" uid="159">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>918</x>
+                        <y>86</y>
+                        <z>0</z>
+                        <width>180</width>
+                        <height>36</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>

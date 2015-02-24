@@ -77,6 +77,32 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="7307168884376244">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="118999128828963" type="WebStorage">
+                            <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="9499140736511512" type="WebStorage">
+                            <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2179070527283105">
+                    <conditions>
+                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="2326829273951867" type="WebStorage">
+                            <param id="0" name="Key">&quot;heart&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="7904241517224083" type="WebStorage">
+                            <param id="0" name="Key">&quot;heart&quot;</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="5026051870691951">
                     <conditions />
                     <actions>

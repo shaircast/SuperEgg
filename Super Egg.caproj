@@ -13,6 +13,7 @@
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra &amp; Ludei" id="CJSAds" version="1">CocoonJS</plugin>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -24,6 +25,7 @@
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
+        <plugin author="sergyperov / SirG" id="cocoonjsnotify" version="1">CocoonJS Notifications</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
@@ -93,6 +95,12 @@
             </object-type>
             <object-type name="Mouse" sid="5678036794682593">
                 <plugin id="Mouse" />
+            </object-type>
+            <object-type name="CocoonJS" sid="3314186826583747">
+                <plugin id="CJSAds" />
+            </object-type>
+            <object-type name="CocoonJSNotifications" sid="8066927506354403">
+                <plugin id="cocoonjsnotify" />
             </object-type>
         </object-folder>
         <object-folder name="battleView">
@@ -1432,14 +1440,14 @@
                     </behaviors>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6744672471360473" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.503704" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg\merged\resized\1.png">
-                                <image-point name="Atk" x="0.635417" y="0.244444" />
-                                <image-point name="Food" x="0.640625" y="0.488889" />
-                                <image-point name="Turn" x="0.635417" y="0.733333" />
-                                <image-point name="AtkText" x="0.833333" y="0.244444" />
-                                <image-point name="FoodText" x="0.833333" y="0.488889" />
-                                <image-point name="TurnText" x="0.833333" y="0.733333" />
-                                <image-point name="HenCage" x="0.291667" y="0.696296" />
+                            <frame duration="1" format="png8" hotspotX="0.502222" hotspotY="0.503704" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg\merged\resized\1.png">
+                                <image-point name="Atk" x="0.0577778" y="0.888889" />
+                                <image-point name="AtkText" x="0.177778" y="0.888889" />
+                                <image-point name="Food" x="0.4" y="0.888889" />
+                                <image-point name="FoodText" x="0.506667" y="0.888889" />
+                                <image-point name="Turn" x="0.768889" y="0.888889" />
+                                <image-point name="TurnText" x="0.853333" y="0.888889" />
+                                <image-point name="HenCage" x="0.48" y="0.622222" />
                             </frame>
                         </animation>
                     </animation-folder>
@@ -2051,6 +2059,27 @@
                             <image-point name="LeftChap" x="-0.5" y="0.5" />
                             <image-point name="RightChap" x="1.5" y="0.5" />
                         </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="heartTimer" sid="5788690458133861">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="4052289153073382">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="heart" sid="1812306129979633">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="205652519728202" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -3314,6 +3343,7 @@
                 <member>golemName</member>
                 <member>golemReward</member>
                 <member>golemSpeed</member>
+                <member>heartTimer</member>
                 <member>henInfo</member>
                 <member>nameText</member>
                 <member>openingText</member>
@@ -3373,6 +3403,18 @@
             </properties>
         </global-instance>
         <global-instance type="Mouse" uid="126" />
+        <global-instance type="CocoonJSNotifications" uid="124" />
+        <global-instance type="CocoonJS" uid="137">
+            <properties>
+                <physics-engine>Accelerated</physics-engine>
+                <store-mode>Managed</store-mode>
+                <leaderboards-service>None</leaderboards-service>
+                <store-sandbox>Enabled</store-sandbox>
+                <google-play-games-clientid></google-play-games-clientid>
+                <facebook-appid></facebook-appid>
+                <facebook-channel></facebook-channel>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder>
         <sound-folder name="eggExplode">

@@ -851,7 +851,7 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="4549750369119469" type="System">
                                     <param id="0" name="Variable">henButtonY</param>
-                                    <param id="1" name="Value">630</param>
+                                    <param id="1" name="Value">650</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="4818628651737208" type="System">
                                     <param id="0" name="Variable">henButtonXOri</param>
@@ -949,6 +949,9 @@
                                     <param id="0" name="Object">henCage</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="Image point">&quot;HenCage&quot;</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="3998246903281823" type="henCage">
+                                    <param id="0" name="Scale">1.5</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="2208788200575127" type="henCage">
                                     <param id="0" name="Instance variable">kind</param>
@@ -5320,9 +5323,6 @@
                                             <param id="0" name="Instance variable">oriHeight</param>
                                             <param id="1" name="Value">Self.Height</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="7419993245374153" type="Text2">
-                                            <param id="0" name="Text">int(WebStorage.LocalValue(&quot;chapter&quot;))&amp;&quot;,&quot;&amp;int(left(WebStorage.LocalValue(&quot;maxStage&quot;),1))</param>
-                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="7412197709937275">
@@ -5349,9 +5349,6 @@
                                         <action id="-10" name="Set value" sid="9382332949654621" type="chapterStage">
                                             <param id="0" name="Instance variable">oriHeight</param>
                                             <param id="1" name="Value">Self.Height</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="8372371668045897" type="Text2">
-                                            <param id="0" name="Text">int(WebStorage.LocalValue(&quot;chapter&quot;))&amp;&quot;,&quot;&amp;int(left(WebStorage.LocalValue(&quot;maxStage&quot;),1))&amp;&quot;,&quot;&amp;loopindex</param>
                                         </action>
                                     </actions>
                                 </event-block>

@@ -12,13 +12,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout order="0">sprites</layout>
         <layout order="3">battleView</layout>
-        <layout active="1" order="4">opening</layout>
+        <layout order="4">opening</layout>
         <layout order="6">stageView</layout>
         <event-sheet order="1">function</event-sheet>
         <event-sheet order="2">battleView</event-sheet>
         <event-sheet order="5">stageView</event-sheet>
         <event-sheet order="7">opening</event-sheet>
-        <event-sheet order="8">general</event-sheet>
+        <event-sheet active="1" order="0">general</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -34,14 +34,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="1" path="object-folder/plugin/" />
+        <folder expanded="0" path="object-folder/plugin/" />
         <folder expanded="0" path="object-folder/battleView/" />
         <folder expanded="0" path="object-folder/battleView/hud/" />
         <folder expanded="0" path="object-folder/battleView/golem/" />
         <folder expanded="0" path="object-folder/battleView/golem/kindEffect/" />
         <folder expanded="0" path="object-folder/battleView/eggExplode/" />
         <folder expanded="0" path="object-folder/battleView/bgDeco/" />
-        <folder expanded="0" path="object-folder/battleView/henButton/" />
+        <folder expanded="1" path="object-folder/battleView/henButton/" />
         <folder expanded="0" path="object-folder/DBDic/" />
         <folder expanded="1" path="object-folder/stageView/" />
         <folder expanded="0" path="object-folder/menuButton/" />
@@ -54,8 +54,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/optionView/golemDic/" />
         <folder expanded="1" path="object-folder/optionView/credit/" />
         <folder expanded="0" path="object-folder/test/" />
-        <folder expanded="1" path="layout-folder/" />
-        <folder expanded="1" path="event-folder/" />
+        <folder expanded="0" path="layout-folder/" />
+        <folder expanded="0" path="event-folder/" />
         <folder expanded="0" path="file-folder/" />
         <folder expanded="0" path="sound-folder/" />
         <folder expanded="0" path="music-folder/" />
@@ -115,6 +115,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/skyLeftCover/" />
         <folder expanded="1" path="animation-folder/skyRightCover/" />
         <folder expanded="1" path="animation-folder/stageViewTransparentCover/" />
+        <folder expanded="1" path="animation-folder/heart/" />
         <folder expanded="1" path="animation-folder/menuButtonCageView/" />
         <folder expanded="1" path="animation-folder/menuButtonPackage/" />
         <folder expanded="1" path="animation-folder/menuButtonOptionView/" />
