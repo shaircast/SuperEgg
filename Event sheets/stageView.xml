@@ -73,6 +73,9 @@
                     <param id="1" name="ImagePoint">&quot;RightChap&quot;</param>
                     <param id="2" name="Mode">0</param>
                 </action>
+                <action id="5" name="Set frame" sid="2489788717079095" type="heart">
+                    <param id="0" name="Frame number">int(WebStorage.LocalValue(&quot;heart&quot;))</param>
+                </action>
             </actions>
             <sub-events>
                 <comment>엔트리닭들 표시</comment>
@@ -373,11 +376,11 @@
                     <conditions>
                         <condition id="-1" name="Compare X" sid="5175246534579688" type="skyLeftCover">
                             <param id="0" name="Comparison">4</param>
-                            <param id="1" name="X co-ordinate">middlePoint</param>
+                            <param id="1" name="X co-ordinate">middlePoint-200</param>
                         </condition>
                         <condition id="-1" name="Compare X" sid="6117459462028747" type="skyRightCover">
                             <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">middlePoint</param>
+                            <param id="1" name="X co-ordinate">middlePoint+200</param>
                         </condition>
                     </conditions>
                     <actions>

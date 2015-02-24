@@ -3,6 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>general</name>
     <events>
+        <variable constant="1" name="HEARTCHARGETIME" sid="4116059698744367" static="0" type="number">90</variable>
+        <variable constant="1" name="MAXHEART" sid="5061671056963641" static="0" type="number">5</variable>
+        <variable constant="0" name="wallClock" sid="4615752865800644" static="0" type="number">0</variable>
         <event-block sid="9651244264892679">
             <conditions>
                 <condition id="-18" name="Is in preview" sid="9150771652485473" type="System" />
@@ -21,80 +24,6 @@
                     <param id="0" name="Text">WindowWidth&amp;&quot;,&quot;&amp;WindowHeight</param>
                 </action>
             </actions>
-        </event-block>
-        <event-block disabled="1" sid="1805455520731274">
-            <conditions>
-                <condition id="-8" name="Compare two values" sid="9928698981778854" type="System">
-                    <param id="0" name="First value">Touch.Gamma</param>
-                    <param id="1" name="Comparison">4</param>
-                    <param id="2" name="Second value">0</param>
-                </condition>
-                <condition id="-4" name="Trigger once while true" sid="9254160916005191" type="System" />
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block disabled="1" sid="5363193251420609">
-                    <conditions>
-                        <condition id="-8" name="Compare two values" sid="2282799277201331" type="System">
-                            <param id="0" name="First value">Touch.AccelerationZWithG</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Second value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="18" name="Lock orientation" sid="1143234550954371" type="Browser">
-                            <param id="0" name="Orientation">5</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="6963619054510702">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="6515079295013125" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="18" name="Lock orientation" sid="679809899319657" type="Browser">
-                            <param id="0" name="Orientation">4</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block disabled="1" sid="8052651345565197">
-            <conditions>
-                <condition id="-8" name="Compare two values" sid="1785478883168753" type="System">
-                    <param id="0" name="First value">Touch.Gamma</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Second value">0</param>
-                </condition>
-                <condition id="-4" name="Trigger once while true" sid="9649706287925989" type="System" />
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block disabled="1" sid="1301248286259094">
-                    <conditions>
-                        <condition id="-8" name="Compare two values" sid="9049993093107554" type="System">
-                            <param id="0" name="First value">Touch.AccelerationZWithG</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Second value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="18" name="Lock orientation" sid="378266881562701" type="Browser">
-                            <param id="0" name="Orientation">4</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="879683092975503">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="9534871614684953" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="18" name="Lock orientation" sid="6395948310720175" type="Browser">
-                            <param id="0" name="Orientation">5</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
         </event-block>
         <event-block sid="2051457413045695">
             <conditions>
@@ -132,7 +61,7 @@
             <actions>
                 <action id="-18" name="Set layer opacity" sid="7175916689260618" type="System">
                     <param id="0" name="Layer">&quot;fade&quot;</param>
-                    <param id="1" name="Opacity">LayerOpacity(&quot;fade&quot;)-200*dt</param>
+                    <param id="1" name="Opacity">LayerOpacity(&quot;fade&quot;)-100*dt</param>
                 </action>
             </actions>
         </event-block>
@@ -155,38 +84,26 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <variable constant="1" name="HEARTCHARGETIME" sid="2666386870630404" static="0" type="number">90</variable>
-                        <variable constant="0" name="flag" sid="4372032716762337" static="1" type="number">0</variable>
-                        <comment>플래그 변환용</comment>
-                        <event-block sid="2979372015813673">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="7609550065380187" type="System">
-                                    <param id="0" name="Variable">flag</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="2160701680944272" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="6249375998214458" type="System">
-                                    <param id="0" name="Variable">flag</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
+                        <variable constant="0" name="flag" sid="4372032716762337" static="0" type="number">0</variable>
                         <comment>timescale 고려해서, 1초마다 leftToCharge1씩 감소시키고, 앱 꺼질때 대비해서 timeAway도 갱신</comment>
                         <event-block sid="4125015975484101">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="1622531897487796" type="System">
-                                    <param id="0" name="Variable">flag</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
+                                <condition id="-8" name="Compare two values" sid="1622531897487796" type="System">
+                                    <param id="0" name="First value">int(wallClock)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">wallclocktime</param>
                                 </condition>
-                                <condition id="-4" name="Trigger once while true" sid="249298774583684" type="System" />
+                                <condition id="-8" name="Compare two values" sid="4594502860628197" type="System">
+                                    <param id="0" name="First value">int(wallClock)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">int(wallclocktime)</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="1583709436026296" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-16" name="Wait" sid="8418405611095207" type="System">
-                                    <param id="0" name="Seconds">1.0/timescale</param>
+                                <action id="-9" name="Set value" sid="4397242246165347" type="System">
+                                    <param id="0" name="Variable">wallClock</param>
+                                    <param id="1" name="Value">int(wallclocktime)</param>
                                 </action>
                                 <action id="1" name="Start timer" sid="4360334644640689" type="TimeAway">
                                     <param id="0" name="Key">&quot;timeAway&quot;</param>
@@ -195,12 +112,33 @@
                                     <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
                                     <param id="1" name="Value">int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))-1</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="3175122619455316" type="System">
-                                    <param id="0" name="Variable">flag</param>
-                                    <param id="1" name="Value">0</param>
+                                <action id="5" name="Set frame" sid="7200677996126075" type="heart">
+                                    <param id="0" name="Frame number">int(WebStorage.LocalValue(&quot;heart&quot;))</param>
+                                </action>
+                                <action id="0" name="Set text" sid="1706456733474977" type="heartTimer">
+                                    <param id="0" name="Text">&quot;다음 사료까지 - &quot;&amp;zeropad(floor(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))/60),2) &amp;&quot; : &quot;&amp; zeropad(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))%60,2)</param>
                                 </action>
                             </actions>
                             <sub-events>
+                                <event-block sid="8677477824403339">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="9599764982723794" type="WebStorage">
+                                            <param id="0" name="Key">&quot;heart&quot;</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="987554660351723" type="WebStorage">
+                                            <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
+                                            <param id="1" name="Value">HEARTCHARGETIME</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="3284501376698781" type="heartTimer">
+                                            <param id="0" name="Text">&quot;완전 준비완료!&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>시간 다되면 다시 충전하고</comment>
                                 <event-block sid="7839139190222038">
                                     <conditions>
                                         <condition id="7" name="Compare key value (as number)" sid="4329238080974752" type="WebStorage">
@@ -214,28 +152,26 @@
                                             <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
                                             <param id="1" name="Value">HEARTCHARGETIME</param>
                                         </action>
+                                        <action id="0" name="Call function" sid="8295985863000437" type="Function">
+                                            <param id="0" name="Name">&quot;addHeart&quot;</param>
+                                            <param id="1" name="Parameter {n}">1</param>
+                                        </action>
                                     </actions>
-                                    <sub-events>
-                                        <event-block sid="1682000014841958">
-                                            <conditions>
-                                                <condition id="7" name="Compare key value (as number)" sid="4999146458569694" type="WebStorage">
-                                                    <param id="0" name="Key">&quot;heart&quot;</param>
-                                                    <param id="1" name="Comparison">2</param>
-                                                    <param id="2" name="Value">5</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Set local value" sid="6571983772566593" type="WebStorage">
-                                                    <param id="0" name="Key">&quot;heart&quot;</param>
-                                                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;heart&quot;))+1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="3357762033466891">
+                    <conditions>
+                        <condition id="6" name="On local notification is received" sid="5757023216217264" type="CocoonJSNotifications" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="4743052401417224" type="Function">
+                            <param id="0" name="Name">&quot;addHeart&quot;</param>
+                            <param id="1" name="Parameter {n}">5</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

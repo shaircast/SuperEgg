@@ -180,6 +180,15 @@
                                     <param id="0" name="Key">&quot;entry3&quot;</param>
                                     <param id="1" name="Value">&quot;2&quot;</param>
                                 </action>
+                                <action id="0" name="Set local value" sid="7779584694073087" type="WebStorage">
+                                    <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="1157474339873631" type="WebStorage">
+                                    <param id="0" name="Key">&quot;heart&quot;</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="0" name="Cancel all sent local notifications" sid="5945577471697128" type="CocoonJSNotifications" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -318,6 +327,66 @@
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>addHeart(count) : 하트 count개를 더한다. 음수도 가능. 더하고 나서 heart 프레임 갱신.</comment>
+                <event-block sid="8817127446034614">
+                    <conditions>
+                        <condition id="0" name="On function" sid="864043820747522" type="Function">
+                            <param id="0" name="Name">&quot;addHeart&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="185019921327992">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Set local value" sid="5065647622090848" type="WebStorage">
+                                    <param id="0" name="Key">&quot;heart&quot;</param>
+                                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;heart&quot;))+Function.Param(0)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="3013197822911526">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="6589658334996365" type="WebStorage">
+                                            <param id="0" name="Key">&quot;heart&quot;</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">MAXHEART</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="6756155053798814" type="WebStorage">
+                                            <param id="0" name="Key">&quot;heart&quot;</param>
+                                            <param id="1" name="Value">MAXHEART</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8115664814558604">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="5634703614641135" type="WebStorage">
+                                            <param id="0" name="Key">&quot;heart&quot;</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="8901763734195208" type="WebStorage">
+                                            <param id="0" name="Key">&quot;heart&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2898977540796429">
+                                    <conditions />
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="3408306598761198" type="heart">
+                                            <param id="0" name="Frame number">int(WebStorage.LocalValue(&quot;heart&quot;))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -1488,7 +1557,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="7024823255720201" type="Function">
                                             <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
-                                            <param id="1" name="Parameter {n}">272{###}1800{###}Function.Param(0){###}Function.Param(1)</param>
+                                            <param id="1" name="Parameter {n}">272{###}2000{###}Function.Param(0){###}Function.Param(1)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -5107,6 +5176,136 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>loseHeart() : 게임 지거나 나갔을 때 하트와 노티 처리.</comment>
+                <event-block sid="9027050095484521">
+                    <conditions>
+                        <condition id="0" name="On function" sid="5898424149805723" type="Function">
+                            <param id="0" name="Name">&quot;loseHeart&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7647749446035299">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="2640804383254361" type="Function">
+                                    <param id="0" name="Name">&quot;addHeart&quot;</param>
+                                    <param id="1" name="Parameter {n}">-1</param>
+                                </action>
+                                <action id="0" name="Cancel all sent local notifications" sid="5592267755316984" type="CocoonJSNotifications" />
+                                <action id="2" name="Send a local notification." sid="3635366343873178" type="CocoonJSNotifications">
+                                    <param id="0" name="Badge Number">0</param>
+                                    <param id="1" name="Delay">HEARTCHARGETIME*(MAXHEART-int(WebStorage.LocalValue(&quot;heart&quot;)))</param>
+                                    <param id="2" name="Message">&quot;사료가 모두 충전되었습니다!&quot;</param>
+                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
+                                    <param id="4" name="Expanded Body">&quot;사료가 모두 충전되었습니다! 다시 가 볼까요?&quot;</param>
+                                    <param id="5" name="Sound enabled">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>bgSet(chapter,stage) : stage따라 배경이랑 하늘 애니메이션과 프레임 바꾸기</comment>
+                <event-block sid="6527426268276846">
+                    <conditions>
+                        <condition id="0" name="On function" sid="9529122103636482" type="Function">
+                            <param id="0" name="Name">&quot;bgSet&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="ani" sid="5529576660034757" static="0" type="text"></variable>
+                        <variable constant="0" name="frame" sid="3576063542918052" static="0" type="number">0</variable>
+                        <event-block sid="1037394359446265">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="7072255406109588" type="System">
+                                    <param id="0" name="Variable">ani</param>
+                                    <param id="1" name="Value">zeropad(Function.Param(0),2)&amp;&quot;_&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6380520670171719">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="6522226100230305" type="System">
+                                    <param id="0" name="Value">int(Function.Param(1))</param>
+                                    <param id="1" name="Lower bound">1</param>
+                                    <param id="2" name="Upper bound">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9431230895868799" type="System">
+                                    <param id="0" name="Variable">frame</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5879488570015268">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="1857560728013319" type="System">
+                                    <param id="0" name="Value">int(Function.Param(1))</param>
+                                    <param id="1" name="Lower bound">3</param>
+                                    <param id="2" name="Upper bound">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9550891750538858" type="System">
+                                    <param id="0" name="Variable">frame</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2707667817842805">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="8819316688897716" type="System">
+                                    <param id="0" name="Value">int(Function.Param(1))</param>
+                                    <param id="1" name="Lower bound">6</param>
+                                    <param id="2" name="Upper bound">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="8931738636113368" type="System">
+                                    <param id="0" name="Variable">frame</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8367518240678183">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="9380103452997378" type="System">
+                                    <param id="0" name="Value">int(Function.Param(1))</param>
+                                    <param id="1" name="Lower bound">8</param>
+                                    <param id="2" name="Upper bound">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="2108902374946411" type="System">
+                                    <param id="0" name="Variable">frame</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6999443599621059">
+                            <conditions />
+                            <actions>
+                                <action id="4" name="Set animation" sid="5895474092453227" type="battleViewBg">
+                                    <param id="0" name="Animation">ani</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="4863157193294782" type="battleViewBg">
+                                    <param id="0" name="Frame number">frame</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="5369867871273878" type="skySprite">
+                                    <param id="0" name="Animation">ani</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="4356662486129744" type="skySprite">
+                                    <param id="0" name="Frame number">frame</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="4234025495338973" title="stageView">
@@ -5375,7 +5574,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <comment>이미 선택된 게 같으면 자료정리해서 battleView로 이동!</comment>
+                                <comment>이미 선택된 게 같으면 heart 검사</comment>
                                 <variable constant="0" name="randomPick" sid="4484129306987446" static="0" type="number">-1</variable>
                                 <event-block sid="807703448336156">
                                     <conditions>
@@ -5385,116 +5584,139 @@
                                             <param id="2" name="Value">stageSelection.selected</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="6277672275055297" type="System">
-                                            <param id="0" name="Variable">henType0</param>
-                                            <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),3)</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="5683013308565875" type="System">
-                                            <param id="0" name="Variable">henUpgrade0</param>
-                                            <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),2)</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="9476154813741751" type="System">
-                                            <param id="0" name="Variable">henType1</param>
-                                            <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),3)</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="9433260220062633" type="System">
-                                            <param id="0" name="Variable">henUpgrade1</param>
-                                            <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),2)</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="9472490549805692" type="System">
-                                            <param id="0" name="Variable">henType2</param>
-                                            <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),3)</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="5780829824967409" type="System">
-                                            <param id="0" name="Variable">henUpgrade2</param>
-                                            <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),2)</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="6965390610339093" type="System">
-                                            <param id="0" name="Variable">henType3</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="9551971947263258" type="System">
-                                            <param id="0" name="Variable">henUpgrade3</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action behavior="PinToImagePoint" id="10" name="Unpin" sid="4124434254547404" type="skyLeftCover" />
-                                        <action behavior="PinToImagePoint" id="10" name="Unpin" sid="6574255243265968" type="skyRightCover" />
-                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="5796315680870378" type="skyLeftCover">
-                                            <param id="0" name="X">middlePoint</param>
-                                            <param id="1" name="Y">self.Y</param>
-                                        </action>
-                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="6197850480663941" type="skyRightCover">
-                                            <param id="0" name="X">middlePoint</param>
-                                            <param id="1" name="Y">self.Y</param>
-                                        </action>
-                                        <action id="0" name="Play" sid="7389175895713594" type="Audio">
-                                            <param id="0" name="Audio file">stageStart</param>
-                                            <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
-                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
                                     <sub-events>
-                                        <event-block sid="9423947656732501">
-                                            <conditions />
+                                        <comment>하트 충분하면 자료정리해서 battleView로 이동!</comment>
+                                        <event-block sid="9900670591499137">
+                                            <conditions>
+                                                <condition id="7" name="Compare key value (as number)" sid="9291819551297242" type="WebStorage">
+                                                    <param id="0" name="Key">&quot;heart&quot;</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
                                             <actions>
-                                                <action id="-41" name="Wait for signal" sid="8758649131637779" type="System">
-                                                    <param id="0" name="Tag">&quot;coverMoved&quot;</param>
+                                                <action id="-9" name="Set value" sid="6277672275055297" type="System">
+                                                    <param id="0" name="Variable">henType0</param>
+                                                    <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),3)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="5683013308565875" type="System">
+                                                    <param id="0" name="Variable">henUpgrade0</param>
+                                                    <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry1&quot;)),&quot;/&quot;),2)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="9476154813741751" type="System">
+                                                    <param id="0" name="Variable">henType1</param>
+                                                    <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),3)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="9433260220062633" type="System">
+                                                    <param id="0" name="Variable">henUpgrade1</param>
+                                                    <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry2&quot;)),&quot;/&quot;),2)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="9472490549805692" type="System">
+                                                    <param id="0" name="Variable">henType2</param>
+                                                    <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),3)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="5780829824967409" type="System">
+                                                    <param id="0" name="Variable">henUpgrade2</param>
+                                                    <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),int(WebStorage.LocalValue(&quot;entry3&quot;)),&quot;/&quot;),2)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="6965390610339093" type="System">
+                                                    <param id="0" name="Variable">henType3</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="9551971947263258" type="System">
+                                                    <param id="0" name="Variable">henUpgrade3</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action behavior="PinToImagePoint" id="10" name="Unpin" sid="4124434254547404" type="skyLeftCover" />
+                                                <action behavior="PinToImagePoint" id="10" name="Unpin" sid="6574255243265968" type="skyRightCover" />
+                                                <action behavior="MoveTo" id="4" name="Move to XY" sid="5796315680870378" type="skyLeftCover">
+                                                    <param id="0" name="X">middlePoint</param>
+                                                    <param id="1" name="Y">self.Y</param>
+                                                </action>
+                                                <action behavior="MoveTo" id="4" name="Move to XY" sid="6197850480663941" type="skyRightCover">
+                                                    <param id="0" name="X">middlePoint</param>
+                                                    <param id="1" name="Y">self.Y</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="7389175895713594" type="Audio">
+                                                    <param id="0" name="Audio file">stageStart</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block sid="6351498232886979">
-                                                    <conditions>
-                                                        <condition id="-23" name="While" sid="4291546074744309" type="System" />
-                                                    </conditions>
+                                                <event-block sid="9423947656732501">
+                                                    <conditions />
                                                     <actions>
-                                                        <action id="-9" name="Set value" sid="2372117207762511" type="System">
-                                                            <param id="0" name="Variable">randomPick</param>
-                                                            <param id="1" name="Value">floor(random(tokencount(WebStorage.LocalValue(&quot;henList&quot;),&quot;/&quot;)-1))</param>
+                                                        <action id="-41" name="Wait for signal" sid="8758649131637779" type="System">
+                                                            <param id="0" name="Tag">&quot;coverMoved&quot;</param>
                                                         </action>
                                                     </actions>
                                                     <sub-events>
-                                                        <event-block sid="5708539338917812">
+                                                        <event-block sid="6351498232886979">
                                                             <conditions>
-                                                                <condition id="7" name="Compare key value (as number)" sid="4956957520322883" type="WebStorage">
-                                                                    <param id="0" name="Key">&quot;entry1&quot;</param>
-                                                                    <param id="1" name="Comparison">1</param>
-                                                                    <param id="2" name="Value">randomPick</param>
-                                                                </condition>
-                                                                <condition id="7" name="Compare key value (as number)" sid="1975866644967266" type="WebStorage">
-                                                                    <param id="0" name="Key">&quot;entry2&quot;</param>
-                                                                    <param id="1" name="Comparison">1</param>
-                                                                    <param id="2" name="Value">randomPick</param>
-                                                                </condition>
-                                                                <condition id="7" name="Compare key value (as number)" sid="7543340799604926" type="WebStorage">
-                                                                    <param id="0" name="Key">&quot;entry3&quot;</param>
-                                                                    <param id="1" name="Comparison">1</param>
-                                                                    <param id="2" name="Value">randomPick</param>
-                                                                </condition>
+                                                                <condition id="-23" name="While" sid="4291546074744309" type="System" />
                                                             </conditions>
                                                             <actions>
-                                                                <action id="-9" name="Set value" sid="6027733866375671" type="System">
-                                                                    <param id="0" name="Variable">henType3</param>
-                                                                    <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),randomPick,&quot;/&quot;),3)</param>
-                                                                </action>
-                                                                <action id="-9" name="Set value" sid="8693063168406667" type="System">
-                                                                    <param id="0" name="Variable">henUpgrade3</param>
-                                                                    <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),randomPick,&quot;/&quot;),2)</param>
-                                                                </action>
-                                                                <action id="-9" name="Set value" sid="5908412262524663" type="System">
-                                                                    <param id="0" name="Variable">stage</param>
-                                                                    <param id="1" name="Value">chapterStage.AnimationName</param>
-                                                                </action>
-                                                                <action id="-24" name="Stop loop" sid="7487179566595038" type="System" />
-                                                                <action id="-2" name="Go to layout" sid="5210828823880145" type="System">
-                                                                    <param id="0" name="Layout">battleView</param>
+                                                                <action id="-9" name="Set value" sid="2372117207762511" type="System">
+                                                                    <param id="0" name="Variable">randomPick</param>
+                                                                    <param id="1" name="Value">floor(random(tokencount(WebStorage.LocalValue(&quot;henList&quot;),&quot;/&quot;)-1))</param>
                                                                 </action>
                                                             </actions>
+                                                            <sub-events>
+                                                                <event-block sid="5708539338917812">
+                                                                    <conditions>
+                                                                        <condition id="7" name="Compare key value (as number)" sid="4956957520322883" type="WebStorage">
+                                                                            <param id="0" name="Key">&quot;entry1&quot;</param>
+                                                                            <param id="1" name="Comparison">1</param>
+                                                                            <param id="2" name="Value">randomPick</param>
+                                                                        </condition>
+                                                                        <condition id="7" name="Compare key value (as number)" sid="1975866644967266" type="WebStorage">
+                                                                            <param id="0" name="Key">&quot;entry2&quot;</param>
+                                                                            <param id="1" name="Comparison">1</param>
+                                                                            <param id="2" name="Value">randomPick</param>
+                                                                        </condition>
+                                                                        <condition id="7" name="Compare key value (as number)" sid="7543340799604926" type="WebStorage">
+                                                                            <param id="0" name="Key">&quot;entry3&quot;</param>
+                                                                            <param id="1" name="Comparison">1</param>
+                                                                            <param id="2" name="Value">randomPick</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-9" name="Set value" sid="6027733866375671" type="System">
+                                                                            <param id="0" name="Variable">henType3</param>
+                                                                            <param id="1" name="Value">left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),randomPick,&quot;/&quot;),3)</param>
+                                                                        </action>
+                                                                        <action id="-9" name="Set value" sid="8693063168406667" type="System">
+                                                                            <param id="0" name="Variable">henUpgrade3</param>
+                                                                            <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),randomPick,&quot;/&quot;),2)</param>
+                                                                        </action>
+                                                                        <action id="-9" name="Set value" sid="5908412262524663" type="System">
+                                                                            <param id="0" name="Variable">stage</param>
+                                                                            <param id="1" name="Value">chapterStage.AnimationName</param>
+                                                                        </action>
+                                                                        <action id="-24" name="Stop loop" sid="7487179566595038" type="System" />
+                                                                        <action id="-2" name="Go to layout" sid="5210828823880145" type="System">
+                                                                            <param id="0" name="Layout">battleView</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
                                                         </event-block>
                                                     </sub-events>
                                                 </event-block>
                                             </sub-events>
+                                        </event-block>
+                                        <event-block sid="1474860920365847">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="7838223391318876" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="564692441553529" type="stageInfoText">
+                                                    <param id="0" name="Text">&quot;사료 포대가 부족합니다. 조금만 기다려 주세요.&quot;</param>
+                                                </action>
+                                            </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>

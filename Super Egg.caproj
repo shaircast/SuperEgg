@@ -13,7 +13,6 @@
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
-        <plugin author="Scirra &amp; Ludei" id="CJSAds" version="1">CocoonJS</plugin>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -22,7 +21,6 @@
         <plugin author="Rex.Rainbow" id="Rex_audio_helper" version="0.100000001">Audio helper</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
         <plugin author="sergyperov / SirG" id="cocoonjsnotify" version="1">CocoonJS Notifications</plugin>
@@ -60,7 +58,7 @@
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Orientations">Landscape</prop>
-        <prop name="Pause on unfocus">Yes</prop>
+        <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preload sounds">Yes</prop>
         <prop name="Preview browser">Chrome</prop>
@@ -95,9 +93,6 @@
             </object-type>
             <object-type name="Mouse" sid="5678036794682593">
                 <plugin id="Mouse" />
-            </object-type>
-            <object-type name="CocoonJS" sid="3314186826583747">
-                <plugin id="CJSAds" />
             </object-type>
             <object-type name="CocoonJSNotifications" sid="8066927506354403">
                 <plugin id="cocoonjsnotify" />
@@ -142,14 +137,7 @@
                     </behaviors>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9409025723892355" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0" y="1" />
-                                    <point x="0.282895" y="0.263158" />
-                                    <point x="1" y="0" />
-                                    <point x="1" y="1" />
-                                </collision-poly>
-                            </frame>
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\cage\okButton.jpg" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -1350,25 +1338,6 @@
                         </behavior-type>
                     </behaviors>
                 </object-type>
-                <object-type name="tower" sid="5447411779079036">
-                    <plugin id="Sprite" />
-                    <animation-folder>
-                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8234907786635926" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\Tower.png">
-                                <collision-poly>
-                                    <point x="0.0480573" y="0.0167618" />
-                                    <point x="0.5" y="0.0206847" />
-                                    <point x="0.816973" y="0.0638374" />
-                                    <point x="0.844581" y="0.5" />
-                                    <point x="0.843558" y="0.945435" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0" y="1" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                </object-type>
                 <object-type name="foodSprite" sid="500685452156395">
                     <plugin id="Sprite" />
                     <behaviors>
@@ -1393,31 +1362,14 @@
                         </animation>
                     </animation-folder>
                 </object-type>
-                <object-type name="skyTile1" sid="7358266248812784">
-                    <plugin id="TiledBg" />
-                    <texture format="png8" />
-                </object-type>
-                <object-type name="skyTile2" sid="1140172887312074">
-                    <plugin id="TiledBg" />
-                    <texture format="png8" />
-                </object-type>
-                <object-type name="skyTile3" sid="5000159708844694">
-                    <plugin id="TiledBg" />
-                    <texture format="png8" />
-                </object-type>
-                <object-type name="skyTile4" sid="4199058728620303">
-                    <plugin id="TiledBg" />
-                    <texture format="png8" />
-                </object-type>
-                <object-type name="skyTile5" sid="9679992388871039">
-                    <plugin id="TiledBg" />
-                    <texture format="png8" />
-                </object-type>
                 <object-type name="skySprite" sid="1294478346725572">
                     <plugin id="Sprite" />
                     <animation-folder>
-                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7535486446742942" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <animation framecount="4" loop="0" name="01_" pingpong="0" repeatcount="1" repeatto="0" sid="7535486446742942" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_.jpg" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_1,2.jpg" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_3.jpg" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_4.jpg" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -1440,14 +1392,14 @@
                     </behaviors>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6744672471360473" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.502222" hotspotY="0.503704" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg\merged\resized\1.png">
-                                <image-point name="Atk" x="0.0577778" y="0.888889" />
-                                <image-point name="AtkText" x="0.177778" y="0.888889" />
-                                <image-point name="Food" x="0.4" y="0.888889" />
-                                <image-point name="FoodText" x="0.506667" y="0.888889" />
-                                <image-point name="Turn" x="0.768889" y="0.888889" />
-                                <image-point name="TurnText" x="0.853333" y="0.888889" />
-                                <image-point name="HenCage" x="0.48" y="0.622222" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg\merged\resized\1.png">
+                                <image-point name="Atk" x="0.15" y="0.84375" />
+                                <image-point name="AtkText" x="0.3" y="0.84375" />
+                                <image-point name="Food" x="0.45" y="0.84375" />
+                                <image-point name="FoodText" x="0.6" y="0.84375" />
+                                <image-point name="Turn" x="0.75" y="0.84375" />
+                                <image-point name="TurnText" x="0.9" y="0.84375" />
+                                <image-point name="HenCage" x="0.5" y="0.59375" />
                             </frame>
                         </animation>
                     </animation-folder>
@@ -1644,7 +1596,7 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="pauseButton" sid="1176948810963397">
+            <object-type name="exitButton" sid="1176948810963397">
                 <plugin id="Sprite" />
                 <behaviors>
                     <behavior-type name="Anchor" sid="8875301441477429">
@@ -1719,24 +1671,10 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4942981947109659" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                            </collision-poly>
-                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\battle\button1Time.jpg" />
                     </animation>
                     <animation framecount="1" loop="0" name="Fast" pingpong="0" repeatcount="1" repeatto="0" sid="726715567616416" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                            </collision-poly>
-                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\battle\button1.5Time.jpg" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2015,7 +1953,15 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8207058004840767" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.542857" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\stage\stagecover.jpg">
+                            <collision-poly>
+                                <point x="0.025" y="0.025" />
+                                <point x="0.980469" y="0.0195313" />
+                                <point x="0.960156" y="0.960156" />
+                                <point x="0.5" y="0.985937" />
+                                <point x="0.0335938" y="0.966406" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2031,7 +1977,15 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5882154136145624" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.457143" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\stage\stagecover.jpg">
+                            <collision-poly>
+                                <point x="0.025" y="0.025" />
+                                <point x="0.980469" y="0.0195313" />
+                                <point x="0.960156" y="0.960156" />
+                                <point x="0.5" y="0.985937" />
+                                <point x="0.0335938" y="0.966406" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2072,6 +2026,11 @@
             </object-type>
             <object-type name="heart" sid="1812306129979633">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="4429612132714641">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="205652519728202" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -3352,6 +3311,7 @@
                 <member>powerupText</member>
                 <member>readyturnText</member>
                 <member>stageInfoText</member>
+                <member>stageText</member>
                 <member>systemText</member>
                 <member>Text2</member>
                 <member>turnText</member>
@@ -3404,17 +3364,6 @@
         </global-instance>
         <global-instance type="Mouse" uid="126" />
         <global-instance type="CocoonJSNotifications" uid="124" />
-        <global-instance type="CocoonJS" uid="137">
-            <properties>
-                <physics-engine>Accelerated</physics-engine>
-                <store-mode>Managed</store-mode>
-                <leaderboards-service>None</leaderboards-service>
-                <store-sandbox>Enabled</store-sandbox>
-                <google-play-games-clientid></google-play-games-clientid>
-                <facebook-appid></facebook-appid>
-                <facebook-channel></facebook-channel>
-            </properties>
-        </global-instance>
     </global-instances>
     <sounds-folder>
         <sound-folder name="eggExplode">

@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>opening</name>
     <events>
+        <variable constant="0" name="timeAway" sid="8224845814145057" static="0" type="number">0</variable>
         <include>function</include>
         <event-block sid="7572007857739591">
             <conditions>
@@ -12,6 +13,10 @@
                 <action id="0" name="Call function" sid="7759312065561914" type="Function">
                     <param id="0" name="Name">&quot;SetGroupActive&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;OPENING INIT&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="388191855247532" type="System">
+                    <param id="0" name="Variable">timeAway</param>
+                    <param id="1" name="Value">int(TimeAway.ElapsedTime(&quot;timeAway&quot;))</param>
                 </action>
                 <action id="-3" name="Set position" sid="4501017409578334" type="openingFox">
                     <param id="0" name="X">2000</param>
@@ -27,6 +32,10 @@
                 </action>
                 <action id="0" name="Set text" sid="4729545664414779" type="openingText">
                     <param id="0" name="Text">&quot;화면을 터치해서 게임을 시작해 봅시닭!&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="1251958595054869" type="System">
+                    <param id="0" name="Variable">wallClock</param>
+                    <param id="1" name="Value">int(wallclocktime)</param>
                 </action>
                 <action id="-16" name="Wait" sid="9895037538262008" type="System">
                     <param id="0" name="Seconds">0</param>
@@ -53,20 +62,20 @@
                 <comment>볼륨 최소 -60 최대 0 : on이 0, off가 -60</comment>
                 <event-block sid="4743405970216497">
                     <conditions>
-                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="473784033701567" type="WebStorage">
+                        <condition id="3" inverted="1" name="Local key exists" sid="473784033701567" type="WebStorage">
                             <param id="0" name="Key">&quot;music&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Set local value" sid="7143371914270855" type="WebStorage">
                             <param id="0" name="Key">&quot;music&quot;</param>
-                            <param id="1" name="Value">-60</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
                 <event-block sid="1340043604329025">
                     <conditions>
-                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="2499643745618174" type="WebStorage">
+                        <condition id="3" inverted="1" name="Local key exists" sid="2499643745618174" type="WebStorage">
                             <param id="0" name="Key">&quot;sfx&quot;</param>
                         </condition>
                     </conditions>
@@ -79,7 +88,7 @@
                 </event-block>
                 <event-block sid="7307168884376244">
                     <conditions>
-                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="118999128828963" type="WebStorage">
+                        <condition id="3" inverted="1" name="Local key exists" sid="118999128828963" type="WebStorage">
                             <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
                         </condition>
                     </conditions>
@@ -92,7 +101,7 @@
                 </event-block>
                 <event-block sid="2179070527283105">
                     <conditions>
-                        <condition disabled="1" id="3" inverted="1" name="Local key exists" sid="2326829273951867" type="WebStorage">
+                        <condition id="3" inverted="1" name="Local key exists" sid="2326829273951867" type="WebStorage">
                             <param id="0" name="Key">&quot;heart&quot;</param>
                         </condition>
                     </conditions>
@@ -132,6 +141,105 @@
                             <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
                         </action>
                     </actions>
+                </event-block>
+                <variable constant="0" name="timeCalcDone" sid="1054628559002441" static="0" type="number">0</variable>
+                <comment>timeCalcDone은 시간계산 필요없으면 1.</comment>
+                <event-block sid="9323872709372003">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="8178055122170966" type="System">
+                            <param id="0" name="Variable">timeCalcDone</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>일단 게임 종료시 저장되어 있었던 다음 하트 차는데까지 걸리는 시간과 기기 꺼져있었던 시간을 비교.&#x0D;&#x0A;꺼져있었던게 길면 빼주고 하트 1 추가.</comment>
+                        <event-block sid="9505310942733913">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="2099863868476226" type="System">
+                                    <param id="0" name="First value">timeAway</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">WebStorage.LocalValue(&quot;timeLeftToCharge&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="695117413607593" type="System">
+                                    <param id="0" name="Variable">timeAway</param>
+                                    <param id="1" name="Value">timeAway-int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))</param>
+                                </action>
+                                <action id="0" name="Call function" sid="4978555364463671" type="Function">
+                                    <param id="0" name="Name">&quot;addHeart&quot;</param>
+                                    <param id="1" name="Parameter {n}">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>아니면 그냥 빼주고 끝</comment>
+                        <event-block sid="4095668792121702">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="354158078654395" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="9581298699726738" type="WebStorage">
+                                    <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
+                                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))-timeAway</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8349562028666063" type="System">
+                                    <param id="0" name="Variable">timeCalcDone</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>그거 제외하고 heartchargetime과 비교해서 지난 시간만큼 하트 채워주기</comment>
+                        <event-block sid="9696217667591857">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="4234737844691724" type="System">
+                                    <param id="0" name="Count">5</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="7642643122606848" type="System">
+                                    <param id="0" name="Variable">timeCalcDone</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3679529257538394">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="772946266690791" type="System">
+                                            <param id="0" name="First value">timeAway</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">HEARTCHARGETIME</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="5453618364211043" type="System">
+                                            <param id="0" name="Variable">timeAway</param>
+                                            <param id="1" name="Value">timeAway-HEARTCHARGETIME</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="9719303818926377" type="Function">
+                                            <param id="0" name="Name">&quot;addHeart&quot;</param>
+                                            <param id="1" name="Parameter {n}">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6691197175813189">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="3254158943504552" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="3756471167989105" type="WebStorage">
+                                            <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
+                                            <param id="1" name="Value">HEARTCHARGETIME-timeAway</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8472095479528058" type="System">
+                                            <param id="0" name="Variable">timeCalcDone</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
