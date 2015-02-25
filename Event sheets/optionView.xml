@@ -94,7 +94,7 @@
             <sub-events>
                 <variable constant="0" name="row" sid="4011628691854775" static="0" type="number">4</variable>
                 <variable constant="0" name="column" sid="5988743692431219" static="0" type="number">3</variable>
-                <variable constant="0" name="golemKindCount" sid="4221804290793351" static="0" type="number">8</variable>
+                <variable constant="0" name="golemKindCount" sid="4221804290793351" static="0" type="number">12</variable>
                 <comment>golemSpritePage에서 ImagePoint 바꿔서 정렬하면 됨.</comment>
                 <event-block sid="9025545163743178">
                     <conditions>
@@ -220,6 +220,44 @@
                         </action>
                         <action id="-13" name="Set boolean" sid="3974981439487287" type="sfxButton">
                             <param id="0" name="Instance variable">on</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7990390912129916">
+                    <conditions>
+                        <condition id="7" name="Compare key value (as number)" sid="1521428682221791" type="WebStorage">
+                            <param id="0" name="Key">&quot;noti&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2375513805921398" type="notiButton">
+                            <param id="0" name="Animation">&quot;Off&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="5088734760760685" type="notiButton">
+                            <param id="0" name="Instance variable">On</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4130586172198796">
+                    <conditions>
+                        <condition id="7" name="Compare key value (as number)" sid="3609579290907398" type="WebStorage">
+                            <param id="0" name="Key">&quot;noti&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="6361627577889443" type="notiButton">
+                            <param id="0" name="Animation">&quot;Off&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="4192463001868608" type="notiButton">
+                            <param id="0" name="Instance variable">On</param>
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>
@@ -454,6 +492,15 @@
                                 <action id="-16" name="Wait" sid="9760580851593861" type="System">
                                     <param id="0" name="Seconds">0</param>
                                 </action>
+                                <action id="0" name="Play" sid="2702698724576826" type="Audio">
+                                    <param id="0" name="Audio file">cluck</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9047290056415514" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
                                 <action id="0" name="Play" sid="5009503249962821" type="Audio">
                                     <param id="0" name="Audio file">optionView</param>
                                     <param id="2" name="Loop">1</param>
@@ -513,7 +560,7 @@
                                     <param id="0" name="Seconds">0</param>
                                 </action>
                                 <action id="0" name="Play" sid="2744485090835727" type="Audio">
-                                    <param id="0" name="Audio file">click</param>
+                                    <param id="0" name="Audio file">cluck</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
@@ -537,6 +584,83 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="9603214238935542">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4767432975708509" type="Touch">
+                            <param id="0" name="Object">notiButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Toggle boolean" sid="1708406856082354" type="notiButton">
+                            <param id="0" name="Instance variable">On</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4324827554998513">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="6905773924095602" type="notiButton">
+                                    <param id="0" name="Instance variable">On</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="5304398260711554" type="notiButton">
+                                    <param id="0" name="Animation">&quot;On&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="2503551504258717" type="WebStorage">
+                                    <param id="0" name="Key">&quot;noti&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="9637917005994234" type="Audio">
+                                    <param id="0" name="Audio file">click</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="2" name="Send a local notification." sid="6467129662794889" type="CocoonJSNotifications">
+                                    <param id="0" name="Badge Number">0</param>
+                                    <param id="1" name="Delay">HEARTCHARGETIME*(MAXHEART-int(WebStorage.LocalValue(&quot;heart&quot;))-1)+int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))</param>
+                                    <param id="2" name="Message">&quot;달걀이 모두 준비되었습니다!&quot;</param>
+                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
+                                    <param id="4" name="Expanded Body">&quot;달걀이 모두 준비되었습니다! 다시 가 볼까요?&quot;</param>
+                                    <param id="5" name="Sound enabled">1</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="4229953120882966" type="WebStorage">
+                                    <param id="0" name="Key">&quot;heartNotiId&quot;</param>
+                                    <param id="1" name="Value">CocoonJSNotifications.returnNotificationId</param>
+                                </action>
+                                <action id="2" name="Send a local notification." sid="4405934024231535" type="CocoonJSNotifications">
+                                    <param id="0" name="Badge Number">0</param>
+                                    <param id="1" name="Delay">60*60*24-int((Date.UnixTimestamp-int(WebStorage.LocalValue(&quot;lastGoldRewardTimeStamp&quot;)))/1000)</param>
+                                    <param id="2" name="Message">&quot;골드 선물이 도착했습니다!&quot;</param>
+                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
+                                    <param id="4" name="Expanded Body">&quot;매일매일 500골드를 받아가세요!&quot;</param>
+                                    <param id="5" name="Sound enabled">1</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="9430488408629609" type="WebStorage">
+                                    <param id="0" name="Key">&quot;goldNotiId&quot;</param>
+                                    <param id="1" name="Value">CocoonJSNotifications.returnNotificationId</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2065714872065227">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8037224391565402" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="1566534578173381" type="notiButton">
+                                    <param id="0" name="Animation">&quot;Off&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="1256206087969806" type="WebStorage">
+                                    <param id="0" name="Key">&quot;noti&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Cancel all sent local notifications" sid="4928623766589203" type="CocoonJSNotifications" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <comment>크레딧으로</comment>
                 <event-block sid="3088987396920915">
                     <conditions>
@@ -545,6 +669,9 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-16" name="Wait" sid="3103608578016071" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
                         <action id="-9" name="Set value" sid="4003737907329036" type="System">
                             <param id="0" name="Variable">optionViewState</param>
                             <param id="1" name="Value">1</param>
@@ -559,6 +686,9 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-16" name="Wait" sid="3036618985207772" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
                         <action id="-9" name="Set value" sid="4419985051043147" type="System">
                             <param id="0" name="Variable">optionViewState</param>
                             <param id="1" name="Value">2</param>
@@ -619,15 +749,18 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="6048253706719827" type="System">
-                            <param id="0" name="Variable">optionViewState</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
                         <action id="0" name="Play" sid="9393714051473642" type="Audio">
                             <param id="0" name="Audio file">bookClose</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="5885414542585437" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3953415989388396" type="System">
+                            <param id="0" name="Variable">optionViewState</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -703,15 +836,18 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="1417541421500129" type="System">
-                            <param id="0" name="Variable">optionViewState</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
                         <action id="0" name="Play" sid="3142165460385821" type="Audio">
                             <param id="0" name="Audio file">bookClose</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="8397771948557804" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1417541421500129" type="System">
+                            <param id="0" name="Variable">optionViewState</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>

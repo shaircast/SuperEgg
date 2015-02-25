@@ -302,7 +302,7 @@
                                     <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
                                 </action>
                                 <action id="0" name="Set text" sid="4450026276879766" type="turnText">
-                                    <param id="0" name="Text">&quot;Turn &quot;&amp;turnCount</param>
+                                    <param id="0" name="Text">&quot;제 &quot;&amp;turnCount&amp;&quot; 턴&quot;</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="6895879010959442" type="System">
                                     <param id="0" name="Seconds">0.5</param>
@@ -333,33 +333,79 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <comment>4번골렘 체력회복</comment>
                         <event-block sid="9956803510707261">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="4047328395083791" type="System">
                                     <param id="0" name="Object">golem</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="4852722080720507" type="golem">
-                                    <param id="0" name="Instance variable">kind</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;04&quot;</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="6134245139497599" type="golem">
-                                    <param id="0" name="Instance variable">hp</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Value">self.maxHp</param>
-                                </condition>
                             </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="7063485332682364" type="Function">
-                                    <param id="0" name="Name">&quot;dealingDamage&quot;</param>
-                                    <param id="1" name="Parameter {n}">golem.UID{###}-1</param>
-                                </action>
-                                <action id="0" name="Call function" sid="1246293631379766" type="Function">
-                                    <param id="0" name="Name">&quot;golemHealEffect&quot;</param>
-                                    <param id="1" name="Parameter {n}">golem.UID</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <comment>4번골렘 자힐</comment>
+                                <event-block sid="169725014226393">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4852722080720507" type="golem">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;04&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="4190249499174653" type="Function">
+                                            <param id="0" name="Name">&quot;dealingDamage&quot;</param>
+                                            <param id="1" name="Parameter {n}">golem.UID{###}-1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="5574941802979449" type="Function">
+                                            <param id="0" name="Name">&quot;golemHealEffect&quot;</param>
+                                            <param id="1" name="Parameter {n}">golem.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>12번골렘 광역힐</comment>
+                                <variable constant="0" name="12golemY" sid="3917888895237459" static="0" type="number">0</variable>
+                                <event-block sid="2235599605071474">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="6508538750114628" type="golem">
+                                            <param id="0" name="Instance variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;12&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="7314152885027912" type="System">
+                                            <param id="0" name="Variable">12golemY</param>
+                                            <param id="1" name="Value">golem.posY</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="4295980576194345">
+                                            <conditions>
+                                                <condition id="-19" name="Pick all" sid="4551046578656715" type="System">
+                                                    <param id="0" name="Object">golem</param>
+                                                </condition>
+                                                <condition id="-11" name="For Each" sid="5614467421502144" type="System">
+                                                    <param id="0" name="Object">golem</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="9061922946480778" type="golem">
+                                                    <param id="0" name="Instance variable">posY</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">12golemY</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="7063485332682364" type="Function">
+                                                    <param id="0" name="Name">&quot;dealingDamage&quot;</param>
+                                                    <param id="1" name="Parameter {n}">golem.UID{###}-1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="1246293631379766" type="Function">
+                                                    <param id="0" name="Name">&quot;golemHealEffect&quot;</param>
+                                                    <param id="1" name="Parameter {n}">golem.UID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -395,7 +441,7 @@
                                     <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
                                 </action>
                                 <action id="0" name="Set text" sid="5800091701740118" type="turnText">
-                                    <param id="0" name="Text">&quot;Turn Over&quot;</param>
+                                    <param id="0" name="Text">&quot;턴 넘기기&quot;</param>
                                 </action>
                                 <action id="0" name="Play" sid="6577916948711246" type="Audio">
                                     <param id="0" name="Audio file">turnOverTicktick</param>
@@ -952,6 +998,7 @@
                                         <event-block sid="8026615998906882">
                                             <conditions />
                                             <actions>
+                                                <action id="-9" name="Destroy" sid="3377846873518647" type="turnText" />
                                                 <action id="-3" name="Create object" sid="2592883838880948" type="System">
                                                     <param id="0" name="Object to create">turnText</param>
                                                     <param id="1" name="Layer">&quot;hud&quot;</param>
@@ -962,7 +1009,7 @@
                                                     <param id="0" name="Wait time">3</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="2541924343708251" type="turnText">
-                                                    <param id="0" name="Text">&quot;Stage Clear!&quot;</param>
+                                                    <param id="0" name="Text">&quot;스테이지 클리어!&quot;</param>
                                                 </action>
                                                 <action id="0" name="Play" sid="7604559368032906" type="Audio">
                                                     <param id="0" name="Audio file">battleWin</param>
@@ -970,6 +1017,113 @@
                                                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                 </action>
+                                            </actions>
+                                            <sub-events>
+                                                <comment>스테이지 보상이 있다면</comment>
+                                                <event-block sid="1692402922163884">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="2269552735853079" type="System">
+                                                            <param id="0" name="First value">tokenat(stageDB.Get(stage),2,&quot;/&quot;)</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">&quot;&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <comment>닭장에 자리가 있다면 보상보여주면서 추가</comment>
+                                                        <variable constant="0" name="stageReward" sid="9598216309188835" static="0" type="text"></variable>
+                                                        <event-block sid="1547310491842674">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="2570974717236386" type="System">
+                                                                    <param id="0" name="First value">tokencount(WebStorage.LocalValue(&quot;henList&quot;),&quot;/&quot;)-1</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Second value">maxCage</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="6598653337350633" type="System">
+                                                                    <param id="0" name="Variable">stageReward</param>
+                                                                    <param id="1" name="Value">tokenat(stageDB.Get(stage),2,&quot;/&quot;)</param>
+                                                                </action>
+                                                                <action id="0" name="Set local value" sid="2149015783617675" type="WebStorage">
+                                                                    <param id="0" name="Key">&quot;henList&quot;</param>
+                                                                    <param id="1" name="Value">WebStorage.LocalValue(&quot;henList&quot;)&amp;stageReward&amp;&quot;/&quot;</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="7150693334002959" type="System">
+                                                                    <param id="0" name="Seconds">1</param>
+                                                                </action>
+                                                                <action id="-3" name="Create object" sid="433712429284821" type="System">
+                                                                    <param id="0" name="Object to create">turnText</param>
+                                                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                                                                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2+50</param>
+                                                                </action>
+                                                                <action id="3" name="Set font size" sid="5483329939825059" type="turnText">
+                                                                    <param id="0" name="Size (pt)">25</param>
+                                                                </action>
+                                                                <action id="0" name="Set text" sid="3623720103774699" type="turnText">
+                                                                    <param id="0" name="Text">&quot;스테이지 보상 획득!&quot;</param>
+                                                                </action>
+                                                                <action id="-3" name="Create object" sid="916369742832303" type="System">
+                                                                    <param id="0" name="Object to create">henCage</param>
+                                                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2-100</param>
+                                                                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2+100</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="8341282273374198" type="henCage">
+                                                                    <param id="0" name="Instance variable">kind</param>
+                                                                    <param id="1" name="Value">left(stageReward,2)</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="5130743058382058" type="henCage">
+                                                                    <param id="0" name="Instance variable">type</param>
+                                                                    <param id="1" name="Value">mid(stageReward,2,1)</param>
+                                                                </action>
+                                                                <action id="0" name="Set text" sid="3027582875508677" type="powerupHUD">
+                                                                    <param id="0" name="Text">right(stageReward,2)</param>
+                                                                </action>
+                                                                <action id="-3" name="Set position" sid="7912593807350846" type="powerupHUD">
+                                                                    <param id="0" name="X">henCage.X+powerupIndicatorX</param>
+                                                                    <param id="1" name="Y">henCage.Y+powerupIndicatorY</param>
+                                                                </action>
+                                                                <action id="0" name="Call function" sid="3719015735961856" type="Function">
+                                                                    <param id="0" name="Name">&quot;typeIconPick&quot;</param>
+                                                                    <param id="1" name="Parameter {n}">henCage.UID</param>
+                                                                </action>
+                                                                <action behavior="Sine" id="0" name="Set active" sid="6497043370870664" type="henCage">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <comment>닭장에 자리가 없다면 없다는 메세지.</comment>
+                                                        <event-block sid="9645100964915908">
+                                                            <conditions>
+                                                                <condition id="-22" name="Else" sid="7675601882584457" type="System" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-16" name="Wait" sid="2560135913929656" type="System">
+                                                                    <param id="0" name="Seconds">1</param>
+                                                                </action>
+                                                                <action id="-3" name="Create object" sid="5495972575110369" type="System">
+                                                                    <param id="0" name="Object to create">turnText</param>
+                                                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                                                                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2+50</param>
+                                                                </action>
+                                                                <action id="3" name="Set font size" sid="998522883349805" type="turnText">
+                                                                    <param id="0" name="Size (pt)">25</param>
+                                                                </action>
+                                                                <action id="0" name="Set text" sid="7464583469558921" type="turnText">
+                                                                    <param id="0" name="Text">&quot;닭장이 꽉 차서 보상은 받지 못해요...&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="4402114416802641">
+                                            <conditions />
+                                            <actions>
                                                 <action id="-16" name="Wait" sid="6130925871506581" type="System">
                                                     <param id="0" name="Seconds">5</param>
                                                 </action>
@@ -1082,6 +1236,7 @@
                                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
+                                <action id="-9" name="Destroy" sid="7687311389035968" type="turnText" />
                                 <action id="-3" name="Create object" sid="9300152071853948" type="System">
                                     <param id="0" name="Object to create">turnText</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
@@ -1092,7 +1247,7 @@
                                     <param id="0" name="Wait time">4</param>
                                 </action>
                                 <action id="0" name="Set text" sid="9025137062099726" type="turnText">
-                                    <param id="0" name="Text">&quot;Stage Failed!&quot;</param>
+                                    <param id="0" name="Text">&quot;망했어요!&quot;</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="3247790413369558" type="System">
                                     <param id="0" name="Seconds">5</param>

@@ -344,7 +344,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>162</x>
-                        <y>45</y>
+                        <y>50</y>
                         <z>0</z>
                         <width>200</width>
                         <height>44</height>
@@ -552,7 +552,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>260</x>
-                        <y>598</y>
+                        <y>603</y>
                         <z>0</z>
                         <width>120</width>
                         <height>39</height>
@@ -590,7 +590,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>300</x>
-                        <y>672</y>
+                        <y>677</y>
                         <z>0</z>
                         <width>120</width>
                         <height>29</height>
@@ -628,7 +628,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>443</x>
-                        <y>597</y>
+                        <y>602</y>
                         <z>0</z>
                         <width>53</width>
                         <height>39</height>
@@ -643,7 +643,7 @@
                     <properties>
                         <text>안녕하세요</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>배달의민족 주아,-23,400,0</font>
+                        <font>배달의민족 주아,-24,400,0</font>
                         <color>0,0,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -704,7 +704,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>300</x>
-                        <y>637</y>
+                        <y>642</y>
                         <z>0</z>
                         <width>120</width>
                         <height>30</height>
@@ -841,7 +841,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>420</x>
-                        <y>637</y>
+                        <y>642</y>
                         <z>0</z>
                         <width>120</width>
                         <height>30</height>
@@ -879,7 +879,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>420</x>
-                        <y>672</y>
+                        <y>677</y>
                         <z>0</z>
                         <width>120</width>
                         <height>30</height>

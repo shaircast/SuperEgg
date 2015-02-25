@@ -83,10 +83,10 @@
                         <x>700</x>
                         <y>440</y>
                         <z>0</z>
-                        <width>1280</width>
+                        <width>570</width>
                         <height>960</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>-0.122807018</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -117,11 +117,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>670</x>
-                        <y>400</y>
+                        <x>830</x>
+                        <y>360</y>
                         <z>0</z>
-                        <width>1280</width>
-                        <height>960</height>
+                        <width>760</width>
+                        <height>540</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -142,11 +142,11 @@
                         <x>640</x>
                         <y>360</y>
                         <z>0</z>
-                        <width>1280</width>
-                        <height>960</height>
+                        <width>1210</width>
+                        <height>830</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.528925598</hotspotX>
+                        <hotspotY>0.421686739</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -312,6 +312,8 @@
             <effects />
         </layer>
     </layers>
-    <nonworld-instances />
+    <nonworld-instances>
+        <instance type="Date" uid="14" />
+    </nonworld-instances>
     <effects />
 </c2layout>

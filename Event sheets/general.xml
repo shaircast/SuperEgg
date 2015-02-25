@@ -5,7 +5,8 @@
     <events>
         <variable constant="1" name="HEARTCHARGETIME" sid="4116059698744367" static="0" type="number">90</variable>
         <variable constant="1" name="MAXHEART" sid="5061671056963641" static="0" type="number">5</variable>
-        <variable constant="0" name="wallClock" sid="4615752865800644" static="0" type="number">0</variable>
+        <variable constant="0" name="lastTimeStampEverySec" sid="4615752865800644" static="0" type="number">0</variable>
+        <variable constant="0" name="fadeStart" sid="805565601887793" static="0" type="number">0</variable>
         <event-block sid="9651244264892679">
             <conditions>
                 <condition id="-18" name="Is in preview" sid="9150771652485473" type="System" />
@@ -21,7 +22,7 @@
                     <param id="0" name="Text">int(Touch.Gamma)&amp;&quot;,&quot;&amp;int(Touch.AccelerationZWithG)</param>
                 </action>
                 <action id="0" name="Set text" sid="3455023388396399" type="Text2">
-                    <param id="0" name="Text">WindowWidth&amp;&quot;,&quot;&amp;WindowHeight</param>
+                    <param id="0" name="Text">WindowWidth&amp;&quot;,&quot;&amp;WindowHeight&amp;&quot;,&quot;&amp;int(lastTimeStampEverySec/1000)&amp;&quot;,&quot;&amp;int(date.UnixTimestamp/1000)</param>
                 </action>
             </actions>
         </event-block>
@@ -30,15 +31,9 @@
                 <condition id="-2" name="On start of layout" sid="72825977746074" type="System" />
             </conditions>
             <actions>
-                <action id="-3" name="Create object" sid="9036023539654192" type="System">
-                    <param id="0" name="Object to create">Text2</param>
-                    <param id="1" name="Layer">&quot;hud&quot;</param>
-                    <param id="2" name="X">50</param>
-                    <param id="3" name="Y">50</param>
-                </action>
-                <action id="-34" name="Set layer background color" sid="1349496234790254" type="System">
-                    <param id="0" name="Layer">&quot;fade&quot;</param>
-                    <param id="1" name="Color">rgb(0, 0, 0)</param>
+                <action id="-9" name="Set value" sid="291629711284871" type="System">
+                    <param id="0" name="Variable">fadeStart</param>
+                    <param id="1" name="Value">0</param>
                 </action>
                 <action id="-18" name="Set layer opacity" sid="7838107808011212" type="System">
                     <param id="0" name="Layer">&quot;fade&quot;</param>
@@ -48,7 +43,33 @@
                     <param id="0" name="Layer">&quot;fade&quot;</param>
                     <param id="1" name="Mode">0</param>
                 </action>
+                <action id="-34" name="Set layer background color" sid="1349496234790254" type="System">
+                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                    <param id="1" name="Color">rgb(0, 0, 0)</param>
+                </action>
+                <action id="-16" name="Wait" sid="8979294542331238" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-9" name="Set value" sid="9058078735480526" type="System">
+                    <param id="0" name="Variable">fadeStart</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
+            <sub-events>
+                <event-block sid="383967009495158">
+                    <conditions>
+                        <condition id="-18" name="Is in preview" sid="7413226279897248" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9036023539654192" type="System">
+                            <param id="0" name="Object to create">Text2</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                            <param id="2" name="X">50</param>
+                            <param id="3" name="Y">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="8624111914443111">
             <conditions>
@@ -58,12 +79,52 @@
                     <param id="2" name="Opacity">0</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="-18" name="Set layer opacity" sid="7175916689260618" type="System">
-                    <param id="0" name="Layer">&quot;fade&quot;</param>
-                    <param id="1" name="Opacity">LayerOpacity(&quot;fade&quot;)-100*dt</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="2736157406444676">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="4594507929026996" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4699153055189035" type="System">
+                            <param id="0" name="Object to create">openingTitle</param>
+                            <param id="1" name="Layer">&quot;fade&quot;</param>
+                            <param id="2" name="X">640</param>
+                            <param id="3" name="Y">360</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="5116512361956391" type="openingTitle">
+                            <param id="0" name="Scale">0.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="352557030739954">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2650127371790293" type="System">
+                            <param id="0" name="Variable">fadeStart</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Set layer opacity" sid="7175916689260618" type="System">
+                            <param id="0" name="Layer">&quot;fade&quot;</param>
+                            <param id="1" name="Opacity">LayerOpacity(&quot;fade&quot;)-200*dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2265145061625349">
+                    <conditions>
+                        <condition id="-17" name="Compare opacity" sid="3360994788102177" type="System">
+                            <param id="0" name="Layer">&quot;fade&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Opacity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2799570242486733" type="openingTitle" />
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="5272297691216364">
             <conditions>
@@ -78,98 +139,35 @@
         </event-block>
         <event-group description="" sid="7657085672509721" title="local Push Time Manager">
             <sub-events>
+                <comment>1초마다, 혹은 앱을 정지상태로 뒀다가 올때 실행된다.</comment>
                 <event-block sid="8217676125514442">
                     <conditions>
-                        <condition id="-1" name="Every tick" sid="1667201714694684" type="System" />
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <variable constant="0" name="flag" sid="4372032716762337" static="0" type="number">0</variable>
-                        <comment>timescale 고려해서, 1초마다 leftToCharge1씩 감소시키고, 앱 꺼질때 대비해서 timeAway도 갱신</comment>
-                        <event-block sid="4125015975484101">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="1622531897487796" type="System">
-                                    <param id="0" name="First value">int(wallClock)</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Second value">wallclocktime</param>
-                                </condition>
-                                <condition id="-8" name="Compare two values" sid="4594502860628197" type="System">
-                                    <param id="0" name="First value">int(wallClock)</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Second value">int(wallclocktime)</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="1583709436026296" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="4397242246165347" type="System">
-                                    <param id="0" name="Variable">wallClock</param>
-                                    <param id="1" name="Value">int(wallclocktime)</param>
-                                </action>
-                                <action id="1" name="Start timer" sid="4360334644640689" type="TimeAway">
-                                    <param id="0" name="Key">&quot;timeAway&quot;</param>
-                                </action>
-                                <action id="0" name="Set local value" sid="5897524146881459" type="WebStorage">
-                                    <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
-                                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))-1</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="7200677996126075" type="heart">
-                                    <param id="0" name="Frame number">int(WebStorage.LocalValue(&quot;heart&quot;))</param>
-                                </action>
-                                <action id="0" name="Set text" sid="1706456733474977" type="heartTimer">
-                                    <param id="0" name="Text">&quot;다음 사료까지 - &quot;&amp;zeropad(floor(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))/60),2) &amp;&quot; : &quot;&amp; zeropad(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))%60,2)</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="8677477824403339">
-                                    <conditions>
-                                        <condition id="7" name="Compare key value (as number)" sid="9599764982723794" type="WebStorage">
-                                            <param id="0" name="Key">&quot;heart&quot;</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">5</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Set local value" sid="987554660351723" type="WebStorage">
-                                            <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
-                                            <param id="1" name="Value">HEARTCHARGETIME</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="3284501376698781" type="heartTimer">
-                                            <param id="0" name="Text">&quot;완전 준비완료!&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <comment>시간 다되면 다시 충전하고</comment>
-                                <event-block sid="7839139190222038">
-                                    <conditions>
-                                        <condition id="7" name="Compare key value (as number)" sid="4329238080974752" type="WebStorage">
-                                            <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Set local value" sid="9208156170656284" type="WebStorage">
-                                            <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
-                                            <param id="1" name="Value">HEARTCHARGETIME</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="8295985863000437" type="Function">
-                                            <param id="0" name="Name">&quot;addHeart&quot;</param>
-                                            <param id="1" name="Parameter {n}">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="3357762033466891">
-                    <conditions>
-                        <condition id="6" name="On local notification is received" sid="5757023216217264" type="CocoonJSNotifications" />
+                        <condition id="-8" name="Compare two values" sid="4594502860628197" type="System">
+                            <param id="0" name="First value">int(lastTimeStampEverySec/1000)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">int(date.UnixTimestamp/1000)</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="4485898618093427" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="4743052401417224" type="Function">
-                            <param id="0" name="Name">&quot;addHeart&quot;</param>
-                            <param id="1" name="Parameter {n}">5</param>
+                        <action id="0" name="Call function" sid="2014683320774851" type="Function">
+                            <param id="0" name="Name">&quot;timeHeartCalc&quot;</param>
+                            <param id="1" name="Parameter {n}">lastTimeStampEverySec</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="8162074205537961" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4397242246165347" type="System">
+                            <param id="0" name="Variable">lastTimeStampEverySec</param>
+                            <param id="1" name="Value">date.UnixTimestamp</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="6271903430924984" type="WebStorage">
+                            <param id="0" name="Key">&quot;exitTimeStamp&quot;</param>
+                            <param id="1" name="Value">date.UnixTimestamp</param>
+                        </action>
+                        <action id="0" name="Call function" sid="5062109762796601" type="Function">
+                            <param id="0" name="Name">&quot;heartRefresh&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>

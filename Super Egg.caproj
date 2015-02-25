@@ -17,7 +17,7 @@
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
-        <plugin author="Rex.Rainbow" id="Rex_TimeAway" version="0.100000001">Time away</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_Date" version="1">Date</plugin>
         <plugin author="Rex.Rainbow" id="Rex_audio_helper" version="0.100000001">Audio helper</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -58,7 +58,7 @@
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Orientations">Landscape</prop>
-        <prop name="Pause on unfocus">No</prop>
+        <prop name="Pause on unfocus">Yes</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preload sounds">Yes</prop>
         <prop name="Preview browser">Chrome</prop>
@@ -75,9 +75,6 @@
             </object-type>
             <object-type name="Function" sid="3425884607829582">
                 <plugin id="Function" />
-            </object-type>
-            <object-type name="TimeAway" sid="3082307541983514">
-                <plugin id="Rex_TimeAway" />
             </object-type>
             <object-type name="Touch" sid="6975242742240865">
                 <plugin id="Touch" />
@@ -96,6 +93,9 @@
             </object-type>
             <object-type name="CocoonJSNotifications" sid="8066927506354403">
                 <plugin id="cocoonjsnotify" />
+            </object-type>
+            <object-type global="1" name="Date" sid="2408575321500086">
+                <plugin id="Rex_Date" />
             </object-type>
         </object-folder>
         <object-folder name="battleView">
@@ -149,6 +149,19 @@
                         </behavior-type>
                     </behaviors>
                 </object-type>
+                <object-type name="foodTextPad" sid="5635327248939155">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Anchor" sid="1522936255760241">
+                            <behavior id="Anchor" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2074304276788083" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
             <object-folder name="golem">
                 <object-folder name="kindEffect">
@@ -164,7 +177,7 @@
                         </behaviors>
                         <animation-folder>
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5138255847562381" speed="5">
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
                             </animation>
                         </animation-folder>
                     </object-type>
@@ -177,24 +190,24 @@
                         </behaviors>
                         <animation-folder>
                             <animation framecount="18" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3210157858562269" speed="15">
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
                             </animation>
                         </animation-folder>
                     </object-type>
@@ -207,25 +220,25 @@
                         </behaviors>
                         <animation-folder>
                             <animation framecount="19" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7856602393009101" speed="15">
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.755208" />
                             </animation>
                         </animation-folder>
                     </object-type>
@@ -238,7 +251,7 @@
                         <instance-variable name="atk" sid="8717655689331656" type="number" />
                         <instance-variable name="speed" sid="375290987317111" type="number" />
                         <instance-variable name="reward" sid="9043640031641877" type="number" />
-                        <instance-variable name="invulnerable" sid="4080974904100535" type="boolean" />
+                        <instance-variable name="invulnerable" sid="2864184588100677" type="number" />
                         <instance-variable name="kind" sid="9158891236926536" type="string" />
                         <instance-variable name="type" sid="7256094527996839" type="string" />
                         <instance-variable name="targeted" sid="4265127711109731" type="boolean" />
@@ -647,7 +660,7 @@
                     </container>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1161455457001018" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0" hotspotY="1" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -668,9 +681,9 @@
                     </container>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9030486562965038" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <image-point name="HpBarStart" x="0.016129" y="0.5" />
-                                <image-point name="HpBarEnd" x="0.983871" y="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.636364">
+                                <image-point name="HpBarStart" x="0.0454545" y="0.454545" />
+                                <image-point name="HpBarEnd" x="0.954545" y="0.454545" />
                             </frame>
                         </animation>
                     </animation-folder>
@@ -685,20 +698,6 @@
                             <behavior id="Fade" />
                         </behavior-type>
                     </behaviors>
-                </object-type>
-                <object-type name="destroyedGolem" sid="6471575903417179">
-                    <plugin id="Sprite" />
-                    <behaviors>
-                        <behavior-type name="Fade" sid="6310480417539053">
-                            <behavior id="Fade" />
-                        </behavior-type>
-                    </behaviors>
-                    <animation-folder>
-                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4914819671983176" speed="0">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                        </animation>
-                    </animation-folder>
                 </object-type>
                 <object-type name="golemDestroyEffect" sid="1598194951575307">
                     <plugin id="Sprite" />
@@ -768,7 +767,7 @@
                             <behavior id="Pin" />
                         </behavior-type>
                     </behaviors>
-                    <texture />
+                    <texture format="png8" />
                 </object-type>
                 <object-type name="goldReward" sid="563786377425583">
                     <plugin id="Sprite" />
@@ -782,7 +781,7 @@
                     </behaviors>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3725825043199352" speed="5">
-                            <frame duration="1" hotspotX="1" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="1" hotspotY="0.5" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -810,74 +809,74 @@
                     </instance-variables>
                     <animation-folder>
                         <animation framecount="10" loop="0" name="Explode01" pingpong="0" repeatcount="1" repeatto="0" sid="5683957166589021" speed="12">
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.804688" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.804688" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.804688" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.804688" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.804688" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.804688" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.804688" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.804688" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.804688" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.804688" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.804688" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.804688" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.804688" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.804688" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.804688" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.804688" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.804688" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.804688" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.804688" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.804688" />
                         </animation>
                         <animation framecount="9" loop="0" name="Explode02" pingpong="0" repeatcount="1" repeatto="0" sid="2539402009685715" speed="12">
-                            <frame duration="1" hotspotX="0.585938" hotspotY="0.5625" />
-                            <frame duration="1" hotspotX="0.585938" hotspotY="0.5625" />
-                            <frame duration="1" hotspotX="0.585938" hotspotY="0.5625" />
-                            <frame duration="1" hotspotX="0.585938" hotspotY="0.5625" />
-                            <frame duration="1" hotspotX="0.585938" hotspotY="0.5625" />
-                            <frame duration="1" hotspotX="0.585938" hotspotY="0.5625" />
-                            <frame duration="1" hotspotX="0.585938" hotspotY="0.5625" />
-                            <frame duration="1" hotspotX="0.585938" hotspotY="0.5625" />
-                            <frame duration="1" hotspotX="0.585938" hotspotY="0.5625" />
+                            <frame duration="1" format="png8" hotspotX="0.585938" hotspotY="0.5625" />
+                            <frame duration="1" format="png8" hotspotX="0.585938" hotspotY="0.5625" />
+                            <frame duration="1" format="png8" hotspotX="0.585938" hotspotY="0.5625" />
+                            <frame duration="1" format="png8" hotspotX="0.585938" hotspotY="0.5625" />
+                            <frame duration="1" format="png8" hotspotX="0.585938" hotspotY="0.5625" />
+                            <frame duration="1" format="png8" hotspotX="0.585938" hotspotY="0.5625" />
+                            <frame duration="1" format="png8" hotspotX="0.585938" hotspotY="0.5625" />
+                            <frame duration="1" format="png8" hotspotX="0.585938" hotspotY="0.5625" />
+                            <frame duration="1" format="png8" hotspotX="0.585938" hotspotY="0.5625" />
                         </animation>
                         <animation framecount="10" loop="0" name="Explode03" pingpong="0" repeatcount="1" repeatto="0" sid="825690366531013" speed="12">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                         <animation framecount="6" loop="0" name="Explode04" pingpong="0" repeatcount="1" repeatto="0" sid="1193412480061904" speed="12">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.523438" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.523438" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.523438" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.523438" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.523438" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.523438" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.523438" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.523438" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.523438" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.523438" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.523438" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.523438" />
                         </animation>
                         <animation framecount="10" loop="0" name="Explode05" pingpong="0" repeatcount="1" repeatto="0" sid="7943681349969823" speed="12">
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.492188" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.492188" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.492188" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.492188" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.492188" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.492188" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.492188" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.492188" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.492188" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.492188" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.492188" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.492188" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.492188" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.492188" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.492188" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.492188" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.492188" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.492188" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.492188" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.492188" />
                         </animation>
                         <animation framecount="10" loop="0" name="Explode06" pingpong="0" repeatcount="1" repeatto="0" sid="4539762328152574" speed="12">
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.476563" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.476563" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.476563" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.476563" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.476563" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.476563" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.476563" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.476563" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.476563" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.476563" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.476563" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.476563" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.476563" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.476563" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.476563" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.476563" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.476563" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.476563" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.476563" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.476563" />
                         </animation>
                         <animation framecount="12" loop="0" name="Explode07" pingpong="0" repeatcount="1" repeatto="0" sid="3437575596870849" speed="12">
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -885,7 +884,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -893,7 +892,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -901,7 +900,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -909,7 +908,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -917,7 +916,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -925,7 +924,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -933,7 +932,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -941,7 +940,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -949,7 +948,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -957,7 +956,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -965,7 +964,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.523438" hotspotY="0.53125">
+                            <frame duration="1" format="png8" hotspotX="0.523438" hotspotY="0.53125">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -975,32 +974,32 @@
                             </frame>
                         </animation>
                         <animation framecount="26" loop="0" name="Explode08" pingpong="0" repeatcount="1" repeatto="0" sid="3173098741125324" speed="15">
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
-                            <frame duration="1" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
+                            <frame duration="1" format="png8" hotspotX="0.466667" hotspotY="0.55" />
                         </animation>
                         <animation framecount="10" loop="0" name="Explode09" pingpong="0" repeatcount="1" repeatto="0" sid="7763949920541506" speed="12">
                             <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.8125">
@@ -1043,14 +1042,14 @@
                                     <point x="0.104167" y="0.895833" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.507813" hotspotY="0.8125" />
-                            <frame duration="1" hotspotX="0.507813" hotspotY="0.8125" />
-                            <frame duration="1" hotspotX="0.507813" hotspotY="0.8125" />
-                            <frame duration="1" hotspotX="0.507813" hotspotY="0.8125" />
-                            <frame duration="1" hotspotX="0.507813" hotspotY="0.8125" />
+                            <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.8125" />
+                            <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.8125" />
+                            <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.8125" />
+                            <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.8125" />
+                            <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.8125" />
                         </animation>
                         <animation framecount="10" loop="0" name="Explode10" pingpong="0" repeatcount="1" repeatto="0" sid="4527901762908098" speed="12">
-                            <frame duration="1" hotspotX="0.484375" hotspotY="0.859375">
+                            <frame duration="1" format="png8" hotspotX="0.484375" hotspotY="0.859375">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -1058,7 +1057,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.484375" hotspotY="0.859375">
+                            <frame duration="1" format="png8" hotspotX="0.484375" hotspotY="0.859375">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -1066,7 +1065,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.484375" hotspotY="0.859375">
+                            <frame duration="1" format="png8" hotspotX="0.484375" hotspotY="0.859375">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -1074,7 +1073,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.484375" hotspotY="0.859375">
+                            <frame duration="1" format="png8" hotspotX="0.484375" hotspotY="0.859375">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -1082,7 +1081,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.484375" hotspotY="0.859375">
+                            <frame duration="1" format="png8" hotspotX="0.484375" hotspotY="0.859375">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -1090,7 +1089,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.484375" hotspotY="0.859375">
+                            <frame duration="1" format="png8" hotspotX="0.484375" hotspotY="0.859375">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -1098,7 +1097,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.484375" hotspotY="0.859375">
+                            <frame duration="1" format="png8" hotspotX="0.484375" hotspotY="0.859375">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -1106,7 +1105,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.484375" hotspotY="0.859375">
+                            <frame duration="1" format="png8" hotspotX="0.484375" hotspotY="0.859375">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -1114,7 +1113,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.484375" hotspotY="0.859375">
+                            <frame duration="1" format="png8" hotspotX="0.484375" hotspotY="0.859375">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -1122,7 +1121,7 @@
                                     <point x="1" y="1" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.484375" hotspotY="0.859375">
+                            <frame duration="1" format="png8" hotspotX="0.484375" hotspotY="0.859375">
                                 <collision-poly>
                                     <point x="0" y="1" />
                                     <point x="0" y="0" />
@@ -1132,7 +1131,7 @@
                             </frame>
                         </animation>
                         <animation framecount="10" loop="0" name="Explode11" pingpong="0" repeatcount="1" repeatto="0" sid="2655789648906405" speed="12">
-                            <frame duration="1" hotspotX="0.601563" hotspotY="0.90625">
+                            <frame duration="1" format="png8" hotspotX="0.601563" hotspotY="0.90625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1140,7 +1139,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.601563" hotspotY="0.90625">
+                            <frame duration="1" format="png8" hotspotX="0.601563" hotspotY="0.90625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1148,7 +1147,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.601563" hotspotY="0.90625">
+                            <frame duration="1" format="png8" hotspotX="0.601563" hotspotY="0.90625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1156,7 +1155,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.601563" hotspotY="0.90625">
+                            <frame duration="1" format="png8" hotspotX="0.601563" hotspotY="0.90625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1164,7 +1163,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.601563" hotspotY="0.90625">
+                            <frame duration="1" format="png8" hotspotX="0.601563" hotspotY="0.90625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1172,7 +1171,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.601563" hotspotY="0.90625">
+                            <frame duration="1" format="png8" hotspotX="0.601563" hotspotY="0.90625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1180,7 +1179,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.601563" hotspotY="0.90625">
+                            <frame duration="1" format="png8" hotspotX="0.601563" hotspotY="0.90625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1188,7 +1187,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.601563" hotspotY="0.90625">
+                            <frame duration="1" format="png8" hotspotX="0.601563" hotspotY="0.90625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1196,7 +1195,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.601563" hotspotY="0.90625">
+                            <frame duration="1" format="png8" hotspotX="0.601563" hotspotY="0.90625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1204,7 +1203,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.601563" hotspotY="0.90625">
+                            <frame duration="1" format="png8" hotspotX="0.601563" hotspotY="0.90625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1214,12 +1213,12 @@
                             </frame>
                         </animation>
                         <animation framecount="6" loop="0" name="Explode12" pingpong="0" repeatcount="1" repeatto="0" sid="1130825573124291" speed="12">
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.539063" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.539063" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.539063" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.539063" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.539063" />
-                            <frame duration="1" hotspotX="0.53125" hotspotY="0.539063" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.539063" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.539063" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.539063" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.539063" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.539063" />
+                            <frame duration="1" format="png8" hotspotX="0.53125" hotspotY="0.539063" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -1234,7 +1233,7 @@
                     </instance-variables>
                     <animation-folder>
                         <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5803138655537255" speed="15">
-                            <frame duration="1" hotspotX="0.51875" hotspotY="0.625">
+                            <frame duration="1" format="png8" hotspotX="0.51875" hotspotY="0.625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1242,7 +1241,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.51875" hotspotY="0.625">
+                            <frame duration="1" format="png8" hotspotX="0.51875" hotspotY="0.625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1250,7 +1249,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.51875" hotspotY="0.625">
+                            <frame duration="1" format="png8" hotspotX="0.51875" hotspotY="0.625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1258,7 +1257,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.51875" hotspotY="0.625">
+                            <frame duration="1" format="png8" hotspotX="0.51875" hotspotY="0.625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1266,7 +1265,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.51875" hotspotY="0.625">
+                            <frame duration="1" format="png8" hotspotX="0.51875" hotspotY="0.625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1274,7 +1273,7 @@
                                     <point x="0" y="0" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.51875" hotspotY="0.625">
+                            <frame duration="1" format="png8" hotspotX="0.51875" hotspotY="0.625">
                                 <collision-poly>
                                     <point x="1" y="0" />
                                     <point x="1" y="1" />
@@ -1308,12 +1307,12 @@
                     <animation-folder>
                         <animation framecount="7" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5123362855521794" speed="12">
                             <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.578125" />
-                            <frame duration="1" hotspotX="0.507813" hotspotY="0.578125" />
-                            <frame duration="1" hotspotX="0.507813" hotspotY="0.578125" />
-                            <frame duration="1" hotspotX="0.507813" hotspotY="0.578125" />
-                            <frame duration="1" hotspotX="0.507813" hotspotY="0.578125" />
-                            <frame duration="1" hotspotX="0.507813" hotspotY="0.578125" />
-                            <frame duration="1" hotspotX="0.507813" hotspotY="0.578125" />
+                            <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.578125" />
+                            <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.578125" />
+                            <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.578125" />
+                            <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.578125" />
+                            <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.578125" />
+                            <frame duration="1" format="png8" hotspotX="0.507813" hotspotY="0.578125" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -1324,9 +1323,9 @@
                     <animation-folder>
                         <animation framecount="4" loop="0" name="01_" pingpong="0" repeatcount="1" repeatto="0" sid="4723000001028638" speed="0">
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\bg1.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\bg2.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\bg3.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\bg4.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\bg2.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\bg3.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\bg4.jpg" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -1366,10 +1365,10 @@
                     <plugin id="Sprite" />
                     <animation-folder>
                         <animation framecount="4" loop="0" name="01_" pingpong="0" repeatcount="1" repeatto="0" sid="7535486446742942" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_1,2.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_3.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_4.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_1,2.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_3.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\sky1_4.jpg" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -1394,11 +1393,11 @@
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6744672471360473" speed="5">
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg\merged\resized\1.png">
                                 <image-point name="Atk" x="0.15" y="0.84375" />
-                                <image-point name="AtkText" x="0.3" y="0.84375" />
+                                <image-point name="AtkText" x="0.3" y="0.86875" />
                                 <image-point name="Food" x="0.45" y="0.84375" />
-                                <image-point name="FoodText" x="0.6" y="0.84375" />
+                                <image-point name="FoodText" x="0.6" y="0.86875" />
                                 <image-point name="Turn" x="0.75" y="0.84375" />
-                                <image-point name="TurnText" x="0.9" y="0.84375" />
+                                <image-point name="TurnText" x="0.9" y="0.86875" />
                                 <image-point name="HenCage" x="0.5" y="0.59375" />
                             </frame>
                         </animation>
@@ -1430,13 +1429,13 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="4" loop="0" name="01Default" pingpong="0" repeatcount="1" repeatto="0" sid="1967376042875095" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034958652.jpg" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034959121.jpg" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034959474.jpg" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_035130818.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034958652.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034959121.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034959474.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_035130818.jpg" />
                     </animation>
                     <animation framecount="1" loop="0" name="02Default" pingpong="0" repeatcount="1" repeatto="0" sid="8968254526537589" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_065237885.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_065237885.jpg" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1671,10 +1670,10 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4942981947109659" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\battle\button1Time.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\battle\button1Time.jpg" />
                     </animation>
                     <animation framecount="1" loop="0" name="Fast" pingpong="0" repeatcount="1" repeatto="0" sid="726715567616416" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\battle\button1.5Time.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\battle\button1.5Time.jpg" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2009,7 +2008,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8261215227513411" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
                             <image-point name="LeftChap" x="-0.5" y="0.5" />
                             <image-point name="RightChap" x="1.5" y="0.5" />
                         </frame>
@@ -2033,12 +2032,12 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="205652519728202" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2106,7 +2105,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8909773662443104" speed="5">
-                        <frame duration="1" hotspotX="0.504274" hotspotY="1.13333" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\menu\menuPole.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.504274" hotspotY="1.13333" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\menu\menuPole.jpg" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2297,21 +2296,21 @@
                 <animation-folder>
                     <animation-folder name="01">
                         <animation framecount="3" loop="1" name="01idle" pingpong="1" repeatcount="1" repeatto="0" sid="7712919499338095" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 1.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.506024" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 3.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="2" loop="1" name="01eating" pingpong="0" repeatcount="1" repeatto="0" sid="2600826899334704" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick Eat 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick Eat 1.png">
                                 <image-point name="Center" x="0.5" y="0.506849" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick Eat 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick Eat 2.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
                         </animation>
@@ -2333,13 +2332,13 @@
                     </animation-folder>
                     <animation-folder name="02">
                         <animation framecount="3" loop="1" name="02idle" pingpong="1" repeatcount="1" repeatto="0" sid="9657623426585062" speed="5">
-                            <frame duration="1" hotspotX="0.505155" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.505155" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 1.png">
                                 <image-point name="Center" x="0.505155" y="0.5" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
-                            <frame duration="1" hotspotX="0.505155" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.505155" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 3.png">
                                 <image-point name="Center" x="0.505155" y="0.5" />
                             </frame>
                         </animation>
@@ -2366,18 +2365,18 @@
                     </animation-folder>
                     <animation-folder name="03">
                         <animation framecount="3" loop="1" name="03idle" pingpong="1" repeatcount="1" repeatto="0" sid="8998260361388765" speed="5">
-                            <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 1.png">
                                 <image-point name="Center" x="0.506173" y="0.505155" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.505376" />
                             </frame>
-                            <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 3.png">
                                 <image-point name="Center" x="0.506173" y="0.505155" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="1" name="03eating" pingpong="0" repeatcount="1" repeatto="0" sid="7741551677908721" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.505376" />
                             </frame>
                         </animation>
@@ -2399,18 +2398,18 @@
                     </animation-folder>
                     <animation-folder name="04">
                         <animation framecount="3" loop="1" name="04idle" pingpong="1" repeatcount="1" repeatto="0" sid="2198609863323154" speed="5">
-                            <frame duration="1" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 1.png">
                                 <image-point name="Center" x="0.506173" y="0.506024" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.506024" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 3.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="1" name="04eating" pingpong="0" repeatcount="1" repeatto="0" sid="1235308492595703" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.506024" />
                             </frame>
                         </animation>
@@ -2432,46 +2431,46 @@
                     </animation-folder>
                     <animation-folder name="05">
                         <animation framecount="3" loop="1" name="05idle" pingpong="1" repeatcount="1" repeatto="0" sid="6380119827133479" speed="5">
-                            <frame duration="1" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 1.png">
                                 <image-point name="Center" x="0.504587" y="0.5" />
                             </frame>
-                            <frame duration="1" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 2.png">
                                 <image-point name="Center" x="0.504587" y="0.504587" />
                             </frame>
-                            <frame duration="1" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 3.png">
                                 <image-point name="Center" x="0.504587" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="1" name="05eating" pingpong="0" repeatcount="1" repeatto="0" sid="339382362100624" speed="5">
-                            <frame duration="1" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 2.png">
                                 <image-point name="Center" x="0.504587" y="0.504587" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="1" name="05ready" pingpong="0" repeatcount="1" repeatto="0" sid="7385768048203732" speed="5">
-                            <frame duration="1" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 3.png">
                                 <image-point name="Center" x="0.504587" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="05eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="8944313417786889" speed="5">
-                            <frame duration="1" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 2.png">
                                 <image-point name="Center" x="0.504587" y="0.504587" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="05eyeclosed" pingpong="0" repeatcount="1" repeatto="0" sid="1655804089981927" speed="5">
-                            <frame duration="1" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 3.png">
                                 <image-point name="Center" x="0.504587" y="0.5" />
                             </frame>
                         </animation>
                     </animation-folder>
                     <animation-folder name="06">
                         <animation framecount="3" loop="1" name="06idle" pingpong="1" repeatcount="1" repeatto="0" sid="3756160307462643" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\RoboChick 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\RoboChick 1.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\RoboChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\RoboChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.506024" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\RoboChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\RoboChick 3.png">
                                 <image-point name="Center" x="0.5" y="0.506024" />
                             </frame>
                         </animation>
@@ -2498,13 +2497,13 @@
                     </animation-folder>
                     <animation-folder name="07">
                         <animation framecount="3" loop="1" name="07idle" pingpong="1" repeatcount="1" repeatto="0" sid="3627830700157795" speed="5">
-                            <frame duration="1" hotspotX="0.508197" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\PeaChicks 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.508197" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\PeaChicks 1.png">
                                 <image-point name="Center" x="0.508197" y="0.514286" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\PeaChicks 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\PeaChicks 2.png">
                                 <image-point name="Center" x="0.5" y="0.514286" />
                             </frame>
-                            <frame duration="1" hotspotX="0.508197" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\PeaChicks 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.508197" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\PeaChicks 3.png">
                                 <image-point name="Center" x="0.508197" y="0.514286" />
                             </frame>
                         </animation>
@@ -2531,13 +2530,13 @@
                     </animation-folder>
                     <animation-folder name="08">
                         <animation framecount="3" loop="1" name="08idle" pingpong="1" repeatcount="1" repeatto="0" sid="3648171119727456" speed="5">
-                            <frame duration="1" hotspotX="0.504202" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.504202" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 1.png">
                                 <image-point name="Center" x="0.504202" y="0.506329" />
                             </frame>
-                            <frame duration="1" hotspotX="0.504202" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.504202" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 2.png">
                                 <image-point name="Center" x="0.504202" y="0.506024" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 3.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
                         </animation>
@@ -2564,13 +2563,13 @@
                     </animation-folder>
                     <animation-folder name="09">
                         <animation framecount="3" loop="1" name="09idle" pingpong="1" repeatcount="1" repeatto="0" sid="5932587680456206" speed="5">
-                            <frame duration="1" hotspotX="0.506329" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SickChick 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SickChick 1.png">
                                 <image-point name="Center" x="0.506329" y="0.507937" />
                             </frame>
-                            <frame duration="1" hotspotX="0.506329" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SickChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SickChick 2.png">
                                 <image-point name="Center" x="0.506329" y="0.5" />
                             </frame>
-                            <frame duration="1" hotspotX="0.506329" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SickChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SickChick 3.png">
                                 <image-point name="Center" x="0.506329" y="0.5" />
                             </frame>
                         </animation>
@@ -2597,13 +2596,13 @@
                     </animation-folder>
                     <animation-folder name="10">
                         <animation framecount="3" loop="1" name="10idle" pingpong="1" repeatcount="1" repeatto="0" sid="9050540481178174" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\TowerChick 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\TowerChick 1.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\TowerChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\TowerChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\TowerChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\TowerChick 3.png">
                                 <image-point name="Center" x="0.5" y="0.504425" />
                             </frame>
                         </animation>
@@ -2657,13 +2656,13 @@
                     </animation-folder>
                     <animation-folder name="12">
                         <animation framecount="3" loop="1" name="12idle" pingpong="1" repeatcount="1" repeatto="0" sid="8610245174087057" speed="5">
-                            <frame duration="1" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 1.png">
+                            <frame duration="1" format="png8" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 1.png">
                                 <image-point name="Center" x="0.504505" y="0.5" />
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 2.png">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.506849" />
                             </frame>
-                            <frame duration="1" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 3.png">
+                            <frame duration="1" format="png8" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 3.png">
                                 <image-point name="Center" x="0.504505" y="0.5" />
                             </frame>
                         </animation>
@@ -2695,9 +2694,21 @@
                 <instance-variables>
                     <instance-variable name="select" sid="9409696523663006" type="number" />
                 </instance-variables>
+                <behaviors>
+                    <behavior-type name="Sine" sid="7153343934272385">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8641842406831368" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2739,7 +2750,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3085204460909665" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\cage\cageHome.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\cage\cageHome.jpg">
                             <image-point name="Floor0" x="0.5" y="0.636719" />
                             <image-point name="Floor1" x="0.5" y="0.539063" />
                             <image-point name="Floor2" x="0.5" y="0.4375" />
@@ -2770,12 +2781,12 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8034947604645787" speed="0">
-                        <frame duration="1" hotspotX="0.500599" hotspotY="0.502994" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.503226" />
-                        <frame duration="1" hotspotX="0.500978" hotspotY="0.505376" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.50104" hotspotY="0.503145" />
-                        <frame duration="1" hotspotX="0.500668" hotspotY="0.50237" />
+                        <frame duration="1" format="png8" hotspotX="0.500599" hotspotY="0.502994" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.503226" />
+                        <frame duration="1" format="png8" hotspotX="0.500978" hotspotY="0.505376" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.50104" hotspotY="0.503145" />
+                        <frame duration="1" format="png8" hotspotX="0.500668" hotspotY="0.50237" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2788,7 +2799,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9890613586150756" speed="5">
-                        <frame duration="1" hotspotX="0.502488" hotspotY="0.507692" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\goldTemplete.png">
+                        <frame duration="1" format="png8" hotspotX="0.502488" hotspotY="0.507692" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\goldTemplete.png">
                             <collision-poly>
                                 <point x="0.0547264" y="0.169231" />
                                 <point x="0.497512" y="0.307692" />
@@ -2833,7 +2844,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1813951620278962" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150222_084053720.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150222_084053720.jpg">
                             <collision-poly>
                                 <point x="0.379687" y="0.50625" />
                                 <point x="0.5" y="0.215625" />
@@ -2852,7 +2863,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6384706179431089" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150222_084052975.jpg">
+                        <frame duration="1" format="png8" hotspotX="-0.122807" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150222_084052975.jpg">
                             <collision-poly>
                                 <point x="0.895312" y="0.139583" />
                                 <point x="1" y="0.5" />
@@ -2868,7 +2879,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7408095623221124" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150222_084054079.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.528926" hotspotY="0.421687" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150222_084054079.jpg">
                             <collision-poly>
                                 <point x="0.208594" y="0.278125" />
                                 <point x="0.5" y="0.778125" />
@@ -3003,7 +3014,7 @@
                     </behaviors>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2914596772468899" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
                                 <image-point name="Imagepoint 1" x="0.2525" y="0.258333" />
                                 <image-point name="Imagepoint 2" x="0.5025" y="0.291667" />
                                 <image-point name="Imagepoint 3" x="0.7275" y="0.301667" />
@@ -3013,6 +3024,9 @@
                                 <image-point name="Imagepoint 7" x="0.2225" y="0.725" />
                                 <image-point name="Imagepoint 8" x="0.5025" y="0.731667" />
                                 <image-point name="Imagepoint 9" x="0.7975" y="0.718333" />
+                                <image-point name="Imagepoint 10" x="0.1425" y="0.941667" />
+                                <image-point name="Imagepoint 11" x="0.4875" y="0.938333" />
+                                <image-point name="Imagepoint 12" x="0.8325" y="0.938333" />
                             </frame>
                         </animation>
                     </animation-folder>
@@ -3051,18 +3065,18 @@
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5881977466938529" speed="0">
                         <frame duration="1" format="png8" hotspotX="0.501247" hotspotY="0.500759" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130936157.jpg">
                             <collision-poly>
-                                <point x="0.00498753" y="0.0273141" />
-                                <point x="0.950125" y="0" />
-                                <point x="0.839724" y="1" />
-                                <point x="0.265514" y="1" />
+                                <point x="0.00997506" y="0.0197268" />
+                                <point x="0.975063" y="0.00455235" />
+                                <point x="0.9295" y="0.23824" />
+                                <point x="0.0510502" y="0.259484" />
                             </collision-poly>
                         </frame>
                         <frame duration="1" format="png8" hotspotX="0.501253" hotspotY="0.500761" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130936480.jpg">
                             <collision-poly>
-                                <point x="0.00498753" y="0.0273141" />
-                                <point x="0.950125" y="0" />
-                                <point x="0.839724" y="1" />
-                                <point x="0.265514" y="1" />
+                                <point x="0.00997506" y="0.0197268" />
+                                <point x="0.975063" y="0.00455235" />
+                                <point x="0.9295" y="0.23824" />
+                                <point x="0.0510502" y="0.259484" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -3080,7 +3094,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="On" pingpong="0" repeatcount="1" repeatto="0" sid="8423777970921827" speed="5">
-                        <frame duration="1" hotspotX="0.334842" hotspotY="0.00129366" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130935767.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.334842" hotspotY="0.00129366" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130935767.jpg">
                             <image-point name="Center" x="0.39819" y="0.904269" />
                             <collision-poly>
                                 <point x="0.0452489" y="0.737387" />
@@ -3092,7 +3106,7 @@
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="Off" pingpong="0" repeatcount="1" repeatto="0" sid="6474941527545831" speed="5">
-                        <frame duration="1" hotspotX="0.334842" hotspotY="0.00129366" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130935447.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.334842" hotspotY="0.00129366" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130935447.jpg">
                             <image-point name="Center" x="0.39819" y="0.904269" />
                             <collision-poly>
                                 <point x="0.0452489" y="0.737387" />
@@ -3117,7 +3131,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="On" pingpong="0" repeatcount="1" repeatto="0" sid="9601378438611571" speed="5">
-                        <frame duration="1" hotspotX="0.373333" hotspotY="0.00259403" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130934762.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.373333" hotspotY="0.00259403" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130934762.jpg">
                             <image-point name="Center" x="0.417778" y="0.911803" />
                             <collision-poly>
                                 <point x="0.08" y="0.754864" />
@@ -3129,7 +3143,7 @@
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="Off" pingpong="0" repeatcount="1" repeatto="0" sid="6396501145562852" speed="5">
-                        <frame duration="1" hotspotX="0.373333" hotspotY="0.00259403" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130934294.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.373333" hotspotY="0.00259403" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130934294.jpg">
                             <image-point name="Center" x="0.417778" y="0.911803" />
                             <collision-poly>
                                 <point x="0.08" y="0.754864" />
@@ -3146,7 +3160,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3610132365727856" speed="5">
-                        <frame duration="1" hotspotX="0.500409" hotspotY="0.504587" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130932964.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.500409" hotspotY="0.504587" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130932964.jpg">
                             <collision-poly>
                                 <point x="0.736719" y="0.736719" />
                                 <point x="0.257031" y="0.742969" />
@@ -3161,7 +3175,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7833248351851198" speed="5">
-                        <frame duration="1" hotspotX="0.500404" hotspotY="0.500637" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_132945847.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.500404" hotspotY="0.500637" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_132945847.jpg">
                             <image-point name="CreditLeft" x="0.290557" y="0.500637" />
                             <image-point name="CreditRight" x="0.71025" y="0.500637" />
                             <image-point name="GolemName" x="0.569007" y="0.191083" />
@@ -3184,7 +3198,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8151491050315544" speed="5">
-                        <frame duration="1" hotspotX="0.503185" hotspotY="0.500826" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933968.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.503185" hotspotY="0.500826" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933968.jpg" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -3192,7 +3206,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4983868482588988" speed="5">
-                        <frame duration="1" hotspotX="0.502959" hotspotY="0.500832" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933579.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.502959" hotspotY="0.500832" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933579.jpg" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -3205,7 +3219,21 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4170838313828885" speed="5">
-                        <frame duration="1" hotspotX="0.533333" hotspotY="0.566667" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\cage\gold.png" />
+                        <frame duration="1" format="png8" hotspotX="0.533333" hotspotY="0.566667" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\cage\gold.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="notiButton" sid="2882638169379128">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="On" sid="5069491314310029" type="boolean" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="On" pingpong="0" repeatcount="1" repeatto="0" sid="1597068341981875" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Off" pingpong="0" repeatcount="1" repeatto="0" sid="5582281867171066" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -3342,7 +3370,6 @@
             </properties>
         </global-instance>
         <global-instance type="WebStorage" uid="1" />
-        <global-instance type="TimeAway" uid="4" />
         <global-instance type="Browser" uid="5" />
         <global-instance type="AudioHelper" uid="6" />
         <global-instance type="Function" uid="3" />
@@ -3438,6 +3465,8 @@
         <file name="resetAsk.ogg" />
         <file name="resetDone.m4a" />
         <file name="resetDone.ogg" />
+        <file name="cluck.m4a" />
+        <file name="cluck.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="battleView.m4a" />
