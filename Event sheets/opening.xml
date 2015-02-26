@@ -120,32 +120,6 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="7196616649149384">
-                    <conditions>
-                        <condition id="3" inverted="1" name="Local key exists" sid="6969712206766765" type="WebStorage">
-                            <param id="0" name="Key">&quot;heartNotiId&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Set local value" sid="7348768834232794" type="WebStorage">
-                            <param id="0" name="Key">&quot;heartNotiId&quot;</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="4526146122373086">
-                    <conditions>
-                        <condition id="3" inverted="1" name="Local key exists" sid="8578030705652946" type="WebStorage">
-                            <param id="0" name="Key">&quot;goldNotiId&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Set local value" sid="1721900021650089" type="WebStorage">
-                            <param id="0" name="Key">&quot;goldNotiId&quot;</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="7404003125648614">
                     <conditions>
                         <condition id="-8" name="Compare two values" sid="1134104255260402" type="System">
@@ -159,39 +133,15 @@
                             <param id="0" name="Key">&quot;gold&quot;</param>
                             <param id="1" name="Value">int(WebStorage.LocalValue(&quot;gold&quot;))+500</param>
                         </action>
-                        <action id="3" name="Cancel the local notification with id" sid="1594507776783452" type="CocoonJSNotifications">
-                            <param id="0" name="Notification id">WebStorage.LocalValue(&quot;goldNotiId&quot;)</param>
-                        </action>
                         <action id="0" name="Set local value" sid="7469902183247466" type="WebStorage">
                             <param id="0" name="Key">&quot;lastGoldRewardTimeStamp&quot;</param>
                             <param id="1" name="Value">Date.UnixTimestamp</param>
                         </action>
+                        <action id="0" name="Call function" sid="1263391856683272" type="Function">
+                            <param id="0" name="Name">&quot;resetNoti&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="5854539706385">
-                            <conditions>
-                                <condition id="7" name="Compare key value (as number)" sid="9712324020797055" type="WebStorage">
-                                    <param id="0" name="Key">&quot;noti&quot;</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="2" name="Send a local notification." sid="9605486160242663" type="CocoonJSNotifications">
-                                    <param id="0" name="Badge Number">0</param>
-                                    <param id="1" name="Delay">60*60*24</param>
-                                    <param id="2" name="Message">&quot;골드 선물이 도착했습니다!&quot;</param>
-                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
-                                    <param id="4" name="Expanded Body">&quot;24시간마다 500골드를 받아가세요!&quot;</param>
-                                    <param id="5" name="Sound enabled">1</param>
-                                </action>
-                                <action id="0" name="Set local value" sid="4427864188354797" type="WebStorage">
-                                    <param id="0" name="Key">&quot;goldNotiId&quot;</param>
-                                    <param id="1" name="Value">CocoonJSNotifications.returnNotificationId</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="6653391786427391">
                     <conditions />

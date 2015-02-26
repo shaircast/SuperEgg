@@ -135,6 +135,9 @@
                     <param id="0" name="Font face">&quot;jua&quot;</param>
                     <param id="1" name="Style">0</param>
                 </action>
+                <action id="3" name="Set font size" sid="4297794210811408" type="alltheText">
+                    <param id="0" name="Size (pt)">self.FaceSize+2</param>
+                </action>
             </actions>
         </event-block>
         <event-group description="" sid="7657085672509721" title="local Push Time Manager">

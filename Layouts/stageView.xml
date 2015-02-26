@@ -229,7 +229,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>710</x>
-                        <y>648</y>
+                        <y>653</y>
                         <z>0</z>
                         <width>1030</width>
                         <height>121</height>
@@ -276,6 +276,7 @@
                                 <magnitude-random>1</magnitude-random>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="PinToImagePoint" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -328,6 +329,7 @@
                                 <magnitude-random>1</magnitude-random>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="PinToImagePoint" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -380,6 +382,7 @@
                                 <magnitude-random>1</magnitude-random>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="PinToImagePoint" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

@@ -80,12 +80,17 @@
                         <select>0</select>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="MoveTo">
+                        <behavior-instance type="Sine">
                             <properties>
-                                <activated>Yes</activated>
-                                <max-speed>400</max-speed>
-                                <acceleration>0</acceleration>
-                                <deceleration>0</deceleration>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Size</movement>
+                                <wave>Sine</wave>
+                                <period>1.2</period>
+                                <period-random>0</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>0</period-offset-random>
+                                <magnitude>10</magnitude>
+                                <magnitude-random>0</magnitude-random>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -95,8 +100,8 @@
                         <x>392</x>
                         <y>643</y>
                         <z>0</z>
-                        <width>256</width>
-                        <height>180</height>
+                        <width>236</width>
+                        <height>170</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -266,7 +271,7 @@
                         <x>366</x>
                         <y>844</y>
                         <z>0</z>
-                        <width>200</width>
+                        <width>226</width>
                         <height>160</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -466,7 +471,7 @@
                         <height>22</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.454545468</hotspotY>
+                        <hotspotY>0.636363626</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -495,7 +500,7 @@
                         <height>8</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>1</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -539,25 +544,17 @@
                     <instance-variables>
                         <buttonID>0</buttonID>
                     </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Rotate">
-                            <properties>
-                                <speed>180</speed>
-                                <acceleration>0</acceleration>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
+                    <blend-mode>1</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>902</x>
                         <y>-160</y>
                         <z>0</z>
-                        <width>128</width>
-                        <height>128</height>
+                        <width>384</width>
+                        <height>270</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.494791657</hotspotX>
+                        <hotspotY>0.707407415</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -570,64 +567,19 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <behavior-instances>
-                        <behavior-instance type="Rotate">
-                            <properties>
-                                <speed>720</speed>
-                                <acceleration>0</acceleration>
-                            </properties>
-                        </behavior-instance>
                         <behavior-instance type="PinToImagePoint" />
                     </behavior-instances>
-                    <blend-mode>0</blend-mode>
+                    <blend-mode>1</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>693</x>
                         <y>-266</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
+                        <width>240</width>
+                        <height>192</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="eggDestroyedEffect" uid="39">
-                    <properties>
-                        <rate>6</rate>
-                        <spray-cone>360</spray-cone>
-                        <type>One-shot</type>
-                        <initial-particle-properties></initial-particle-properties>
-                        <speed>150</speed>
-                        <size>24</size>
-                        <opacity>100</opacity>
-                        <grow-rate>0</grow-rate>
-                        <x-randomiser>0</x-randomiser>
-                        <y-randomiser>0</y-randomiser>
-                        <speed-randomiser->0</speed-randomiser->
-                        <size-randomiser>12</size-randomiser>
-                        <grow-rate-randomiser>0</grow-rate-randomiser>
-                        <particle-lifetime-properties></particle-lifetime-properties>
-                        <acceleration>0</acceleration>
-                        <gravity>300</gravity>
-                        <angle-randomiser>0</angle-randomiser>
-                        <speed-randomiser>500</speed-randomiser>
-                        <opacity-randomiser>0</opacity-randomiser>
-                        <destroy-mode>Fade to invisible</destroy-mode>
-                        <timeout>1.5</timeout>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-126</x>
-                        <y>226</y>
-                        <z>0</z>
-                        <width>128</width>
-                        <height>128</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.391666681</hotspotX>
+                        <hotspotY>0.510416687</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -871,6 +823,7 @@
                                 <magnitude-random>1</magnitude-random>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="PinToImagePoint" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1176,11 +1129,11 @@
                         <x>670</x>
                         <y>20</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>96</height>
+                        <width>80</width>
+                        <height>93</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.833333313</hotspotY>
+                        <hotspotY>0.860215068</hotspotY>
                         <angle>0.261799395</angle>
                         <opacity>1</opacity>
                     </world>
@@ -1355,7 +1308,7 @@
                         <text>henInfo</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>배달의민족 주아,-27,400,0</font>
-                        <color>255,255,204</color>
+                        <color>0,0,0</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
@@ -1376,8 +1329,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>398.5</x>
-                        <y>-67.5</y>
+                        <x>195</x>
+                        <y>-80</y>
                         <z>0</z>
                         <width>131</width>
                         <height>59</height>

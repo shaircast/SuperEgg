@@ -286,6 +286,7 @@
                                     <param id="0" name="Variable">flag</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-9" name="Destroy" sid="1628006212510243" type="henSelection" />
                                 <action id="0" name="Call function" sid="9799396295469672" type="Function">
                                     <param id="0" name="Name">&quot;golemCreate&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -573,71 +574,88 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>폭파장면 끝나면 턴스킵. 이때 타워닭 타워세우기 확인!</comment>
+                <comment>폭파장면 끝나면 턴스킵. 타워닭 타워세우기.</comment>
+                <event-block sid="7323345668130972">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="7889189680304813" type="explode">
+                            <param id="0" name="Animation">&quot;Explode10&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6021124234890945" type="launchLine">
+                            <param id="0" name="Instance variable">launchLineIDX</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">explode.posX</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1760023573878012" type="launchLine">
+                            <param id="0" name="Instance variable">launchLineIDY</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">explode.posY</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7393192601943754" type="launchLine">
+                            <param id="0" name="Instance variable">occupied</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="1613377204164726" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="4368556382746054" type="launchLine">
+                            <param id="0" name="Object">blockTower</param>
+                            <param id="1" name="Layer">&quot;golem&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="6894677027864835" type="launchLine">
+                            <param id="0" name="Instance variable">occupied</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4273300747818255" type="blockTower">
+                            <param id="0" name="Instance variable">posX</param>
+                            <param id="1" name="Value">explode.posX</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9815260393893532" type="blockTower">
+                            <param id="0" name="Instance variable">posY</param>
+                            <param id="1" name="Value">explode.posY</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3893760492248655" type="blockTower">
+                            <param id="0" name="Instance variable">turnLeft</param>
+                            <param id="1" name="Value">floor((9-explode.posX)/2)+1</param>
+                        </action>
+                        <action id="0" name="Play" sid="6754308888217413" type="Audio">
+                            <param id="0" name="Audio file">10tower</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>보너스면 턴추가</comment>
+                        <event-block sid="6219387403230164">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="8069136434210674" type="explode">
+                                    <param id="0" name="Instance variable">bonus</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="7531501758109833" type="blockTower">
+                                    <param id="0" name="Instance variable">posX</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="7488258800536622" type="blockTower">
+                                    <param id="0" name="Instance variable">turnLeft</param>
+                                    <param id="1" name="Value">Self.turnLeft+1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>폭파장면 끝나면 턴스킵. </comment>
                 <event-block sid="7939978331846722">
                     <conditions>
                         <condition id="5" name="On any finished" sid="7831210850090395" type="explode" />
                     </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="7323345668130972">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="7889189680304813" type="explode">
-                                    <param id="0" name="Instance variable">kind</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;10&quot;</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="6021124234890945" type="launchLine">
-                                    <param id="0" name="Instance variable">launchLineIDX</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">explode.posX</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="1760023573878012" type="launchLine">
-                                    <param id="0" name="Instance variable">launchLineIDY</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">explode.posY</param>
-                                </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7393192601943754" type="launchLine">
-                                    <param id="0" name="Instance variable">occupied</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Spawn another object" sid="4368556382746054" type="launchLine">
-                                    <param id="0" name="Object">blockTower</param>
-                                    <param id="1" name="Layer">&quot;golem&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action id="-13" name="Set boolean" sid="6894677027864835" type="launchLine">
-                                    <param id="0" name="Instance variable">occupied</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="4273300747818255" type="blockTower">
-                                    <param id="0" name="Instance variable">posX</param>
-                                    <param id="1" name="Value">explode.posX</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="9815260393893532" type="blockTower">
-                                    <param id="0" name="Instance variable">posY</param>
-                                    <param id="1" name="Value">explode.posY</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="3893760492248655" type="blockTower">
-                                    <param id="0" name="Instance variable">turnLeft</param>
-                                    <param id="1" name="Value">floor((9-explode.posX)/2)+1</param>
-                                </action>
-                                <action id="0" name="Play" sid="6754308888217413" type="Audio">
-                                    <param id="0" name="Audio file">10tower</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="2337419338875027">
-                            <conditions />
-                            <actions>
-                                <action id="-9" name="Destroy" sid="9149696161055229" type="explode" />
-                            </actions>
-                        </event-block>
-                    </sub-events>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9149696161055229" type="explode" />
+                    </actions>
                 </event-block>
                 <event-block sid="3898576716259156">
                     <conditions>
@@ -666,6 +684,9 @@
                     <actions>
                         <action id="-2" name="Set Y" sid="2173170722995933" type="focus">
                             <param id="0" name="Y">(eggBullet.Y*2+(ViewportBottom(&quot;hud&quot;)+ViewportTop(&quot;hud&quot;))/2)/3</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8312750490682173" type="eggBulletBonusEffect">
+                            <param id="0" name="Angle">eggBullet.Bullet.AngleOfMotion+180</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -998,6 +1019,7 @@
                                         <event-block sid="8026615998906882">
                                             <conditions />
                                             <actions>
+                                                <action id="-9" name="Destroy" sid="7504517338911382" type="exitButton" />
                                                 <action id="-9" name="Destroy" sid="3377846873518647" type="turnText" />
                                                 <action id="-3" name="Create object" sid="2592883838880948" type="System">
                                                     <param id="0" name="Object to create">turnText</param>
@@ -1006,7 +1028,7 @@
                                                     <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
                                                 </action>
                                                 <action behavior="Fade" id="3" name="Set wait time" sid="3653569819368586" type="turnText">
-                                                    <param id="0" name="Wait time">3</param>
+                                                    <param id="0" name="Wait time">20</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="2541924343708251" type="turnText">
                                                     <param id="0" name="Text">&quot;스테이지 클리어!&quot;</param>
@@ -1055,14 +1077,17 @@
                                                                 <action id="-3" name="Create object" sid="433712429284821" type="System">
                                                                     <param id="0" name="Object to create">turnText</param>
                                                                     <param id="1" name="Layer">&quot;hud&quot;</param>
-                                                                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
-                                                                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2+50</param>
+                                                                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2+50</param>
+                                                                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2+80</param>
+                                                                </action>
+                                                                <action behavior="Fade" id="3" name="Set wait time" sid="8981594088987075" type="turnText">
+                                                                    <param id="0" name="Wait time">20</param>
                                                                 </action>
                                                                 <action id="3" name="Set font size" sid="5483329939825059" type="turnText">
                                                                     <param id="0" name="Size (pt)">25</param>
                                                                 </action>
                                                                 <action id="0" name="Set text" sid="3623720103774699" type="turnText">
-                                                                    <param id="0" name="Text">&quot;스테이지 보상 획득!&quot;</param>
+                                                                    <param id="0" name="Text">&quot;스테이지&quot;&amp;newline&amp;&quot;보상 획득!&quot;</param>
                                                                 </action>
                                                                 <action id="-3" name="Create object" sid="916369742832303" type="System">
                                                                     <param id="0" name="Object to create">henCage</param>
@@ -1077,6 +1102,10 @@
                                                                 <action id="-10" name="Set value" sid="5130743058382058" type="henCage">
                                                                     <param id="0" name="Instance variable">type</param>
                                                                     <param id="1" name="Value">mid(stageReward,2,1)</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="1230499185226907" type="henCage">
+                                                                    <param id="0" name="Animation">henCage.kind&amp;&quot;idle&quot;</param>
+                                                                    <param id="1" name="From">1</param>
                                                                 </action>
                                                                 <action id="0" name="Set text" sid="3027582875508677" type="powerupHUD">
                                                                     <param id="0" name="Text">right(stageReward,2)</param>
@@ -1108,6 +1137,9 @@
                                                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                                                     <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
                                                                     <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2+50</param>
+                                                                </action>
+                                                                <action behavior="Fade" id="3" name="Set wait time" sid="6902168276379195" type="turnText">
+                                                                    <param id="0" name="Wait time">20</param>
                                                                 </action>
                                                                 <action id="3" name="Set font size" sid="998522883349805" type="turnText">
                                                                     <param id="0" name="Size (pt)">25</param>
@@ -1223,6 +1255,7 @@
                                 <action id="-13" name="Set time scale" sid="8920674856328456" type="System">
                                     <param id="0" name="Time scale">1</param>
                                 </action>
+                                <action id="-9" name="Destroy" sid="1055078956629822" type="exitButton" />
                                 <action id="0" name="Call function" sid="5960196682011499" type="Function">
                                     <param id="0" name="Name">&quot;loseHeart&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -1346,6 +1379,247 @@
                                 </action>
                                 <action id="-9" name="Destroy" sid="80430304545338" type="golemMovingSmoke" />
                             </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="5385948967632735" title="henButton Opacity">
+            <sub-events>
+                <event-block sid="6087449798272595">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="4214595832934112" type="System">
+                            <param id="0" name="Object">henButton</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>먹는 상태일때 반투명 진입</comment>
+                        <variable constant="0" name="lerpRate" sid="3171030566935827" static="0" type="number">0.05</variable>
+                        <variable constant="0" name="opacityTransSpeed" sid="6293444989970867" static="0" type="number">200</variable>
+                        <variable constant="0" name="opacityTarget" sid="358244499557582" static="0" type="number">50</variable>
+                        <event-block sid="9006863816338584">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="8627216875494321" type="henButton">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="7434422881652565">
+                                    <conditions>
+                                        <condition id="-10" name="Compare opacity" sid="1464879713460088" type="henButton">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Opacity">opacityTarget</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="1793179070002812" type="henButton">
+                                            <param id="0" name="Opacity">self.Opacity-opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1627998279217922">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="2051013285023926" type="henButton">
+                                            <param id="0" name="Object">henInfo</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="9579232173302885" type="henInfo">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Opacity">opacityTarget</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="6809770335030584" type="henInfo">
+                                            <param id="0" name="Opacity">self.Opacity-opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9111413404809155">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="5293177595646649" type="henButton">
+                                            <param id="0" name="Object">henCage</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="3083246413866302" type="henCage">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Opacity">opacityTarget</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="7398803821726918" type="henCage">
+                                            <param id="0" name="Opacity">self.Opacity-opacityTransSpeed*dt</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="434809248838741" type="powerupHUD">
+                                            <param id="0" name="Opacity">self.Opacity-opacityTransSpeed*dt</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="5964554715500008" type="iconTypeHUD">
+                                            <param id="0" name="Opacity">self.Opacity-opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9860771724750782">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="2909114158386714" type="henButton">
+                                            <param id="0" name="Object">iconAtk</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="5684878412490162" type="iconAtk">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Opacity">opacityTarget</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="541339396583084" type="iconAtk">
+                                            <param id="0" name="Opacity">self.Opacity-opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6891147796060469">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="2344776668933809" type="henButton">
+                                            <param id="0" name="Object">iconFood</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="8963268978053965" type="iconFood">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Opacity">opacityTarget</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="9831533013879974" type="iconFood">
+                                            <param id="0" name="Opacity">self.Opacity-opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3316116930972911">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="8089750443473599" type="henButton">
+                                            <param id="0" name="Object">iconTurn</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="2789971318945841" type="iconTurn">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Opacity">opacityTarget</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="4055573019221397" type="iconTurn">
+                                            <param id="0" name="Opacity">self.Opacity-opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>먹는 상태 아닐 때 불투명</comment>
+                        <event-block sid="3400366737994073">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9781982739590641" type="henButton">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3989252028400312">
+                                    <conditions>
+                                        <condition id="-10" name="Compare opacity" sid="4453053470594891" type="henButton">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="7601085757822947" type="henButton">
+                                            <param id="0" name="Opacity">self.Opacity+opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="352614278893197">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="7486221376028414" type="henButton">
+                                            <param id="0" name="Object">henInfo</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="5118415035675038" type="henInfo">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="7680668171961381" type="henInfo">
+                                            <param id="0" name="Opacity">self.Opacity+opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8386573981523419">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="8295274235882724" type="henButton">
+                                            <param id="0" name="Object">henCage</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="5266874307454235" type="henCage">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="4997612322698165" type="henCage">
+                                            <param id="0" name="Opacity">self.Opacity+opacityTransSpeed*dt</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="2115522975235219" type="powerupHUD">
+                                            <param id="0" name="Opacity">self.Opacity+opacityTransSpeed*dt</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="4065359062592615" type="iconTypeHUD">
+                                            <param id="0" name="Opacity">self.Opacity+opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4721898843417402">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="3206263079986838" type="henButton">
+                                            <param id="0" name="Object">iconAtk</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="7122068557722814" type="iconAtk">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="405202446849459" type="iconAtk">
+                                            <param id="0" name="Opacity">self.Opacity+opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4213279151484247">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="7083811125995761" type="henButton">
+                                            <param id="0" name="Object">iconFood</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="3663878784278282" type="iconFood">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="6603395950195983" type="iconFood">
+                                            <param id="0" name="Opacity">self.Opacity+opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="882783356471075">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="9599663097561317" type="henButton">
+                                            <param id="0" name="Object">iconTurn</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="4124187827651433" type="iconTurn">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="3692065788180614" type="iconTurn">
+                                            <param id="0" name="Opacity">self.Opacity+opacityTransSpeed*dt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

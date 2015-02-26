@@ -5,7 +5,7 @@
     <events>
         <include>general</include>
         <variable constant="0" name="powerupIndicatorX" sid="487664723975616" static="0" type="number">0</variable>
-        <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">4</variable>
+        <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">5</variable>
         <variable constant="0" name="textYcalib" sid="6970010658980569" static="0" type="number">5</variable>
         <event-group description="" sid="3206342493633997" title="general">
             <sub-events>
@@ -193,8 +193,14 @@
                                     <param id="0" name="Key">&quot;lastGoldRewardTimeStamp&quot;</param>
                                     <param id="1" name="Value">Date.UnixTimestamp</param>
                                 </action>
-                                <action id="3" name="Cancel the local notification with id" sid="3065759758342531" type="CocoonJSNotifications">
-                                    <param id="0" name="Notification id">WebStorage.LocalValue(&quot;heartNotiId&quot;)</param>
+                                <action id="0" name="Cancel all sent local notifications" sid="3065759758342531" type="CocoonJSNotifications" />
+                                <action id="2" name="Send a local notification." sid="6272426784161616" type="CocoonJSNotifications">
+                                    <param id="0" name="Badge Number">0</param>
+                                    <param id="1" name="Delay">60*60*24-int((Date.UnixTimestamp-int(WebStorage.LocalValue(&quot;lastGoldRewardTimeStamp&quot;)))/1000)</param>
+                                    <param id="2" name="Message">&quot;골드 선물이 도착했습니다!&quot;</param>
+                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
+                                    <param id="4" name="Expanded Body">&quot;24시간마다 500골드를 받아가세요!&quot;</param>
+                                    <param id="5" name="Sound enabled">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -508,8 +514,69 @@
                                             <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="6990115359786613">
+                                            <conditions>
+                                                <condition id="7" name="Compare key value (as number)" sid="3324533524483019" type="WebStorage">
+                                                    <param id="0" name="Key">&quot;heart&quot;</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set local value" sid="199598837247088" type="WebStorage">
+                                                    <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
+                                                    <param id="1" name="Value">HEARTCHARGETIME</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>resetNoti() : noti를 모두 지우고 noti=1이면 새로 노티 주기</comment>
+                <event-block sid="5914195269734689">
+                    <conditions>
+                        <condition id="0" name="On function" sid="2449074727489742" type="Function">
+                            <param id="0" name="Name">&quot;resetNoti&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7481948070475716">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Cancel all sent local notifications" sid="3421043528158688" type="CocoonJSNotifications" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="7057840205131241">
+                            <conditions>
+                                <condition id="7" name="Compare key value (as number)" sid="4473853207410388" type="WebStorage">
+                                    <param id="0" name="Key">&quot;noti&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Send a local notification." sid="7128828745850171" type="CocoonJSNotifications">
+                                    <param id="0" name="Badge Number">0</param>
+                                    <param id="1" name="Delay">60*60*24-int((Date.UnixTimestamp-int(WebStorage.LocalValue(&quot;lastGoldRewardTimeStamp&quot;)))/1000)</param>
+                                    <param id="2" name="Message">&quot;골드 선물이 도착했습니다!&quot;</param>
+                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
+                                    <param id="4" name="Expanded Body">&quot;24시간마다 500골드를 받아가세요!&quot;</param>
+                                    <param id="5" name="Sound enabled">1</param>
+                                </action>
+                                <action id="2" name="Send a local notification." sid="5736383977113373" type="CocoonJSNotifications">
+                                    <param id="0" name="Badge Number">0</param>
+                                    <param id="1" name="Delay">HEARTCHARGETIME*(MAXHEART-int(WebStorage.LocalValue(&quot;heart&quot;))-1)+int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))</param>
+                                    <param id="2" name="Message">&quot;달걀이 모두 준비되었습니다!&quot;</param>
+                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
+                                    <param id="4" name="Expanded Body">&quot;달걀이 모두 준비되었습니다! 다시 가 볼까요?&quot;</param>
+                                    <param id="5" name="Sound enabled">1</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -784,7 +851,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="545245027899626" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;10&quot;{###}&quot;기둥이닭&quot;{###}2{###}2{###}3{###}42{###}3{###}&quot;투척 지점에 2의 데미지를 주고, 칸이 비었을 경우 골렘을 막는 타워를 짓는다. 타워는 가까이 지어질수록 튼튼하다. 사실 타워 안에는 소중한 물건을 보관하고 있다고 한다. 예를 들면 야한 잡지라던가. 그런데 야한 닭은 무슨 닭이지.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;10&quot;{###}&quot;기둥이닭&quot;{###}2{###}2{###}3{###}42{###}3{###}&quot;투척 지점에 2의 데미지를 주고, 칸이 비었을 경우 골렘을 막는 타워를 짓는다. 타워는 가까이 지어질수록, 또 파워샷이면  튼튼하다. 사실 타워 안에는 소중한 물건을 보관하고 있다고 한다. 예를 들면 야한 잡지라던가. 그런데 야한 닭은 무슨 닭이지.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="4834320340368416" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
@@ -1153,6 +1220,11 @@
                                     <param id="0" name="Object">henCage</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
                                     <param id="2" name="Image point">&quot;HenCage&quot;</param>
+                                </action>
+                                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="3317165748679762" type="henCage">
+                                    <param id="0" name="Pin to">henButton</param>
+                                    <param id="1" name="ImagePoint">&quot;HenCage&quot;</param>
+                                    <param id="2" name="Mode">0</param>
                                 </action>
                                 <action id="9" name="Set scale" sid="3998246903281823" type="henCage">
                                     <param id="0" name="Scale">1.5</param>
@@ -1560,6 +1632,11 @@
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">henSelection.select</param>
                                                 </condition>
+                                                <condition id="-8" name="Compare two values" sid="6109139521997429" type="System">
+                                                    <param id="0" name="First value">henSelection.Count</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
                                             </conditions>
                                             <actions />
                                             <sub-events>
@@ -1605,7 +1682,7 @@
                                                     </conditions>
                                                     <actions>
                                                         <action id="0" name="Play" sid="4744024079422047" type="Audio">
-                                                            <param id="0" name="Audio file">cluck</param>
+                                                            <param id="0" name="Audio file">cwack</param>
                                                             <param id="2" name="Loop">0</param>
                                                             <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
@@ -1658,10 +1735,6 @@
                                 <action id="-4" name="Set position to another object" sid="9226382190565988" type="henSelection">
                                     <param id="0" name="Object">henButton</param>
                                     <param id="1" name="Image point (optional)">0</param>
-                                </action>
-                                <action id="-29" name="Move to object" sid="7346289317141104" type="henSelection">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Object">henButton</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1981,6 +2054,20 @@
                                             <param id="1" name="Parameter {n}">henButton.UID</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="7165754484727677">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7466971063394392" type="henButton">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="7310566741214046" type="henSelection" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <comment>selection 있다면</comment>
                                 <event-block sid="757942766280856">
@@ -2013,6 +2100,20 @@
                                                     <param id="1" name="Value">1</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="4268403306310797">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="7021833391935221" type="henButton">
+                                                            <param id="0" name="Instance variable">state</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="61881397084792" type="henSelection" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <comment>같은거 선택이면 동작하도록.</comment>
                                         <event-block sid="4252066711017229">
@@ -2069,6 +2170,7 @@
                                                                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+50</param>
                                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                 </action>
+                                                                <action id="-9" name="Destroy" sid="9499785047740629" type="henSelection" />
                                                             </actions>
                                                             <sub-events>
                                                                 <event-block sid="285576116072984">
@@ -2083,8 +2185,9 @@
                                                                             <param id="1" name="From">1</param>
                                                                         </action>
                                                                         <action id="6" name="Set speed" sid="9810983297694416" type="henCage">
-                                                                            <param id="0" name="Speed">random(0.7,1.3)</param>
+                                                                            <param id="0" name="Speed">random(1.5,2.3)</param>
                                                                         </action>
+                                                                        <action id="-9" name="Destroy" sid="781171522455208" type="henSelection" />
                                                                     </actions>
                                                                 </event-block>
                                                             </sub-events>
@@ -2410,7 +2513,7 @@
                                                             <param id="1" name="From">1</param>
                                                         </action>
                                                         <action id="6" name="Set speed" sid="427088253263035" type="henCage">
-                                                            <param id="0" name="Speed">random(0.7,1.3)</param>
+                                                            <param id="0" name="Speed">random(4,5)</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2436,11 +2539,15 @@
                                                         <action id="0" name="Spawn another object" sid="531971964587075" type="henButton">
                                                             <param id="0" name="Object">henButtonBonusEffect</param>
                                                             <param id="1" name="Layer">&quot;hud&quot;</param>
-                                                            <param id="2" name="Image point">0</param>
+                                                            <param id="2" name="Image point">&quot;HenCage&quot;</param>
                                                         </action>
                                                         <action id="-10" name="Set value" sid="166410642737513" type="henButtonBonusEffect">
                                                             <param id="0" name="Instance variable">buttonID</param>
                                                             <param id="1" name="Value">henButton.buttonID</param>
+                                                        </action>
+                                                        <action id="-29" name="Move to object" sid="218926881883365" type="henButtonBonusEffect">
+                                                            <param id="0" name="Where">1</param>
+                                                            <param id="1" name="Object">henCage</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2462,14 +2569,18 @@
                                                             <param id="0" name="Instance variable">bonus</param>
                                                             <param id="1" name="Value">1</param>
                                                         </action>
-                                                        <action id="0" name="Spawn another object" sid="1331599679565003" type="henButton">
+                                                        <action id="0" name="Spawn another object" sid="9927200377427198" type="henButton">
                                                             <param id="0" name="Object">henButtonBonusEffect</param>
                                                             <param id="1" name="Layer">&quot;hud&quot;</param>
-                                                            <param id="2" name="Image point">0</param>
+                                                            <param id="2" name="Image point">&quot;HenCage&quot;</param>
                                                         </action>
                                                         <action id="-10" name="Set value" sid="541770176523136" type="henButtonBonusEffect">
                                                             <param id="0" name="Instance variable">buttonID</param>
                                                             <param id="1" name="Value">henButton.buttonID</param>
+                                                        </action>
+                                                        <action id="-29" name="Move to object" sid="301765052562945" type="henButtonBonusEffect">
+                                                            <param id="0" name="Where">1</param>
+                                                            <param id="1" name="Object">henCage</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2491,14 +2602,18 @@
                                                             <param id="0" name="Instance variable">bonus</param>
                                                             <param id="1" name="Value">1</param>
                                                         </action>
-                                                        <action id="0" name="Spawn another object" sid="4781708611071501" type="henButton">
+                                                        <action id="0" name="Spawn another object" sid="8996319189780398" type="henButton">
                                                             <param id="0" name="Object">henButtonBonusEffect</param>
                                                             <param id="1" name="Layer">&quot;hud&quot;</param>
-                                                            <param id="2" name="Image point">0</param>
+                                                            <param id="2" name="Image point">&quot;HenCage&quot;</param>
                                                         </action>
                                                         <action id="-10" name="Set value" sid="1980414266911858" type="henButtonBonusEffect">
                                                             <param id="0" name="Instance variable">buttonID</param>
                                                             <param id="1" name="Value">henButton.buttonID</param>
+                                                        </action>
+                                                        <action id="-29" name="Move to object" sid="7154905823954262" type="henButtonBonusEffect">
+                                                            <param id="0" name="Where">1</param>
+                                                            <param id="1" name="Object">henCage</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2520,14 +2635,18 @@
                                                             <param id="0" name="Instance variable">bonus</param>
                                                             <param id="1" name="Value">1</param>
                                                         </action>
-                                                        <action id="0" name="Spawn another object" sid="3329820641682655" type="henButton">
+                                                        <action id="0" name="Spawn another object" sid="2557681969176562" type="henButton">
                                                             <param id="0" name="Object">henButtonBonusEffect</param>
                                                             <param id="1" name="Layer">&quot;hud&quot;</param>
-                                                            <param id="2" name="Image point">0</param>
+                                                            <param id="2" name="Image point">&quot;HenCage&quot;</param>
                                                         </action>
                                                         <action id="-10" name="Set value" sid="1381367797133802" type="henButtonBonusEffect">
                                                             <param id="0" name="Instance variable">buttonID</param>
                                                             <param id="1" name="Value">henButton.buttonID</param>
+                                                        </action>
+                                                        <action id="-29" name="Move to object" sid="2407197870821461" type="henButtonBonusEffect">
+                                                            <param id="0" name="Where">1</param>
+                                                            <param id="1" name="Object">henCage</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3134,6 +3253,21 @@
                                     <actions>
                                         <action id="1" name="Set blend mode" sid="856910809803801" type="explode">
                                             <param id="0" name="Blend mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>bonus가 1이면 노 보너스이다해. 2면 보너스 붙은 거.</comment>
+                                <event-block sid="9449713987566184">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="1552263824356579" type="explode">
+                                            <param id="0" name="Instance variable">bonus</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="5561596857323562" type="explode">
+                                            <param id="0" name="Scale">2</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -4074,6 +4208,23 @@
                                             <param id="1" name="Value">henDB.Get(&quot;09duration&quot;)+1</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <comment>보너스면</comment>
+                                        <event-block sid="2471746259938069">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="399323376888124" type="poisonEgg">
+                                                    <param id="0" name="Instance variable">bonus</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="9" name="Set scale" sid="5086883456574142" type="poisonEgg">
+                                                    <param id="0" name="Scale">1.5</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -4486,6 +4637,9 @@
                                                 <action id="4" name="Set animation" sid="311737244255218" type="henCage">
                                                     <param id="0" name="Animation">&quot;12ready&quot;</param>
                                                     <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="6" name="Set speed" sid="6860877770657923" type="henCage">
+                                                    <param id="0" name="Speed">random(4,5)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -5110,6 +5264,21 @@
                                 </action>
                             </actions>
                             <sub-events>
+                                <comment>보너스면</comment>
+                                <event-block sid="1691289939675068">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="1287801477445645" type="poisonEgg">
+                                            <param id="0" name="Instance variable">bonus</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="6173736362977671" type="poisonDamage">
+                                            <param id="0" name="Scale">1.5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="3525905336422082">
                                     <conditions>
                                         <condition id="-24" name="For Each (ordered)" sid="7576314625875722" type="System">
@@ -5171,12 +5340,12 @@
                                     <param id="0" name="Object to create">goldRewardText</param>
                                     <param id="1" name="Layer">&quot;effect&quot;</param>
                                     <param id="2" name="X">golem.X-24</param>
-                                    <param id="3" name="Y">golem.Y+textYcalib</param>
+                                    <param id="3" name="Y">golem.Y+textYcalib+4</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="4001838961376741" type="System">
                                     <param id="0" name="Object to create">goldReward</param>
                                     <param id="1" name="Layer">&quot;effect&quot;</param>
-                                    <param id="2" name="X">golem.X-24</param>
+                                    <param id="2" name="X">golem.X-16</param>
                                     <param id="3" name="Y">golem.Y</param>
                                 </action>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="9525174222061569" type="goldReward">
@@ -5330,35 +5499,11 @@
                                     <param id="0" name="Name">&quot;addHeart&quot;</param>
                                     <param id="1" name="Parameter {n}">-1</param>
                                 </action>
-                                <action id="3" name="Cancel the local notification with id" sid="5592267755316984" type="CocoonJSNotifications">
-                                    <param id="0" name="Notification id">WebStorage.LocalValue(&quot;heartNotiId&quot;)</param>
+                                <action id="0" name="Call function" sid="7135412041098961" type="Function">
+                                    <param id="0" name="Name">&quot;resetNoti&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
-                            <sub-events>
-                                <event-block sid="5426790205443531">
-                                    <conditions>
-                                        <condition id="7" name="Compare key value (as number)" sid="5709568528857884" type="WebStorage">
-                                            <param id="0" name="Key">&quot;noti&quot;</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="2" name="Send a local notification." sid="3635366343873178" type="CocoonJSNotifications">
-                                            <param id="0" name="Badge Number">0</param>
-                                            <param id="1" name="Delay">HEARTCHARGETIME*(MAXHEART-int(WebStorage.LocalValue(&quot;heart&quot;))-1)+int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))</param>
-                                            <param id="2" name="Message">&quot;달걀이 모두 준비되었습니다!&quot;</param>
-                                            <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
-                                            <param id="4" name="Expanded Body">&quot;달걀 모두 준비되었습니다! 다시 가 볼까요?&quot;</param>
-                                            <param id="5" name="Sound enabled">1</param>
-                                        </action>
-                                        <action id="0" name="Set local value" sid="5113931474862129" type="WebStorage">
-                                            <param id="0" name="Key">&quot;heartNotiId&quot;</param>
-                                            <param id="1" name="Value">CocoonJSNotifications.returnNotificationId</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -5871,7 +6016,7 @@
                                             </conditions>
                                             <actions>
                                                 <action id="0" name="Set text" sid="564692441553529" type="stageInfoText">
-                                                    <param id="0" name="Text">&quot;사료 포대가 부족합니다. 조금만 기다려 주세요.&quot;</param>
+                                                    <param id="0" name="Text">&quot;달걀이 부족합니다. 조금만 기다려 주세요.&quot;</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -6048,7 +6193,7 @@
                                     <param id="0" name="Frame number">int(WebStorage.LocalValue(&quot;heart&quot;))</param>
                                 </action>
                                 <action id="0" name="Set text" sid="9395775391431727" type="heartTimer">
-                                    <param id="0" name="Text">&quot;다음 사료보급까지 - &quot;&amp;zeropad(floor(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))/60),2) &amp;&quot; : &quot;&amp; zeropad(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))%60,2)</param>
+                                    <param id="0" name="Text">&quot;다음 달걀 충전까지 - &quot;&amp;zeropad(floor(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))/60),2) &amp;&quot; : &quot;&amp; zeropad(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))%60,2)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -6359,43 +6504,70 @@
                                                             <param id="0" name="Variable">flag</param>
                                                             <param id="1" name="Value">1</param>
                                                         </action>
-                                                        <action id="-3" name="Create object" sid="5558285460508716" type="System">
-                                                            <param id="0" name="Object to create">cageSelection</param>
-                                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                                            <param id="2" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
-                                                            <param id="3" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
-                                                        </action>
                                                         <action id="-9" name="Set value" sid="7669453712930107" type="System">
                                                             <param id="0" name="Variable">reproduceSelect2</param>
                                                             <param id="1" name="Value">henCage.id</param>
                                                         </action>
-                                                        <action id="-9" name="Set value" sid="5121786540952499" type="System">
-                                                            <param id="0" name="Variable">hen1Price</param>
-                                                            <param id="1" name="Value">henDB.Get(left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect1,&quot;/&quot;),2)&amp;&quot;price&quot;)</param>
-                                                        </action>
-                                                        <action id="-9" name="Set value" sid="4945361892624098" type="System">
-                                                            <param id="0" name="Variable">hen1Bonus</param>
-                                                            <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect1,&quot;/&quot;),2)</param>
-                                                        </action>
-                                                        <action id="-9" name="Set value" sid="6730478552022241" type="System">
-                                                            <param id="0" name="Variable">hen2Price</param>
-                                                            <param id="1" name="Value">henDB.Get(left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect2,&quot;/&quot;),2)&amp;&quot;price&quot;)</param>
-                                                        </action>
-                                                        <action id="-9" name="Set value" sid="8514918748644299" type="System">
-                                                            <param id="0" name="Variable">hen2Bonus</param>
-                                                            <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect2,&quot;/&quot;),2)</param>
-                                                        </action>
-                                                        <action id="-9" name="Set value" sid="7004954785337271" type="System">
-                                                            <param id="0" name="Variable">reproduceCost</param>
-                                                            <param id="1" name="Value">int((hen1Price+hen1Bonus)*(hen2Price+hen2Bonus)/MATECOSTDIVIDE)</param>
-                                                        </action>
-                                                        <action id="0" name="Set text" sid="2650428616149346" type="systemText">
-                                                            <param id="0" name="Text">&quot;[교배] &quot;&amp;reproduceCost&amp;&quot;원이 필요합니다. 계속할까요?&quot;</param>
-                                                        </action>
-                                                        <action id="-15" name="Set visible" sid="6314686126617124" type="cageViewOkButton">
-                                                            <param id="0" name="Visibility">1</param>
-                                                        </action>
                                                     </actions>
+                                                    <sub-events>
+                                                        <event-block sid="4764479509947495">
+                                                            <conditions>
+                                                                <condition id="-14" name="Compare variable" sid="2228263974420022" type="System">
+                                                                    <param id="0" name="Variable">reproduceSelect1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">reproduceSelect2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Set text" sid="5305089396366753" type="systemText">
+                                                                    <param id="0" name="Text">&quot;[교배] 자가교배는 좋지 못합니다. 다른 닭을 선택해주세요.&quot;</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="5017642116012301" type="System">
+                                                                    <param id="0" name="Variable">reproduceSelect2</param>
+                                                                    <param id="1" name="Value">-1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="3679742034902302">
+                                                            <conditions>
+                                                                <condition id="-22" name="Else" sid="5561639822464359" type="System" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Create object" sid="5558285460508716" type="System">
+                                                                    <param id="0" name="Object to create">cageSelection</param>
+                                                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                                    <param id="2" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                                                    <param id="3" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="5121786540952499" type="System">
+                                                                    <param id="0" name="Variable">hen1Price</param>
+                                                                    <param id="1" name="Value">henDB.Get(left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect1,&quot;/&quot;),2)&amp;&quot;price&quot;)</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="4945361892624098" type="System">
+                                                                    <param id="0" name="Variable">hen1Bonus</param>
+                                                                    <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect1,&quot;/&quot;),2)</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="6730478552022241" type="System">
+                                                                    <param id="0" name="Variable">hen2Price</param>
+                                                                    <param id="1" name="Value">henDB.Get(left(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect2,&quot;/&quot;),2)&amp;&quot;price&quot;)</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="8514918748644299" type="System">
+                                                                    <param id="0" name="Variable">hen2Bonus</param>
+                                                                    <param id="1" name="Value">right(tokenat(WebStorage.LocalValue(&quot;henList&quot;),reproduceSelect2,&quot;/&quot;),2)</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="7004954785337271" type="System">
+                                                                    <param id="0" name="Variable">reproduceCost</param>
+                                                                    <param id="1" name="Value">int((hen1Price+hen1Bonus)*(hen2Price+hen2Bonus)/MATECOSTDIVIDE)</param>
+                                                                </action>
+                                                                <action id="0" name="Set text" sid="2650428616149346" type="systemText">
+                                                                    <param id="0" name="Text">&quot;[교배] &quot;&amp;reproduceCost&amp;&quot;원이 필요합니다. 계속할까요?&quot;</param>
+                                                                </action>
+                                                                <action id="-15" name="Set visible" sid="6314686126617124" type="cageViewOkButton">
+                                                                    <param id="0" name="Visibility">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
@@ -6644,7 +6816,7 @@
                                 </action>
                                 <action id="-9" name="Destroy" sid="4824153002558588" type="cageSelection" />
                                 <action id="0" name="Set text" sid="157871016433122" type="systemText">
-                                    <param id="0" name="Text">&quot;[판매] 판매하고 싶은 닭을 고르세요. 설명도 해줍니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;[판매] 판매하고 싶은 닭을 고르고 OK를 누르면 닭을 팝니다.&quot;</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="7252828232889597" type="cageViewOkButton">
                                     <param id="0" name="Animation">&quot;Sell&quot;</param>
@@ -6707,7 +6879,7 @@
                                     <param id="1" name="Value">-1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="2379355547203711" type="systemText">
-                                    <param id="0" name="Text">&quot;[교배] 닭 두 마리를 교배해서 새로운 닭을 만듭니다. 일정 확률로 강화됩니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;[교배] 닭 두 마리를 골라 OK를 누르면 교배해서 새로운 닭을 만듭니다. 일정 확률로 강화됩니다.&quot;</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="3010562210040054" type="cageViewOkButton">
                                     <param id="0" name="Animation">&quot;Reproduce&quot;</param>
@@ -6770,7 +6942,7 @@
                                     <param id="1" name="Value">-1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="7518242613786269" type="systemText">
-                                    <param id="0" name="Text">&quot;[엔트리] 전투에 사용할 닭을 골라주세요(1/3).&quot;</param>
+                                    <param id="0" name="Text">&quot;[엔트리] 엔트리를 바꾸시려고요? 전투에 사용할 닭을 골라주세요(1/3).&quot;</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="2811275833551949" type="cageViewOkButton">
                                     <param id="0" name="Animation">&quot;Entry&quot;</param>

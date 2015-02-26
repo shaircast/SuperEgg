@@ -1293,7 +1293,7 @@
                     </instance-variables>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7797494498981483" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.833333" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.860215" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -1392,12 +1392,12 @@
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6744672471360473" speed="5">
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg\merged\resized\1.png">
-                                <image-point name="Atk" x="0.15" y="0.84375" />
-                                <image-point name="AtkText" x="0.3" y="0.86875" />
-                                <image-point name="Food" x="0.45" y="0.84375" />
-                                <image-point name="FoodText" x="0.6" y="0.86875" />
-                                <image-point name="Turn" x="0.75" y="0.84375" />
-                                <image-point name="TurnText" x="0.9" y="0.86875" />
+                                <image-point name="Atk" x="0.150442" y="0.84375" />
+                                <image-point name="AtkText" x="0.292035" y="0.86875" />
+                                <image-point name="Food" x="0.451327" y="0.84375" />
+                                <image-point name="FoodText" x="0.59292" y="0.86875" />
+                                <image-point name="Turn" x="0.752212" y="0.84375" />
+                                <image-point name="TurnText" x="0.889381" y="0.86875" />
                                 <image-point name="HenCage" x="0.5" y="0.59375" />
                             </frame>
                         </animation>
@@ -1445,13 +1445,20 @@
                     <instance-variable name="select" sid="7091668356185059" type="number" />
                 </instance-variables>
                 <behaviors>
-                    <behavior-type name="MoveTo" sid="8309266265072799">
-                        <behavior id="Rex_MoveTo" />
+                    <behavior-type name="Sine" sid="5483617663614612">
+                        <behavior id="Sin" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4109331022336571" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1622,36 +1629,76 @@
                 <instance-variables>
                     <instance-variable name="buttonID" sid="7629420547719832" type="number" />
                 </instance-variables>
-                <behaviors>
-                    <behavior-type name="Rotate" sid="8275544603114246">
-                        <behavior id="Rotate" />
-                    </behavior-type>
-                </behaviors>
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9463212830423405" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9463212830423405" speed="15">
+                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
+                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
+                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
+                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
+                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
+                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
                     </animation>
                 </animation-folder>
             </object-type>
             <object-type name="eggBulletBonusEffect" sid="6176408708153329">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Rotate" sid="8447336714609841">
-                        <behavior id="Rotate" />
-                    </behavior-type>
                     <behavior-type name="PinToImagePoint" sid="4810806985178602">
                         <behavior id="Rex_pin2imgpt" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4932938029690975" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4932938029690975" speed="15">
+                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
-            </object-type>
-            <object-type name="eggDestroyedEffect" sid="533790726821284">
-                <plugin id="Particles" />
-                <texture format="png8" />
             </object-type>
             <object-type name="turnText" sid="3318910413245149">
                 <plugin id="Text" />
@@ -2287,6 +2334,9 @@
                     <behavior-type name="Sine" sid="5466205260517318">
                         <behavior id="Sin" />
                     </behavior-type>
+                    <behavior-type name="PinToImagePoint" sid="242086463379556">
+                        <behavior id="Rex_pin2imgpt" />
+                    </behavior-type>
                 </behaviors>
                 <container>
                     <type>henCage</type>
@@ -2296,60 +2346,69 @@
                 <animation-folder>
                     <animation-folder name="01">
                         <animation framecount="3" loop="1" name="01idle" pingpong="1" repeatcount="1" repeatto="0" sid="7712919499338095" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\BasicChick 1.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\BasicChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.506024" />
                             </frame>
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 3.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\BasicChick 3.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="2" loop="1" name="01eating" pingpong="0" repeatcount="1" repeatto="0" sid="2600826899334704" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick Eat 1.png">
-                                <image-point name="Center" x="0.5" y="0.506849" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.90411" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\BasicChick Eat 1.png">
+                                <image-point name="Center" x="0.508621" y="0.506849" />
                             </frame>
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick Eat 2.png">
-                                <image-point name="Center" x="0.5" y="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.910256" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\BasicChick Eat 2.png">
+                                <image-point name="Center" x="0.508475" y="0.5" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="01ready" pingpong="0" repeatcount="1" repeatto="0" sid="7718521509910572" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.506024" />
+                        <animation framecount="2" loop="1" name="01ready" pingpong="0" repeatcount="1" repeatto="0" sid="7718521509910572" speed="5">
+                            <frame duration="1" hotspotX="0.504425" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\BasicChick FREAK 1.png">
+                                <image-point name="Center" x="0.504425" y="0.505376" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.504951" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\BasicChick FREAK 2.png">
+                                <image-point name="Center" x="0.504951" y="0.505376" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="1" name="01eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="3716267117485692" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\BasicChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.506024" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="1" name="01eyeclosed" pingpong="0" repeatcount="1" repeatto="0" sid="7655697387434149" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\BasicChick 1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\BasicChick 3.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
                         </animation>
                     </animation-folder>
                     <animation-folder name="02">
                         <animation framecount="3" loop="1" name="02idle" pingpong="1" repeatcount="1" repeatto="0" sid="9657623426585062" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.505155" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 1.png">
+                            <frame duration="1" hotspotX="0.505155" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\STRONGChick 1.png">
                                 <image-point name="Center" x="0.505155" y="0.5" />
                             </frame>
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\STRONGChick 2.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
-                            <frame duration="1" format="png8" hotspotX="0.505155" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 3.png">
+                            <frame duration="1" hotspotX="0.505155" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\STRONGChick 3.png">
                                 <image-point name="Center" x="0.505155" y="0.5" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="02eating" pingpong="0" repeatcount="1" repeatto="0" sid="5458261134735002" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.5" />
+                        <animation framecount="2" loop="1" name="02eating" pingpong="0" repeatcount="1" repeatto="0" sid="5458261134735002" speed="5">
+                            <frame duration="1" hotspotX="0.504202" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\STRONGChick Eat 1.png">
+                                <image-point name="Center" x="0.504202" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.504274" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\STRONGChick Eat 2.png">
+                                <image-point name="Center" x="0.504274" y="0.506849" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="02ready" pingpong="0" repeatcount="1" repeatto="0" sid="9509063158664713" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.505155" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\STRONGChick 3.png">
-                                <image-point name="Center" x="0.505155" y="0.5" />
+                        <animation framecount="2" loop="1" name="02ready" pingpong="0" repeatcount="1" repeatto="0" sid="9509063158664713" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\STRONGChick FREAK 1.png">
+                                <image-point name="Center" x="0.508621" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.504673" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\STRONGChick FREAK 2.png">
+                                <image-point name="Center" x="0.504673" y="0.505263" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="02eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="1076121815690649" speed="5">
@@ -2375,14 +2434,20 @@
                                 <image-point name="Center" x="0.506173" y="0.505155" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="03eating" pingpong="0" repeatcount="1" repeatto="0" sid="7741551677908721" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.505376" />
+                        <animation framecount="2" loop="1" name="03eating" pingpong="0" repeatcount="1" repeatto="0" sid="7741551677908721" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.890411" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\SpeedsterChick Eat 1.png">
+                                <image-point name="Center" x="0.507246" y="0.506849" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.884058" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\SpeedsterChick Eat 2.png">
+                                <image-point name="Center" x="0.507246" y="0.507246" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="03ready" pingpong="0" repeatcount="1" repeatto="0" sid="3279312272592073" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SpeedsterChick 3.png">
-                                <image-point name="Center" x="0.506173" y="0.505155" />
+                        <animation framecount="2" loop="1" name="03ready" pingpong="0" repeatcount="1" repeatto="0" sid="3279312272592073" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\SpeedsterChick FREAK 1.png">
+                                <image-point name="Center" x="0.5" y="0.505263" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.504673" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\SpeedsterChick FREAK 2.png">
+                                <image-point name="Center" x="0.504673" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="03eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="6311857610477063" speed="5">
@@ -2408,14 +2473,20 @@
                                 <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="04eating" pingpong="0" repeatcount="1" repeatto="0" sid="1235308492595703" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.506024" />
+                        <animation framecount="2" loop="1" name="04eating" pingpong="0" repeatcount="1" repeatto="0" sid="1235308492595703" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.891892" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\ScarChick Eat 1.png">
+                                <image-point name="Center" x="0.508065" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.504" hotspotY="0.896104" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\ScarChick Eat 2.png">
+                                <image-point name="Center" x="0.504" y="0.506494" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="04ready" pingpong="0" repeatcount="1" repeatto="0" sid="7035563637600017" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.506173" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\ScarChick 1.png">
-                                <image-point name="Center" x="0.506173" y="0.506024" />
+                        <animation framecount="2" loop="1" name="04ready" pingpong="0" repeatcount="1" repeatto="0" sid="7035563637600017" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\ScarChick FREAK 1.png">
+                                <image-point name="Center" x="0.508772" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.504854" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\ScarChick FREAK 2.png">
+                                <image-point name="Center" x="0.504854" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="04eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="8493130833133839" speed="5">
@@ -2441,14 +2512,20 @@
                                 <image-point name="Center" x="0.504587" y="0.5" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="05eating" pingpong="0" repeatcount="1" repeatto="0" sid="339382362100624" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 2.png">
-                                <image-point name="Center" x="0.504587" y="0.504587" />
+                        <animation framecount="2" loop="1" name="05eating" pingpong="0" repeatcount="1" repeatto="0" sid="339382362100624" speed="5">
+                            <frame duration="1" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\FatChick Eat 1.png">
+                                <image-point name="Center" x="0.504587" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\FatChick Eat 2.png">
+                                <image-point name="Center" x="0.508929" y="0.5" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="05ready" pingpong="0" repeatcount="1" repeatto="0" sid="7385768048203732" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.504587" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\FatChick 3.png">
-                                <image-point name="Center" x="0.504587" y="0.5" />
+                        <animation framecount="2" loop="1" name="05ready" pingpong="0" repeatcount="1" repeatto="0" sid="7385768048203732" speed="5">
+                            <frame duration="1" hotspotX="0.504202" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\FatChick FREAK 1.png">
+                                <image-point name="Center" x="0.504202" y="0.504762" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.504202" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\FatChick FREAK 2.png">
+                                <image-point name="Center" x="0.504202" y="0.504762" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="05eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="8944313417786889" speed="5">
@@ -2474,14 +2551,20 @@
                                 <image-point name="Center" x="0.5" y="0.506024" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="06eating" pingpong="0" repeatcount="1" repeatto="0" sid="5653272546749871" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\RoboChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.506024" />
+                        <animation framecount="2" loop="1" name="06eating" pingpong="0" repeatcount="1" repeatto="0" sid="5653272546749871" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.959459" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\RoboChick Eat 1.png">
+                                <image-point name="Center" x="0.507813" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.96" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\RoboChick Eat 2.png">
+                                <image-point name="Center" x="0.507813" y="0.506667" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="06ready" pingpong="0" repeatcount="1" repeatto="0" sid="8906148111481339" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\RoboChick 3.png">
-                                <image-point name="Center" x="0.5" y="0.506024" />
+                        <animation framecount="2" loop="1" name="06ready" pingpong="0" repeatcount="1" repeatto="0" sid="8906148111481339" speed="5">
+                            <frame duration="1" hotspotX="0.536842" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\RoboChick FREAK 1.png">
+                                <image-point name="Center" x="0.505263" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\RoboChick FREAK 2.png">
+                                <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="06eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="2948532722042685" speed="5">
@@ -2507,14 +2590,20 @@
                                 <image-point name="Center" x="0.508197" y="0.514286" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="07eating" pingpong="0" repeatcount="1" repeatto="0" sid="7273290448145288" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\PeaChicks 2.png">
+                        <animation framecount="2" loop="1" name="07eating" pingpong="0" repeatcount="1" repeatto="0" sid="7273290448145288" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.914286" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\PeaChicks Eat 1.png">
                                 <image-point name="Center" x="0.5" y="0.514286" />
                             </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.925" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\PeaChicks Eat 2.png">
+                                <image-point name="Center" x="0.5" y="0.5" />
+                            </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="07ready" pingpong="0" repeatcount="1" repeatto="0" sid="9354781599788618" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.508197" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\PeaChicks 3.png">
-                                <image-point name="Center" x="0.508197" y="0.514286" />
+                        <animation framecount="2" loop="1" name="07ready" pingpong="0" repeatcount="1" repeatto="0" sid="9354781599788618" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\PeaChicks FREAK 1.png">
+                                <image-point name="Center" x="0.5" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.507692" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\PeaChicks FREAK 2.png">
+                                <image-point name="Center" x="0.507692" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="07eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="8686417625765303" speed="5">
@@ -2537,17 +2626,23 @@
                                 <image-point name="Center" x="0.504202" y="0.506024" />
                             </frame>
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 3.png">
-                                <image-point name="Center" x="0.5" y="0.5" />
+                                <image-point name="Center" x="0.508333" y="0.5" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="08eating" pingpong="0" repeatcount="1" repeatto="0" sid="2773661867918095" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.504202" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 2.png">
-                                <image-point name="Center" x="0.504202" y="0.506024" />
+                        <animation framecount="2" loop="1" name="08eating" pingpong="0" repeatcount="1" repeatto="0" sid="2773661867918095" speed="5">
+                            <frame duration="1" hotspotX="0.503401" hotspotY="0.909091" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\DOOMChick Eat 1.png">
+                                <image-point name="Center" x="0.503401" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.503401" hotspotY="0.912088" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\DOOMChick Eat 2.png">
+                                <image-point name="Center" x="0.503401" y="0.505495" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="08ready" pingpong="0" repeatcount="1" repeatto="0" sid="8246890430497946" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 3.png">
-                                <image-point name="Center" x="0.5" y="0.5" />
+                        <animation framecount="2" loop="1" name="08ready" pingpong="0" repeatcount="1" repeatto="0" sid="8246890430497946" speed="5">
+                            <frame duration="1" hotspotX="0.503817" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\DOOMChick FREAK 1.png">
+                                <image-point name="Center" x="0.503817" y="0.505155" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\DOOMChick FREAK 2.png">
+                                <image-point name="Center" x="0.507143" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="08eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="6558694167902076" speed="5">
@@ -2557,7 +2652,7 @@
                         </animation>
                         <animation framecount="1" loop="0" name="08eyeclosed" pingpong="0" repeatcount="1" repeatto="0" sid="9963856810595622" speed="5">
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\DOOMChick 3.png">
-                                <image-point name="Center" x="0.5" y="0.5" />
+                                <image-point name="Center" x="0.508333" y="0.5" />
                             </frame>
                         </animation>
                     </animation-folder>
@@ -2573,14 +2668,20 @@
                                 <image-point name="Center" x="0.506329" y="0.5" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="09eating" pingpong="0" repeatcount="1" repeatto="0" sid="1387451466812779" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SickChick 3.png">
-                                <image-point name="Center" x="0.506329" y="0.5" />
+                        <animation framecount="2" loop="1" name="09eating" pingpong="0" repeatcount="1" repeatto="0" sid="1387451466812779" speed="5">
+                            <frame duration="1" hotspotX="0.503937" hotspotY="0.807692" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\SickChick Eat 1.png">
+                                <image-point name="Center" x="0.503937" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.503876" hotspotY="0.8" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\SickChick Eat 2.png">
+                                <image-point name="Center" x="0.503876" y="0.509091" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="09ready" pingpong="0" repeatcount="1" repeatto="0" sid="8721360751082835" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\SickChick 1.png">
-                                <image-point name="Center" x="0.506329" y="0.507937" />
+                        <animation framecount="2" loop="1" name="09ready" pingpong="0" repeatcount="1" repeatto="0" sid="8721360751082835" speed="5">
+                            <frame duration="1" hotspotX="0.505155" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\SickChick FREAK 1.png">
+                                <image-point name="Center" x="0.505155" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\SickChick FREAK 2.png">
+                                <image-point name="Center" x="0.5" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="09eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="6802235799017777" speed="5">
@@ -2606,14 +2707,20 @@
                                 <image-point name="Center" x="0.5" y="0.504425" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="10eating" pingpong="0" repeatcount="1" repeatto="0" sid="2107748490319804" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\TowerChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.5" />
+                        <animation framecount="2" loop="1" name="10eating" pingpong="0" repeatcount="1" repeatto="0" sid="2107748490319804" speed="5">
+                            <frame duration="1" hotspotX="0.503759" hotspotY="0.906977" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\TowerChick Eat 1.png">
+                                <image-point name="Center" x="0.503759" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.503817" hotspotY="0.906977" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\TowerChick Eat 2.png">
+                                <image-point name="Center" x="0.503817" y="0.5" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="10ready" pingpong="0" repeatcount="1" repeatto="0" sid="5222427687895945" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\TowerChick 1.png">
-                                <image-point name="Center" x="0.5" y="0.5" />
+                        <animation framecount="2" loop="1" name="10ready" pingpong="0" repeatcount="1" repeatto="0" sid="5222427687895945" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\TowerChick FREAK 1.png">
+                                <image-point name="Center" x="0.508065" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\TowerChick FREAK 2.png">
+                                <image-point name="Center" x="0.507813" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="10eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="6610018752793309" speed="5">
@@ -2628,29 +2735,41 @@
                         </animation>
                     </animation-folder>
                     <animation-folder name="11">
-                        <animation framecount="1" loop="1" name="11idle" pingpong="1" repeatcount="1" repeatto="0" sid="6232333162175724" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
+                        <animation framecount="3" loop="1" name="11idle" pingpong="1" repeatcount="1" repeatto="0" sid="6232333162175724" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\NakedChick 1.png">
+                                <image-point name="Center" x="0.5" y="0.506173" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.505747" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\NakedChick 2.png">
+                                <image-point name="Center" x="0.505747" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.505882" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\NakedChick 3.png">
+                                <image-point name="Center" x="0.505882" y="0.506173" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="11eating" pingpong="0" repeatcount="1" repeatto="0" sid="9915023040978931" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
+                        <animation framecount="2" loop="1" name="11eating" pingpong="0" repeatcount="1" repeatto="0" sid="9915023040978931" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.897059" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\NakedChick Eat 1.png">
+                                <image-point name="Center" x="0.507143" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.503759" hotspotY="0.901408" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\NakedChick Eat 2.png">
+                                <image-point name="Center" x="0.503759" y="0.507042" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="11ready" pingpong="0" repeatcount="1" repeatto="0" sid="5665162490266527" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
+                        <animation framecount="2" loop="1" name="11ready" pingpong="0" repeatcount="1" repeatto="0" sid="5665162490266527" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\NakedChick FREAK 1.png">
                                 <image-point name="Center" x="0.5" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.504854" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\NakedChick FREAK 2.png">
+                                <image-point name="Center" x="0.504854" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="11eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="9321006753802416" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\NakedChick 1.png">
+                                <image-point name="Center" x="0.5" y="0.506173" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="11eyeclosed" pingpong="0" repeatcount="1" repeatto="0" sid="7128284678024192" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                <image-point name="Center" x="0.5" y="0.5" />
+                            <frame duration="1" hotspotX="0.505747" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\NakedChick 2.png">
+                                <image-point name="Center" x="0.505747" y="0.5" />
                             </frame>
                         </animation>
                     </animation-folder>
@@ -2660,20 +2779,26 @@
                                 <image-point name="Center" x="0.504505" y="0.5" />
                             </frame>
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.506849" />
+                                <image-point name="Center" x="0.509091" y="0.506849" />
                             </frame>
                             <frame duration="1" format="png8" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 3.png">
                                 <image-point name="Center" x="0.504505" y="0.5" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="12eating" pingpong="0" repeatcount="1" repeatto="0" sid="8782418770256663" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.506849" />
+                        <animation framecount="2" loop="1" name="12eating" pingpong="0" repeatcount="1" repeatto="0" sid="8782418770256663" speed="5">
+                            <frame duration="1" hotspotX="0.503817" hotspotY="0.917647" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\HoodieChick Eat 1.png">
+                                <image-point name="Center" x="0.503817" y="0.505882" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.503759" hotspotY="0.9125" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\HoodieChick Eat 2.png">
+                                <image-point name="Center" x="0.503759" y="0.5" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="1" name="12ready" pingpong="0" repeatcount="1" repeatto="0" sid="5019904462276818" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.504505" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 3.png">
-                                <image-point name="Center" x="0.504505" y="0.5" />
+                        <animation framecount="2" loop="1" name="12ready" pingpong="0" repeatcount="1" repeatto="0" sid="5019904462276818" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\HoodieChick FREAK 1.png">
+                                <image-point name="Center" x="0.506329" y="0.505263" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.931373" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\HoodieChick FREAK 2.png">
+                                <image-point name="Center" x="0.506849" y="0.5" />
                             </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="12eyeopened" pingpong="0" repeatcount="1" repeatto="0" sid="9080037068393614" speed="5">
@@ -2683,7 +2808,7 @@
                         </animation>
                         <animation framecount="1" loop="0" name="12eyeclosed" pingpong="0" repeatcount="1" repeatto="0" sid="1836669541710986" speed="5">
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\resizedForHenCage\HoodieChick 2.png">
-                                <image-point name="Center" x="0.5" y="0.506849" />
+                                <image-point name="Center" x="0.509091" y="0.506849" />
                             </frame>
                         </animation>
                     </animation-folder>
@@ -3467,6 +3592,8 @@
         <file name="resetDone.ogg" />
         <file name="cluck.m4a" />
         <file name="cluck.ogg" />
+        <file name="cwack.m4a" />
+        <file name="cwack.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="battleView.m4a" />

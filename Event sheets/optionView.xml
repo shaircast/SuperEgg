@@ -493,7 +493,7 @@
                                     <param id="0" name="Seconds">0</param>
                                 </action>
                                 <action id="0" name="Play" sid="2702698724576826" type="Audio">
-                                    <param id="0" name="Audio file">cluck</param>
+                                    <param id="0" name="Audio file">cwack</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;music&quot;))</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
@@ -560,7 +560,7 @@
                                     <param id="0" name="Seconds">0</param>
                                 </action>
                                 <action id="0" name="Play" sid="2744485090835727" type="Audio">
-                                    <param id="0" name="Audio file">cluck</param>
+                                    <param id="0" name="Audio file">cwack</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
@@ -617,29 +617,9 @@
                                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
-                                <action id="2" name="Send a local notification." sid="6467129662794889" type="CocoonJSNotifications">
-                                    <param id="0" name="Badge Number">0</param>
-                                    <param id="1" name="Delay">HEARTCHARGETIME*(MAXHEART-int(WebStorage.LocalValue(&quot;heart&quot;))-1)+int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))</param>
-                                    <param id="2" name="Message">&quot;달걀이 모두 준비되었습니다!&quot;</param>
-                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
-                                    <param id="4" name="Expanded Body">&quot;달걀이 모두 준비되었습니다! 다시 가 볼까요?&quot;</param>
-                                    <param id="5" name="Sound enabled">1</param>
-                                </action>
-                                <action id="0" name="Set local value" sid="4229953120882966" type="WebStorage">
-                                    <param id="0" name="Key">&quot;heartNotiId&quot;</param>
-                                    <param id="1" name="Value">CocoonJSNotifications.returnNotificationId</param>
-                                </action>
-                                <action id="2" name="Send a local notification." sid="4405934024231535" type="CocoonJSNotifications">
-                                    <param id="0" name="Badge Number">0</param>
-                                    <param id="1" name="Delay">60*60*24-int((Date.UnixTimestamp-int(WebStorage.LocalValue(&quot;lastGoldRewardTimeStamp&quot;)))/1000)</param>
-                                    <param id="2" name="Message">&quot;골드 선물이 도착했습니다!&quot;</param>
-                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
-                                    <param id="4" name="Expanded Body">&quot;매일매일 500골드를 받아가세요!&quot;</param>
-                                    <param id="5" name="Sound enabled">1</param>
-                                </action>
-                                <action id="0" name="Set local value" sid="9430488408629609" type="WebStorage">
-                                    <param id="0" name="Key">&quot;goldNotiId&quot;</param>
-                                    <param id="1" name="Value">CocoonJSNotifications.returnNotificationId</param>
+                                <action id="0" name="Call function" sid="40743963547349" type="Function">
+                                    <param id="0" name="Name">&quot;resetNoti&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>
@@ -656,7 +636,10 @@
                                     <param id="0" name="Key">&quot;noti&quot;</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="0" name="Cancel all sent local notifications" sid="4928623766589203" type="CocoonJSNotifications" />
+                                <action id="0" name="Call function" sid="697175954549755" type="Function">
+                                    <param id="0" name="Name">&quot;resetNoti&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
