@@ -30,6 +30,7 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
         <behavior author="Rex.Rainbow" id="Rex_RotateTo" version="0.100000001">RotateTo</behavior>
@@ -100,7 +101,7 @@
         </object-folder>
         <object-folder name="battleView">
             <object-folder name="hud">
-                <object-type name="cannon" sid="2516751700776377">
+                <object-type name="shooter" sid="2516751700776377">
                     <plugin id="Sprite" />
                     <behaviors>
                         <behavior-type name="RotateTo" sid="6372799399150207">
@@ -112,19 +113,21 @@
                     </behaviors>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="560206865847634" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.271186" hotspotY="0.822222" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\Thrower.png">
-                                <image-point name="launchPoint" x="0.542373" y="0.0888889" />
+                            <frame duration="1" format="png8" hotspotX="0.503937" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\Image00001.png">
+                                <image-point name="launchPoint" x="0.771654" y="0.285714" />
                             </frame>
                         </animation>
-                        <animation framecount="1" loop="0" name="MovingUp" pingpong="0" repeatcount="1" repeatto="0" sid="9766892040164167" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.271186" hotspotY="0.822222">
-                                <image-point name="launchPoint" x="0.542373" y="0.0888889" />
+                        <animation framecount="2" loop="1" name="MovingUp" pingpong="0" repeatcount="1" repeatto="0" sid="2949993484420509" speed="12">
+                            <frame duration="1" format="png8" hotspotX="0.503937" hotspotY="1">
+                                <image-point name="launchPoint" x="0.771654" y="0.285714" />
                             </frame>
+                            <frame duration="1" hotspotX="0.503937" hotspotY="1" />
                         </animation>
-                        <animation framecount="1" loop="0" name="MovingDown" pingpong="0" repeatcount="1" repeatto="0" sid="6042541627529358" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.271186" hotspotY="0.822222">
-                                <image-point name="launchPoint" x="0.542373" y="0.0888889" />
+                        <animation framecount="2" loop="1" name="MovingDown" pingpong="0" repeatcount="1" repeatto="0" sid="919559173388455" speed="12">
+                            <frame duration="1" format="png8" hotspotX="0.503937" hotspotY="1">
+                                <image-point name="launchPoint" x="0.771654" y="0.285714" />
                             </frame>
+                            <frame duration="1" hotspotX="0.503937" hotspotY="1" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -162,6 +165,238 @@
                         </animation>
                     </animation-folder>
                 </object-type>
+                <object-type name="foodSprite" sid="500685452156395">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Anchor" sid="5490959355802128">
+                            <behavior id="Anchor" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3759405843729228" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\SUPER FEED.png">
+                                <collision-poly>
+                                    <point x="0.223958" y="0.182979" />
+                                    <point x="0.5" y="0.00851064" />
+                                    <point x="0.927083" y="0.0595745" />
+                                    <point x="0.921875" y="0.497872" />
+                                    <point x="0.890625" y="0.910638" />
+                                    <point x="0.5" y="0.991489" />
+                                    <point x="0.135417" y="0.889362" />
+                                    <point x="0.078125" y="0.497872" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="foodText" sid="31800901128506">
+                    <plugin id="Text" />
+                    <behaviors>
+                        <behavior-type name="Anchor" sid="7350113210345424">
+                            <behavior id="Anchor" />
+                        </behavior-type>
+                    </behaviors>
+                </object-type>
+                <object-type name="exitButton" sid="1176948810963397">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Anchor" sid="8875301441477429">
+                            <behavior id="Anchor" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4011827115660819" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150227_091849803.jpg" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="timeScaleButton" sid="5467760425990307">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Anchor" sid="895403354676684">
+                            <behavior id="Anchor" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4942981947109659" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\battle\button1Time.jpg" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Fast" pingpong="0" repeatcount="1" repeatto="0" sid="726715567616416" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\battle\button1.5Time.jpg" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="henSelection" sid="7712969762775287">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="select" sid="7091668356185059" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Sine" sid="5483617663614612">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4109331022336571" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="turnText" sid="3318910413245149">
+                    <plugin id="Text" />
+                    <behaviors>
+                        <behavior-type name="Fade" sid="1757164724466687">
+                            <behavior id="Fade" />
+                        </behavior-type>
+                    </behaviors>
+                </object-type>
+                <object-type name="turnTextBg" sid="891033360479421">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Fade" sid="4025866460009806">
+                            <behavior id="Fade" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1841010782879181" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="launchLine" sid="7776698058798086">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="aimed" sid="7943987331280325" type="boolean" />
+                        <instance-variable name="launchLineIDX" sid="5865254091538735" type="number" />
+                        <instance-variable name="launchLineIDY" sid="8529816274522615" type="number" />
+                        <instance-variable name="occupied" sid="996335239607631" type="boolean" />
+                        <instance-variable name="originalWidth" sid="2170307310923225" type="number" />
+                        <instance-variable name="originalHeight" sid="1902184267623668" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Sine" sid="8741223885480183">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="4" loop="0" name="01Default" pingpong="0" repeatcount="1" repeatto="0" sid="1967376042875095" speed="0">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034958652.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034959121.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034959474.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_035130818.jpg" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="02Default" pingpong="0" repeatcount="1" repeatto="0" sid="8968254526537589" speed="0">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_065237885.jpg" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="target" sid="1760867515236626">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="2267859683090665">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7125275696565298" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="eggLaunchEffect" sid="9957155112687993">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="10" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3688153160946222" speed="15">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.270833">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.270833">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.270833">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.270833">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.270833">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.270833">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.270833">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.270833">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.270833">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.270833">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
             <object-folder name="golem">
                 <object-folder name="kindEffect">
@@ -178,36 +413,6 @@
                         <animation-folder>
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5138255847562381" speed="5">
                                 <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                            </animation>
-                        </animation-folder>
-                    </object-type>
-                    <object-type name="effectShield" sid="1708526688620533">
-                        <plugin id="Sprite" />
-                        <behaviors>
-                            <behavior-type name="Fade" sid="6832896937068674">
-                                <behavior id="Fade" />
-                            </behavior-type>
-                        </behaviors>
-                        <animation-folder>
-                            <animation framecount="18" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3210157858562269" speed="15">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.546875" />
                             </animation>
                         </animation-folder>
                     </object-type>
@@ -275,6 +480,9 @@
                         <behavior-type name="PinToImagePoint" sid="9724632605320955">
                             <behavior id="Rex_pin2imgpt" />
                         </behavior-type>
+                        <behavior-type name="Flash" sid="4916321529134876">
+                            <behavior id="Flash" />
+                        </behavior-type>
                     </behaviors>
                     <container>
                         <type>golem</type>
@@ -283,360 +491,712 @@
                     </container>
                     <animation-folder>
                         <animation-folder name="01">
-                            <animation framecount="1" loop="0" name="01a" pingpong="0" repeatcount="1" repeatto="0" sid="1814022913169197" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="01a" pingpong="0" repeatcount="1" repeatto="0" sid="1814022913169197" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\01\Small Golem Grey Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\01\Small Golem Grey Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="01b" pingpong="0" repeatcount="1" repeatto="0" sid="1782245303259413" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="01b" pingpong="0" repeatcount="1" repeatto="0" sid="1782245303259413" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\Basic Small Golem Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\Basic Small Golem Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="01c" pingpong="0" repeatcount="1" repeatto="0" sid="2994204113790054" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="01c" pingpong="0" repeatcount="1" repeatto="0" sid="2994204113790054" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\01\Small Golem Blue Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\01\Small Golem Blue Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="01d" pingpong="0" repeatcount="1" repeatto="0" sid="9411957221932075" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="01d" pingpong="0" repeatcount="1" repeatto="0" sid="9411957221932075" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\01\Basic Golem Green Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\01\Basic Golem Green Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="02">
-                            <animation framecount="1" loop="0" name="02a" pingpong="0" repeatcount="1" repeatto="0" sid="3965055708468371" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="02a" pingpong="0" repeatcount="1" repeatto="0" sid="3965055708468371" speed="5">
+                                <frame duration="1" hotspotX="0.510638" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\02\Speedy Golem Grey Standing.png">
+                                    <image-point name="Feet" x="0.510638" y="1" />
+                                    <image-point name="HpBarFrame" x="0.510638" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.12766" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.510638" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\02\Speedy Golem Grey Rolling.png">
+                                    <image-point name="Feet" x="0.510638" y="1" />
+                                    <image-point name="HpBarFrame" x="0.510638" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.12766" y="-0.16129" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="02b" pingpong="0" repeatcount="1" repeatto="0" sid="2921968480150948" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="02b" pingpong="0" repeatcount="1" repeatto="0" sid="2921968480150948" speed="5">
+                                <frame duration="1" hotspotX="0.510638" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\02\Speedy Golem Standing.png">
+                                    <image-point name="Feet" x="0.510638" y="1" />
+                                    <image-point name="HpBarFrame" x="0.510638" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.12766" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.510638" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\02\Speedy Golem Rolling.png">
+                                    <image-point name="Feet" x="0.510638" y="1" />
+                                    <image-point name="HpBarFrame" x="0.510638" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.12766" y="-0.16129" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="02c" pingpong="0" repeatcount="1" repeatto="0" sid="6362864430214979" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="02c" pingpong="0" repeatcount="1" repeatto="0" sid="6362864430214979" speed="5">
+                                <frame duration="1" hotspotX="0.510638" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\02\Speedy Golem Blue Standing.png">
+                                    <image-point name="Feet" x="0.510638" y="1" />
+                                    <image-point name="HpBarFrame" x="0.510638" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.12766" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.510638" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\02\Speedy Golem Blue Rolling.png">
+                                    <image-point name="Feet" x="0.510638" y="1" />
+                                    <image-point name="HpBarFrame" x="0.510638" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.12766" y="-0.16129" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="02d" pingpong="0" repeatcount="1" repeatto="0" sid="289149281800986" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="02d" pingpong="0" repeatcount="1" repeatto="0" sid="289149281800986" speed="5">
+                                <frame duration="1" hotspotX="0.510638" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\02\Speedy Golem Green Standing.png">
+                                    <image-point name="Feet" x="0.510638" y="1" />
+                                    <image-point name="HpBarFrame" x="0.510638" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.12766" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.510638" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\02\Speedy Golem Green Rolling.png">
+                                    <image-point name="Feet" x="0.510638" y="1" />
+                                    <image-point name="HpBarFrame" x="0.510638" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.12766" y="-0.16129" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="03">
-                            <animation framecount="1" loop="0" name="03a" pingpong="0" repeatcount="1" repeatto="0" sid="9322632873290347" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="03a" pingpong="0" repeatcount="1" repeatto="0" sid="9322632873290347" speed="5">
+                                <frame duration="1" hotspotX="0.515152" hotspotY="0.515152" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\03\Big Golem Grey Standing.png">
+                                    <image-point name="Feet" x="0.515152" y="1" />
+                                    <image-point name="HpBarFrame" x="0.515152" y="-0.166667" />
+                                    <image-point name="HpBar" x="-0.121212" y="-0.166667" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.507463" hotspotY="0.507937" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\03\Big Golem Grey Rolling.png">
+                                    <image-point name="Feet" x="0.507463" y="1" />
+                                    <image-point name="HpBarFrame" x="0.507463" y="-0.15873" />
+                                    <image-point name="HpBar" x="-0.119403" y="-0.15873" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="03b" pingpong="0" repeatcount="1" repeatto="0" sid="552762004943143" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="03b" pingpong="0" repeatcount="1" repeatto="0" sid="552762004943143" speed="5">
+                                <frame duration="1" hotspotX="0.515152" hotspotY="0.515152" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\03\Big Golem Standing.png">
+                                    <image-point name="Feet" x="0.515152" y="1" />
+                                    <image-point name="HpBarFrame" x="0.515152" y="-0.166667" />
+                                    <image-point name="HpBar" x="-0.121212" y="-0.166667" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.507463" hotspotY="0.507937" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\03\Big Golem Rolling.png">
+                                    <image-point name="Feet" x="0.507463" y="1" />
+                                    <image-point name="HpBarFrame" x="0.507463" y="-0.15873" />
+                                    <image-point name="HpBar" x="-0.119403" y="-0.15873" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="03c" pingpong="0" repeatcount="1" repeatto="0" sid="4276677619884041" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="03c" pingpong="0" repeatcount="1" repeatto="0" sid="4276677619884041" speed="5">
+                                <frame duration="1" hotspotX="0.515152" hotspotY="0.515152" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\03\Big Golem Blue Standing.png">
+                                    <image-point name="Feet" x="0.515152" y="1" />
+                                    <image-point name="HpBarFrame" x="0.515152" y="-0.166667" />
+                                    <image-point name="HpBar" x="-0.121212" y="-0.166667" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.507463" hotspotY="0.507937" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\03\Big Golem Blue Rolling.png">
+                                    <image-point name="Feet" x="0.507463" y="1" />
+                                    <image-point name="HpBarFrame" x="0.507463" y="-0.15873" />
+                                    <image-point name="HpBar" x="-0.119403" y="-0.15873" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="03d" pingpong="0" repeatcount="1" repeatto="0" sid="7376580547943922" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="03d" pingpong="0" repeatcount="1" repeatto="0" sid="7376580547943922" speed="5">
+                                <frame duration="1" hotspotX="0.515152" hotspotY="0.515152" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\03\Big Golem Green Standing.png">
+                                    <image-point name="Feet" x="0.515152" y="1" />
+                                    <image-point name="HpBarFrame" x="0.515152" y="-0.166667" />
+                                    <image-point name="HpBar" x="-0.121212" y="-0.166667" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.507463" hotspotY="0.507937" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\03\Big Golem Green Rolling.png">
+                                    <image-point name="Feet" x="0.507463" y="1" />
+                                    <image-point name="HpBarFrame" x="0.507463" y="-0.15873" />
+                                    <image-point name="HpBar" x="-0.119403" y="-0.15873" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="04">
-                            <animation framecount="1" loop="0" name="04a" pingpong="0" repeatcount="1" repeatto="0" sid="9601497675394327" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="04a" pingpong="0" repeatcount="1" repeatto="0" sid="9601497675394327" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\04\Sprout Golem Grey Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.108696" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\04\Sprout Golem Grey Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.108696" y="-0.173077" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="04b" pingpong="0" repeatcount="1" repeatto="0" sid="6232246103706976" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="04b" pingpong="0" repeatcount="1" repeatto="0" sid="6232246103706976" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\04\Sprout Golem Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.108696" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\04\Sprout Golem Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.108696" y="-0.173077" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="04c" pingpong="0" repeatcount="1" repeatto="0" sid="7500947555847898" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="04c" pingpong="0" repeatcount="1" repeatto="0" sid="7500947555847898" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\04\Sprout Golem Blue Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.108696" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\04\Sprout Golem Blue Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.108696" y="-0.173077" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="04d" pingpong="0" repeatcount="1" repeatto="0" sid="7040957329099796" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="04d" pingpong="0" repeatcount="1" repeatto="0" sid="7040957329099796" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\04\Sprout Golem Green Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.108696" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\04\Sprout Golem Green Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.108696" y="-0.173077" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="05">
-                            <animation framecount="1" loop="0" name="05a" pingpong="0" repeatcount="1" repeatto="0" sid="444555079310824" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="4" loop="0" name="05a" pingpong="0" repeatcount="1" repeatto="0" sid="444555079310824" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\05\Mask Golem Grey Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.115385" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\05\Mask Golem Grey Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.115385" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\05\Mask Golem Grey Standing No Mask.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\05\Mask Golem Grey Rolling No Mask.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="05b" pingpong="0" repeatcount="1" repeatto="0" sid="1664313502404678" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="4" loop="0" name="05b" pingpong="0" repeatcount="1" repeatto="0" sid="1664313502404678" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\05\Mask Golem Mask On Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.115385" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\05\Mask Golem Mask On Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.115385" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\05\Mask Golem No Mask Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\05\Mask Golem No Mask Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="05c" pingpong="0" repeatcount="1" repeatto="0" sid="9678082181371241" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="4" loop="0" name="05c" pingpong="0" repeatcount="1" repeatto="0" sid="9678082181371241" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\05\Mask Golem Blue Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.115385" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\05\Mask Golem Blue Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.115385" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\05\Mask Golem Blue Standing No Mask.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\05\Mask Golem Blue Rolling No Mask.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="05d" pingpong="0" repeatcount="1" repeatto="0" sid="7305993676154816" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="4" loop="0" name="05d" pingpong="0" repeatcount="1" repeatto="0" sid="7305993676154816" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\05\Mask Golem Green Standing Mask On.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.115385" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\05\Mask Golem Green Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16129" />
+                                    <image-point name="HpBar" x="-0.115385" y="-0.16129" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\05\Mask Golem Green Standing No Mask.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\05\Mask Golem Green Rolling No Mask.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.16" />
+                                    <image-point name="HpBar" x="-0.12" y="-0.16" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="06">
-                            <animation framecount="1" loop="0" name="06a" pingpong="0" repeatcount="1" repeatto="0" sid="3837230170186857" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="06a" pingpong="0" repeatcount="1" repeatto="0" sid="3837230170186857" speed="5">
+                                <frame duration="1" hotspotX="0.508772" hotspotY="0.505747" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\06\Siam Golem Grey Standing.png">
+                                    <image-point name="Feet" x="0.508772" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508772" y="-0.16092" />
+                                    <image-point name="HpBar" x="-0.122807" y="-0.16092" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.509434" hotspotY="0.513889" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\06\Siam Golem Grey Rolling.png">
+                                    <image-point name="Feet" x="0.509434" y="1" />
+                                    <image-point name="HpBarFrame" x="0.509434" y="-0.166667" />
+                                    <image-point name="HpBar" x="-0.113208" y="-0.166667" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="06b" pingpong="0" repeatcount="1" repeatto="0" sid="8233642896969621" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="06b" pingpong="0" repeatcount="1" repeatto="0" sid="8233642896969621" speed="5">
+                                <frame duration="1" hotspotX="0.508772" hotspotY="0.505747" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\06\Siam Golem Standing.png">
+                                    <image-point name="Feet" x="0.508772" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508772" y="-0.16092" />
+                                    <image-point name="HpBar" x="-0.122807" y="-0.16092" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.509434" hotspotY="0.513889" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\06\Siam Golem Rolling.png">
+                                    <image-point name="Feet" x="0.509434" y="1" />
+                                    <image-point name="HpBarFrame" x="0.509434" y="-0.166667" />
+                                    <image-point name="HpBar" x="-0.113208" y="-0.166667" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="06c" pingpong="0" repeatcount="1" repeatto="0" sid="6601245860135561" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="06c" pingpong="0" repeatcount="1" repeatto="0" sid="6601245860135561" speed="5">
+                                <frame duration="1" hotspotX="0.508772" hotspotY="0.505747" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\06\Siam Golem Blue Standing.png">
+                                    <image-point name="Feet" x="0.508772" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508772" y="-0.16092" />
+                                    <image-point name="HpBar" x="-0.122807" y="-0.16092" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.509434" hotspotY="0.513889" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\06\Siam Golem Blue Rolling.png">
+                                    <image-point name="Feet" x="0.509434" y="1" />
+                                    <image-point name="HpBarFrame" x="0.509434" y="-0.166667" />
+                                    <image-point name="HpBar" x="-0.113208" y="-0.166667" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="06d" pingpong="0" repeatcount="1" repeatto="0" sid="2423354584843822" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="06d" pingpong="0" repeatcount="1" repeatto="0" sid="2423354584843822" speed="5">
+                                <frame duration="1" hotspotX="0.508772" hotspotY="0.505747" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\06\Siam Golem Green Standing.png">
+                                    <image-point name="Feet" x="0.508772" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508772" y="-0.16092" />
+                                    <image-point name="HpBar" x="-0.122807" y="-0.16092" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.509434" hotspotY="0.513889" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\06\Siam Golem Green Rolling.png">
+                                    <image-point name="Feet" x="0.509434" y="1" />
+                                    <image-point name="HpBarFrame" x="0.509434" y="-0.166667" />
+                                    <image-point name="HpBar" x="-0.113208" y="-0.166667" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="07">
-                            <animation framecount="1" loop="0" name="07a" pingpong="0" repeatcount="1" repeatto="0" sid="6091670077141977" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="07a" pingpong="0" repeatcount="1" repeatto="0" sid="6091670077141977" speed="5">
+                                <frame duration="1" hotspotX="0.513514" hotspotY="0.509434" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\07\Sturdy Golem Grey Standing.png">
+                                    <image-point name="Feet" x="0.513514" y="1" />
+                                    <image-point name="HpBarFrame" x="0.513514" y="-0.169811" />
+                                    <image-point name="HpBar" x="-0.108108" y="-0.169811" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.513514" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\07\Sturdy Golem Grey Rolling.png">
+                                    <image-point name="Feet" x="0.513514" y="1" />
+                                    <image-point name="HpBarFrame" x="0.513514" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.108108" y="-0.173077" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="07b" pingpong="0" repeatcount="1" repeatto="0" sid="2608324752921383" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="07b" pingpong="0" repeatcount="1" repeatto="0" sid="2608324752921383" speed="5">
+                                <frame duration="1" hotspotX="0.513514" hotspotY="0.509434" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\07\Sturdy Golem Standing.png">
+                                    <image-point name="Feet" x="0.513514" y="1" />
+                                    <image-point name="HpBarFrame" x="0.513514" y="-0.169811" />
+                                    <image-point name="HpBar" x="-0.108108" y="-0.169811" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.513514" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\07\Sturdy Golem Rolling.png">
+                                    <image-point name="Feet" x="0.513514" y="1" />
+                                    <image-point name="HpBarFrame" x="0.513514" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.108108" y="-0.173077" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="07c" pingpong="0" repeatcount="1" repeatto="0" sid="1626660571025971" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="07c" pingpong="0" repeatcount="1" repeatto="0" sid="1626660571025971" speed="5">
+                                <frame duration="1" hotspotX="0.513514" hotspotY="0.509434" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\07\Sturdy Golem Blue Standing.png">
+                                    <image-point name="Feet" x="0.513514" y="1" />
+                                    <image-point name="HpBarFrame" x="0.513514" y="-0.169811" />
+                                    <image-point name="HpBar" x="-0.108108" y="-0.169811" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.513514" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\07\Sturdy Golem Blue Rolling.png">
+                                    <image-point name="Feet" x="0.513514" y="1" />
+                                    <image-point name="HpBarFrame" x="0.513514" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.108108" y="-0.173077" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="07d" pingpong="0" repeatcount="1" repeatto="0" sid="2175321287893509" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="07d" pingpong="0" repeatcount="1" repeatto="0" sid="2175321287893509" speed="5">
+                                <frame duration="1" hotspotX="0.513514" hotspotY="0.509434" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\07\Sturdy Golem Green Standing.png">
+                                    <image-point name="Feet" x="0.513514" y="1" />
+                                    <image-point name="HpBarFrame" x="0.513514" y="-0.169811" />
+                                    <image-point name="HpBar" x="-0.108108" y="-0.169811" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.513514" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\07\Sturdy Golem Green Rolling.png">
+                                    <image-point name="Feet" x="0.513514" y="1" />
+                                    <image-point name="HpBarFrame" x="0.513514" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.108108" y="-0.173077" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="08">
-                            <animation framecount="3" loop="0" name="08a" pingpong="0" repeatcount="1" repeatto="0" sid="2395950033671089" speed="0">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="08a" pingpong="0" repeatcount="1" repeatto="0" sid="2395950033671089" speed="0">
+                                <frame duration="1" hotspotX="0.516129" hotspotY="0.511111" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\08\Turtle Golem Grey Rolling.png">
+                                    <image-point name="Feet" x="0.516129" y="1" />
+                                    <image-point name="HpBarFrame" x="0.516129" y="-0.155556" />
+                                    <image-point name="HpBar" x="-0.112903" y="-0.155556" />
                                 </frame>
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
-                                </frame>
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                <frame duration="1" hotspotX="0.516129" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\08\Turtle Golem Grey Standing.png">
+                                    <image-point name="Feet" x="0.516129" y="1" />
+                                    <image-point name="HpBarFrame" x="0.516129" y="-0.159091" />
+                                    <image-point name="HpBar" x="-0.112903" y="-0.159091" />
                                 </frame>
                             </animation>
                             <animation framecount="2" loop="0" name="08b" pingpong="0" repeatcount="1" repeatto="0" sid="7659527675109964" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                <frame duration="1" hotspotX="0.516129" hotspotY="0.511111" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\08\Turtle Golem Rolling.png">
+                                    <image-point name="Feet" x="0.516129" y="1" />
+                                    <image-point name="HpBarFrame" x="0.516129" y="-0.155556" />
+                                    <image-point name="HpBar" x="-0.112903" y="-0.155556" />
                                 </frame>
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                <frame duration="1" hotspotX="0.516129" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\08\Turtle Golem Standing.png">
+                                    <image-point name="Feet" x="0.516129" y="1" />
+                                    <image-point name="HpBarFrame" x="0.516129" y="-0.159091" />
+                                    <image-point name="HpBar" x="-0.112903" y="-0.159091" />
                                 </frame>
                             </animation>
                             <animation framecount="2" loop="0" name="08c" pingpong="0" repeatcount="1" repeatto="0" sid="1745443989481202" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                <frame duration="1" hotspotX="0.516129" hotspotY="0.511111" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\08\Turtle Golem Blue Rolling.png">
+                                    <image-point name="Feet" x="0.516129" y="1" />
+                                    <image-point name="HpBarFrame" x="0.516129" y="-0.155556" />
+                                    <image-point name="HpBar" x="-0.112903" y="-0.155556" />
                                 </frame>
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                <frame duration="1" hotspotX="0.516129" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\08\Turtle Golem Blue Standing.png">
+                                    <image-point name="Feet" x="0.516129" y="1" />
+                                    <image-point name="HpBarFrame" x="0.516129" y="-0.159091" />
+                                    <image-point name="HpBar" x="-0.112903" y="-0.159091" />
                                 </frame>
                             </animation>
                             <animation framecount="2" loop="0" name="08d" pingpong="0" repeatcount="1" repeatto="0" sid="6026696307470054" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                <frame duration="1" hotspotX="0.516129" hotspotY="0.511111" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\08\Turtle Golem Green Rolling.png">
+                                    <image-point name="Feet" x="0.516129" y="1" />
+                                    <image-point name="HpBarFrame" x="0.516129" y="-0.155556" />
+                                    <image-point name="HpBar" x="-0.112903" y="-0.155556" />
                                 </frame>
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                <frame duration="1" hotspotX="0.516129" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\08\Turtle Golem Green Standing.png">
+                                    <image-point name="Feet" x="0.516129" y="1" />
+                                    <image-point name="HpBarFrame" x="0.516129" y="-0.159091" />
+                                    <image-point name="HpBar" x="-0.112903" y="-0.159091" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="09">
-                            <animation framecount="1" loop="0" name="09a" pingpong="0" repeatcount="1" repeatto="0" sid="7184736382092638" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="09a" pingpong="0" repeatcount="1" repeatto="0" sid="7184736382092638" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\09\Siam Golem Grey Solo Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.119048" y="-0.173077" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\09\Siam Golem Grey Solo Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.119048" y="-0.173077" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="09b" pingpong="0" repeatcount="1" repeatto="0" sid="1953064479965799" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="09b" pingpong="0" repeatcount="1" repeatto="0" sid="1953064479965799" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\09\Siam Golem Solo Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.119048" y="-0.173077" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.511628" hotspotY="0.509434" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\09\Siam Golem Solo Rolling.png">
+                                    <image-point name="Feet" x="0.511628" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511628" y="-0.169811" />
+                                    <image-point name="HpBar" x="-0.116279" y="-0.169811" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="09c" pingpong="0" repeatcount="1" repeatto="0" sid="3123037174477501" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="09c" pingpong="0" repeatcount="1" repeatto="0" sid="3123037174477501" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\09\Siam Golem Blue Solo Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.119048" y="-0.173077" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\09\Siam Golem Blue Solo Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.119048" y="-0.173077" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="09d" pingpong="0" repeatcount="1" repeatto="0" sid="1318554022177704" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="09d" pingpong="0" repeatcount="1" repeatto="0" sid="1318554022177704" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\09\Siam Golem Green Solo Standing.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.119048" y="-0.173077" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\09\Siam Golem Green Solo Rolling.png">
+                                    <image-point name="Feet" x="0.5" y="1" />
+                                    <image-point name="HpBarFrame" x="0.5" y="-0.173077" />
+                                    <image-point name="HpBar" x="-0.119048" y="-0.173077" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="10">
-                            <animation framecount="1" loop="0" name="10a" pingpong="0" repeatcount="1" repeatto="0" sid="1576565994420608" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="10a" pingpong="0" repeatcount="1" repeatto="0" sid="1576565994420608" speed="5">
+                                <frame duration="1" hotspotX="0.512195" hotspotY="0.510204" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\10\BOSS 1 GREY Standing.png">
+                                    <image-point name="Feet" x="0.512195" y="1" />
+                                    <image-point name="HpBarFrame" x="0.512195" y="-0.163265" />
+                                    <image-point name="HpBar" x="-0.121951" y="-0.163265" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.506173" hotspotY="0.511628" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\10\BOSS 1 GREY Rolling.png">
+                                    <image-point name="Feet" x="0.506173" y="1" />
+                                    <image-point name="HpBarFrame" x="0.506173" y="-0.162791" />
+                                    <image-point name="HpBar" x="-0.123457" y="-0.162791" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="10b" pingpong="0" repeatcount="1" repeatto="0" sid="6249995475847914" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="10b" pingpong="0" repeatcount="1" repeatto="0" sid="6249995475847914" speed="5">
+                                <frame duration="1" hotspotX="0.512195" hotspotY="0.510204" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\10\BOSS 1 Standing.png">
+                                    <image-point name="Feet" x="0.512195" y="1" />
+                                    <image-point name="HpBarFrame" x="0.512195" y="-0.163265" />
+                                    <image-point name="HpBar" x="-0.121951" y="-0.163265" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.506173" hotspotY="0.511628" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\10\BOSS 1 ROLLING.png">
+                                    <image-point name="Feet" x="0.506173" y="1" />
+                                    <image-point name="HpBarFrame" x="0.506173" y="-0.162791" />
+                                    <image-point name="HpBar" x="-0.123457" y="-0.162791" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="10c" pingpong="0" repeatcount="1" repeatto="0" sid="167287556450935" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="10c" pingpong="0" repeatcount="1" repeatto="0" sid="167287556450935" speed="5">
+                                <frame duration="1" hotspotX="0.512195" hotspotY="0.510204" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\10\BOSS 1 BLUE Standing.png">
+                                    <image-point name="Feet" x="0.512195" y="1" />
+                                    <image-point name="HpBarFrame" x="0.512195" y="-0.163265" />
+                                    <image-point name="HpBar" x="-0.121951" y="-0.163265" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.506173" hotspotY="0.511628" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\10\BOSS 1 BLUE Rolling.png">
+                                    <image-point name="Feet" x="0.506173" y="1" />
+                                    <image-point name="HpBarFrame" x="0.506173" y="-0.162791" />
+                                    <image-point name="HpBar" x="-0.123457" y="-0.162791" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="10d" pingpong="0" repeatcount="1" repeatto="0" sid="861029672428347" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="10d" pingpong="0" repeatcount="1" repeatto="0" sid="861029672428347" speed="5">
+                                <frame duration="1" hotspotX="0.512195" hotspotY="0.510204" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\10\BOSS 1 GREEN Standing.png">
+                                    <image-point name="Feet" x="0.512195" y="1" />
+                                    <image-point name="HpBarFrame" x="0.512195" y="-0.163265" />
+                                    <image-point name="HpBar" x="-0.121951" y="-0.163265" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.506173" hotspotY="0.511628" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\10\BOSS 1 GREEN Rolling.png">
+                                    <image-point name="Feet" x="0.506173" y="1" />
+                                    <image-point name="HpBarFrame" x="0.506173" y="-0.162791" />
+                                    <image-point name="HpBar" x="-0.123457" y="-0.162791" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="11">
-                            <animation framecount="1" loop="0" name="11a" pingpong="0" repeatcount="1" repeatto="0" sid="8404437537586398" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="4" loop="0" name="11a" pingpong="0" repeatcount="1" repeatto="0" sid="8404437537586398" speed="5">
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.513043" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\11\BOSS 2 GREY Standing.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.513043" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\11\BOSS 2 GREY Rolling.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.608696" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\11\BOSS 2 GREY Standing No Mask.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.608696" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\11\BOSS 2 GREY Rolling No Mask.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="11b" pingpong="0" repeatcount="1" repeatto="0" sid="6209146978794615" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="4" loop="0" name="11b" pingpong="0" repeatcount="1" repeatto="0" sid="6209146978794615" speed="5">
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.513043" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\11\BOSS 2 MASK ON STANDING.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.513043" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\11\BOSS 2 MASK ON ROLLING.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.506329" hotspotY="0.505495" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\11\BOSS 2 MASK OFF STANDING.png">
+                                    <image-point name="Feet" x="0.506329" y="1" />
+                                    <image-point name="HpBarFrame" x="0.506329" y="-0.164835" />
+                                    <image-point name="HpBar" x="-0.113924" y="-0.164835" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.506329" hotspotY="0.505747" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\11\BOSS 2 MASK OFF ROLLING.png">
+                                    <image-point name="Feet" x="0.506329" y="1" />
+                                    <image-point name="HpBarFrame" x="0.506329" y="-0.16092" />
+                                    <image-point name="HpBar" x="-0.113924" y="-0.16092" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="11c" pingpong="0" repeatcount="1" repeatto="0" sid="7340205465624831" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="4" loop="0" name="11c" pingpong="0" repeatcount="1" repeatto="0" sid="7340205465624831" speed="5">
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.513043" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\11\BOSS 2 BLUE Standing.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.513043" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\11\BOSS 2 BLUE Rolling.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.608696" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\11\BOSS 2 BLUE Standing No Mask.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.608696" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\11\BOSS 2 BLUE Rolling No Mask.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="11d" pingpong="0" repeatcount="1" repeatto="0" sid="6826403856220141" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="4" loop="0" name="11d" pingpong="0" repeatcount="1" repeatto="0" sid="6826403856220141" speed="5">
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.513043" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\11\BOSS 2 GREEN Standing.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.511364" hotspotY="0.513043" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\11\BOSS 2 GREEN Rolling.png">
+                                    <image-point name="Feet" x="0.511364" y="1" />
+                                    <image-point name="HpBarFrame" x="0.511364" y="-0.165217" />
+                                    <image-point name="HpBar" x="-0.113636" y="-0.165217" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.506329" hotspotY="0.505495" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\11\BOSS 2 GREEN Standing No Mask.png">
+                                    <image-point name="Feet" x="0.506329" y="1" />
+                                    <image-point name="HpBarFrame" x="0.506329" y="-0.164835" />
+                                    <image-point name="HpBar" x="-0.113924" y="-0.164835" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.506329" hotspotY="0.505747" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\11\BOSS 2 GREEN Rolling No Mask.png">
+                                    <image-point name="Feet" x="0.506329" y="1" />
+                                    <image-point name="HpBarFrame" x="0.506329" y="-0.16092" />
+                                    <image-point name="HpBar" x="-0.113924" y="-0.16092" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="12">
-                            <animation framecount="1" loop="0" name="12a" pingpong="0" repeatcount="1" repeatto="0" sid="1425704090210974" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="12a" pingpong="0" repeatcount="1" repeatto="0" sid="1425704090210974" speed="5">
+                                <frame duration="1" hotspotX="0.508475" hotspotY="0.509091" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\12\BOSS 3 GREY Standing.png">
+                                    <image-point name="Feet" x="0.508475" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508475" y="-0.163636" />
+                                    <image-point name="HpBar" x="-0.118644" y="-0.163636" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.508475" hotspotY="0.509091" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\12\BOSS 3 GREY Rolling.png">
+                                    <image-point name="Feet" x="0.508475" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508475" y="-0.163636" />
+                                    <image-point name="HpBar" x="-0.118644" y="-0.163636" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="12b" pingpong="0" repeatcount="1" repeatto="0" sid="1564394571360741" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="12b" pingpong="0" repeatcount="1" repeatto="0" sid="1564394571360741" speed="5">
+                                <frame duration="1" hotspotX="0.508475" hotspotY="0.509091" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\12\BOSS 3 Standing.png">
+                                    <image-point name="Feet" x="0.508475" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508475" y="-0.163636" />
+                                    <image-point name="HpBar" x="-0.118644" y="-0.163636" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.508475" hotspotY="0.509091" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\12\BOSS 3 Rolling.png">
+                                    <image-point name="Feet" x="0.508475" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508475" y="-0.163636" />
+                                    <image-point name="HpBar" x="-0.118644" y="-0.163636" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="12c" pingpong="0" repeatcount="1" repeatto="0" sid="5654132726709595" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="12c" pingpong="0" repeatcount="1" repeatto="0" sid="5654132726709595" speed="5">
+                                <frame duration="1" hotspotX="0.508475" hotspotY="0.509091" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\12\BOSS 3 BLUE Standing.png">
+                                    <image-point name="Feet" x="0.508475" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508475" y="-0.163636" />
+                                    <image-point name="HpBar" x="-0.118644" y="-0.163636" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.508475" hotspotY="0.509091" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_resultt\12\BOSS 3 BLUE Rolling.png">
+                                    <image-point name="Feet" x="0.508475" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508475" y="-0.163636" />
+                                    <image-point name="HpBar" x="-0.118644" y="-0.163636" />
                                 </frame>
                             </animation>
-                            <animation framecount="1" loop="0" name="12d" pingpong="0" repeatcount="1" repeatto="0" sid="5635747636089761" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
-                                    <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
-                                    <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                            <animation framecount="2" loop="0" name="12d" pingpong="0" repeatcount="1" repeatto="0" sid="5635747636089761" speed="5">
+                                <frame duration="1" hotspotX="0.508475" hotspotY="0.509091" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\12\BOSS 3 GREEN Standing.png">
+                                    <image-point name="Feet" x="0.508475" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508475" y="-0.163636" />
+                                    <image-point name="HpBar" x="-0.118644" y="-0.163636" />
+                                </frame>
+                                <frame duration="1" hotspotX="0.508475" hotspotY="0.509091" original-source="C:\Users\Administrator.xnote-PC\Desktop\Les GOLEMS\_result\12\BOSS 3 GREEN Rolling.png">
+                                    <image-point name="Feet" x="0.508475" y="1" />
+                                    <image-point name="HpBarFrame" x="0.508475" y="-0.163636" />
+                                    <image-point name="HpBar" x="-0.118644" y="-0.163636" />
                                 </frame>
                             </animation>
                         </animation-folder>
                         <animation-folder name="13">
                             <animation framecount="1" loop="0" name="13a" pingpong="0" repeatcount="1" repeatto="0" sid="7590167944937847" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.515625">
                                     <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
                                     <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                    <image-point name="Feet" x="0.5" y="1" />
                                 </frame>
                             </animation>
                             <animation framecount="1" loop="0" name="13b" pingpong="0" repeatcount="1" repeatto="0" sid="5793170925282182" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.515625">
                                     <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
                                     <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                    <image-point name="Feet" x="0.5" y="1" />
                                 </frame>
                             </animation>
                             <animation framecount="1" loop="0" name="13c" pingpong="0" repeatcount="1" repeatto="0" sid="8779008379237657" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.515625">
                                     <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
                                     <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                    <image-point name="Feet" x="0.5" y="1" />
                                 </frame>
                             </animation>
                             <animation framecount="1" loop="0" name="13d" pingpong="0" repeatcount="1" repeatto="0" sid="8799700121864869" speed="5">
-                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="1">
+                                <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.515625">
                                     <image-point name="HpBarFrame" x="0.5" y="-0.15625" />
                                     <image-point name="HpBar" x="-0.125" y="-0.15625" />
+                                    <image-point name="Feet" x="0.5" y="1" />
                                 </frame>
                             </animation>
                         </animation-folder>
@@ -720,43 +1280,6 @@
                         </animation>
                     </animation-folder>
                 </object-type>
-                <object-type name="golemCreateEffect" sid="6331587354910353">
-                    <plugin id="Sprite" />
-                    <behaviors>
-                        <behavior-type name="Fade" sid="8630165975536991">
-                            <behavior id="Fade" />
-                        </behavior-type>
-                    </behaviors>
-                    <animation-folder>
-                        <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="409068177342822" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="1" y="0" />
-                                    <point x="1" y="1" />
-                                    <point x="0" y="1" />
-                                    <point x="0" y="0" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="1" y="1" />
-                                    <point x="0" y="1" />
-                                    <point x="0" y="0" />
-                                    <point x="1" y="0" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <collision-poly>
-                                    <point x="0" y="1" />
-                                    <point x="0" y="0" />
-                                    <point x="1" y="0" />
-                                    <point x="1" y="1" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                </object-type>
                 <object-type name="golemMovingSmoke" sid="8419324885742653">
                     <plugin id="Particles" />
                     <instance-variables>
@@ -796,8 +1319,21 @@
                         </behavior-type>
                     </behaviors>
                 </object-type>
+                <object-type name="golemSummon" sid="3908584676014232">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Fade" sid="9357568289280331">
+                            <behavior id="Fade" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="921586340196142" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150227_095601511.jpg" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
-            <object-folder name="eggExplode">
+            <object-folder name="egg">
                 <object-type name="explode" sid="9488261618380134">
                     <plugin id="Sprite" />
                     <instance-variables>
@@ -1316,6 +1852,122 @@
                         </animation>
                     </animation-folder>
                 </object-type>
+                <object-type name="eggBullet" sid="3209988137201803">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="kind" sid="7146510952174035" type="string" />
+                        <instance-variable name="type" sid="2548538060274999" type="string" />
+                        <instance-variable comment="1이 일반, 2가 보너스" name="bonus" sid="175394399497018" type="number" />
+                        <instance-variable name="targetX" sid="6719433743274246" type="number" />
+                        <instance-variable name="targetY" sid="8892721858022845" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="8999987267100798">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                        <behavior-type name="Rotate" sid="9250693752080137">
+                            <behavior id="Rotate" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="01_" pingpong="0" repeatcount="1" repeatto="0" sid="6373878700653659" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="0.505495" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\Standard Egg.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="02_" pingpong="0" repeatcount="1" repeatto="0" sid="1093045494804914" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\STRONG EGG.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="03_" pingpong="0" repeatcount="1" repeatto="0" sid="8644448127449451" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.506494" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\Speedster Egg.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="04_" pingpong="0" repeatcount="1" repeatto="0" sid="5345521558660811" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="0.505495" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\Scar Egg.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="05_" pingpong="0" repeatcount="1" repeatto="0" sid="5240110744708661" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.504673" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\FAT Egg.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="06_" pingpong="0" repeatcount="1" repeatto="0" sid="243543866984801" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.506173" hotspotY="0.510638" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\Robot Egg.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="07_" pingpong="0" repeatcount="1" repeatto="0" sid="9249602457767974" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.504854" hotspotY="0.506024" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\Pea Egg.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="08_" pingpong="0" repeatcount="1" repeatto="0" sid="8885697621730577" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="0.505495" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\DOOM EGG.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="09_" pingpong="0" repeatcount="1" repeatto="0" sid="427884327528649" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\Sick Egg.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="10_" pingpong="0" repeatcount="1" repeatto="0" sid="7884932209482899" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="0.505495" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\Tower Egg.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="11_" pingpong="0" repeatcount="1" repeatto="0" sid="4324886859730945" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.506329" hotspotY="0.505495" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\Naked Egg.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="12_" pingpong="0" repeatcount="1" repeatto="0" sid="7375992099667007" speed="5">
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\EGGSSSSSSSSSS\_result\Hoodie Egg.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="eggBulletBonusEffect" sid="6176408708153329">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="PinToImagePoint" sid="4810806985178602">
+                            <behavior id="Rex_pin2imgpt" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4932938029690975" speed="15">
+                            <frame duration="1" hotspotX="0.391667" hotspotY="0.505208">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.391667" hotspotY="0.505208">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.391667" hotspotY="0.505208">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.391667" hotspotY="0.505208">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.391667" hotspotY="0.505208">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.391667" hotspotY="0.505208">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
             <object-folder name="bgDeco">
                 <object-type name="battleViewBg" sid="2200094870917414">
@@ -1326,38 +1978,6 @@
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\bg2.jpg" />
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\bg3.jpg" />
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\bg4.jpg" />
-                        </animation>
-                    </animation-folder>
-                </object-type>
-                <object-type name="foodText" sid="31800901128506">
-                    <plugin id="Text" />
-                    <behaviors>
-                        <behavior-type name="Anchor" sid="7350113210345424">
-                            <behavior id="Anchor" />
-                        </behavior-type>
-                    </behaviors>
-                </object-type>
-                <object-type name="foodSprite" sid="500685452156395">
-                    <plugin id="Sprite" />
-                    <behaviors>
-                        <behavior-type name="Anchor" sid="5490959355802128">
-                            <behavior id="Anchor" />
-                        </behavior-type>
-                    </behaviors>
-                    <animation-folder>
-                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3759405843729228" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\SUPER FEED.png">
-                                <collision-poly>
-                                    <point x="0.223958" y="0.182979" />
-                                    <point x="0.5" y="0.00851064" />
-                                    <point x="0.927083" y="0.0595745" />
-                                    <point x="0.921875" y="0.497872" />
-                                    <point x="0.890625" y="0.910638" />
-                                    <point x="0.5" y="0.991489" />
-                                    <point x="0.135417" y="0.889362" />
-                                    <point x="0.078125" y="0.497872" />
-                                </collision-poly>
-                            </frame>
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -1411,319 +2031,23 @@
                         </behavior-type>
                     </behaviors>
                 </object-type>
+                <object-type name="henButtonBonusEffect" sid="3249201376173108">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="buttonID" sid="7629420547719832" type="number" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9463212830423405" speed="15">
+                            <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
+                            <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
+                            <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
+                            <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
+                            <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
+                            <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
-            <object-type name="launchLine" sid="7776698058798086">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="aimed" sid="7943987331280325" type="boolean" />
-                    <instance-variable name="launchLineIDX" sid="5865254091538735" type="number" />
-                    <instance-variable name="launchLineIDY" sid="8529816274522615" type="number" />
-                    <instance-variable name="occupied" sid="996335239607631" type="boolean" />
-                    <instance-variable name="originalWidth" sid="2170307310923225" type="number" />
-                    <instance-variable name="originalHeight" sid="1902184267623668" type="number" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Sine" sid="8741223885480183">
-                        <behavior id="Sin" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="4" loop="0" name="01Default" pingpong="0" repeatcount="1" repeatto="0" sid="1967376042875095" speed="0">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034958652.jpg" />
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034959121.jpg" />
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_034959474.jpg" />
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_035130818.jpg" />
-                    </animation>
-                    <animation framecount="1" loop="0" name="02Default" pingpong="0" repeatcount="1" repeatto="0" sid="8968254526537589" speed="0">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_065237885.jpg" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="henSelection" sid="7712969762775287">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="select" sid="7091668356185059" type="number" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Sine" sid="5483617663614612">
-                        <behavior id="Sin" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4109331022336571" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="eggBullet" sid="3209988137201803">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="kind" sid="7146510952174035" type="string" />
-                    <instance-variable name="type" sid="2548538060274999" type="string" />
-                    <instance-variable comment="1이 일반, 2가 보너스" name="bonus" sid="175394399497018" type="number" />
-                    <instance-variable name="targetX" sid="6719433743274246" type="number" />
-                    <instance-variable name="targetY" sid="8892721858022845" type="number" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Bullet" sid="8999987267100798">
-                        <behavior id="Bullet" />
-                    </behavior-type>
-                    <behavior-type name="Rotate" sid="9250693752080137">
-                        <behavior id="Rotate" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="01_" pingpong="0" repeatcount="1" repeatto="0" sid="6373878700653659" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\SUPEREGG\Egg (to throw).png">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="02_" pingpong="0" repeatcount="1" repeatto="0" sid="1093045494804914" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="03_" pingpong="0" repeatcount="1" repeatto="0" sid="8644448127449451" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="04_" pingpong="0" repeatcount="1" repeatto="0" sid="5345521558660811" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="05_" pingpong="0" repeatcount="1" repeatto="0" sid="5240110744708661" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="06_" pingpong="0" repeatcount="1" repeatto="0" sid="243543866984801" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="07_" pingpong="0" repeatcount="1" repeatto="0" sid="9249602457767974" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="08_" pingpong="0" repeatcount="1" repeatto="0" sid="8885697621730577" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="09_" pingpong="0" repeatcount="1" repeatto="0" sid="427884327528649" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="10_" pingpong="0" repeatcount="1" repeatto="0" sid="7884932209482899" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="11_" pingpong="0" repeatcount="1" repeatto="0" sid="4324886859730945" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="12_" pingpong="0" repeatcount="1" repeatto="0" sid="7375992099667007" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.4375" y="0.4375" />
-                                <point x="0.5625" y="0.4375" />
-                                <point x="0.5625" y="0.5625" />
-                                <point x="0.4375" y="0.5625" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="exitButton" sid="1176948810963397">
-                <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="Anchor" sid="8875301441477429">
-                        <behavior id="Anchor" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4011827115660819" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="battleViewTimer" sid="3686755254771514">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8543236336146766" speed="1">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="henButtonBonusEffect" sid="3249201376173108">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="buttonID" sid="7629420547719832" type="number" />
-                </instance-variables>
-                <animation-folder>
-                    <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9463212830423405" speed="15">
-                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
-                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
-                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
-                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
-                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
-                        <frame duration="1" hotspotX="0.494792" hotspotY="0.707407" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="eggBulletBonusEffect" sid="6176408708153329">
-                <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="PinToImagePoint" sid="4810806985178602">
-                        <behavior id="Rex_pin2imgpt" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4932938029690975" speed="15">
-                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
-                            <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
-                            <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
-                            <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
-                            <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
-                            <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.391667" hotspotY="0.510417">
-                            <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="turnText" sid="3318910413245149">
-                <plugin id="Text" />
-                <behaviors>
-                    <behavior-type name="Fade" sid="1757164724466687">
-                        <behavior id="Fade" />
-                    </behavior-type>
-                </behaviors>
-            </object-type>
-            <object-type name="timeScaleButton" sid="5467760425990307">
-                <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="Anchor" sid="895403354676684">
-                        <behavior id="Anchor" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4942981947109659" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\battle\button1Time.jpg" />
-                    </animation>
-                    <animation framecount="1" loop="0" name="Fast" pingpong="0" repeatcount="1" repeatto="0" sid="726715567616416" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\battle\button1.5Time.jpg" />
-                    </animation>
-                </animation-folder>
-            </object-type>
         </object-folder>
         <object-folder name="DBDic">
             <object-type global="1" name="golemDB" sid="1480243055815972">
@@ -1996,10 +2320,13 @@
                     <behavior-type name="MoveTo" sid="6110465930548586">
                         <behavior id="Rex_MoveTo" />
                     </behavior-type>
+                    <behavior-type name="Sine" sid="2887876457488945">
+                        <behavior id="Sin" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8207058004840767" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.542857" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\stage\stagecover.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.521429" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\stage\stagecover.jpg">
                             <collision-poly>
                                 <point x="0.025" y="0.025" />
                                 <point x="0.980469" y="0.0195313" />
@@ -2020,10 +2347,13 @@
                     <behavior-type name="MoveTo" sid="4501431905196882">
                         <behavior id="Rex_MoveTo" />
                     </behavior-type>
+                    <behavior-type name="Sine" sid="9911453058685951">
+                        <behavior id="Sin" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5882154136145624" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.457143" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\stage\stagecover.jpg">
+                        <frame duration="1" format="png8" hotspotX="0.478571" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\stage\stagecover.jpg">
                             <collision-poly>
                                 <point x="0.025" y="0.025" />
                                 <point x="0.980469" y="0.0195313" />
@@ -2482,10 +2812,10 @@
                             </frame>
                         </animation>
                         <animation framecount="2" loop="1" name="04ready" pingpong="0" repeatcount="1" repeatto="0" sid="7035563637600017" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\ScarChick FREAK 1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\chickResized\Image00001.png">
                                 <image-point name="Center" x="0.508772" y="0.5" />
                             </frame>
-                            <frame duration="1" hotspotX="0.504854" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Desktop\documents-export-2015-02-25\_result\ScarChick FREAK 2.png">
+                            <frame duration="1" hotspotX="0.504854" hotspotY="1" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\chickResized\Image00002.png">
                                 <image-point name="Center" x="0.504854" y="0.5" />
                             </frame>
                         </animation>
@@ -3018,6 +3348,9 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="tipText" sid="2029038842416462">
+                <plugin id="Text" />
+            </object-type>
         </object-folder>
         <object-folder name="icon">
             <object-type name="iconAtk" sid="7632449024285424">
@@ -3140,18 +3473,18 @@
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2914596772468899" speed="5">
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <image-point name="Imagepoint 1" x="0.2525" y="0.258333" />
-                                <image-point name="Imagepoint 2" x="0.5025" y="0.291667" />
-                                <image-point name="Imagepoint 3" x="0.7275" y="0.301667" />
-                                <image-point name="Imagepoint 4" x="0.2025" y="0.505" />
-                                <image-point name="Imagepoint 5" x="0.4825" y="0.485" />
-                                <image-point name="Imagepoint 6" x="0.7875" y="0.491667" />
-                                <image-point name="Imagepoint 7" x="0.2225" y="0.725" />
-                                <image-point name="Imagepoint 8" x="0.5025" y="0.731667" />
-                                <image-point name="Imagepoint 9" x="0.7975" y="0.718333" />
-                                <image-point name="Imagepoint 10" x="0.1425" y="0.941667" />
-                                <image-point name="Imagepoint 11" x="0.4875" y="0.938333" />
-                                <image-point name="Imagepoint 12" x="0.8325" y="0.938333" />
+                                <image-point name="Imagepoint 1" x="0.2175" y="0.155" />
+                                <image-point name="Imagepoint 2" x="0.4875" y="0.178333" />
+                                <image-point name="Imagepoint 3" x="0.7625" y="0.15" />
+                                <image-point name="Imagepoint 4" x="0.555" y="0.328333" />
+                                <image-point name="Imagepoint 5" x="0.2025" y="0.315" />
+                                <image-point name="Imagepoint 6" x="0.4975" y="0.515" />
+                                <image-point name="Imagepoint 7" x="0.7925" y="0.403333" />
+                                <image-point name="Imagepoint 8" x="0.2" y="0.56" />
+                                <image-point name="Imagepoint 9" x="0.8125" y="0.61" />
+                                <image-point name="Imagepoint 10" x="0.24" y="0.785" />
+                                <image-point name="Imagepoint 11" x="0.56" y="0.816667" />
+                                <image-point name="Imagepoint 12" x="0.8375" y="0.835" />
                             </frame>
                         </animation>
                     </animation-folder>
@@ -3355,10 +3688,26 @@
                 </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="On" pingpong="0" repeatcount="1" repeatto="0" sid="1597068341981875" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.501048" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150227_090945571.jpg">
+                            <collision-poly>
+                                <point x="0.119403" y="0.0754717" />
+                                <point x="0.49403" y="0.0230608" />
+                                <point x="0.868657" y="0.0922432" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="Off" pingpong="0" repeatcount="1" repeatto="0" sid="5582281867171066" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.501493" hotspotY="0.501048" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150227_090945872.jpg">
+                            <collision-poly>
+                                <point x="0.119403" y="0.0754717" />
+                                <point x="0.49403" y="0.0230608" />
+                                <point x="0.868657" y="0.0922432" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -3387,6 +3736,25 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4232872001806188" speed="5">
                     <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="stageStartButton" sid="2000551510054207">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="On" sid="5747457836806646" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Anchor" sid="6946902674805915">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Off" pingpong="0" repeatcount="1" repeatto="0" sid="7537773766514209" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="On" pingpong="0" repeatcount="1" repeatto="0" sid="7659829277254328" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -3467,7 +3835,16 @@
                 <member>stageText</member>
                 <member>systemText</member>
                 <member>Text2</member>
+                <member>tipText</member>
                 <member>turnText</member>
+            </members>
+        </family>
+        <family name="menus" plugin-id="Sprite" sid="3361722295545741">
+            <members>
+                <member>menuButtonCageView</member>
+                <member>menuButtonOptionView</member>
+                <member>menuButtonPackage</member>
+                <member>menuButtonStageView</member>
             </members>
         </family>
     </families>
@@ -3594,6 +3971,8 @@
         <file name="cluck.ogg" />
         <file name="cwack.m4a" />
         <file name="cwack.ogg" />
+        <file name="notiOn.m4a" />
+        <file name="notiOn.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="battleView.m4a" />

@@ -322,13 +322,13 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>283</x>
-                        <y>567</y>
+                        <y>545</y>
                         <z>0</z>
-                        <width>192</width>
-                        <height>192</height>
+                        <width>167.793762207</width>
+                        <height>238.918289185</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.50149256</hotspotX>
+                        <hotspotY>0.501048207</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -351,8 +351,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>287</x>
-                        <y>583</y>
+                        <x>282</x>
+                        <y>595</y>
                         <z>0</z>
                         <width>102</width>
                         <height>37</height>
@@ -737,7 +737,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>80</x>
+                        <x>90</x>
                         <y>640</y>
                         <z>0</z>
                         <width>155</width>

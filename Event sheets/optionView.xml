@@ -146,6 +146,15 @@
                             <param id="1" name="ImagePoint">loopindex</param>
                             <param id="2" name="Mode">0</param>
                         </action>
+                        <action id="-16" name="Wait" sid="6699369520641384" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="4871564333646954" type="golem">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="956192895189511" type="golem">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="8007764697804263">
@@ -320,6 +329,23 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Call function" sid="49681136266434" type="Function">
+                            <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4989026705776379">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="2718646808210626" type="Touch" />
+                        <condition id="2" name="Is playing" sid="6090364908128791" type="menuButtonPackage">
+                            <param id="0" name="Animation">&quot;Opened&quot;</param>
+                        </condition>
+                        <condition id="4" inverted="1" name="Is touching object" sid="2905610485503308" type="Touch">
+                            <param id="0" name="Object">menus</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="3561291070497086" type="Function">
                             <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -612,7 +638,7 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="0" name="Play" sid="9637917005994234" type="Audio">
-                                    <param id="0" name="Audio file">click</param>
+                                    <param id="0" name="Audio file">notiOn</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
@@ -760,11 +786,16 @@
             </conditions>
             <actions />
             <sub-events>
+                <variable constant="0" name="golemSelected" sid="3023255793303144" static="1" type="text"></variable>
                 <event-block sid="7913767410585627">
                     <conditions>
                         <condition id="-4" name="Trigger once while true" sid="83418779887531" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="7480530282567371" type="System">
+                            <param id="0" name="Variable">golemSelected</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
                         <action id="-15" name="Set visible" sid="955246353187657" type="optionViewCreditText">
                             <param id="0" name="Visibility">0</param>
                         </action>
@@ -802,12 +833,43 @@
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="3403931124280693">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="2972086236786647" type="System">
+                                    <param id="0" name="Object">golem</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="BreathSine" id="0" name="Set active" sid="8700186128572808" type="golem">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="3308096555787847" type="golem">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="121315639448374">
                     <conditions />
                     <actions>
                         <action id="-2" name="Set Y" sid="1453582655013235" type="optionViewBook">
                             <param id="0" name="Y">lerp(self.y,focus.Y,0.1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3182276152441986">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5377930187134833" type="golem">
+                            <param id="0" name="Instance variable">kind</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">golemSelected</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Set scale" sid="1745982607539414" type="golem">
+                            <param id="0" name="Scale">lerp(self.Height/self.ImageHeight, 1.5, 0.1)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -852,11 +914,24 @@
                                 <action behavior="BreathSine" id="0" name="Set active" sid="2638066029996354" type="golem">
                                     <param id="0" name="State">0</param>
                                 </action>
+                                <action id="9" name="Set scale" sid="4412801595397774" type="golem">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="2730584383251146">
                             <conditions />
                             <actions>
+                                <action id="-9" name="Set value" sid="2899348270453382" type="System">
+                                    <param id="0" name="Variable">golemSelected</param>
+                                    <param id="1" name="Value">golem.kind</param>
+                                </action>
+                                <action id="6" name="Set speed" sid="5982621777881554" type="golem">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="6365721094700998" type="golem">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
                                 <action id="0" name="Set text" sid="4100498943853525" type="golemName">
                                     <param id="0" name="Text">&quot;이름 : &quot;&amp;golemDB.Get(golem.kind&amp;&quot;name&quot;)</param>
                                 </action>

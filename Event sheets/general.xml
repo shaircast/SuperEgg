@@ -48,7 +48,7 @@
                     <param id="1" name="Color">rgb(0, 0, 0)</param>
                 </action>
                 <action id="-16" name="Wait" sid="8979294542331238" type="System">
-                    <param id="0" name="Seconds">0.5</param>
+                    <param id="0" name="Seconds">1.2</param>
                 </action>
                 <action id="-9" name="Set value" sid="9058078735480526" type="System">
                     <param id="0" name="Variable">fadeStart</param>
@@ -81,6 +81,8 @@
             </conditions>
             <actions />
             <sub-events>
+                <variable constant="0" name="randomText" sid="1166569474102218" static="0" type="number">0</variable>
+                <comment>팁메세지</comment>
                 <event-block sid="2736157406444676">
                     <conditions>
                         <condition id="-4" name="Trigger once while true" sid="4594507929026996" type="System" />
@@ -90,12 +92,654 @@
                             <param id="0" name="Object to create">openingTitle</param>
                             <param id="1" name="Layer">&quot;fade&quot;</param>
                             <param id="2" name="X">640</param>
-                            <param id="3" name="Y">360</param>
+                            <param id="3" name="Y">310</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2512649963873425" type="System">
+                            <param id="0" name="Object to create">tipText</param>
+                            <param id="1" name="Layer">&quot;fade&quot;</param>
+                            <param id="2" name="X">640</param>
+                            <param id="3" name="Y">480</param>
                         </action>
                         <action id="9" name="Set scale" sid="5116512361956391" type="openingTitle">
                             <param id="0" name="Scale">0.5</param>
                         </action>
+                        <action id="-9" name="Set value" sid="6834725309204599" type="System">
+                            <param id="0" name="Variable">randomText</param>
+                            <param id="1" name="Value">floor(random(45))</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="9645149606492379">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9930935727910739" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="4107186767629227" type="tipText">
+                                    <param id="0" name="Text">&quot;거점마다 나오는 골렘이 다르므로 닭을 잘 조합해야 합니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5519083579971851">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5170632764553106" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="3800539458296173" type="tipText">
+                                    <param id="0" name="Text">&quot;불&gt;물&gt;풀&gt;불. 상성관계입니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3299004024063234">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5317869696646161" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="321923276303689" type="tipText">
+                                    <param id="0" name="Text">&quot;상성이 좋으면 두 배의 데미지가, 나쁘면 반만 들어갑니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2874619153601319">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7431237576949908" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="2841083242391697" type="tipText">
+                                    <param id="0" name="Text">&quot;닭의 속성은 달려있는 구슬로, 골렘의 속성은 골렘의 색깔로 알 수 있습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6733609323878235">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7098066338210904" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="6089395441646249" type="tipText">
+                                    <param id="0" name="Text">&quot;닭장에서 닭을 팔거나, 정보를 보거나, 교배하거나, 엔트리를 바꿀 수 있습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4454255623167907">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1953484679535322" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="5419676950260768" type="tipText">
+                                    <param id="0" name="Text">&quot;닭을 교배하면 두 닭의 종류와 속성이 랜덤으로 조합되어 새 닭이 나옵니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1452256380661843">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9907976512198515" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="7661310192766623" type="tipText">
+                                    <param id="0" name="Text">&quot;찍먹이 최고입니다. 부먹하는 사람은 노답이니 가까이하지 말아야 합니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="576968293021078">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9679671585069161" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="8920699874999169" type="tipText">
+                                    <param id="0" name="Text">&quot;교배해서 나온 닭은 일정 확률로 강화됩니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9261437304867102">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1367688889855847" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="677708420205401" type="tipText">
+                                    <param id="0" name="Text">&quot;강화가 많이 된 닭은 그만큼 파워샷을 쏠 확률이 높아집니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4330574645158732">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8816476188129023" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">9</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="4106370401154262" type="tipText">
+                                    <param id="0" name="Text">&quot;파워샷이 장전되면 불꽃이 이글거리면서 두 배의 데미지를 줍니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9439649932980673">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2352442202798002" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="645934346868182" type="tipText">
+                                    <param id="0" name="Text">&quot;빨강&gt;파랑&gt;초록&gt;빨강. 상성관계입니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7906621551423111">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4450634710489873" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">11</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="318663340655265" type="tipText">
+                                    <param id="0" name="Text">&quot;UFO의 추락 이후, 여우는 돌멩이를 골렘으로 부릴 수 있게 되었습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1576993828481681">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="724911740717144" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">12</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="5816447189206932" type="tipText">
+                                    <param id="0" name="Text">&quot;평화로운 농장에 UFO가 추락한 후, 닭과 여우에게 능력이 생겼습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4488924501862154">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9335207172329572" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="100593127040621" type="tipText">
+                                    <param id="0" name="Text">&quot;닭들은 자신들을 괴롭히고 납치하는 마법사 여우를 잡기 위해 결심을 합니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1251765754738762">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5761353297718255" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">14</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="1252529227883716" type="tipText">
+                                    <param id="0" name="Text">&quot;여우가 부리는 골렘들은 원래는 그냥 돌멩이입니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1384486812222726">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8523600148478155" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="3480716088275497" type="tipText">
+                                    <param id="0" name="Text">&quot;알들이 이상하게 생겼지만 다들 맛좋은 1등급 무정란입니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1907623354453877">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3457919097085824" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">16</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="9925404669642997" type="tipText">
+                                    <param id="0" name="Text">&quot;4번째 엔트리는 랜덤이므로 닭장을 잘 관리해야 합니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6038118870532359">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4883968189376343" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">17</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="3659913027121421" type="tipText">
+                                    <param id="0" name="Text">&quot;닭이 강화될수록 가치가 높아지고 교배비도 비싸집니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9369130667062733">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8118048600149269" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">18</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="8816433282219391" type="tipText">
+                                    <param id="0" name="Text">&quot;교배 비용은 교배하는 닭이 비쌀수록 비싸집니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9111096989704887">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9113986382130346" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">19</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="6018028765149421" type="tipText">
+                                    <param id="0" name="Text">&quot;클리어할 때 보상으로 새로운 닭을 주는 거점들이 있습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9102675087413506">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7876688813918401" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="5442778078227171" type="tipText">
+                                    <param id="0" name="Text">&quot;사료는 매 턴 하나씩 충전되니 관리를 잘 해야 합니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5503184954568459">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4585644619986753" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">21</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="4813801630884121" type="tipText">
+                                    <param id="0" name="Text">&quot;닭이 공격을 하고 나면 자동으로 턴이 넘어갑니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4501203378939221">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2203934924746795" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">22</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="239416771142704" type="tipText">
+                                    <param id="0" name="Text">&quot;닭은 먼저 사료를 배불리 먹어야 공격할 수 있습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4600045977907579">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3286480583767818" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">23</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="8050404159472568" type="tipText">
+                                    <param id="0" name="Text">&quot;거점마다 골렘의 속성이나 패턴을 고려해서 엔트리를 짜야 합니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3813103702958196">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7622646342146234" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">24</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="9576078764721641" type="tipText">
+                                    <param id="0" name="Text">&quot;여우는 골렘들을 부하로 보지만, 골렘들은 여우를 딱히 주인으로 보진 않습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="401838426343581">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3639391386919812" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">25</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="7036487203092104" type="tipText">
+                                    <param id="0" name="Text">&quot;사료가 충분하지 않으면 공격을 못하니 계획을 잘 세워야 합니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="819862252282876">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5912742556589547" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">26</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="8084896625362576" type="tipText">
+                                    <param id="0" name="Text">&quot;닭이 먹이를 먹는 데에는 일정 턴을 소모합니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5454420424661496">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5747736946984407" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">27</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="3660768245600507" type="tipText">
+                                    <param id="0" name="Text">&quot;닭이 먹이를 다 먹어야 공격을 할 수 있습니다. 금강산도 식후경.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3873694348966963">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3028521209053126" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">28</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="5695309854599503" type="tipText">
+                                    <param id="0" name="Text">&quot;먹이를 먹고 있는 닭은 다 먹을 때까지 건드릴 수 없습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8147669201108842">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4047272928603305" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">29</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="3249379509968564" type="tipText">
+                                    <param id="0" name="Text">&quot;닭이 준비되면 펄쩍펄쩍 미쳐 날뜁니다. 아주 볼만합니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3967468099624329">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5047693112265956" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">30</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="8757690941468212" type="tipText">
+                                    <param id="0" name="Text">&quot;준비된 닭을 선택하고 타일을 누르면 공격 범위를 볼 수 있습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2647105441563465">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6252036011544412" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">31</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="4335110870914811" type="tipText">
+                                    <param id="0" name="Text">&quot;닭을 먼저 선택하고, 타일을 눌러서 범위를 보고, 다시 눌러서 공격합니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9878421383586362">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7122775723209907" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">32</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="4317987940648777" type="tipText">
+                                    <param id="0" name="Text">&quot;한 턴에 여러 닭을 먹일 순 있지만, 발사는 하나의 닭만 할 수 있습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5002502549241887">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3874455121720282" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">33</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="7994337603796423" type="tipText">
+                                    <param id="0" name="Text">&quot;클리어가 어렵다면, 그건 디자이너의 탓이 아니라 당신 탓입니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1027557775413774">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1432075982723692" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">34</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="9232560989734607" type="tipText">
+                                    <param id="0" name="Text">&quot;닭을 사용하기 전에 닭장에 가서 설명을 읽어보는 것이 좋습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8198046799771001">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9612869725099981" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">35</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="5932079736759616" type="tipText">
+                                    <param id="0" name="Text">&quot;파워샷에 속성까지 잘 맞춘다면 4배의 데미지까지 뽑아낼 수 있습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3315828330831879">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5449870820909306" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">36</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="6693923477449498" type="tipText">
+                                    <param id="0" name="Text">&quot;해당 스테이지에 나오는 골렘을 모두 파괴하면 자동으로 클리어입니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7063370422184009">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6008363447510516" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">37</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="7481055396876501" type="tipText">
+                                    <param id="0" name="Text">&quot;배틀 중 더 이상 할 게 없다면 OK버튼으로 턴을 넘기세요.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1989920866473117">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6476682847669126" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">38</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="668857215944197" type="tipText">
+                                    <param id="0" name="Text">&quot;배틀이 느리다면 배속 버튼을 눌러 빠르게 진행할 수도 있습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3634345731776239">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7678453021372354" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">39</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="4975452397432057" type="tipText">
+                                    <param id="0" name="Text">&quot;세계에서 한 해에 닭고기가 되는 닭의 수는 5백억 마리가 넘는다고 합니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4468492538897401">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4411003900674563" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">40</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="171255255586494" type="tipText">
+                                    <param id="0" name="Text">&quot;닭장이 꽉 차 있으면 스테이지 보상으로 주는 닭을 받을 수 없습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="48388592708975">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="366056393958823" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">41</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="1581419163229326" type="tipText">
+                                    <param id="0" name="Text">&quot;닭에게 사료를 먹인다. 준비된 닭을 선택한다. 공격할 타일을 선택한다. 끝.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7574654974338779">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7400720410680115" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">42</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="578160553112609" type="tipText">
+                                    <param id="0" name="Text">&quot;게임에서 지거나 무단으로 전투를 이탈하면 달걀을 잃게 됩니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5322851168360651">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6589657281723326" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">43</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="6956954095824611" type="tipText">
+                                    <param id="0" name="Text">&quot;월드 화면에서 화면을 옆으로 쓸어넘기면 작전구역을 이동할 수 있습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7422230178529954">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3173837626953753" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">44</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="7860497201365505" type="tipText">
+                                    <param id="0" name="Text">&quot;여러분도 달걀을 이케이케 잘 던지면 바위를 쳐서 깰 수 있습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="352557030739954">
                     <conditions>

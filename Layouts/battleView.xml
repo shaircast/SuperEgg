@@ -110,7 +110,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="cannon" uid="15">
+                <instance type="shooter" uid="15">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -121,7 +121,7 @@
                         <behavior-instance type="RotateTo">
                             <properties>
                                 <activated>Yes</activated>
-                                <max-speed>180</max-speed>
+                                <max-speed>150</max-speed>
                                 <acceleration>0</acceleration>
                                 <deceleration>0</deceleration>
                             </properties>
@@ -129,7 +129,7 @@
                         <behavior-instance type="MoveTo">
                             <properties>
                                 <activated>Yes</activated>
-                                <max-speed>400</max-speed>
+                                <max-speed>200</max-speed>
                                 <acceleration>0</acceleration>
                                 <deceleration>0</deceleration>
                             </properties>
@@ -138,14 +138,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>33</x>
+                        <x>82</x>
                         <y>145</y>
                         <z>0</z>
-                        <width>59</width>
-                        <height>90</height>
+                        <width>127</width>
+                        <height>98</height>
                         <depth>0</depth>
-                        <hotspotX>0.271186441</hotspotX>
-                        <hotspotY>0.822222233</hotspotY>
+                        <hotspotX>0.503937006</hotspotX>
+                        <hotspotY>1</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -237,8 +237,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1230</x>
-                        <y>50</y>
+                        <x>1240</x>
+                        <y>40</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>

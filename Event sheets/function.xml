@@ -155,7 +155,7 @@
                             <actions>
                                 <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
                                     <param id="0" name="Key">&quot;henList&quot;</param>
-                                    <param id="1" name="Value">&quot;01a50/02a51/03c52/04a53/05a54/06d54/07a54/08a54/09a54/10b54/03a54/04a54/05c54/06a54/07a06/08a07/09c08/12d11/01a00/02d01/03a02/04a03/05a04/06b05/07a56/08a57/&quot;</param>
+                                    <param id="1" name="Value">&quot;01a99/02a99/03a99/04a99/&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
                                     <param id="0" name="Key">&quot;chapter&quot;</param>
@@ -163,11 +163,11 @@
                                 </action>
                                 <action id="0" name="Set local value" sid="3645545715772576" type="WebStorage">
                                     <param id="0" name="Key">&quot;maxStage&quot;</param>
-                                    <param id="1" name="Value">&quot;3_10&quot;</param>
+                                    <param id="1" name="Value">&quot;2_5&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="71699616378047" type="WebStorage">
                                     <param id="0" name="Key">&quot;gold&quot;</param>
-                                    <param id="1" name="Value">10000</param>
+                                    <param id="1" name="Value">500</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="5464618023177127" type="WebStorage">
                                     <param id="0" name="Key">&quot;entry1&quot;</param>
@@ -198,7 +198,7 @@
                                     <param id="0" name="Badge Number">0</param>
                                     <param id="1" name="Delay">60*60*24-int((Date.UnixTimestamp-int(WebStorage.LocalValue(&quot;lastGoldRewardTimeStamp&quot;)))/1000)</param>
                                     <param id="2" name="Message">&quot;골드 선물이 도착했습니다!&quot;</param>
-                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
+                                    <param id="3" name="Expanded Title">&quot;슈퍼에그&quot;</param>
                                     <param id="4" name="Expanded Body">&quot;24시간마다 500골드를 받아가세요!&quot;</param>
                                     <param id="5" name="Sound enabled">1</param>
                                 </action>
@@ -564,7 +564,7 @@
                                     <param id="0" name="Badge Number">0</param>
                                     <param id="1" name="Delay">60*60*24-int((Date.UnixTimestamp-int(WebStorage.LocalValue(&quot;lastGoldRewardTimeStamp&quot;)))/1000)</param>
                                     <param id="2" name="Message">&quot;골드 선물이 도착했습니다!&quot;</param>
-                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
+                                    <param id="3" name="Expanded Title">&quot;슈퍼에그&quot;</param>
                                     <param id="4" name="Expanded Body">&quot;24시간마다 500골드를 받아가세요!&quot;</param>
                                     <param id="5" name="Sound enabled">1</param>
                                 </action>
@@ -572,9 +572,49 @@
                                     <param id="0" name="Badge Number">0</param>
                                     <param id="1" name="Delay">HEARTCHARGETIME*(MAXHEART-int(WebStorage.LocalValue(&quot;heart&quot;))-1)+int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))</param>
                                     <param id="2" name="Message">&quot;달걀이 모두 준비되었습니다!&quot;</param>
-                                    <param id="3" name="Expanded Title">&quot;슈퍼 에그&quot;</param>
+                                    <param id="3" name="Expanded Title">&quot;슈퍼에그&quot;</param>
                                     <param id="4" name="Expanded Body">&quot;달걀이 모두 준비되었습니다! 다시 가 볼까요?&quot;</param>
                                     <param id="5" name="Sound enabled">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>heartRefresh() : 하트창 리프레쉬 및 하트 5일때 timeLeftToCharge를 HEARTCHARGETIME으로 유지.</comment>
+                <event-block sid="6066605846712692">
+                    <conditions>
+                        <condition id="0" name="On function" sid="3371607125967735" type="Function">
+                            <param id="0" name="Name">&quot;heartRefresh&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3261511381366335">
+                            <conditions />
+                            <actions>
+                                <action id="5" name="Set frame" sid="4790240370826077" type="heart">
+                                    <param id="0" name="Frame number">int(WebStorage.LocalValue(&quot;heart&quot;))</param>
+                                </action>
+                                <action id="0" name="Set text" sid="3965328889845666" type="heartTimer">
+                                    <param id="0" name="Text">&quot;다음 달걀 충전까지 - &quot;&amp;zeropad(floor(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))/60),2) &amp;&quot; : &quot;&amp; zeropad(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))%60,2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5120612599756053">
+                            <conditions>
+                                <condition id="7" name="Compare key value (as number)" sid="1579604193421951" type="WebStorage">
+                                    <param id="0" name="Key">&quot;heart&quot;</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="7008573565193895" type="WebStorage">
+                                    <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
+                                    <param id="1" name="Value">HEARTCHARGETIME</param>
+                                </action>
+                                <action id="0" name="Set text" sid="4990177512443204" type="heartTimer">
+                                    <param id="0" name="Text">&quot;완전 준비완료!&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -819,47 +859,47 @@
                                 </action>
                                 <action id="0" name="Call function" sid="7429517911181462" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;02&quot;{###}&quot;달린닭&quot;{###}2{###}3{###}0{###}28{###}4{###}&quot;언젠가 전투에 나갔다가 눈을 다친 영광스런 닭은 아니고 그냥 안대는 폼으로 낀다. 알도 아주 파워풀해서 아주 그냥 쾅쾅 터지면서 투척 지점이랑 뒤로 2칸까지, 3의 데미지를 준다. 한 라인만 밀어버리는 우직한 녀석.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;02&quot;{###}&quot;달린닭&quot;{###}2{###}3{###}0{###}28{###}4{###}&quot;언젠가 전투에 나갔다가 눈을 다친 영광스런 닭은 아니고 그냥 안대는 폼으로 낀다. 알도 아주 파워풀해서 아주 그냥 쾅쾅 터지면서 투척 지점과 앞뒷칸에 3의 데미지를 준다. 한 라인만 갈아버리는 우직한 녀석.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="992724471859365" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;03&quot;{###}&quot;얍삽하닭&quot;{###}2{###}3{###}0{###}24{###}4{###}&quot;모가지가 길어 슬픈 짐승은 사슴 뿐이 아니다. 옛날에는 샤프한 인상에 목만 길어 놀림을 받았지만, 지금은 긴 목에서 나오는 넓은 시야로 쓸모가 많다고 하니 인생, 아니 계생은 참 모를 일이다. 투척 지점과 양 옆라인에 3의 데미지를 준다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;03&quot;{###}&quot;얍삽하닭&quot;{###}2{###}3{###}0{###}24{###}4{###}&quot;모가지가 길어 슬픈 짐승, 바로 이 녀석이다. 옛날에는 많은 놀림을 받았지만, 지금은 긴 목을 휘둘러 보는 넓은 시야로 쓸모가 많다고 하니 참 모를 일이다. 투척 지점과 양 옆라인에 3의 데미지를 준다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="273196151609249" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;04&quot;{###}&quot;십자군닭&quot;{###}2{###}2{###}0{###}30{###}4{###}&quot;십자모양 흉터에 구워진 듯한 색으로 별명이 십자군닭이다. 왜 탔냐고 물으니 복날에 밖에 나와서 썬탠을 하다가 그랬다고 한다. 투척 지점을 중심으로 십자 범위에  2의 데미지를 준다. 흉터에 대해선 절대 입을 열지 않는다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;04&quot;{###}&quot;십자군닭&quot;{###}2{###}2{###}0{###}30{###}4{###}&quot;십자모양 흉터에 구워진 듯한 색으로 별명이 십자군닭이다. 왜 탔냐고 물으니 복날에 밖에 나와서 썬탠을 하다가 그랬다고 한다. 투척 지점을 중심으로 십자 범위에  2의 데미지를 준다. 흉터에 대해선 함구.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="4262621269774037" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;05&quot;{###}&quot;살쪘닭&quot;{###}2{###}2{###}0{###}32{###}6{###}&quot;사료 먹으면서 누워서 런닝닭 보는 게 낙인 닭. 잘 움직이지 않아서 윤기가 흐르고 굉장히 포동포동해서 복날 1등 재료감이었는데 뭐 없던 일이 되었다. 투척 지점을 중심으로 3X3 범위에 2의 데미지를 준다. 덩치값 하는 넓은 범위.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;05&quot;{###}&quot;살쪘닭&quot;{###}2{###}2{###}0{###}32{###}6{###}&quot;사료 먹으면서 누워서 예능 보는 게 낙인 닭. 굉장히 포동포동해 복날 1등 재료감이었는데 뭐 없던 일이 되었다. 투척 지점을 중심으로 3X3 범위에 2의 데미지를 준다. 덩치값 하는 넓은 범위.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="8762810998809135" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;06&quot;{###}&quot;짜릿하닭&quot;{###}2{###}1{###}0{###}35{###}2{###}&quot;과학의 발달은 사실 인간에게만 도움을 준 것이 아니었다. 상품 가치가 없다고 버려지는 닭들은 사실 지하에서 사이보그로 개조되고 있었다! 이 녀석의 알에서는 짜릿짜릿한 빔이 나가서 투척한 라인 전체에 1의 데미지를 준다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;06&quot;{###}&quot;짜릿하닭&quot;{###}2{###}1{###}0{###}35{###}2{###}&quot;상품 가치가 없다고 버려지는 닭들은 사실 지하에서 사이보그로 개조되고 있었다! 닭들의 기술력은 세계제이이일!이 녀석의 알에서는 짜릿짜릿한 빔이 나가서 투척한 라인 전체에 1의 데미지를 준다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="2948965678833344" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;07&quot;{###}&quot;콩이닭&quot;{###}2{###}2{###}0{###}22{###}2{###}&quot;콩 사이즈로 작은 닭. 몸이 작아서 그런지 겁이 많아 두 닭이 항상 붙어다닌다. 사실 사료로 하루 두 끼 콩만 먹으며 2년을 자란 쌍둥이. 알이 아니라 콩을 낳는다는 소문도. 2의 데미지를 2번 준다. 누군가 생각난다면 그건 오해다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;07&quot;{###}&quot;콩이닭&quot;{###}2{###}2{###}0{###}22{###}2{###}&quot;몸이 작고 겁이 많아 두 닭이 항상 붙어다닌다. 사실 사료로 하루 두 끼 콩만 먹으며 2년을 자란 쌍둥이. 알이 아니라 콩을 낳는다는 소문도. 2의 데미지를 2번 준다. 누군가 생각난다면 그건 오해다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7926202976699681" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;08&quot;{###}&quot;고스트닭&quot;{###}1{###}6{###}0{###}30{###}4{###}&quot;전직 특수요원이라고 주장하며 항상 보호장구를 착용하고 다니는 닭이다. 투척 지점에 6이라는 큰 데미지를 주는 걸 보니 헛 말은 아닌 듯. 혹자에 의하면 한여름에 옷 아래로 떨어지는 육수가 맛이 일품이라고 한다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;08&quot;{###}&quot;고스트닭&quot;{###}1{###}6{###}0{###}30{###}4{###}&quot;전직 특수요원이라고 주장하며 항상 저렇게 입고 다니는 닭이다. 투척 지점에 6이라는 큰 데미지를 주는 걸 보니 헛 말은 아닌 듯. 혹자에 의하면 한여름에 옷 아래로 떨어지는 육수가 맛이 일품이라고 한다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7341198115872631" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;09&quot;{###}&quot;독알이닭&quot;{###}2{###}2{###}3{###}35{###}3{###}&quot;어려서 독이 든 먹이를 실수로 먹고 항상 입냄새가 난다고 한다. 이 녀석의 독달걀은 투척 지점에 2의 데미지를 주고 3턴 동안 그곳에 박혀있다. 독달걀은 턴마다 그 자리에 2의 데미지를 준다. 냄새가 베면 3일을 가는 무서운 닭.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;09&quot;{###}&quot;독알이닭&quot;{###}2{###}2{###}3{###}35{###}3{###}&quot;병아리 때 상한 사료를 먹곤 평생 앓고 있다. 이 녀석의 독달걀은 투척 지점에 2의 데미지를 주고 3턴 동안 그곳에 박혀있다. 독달걀은 턴마다 그 자리에 2의 데미지를 준다. 사실 독이 아니라 악취인 듯.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="545245027899626" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;10&quot;{###}&quot;기둥이닭&quot;{###}2{###}2{###}3{###}42{###}3{###}&quot;투척 지점에 2의 데미지를 주고, 칸이 비었을 경우 골렘을 막는 타워를 짓는다. 타워는 가까이 지어질수록, 또 파워샷이면  튼튼하다. 사실 타워 안에는 소중한 물건을 보관하고 있다고 한다. 예를 들면 야한 잡지라던가. 그런데 야한 닭은 무슨 닭이지.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;10&quot;{###}&quot;기둥이닭&quot;{###}2{###}2{###}3{###}42{###}3{###}&quot;투척 지점에 2의 데미지를 주고, 칸이 비었을 경우 골렘을 막는 타워를 짓는다. 타워는 가까이 지어질수록, 또 파워샷이면  튼튼하다. 타워 안에는 야한 잡지를 보관하고 있다고 한다. 야한 닭은 무슨 닭일까.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="4834320340368416" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;11&quot;{###}&quot;반죽었닭&quot;{###}3{###}&quot;?&quot;{###}0{###}45{###}4{###}&quot;털이 반 쯤 뽑혀있다. 원래 겁나 잘생긴 닭이었는데 복날에 친구들과 놀러나갔다가 잡혀 죽을 뻔했다고 한다. 안습해진 외모에서 나오는 절망은 알 투척 지점에 있는 적의 체력을 반으로 깎는다. 역시 사람 조심 안하면 훅간다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;11&quot;{###}&quot;반죽었닭&quot;{###}3{###}&quot;?&quot;{###}0{###}45{###}4{###}&quot;털이 반쯤 뽑혀있다. 원래 겁나 잘생긴 닭이었는데 복날에 친구들과 놀러나갔다가 죽을 뻔했다고. 트라우마에서 나오는 절망은 알 투척 지점에 있는 적의 체력을 반으로 깎는다. 복날엔 조심 또 조심.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7977997339212036" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;12&quot;{###}&quot;못말린닭&quot;{###}5{###}2{###}0{###}50{###}7{###}&quot;멋진 후드패션 만큼이나 랩을 잘한다. 이 게임의 배경음악을 녹음했는데, 개발자의 증언에 따르면 한 번의 실수도 없이 녹음을 끝마쳤다고. 투척 지점에 2의 데미지를 주고, 적을 파괴했을 경우 바로 장전이 된다. 아 그래, 부업으로 암살을 한다. &quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;12&quot;{###}&quot;못말린닭&quot;{###}5{###}2{###}0{###}50{###}7{###}&quot;멋진 후드패션 만큼이나 랩을 잘한다. 이 게임의 배경음악을 녹음했는데, 한 번의 실수도 없이 녹음을 끝마쳤다. 투척 지점에 2의 데미지를 주고, 적을 파괴했을 경우 바로 장전이 된다. 부업으로는 암살을 한다. &quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1610,6 +1650,33 @@
                                             <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="7969955249937022">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="7092064376721393" type="System">
+                                                    <param id="0" name="First value">henSelection.Count</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="3249667167445914" type="henButton">
+                                                    <param id="0" name="Instance variable">buttonID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">henSelection.select</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="1321031016058229" type="henButton">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="4558233349213262" type="Function">
+                                                    <param id="0" name="Name">&quot;showAtkRange&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <comment>1 : Aimed. 여기에 발사처리.</comment>
                                 <event-block sid="1725005376719542">
@@ -1717,6 +1784,29 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="2530398401798012">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="6284931659510372" type="System">
+                                    <param id="0" name="Object">launchLine</param>
+                                    <param id="1" name="Expression">launchLine.UID</param>
+                                    <param id="2" name="Comparison">1</param>
+                                    <param id="3" name="Value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="4325940076783875" type="launchLine">
+                                    <param id="0" name="Instance variable">aimed</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="4959802153455198" type="launchLine">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="6593406695712071" type="launchLine">
+                                    <param id="0" name="Width">self.originalWidth</param>
+                                    <param id="1" name="Height">self.originalHeight</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="569267226916143">
                             <conditions>
                                 <condition id="-14" name="Pick by unique ID" sid="2134730700449827" type="henButton">
@@ -1736,6 +1826,7 @@
                                     <param id="0" name="Object">henButton</param>
                                     <param id="1" name="Image point (optional)">0</param>
                                 </action>
+                                <action id="-9" name="Destroy" sid="8146343643605123" type="target" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -1798,37 +1889,37 @@
                         <comment>닭 상하 움직임</comment>
                         <event-block sid="2039038527696343">
                             <conditions>
-                                <condition id="-2" name="Compare Y" sid="6289216724518005" type="cannon">
+                                <condition id="-2" name="Compare Y" sid="6289216724518005" type="shooter">
                                     <param id="0" name="Comparison">5</param>
                                     <param id="1" name="Y co-ordinate">Function.Call(&quot;launchLineYSet&quot;,Function.Param(3))</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="4509983605764938" type="cannon">
+                                <action id="4" name="Set animation" sid="4509983605764938" type="shooter">
                                     <param id="0" name="Animation">&quot;MovingDown&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
-                                <action behavior="MoveTo" id="4" name="Move to XY" sid="8832281095046955" type="cannon">
+                                <action behavior="MoveTo" id="4" name="Move to XY" sid="8832281095046955" type="shooter">
                                     <param id="0" name="X">Self.X</param>
-                                    <param id="1" name="Y">Function.Call(&quot;launchLineYSet&quot;,Function.Param(3))</param>
+                                    <param id="1" name="Y">Function.Call(&quot;launchLineYSet&quot;,Function.Param(3))+self.Height/2</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="585644768178944">
                             <conditions>
-                                <condition id="-2" name="Compare Y" sid="8096267803375708" type="cannon">
+                                <condition id="-2" name="Compare Y" sid="8096267803375708" type="shooter">
                                     <param id="0" name="Comparison">2</param>
                                     <param id="1" name="Y co-ordinate">Function.Call(&quot;launchLineYSet&quot;,Function.Param(3))</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="1004266314860941" type="cannon">
+                                <action id="4" name="Set animation" sid="1004266314860941" type="shooter">
                                     <param id="0" name="Animation">&quot;MovingUp&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
-                                <action behavior="MoveTo" id="4" name="Move to XY" sid="2685269742587114" type="cannon">
+                                <action behavior="MoveTo" id="4" name="Move to XY" sid="2685269742587114" type="shooter">
                                     <param id="0" name="X">Self.X</param>
-                                    <param id="1" name="Y">Function.Call(&quot;launchLineYSet&quot;,Function.Param(3))</param>
+                                    <param id="1" name="Y">Function.Call(&quot;launchLineYSet&quot;,Function.Param(3))+self.Height/2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1858,22 +1949,52 @@
                                 <action id="-41" name="Wait for signal" sid="8207646688770751" type="System">
                                     <param id="0" name="Tag">&quot;cannonMoved&quot;</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="5066678731912781" type="cannon">
+                                <action id="4" name="Set animation" sid="5066678731912781" type="shooter">
                                     <param id="0" name="Animation">&quot;Default&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
-                                <action behavior="RotateTo" id="4" name="Rotate to angle" sid="6491002975004423" type="cannon">
-                                    <param id="0" name="Angle">saveAng</param>
+                                <action behavior="RotateTo" id="1" name="Set maximum speed" sid="7241972751772557" type="shooter">
+                                    <param id="0" name="Max speed">60</param>
+                                </action>
+                                <action behavior="RotateTo" id="4" name="Rotate to angle" sid="6491002975004423" type="shooter">
+                                    <param id="0" name="Angle">saveAng+45</param>
+                                    <param id="1" name="Clockwise">2</param>
+                                </action>
+                                <action id="-41" name="Wait for signal" sid="94899804244097" type="System">
+                                    <param id="0" name="Tag">&quot;rotateComplete&quot;</param>
+                                </action>
+                                <action behavior="RotateTo" id="1" name="Set maximum speed" sid="6951637577518129" type="shooter">
+                                    <param id="0" name="Max speed">300</param>
+                                </action>
+                                <action behavior="RotateTo" id="4" name="Rotate to angle" sid="9244188419257879" type="shooter">
+                                    <param id="0" name="Angle">saveAng+90</param>
                                     <param id="1" name="Clockwise">2</param>
                                 </action>
                                 <action id="-41" name="Wait for signal" sid="6751511349181758" type="System">
                                     <param id="0" name="Tag">&quot;rotateComplete&quot;</param>
                                 </action>
+                                <action id="-9" name="Destroy" sid="3347010520044676" type="target" />
                                 <action id="-3" name="Create object" sid="5925763060550796" type="System">
                                     <param id="0" name="Object to create">eggBullet</param>
                                     <param id="1" name="Layer">&quot;effect&quot;</param>
-                                    <param id="2" name="X">cannon.ImagePointX(&quot;launchPoint&quot;)</param>
-                                    <param id="3" name="Y">cannon.ImagePointY(&quot;launchPoint&quot;)</param>
+                                    <param id="2" name="X">shooter.ImagePointX(&quot;launchPoint&quot;)</param>
+                                    <param id="3" name="Y">shooter.ImagePointY(&quot;launchPoint&quot;)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="1464968754598449" type="System">
+                                    <param id="0" name="Object to create">eggLaunchEffect</param>
+                                    <param id="1" name="Layer">&quot;golem&quot;</param>
+                                    <param id="2" name="X">shooter.ImagePointX(&quot;launchPoint&quot;)</param>
+                                    <param id="3" name="Y">shooter.ImagePointY(&quot;launchPoint&quot;)</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="8782430514155173" type="eggLaunchEffect">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Object">shooter</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="439388023663387" type="eggLaunchEffect">
+                                    <param id="0" name="Angle">saveAng+90</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="5215993454660795" type="eggBullet">
+                                    <param id="0" name="Scale">0.7</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="5089967527608578" type="eggBullet">
                                     <param id="0" name="Animation">left(henSelected,2)&amp;&quot;_&quot;</param>
@@ -1905,7 +2026,7 @@
                                     <param id="0" name="Gravity">1000</param>
                                 </action>
                                 <action id="-24" name="Move to top" sid="4023753864354215" type="eggBullet" />
-                                <action behavior="RotateTo" id="4" name="Rotate to angle" sid="676711663241181" type="cannon">
+                                <action behavior="RotateTo" id="4" name="Rotate to angle" sid="676711663241181" type="shooter">
                                     <param id="0" name="Angle">0</param>
                                     <param id="1" name="Clockwise">2</param>
                                 </action>
@@ -1939,8 +2060,10 @@
                                     <sub-events>
                                         <event-block sid="655310421575159">
                                             <conditions>
-                                                <condition id="1" name="Is overlapping another object" sid="8271921944679025" type="henCage">
-                                                    <param id="0" name="Object">henButton</param>
+                                                <condition id="-15" name="Pick nearest/furthest" sid="8271921944679025" type="henCage">
+                                                    <param id="0" name="Which">0</param>
+                                                    <param id="1" name="X">henButton.X</param>
+                                                    <param id="2" name="Y">henButton.Y</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -2167,7 +2290,7 @@
                                                                 <action id="0" name="Play" sid="1695119422253258" type="Audio">
                                                                     <param id="0" name="Audio file">henFeed</param>
                                                                     <param id="2" name="Loop">0</param>
-                                                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))+50</param>
+                                                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                 </action>
                                                                 <action id="-9" name="Destroy" sid="9499785047740629" type="henSelection" />
@@ -2175,8 +2298,10 @@
                                                             <sub-events>
                                                                 <event-block sid="285576116072984">
                                                                     <conditions>
-                                                                        <condition id="1" name="Is overlapping another object" sid="9803480853178478" type="henCage">
-                                                                            <param id="0" name="Object">henButton</param>
+                                                                        <condition id="-15" name="Pick nearest/furthest" sid="1615243815497625" type="henCage">
+                                                                            <param id="0" name="Which">0</param>
+                                                                            <param id="1" name="X">henButton.X</param>
+                                                                            <param id="2" name="Y">henButton.Y</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -2192,11 +2317,64 @@
                                                                 </event-block>
                                                             </sub-events>
                                                         </event-block>
+                                                        <comment>부족할 때</comment>
                                                         <event-block sid="7741127979556559">
                                                             <conditions>
                                                                 <condition id="-22" name="Else" sid="2265041874194811" type="System" />
                                                             </conditions>
-                                                            <actions />
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="5605400640544966" type="Audio">
+                                                                    <param id="0" name="Audio file">cluck</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set font color" sid="2869968079848925" type="foodText">
+                                                                    <param id="0" name="Color">rgb(230, 0, 0)</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="3781584287103389" type="System">
+                                                                    <param id="0" name="Seconds">0.2</param>
+                                                                </action>
+                                                                <action id="4" name="Set font color" sid="3105628656044255" type="foodText">
+                                                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="882544660866174" type="System">
+                                                                    <param id="0" name="Seconds">0.2</param>
+                                                                </action>
+                                                                <action id="4" name="Set font color" sid="4559161385089146" type="foodText">
+                                                                    <param id="0" name="Color">rgb(230, 0, 0)</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="5559390458252552" type="System">
+                                                                    <param id="0" name="Seconds">0.2</param>
+                                                                </action>
+                                                                <action id="4" name="Set font color" sid="8646690639083571" type="foodText">
+                                                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="9300661453289215" type="System">
+                                                                    <param id="0" name="Seconds">0.2</param>
+                                                                </action>
+                                                                <action id="4" name="Set font color" sid="6757477168449834" type="foodText">
+                                                                    <param id="0" name="Color">rgb(230, 0, 0)</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="1087141263713882" type="System">
+                                                                    <param id="0" name="Seconds">0.2</param>
+                                                                </action>
+                                                                <action id="4" name="Set font color" sid="1410802367887746" type="foodText">
+                                                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="8867469495969516" type="System">
+                                                                    <param id="0" name="Seconds">0.2</param>
+                                                                </action>
+                                                                <action id="4" name="Set font color" sid="6064800765616017" type="foodText">
+                                                                    <param id="0" name="Color">rgb(230, 0, 0)</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="7246227140969562" type="System">
+                                                                    <param id="0" name="Seconds">0.2</param>
+                                                                </action>
+                                                                <action id="4" name="Set font color" sid="7560939834080641" type="foodText">
+                                                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                                                </action>
+                                                            </actions>
                                                         </event-block>
                                                     </sub-events>
                                                 </event-block>
@@ -2335,7 +2513,7 @@
                             </conditions>
                             <actions>
                                 <action id="5" name="Set frame" sid="7395843611939887" type="golem">
-                                    <param id="0" name="Frame number">golemMovingFrameStart</param>
+                                    <param id="0" name="Frame number">golemMovingFrame</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="749035880680649" type="System">
                                     <param id="0" name="Object to create">golemMovingSmoke</param>
@@ -2503,8 +2681,10 @@
                                             <sub-events>
                                                 <event-block sid="2479503031969621">
                                                     <conditions>
-                                                        <condition id="1" name="Is overlapping another object" sid="9393089760131761" type="henCage">
-                                                            <param id="0" name="Object">henButton</param>
+                                                        <condition id="-15" name="Pick nearest/furthest" sid="8014688203572667" type="henCage">
+                                                            <param id="0" name="Which">0</param>
+                                                            <param id="1" name="X">henButton.X</param>
+                                                            <param id="2" name="Y">henButton.Y</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
@@ -2716,7 +2896,7 @@
                                                     <param id="1" name="Value">10</param>
                                                 </action>
                                                 <action id="5" name="Set frame" sid="3293386692571911" type="golem">
-                                                    <param id="0" name="Frame number">2</param>
+                                                    <param id="0" name="Frame number">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -2758,7 +2938,7 @@
                                             </conditions>
                                             <actions />
                                             <sub-events>
-                                                <comment>빈자리라면. golem moving frame으로 바꿔주기</comment>
+                                                <comment>빈자리라면. golem moving frame으로 바꿔주기. golemStepY는 골렘 발이 타일 중점에서 내려온 정도.</comment>
                                                 <variable constant="0" name="golemStepY" sid="8759568643862649" static="0" type="number">20</variable>
                                                 <event-block sid="9983376941578209">
                                                     <conditions>
@@ -2787,7 +2967,7 @@
                                                         </action>
                                                         <action id="0" name="Call function" sid="2918510670285092" type="Function">
                                                             <param id="0" name="Name">&quot;golemMovesToXY&quot;</param>
-                                                            <param id="1" name="Parameter {n}">golem.UID{###}launchLine.X{###}launchLine.Y+golemStepY</param>
+                                                            <param id="1" name="Parameter {n}">golem.UID{###}launchLine.X{###}launchLine.Y+golemStepY-(golem.ImagePointY(&quot;Feet&quot;)-golem.Y)</param>
                                                         </action>
                                                         <action id="0" name="Call function" sid="1366243373838252" type="Function">
                                                             <param id="0" name="Name">&quot;launchLineOccupyAtXY&quot;</param>
@@ -2824,11 +3004,12 @@
                     <actions />
                     <sub-events>
                         <variable constant="0" name="golemStepY" sid="1485361630656812" static="0" type="number">20</variable>
+                        <comment>golemStepY는 골렘 발이 타일 중점에서 내려온 정도.</comment>
                         <event-block sid="8135116056559687">
                             <conditions />
                             <actions>
-                                <action id="-3" name="Create object" sid="5307147849887869" type="System">
-                                    <param id="0" name="Object to create">golemCreateEffect</param>
+                                <action id="-3" name="Create object" sid="9005117926587185" type="System">
+                                    <param id="0" name="Object to create">golemSummon</param>
                                     <param id="1" name="Layer">&quot;golem&quot;</param>
                                     <param id="2" name="X">Function.Call(&quot;launchLineXSet&quot;,int(Function.Param(1)))</param>
                                     <param id="3" name="Y">Function.Call(&quot;launchLineYSet&quot;,int(Function.Param(2)))</param>
@@ -2837,11 +3018,25 @@
                                     <param id="0" name="Object to create">golem</param>
                                     <param id="1" name="Layer">&quot;golem&quot;</param>
                                     <param id="2" name="X">Function.Call(&quot;launchLineXSet&quot;,int(Function.Param(1)))</param>
-                                    <param id="3" name="Y">Function.Call(&quot;launchLineYSet&quot;,int(Function.Param(2)))+golemStepY</param>
+                                    <param id="3" name="Y">Function.Call(&quot;launchLineYSet&quot;,int(Function.Param(2)))</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="283047382133011" type="golem">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.8</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="1001150660043823" type="golem">
                                     <param id="0" name="Animation">Function.Param(0)</param>
                                     <param id="1" name="From">1</param>
+                                </action>
+                                <action id="6" name="Set speed" sid="8523615252582115" type="golem">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="6166137994623902" type="golem">
+                                    <param id="0" name="Frame number">golemIdleFrame</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="8038617178602943" type="golem">
+                                    <param id="0" name="Y">Function.Call(&quot;launchLineYSet&quot;,int(Function.Param(2)))-(self.ImagePointY(&quot;Feet&quot;)-self.Y)+golemStepY</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="6725641894567307" type="golem">
                                     <param id="0" name="Instance variable">hp</param>
@@ -2903,7 +3098,16 @@
                                     <param id="0" name="Where">0</param>
                                     <param id="1" name="Object">golemHpBarFrame</param>
                                 </action>
-                                <action id="-24" name="Move to top" sid="8419903839462323" type="golemCreateEffect" />
+                                <action id="0" name="Call function" sid="516781907368154" type="Function">
+                                    <param id="0" name="Name">&quot;golemHpBarLocateX&quot;</param>
+                                    <param id="1" name="Parameter {n}">golem.UID</param>
+                                </action>
+                                <action id="6" name="Set speed" sid="3379608306734349" type="golem">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="9596063307197477" type="golem">
+                                    <param id="0" name="Frame number">golemIdleFrame</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="5859681081737402">
@@ -3366,7 +3570,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="1031086211408159" type="Function">
                                     <param id="0" name="Name">&quot;explodeEffectCreate&quot;</param>
-                                    <param id="1" name="Parameter {n}">eggBullet.targetX+2{###}eggBullet.targetY+0</param>
+                                    <param id="1" name="Parameter {n}">eggBullet.targetX-1{###}eggBullet.targetY+0</param>
                                 </action>
                                 <action id="0" name="Play" sid="9937742210961621" type="Audio">
                                     <param id="0" name="Audio file">02boom</param>
@@ -3430,7 +3634,7 @@
                                                 <condition id="-7" name="Compare instance variable" sid="8524166402113958" type="golem">
                                                     <param id="0" name="Instance variable">posX</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">eggBullet.targetX+2</param>
+                                                    <param id="2" name="Value">eggBullet.targetX-1</param>
                                                 </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="1023782684160458" type="golem">
                                                     <param id="0" name="Instance variable">posY</param>
@@ -4629,8 +4833,10 @@
                                     <sub-events>
                                         <event-block sid="3227691913680568">
                                             <conditions>
-                                                <condition id="1" name="Is overlapping another object" sid="9322257281975331" type="henCage">
-                                                    <param id="0" name="Object">henButton</param>
+                                                <condition id="-15" name="Pick nearest/furthest" sid="8168447214527681" type="henCage">
+                                                    <param id="0" name="Which">0</param>
+                                                    <param id="1" name="X">henButton.X</param>
+                                                    <param id="2" name="Y">henButton.Y</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -5038,11 +5244,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Spawn another object" sid="9879364250131893" type="golem">
-                                            <param id="0" name="Object">effectShield</param>
-                                            <param id="1" name="Layer">&quot;effect&quot;</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
                                         <action id="0" name="Spawn another object" sid="9201120520490726" type="golem">
                                             <param id="0" name="Object">damageText</param>
                                             <param id="1" name="Layer">&quot;effect&quot;</param>
@@ -5065,6 +5266,40 @@
                                             <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <comment>5번 11번 골렘은 방패 유무 프레임이 있으므로 따로 처리.</comment>
+                                        <event-block any="1" sid="770861374872921">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="1012025593565915" type="golem">
+                                                    <param id="0" name="Instance variable">kind</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;05&quot;</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="1390535923031002" type="golem">
+                                                    <param id="0" name="Instance variable">kind</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;11&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="5458515613609347">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="4587138434848241" type="golem">
+                                                            <param id="0" name="Instance variable">invulnerable</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="5" name="Set frame" sid="3135704280947996" type="golem">
+                                                            <param id="0" name="Frame number">golemIdleFrame+2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="8209102401486227">
                                     <conditions>
@@ -5608,6 +5843,420 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>showAtkRange() : launchLine 눌렀을 때 공격범위 표시</comment>
+                <event-block sid="756996699684412">
+                    <conditions>
+                        <condition id="0" name="On function" sid="1344534776024341" type="Function">
+                            <param id="0" name="Name">&quot;showAtkRange&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2203615535521014">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="4140686728787476" type="System">
+                                    <param id="0" name="Object">target</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="9172774288101285" type="target" />
+                            </actions>
+                        </event-block>
+                        <variable constant="0" name="kind" sid="5704483488124882" static="0" type="text"></variable>
+                        <variable constant="0" name="x" sid="8715831510887092" static="0" type="number">0</variable>
+                        <variable constant="0" name="y" sid="2962552310953248" static="0" type="number">0</variable>
+                        <event-block sid="9481842419864958">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="7098910016304529" type="System">
+                                    <param id="0" name="First value">henSelection.Count</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="8508051982065751" type="launchLine">
+                                    <param id="0" name="Instance variable">aimed</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9510737226983893" type="System">
+                                    <param id="0" name="Variable">x</param>
+                                    <param id="1" name="Value">launchLine.launchLineIDX</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3455877254104769" type="System">
+                                    <param id="0" name="Variable">y</param>
+                                    <param id="1" name="Value">launchLine.launchLineIDY</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="1212633623539935">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3198858942043912" type="henSelection">
+                                            <param id="0" name="Instance variable">select</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="697455862540997" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Value">left(henType0,2)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4024369639284251">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="8502360211444682" type="henSelection">
+                                            <param id="0" name="Instance variable">select</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="9155243721314641" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Value">left(henType0,2)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6026500715989564">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="149464246324784" type="henSelection">
+                                            <param id="0" name="Instance variable">select</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="9381444428808601" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Value">left(henType1,2)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4301781453564911">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="6518953333434406" type="henSelection">
+                                            <param id="0" name="Instance variable">select</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="8329059604682816" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Value">left(henType2,2)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9109179739177044">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7410811211084" type="henSelection">
+                                            <param id="0" name="Instance variable">select</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2947538367915868" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Value">left(henType3,2)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4323805730439449">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="2977461877757071" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;01&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="8376751544748026" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1040283775485803">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="176186645939136" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;02&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="7108968150088402" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="6876435185842979" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x+1{###}y</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="1286899456114271" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x-1{###}y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3428269081895976">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="3722396358851276" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;03&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="267182083037804" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="7877224465086548" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y+1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="8368080304371564" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5228585118120834">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="3581801302643617" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;04&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="7035092908826774" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="5059065419394397" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y+1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="6463734314161666" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y-1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="5664704410948505" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x+1{###}y</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="3959202540301338" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x-1{###}y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8371991110327512">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="1339434540158115" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;05&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="8876320108015972" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="5475529730733952" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y+1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="4776190014310941" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y-1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="4806164975534043" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x+1{###}y</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="1164042387563236" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x+1{###}y+1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="1354662384958178" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x+1{###}y-1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="8720734764554835" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x-1{###}y</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="5965675340194364" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x-1{###}y+1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="7998307738688823" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x-1{###}y-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6881522860730705">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="4630805243564183" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;06&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="8544961322597829">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="4714575286168293" type="System">
+                                                    <param id="0" name="Name">&quot;&quot;</param>
+                                                    <param id="1" name="Start index">-8</param>
+                                                    <param id="2" name="End index">8</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="2336589539114822" type="Function">
+                                                    <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                                    <param id="1" name="Parameter {n}">x+loopindex{###}y</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="1646074422649142">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="6630090801935637" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;07&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="4471369608563024" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4471132965705988">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="9568476779139328" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;08&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="1806031831363202" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="713255954673383">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="8642732174595851" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;09&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="1546275335907073" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5063174138294572">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="7337939602396804" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;10&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="9271520477379567" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6297727902498664">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="5442083946079924" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;11&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="6878935958236824" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9977228915825595">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="3585104482848087" type="System">
+                                            <param id="0" name="Variable">kind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;12&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="6321345901478789" type="Function">
+                                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">x{###}y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>targetCreate(launchline.x, launchline.y) : showAtkRange함수에 쓰이는 것.</comment>
+                <event-block sid="6145833563919549">
+                    <conditions>
+                        <condition id="0" name="On function" sid="2090918164313942" type="Function">
+                            <param id="0" name="Name">&quot;targetCreate&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="17814990709661">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4081638589386876" type="launchLine">
+                                    <param id="0" name="Instance variable">launchLineIDX</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(0)</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="5729867220712125" type="launchLine">
+                                    <param id="0" name="Instance variable">launchLineIDY</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="8223479731088241" type="launchLine">
+                                    <param id="0" name="Object">target</param>
+                                    <param id="1" name="Layer">&quot;frontBg&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9857192413280307" type="target">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="4234025495338973" title="stageView">
@@ -5756,6 +6405,10 @@
                                 </action>
                                 <action id="0" name="Set text" sid="8247679354070881" type="stageInfoText">
                                     <param id="0" name="Text">WebStorage.LocalValue(&quot;chapter&quot;)&amp;&quot;번 작전구역입니다.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="4609556823159448" type="Function">
+                                    <param id="0" name="Name">&quot;stageStartButtonOn&quot;</param>
+                                    <param id="1" name="Parameter {n}">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -6053,6 +6706,10 @@
                                                     <param id="0" name="Name">&quot;stageButtonSelectedEffect&quot;</param>
                                                     <param id="1" name="Parameter {n}"></param>
                                                 </action>
+                                                <action id="0" name="Call function" sid="119175219688366" type="Function">
+                                                    <param id="0" name="Name">&quot;stageStartButtonOn&quot;</param>
+                                                    <param id="1" name="Parameter {n}">0</param>
+                                                </action>
                                             </actions>
                                         </event-block>
                                         <comment>안잠겨있으면</comment>
@@ -6091,6 +6748,10 @@
                                                             <param id="0" name="Where">1</param>
                                                             <param id="1" name="Object">skyLeftCover</param>
                                                         </action>
+                                                        <action id="0" name="Call function" sid="2598365787388137" type="Function">
+                                                            <param id="0" name="Name">&quot;stageStartButtonOn&quot;</param>
+                                                            <param id="1" name="Parameter {n}">0</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <comment>옮기고 바꾸고 텍스트!</comment>
@@ -6116,6 +6777,10 @@
                                                         <action id="0" name="Call function" sid="9454760701560319" type="Function">
                                                             <param id="0" name="Name">&quot;stageButtonSelectedEffect&quot;</param>
                                                             <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="3876745502448335" type="Function">
+                                                            <param id="0" name="Name">&quot;stageStartButtonOn&quot;</param>
+                                                            <param id="1" name="Parameter {n}">1</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -6177,41 +6842,46 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>heartRefresh() : 하트창 리프레쉬 및 하트 5일때 timeLeftToCharge를 HEARTCHARGETIME으로 유지.</comment>
-                <event-block sid="1280711039804915">
+                <comment>stageStartButtonOn(1:on, 0:off) : 말 그대로.</comment>
+                <event-block sid="2703861575217788">
                     <conditions>
-                        <condition id="0" name="On function" sid="1681693533879797" type="Function">
-                            <param id="0" name="Name">&quot;heartRefresh&quot;</param>
+                        <condition id="0" name="On function" sid="9949760338216054" type="Function">
+                            <param id="0" name="Name">&quot;stageStartButtonOn&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="2093891096672178">
-                            <conditions />
-                            <actions>
-                                <action id="5" name="Set frame" sid="8080625853019968" type="heart">
-                                    <param id="0" name="Frame number">int(WebStorage.LocalValue(&quot;heart&quot;))</param>
-                                </action>
-                                <action id="0" name="Set text" sid="9395775391431727" type="heartTimer">
-                                    <param id="0" name="Text">&quot;다음 달걀 충전까지 - &quot;&amp;zeropad(floor(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))/60),2) &amp;&quot; : &quot;&amp; zeropad(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))%60,2)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="5616145669518222">
+                        <event-block sid="106077073858575">
                             <conditions>
-                                <condition id="7" name="Compare key value (as number)" sid="3481107751215462" type="WebStorage">
-                                    <param id="0" name="Key">&quot;heart&quot;</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">5</param>
+                                <condition id="-8" name="Compare two values" sid="974414602916814" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Set local value" sid="5365313183163935" type="WebStorage">
-                                    <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
-                                    <param id="1" name="Value">HEARTCHARGETIME</param>
+                                <action id="4" name="Set animation" sid="8502548928737051" type="stageStartButton">
+                                    <param id="0" name="Animation">&quot;Off&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
-                                <action id="0" name="Set text" sid="7822477068219139" type="heartTimer">
-                                    <param id="0" name="Text">&quot;완전 준비완료!&quot;</param>
+                                <action id="-13" name="Set boolean" sid="6202343939440335" type="stageStartButton">
+                                    <param id="0" name="Instance variable">On</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2966209418196833">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="7784395344970511" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="2669611418971301" type="stageStartButton">
+                                    <param id="0" name="Animation">&quot;On&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="5537232863986929" type="stageStartButton">
+                                    <param id="0" name="Instance variable">On</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>

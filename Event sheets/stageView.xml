@@ -6,8 +6,8 @@
         <include>function</include>
         <comment>mapState&#x0D;&#x0A;0 : idle&#x0D;&#x0A;1 : moving</comment>
         <variable constant="0" name="mapState" sid="1527712285530095" static="0" type="number">0</variable>
-        <variable constant="0" name="leftLimit" sid="2442168118569261" static="0" type="number">200</variable>
-        <variable constant="0" name="rightLimit" sid="2656393535942194" static="0" type="number">1080</variable>
+        <variable constant="0" name="leftLimit" sid="2442168118569261" static="0" type="number">150</variable>
+        <variable constant="0" name="rightLimit" sid="2656393535942194" static="0" type="number">1130</variable>
         <comment>stageLimit : 현재 만들어진 최고 챕터</comment>
         <variable constant="0" name="chapterLimit" sid="4418648694302212" static="0" type="number">3</variable>
         <comment>맵의 left, right, middle point</comment>
@@ -241,6 +241,23 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="9050214072957216">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="9467203419424609" type="Touch" />
+                <condition id="2" name="Is playing" sid="5344294963210687" type="menuButtonPackage">
+                    <param id="0" name="Animation">&quot;Opened&quot;</param>
+                </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="3013726933658732" type="Touch">
+                    <param id="0" name="Object">menus</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="8590076997210405" type="Function">
+                    <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="9090920253699932">
             <conditions>
                 <condition id="3" name="On touched object" sid="5721463475334609" type="Touch">
@@ -295,6 +312,26 @@
             </conditions>
             <actions>
                 <action id="0" name="Call function" sid="1547016160221183" type="Function">
+                    <param id="0" name="Name">&quot;touchChapterStage&quot;</param>
+                    <param id="1" name="Parameter {n}">chapterStage.stage</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>없으면 selection 만들고 있으면 이동후 바꿈. 이미 선택된 경우 battleView로 감.</comment>
+        <event-block sid="569782566970507">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4578582752497959" type="Touch">
+                    <param id="0" name="Object">stageStartButton</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="8261872307277827" type="stageStartButton">
+                    <param id="0" name="Instance variable">On</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="722577787934625" type="chapterStage">
+                    <param id="0" name="Object">stageSelection</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="8355152851235618" type="Function">
                     <param id="0" name="Name">&quot;touchChapterStage&quot;</param>
                     <param id="1" name="Parameter {n}">chapterStage.stage</param>
                 </action>

@@ -305,7 +305,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>80</x>
+                        <x>90</x>
                         <y>640</y>
                         <z>0</z>
                         <width>155</width>
@@ -669,7 +669,7 @@
                         <y>588</y>
                         <z>0</z>
                         <width>570</width>
-                        <height>116</height>
+                        <height>126</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

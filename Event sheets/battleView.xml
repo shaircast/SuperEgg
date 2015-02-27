@@ -44,10 +44,8 @@
         <comment>gameState&#x0D;&#x0A;0: not Ready(stage starting point)&#x0D;&#x0A;1: waiting for shoot&#x0D;&#x0A;2: shooting ani &amp;calc&#x0D;&#x0A;3: check finish, move golem&#x0D;&#x0A;4: lost&#x0D;&#x0A;5: win</comment>
         <variable constant="0" name="gameState" sid="8756455970267743" static="0" type="number">0</variable>
         <comment>골렘 애니메이션 변수. 닭은 다 나뉘어져 있어서 할 필요 X.</comment>
-        <variable constant="0" name="golemIdleFrameStart" sid="6648952167722388" static="0" type="number">0</variable>
-        <variable constant="0" name="golemIdleFrameEnd" sid="5451193856181061" static="0" type="number">0</variable>
-        <variable constant="0" name="golemMovingFrameStart" sid="1026416991810081" static="0" type="number">1</variable>
-        <variable constant="0" name="golemMovingFrameEnd" sid="6504824674708408" static="0" type="number">1</variable>
+        <variable constant="0" name="golemIdleFrame" sid="6648952167722388" static="0" type="number">0</variable>
+        <variable constant="0" name="golemMovingFrame" sid="1026416991810081" static="0" type="number">1</variable>
         <comment>stage : 전 단계에서 정해서 오기. eggCollideGround는 몸풀기용, explode 화면 밑에 뒀다가 .</comment>
         <event-block sid="1239435629214137">
             <conditions>
@@ -122,15 +120,8 @@
                     <param id="0" name="Name">&quot;refreshFood&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="-3" name="Create object" sid="7557852152154248" type="System">
-                    <param id="0" name="Object to create">battleViewTimer</param>
-                    <param id="1" name="Layer">&quot;hud&quot;</param>
-                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
-                    <param id="3" name="Y">(ViewportLeft(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
-                </action>
                 <action id="-24" name="Move to top" sid="6452252867064236" type="skyLeftCover" />
                 <action id="-24" name="Move to top" sid="752473950550115" type="skyRightCover" />
-                <action id="2" name="Stop" sid="8197932946038776" type="battleViewTimer" />
                 <action id="6" name="Stop" sid="7268624510931513" type="Audio">
                     <param id="0" name="Tag">&quot;bgm&quot;</param>
                 </action>
@@ -167,8 +158,8 @@
             <actions>
                 <action id="-9" name="Destroy" sid="7365907661830559" type="skyLeftCover" />
                 <action id="-9" name="Destroy" sid="8583099189811968" type="skyRightCover" />
-                <action id="3" name="Start" sid="8118834679325163" type="battleViewTimer">
-                    <param id="0" name="From">0</param>
+                <action id="-42" name="Signal" sid="6624647980560456" type="System">
+                    <param id="0" name="Tag">&quot;gameStart&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -182,6 +173,9 @@
                 <action id="0" name="Call function" sid="9547377507028987" type="Function">
                     <param id="0" name="Name">&quot;loseHeart&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="5245552706710848" type="System">
+                    <param id="0" name="Seconds">0</param>
                 </action>
                 <action id="-2" name="Go to layout" sid="4124365629596598" type="System">
                     <param id="0" name="Layout">stageView</param>
@@ -234,6 +228,15 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>turnText fade 시작하면 Bg도 fade시작</comment>
+        <event-block sid="4333101639720241">
+            <conditions>
+                <condition behavior="Fade" id="2" name="On wait finished" sid="1279302919154793" type="turnText" />
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="6198296851674763" type="turnTextBg" />
+            </actions>
+        </event-block>
         <event-block sid="4163058616545128">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="8212883603671455" type="System">
@@ -244,14 +247,57 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="2072641300965937">
+                <event-block sid="4546806555166319">
                     <conditions>
-                        <condition id="4" name="On finished" sid="2926728926176212" type="battleViewTimer">
-                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="69202350419521" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="750231418469426" type="battleViewTimer" />
+                        <action id="-41" name="Wait for signal" sid="3169287103393367" type="System">
+                            <param id="0" name="Tag">&quot;gameStart&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6761927724213503" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5386795785603699" type="turnText" />
+                        <action id="-9" name="Destroy" sid="6243602235134889" type="turnTextBg" />
+                        <action id="-3" name="Create object" sid="7484950300840256" type="System">
+                            <param id="0" name="Object to create">turnTextBg</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                            <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                            <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2420233102949732" type="System">
+                            <param id="0" name="Object to create">turnText</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                            <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                            <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="141575438443148" type="turnText">
+                            <param id="0" name="Text">&quot;자, 준비하세요.&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="9626334364036093" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="350928578340853" type="turnText" />
+                        <action id="-9" name="Destroy" sid="2897433479413703" type="turnTextBg" />
+                        <action id="-3" name="Create object" sid="9241883540467704" type="System">
+                            <param id="0" name="Object to create">turnTextBg</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                            <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                            <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1273699874299522" type="System">
+                            <param id="0" name="Object to create">turnText</param>
+                            <param id="1" name="Layer">&quot;hud&quot;</param>
+                            <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                            <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9518152661145773" type="turnText">
+                            <param id="0" name="Text">&quot;가 봅시다!&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="5199612713672848" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
                         <action id="-9" name="Set value" sid="4526369778345731" type="System">
                             <param id="0" name="Variable">gameState</param>
                             <param id="1" name="Value">1</param>
@@ -296,6 +342,13 @@
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="2595796012120358" type="turnText" />
+                                <action id="-9" name="Destroy" sid="5900172957662543" type="turnTextBg" />
+                                <action id="-3" name="Create object" sid="4198784118366744" type="System">
+                                    <param id="0" name="Object to create">turnTextBg</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="2204532806106861" type="System">
                                     <param id="0" name="Object to create">turnText</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
@@ -306,7 +359,10 @@
                                     <param id="0" name="Text">&quot;제 &quot;&amp;turnCount&amp;&quot; 턴&quot;</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="6895879010959442" type="System">
-                                    <param id="0" name="Seconds">0.5</param>
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="830457119909324" type="turnButton">
+                                    <param id="0" name="Opacity">100</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="2983111357784312" type="System">
                                     <param id="0" name="Variable">flag</param>
@@ -416,6 +472,10 @@
                         <condition id="3" name="On touched object" sid="4222458757991138" type="Touch">
                             <param id="0" name="Object">turnButton</param>
                         </condition>
+                        <condition id="-10" name="Compare opacity" sid="7948077448171674" type="turnButton">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Opacity">100</param>
+                        </condition>
                         <condition id="-14" name="Compare variable" sid="6894589747538096" type="System">
                             <param id="0" name="Variable">flag</param>
                             <param id="1" name="Comparison">0</param>
@@ -431,10 +491,19 @@
                                     <param id="0" name="Name">&quot;poisonDealsDamage&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
+                                <action id="-9" name="Destroy" sid="9129842234859214" type="target" />
+                                <action id="-9" name="Destroy" sid="1535645955140993" type="henSelection" />
                                 <action id="-16" name="Wait" sid="724939789541473" type="System">
                                     <param id="0" name="Seconds">0</param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="2738618790041049" type="turnText" />
+                                <action id="-9" name="Destroy" sid="8919592852163806" type="turnTextBg" />
+                                <action id="-3" name="Create object" sid="4006432410285293" type="System">
+                                    <param id="0" name="Object to create">turnTextBg</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="6647081970919151" type="System">
                                     <param id="0" name="Object to create">turnText</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
@@ -449,6 +518,9 @@
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9020654699858968" type="turnButton">
+                                    <param id="0" name="Opacity">50</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="359202178077101" type="System">
                                     <param id="0" name="Variable">gameState</param>
@@ -527,13 +599,16 @@
                             <param id="0" name="Name">&quot;poisonDealsDamage&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
+                        <action id="-16" name="Set opacity" sid="8117008610749688" type="turnButton">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>touchLanchLine-&gt; lanchEgg-&gt; launchEggFromCannon에서 wait:rotateComplete 시그널 통과.&#x0D;&#x0A;알 충돌해서 파괴되고 데미지 계산 종료시 state3으로</comment>
                 <variable constant="0" name="flag" sid="5215577672228696" static="0" type="number">0</variable>
                 <event-block sid="6140712249679346">
                     <conditions>
-                        <condition behavior="RotateTo" id="0" name="On hit target angle" sid="1253585371808687" type="cannon" />
+                        <condition behavior="RotateTo" id="0" name="On hit target angle" sid="1253585371808687" type="shooter" />
                         <condition id="-14" name="Compare variable" sid="2067942526447437" type="System">
                             <param id="0" name="Variable">flag</param>
                             <param id="1" name="Comparison">0</param>
@@ -566,12 +641,21 @@
                 <comment> launchEggFromCannon 에서 wait:cannonMoved시그널.</comment>
                 <event-block sid="9321738984096278">
                     <conditions>
-                        <condition behavior="MoveTo" id="0" name="On hit target position" sid="5422583559325003" type="cannon" />
+                        <condition behavior="MoveTo" id="0" name="On hit target position" sid="5422583559325003" type="shooter" />
                     </conditions>
                     <actions>
                         <action id="-42" name="Signal" sid="5654119739274671" type="System">
                             <param id="0" name="Tag">&quot;cannonMoved&quot;</param>
                         </action>
+                    </actions>
+                </event-block>
+                <comment>연기 끝나면 끝.</comment>
+                <event-block sid="8527228339078953">
+                    <conditions>
+                        <condition id="5" name="On any finished" sid="1522946638017524" type="eggLaunchEffect" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6616737484432313" type="eggLaunchEffect" />
                     </actions>
                 </event-block>
                 <comment>폭파장면 끝나면 턴스킵. 타워닭 타워세우기.</comment>
@@ -683,7 +767,7 @@
                     </conditions>
                     <actions>
                         <action id="-2" name="Set Y" sid="2173170722995933" type="focus">
-                            <param id="0" name="Y">(eggBullet.Y*2+(ViewportBottom(&quot;hud&quot;)+ViewportTop(&quot;hud&quot;))/2)/3</param>
+                            <param id="0" name="Y">(eggBullet.Y*2.2+(ViewportBottom(&quot;hud&quot;)+ViewportTop(&quot;hud&quot;))/2)/3.2</param>
                         </action>
                         <action id="-8" name="Set angle" sid="8312750490682173" type="eggBulletBonusEffect">
                             <param id="0" name="Angle">eggBullet.Bullet.AngleOfMotion+180</param>
@@ -1021,6 +1105,13 @@
                                             <actions>
                                                 <action id="-9" name="Destroy" sid="7504517338911382" type="exitButton" />
                                                 <action id="-9" name="Destroy" sid="3377846873518647" type="turnText" />
+                                                <action id="-9" name="Destroy" sid="5142667022718575" type="turnTextBg" />
+                                                <action id="-3" name="Create object" sid="6439939409464221" type="System">
+                                                    <param id="0" name="Object to create">turnTextBg</param>
+                                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                                                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
+                                                </action>
                                                 <action id="-3" name="Create object" sid="2592883838880948" type="System">
                                                     <param id="0" name="Object to create">turnText</param>
                                                     <param id="1" name="Layer">&quot;hud&quot;</param>
@@ -1108,7 +1199,7 @@
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
                                                                 <action id="0" name="Set text" sid="3027582875508677" type="powerupHUD">
-                                                                    <param id="0" name="Text">right(stageReward,2)</param>
+                                                                    <param id="0" name="Text">&quot;+&quot;&amp;right(stageReward,2)</param>
                                                                 </action>
                                                                 <action id="-3" name="Set position" sid="7912593807350846" type="powerupHUD">
                                                                     <param id="0" name="X">henCage.X+powerupIndicatorX</param>
@@ -1270,6 +1361,13 @@
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="7687311389035968" type="turnText" />
+                                <action id="-9" name="Destroy" sid="6116448983528982" type="turnTextBg" />
+                                <action id="-3" name="Create object" sid="9628908257227078" type="System">
+                                    <param id="0" name="Object to create">turnTextBg</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="X">(ViewportLeft(&quot;hud&quot;)+ViewportRight(&quot;hud&quot;))/2</param>
+                                    <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="9300152071853948" type="System">
                                     <param id="0" name="Object to create">turnText</param>
                                     <param id="1" name="Layer">&quot;hud&quot;</param>
@@ -1277,7 +1375,7 @@
                                     <param id="3" name="Y">(ViewportTop(&quot;hud&quot;)+ViewportBottom(&quot;hud&quot;))/2</param>
                                 </action>
                                 <action behavior="Fade" id="3" name="Set wait time" sid="5695767622246263" type="turnText">
-                                    <param id="0" name="Wait time">4</param>
+                                    <param id="0" name="Wait time">20</param>
                                 </action>
                                 <action id="0" name="Set text" sid="9025137062099726" type="turnText">
                                     <param id="0" name="Text">&quot;망했어요!&quot;</param>
@@ -1310,33 +1408,40 @@
                             <param id="1" name="Parameter {n}">golem.UID</param>
                         </action>
                     </actions>
-                </event-block>
-                <comment>골렘 애니메이션 돌리기</comment>
-                <event-block sid="2516843951633541">
-                    <conditions>
-                        <condition id="3" name="Compare frame" sid="242504764429837" type="golem">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Number">golemIdleFrameEnd</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="5234546622167575" type="golem">
-                            <param id="0" name="Frame number">golemIdleFrameStart</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="7734544671038524">
-                    <conditions>
-                        <condition id="3" name="Compare frame" sid="8279516036311753" type="golem">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Number">golemMovingFrameEnd</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="3184810263286994" type="golem">
-                            <param id="0" name="Frame number">golemMovingFrameStart</param>
-                        </action>
-                    </actions>
+                    <sub-events>
+                        <comment>5번 11번 골렘은 방패 유무 프레임이 있으므로 따로 처리.</comment>
+                        <event-block any="1" sid="3120685931931665">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7873966005474146" type="golem">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;05&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="8258924984619518" type="golem">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;11&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="4413680668665875">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9823758982261013" type="golem">
+                                            <param id="0" name="Instance variable">invulnerable</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="3188013382316635" type="golem">
+                                            <param id="0" name="Frame number">golemMovingFrame+2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>골렘 도착하면 frame idle로 바꾸고 rotate 끝. turnover 함수에서는 moving frame으로 바꿈. 연기도 파괴.</comment>
                 <event-block sid="1286923118960888">
@@ -1355,13 +1460,45 @@
                             <param id="1" name="Parameter {n}">golem.UID</param>
                         </action>
                         <action id="5" name="Set frame" sid="5240683504942912" type="golem">
-                            <param id="0" name="Frame number">golemIdleFrameStart</param>
+                            <param id="0" name="Frame number">golemIdleFrame</param>
                         </action>
                         <action id="-42" name="Signal" sid="1863631318543817" type="System">
                             <param id="0" name="Tag">&quot;golemMovingComplete&quot;</param>
                         </action>
                     </actions>
                     <sub-events>
+                        <comment>5번 11번 골렘은 방패 유무 프레임이 있으므로 따로 처리.</comment>
+                        <event-block any="1" sid="1099573644089798">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3671630977664462" type="golem">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;05&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="1608238726886885" type="golem">
+                                    <param id="0" name="Instance variable">kind</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;11&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1906258280908039">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="8589443349017847" type="golem">
+                                            <param id="0" name="Instance variable">invulnerable</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="6965067227784258" type="golem">
+                                            <param id="0" name="Frame number">golemIdleFrame+2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                         <event-block sid="4169472442918057">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="9703341699306187" type="golemMovingSmoke">
@@ -1423,8 +1560,10 @@
                                 </event-block>
                                 <event-block sid="1627998279217922">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="2051013285023926" type="henButton">
-                                            <param id="0" name="Object">henInfo</param>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="2051013285023926" type="henInfo">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">henButton.X</param>
+                                            <param id="2" name="Y">henButton.Y</param>
                                         </condition>
                                         <condition id="-10" name="Compare opacity" sid="9579232173302885" type="henInfo">
                                             <param id="0" name="Comparison">4</param>
@@ -1439,8 +1578,10 @@
                                 </event-block>
                                 <event-block sid="9111413404809155">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="5293177595646649" type="henButton">
-                                            <param id="0" name="Object">henCage</param>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="6289449973359223" type="henCage">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">henButton.X</param>
+                                            <param id="2" name="Y">henButton.Y</param>
                                         </condition>
                                         <condition id="-10" name="Compare opacity" sid="3083246413866302" type="henCage">
                                             <param id="0" name="Comparison">4</param>
@@ -1461,8 +1602,10 @@
                                 </event-block>
                                 <event-block sid="9860771724750782">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="2909114158386714" type="henButton">
-                                            <param id="0" name="Object">iconAtk</param>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="1185807253061524" type="iconAtk">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">henButton.X</param>
+                                            <param id="2" name="Y">henButton.Y</param>
                                         </condition>
                                         <condition id="-10" name="Compare opacity" sid="5684878412490162" type="iconAtk">
                                             <param id="0" name="Comparison">4</param>
@@ -1477,8 +1620,10 @@
                                 </event-block>
                                 <event-block sid="6891147796060469">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="2344776668933809" type="henButton">
-                                            <param id="0" name="Object">iconFood</param>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="7863696509271141" type="iconFood">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">henButton.X</param>
+                                            <param id="2" name="Y">henButton.Y</param>
                                         </condition>
                                         <condition id="-10" name="Compare opacity" sid="8963268978053965" type="iconFood">
                                             <param id="0" name="Comparison">4</param>
@@ -1493,8 +1638,10 @@
                                 </event-block>
                                 <event-block sid="3316116930972911">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="8089750443473599" type="henButton">
-                                            <param id="0" name="Object">iconTurn</param>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="4451867665581725" type="iconTurn">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">henButton.X</param>
+                                            <param id="2" name="Y">henButton.Y</param>
                                         </condition>
                                         <condition id="-10" name="Compare opacity" sid="2789971318945841" type="iconTurn">
                                             <param id="0" name="Comparison">4</param>
@@ -1535,8 +1682,10 @@
                                 </event-block>
                                 <event-block sid="352614278893197">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="7486221376028414" type="henButton">
-                                            <param id="0" name="Object">henInfo</param>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="6366498096870418" type="henInfo">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">henButton.X</param>
+                                            <param id="2" name="Y">henButton.Y</param>
                                         </condition>
                                         <condition id="-10" name="Compare opacity" sid="5118415035675038" type="henInfo">
                                             <param id="0" name="Comparison">2</param>
@@ -1551,8 +1700,10 @@
                                 </event-block>
                                 <event-block sid="8386573981523419">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="8295274235882724" type="henButton">
-                                            <param id="0" name="Object">henCage</param>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="3358076480768013" type="henCage">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">henButton.X</param>
+                                            <param id="2" name="Y">henButton.Y</param>
                                         </condition>
                                         <condition id="-10" name="Compare opacity" sid="5266874307454235" type="henCage">
                                             <param id="0" name="Comparison">2</param>
@@ -1573,8 +1724,10 @@
                                 </event-block>
                                 <event-block sid="4721898843417402">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="3206263079986838" type="henButton">
-                                            <param id="0" name="Object">iconAtk</param>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="4936295373952341" type="iconAtk">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">henButton.X</param>
+                                            <param id="2" name="Y">henButton.Y</param>
                                         </condition>
                                         <condition id="-10" name="Compare opacity" sid="7122068557722814" type="iconAtk">
                                             <param id="0" name="Comparison">2</param>
@@ -1589,8 +1742,10 @@
                                 </event-block>
                                 <event-block sid="4213279151484247">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="7083811125995761" type="henButton">
-                                            <param id="0" name="Object">iconFood</param>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="2529389025462306" type="iconFood">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">henButton.X</param>
+                                            <param id="2" name="Y">henButton.Y</param>
                                         </condition>
                                         <condition id="-10" name="Compare opacity" sid="3663878784278282" type="iconFood">
                                             <param id="0" name="Comparison">2</param>
@@ -1605,8 +1760,10 @@
                                 </event-block>
                                 <event-block sid="882783356471075">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="9599663097561317" type="henButton">
-                                            <param id="0" name="Object">iconTurn</param>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="8516518420004668" type="iconTurn">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">henButton.X</param>
+                                            <param id="2" name="Y">henButton.Y</param>
                                         </condition>
                                         <condition id="-10" name="Compare opacity" sid="4124187827651433" type="iconTurn">
                                             <param id="0" name="Comparison">2</param>
