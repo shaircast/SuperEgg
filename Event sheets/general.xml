@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>general</name>
     <events>
-        <variable constant="1" name="HEARTCHARGETIME" sid="4116059698744367" static="0" type="number">90</variable>
+        <variable constant="1" name="HEARTCHARGETIME" sid="4116059698744367" static="0" type="number">180</variable>
         <variable constant="1" name="MAXHEART" sid="5061671056963641" static="0" type="number">5</variable>
         <variable constant="0" name="lastTimeStampEverySec" sid="4615752865800644" static="0" type="number">0</variable>
         <variable constant="0" name="fadeStart" sid="805565601887793" static="0" type="number">0</variable>
@@ -161,7 +161,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="2841083242391697" type="tipText">
-                                    <param id="0" name="Text">&quot;닭의 속성은 달려있는 구슬로, 골렘의 속성은 골렘의 색깔로 알 수 있습니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;닭의 속성은 구슬 색으로, 골렘의 속성은 몸의 색깔로 알 수 있습니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -175,7 +175,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="6089395441646249" type="tipText">
-                                    <param id="0" name="Text">&quot;닭장에서 닭을 팔거나, 정보를 보거나, 교배하거나, 엔트리를 바꿀 수 있습니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;닭장에서 닭을 팔거나, 교배하거나, 엔트리를 바꿀 수 있습니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -217,7 +217,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="8920699874999169" type="tipText">
-                                    <param id="0" name="Text">&quot;교배해서 나온 닭은 일정 확률로 강화됩니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;교배해서 나온 닭은 일정 확률로 강화됩니다(덜 강화된 부모 기준).&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -231,7 +231,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="677708420205401" type="tipText">
-                                    <param id="0" name="Text">&quot;강화가 많이 된 닭은 그만큼 파워샷을 쏠 확률이 높아집니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;강화가 많이 된 닭은 파워샷을 쏠 확률이 높습니다. 파워샷은 데미지 2배!&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -245,7 +245,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="4106370401154262" type="tipText">
-                                    <param id="0" name="Text">&quot;파워샷이 장전되면 불꽃이 이글거리면서 두 배의 데미지를 줍니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;파워샷이 장전되면 불꽃이 이글거립니다. 그렇다고 통닭이 되진 않습니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -259,7 +259,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="645934346868182" type="tipText">
-                                    <param id="0" name="Text">&quot;빨강&gt;파랑&gt;초록&gt;빨강. 상성관계입니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;빨간색은 불, 파란색은 물, 초록색은 풀. 회색은 속성없음.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -287,7 +287,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="5816447189206932" type="tipText">
-                                    <param id="0" name="Text">&quot;평화로운 농장에 UFO가 추락한 후, 닭과 여우에게 능력이 생겼습니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;평화로운 농장에 UFO가 추락한 후, 닭과 여우에게 이런 능력이 생겼습니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -301,7 +301,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="100593127040621" type="tipText">
-                                    <param id="0" name="Text">&quot;닭들은 자신들을 괴롭히고 납치하는 마법사 여우를 잡기 위해 결심을 합니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;닭들은 자신들을 괴롭히는 마법사 여우를 잡기 위해 모험을 나섭니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -329,7 +329,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="3480716088275497" type="tipText">
-                                    <param id="0" name="Text">&quot;알들이 이상하게 생겼지만 다들 맛좋은 1등급 무정란입니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;알들이 이상하게 생겼지만 다들 맛 좋은 1등급 무정란입니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -343,7 +343,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="9925404669642997" type="tipText">
-                                    <param id="0" name="Text">&quot;4번째 엔트리는 랜덤이므로 닭장을 잘 관리해야 합니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;4번째 엔트리는 랜덤이므로 닭장을 잘 관리해야 원하는 닭이 나옵니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -371,7 +371,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="8816433282219391" type="tipText">
-                                    <param id="0" name="Text">&quot;교배 비용은 교배하는 닭이 비쌀수록 비싸집니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;교배 비용은 교배하는 닭이 비쌀수록 비싸집니다. 세상에 공짜는 없음.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -399,7 +399,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="5442778078227171" type="tipText">
-                                    <param id="0" name="Text">&quot;사료는 매 턴 하나씩 충전되니 관리를 잘 해야 합니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;사료는 매 턴 하나씩 충전되니, 알 낳기는 계획적으로.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -413,7 +413,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="4813801630884121" type="tipText">
-                                    <param id="0" name="Text">&quot;닭이 공격을 하고 나면 자동으로 턴이 넘어갑니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;닭이 공격을 하고 나면 자동으로 턴이 넘어갑니다. 한 턴에 공격은 한 번.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -483,7 +483,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="8084896625362576" type="tipText">
-                                    <param id="0" name="Text">&quot;닭이 먹이를 먹는 데에는 일정 턴을 소모합니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;닭이 먹이를 다 먹는 데에는 일정 턴을 소모합니다. 먹을 땐 뒤도 안돌아봅니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -525,7 +525,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="3249379509968564" type="tipText">
-                                    <param id="0" name="Text">&quot;닭이 준비되면 펄쩍펄쩍 미쳐 날뜁니다. 아주 볼만합니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;닭이 준비되면 펄쩍펄쩍 미쳐 날뜁니다. 불꽃이 보인다면 그건 파워샷!&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -539,7 +539,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="8757690941468212" type="tipText">
-                                    <param id="0" name="Text">&quot;준비된 닭을 선택하고 타일을 누르면 공격 범위를 볼 수 있습니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;범위를 보다가 누르고 있던 타일에서 손을 떼면 공격을 시작합니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -553,7 +553,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="4335110870914811" type="tipText">
-                                    <param id="0" name="Text">&quot;닭을 먼저 선택하고, 타일을 눌러서 범위를 보고, 다시 눌러서 공격합니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;준비된 닭을 선택하고 타일을 누르고 있으면 공격범위가 보입니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -595,7 +595,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="9232560989734607" type="tipText">
-                                    <param id="0" name="Text">&quot;닭을 사용하기 전에 닭장에 가서 설명을 읽어보는 것이 좋습니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;새 닭을 사용하기 전에 닭장에 가서 설명을 읽어보는 것이 좋습니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -637,7 +637,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="7481055396876501" type="tipText">
-                                    <param id="0" name="Text">&quot;배틀 중 더 이상 할 게 없다면 OK버튼으로 턴을 넘기세요.&quot;</param>
+                                    <param id="0" name="Text">&quot;배틀 중 더 이상 할 게 없다면 턴 버튼으로 턴을 넘기세요.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -665,7 +665,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="4975452397432057" type="tipText">
-                                    <param id="0" name="Text">&quot;지금도 1초에 7마리의 닭이  닭고기로 변신하고 있습니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;지금도 1초에 7마리의 닭이 닭고기로 변신하고 있습니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -679,7 +679,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="171255255586494" type="tipText">
-                                    <param id="0" name="Text">&quot;닭장이 꽉 차 있으면 스테이지 보상으로 주는 닭을 받을 수 없습니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;닭장이 꽉 차면 스테이지 보상으로 주는 닭을 받을 수 없습니다. 관리좀.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

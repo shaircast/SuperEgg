@@ -145,8 +145,8 @@
                         <x>199</x>
                         <y>282</y>
                         <z>0</z>
-                        <width>112</width>
-                        <height>112</height>
+                        <width>116</width>
+                        <height>116</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -394,7 +394,7 @@
                         <text>Turn 1</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>배달의민족 주아,-96,400,0</font>
-                        <color>0,0,0</color>
+                        <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
@@ -1174,11 +1174,11 @@
                         <x>376</x>
                         <y>-134</y>
                         <z>0</z>
-                        <width>33</width>
-                        <height>33</height>
+                        <width>32</width>
+                        <height>32</height>
                         <depth>0</depth>
-                        <hotspotX>0.515151501</hotspotX>
-                        <hotspotY>0.515151501</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

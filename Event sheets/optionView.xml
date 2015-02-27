@@ -149,6 +149,9 @@
                         <action id="-16" name="Wait" sid="6699369520641384" type="System">
                             <param id="0" name="Seconds">0</param>
                         </action>
+                        <action id="9" name="Set scale" sid="1120556825828387" type="golem">
+                            <param id="0" name="Scale">1.2</param>
+                        </action>
                         <action id="6" name="Set speed" sid="4871564333646954" type="golem">
                             <param id="0" name="Speed">0</param>
                         </action>
@@ -844,8 +847,8 @@
                                 <action behavior="BreathSine" id="0" name="Set active" sid="8700186128572808" type="golem">
                                     <param id="0" name="State">0</param>
                                 </action>
-                                <action id="9" name="Set scale" sid="3308096555787847" type="golem">
-                                    <param id="0" name="Scale">1</param>
+                                <action id="9" name="Set scale" sid="8128714859577689" type="golem">
+                                    <param id="0" name="Scale">1.2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -914,8 +917,8 @@
                                 <action behavior="BreathSine" id="0" name="Set active" sid="2638066029996354" type="golem">
                                     <param id="0" name="State">0</param>
                                 </action>
-                                <action id="9" name="Set scale" sid="4412801595397774" type="golem">
-                                    <param id="0" name="Scale">1</param>
+                                <action id="9" name="Set scale" sid="9266214939196419" type="golem">
+                                    <param id="0" name="Scale">1.2</param>
                                 </action>
                             </actions>
                         </event-block>

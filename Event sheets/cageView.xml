@@ -10,7 +10,7 @@
         <variable comment="-1 : 선택 not yet" constant="0" name="reproduceSelect1" sid="7777858151525249" static="0" type="number">-1</variable>
         <variable comment="-1 : 선택 not yet" constant="0" name="reproduceSelect2" sid="4625240151375701" static="0" type="number">-1</variable>
         <variable constant="0" name="reproduceCost" sid="6266228310381294" static="0" type="number">0</variable>
-        <variable comment="퍼센트" constant="0" name="reproduceBonusChance" sid="2456110780434529" static="0" type="number">20</variable>
+        <variable comment="퍼센트" constant="0" name="reproduceBonusChance" sid="2456110780434529" static="0" type="number">50</variable>
         <variable comment="-1 : 선택 not yet" constant="0" name="entrySelect1" sid="4003501661021275" static="0" type="number">-1</variable>
         <variable comment="-1 : 선택 not yet" constant="0" name="entrySelect2" sid="6911913954850959" static="0" type="number">-1</variable>
         <variable comment="-1 : 선택 not yet" constant="0" name="entrySelect3" sid="442461165577697" static="0" type="number">-1</variable>

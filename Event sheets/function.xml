@@ -155,7 +155,7 @@
                             <actions>
                                 <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
                                     <param id="0" name="Key">&quot;henList&quot;</param>
-                                    <param id="1" name="Value">&quot;01a99/02a99/03a99/04a99/&quot;</param>
+                                    <param id="1" name="Value">&quot;01a05/02b03/03a08/04c01/05d02/06a24/07d15/08a22/09c19/10a14/11b20/12a24/04c08/05d12/06a23/07d17/01a22/02b17/03a12/&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
                                     <param id="0" name="Key">&quot;chapter&quot;</param>
@@ -163,11 +163,11 @@
                                 </action>
                                 <action id="0" name="Set local value" sid="3645545715772576" type="WebStorage">
                                     <param id="0" name="Key">&quot;maxStage&quot;</param>
-                                    <param id="1" name="Value">&quot;2_5&quot;</param>
+                                    <param id="1" name="Value">&quot;3_3&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="71699616378047" type="WebStorage">
                                     <param id="0" name="Key">&quot;gold&quot;</param>
-                                    <param id="1" name="Value">500</param>
+                                    <param id="1" name="Value">10000</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="5464618023177127" type="WebStorage">
                                     <param id="0" name="Key">&quot;entry1&quot;</param>
@@ -183,7 +183,7 @@
                                 </action>
                                 <action id="0" name="Set local value" sid="7779584694073087" type="WebStorage">
                                     <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
-                                    <param id="1" name="Value">0</param>
+                                    <param id="1" name="Value">HEARTCHARGETIME</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="1157474339873631" type="WebStorage">
                                     <param id="0" name="Key">&quot;heart&quot;</param>
@@ -596,7 +596,7 @@
                                     <param id="0" name="Frame number">int(WebStorage.LocalValue(&quot;heart&quot;))</param>
                                 </action>
                                 <action id="0" name="Set text" sid="3965328889845666" type="heartTimer">
-                                    <param id="0" name="Text">&quot;다음 달걀 충전까지 - &quot;&amp;zeropad(floor(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))/60),2) &amp;&quot; : &quot;&amp; zeropad(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))%60,2)</param>
+                                    <param id="0" name="Text">&quot;다음 달걀 충전 - &quot;&amp;zeropad(floor(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))/60),2) &amp;&quot; : &quot;&amp; zeropad(int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))%60,2)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -984,43 +984,43 @@
                             <actions>
                                 <action id="0" name="Add key" sid="3517775904818805" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_1&quot;</param>
-                                    <param id="1" name="Value">&quot;12/01d82/01a82/01b81/01c83/01d70,01a80/&quot;</param>
+                                    <param id="1" name="Value">&quot;12/01b82/01a82/01d81/01c83/01b70,01a80/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="5276096704093237" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_2&quot;</param>
-                                    <param id="1" name="Value">&quot;20/01a81,01b83/01a81,01c82,01a83/01a81,01b83/01a80/01a81,01c82,01a83/&quot;</param>
+                                    <param id="1" name="Value">&quot;20/01a81,01d83/01a81,01c82,01a83/01a81,01d83/01a80/01a81,01c82,01a83/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="8155646310131125" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_3&quot;</param>
-                                    <param id="1" name="Value">&quot;12/01a80/02b82/01b81,01a83/02b81,01b82,02b83/02b82/01b80,02a82/&quot;</param>
+                                    <param id="1" name="Value">&quot;12/01a80/02d82/01d81,01a83/02d81,01d82,02d83/02d82/01d80,02a82/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="2142663879786924" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_4&quot;</param>
-                                    <param id="1" name="Value">&quot;14/02a80,02a81,02a82/01b81/01a80,01a82,02b83/02a81/02a82/02a80/&quot;</param>
+                                    <param id="1" name="Value">&quot;14/02a80,02a81,02a82/01d81/01a80,01a82,02d83/02a81/02a82/02a80/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="1363980008729736" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_5&quot;</param>
-                                    <param id="1" name="Value">&quot;12/01b80/03b81/02b82,02a83/01a81/03a82,01b83/&quot;</param>
+                                    <param id="1" name="Value">&quot;12/01d80/03d81/02d82,02a83/01a81/03a82,01d83/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="2596806235630795" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_6&quot;</param>
-                                    <param id="1" name="Value">&quot;8/01a80/03b81/03b82/01b83/02b80,02b81,02b82/02a80,02a81,02a82/&quot;</param>
+                                    <param id="1" name="Value">&quot;8/01a80/03d81/03d82/01d83/02d80,02d81,02d82/02a80,02a81,02a82/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="7754875886181542" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_7&quot;</param>
-                                    <param id="1" name="Value">&quot;24/01b80,03a82/03a81,01b83/02b80,02b81,02b82,02b83/02a80,02a82/01c81/02b81,03b83/03a80,02b83/01b80,01a83/02a80,02a83/&quot;</param>
+                                    <param id="1" name="Value">&quot;24/01d80,03a82/03a81,01d83/02d80,02d81,02d82,02d83/02a80,02a82/01c81/02d81,03d83/03a80,02d83/01d80,01a83/02a80,02a83/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="628480415125979" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_8&quot;</param>
-                                    <param id="1" name="Value">&quot;12/01b80,01a82/04b81/03b83/02a80,02b81,01a82/02b81/04a82/&quot;</param>
+                                    <param id="1" name="Value">&quot;12/01d80,01a82/04d81/03d83/02a80,02d81,01a82/02d81/04a82/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="9888097411020062" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_9&quot;</param>
-                                    <param id="1" name="Value">&quot;15/01b80,02b81,01b82,02a83/02a80,01b81,02b82,01b83//02a80,04b81,02a82,04b83/03b81,03b82/&quot;</param>
+                                    <param id="1" name="Value">&quot;15/01d80,02d81,01d82,02a83/02a80,01d81,02d82,01d83//02a80,04d81,02a82,04d83/03d81,03d82/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="6659588733755366" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;1_10&quot;</param>
-                                    <param id="1" name="Value">&quot;30/01a80/02c81,03d83/02b80,04a81/02b80,02a82,03c83/02b80/02b80/02b80/04d81,03d83///01a80/03c82///10a81/&quot;</param>
+                                    <param id="1" name="Value">&quot;30/01a80/02c81,03b83/02d80,04a81/02d80,02a82,03c83/02d80/02d80/02d80/04b81,03b83///01a80/03c82///10a81/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="9925743072516553" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;2_1&quot;</param>
@@ -1064,43 +1064,43 @@
                                 </action>
                                 <action id="0" name="Add key" sid="3481428019380812" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;3_1&quot;</param>
-                                    <param id="1" name="Value">&quot;18/01d80,06d82/02a81,02d82,04a83/02d82/07d80,02d82,03d83/07d81,02d82/07a80,02d82,01d83/&quot;</param>
+                                    <param id="1" name="Value">&quot;18/01b80,06b82/02a81,02b82,04a83/02b82/07b80,02b82,03b83/07b81,02b82/07a80,02b82,01b83/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="8478833824138969" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;3_2&quot;</param>
-                                    <param id="1" name="Value">&quot;20/01a82/02d80,01b82,05a83/02c80,08a81/06a82/07d82//02b81/01b83//08c81,08c82//06a82/08d81,08a83/08c82/04b80/&quot;</param>
+                                    <param id="1" name="Value">&quot;20/01a82/02b80,01d82,05a83/02c80,08a81/06a82/07b82//02d81/01d83//08c81,08c82//06a82/08b81,08a83/08c82/04d80/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="6131525903184201" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;3_3&quot;</param>
-                                    <param id="1" name="Value">&quot;18/07d80,03d81,04d82,05d83/06d81,08d83/02d80/02a81/05a80,02d81,01d82/08d81,08d82,01d83/01d82/&quot;</param>
+                                    <param id="1" name="Value">&quot;18/07b80,03b81,04b82,05b83/06b81,08b83/02b80/02a81/05a80,02b81,01b82/08b81,08b82,01b83/01b82/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="5519392347134057" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;3_4&quot;</param>
-                                    <param id="1" name="Value">&quot;12/06d81,05d83/08d80,08d81,08d82,05d83/02a80,02a81,02a82///07a80,08d81,01d82,01d83/&quot;</param>
+                                    <param id="1" name="Value">&quot;12/06b81,05b83/08b80,08b81,08b82,05b83/02a80,02a81,02a82///07a80,08b81,01b82,01b83/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="2540129936371667" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;3_5&quot;</param>
-                                    <param id="1" name="Value">&quot;20/05d81,05d82/06d81,08d83/02d80,08d81,02d82/08a81,04d83/07a80,03d82////01d80,06d81,01d82,07d83/03d81,02d83/02d83/04d81,08d83/05d80,05d82/bossd81/&quot;</param>
+                                    <param id="1" name="Value">&quot;20/05b81,05b82/06b81,08b83/02b80,08b81,02b82/08a81,04b83/07a80,03b82////01b80,06b81,01b82,07b83/03b81,02b83/02b83/04b81,08b83/05b80,05b82/10b81/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="1592317034748946" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;3_6&quot;</param>
-                                    <param id="1" name="Value">&quot;32/07b80,07c81,05b82,05c83//02d80,02d81,02a82,02a83/08a80,08a81,08d82,08d83//01b80,08d81,08d82,01b83/06a81/06a82/02d80,02c81,02c82,02d83/&quot;</param>
+                                    <param id="1" name="Value">&quot;32/07d80,07c81,05d82,05c83//02b80,02b81,02a82,02a83/08a80,08a81,08b82,08b83//01d80,08b81,08b82,01d83/06a81/06a82/02b80,02c81,02c82,02b83/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="1280044708486674" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;3_7&quot;</param>
-                                    <param id="1" name="Value">&quot;18/01d80,01d81,07d82/02a80,05d83/08a80,06d82//04d80,03d81,08d82/02d83/06d81,08d82,02d83//08d82/07a80,01d81,08d82,02d83/01d81,02d82,08d83/01d81,08d82,02d83/02a83/02a83/&quot;</param>
+                                    <param id="1" name="Value">&quot;18/01b80,01b81,07b82/02a80,05b83/08a80,06b82//04b80,03b81,08b82/02b83/06b81,08b82,02b83//08b82/07a80,01b81,08b82,02b83/01b81,02b82,08b83/01b81,08b82,02b83/02a83/02a83/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="1119073725492663" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;3_8&quot;</param>
-                                    <param id="1" name="Value">&quot;10/01d80,01d81,07d82/02a80,01d83/08a80,06d82///////04d80,03d81,08d82/02d83/06d81,08d82,02d83///////08d82/07a80,01d81,08d82,02d83/01d81,02d82,08d83/01d81,08d82,02d83/02a83/02a83/&quot;</param>
+                                    <param id="1" name="Value">&quot;10/01b80,01b81,07b82/02a80,01b83/08a80,06b82///////04b80,03b81,08b82/02b83/06b81,08b82,02b83///////08b82/07a80,01b81,08b82,02b83/01b81,02b82,08b83/01b81,08b82,02b83/02a83/02a83/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="8057734174167575" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;3_9&quot;</param>
-                                    <param id="1" name="Value">&quot;21/06a81/02a80,05a82,07a83/08b80,08c82/08b82/08d81/08a80,01d81,02a83/08c80,02a83/01b80,01a83/07d81/&quot;</param>
+                                    <param id="1" name="Value">&quot;21/06a81/02a80,05a82,07a83/08d80,08c82/08d82/08b81/08a80,01b81,02a83/08c80,02a83/01d80,01a83/07b81/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="2891649158996505" type="stageGolemDB">
                                     <param id="0" name="Key">&quot;3_10&quot;</param>
-                                    <param id="1" name="Value">&quot;45/01a80/02b80,01a81/03a80,02b81,01a82/04c80,03a81,02b82,01a83/05d81,05d82////01a81/02a82/03a83/04b82/////06c81/03a80,05d82/07a81/08d82/05a81,05a82/07a80,07a83/12a82/&quot;</param>
+                                    <param id="1" name="Value">&quot;45/01a80/02d80,01a81/03a80,02d81,01a82/04c80,03a81,02d82,01a83/05b81,05b82////01a81/02a82/03a83/04d82/////06c81/03a80,05b82/07a81/08b82/05a81,05a82/07a80,07a83/12a82/&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1775,6 +1775,229 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>touchingLaunchLine(launchLine.UID) : 손 대고 있을때 조준선 보이기</comment>
+                <event-block bookmark="1" sid="4296760823018339">
+                    <conditions>
+                        <condition id="0" name="On function" sid="5147763880925042" type="Function">
+                            <param id="0" name="Name">&quot;touchingLaunchLine&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4213689750155863">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="1251661048951674" type="System">
+                                    <param id="0" name="Object">launchLine</param>
+                                    <param id="1" name="Expression">launchLine.UID</param>
+                                    <param id="2" name="Comparison">1</param>
+                                    <param id="3" name="Value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="6978208543223687" type="launchLine">
+                                    <param id="0" name="Instance variable">aimed</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="9065662141352973" type="launchLine">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="30325753882524" type="launchLine">
+                                    <param id="0" name="Width">self.originalWidth</param>
+                                    <param id="1" name="Height">self.originalHeight</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <variable constant="0" name="flag" sid="9482784477262995" static="0" type="number">0</variable>
+                        <event-block sid="742081452915404">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="9682983244107099" type="launchLine">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="5052407112586542" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>0 : Default</comment>
+                                <event-block sid="5293140293536335">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9816591995263128" type="launchLine">
+                                            <param id="0" name="Instance variable">aimed</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="7541128706837105" type="System">
+                                            <param id="0" name="Variable">flag</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="2104701719080896" type="launchLine">
+                                            <param id="0" name="Instance variable">aimed</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Sine" id="0" name="Set active" sid="9864243507123891" type="launchLine">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="7403042193889394" type="System">
+                                            <param id="0" name="Variable">flag</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="7199943263359715">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="2504917960020755" type="System">
+                                                    <param id="0" name="First value">henSelection.Count</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="7013884007648631" type="henButton">
+                                                    <param id="0" name="Instance variable">buttonID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">henSelection.select</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="8073122403004908" type="henButton">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="9661426312505972" type="Function">
+                                                    <param id="0" name="Name">&quot;showAtkRange&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>endTouchingLaunchLine(launchLine.UID) :  gameState 2로만들고 발사.</comment>
+                <event-block bookmark="1" sid="6712778457155449">
+                    <conditions>
+                        <condition id="0" name="On function" sid="3541432124436387" type="Function">
+                            <param id="0" name="Name">&quot;endTouchingLaunchLine&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="flag" sid="4685511986588715" static="0" type="number">0</variable>
+                        <event-block sid="8167576191490564">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="2155856757911213" type="launchLine">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="7597744691564889" type="System">
+                                    <param id="0" name="Variable">flag</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>1 : Aimed. 여기에 발사처리.</comment>
+                                <event-block sid="8092197842248546">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="8474247135782368" type="launchLine">
+                                            <param id="0" name="Instance variable">aimed</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="7109830552351109" type="System">
+                                            <param id="0" name="Variable">flag</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="544553244712484">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="8086284051503778" type="henButton">
+                                                    <param id="0" name="Instance variable">buttonID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">henSelection.select</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="4190681648158209" type="System">
+                                                    <param id="0" name="First value">henSelection.Count</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <comment>준비됐소!</comment>
+                                                <event-block sid="3714976191609145">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="3881675797545416" type="henButton">
+                                                            <param id="0" name="Instance variable">state</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-13" name="Set boolean" sid="3412902540182165" type="launchLine">
+                                                            <param id="0" name="Instance variable">aimed</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action behavior="Sine" id="0" name="Set active" sid="5407432950651802" type="launchLine">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="2246195575278496" type="launchLine">
+                                                            <param id="0" name="Width">self.originalWidth</param>
+                                                            <param id="1" name="Height">self.originalHeight</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="1451083550147885" type="System">
+                                                            <param id="0" name="Variable">gameState</param>
+                                                            <param id="1" name="Value">2</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="4922794969991428" type="Function">
+                                                            <param id="0" name="Name">&quot;launchEgg&quot;</param>
+                                                            <param id="1" name="Parameter {n}">launchLine.launchLineIDX{###}launchLine.launchLineIDY</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="1663256507803501" type="System">
+                                                            <param id="0" name="Variable">flag</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>무슨소오리?</comment>
+                                                <event-block sid="578462987640463">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="6033183779738753" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="3586715891686322" type="Audio">
+                                                            <param id="0" name="Audio file">cwack</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="-13" name="Set boolean" sid="8650053004223562" type="launchLine">
+                                                            <param id="0" name="Instance variable">aimed</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action behavior="Sine" id="0" name="Set active" sid="4982578865082571" type="launchLine">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="6273391689174854" type="System">
+                                                            <param id="0" name="Variable">flag</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <comment>henSelectionChange(henButton.UID) : 누른 버튼에 해당하게 henSelected 바꾸고 indicator 옮기고</comment>
                 <event-block sid="5695852510089218">
                     <conditions>
@@ -2329,6 +2552,7 @@
                                                                     <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
                                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                 </action>
+                                                                <action id="-9" name="Destroy" sid="8320904610529507" type="henSelection" />
                                                                 <action id="4" name="Set font color" sid="2869968079848925" type="foodText">
                                                                     <param id="0" name="Color">rgb(230, 0, 0)</param>
                                                                 </action>
@@ -2735,7 +2959,7 @@
                                                             <param id="1" name="From">1</param>
                                                         </action>
                                                         <action id="6" name="Set speed" sid="427088253263035" type="henCage">
-                                                            <param id="0" name="Speed">random(4,5)</param>
+                                                            <param id="0" name="Speed">random(6,7)</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -4887,7 +5111,7 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                                 <action id="6" name="Set speed" sid="6860877770657923" type="henCage">
-                                                    <param id="0" name="Speed">random(4,5)</param>
+                                                    <param id="0" name="Speed">random(6,7)</param>
                                                 </action>
                                             </actions>
                                         </event-block>

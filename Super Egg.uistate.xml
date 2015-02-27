@@ -11,16 +11,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">sprites</layout>
-        <layout order="1">opening</layout>
-        <layout order="4">cageView</layout>
-        <layout order="5">optionView</layout>
-        <layout order="6">battleView</layout>
-        <layout active="1" order="8">stageView</layout>
-        <event-sheet order="2">battleView</event-sheet>
-        <event-sheet order="3">general</event-sheet>
-        <event-sheet order="7">optionView</event-sheet>
-        <event-sheet order="9">function</event-sheet>
-        <event-sheet order="10">stageView</event-sheet>
+        <layout active="1" order="1">opening</layout>
+        <layout order="2">battleView</layout>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -28,7 +20,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
-    <families-expanded root="1">
+    <families-expanded root="0">
         <family expanded="0" name="battleViewIcon" />
         <family expanded="0" name="optionViewGolemDicText" />
         <family expanded="0" name="optionViewCreditText" />
@@ -39,20 +31,20 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/plugin/" />
         <folder expanded="1" path="object-folder/battleView/" />
-        <folder expanded="0" path="object-folder/battleView/hud/" />
-        <folder expanded="1" path="object-folder/battleView/golem/" />
+        <folder expanded="1" path="object-folder/battleView/hud/" />
+        <folder expanded="0" path="object-folder/battleView/golem/" />
         <folder expanded="1" path="object-folder/battleView/golem/kindEffect/" />
         <folder expanded="0" path="object-folder/battleView/egg/" />
-        <folder expanded="0" path="object-folder/battleView/bgDeco/" />
-        <folder expanded="1" path="object-folder/battleView/henButton/" />
+        <folder expanded="1" path="object-folder/battleView/bgDeco/" />
+        <folder expanded="0" path="object-folder/battleView/henButton/" />
         <folder expanded="0" path="object-folder/DBDic/" />
-        <folder expanded="1" path="object-folder/stageView/" />
+        <folder expanded="0" path="object-folder/stageView/" />
         <folder expanded="0" path="object-folder/menuButton/" />
         <folder expanded="0" path="object-folder/cageView/" />
         <folder expanded="0" path="object-folder/cageView/textbox/" />
         <folder expanded="0" path="object-folder/cageView/modeButton/" />
         <folder expanded="0" path="object-folder/opening/" />
-        <folder expanded="0" path="object-folder/icon/" />
+        <folder expanded="1" path="object-folder/icon/" />
         <folder expanded="0" path="object-folder/optionView/" />
         <folder expanded="1" path="object-folder/optionView/golemDic/" />
         <folder expanded="1" path="object-folder/optionView/credit/" />
@@ -119,6 +111,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/skyRightCover/" />
         <folder expanded="1" path="animation-folder/stageViewTransparentCover/" />
         <folder expanded="1" path="animation-folder/heart/" />
+        <folder expanded="1" path="animation-folder/stageStartButton/" />
         <folder expanded="1" path="animation-folder/menuButtonCageView/" />
         <folder expanded="1" path="animation-folder/menuButtonPackage/" />
         <folder expanded="1" path="animation-folder/menuButtonOptionView/" />
@@ -172,6 +165,5 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/optionViewReward/" />
         <folder expanded="1" path="animation-folder/notiButton/" />
         <folder expanded="1" path="animation-folder/focus/" />
-        <folder expanded="1" path="animation-folder/stageStartButton/" />
     </folders-expanded>
 </c2uistate>
