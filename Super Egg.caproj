@@ -1332,6 +1332,42 @@
                         </animation>
                     </animation-folder>
                 </object-type>
+                <object-type name="golemMovingSmoke2" sid="713575841766445">
+                    <plugin id="Particles" />
+                    <instance-variables>
+                        <instance-variable name="golemUID" sid="6182349095222491" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="4065475804599838">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture format="png8" />
+                </object-type>
+                <object-type name="golemMovingSmoke3" sid="9336147182516786">
+                    <plugin id="Particles" />
+                    <instance-variables>
+                        <instance-variable name="golemUID" sid="1961702874284111" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="5423935725068522">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture format="png8" />
+                </object-type>
+                <object-type name="golemMovingSmoke4" sid="335271357257008">
+                    <plugin id="Particles" />
+                    <instance-variables>
+                        <instance-variable name="golemUID" sid="7314833973443998" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="4254439060678023">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture format="png8" />
+                </object-type>
             </object-folder>
             <object-folder name="egg">
                 <object-type name="explode" sid="9488261618380134">

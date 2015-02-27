@@ -665,7 +665,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="4975452397432057" type="tipText">
-                                    <param id="0" name="Text">&quot;세계에서 한 해에 닭고기가 되는 닭의 수는 5백억 마리가 넘는다고 합니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;지금도 1초에 7마리의 닭이  닭고기로 변신하고 있습니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

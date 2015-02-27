@@ -11,15 +11,15 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">sprites</layout>
-        <layout active="1" order="1">opening</layout>
+        <layout order="1">opening</layout>
         <layout order="4">cageView</layout>
-        <layout order="8">stageView</layout>
         <layout order="5">optionView</layout>
         <layout order="6">battleView</layout>
-        <event-sheet order="9">function</event-sheet>
+        <layout active="1" order="8">stageView</layout>
         <event-sheet order="2">battleView</event-sheet>
         <event-sheet order="3">general</event-sheet>
         <event-sheet order="7">optionView</event-sheet>
+        <event-sheet order="9">function</event-sheet>
         <event-sheet order="10">stageView</event-sheet>
     </open-tabs>
     <properties>
@@ -39,12 +39,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/plugin/" />
         <folder expanded="1" path="object-folder/battleView/" />
-        <folder expanded="1" path="object-folder/battleView/hud/" />
-        <folder expanded="0" path="object-folder/battleView/golem/" />
+        <folder expanded="0" path="object-folder/battleView/hud/" />
+        <folder expanded="1" path="object-folder/battleView/golem/" />
         <folder expanded="1" path="object-folder/battleView/golem/kindEffect/" />
         <folder expanded="0" path="object-folder/battleView/egg/" />
         <folder expanded="0" path="object-folder/battleView/bgDeco/" />
-        <folder expanded="0" path="object-folder/battleView/henButton/" />
+        <folder expanded="1" path="object-folder/battleView/henButton/" />
         <folder expanded="0" path="object-folder/DBDic/" />
         <folder expanded="1" path="object-folder/stageView/" />
         <folder expanded="0" path="object-folder/menuButton/" />

@@ -726,15 +726,15 @@
                                 </action>
                                 <action id="0" name="Add key" sid="6181242300428315" type="stageDB">
                                     <param id="0" name="Key">&quot;1_3&quot;</param>
-                                    <param id="1" name="Value">&quot;재빠른 녀석들/처음 보는 날쌘돌이 골렘의 등장! 너무 빠른거 아니야?/04a00&quot;</param>
+                                    <param id="1" name="Value">&quot;재빠른 녀석들/처음 보는 날쌘골렘의 등장! 너무 빠른거 아니야?/04a00&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="5086247515489195" type="stageDB">
                                     <param id="0" name="Key">&quot;1_4&quot;</param>
-                                    <param id="1" name="Value">&quot;알 도둑/아직 남아있는 날쌘돌이 골렘들이 알을 노리는데…/&quot;</param>
+                                    <param id="1" name="Value">&quot;알 도둑/아직 남아있는 날쌘골렘들이 알을 노리는데…/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="9876319082979012" type="stageDB">
                                     <param id="0" name="Key">&quot;1_5&quot;</param>
-                                    <param id="1" name="Value">&quot;숲으로 들어가는 길/숲으로 진격하는 닭들! 처음 마주한건 다름아닌 거대 골렘!/05a00&quot;</param>
+                                    <param id="1" name="Value">&quot;숲으로 들어가는 길/숲으로 진격하는 닭들! 처음 마주한건 다름아닌 거대한 골렘!/05a00&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="9211900149679967" type="stageDB">
                                     <param id="0" name="Key">&quot;1_6&quot;</param>
@@ -754,19 +754,19 @@
                                 </action>
                                 <action id="0" name="Add key" sid="3033377501725338" type="stageDB">
                                     <param id="0" name="Key">&quot;1_10&quot;</param>
-                                    <param id="1" name="Value">&quot;보이지 않는 위협/빛이 들지 않는 깊은 숲속. 그리고 덤불 속에서 반짝이는 여우의 눈동자…/01d00&quot;</param>
+                                    <param id="1" name="Value">&quot;보이지 않는 위협/빛이 들지 않는 깊은 숲속. 그리고 덤불 속에서 반짝이는 눈동자들…/01d00&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="4295321258220968" type="stageDB">
                                     <param id="0" name="Key">&quot;2_1&quot;</param>
-                                    <param id="1" name="Value">&quot;숲 속 호숫가/간신히 여우를 물리치고 잠시 호숫가로 쉬러나온 닭들!/06a00&quot;</param>
+                                    <param id="1" name="Value">&quot;숲 속 호숫가/간신히 위기를 피하고 잠시 호숫가로 쉬러나온 닭들!/06a00&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="1290323931910783" type="stageDB">
                                     <param id="0" name="Key">&quot;2_2&quot;</param>
-                                    <param id="1" name="Value">&quot;뗏목을 타고/닭들은 몰아닥친 골렘들을 피해 간신히 뗏목을 타고 호숫가로 피하는데…/&quot;</param>
+                                    <param id="1" name="Value">&quot;뗏목을 타고/닭들은 몰아닥친 골렘들을 피해 뗏목을 타는데…/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="8677123673125224" type="stageDB">
                                     <param id="0" name="Key">&quot;2_3&quot;</param>
-                                    <param id="1" name="Value">&quot;딱딱한 등껍질/호수 한가운데 보이는 거북이! 근데 호수에 거북이가 살았던가?/10a00&quot;</param>
+                                    <param id="1" name="Value">&quot;딱딱한 등껍질/호수 한가운데 보이는 석판! 어떻게 물에 뜨는거지?/10a00&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="3644875835783125" type="stageDB">
                                     <param id="0" name="Key">&quot;2_4&quot;</param>
@@ -786,7 +786,7 @@
                                 </action>
                                 <action id="0" name="Add key" sid="411073747907121" type="stageDB">
                                     <param id="0" name="Key">&quot;2_8&quot;</param>
-                                    <param id="1" name="Value">&quot;철통 방어/닭들의 뗏목을 가로막는 단단한 갑옷을 입은 골렘들 등장!/&quot;</param>
+                                    <param id="1" name="Value">&quot;철통 방어/닭들의 뗏목을 가로막는 튼튼해 보이는 골렘들 등장!/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="3426834246315373" type="stageDB">
                                     <param id="0" name="Key">&quot;2_9&quot;</param>
@@ -794,7 +794,7 @@
                                 </action>
                                 <action id="0" name="Add key" sid="4101757132190016" type="stageDB">
                                     <param id="0" name="Key">&quot;2_10&quot;</param>
-                                    <param id="1" name="Value">&quot;호수 한 가운데/호수 한 가운데 도착한 닭들. 그리고 뗏목 아래에서 반짝이는 여우의 눈동자…/01c00&quot;</param>
+                                    <param id="1" name="Value">&quot;호수 한 가운데/호수 한 가운데 도착한 닭들. 그리고 뗏목 아래에서 뭔가 어렴풋이 보인다!/01c00&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="2289897958312817" type="stageDB">
                                     <param id="0" name="Key">&quot;3_1&quot;</param>
@@ -802,7 +802,7 @@
                                 </action>
                                 <action id="0" name="Add key" sid="1979860207913482" type="stageDB">
                                     <param id="0" name="Key">&quot;3_2&quot;</param>
-                                    <param id="1" name="Value">&quot;꿈틀거리는 잿더미/잿더미를 건너는 닭들. 근데 잿더미들 밑에서 무언가 꿈틀거리는데?/&quot;</param>
+                                    <param id="1" name="Value">&quot;꿈틀거리는 잿더미/잿더미를 건너는 닭들. 근데 밑에서 무언가 꿈틀거리는데?/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="7615932318525205" type="stageDB">
                                     <param id="0" name="Key">&quot;3_3&quot;</param>
@@ -818,11 +818,11 @@
                                 </action>
                                 <action id="0" name="Add key" sid="7260684893510291" type="stageDB">
                                     <param id="0" name="Key">&quot;3_6&quot;</param>
-                                    <param id="1" name="Value">&quot;불타버린 농장/드디어 도착한 친구의 농장! 하지만 이미 불타버린듯 한데…/&quot;</param>
+                                    <param id="1" name="Value">&quot;불타버린 농장/드디어 도착한 친구의 농장! 하지만 이미 불 타버린듯 한데…/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="9056979095074001" type="stageDB">
                                     <param id="0" name="Key">&quot;3_7&quot;</param>
-                                    <param id="1" name="Value">&quot;흔적을 쫓아/골렘들의 발자국을 쫓아 여우굴 본거지로 향하는 닭들!/&quot;</param>
+                                    <param id="1" name="Value">&quot;흔적을 쫓아/골렘들의 발자국을 쫓아가는 닭들!/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="7308246831119498" type="stageDB">
                                     <param id="0" name="Key">&quot;3_8&quot;</param>
@@ -830,11 +830,11 @@
                                 </action>
                                 <action id="0" name="Add key" sid="6907208421146073" type="stageDB">
                                     <param id="0" name="Key">&quot;3_9&quot;</param>
-                                    <param id="1" name="Value">&quot;계란으로 바위치기/도착한 곳은 어두컴컴한 동굴… 하지만 사방이 적!/&quot;</param>
+                                    <param id="1" name="Value">&quot;사면초가/도착한 곳은 어두컴컴한 동굴… 하지만 사방이 적!/&quot;</param>
                                 </action>
                                 <action id="0" name="Add key" sid="7806391139979839" type="stageDB">
                                     <param id="0" name="Key">&quot;3_10&quot;</param>
-                                    <param id="1" name="Value">&quot;슈퍼 에그/슈퍼 에그!/&quot;</param>
+                                    <param id="1" name="Value">&quot;계란으로 바위치기/이길 수 없어 보이는 구도, 과연 그 결과는?/&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -920,51 +920,51 @@
                             <actions>
                                 <action id="0" name="Call function" sid="6112891196647187" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;01&quot;{###}&quot;작은골렘&quot;{###}3{###}1{###}10{###}&quot;흔하게 볼 수 있는 작은 골렘. 평소엔 잔디밭 파내는 걸 좋아하는데 딱히 특징이 없는 것 같다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;01&quot;{###}&quot;작은골렘&quot;{###}3{###}1{###}10{###}&quot;흔하게 볼 수 있는 작은 골렘. 향수병이 심한지 평소엔 잔디밭을 파들어가곤 한다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="8328388616101197" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;02&quot;{###}&quot;날쌘돌이골렘&quot;{###}2{###}2{###}12{###}&quot;조그맣고 얍삽하게 생겨가지고 구르는 게 아주 빠르다. 저런 애들이 몸은 약할테니 잘 노리도록.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;02&quot;{###}&quot;날쌘골렘&quot;{###}2{###}2{###}12{###}&quot;조그맣고 얍삽하게 생겨가지고 아주 빠르게 움직인다. 다리만 있었다면 육상을 했겠지만 한낱 돌멩이.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="3403070601094738" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;03&quot;{###}&quot;덩치골렘&quot;{###}6{###}1{###}20{###}&quot;좀 더 체력이 많고 큰 골렘. &quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;03&quot;{###}&quot;덩치골렘&quot;{###}6{###}1{###}20{###}&quot;덩치만큼 맷집이 좋은 골렘. 여우가 어깨로 부리려고 하는데 말을 잘 안 듣는다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="5689887300829072" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;04&quot;{###}&quot;새싹골렘&quot;{###}4{###}1{###}22{###}&quot;매 턴마다 체력을 회복하는 골렘. 머리에 새싹이 있다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;04&quot;{###}&quot;새싹골렘&quot;{###}4{###}1{###}22{###}&quot;새싹의 생명력으로 매 턴마다 체력을 회복하는 골렘. 사실 바오밥나무의 새싹이라고 한다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7018177101731351" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;05&quot;{###}&quot;가디언골렘&quot;{###}3{###}1{###}25{###}&quot;공격 한 번을 무효화하는 골렘. 쉴드가 있을 땐 방패를 들고 있다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;05&quot;{###}&quot;가면골렘&quot;{###}3{###}1{###}25{###}&quot;가면으로 공격 한 번을 무효화하는 골렘. 전 재산을 털어 산 초경량 티타늄 가면이다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7088134043598431" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;06&quot;{###}&quot;샴쌍둥이골렘&quot;{###}2{###}1{###}10{###}&quot;파괴될 시 양 옆 라인으로 작은 골렘을 만드는 골렘. 두 골렘이 붙어있는 것처럼 보인다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;06&quot;{###}&quot;쌍쌍골렘&quot;{###}2{###}1{###}10{###}&quot;두 외톨골렘들이 공유결합으로 단단히 붙어있다. 파괴되면 외톨골렘이 양 옆라인으로 튀어나간다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7544504494662237" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;07&quot;{###}&quot;단단골렘&quot;{###}3{###}1{###}28{###}&quot;맞을 때 마다 hp가 1씩 깎이는 골렘. 딱딱하게 생김.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;07&quot;{###}&quot;튼튼골렘&quot;{###}3{###}1{###}28{###}&quot;어떤 공격을 받아도 체력은 1씩 깎인다. 숟가락으로 3번 때리면 터진다는 소리.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7949965449402433" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;08&quot;{###}&quot;땅굴골렘&quot;{###}2{###}1{###}15{###}&quot;땅굴을 파고 오는 골렘.  두 턴 당 한 턴씩 숨을 쉬러 땅 위로 올라옴.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;08&quot;{###}&quot;딱지골렘&quot;{###}2{###}1{###}15{###}&quot;매 턴 뒤집어지며 움직이는 골렘. 복근을 빼서 등에다 몰빵했다. 등에 왕자가 있다고.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="2348100012865494" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;09&quot;{###}&quot;새끼골렘&quot;{###}2{###}1{###}8{###}&quot;샴쌍둥이골렘 파괴시 생성되는 새끼골렘&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;09&quot;{###}&quot;외톨골렘&quot;{###}2{###}1{###}8{###}&quot;쌍쌍골렘에서 튀어나온 골렘들. 서로 쌓인 게 많았는지 다시 붙진 않는다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="9117876726222982" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;10&quot;{###}&quot;1탄보스&quot;{###}10{###}2{###}100{###}&quot;1탄 보스. 특수효과는 따로 없다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;10&quot;{###}&quot;큰머리골렘&quot;{###}10{###}2{###}100{###}&quot;실컷 맞아도 잘 안 죽는 녀석이 빠르기는 또 빠르다. 전직 대포알.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="6011540133752889" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;11&quot;{###}&quot;2탄보스&quot;{###}8{###}1{###}300{###}&quot;2탄보스. 특수효과 : 두턴 가드&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;11&quot;{###}&quot;큰가면골렘&quot;{###}8{###}1{###}300{###}&quot;가면으로 공격 두 번을 무효화하는 골렘. 전 재산을 두 번 털어 산 초초합금 강화 티타늄 가면이다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="4203722551892308" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;12&quot;{###}&quot;3탄보스&quot;{###}10{###}1{###}500{###}&quot;3탄보스. 특수효과 : 자신의 라인 광역힐&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;12&quot;{###}&quot;대장골렘&quot;{###}10{###}1{###}500{###}&quot;매 턴 같은 라인의 골렘에게 광역힐을 시전한다. 간호사가 되고 싶었지만 못생겨서 탈락.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2521,11 +2521,53 @@
                                     <param id="2" name="X">golem.X</param>
                                     <param id="3" name="Y">golem.Y</param>
                                 </action>
+                                <action id="-3" name="Create object" sid="776081645339034" type="System">
+                                    <param id="0" name="Object to create">golemMovingSmoke2</param>
+                                    <param id="1" name="Layer">&quot;frontBg&quot;</param>
+                                    <param id="2" name="X">golem.X</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="5154446017878643" type="System">
+                                    <param id="0" name="Object to create">golemMovingSmoke3</param>
+                                    <param id="1" name="Layer">&quot;frontBg&quot;</param>
+                                    <param id="2" name="X">golem.X</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="295320363103425" type="System">
+                                    <param id="0" name="Object to create">golemMovingSmoke4</param>
+                                    <param id="1" name="Layer">&quot;frontBg&quot;</param>
+                                    <param id="2" name="X">golem.X</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
                                 <action behavior="Pin" id="0" name="Pin to object" sid="9949846638994902" type="golemMovingSmoke">
                                     <param id="0" name="Pin to">golem</param>
                                     <param id="1" name="Mode">1</param>
                                 </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="5869852556364808" type="golemMovingSmoke2">
+                                    <param id="0" name="Pin to">golem</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="1409258318106377" type="golemMovingSmoke3">
+                                    <param id="0" name="Pin to">golem</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="5779741863185306" type="golemMovingSmoke4">
+                                    <param id="0" name="Pin to">golem</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="7985942502022598" type="golemMovingSmoke">
+                                    <param id="0" name="Instance variable">golemUID</param>
+                                    <param id="1" name="Value">golem.UID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="6017017328912669" type="golemMovingSmoke2">
+                                    <param id="0" name="Instance variable">golemUID</param>
+                                    <param id="1" name="Value">golem.UID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3520833201264465" type="golemMovingSmoke3">
+                                    <param id="0" name="Instance variable">golemUID</param>
+                                    <param id="1" name="Value">golem.UID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="6890543965240412" type="golemMovingSmoke4">
                                     <param id="0" name="Instance variable">golemUID</param>
                                     <param id="1" name="Value">golem.UID</param>
                                 </action>
@@ -6943,7 +6985,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <variable constant="1" name="PRICEPERBONUS" sid="2216424190765371" static="0" type="number">5</variable>
+                        <variable constant="1" name="PRICEPERBONUS" sid="2216424190765371" static="0" type="number">1</variable>
                         <variable constant="1" name="MAtecostdivide" sid="8864027170854174" static="0" type="number">5</variable>
                         <event-block sid="4494833180591104">
                             <conditions>
