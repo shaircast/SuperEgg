@@ -12,7 +12,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout order="0">sprites</layout>
         <layout active="1" order="1">opening</layout>
-        <layout order="2">battleView</layout>
+        <event-sheet order="2">function</event-sheet>
+        <event-sheet order="3">stageView</event-sheet>
+        <event-sheet order="4">cageView</event-sheet>
+        <event-sheet order="5">optionView</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

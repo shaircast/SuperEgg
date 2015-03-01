@@ -287,10 +287,10 @@
                     </behaviors>
                     <animation-folder>
                         <animation framecount="4" loop="0" name="01Default" pingpong="0" repeatcount="1" repeatto="0" sid="1967376042875095" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_070021107.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_070021952.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_070022497.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_070023903.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_070021107.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_070021952.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_070022497.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_070023903.jpg" />
                         </animation>
                         <animation framecount="2" loop="0" name="02Default" pingpong="0" repeatcount="1" repeatto="0" sid="8968254526537589" speed="0">
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Desktop\Super Egg Art\original\KakaoTalk_20150217_065237885.jpg" />
@@ -304,8 +304,8 @@
                             </frame>
                         </animation>
                         <animation framecount="2" loop="0" name="03Default" pingpong="0" repeatcount="1" repeatto="0" sid="1390010214166599" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_071436224.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_071436541.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_071436224.jpg" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_071436541.jpg" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -2026,7 +2026,7 @@
                         </animation>
                         <animation framecount="2" loop="0" name="02_" pingpong="0" repeatcount="1" repeatto="0" sid="6182487460430461" speed="0">
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_064659117.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                         <animation framecount="1" loop="0" name="03_" pingpong="0" repeatcount="1" repeatto="0" sid="8010019940225458" speed="0">
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_072949830.jpg" />
@@ -2041,7 +2041,7 @@
                         </animation>
                         <animation framecount="2" loop="0" name="02_" pingpong="0" repeatcount="1" repeatto="0" sid="5647643787259251" speed="0">
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_080656705.jpg" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                         <animation framecount="1" loop="0" name="03_" pingpong="0" repeatcount="1" repeatto="0" sid="1068843641763956" speed="0">
                             <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator.xnote-PC\Dropbox\SNUGDC\2014WinterNexon\Super Egg\Super Egg Art\Super Egg Art\original\KakaoTalk_20150228_073125682.jpg" />

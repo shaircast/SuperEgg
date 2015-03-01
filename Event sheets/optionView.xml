@@ -384,18 +384,19 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="3025017364160472">
+                <event-block sid="9711176495021935">
                     <conditions>
-                        <condition id="3" name="On touched object" sid="522670878348338" type="Touch">
+                        <condition id="3" name="On touched object" sid="2589759736021482" type="Touch">
                             <param id="0" name="Object">menuButtonOptionView</param>
                         </condition>
-                        <condition id="-8" name="Is boolean instance variable set" sid="2950550709910344" type="menuButtonPackage">
+                        <condition id="-8" name="Is boolean instance variable set" sid="6390836985257268" type="menuButtonPackage">
                             <param id="0" name="Instance variable">ready</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-2" name="Go to layout" sid="6358419861308133" type="System">
-                            <param id="0" name="Layout">optionView</param>
+                        <action id="0" name="Call function" sid="7279565758741029" type="Function">
+                            <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>

@@ -6,8 +6,8 @@
         <include>function</include>
         <comment>mapState&#x0D;&#x0A;0 : idle&#x0D;&#x0A;1 : moving</comment>
         <variable constant="0" name="mapState" sid="1527712285530095" static="0" type="number">0</variable>
-        <variable constant="0" name="leftLimit" sid="2442168118569261" static="0" type="number">150</variable>
-        <variable constant="0" name="rightLimit" sid="2656393535942194" static="0" type="number">1130</variable>
+        <variable constant="0" name="leftLimit" sid="2442168118569261" static="0" type="number">500</variable>
+        <variable constant="0" name="rightLimit" sid="2656393535942194" static="0" type="number">780</variable>
         <comment>stageLimit : 현재 만들어진 최고 챕터</comment>
         <variable constant="0" name="chapterLimit" sid="4418648694302212" static="0" type="number">3</variable>
         <comment>맵의 left, right, middle point</comment>
@@ -252,38 +252,39 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="8590076997210405" type="Function">
+                <action id="0" name="Call function" sid="144600629501767" type="Function">
                     <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="9090920253699932">
-            <conditions>
-                <condition id="3" name="On touched object" sid="5721463475334609" type="Touch">
-                    <param id="0" name="Object">menuButtonStageView</param>
-                </condition>
-                <condition id="-8" name="Is boolean instance variable set" sid="2453629662776809" type="menuButtonPackage">
-                    <param id="0" name="Instance variable">ready</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="1959383621263203" type="System">
-                    <param id="0" name="Layout">stageView</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="1088507531179085">
             <conditions>
                 <condition id="3" name="On touched object" sid="3060708164666306" type="Touch">
-                    <param id="0" name="Object">menuButtonCageView</param>
+                    <param id="0" name="Object">menuButtonStageView</param>
                 </condition>
                 <condition id="-8" name="Is boolean instance variable set" sid="3907631388819921" type="menuButtonPackage">
                     <param id="0" name="Instance variable">ready</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-2" name="Go to layout" sid="3088344993902522" type="System">
+                <action id="0" name="Call function" sid="8590076997210405" type="Function">
+                    <param id="0" name="Name">&quot;menuButtonPackageTouched&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4145855849856615">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9672575498430548" type="Touch">
+                    <param id="0" name="Object">menuButtonCageView</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="6331939914046571" type="menuButtonPackage">
+                    <param id="0" name="Instance variable">ready</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="2991037729931786" type="System">
                     <param id="0" name="Layout">cageView</param>
                 </action>
             </actions>

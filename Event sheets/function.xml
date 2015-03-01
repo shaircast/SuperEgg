@@ -155,7 +155,7 @@
                             <actions>
                                 <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
                                     <param id="0" name="Key">&quot;henList&quot;</param>
-                                    <param id="1" name="Value">&quot;01a05/02b03/03a08/04c01/05d02/06a24/07d15/08a22/09c19/10a14/11b20/12a24/04c08/05d12/06a23/07d17/01a22/02b17/03a12/&quot;</param>
+                                    <param id="1" name="Value">&quot;01a00/02a00/03a00/04a00/&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
                                     <param id="0" name="Key">&quot;chapter&quot;</param>
@@ -163,11 +163,11 @@
                                 </action>
                                 <action id="0" name="Set local value" sid="3645545715772576" type="WebStorage">
                                     <param id="0" name="Key">&quot;maxStage&quot;</param>
-                                    <param id="1" name="Value">&quot;3_3&quot;</param>
+                                    <param id="1" name="Value">&quot;1_1&quot;</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="71699616378047" type="WebStorage">
                                     <param id="0" name="Key">&quot;gold&quot;</param>
-                                    <param id="1" name="Value">10000</param>
+                                    <param id="1" name="Value">3000</param>
                                 </action>
                                 <action id="0" name="Set local value" sid="5464618023177127" type="WebStorage">
                                     <param id="0" name="Key">&quot;entry1&quot;</param>

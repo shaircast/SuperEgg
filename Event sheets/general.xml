@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>general</name>
     <events>
-        <variable constant="1" name="HEARTCHARGETIME" sid="4116059698744367" static="0" type="number">180</variable>
+        <variable constant="1" name="HEARTCHARGETIME" sid="4116059698744367" static="0" type="number">900</variable>
         <variable constant="1" name="MAXHEART" sid="5061671056963641" static="0" type="number">5</variable>
         <variable constant="0" name="lastTimeStampEverySec" sid="4615752865800644" static="0" type="number">0</variable>
         <variable constant="0" name="fadeStart" sid="805565601887793" static="0" type="number">0</variable>
@@ -48,7 +48,7 @@
                     <param id="1" name="Color">rgb(0, 0, 0)</param>
                 </action>
                 <action id="-16" name="Wait" sid="8979294542331238" type="System">
-                    <param id="0" name="Seconds">1.2</param>
+                    <param id="0" name="Seconds">1.5</param>
                 </action>
                 <action id="-9" name="Set value" sid="9058078735480526" type="System">
                     <param id="0" name="Variable">fadeStart</param>
