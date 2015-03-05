@@ -168,6 +168,7 @@
                 <condition id="3" name="On touched object" sid="2700846813471433" type="Touch">
                     <param id="0" name="Object">exitButton</param>
                 </condition>
+                <condition id="-9" name="Is visible" sid="1693029801421527" type="exitButton" />
             </conditions>
             <actions>
                 <action id="0" name="Call function" sid="9547377507028987" type="Function">
@@ -177,8 +178,9 @@
                 <action id="-16" name="Wait" sid="5245552706710848" type="System">
                     <param id="0" name="Seconds">0</param>
                 </action>
-                <action id="-2" name="Go to layout" sid="4124365629596598" type="System">
-                    <param id="0" name="Layout">stageView</param>
+                <action id="-9" name="Set value" sid="4124365629596598" type="System">
+                    <param id="0" name="Variable">gameState</param>
+                    <param id="1" name="Value">4</param>
                 </action>
             </actions>
         </event-block>
@@ -297,6 +299,9 @@
                         </action>
                         <action id="-16" name="Wait" sid="5199612713672848" type="System">
                             <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="7519404239600812" type="exitButton">
+                            <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="-9" name="Set value" sid="4526369778345731" type="System">
                             <param id="0" name="Variable">gameState</param>
@@ -590,21 +595,57 @@
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Second value">0</param>
                         </condition>
-                        <condition id="4" name="Is touching object" sid="2240256857128339" type="Touch">
-                            <param id="0" name="Object">launchLine</param>
-                        </condition>
                         <condition id="-14" name="Compare variable" sid="8407475261259978" type="System">
                             <param id="0" name="Variable">flag</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="9758878962771427" type="Function">
-                            <param id="0" name="Name">&quot;touchingLaunchLine&quot;</param>
-                            <param id="1" name="Parameter {n}">launchLine.UID</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="8339466123953589">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="2240256857128339" type="Touch">
+                                    <param id="0" name="Object">launchLine</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="9758878962771427" type="Function">
+                                    <param id="0" name="Name">&quot;touchingLaunchLine&quot;</param>
+                                    <param id="1" name="Parameter {n}">launchLine.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3621555506493338">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="7910530297073947" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9481208758905689">
+                                    <conditions>
+                                        <condition id="-19" name="Pick all" sid="8242844224326924" type="System">
+                                            <param id="0" name="Object">launchLine</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="9729368730537941" type="launchLine">
+                                            <param id="0" name="Instance variable">aimed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Sine" id="0" name="Set active" sid="6263160739491667" type="launchLine">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="1127175646834167" type="launchLine">
+                                            <param id="0" name="Width">self.originalWidth</param>
+                                            <param id="1" name="Height">self.originalHeight</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="5843874662549756" type="target" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="7196352529718023">
                     <conditions>

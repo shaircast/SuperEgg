@@ -32,7 +32,7 @@
                     <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
                 </action>
                 <action id="0" name="Set text" sid="9373895425326217" type="credit1">
-                    <param id="0" name="Text">&quot;슈퍼 에그&quot;&amp;newline&amp;newline&amp;&quot;&apos;14 겨울&quot;&amp;newline&amp;&quot;SNUGDC&quot;</param>
+                    <param id="0" name="Text">&quot;슈퍼 에그&quot;&amp;newline&amp;newline&amp;&quot;&apos;14-&apos;15 겨울&quot;&amp;newline&amp;&quot;SNUGDC&quot;</param>
                 </action>
                 <action id="0" name="Set text" sid="7506538788314958" type="credit2">
                     <param id="0" name="Text">&quot;PM&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;박성환&quot;&amp;newline&amp;newline&amp;&#x0D;&#x0A;&#x0D;&#x0A;&quot;기획&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;박성환, 김주현&quot;&amp;newline&amp;newline&amp;&#x0D;&#x0A;&#x0D;&#x0A;&quot;닭/골렘&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;김지윤&quot;&amp;newline&amp;newline&amp;&#x0D;&#x0A;&#x0D;&#x0A;&quot;스테이지 디자인&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;김주현&quot;&amp;newline&amp;newline&amp;&#x0D;&#x0A;&#x0D;&#x0A;&quot;프로그래밍&quot;&amp;newline&amp;&#x0D;&#x0A;&quot;박성환&quot;</param>
@@ -246,12 +246,12 @@
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="2375513805921398" type="notiButton">
-                            <param id="0" name="Animation">&quot;Off&quot;</param>
+                            <param id="0" name="Animation">&quot;On&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action id="-13" name="Set boolean" sid="5088734760760685" type="notiButton">
                             <param id="0" name="Instance variable">On</param>
-                            <param id="1" name="Value">0</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>

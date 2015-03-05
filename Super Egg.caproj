@@ -21,6 +21,7 @@
         <plugin author="Rex.Rainbow" id="Rex_audio_helper" version="0.100000001">Audio helper</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
         <plugin author="sergyperov / SirG" id="cocoonjsnotify" version="1">CocoonJS Notifications</plugin>
@@ -3426,6 +3427,14 @@
             <object-type name="tipText" sid="2029038842416462">
                 <plugin id="Text" />
             </object-type>
+            <object-type name="cprtText" sid="8989361414233438">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="7381497695361165">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
         </object-folder>
         <object-folder name="icon">
             <object-type name="iconAtk" sid="7632449024285424">
@@ -3831,6 +3840,25 @@
                 <plugin id="Text" />
             </object-type>
         </object-folder>
+        <object-folder name="testfunction">
+            <object-type name="button" sid="1018615838279093">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5978247448661789" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Text" sid="6213924304645909">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="TextBox" sid="5305697906117966">
+                <plugin id="TextBox" />
+            </object-type>
+            <object-type name="Text3" sid="136546670488618">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
         <object-type name="Text2" sid="9244127702308912">
             <plugin id="Text" />
         </object-type>
@@ -3844,6 +3872,14 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4232872001806188" speed="5">
                     <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="heartdown" sid="1640845493575793">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4013118483795398" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -3896,6 +3932,7 @@
                 <member>alpha</member>
                 <member>atkText</member>
                 <member>beta</member>
+                <member>cprtText</member>
                 <member>credit1</member>
                 <member>credit2</member>
                 <member>credit3</member>
@@ -3944,6 +3981,7 @@
         <layout>sprites.xml</layout>
         <layout>cageView.xml</layout>
         <layout>optionView.xml</layout>
+        <layout>Layout 1.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>battleView.xml</event-sheet>
@@ -3953,6 +3991,7 @@
         <event-sheet>cageView.xml</event-sheet>
         <event-sheet>optionView.xml</event-sheet>
         <event-sheet>general.xml</event-sheet>
+        <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="0">

@@ -414,121 +414,134 @@
                     <sub-events>
                         <comment>calcDone은 시간계산 필요없으면 1.</comment>
                         <variable constant="0" name="calcDone" sid="1109934088849485" static="0" type="number">0</variable>
-                        <variable constant="0" name="lastTimeStampInSec" sid="4800031084394543" static="0" type="number">0</variable>
-                        <variable constant="0" name="currentTimeStampInSec" sid="4251402895228676" static="0" type="number">0</variable>
+                        <variable constant="0" name="lastTimeStamp" sid="4800031084394543" static="0" type="number">0</variable>
+                        <variable constant="0" name="currentTimeStamp" sid="4251402895228676" static="0" type="number">0</variable>
                         <variable constant="0" name="timeDiffInSec" sid="2046738186880434" static="0" type="number">0</variable>
                         <event-block sid="6402651836112892">
                             <conditions />
                             <actions>
                                 <action id="-9" name="Set value" sid="53842192939933" type="System">
-                                    <param id="0" name="Variable">lastTimeStampInSec</param>
-                                    <param id="1" name="Value">int(Function.Param(0)/1000)</param>
+                                    <param id="0" name="Variable">lastTimeStamp</param>
+                                    <param id="1" name="Value">int(Function.Param(0))</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="3844830949762936" type="System">
-                                    <param id="0" name="Variable">currentTimeStampInSec</param>
-                                    <param id="1" name="Value">int(date.UnixTimestamp/1000)</param>
+                                    <param id="0" name="Variable">currentTimeStamp</param>
+                                    <param id="1" name="Value">date.UnixTimestamp</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="8928314043435995" type="System">
                                     <param id="0" name="Variable">timeDiffInSec</param>
-                                    <param id="1" name="Value">currentTimeStampInSec-lastTimeStampInSec</param>
+                                    <param id="1" name="Value">int((currentTimeStamp-lastTimeStamp)/1000)</param>
                                 </action>
                             </actions>
-                        </event-block>
-                        <event-block sid="4570969145145387">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="4057547267243546" type="System">
-                                    <param id="0" name="First value">timeDiffInSec</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Second value">WebStorage.LocalValue(&quot;timeLeftToCharge&quot;)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="477857484485095" type="System">
-                                    <param id="0" name="Variable">timeDiffInSec</param>
-                                    <param id="1" name="Value">timeDiffInSec-int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))</param>
-                                </action>
-                                <action id="0" name="Call function" sid="3226131856156693" type="Function">
-                                    <param id="0" name="Name">&quot;addHeart&quot;</param>
-                                    <param id="1" name="Parameter {n}">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="3440870644967857">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="8785454353541745" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set local value" sid="3674777877838179" type="WebStorage">
-                                    <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
-                                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))-timeDiffInSec</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="6625159790040545" type="System">
-                                    <param id="0" name="Variable">calcDone</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="1797705821628602">
-                            <conditions>
-                                <condition id="-12" name="Repeat" sid="5044593113348296" type="System">
-                                    <param id="0" name="Count">5</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="5440771897212776" type="System">
-                                    <param id="0" name="Variable">calcDone</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions />
                             <sub-events>
-                                <event-block sid="1896273100642913">
+                                <event-block sid="4570969145145387">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="2522549870683486" type="System">
+                                        <condition id="-8" name="Compare two values" sid="4057547267243546" type="System">
                                             <param id="0" name="First value">timeDiffInSec</param>
                                             <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">HEARTCHARGETIME</param>
+                                            <param id="2" name="Second value">int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="2710789716752294" type="System">
+                                        <action id="-9" name="Set value" sid="477857484485095" type="System">
                                             <param id="0" name="Variable">timeDiffInSec</param>
-                                            <param id="1" name="Value">timeDiffInSec-HEARTCHARGETIME</param>
+                                            <param id="1" name="Value">timeDiffInSec-int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))</param>
                                         </action>
-                                        <action id="0" name="Call function" sid="9442347107755342" type="Function">
+                                        <action id="0" name="Call function" sid="3226131856156693" type="Function">
                                             <param id="0" name="Name">&quot;addHeart&quot;</param>
                                             <param id="1" name="Parameter {n}">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="1430517539448111">
+                                <event-block sid="3440870644967857">
                                     <conditions>
-                                        <condition id="-22" name="Else" sid="4368738678634044" type="System" />
+                                        <condition id="-22" name="Else" sid="8785454353541745" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Set local value" sid="8232479990359505" type="WebStorage">
+                                        <action id="0" name="Set local value" sid="3674777877838179" type="WebStorage">
                                             <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
-                                            <param id="1" name="Value">HEARTCHARGETIME-timeDiffInSec</param>
+                                            <param id="1" name="Value">int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))-timeDiffInSec</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="3106230433660561" type="System">
+                                        <action id="-9" name="Set value" sid="6625159790040545" type="System">
                                             <param id="0" name="Variable">calcDone</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
+                                </event-block>
+                                <event-block sid="941348557315338">
+                                    <conditions />
+                                    <actions />
                                     <sub-events>
-                                        <event-block sid="6990115359786613">
+                                        <event-block sid="1797705821628602">
                                             <conditions>
-                                                <condition id="7" name="Compare key value (as number)" sid="3324533524483019" type="WebStorage">
-                                                    <param id="0" name="Key">&quot;heart&quot;</param>
-                                                    <param id="1" name="Comparison">5</param>
-                                                    <param id="2" name="Value">5</param>
+                                                <condition id="-12" name="Repeat" sid="5044593113348296" type="System">
+                                                    <param id="0" name="Count">5</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="0" name="Set local value" sid="199598837247088" type="WebStorage">
-                                                    <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
-                                                    <param id="1" name="Value">HEARTCHARGETIME</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="1896273100642913">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="2522549870683486" type="System">
+                                                            <param id="0" name="First value">timeDiffInSec</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Second value">HEARTCHARGETIME</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="5440771897212776" type="System">
+                                                            <param id="0" name="Variable">calcDone</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="2710789716752294" type="System">
+                                                            <param id="0" name="Variable">timeDiffInSec</param>
+                                                            <param id="1" name="Value">timeDiffInSec-HEARTCHARGETIME</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="9442347107755342" type="Function">
+                                                            <param id="0" name="Name">&quot;addHeart&quot;</param>
+                                                            <param id="1" name="Parameter {n}">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="1430517539448111">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="4368738678634044" type="System" />
+                                                        <condition id="-14" name="Compare variable" sid="3236068476622442" type="System">
+                                                            <param id="0" name="Variable">calcDone</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Set local value" sid="8232479990359505" type="WebStorage">
+                                                            <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
+                                                            <param id="1" name="Value">HEARTCHARGETIME-timeDiffInSec</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="3106230433660561" type="System">
+                                                            <param id="0" name="Variable">calcDone</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="6990115359786613">
+                                                            <conditions>
+                                                                <condition id="7" name="Compare key value (as number)" sid="3324533524483019" type="WebStorage">
+                                                                    <param id="0" name="Key">&quot;heart&quot;</param>
+                                                                    <param id="1" name="Comparison">5</param>
+                                                                    <param id="2" name="Value">5</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Set local value" sid="199598837247088" type="WebStorage">
+                                                                    <param id="0" name="Key">&quot;timeLeftToCharge&quot;</param>
+                                                                    <param id="1" name="Value">HEARTCHARGETIME</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -920,51 +933,51 @@
                             <actions>
                                 <action id="0" name="Call function" sid="6112891196647187" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;01&quot;{###}&quot;작은골렘&quot;{###}3{###}1{###}10{###}&quot;흔하게 볼 수 있는 작은 골렘. 향수병이 심한지 평소엔 잔디밭을 파들어가곤 한다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;01&quot;{###}&quot;작은골렘&quot;{###}3{###}1{###}20{###}&quot;흔하게 볼 수 있는 작은 골렘. 향수병이 심한지 평소엔 잔디밭을 파들어가곤 한다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="8328388616101197" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;02&quot;{###}&quot;날쌘골렘&quot;{###}2{###}2{###}12{###}&quot;조그맣고 얍삽하게 생겨가지고 아주 빠르게 움직인다. 다리만 있었다면 육상을 했겠지만 한낱 돌멩이.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;02&quot;{###}&quot;날쌘골렘&quot;{###}2{###}2{###}24{###}&quot;조그맣고 얍삽하게 생겨가지고 아주 빠르게 움직인다. 다리만 있었다면 육상을 했겠지만 한낱 돌멩이.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="3403070601094738" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;03&quot;{###}&quot;덩치골렘&quot;{###}6{###}1{###}20{###}&quot;덩치만큼 맷집이 좋은 골렘. 여우가 어깨로 부리려고 하는데 말을 잘 안 듣는다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;03&quot;{###}&quot;덩치골렘&quot;{###}6{###}1{###}40{###}&quot;덩치만큼 맷집이 좋은 골렘. 여우가 어깨로 부리려고 하는데 말을 잘 안 듣는다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="5689887300829072" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;04&quot;{###}&quot;새싹골렘&quot;{###}4{###}1{###}22{###}&quot;새싹의 생명력으로 매 턴마다 체력을 회복하는 골렘. 사실 바오밥나무의 새싹이라고 한다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;04&quot;{###}&quot;새싹골렘&quot;{###}4{###}1{###}44{###}&quot;새싹의 생명력으로 매 턴마다 체력을 회복하는 골렘. 사실 바오밥나무의 새싹이라고 한다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7018177101731351" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;05&quot;{###}&quot;가면골렘&quot;{###}3{###}1{###}25{###}&quot;가면으로 공격 한 번을 무효화하는 골렘. 전 재산을 털어 산 초경량 티타늄 가면이다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;05&quot;{###}&quot;가면골렘&quot;{###}3{###}1{###}50{###}&quot;가면으로 공격 한 번을 무효화하는 골렘. 전 재산을 털어 산 초경량 티타늄 가면이다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7088134043598431" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;06&quot;{###}&quot;쌍쌍골렘&quot;{###}2{###}1{###}10{###}&quot;두 외톨골렘들이 공유결합으로 단단히 붙어있다. 파괴되면 외톨골렘이 양 옆라인으로 튀어나간다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;06&quot;{###}&quot;쌍쌍골렘&quot;{###}2{###}1{###}20{###}&quot;두 외톨골렘들이 공유결합으로 단단히 붙어있다. 파괴되면 외톨골렘이 양 옆라인으로 튀어나간다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7544504494662237" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;07&quot;{###}&quot;튼튼골렘&quot;{###}3{###}1{###}28{###}&quot;어떤 공격을 받아도 체력은 1씩 깎인다. 숟가락으로 3번 때리면 터진다는 소리.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;07&quot;{###}&quot;튼튼골렘&quot;{###}3{###}1{###}56{###}&quot;어떤 공격을 받아도 체력은 1씩 깎인다. 숟가락으로 3번 때리면 터진다는 소리.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7949965449402433" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;08&quot;{###}&quot;딱지골렘&quot;{###}2{###}1{###}15{###}&quot;매 턴 뒤집어지며 움직이는 골렘. 복근을 빼서 등에다 몰빵했다. 등에 왕자가 있다고.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;08&quot;{###}&quot;딱지골렘&quot;{###}2{###}1{###}30{###}&quot;매 턴 뒤집어지며 움직이는 골렘. 복근을 빼서 등에다 몰빵했다. 등에 왕자가 있다고.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="2348100012865494" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;09&quot;{###}&quot;외톨골렘&quot;{###}2{###}1{###}8{###}&quot;쌍쌍골렘에서 튀어나온 골렘들. 서로 쌓인 게 많았는지 다시 붙진 않는다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;09&quot;{###}&quot;외톨골렘&quot;{###}2{###}1{###}16{###}&quot;쌍쌍골렘에서 튀어나온 골렘들. 서로 쌓인 게 많았는지 다시 붙진 않는다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="9117876726222982" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;10&quot;{###}&quot;큰머리골렘&quot;{###}10{###}2{###}100{###}&quot;실컷 맞아도 잘 안 죽는 녀석이 빠르기는 또 빠르다. 전직 대포알.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;10&quot;{###}&quot;큰머리골렘&quot;{###}10{###}2{###}200{###}&quot;실컷 맞아도 잘 안 죽는 녀석이 빠르기는 또 빠르다. 전직 대포알.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="6011540133752889" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;11&quot;{###}&quot;큰가면골렘&quot;{###}8{###}1{###}300{###}&quot;가면으로 공격 두 번을 무효화하는 골렘. 전 재산을 두 번 털어 산 초초합금 강화 티타늄 가면이다.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;11&quot;{###}&quot;큰가면골렘&quot;{###}8{###}1{###}600{###}&quot;가면으로 공격 두 번을 무효화하는 골렘. 전 재산을 두 번 털어 산 초초합금 강화 티타늄 가면이다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="4203722551892308" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;12&quot;{###}&quot;대장골렘&quot;{###}10{###}1{###}500{###}&quot;매 턴 같은 라인의 골렘에게 광역힐을 시전한다. 간호사가 되고 싶었지만 못생겨서 탈락.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;12&quot;{###}&quot;대장골렘&quot;{###}10{###}1{###}800{###}&quot;매 턴 같은 라인의 골렘에게 광역힐을 시전한다. 간호사가 되고 싶었지만 못생겨서 탈락.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

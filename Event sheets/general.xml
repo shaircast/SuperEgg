@@ -24,6 +24,9 @@
                 <action id="0" name="Set text" sid="3455023388396399" type="Text2">
                     <param id="0" name="Text">WindowWidth&amp;&quot;,&quot;&amp;WindowHeight&amp;&quot;,&quot;&amp;int(lastTimeStampEverySec/1000)&amp;&quot;,&quot;&amp;int(date.UnixTimestamp/1000)</param>
                 </action>
+                <action id="0" name="Set text" sid="66723656570629" type="openingText">
+                    <param id="0" name="Text">Date.UnixTimestamp&amp;&quot;,&quot;&amp;WebStorage.LocalValue(&quot;exitTimeStamp&quot;)&amp;&quot;,&quot;&amp;WebStorage.LocalValue(&quot;heart&quot;)</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="2051457413045695">
@@ -48,7 +51,7 @@
                     <param id="1" name="Color">rgb(0, 0, 0)</param>
                 </action>
                 <action id="-16" name="Wait" sid="8979294542331238" type="System">
-                    <param id="0" name="Seconds">1.5</param>
+                    <param id="0" name="Seconds">1.3</param>
                 </action>
                 <action id="-9" name="Set value" sid="9058078735480526" type="System">
                     <param id="0" name="Variable">fadeStart</param>
@@ -784,29 +787,22 @@
                 </action>
             </actions>
         </event-block>
-        <event-group description="" sid="7657085672509721" title="local Push Time Manager">
+        <event-group description="" sid="7657085672509721" title="timeManager">
             <sub-events>
                 <comment>1초마다, 혹은 앱을 정지상태로 뒀다가 올때 실행된다.</comment>
                 <event-block sid="8217676125514442">
                     <conditions>
                         <condition id="-8" name="Compare two values" sid="4594502860628197" type="System">
-                            <param id="0" name="First value">int(lastTimeStampEverySec/1000)</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Second value">int(date.UnixTimestamp/1000)</param>
+                            <param id="0" name="First value">date.UnixTimestamp-int(WebStorage.LocalValue(&quot;exitTimeStamp&quot;))</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">1000</param>
                         </condition>
                         <condition id="-4" name="Trigger once while true" sid="4485898618093427" type="System" />
                     </conditions>
                     <actions>
                         <action id="0" name="Call function" sid="2014683320774851" type="Function">
                             <param id="0" name="Name">&quot;timeHeartCalc&quot;</param>
-                            <param id="1" name="Parameter {n}">lastTimeStampEverySec</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="8162074205537961" type="System">
-                            <param id="0" name="Seconds">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="4397242246165347" type="System">
-                            <param id="0" name="Variable">lastTimeStampEverySec</param>
-                            <param id="1" name="Value">date.UnixTimestamp</param>
+                            <param id="1" name="Parameter {n}">WebStorage.LocalValue(&quot;exitTimeStamp&quot;)</param>
                         </action>
                         <action id="0" name="Set local value" sid="6271903430924984" type="WebStorage">
                             <param id="0" name="Key">&quot;exitTimeStamp&quot;</param>

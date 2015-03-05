@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <include>function</include>
+        <event-block sid="2808908292199143">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4099280322110253" type="Touch">
+                    <param id="0" name="Object">button</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="4831729840061905" type="Function">
+                    <param id="0" name="Name">&quot;timeHeartCalc&quot;</param>
+                    <param id="1" name="Parameter {n}">int(TextBox.Text)</param>
+                </action>
+                <action id="0" name="Set text" sid="3340577428346395" type="Text">
+                    <param id="0" name="Text">int(TextBox.Text)&amp;&quot;,&quot;&amp;WebStorage.LocalValue(&quot;exitTimeStamp&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3497242826811055">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4091770213326122" type="Touch">
+                    <param id="0" name="Object">heartdown</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="7652056477807868" type="Function">
+                    <param id="0" name="Name">&quot;addHeart&quot;</param>
+                    <param id="1" name="Parameter {n}">-1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1146765370843541">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="2843181185186975" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="671237127314538" type="Text3">
+                    <param id="0" name="Text">&quot;heartcharge:&quot;&amp;HEARTCHARGETIME&amp;&quot;, heart:&quot;&amp;WebStorage.LocalValue(&quot;heart&quot;)&amp;&quot;, now:&quot;&amp;date.UnixTimestamp&amp;&quot;, timeleft;&quot;&amp;int(WebStorage.LocalValue(&quot;timeLeftToCharge&quot;))</param>
+                </action>
+                <action id="0" name="Call function" sid="1665827976055239" type="Function">
+                    <param id="0" name="Name">&quot;heartRefresh&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Set text" sid="5131812369732654" type="Text">
+                    <param id="0" name="Text">int(TextBox.Text)&amp;&quot;,&quot;&amp;WebStorage.LocalValue(&quot;exitTimeStamp&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3488770399644804">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4101237366177729" type="System" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="1178767437117769" type="System">
+                    <param id="0" name="Group name">&quot;timeManager&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
