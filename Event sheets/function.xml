@@ -7,6 +7,7 @@
         <variable constant="0" name="powerupIndicatorX" sid="487664723975616" static="0" type="number">0</variable>
         <variable constant="0" name="powerupIndicatorY" sid="1223921681712774" static="0" type="number">5</variable>
         <variable constant="0" name="textYcalib" sid="6970010658980569" static="0" type="number">5</variable>
+        <variable constant="0" name="sellPrice" sid="1782697737199616" static="0" type="number">0</variable>
         <event-group description="" sid="3206342493633997" title="general">
             <sub-events>
                 <comment>typeIconPick(henCage.uid) : 해당 henCage의 iconTypeHUD에 type따라 색을 부여하고 정리, 배치.</comment>
@@ -2095,12 +2096,144 @@
                                             <param id="2" name="Value">2</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="7024823255720201" type="Function">
-                                            <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
-                                            <param id="1" name="Parameter {n}">272{###}2000{###}Function.Param(0){###}Function.Param(1)</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="1515408153583407">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="8440236747904322" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="7024823255720201" type="Function">
+                                                    <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
+                                                    <param id="1" name="Parameter {n}">315{###}300{###}Function.Param(0){###}Function.Param(1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8936662280681094">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="5756361133602468" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="7447014784539333" type="Function">
+                                                    <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
+                                                    <param id="1" name="Parameter {n}">315{###}470{###}Function.Param(0){###}Function.Param(1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="7595880845739313">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="8764808334283296" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="7347956133256722" type="Function">
+                                                    <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
+                                                    <param id="1" name="Parameter {n}">305{###}600{###}Function.Param(0){###}Function.Param(1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="3311138398440582">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="893656599584173" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="7779279444477226" type="Function">
+                                                    <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
+                                                    <param id="1" name="Parameter {n}">300{###}730{###}Function.Param(0){###}Function.Param(1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8995160197284637">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="5923664496179154" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="53262386496954" type="Function">
+                                                    <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
+                                                    <param id="1" name="Parameter {n}">298{###}840{###}Function.Param(0){###}Function.Param(1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="3185854470273107">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="2264322115474476" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="9908078041663077" type="Function">
+                                                    <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
+                                                    <param id="1" name="Parameter {n}">296{###}950{###}Function.Param(0){###}Function.Param(1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="7292829466753362">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="5427964624030594" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">6</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="2751142290395599" type="Function">
+                                                    <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
+                                                    <param id="1" name="Parameter {n}">294{###}1050{###}Function.Param(0){###}Function.Param(1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8099798816298049">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="2538726282399005" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">7</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="7085232468541769" type="Function">
+                                                    <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
+                                                    <param id="1" name="Parameter {n}">290{###}1220{###}Function.Param(0){###}Function.Param(1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="7753623170940095">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="364412667946849" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">8</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="5289690400754544" type="Function">
+                                                    <param id="0" name="Name">&quot;launchEggFromCannon&quot;</param>
+                                                    <param id="1" name="Parameter {n}">285{###}1460{###}Function.Param(0){###}Function.Param(1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <comment>쏠수있는게 없어요!</comment>
                                 <event-block sid="4594350622919646">
@@ -2193,7 +2326,7 @@
                                     <param id="0" name="Max speed">60</param>
                                 </action>
                                 <action behavior="RotateTo" id="4" name="Rotate to angle" sid="6491002975004423" type="shooter">
-                                    <param id="0" name="Angle">saveAng+45</param>
+                                    <param id="0" name="Angle">280+45</param>
                                     <param id="1" name="Clockwise">2</param>
                                 </action>
                                 <action id="-41" name="Wait for signal" sid="94899804244097" type="System">
@@ -2203,7 +2336,7 @@
                                     <param id="0" name="Max speed">300</param>
                                 </action>
                                 <action behavior="RotateTo" id="4" name="Rotate to angle" sid="9244188419257879" type="shooter">
-                                    <param id="0" name="Angle">saveAng+90</param>
+                                    <param id="0" name="Angle">280+90</param>
                                     <param id="1" name="Clockwise">2</param>
                                 </action>
                                 <action id="-41" name="Wait for signal" sid="6751511349181758" type="System">
@@ -7224,6 +7357,7 @@
                     <sub-events>
                         <variable constant="1" name="PRICEPERBONUS" sid="2216424190765371" static="0" type="number">1</variable>
                         <variable constant="1" name="MAtecostdivide" sid="8864027170854174" static="0" type="number">5</variable>
+                        <variable constant="1" name="CRITICALCHANCEPERBONUS" sid="1923734655557216" static="0" type="number">1</variable>
                         <event-block sid="4494833180591104">
                             <conditions>
                                 <condition id="-14" name="Pick by unique ID" sid="1826590481011001" type="henCage">
@@ -7250,130 +7384,134 @@
                                             </conditions>
                                             <actions />
                                             <sub-events>
-                                                <variable constant="1" name="CRITICALCHANCEPERBONUS" sid="1923734655557216" static="0" type="number">1</variable>
-                                                <event-block sid="4165048545728656">
+                                                <event-block sid="7539800775859979">
                                                     <conditions>
-                                                        <condition id="-8" name="Compare two values" sid="2094513368459892" type="System">
-                                                            <param id="0" name="First value">cageSelection.Count</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Second value">0</param>
+                                                        <condition id="-7" name="Compare instance variable" sid="5955841799281172" type="henCage">
+                                                            <param id="0" name="Instance variable">id</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Value">int(WebStorage.LocalValue(&quot;entry1&quot;))</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="5683590898346084" type="henCage">
+                                                            <param id="0" name="Instance variable">id</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Value">int(WebStorage.LocalValue(&quot;entry2&quot;))</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="4903419614474037" type="henCage">
+                                                            <param id="0" name="Instance variable">id</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Value">int(WebStorage.LocalValue(&quot;entry3&quot;))</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions>
-                                                        <action id="-3" name="Create object" sid="6748636129557933" type="System">
-                                                            <param id="0" name="Object to create">cageSelection</param>
-                                                            <param id="1" name="Layer">&quot;hud&quot;</param>
-                                                            <param id="2" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
-                                                            <param id="3" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="3976233776490893" type="cageSelection">
-                                                            <param id="0" name="Instance variable">select</param>
-                                                            <param id="1" name="Value">henCage.id</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="380193049840814">
-                                                    <conditions />
-                                                    <actions>
-                                                        <action id="-10" name="Set value" sid="809900938948204" type="cageSelection">
-                                                            <param id="0" name="Instance variable">select</param>
-                                                            <param id="1" name="Value">henCage.id</param>
-                                                        </action>
-                                                        <action id="-3" name="Set position" sid="9304518284594172" type="cageSelection">
-                                                            <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
-                                                            <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
-                                                        </action>
-                                                        <action id="0" name="Call function" sid="4457681043795513" type="Function">
-                                                            <param id="0" name="Name">&quot;infoModeShowHide&quot;</param>
-                                                            <param id="1" name="Parameter {n}">1</param>
-                                                        </action>
-                                                        <action id="0" name="Set text" sid="4925060115577885" type="nameText">
-                                                            <param id="0" name="Text">henDB.Get(henCage.kind&amp;&quot;name&quot;)</param>
-                                                        </action>
-                                                        <action id="0" name="Set text" sid="7857033824541171" type="atkText">
-                                                            <param id="0" name="Text">henDB.Get(henCage.kind&amp;&quot;atk&quot;)</param>
-                                                        </action>
-                                                        <action id="0" name="Set text" sid="9192192278629023" type="foodcostText">
-                                                            <param id="0" name="Text">henDB.Get(henCage.kind&amp;&quot;foodcost&quot;)</param>
-                                                        </action>
-                                                        <action id="0" name="Set text" sid="6087943094887514" type="readyturnText">
-                                                            <param id="0" name="Text">henDB.Get(henCage.kind&amp;&quot;readyturn&quot;)</param>
-                                                        </action>
-                                                        <action id="0" name="Set text" sid="4421237444430063" type="powerupText">
-                                                            <param id="0" name="Text">henCage.bonus*CRITICALCHANCEPERBONUS&amp;&quot;%&quot;</param>
-                                                        </action>
-                                                        <action id="0" name="Set text" sid="1200027854761927" type="goldText">
-                                                            <param id="0" name="Text">henDB.Get(henCage.kind&amp;&quot;price&quot;)+henCage.bonus*PRICEPERBONUS</param>
-                                                        </action>
-                                                        <action id="0" name="Set text" sid="7374851964963933" type="descriptionText">
-                                                            <param id="0" name="Text">henDB.Get(henCage.kind&amp;&quot;description&quot;)</param>
-                                                        </action>
-                                                        <action id="-15" name="Set visible" sid="6040513523164346" type="cageViewOkButton">
-                                                            <param id="0" name="Visibility">1</param>
-                                                        </action>
-                                                    </actions>
+                                                    <actions />
                                                     <sub-events>
-                                                        <event-block sid="6618682653975688">
+                                                        <event-block sid="8219436302383523">
                                                             <conditions>
-                                                                <condition id="-7" name="Compare instance variable" sid="9409983416180978" type="henCage">
-                                                                    <param id="0" name="Instance variable">type</param>
-                                                                    <param id="1" name="Comparison">0</param>
-                                                                    <param id="2" name="Value">&quot;a&quot;</param>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3256400559914894" type="henCage">
+                                                                    <param id="0" name="Instance variable">sell</param>
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
-                                                                <action id="4" name="Set animation" sid="8726701723772113" type="iconType">
-                                                                    <param id="0" name="Animation">&quot;None&quot;</param>
-                                                                    <param id="1" name="From">1</param>
+                                                                <action id="-13" name="Set boolean" sid="2358496710435505" type="henCage">
+                                                                    <param id="0" name="Instance variable">sell</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="-3" name="Create object" sid="6748636129557933" type="System">
+                                                                    <param id="0" name="Object to create">cageSelection</param>
+                                                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                                                    <param id="2" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                                                    <param id="3" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
+                                                                </action>
+                                                                <action id="-10" name="Add to" sid="4606277049194472" type="System">
+                                                                    <param id="0" name="Variable">sellPrice</param>
+                                                                    <param id="1" name="Value">henDB.Get(henCage.kind&amp;&quot;price&quot;)+henCage.bonus*PRICEPERBONUS</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="6265201677661111" type="cageSelection">
+                                                                    <param id="0" name="Instance variable">select</param>
+                                                                    <param id="1" name="Value">henCage.id</param>
+                                                                </action>
+                                                                <action id="-15" name="Set visible" sid="1800946285311596" type="cageViewOkButton">
+                                                                    <param id="0" name="Visibility">1</param>
+                                                                </action>
+                                                                <action id="0" name="Set text" sid="8720485446468699" type="systemText">
+                                                                    <param id="0" name="Text">&quot;[판매] &quot;&amp;sellPrice&amp;&quot;골드를 얻을 수 있습니다. 판매하시겠어요?&quot;</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
-                                                        <event-block sid="9528123799324337">
+                                                        <event-block sid="4297121526572458">
                                                             <conditions>
-                                                                <condition id="-7" name="Compare instance variable" sid="7641298885715812" type="henCage">
-                                                                    <param id="0" name="Instance variable">type</param>
-                                                                    <param id="1" name="Comparison">0</param>
-                                                                    <param id="2" name="Value">&quot;b&quot;</param>
-                                                                </condition>
+                                                                <condition id="-22" name="Else" sid="1048356935693108" type="System" />
                                                             </conditions>
                                                             <actions>
-                                                                <action id="4" name="Set animation" sid="7391022946693919" type="iconType">
-                                                                    <param id="0" name="Animation">&quot;Fire&quot;</param>
-                                                                    <param id="1" name="From">1</param>
+                                                                <action id="-13" name="Set boolean" sid="1692863754331472" type="henCage">
+                                                                    <param id="0" name="Instance variable">sell</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action id="-10" name="Add to" sid="7075799327192055" type="System">
+                                                                    <param id="0" name="Variable">sellPrice</param>
+                                                                    <param id="1" name="Value">-(henDB.Get(henCage.kind&amp;&quot;price&quot;)+henCage.bonus*PRICEPERBONUS)</param>
                                                                 </action>
                                                             </actions>
-                                                        </event-block>
-                                                        <event-block sid="1680628568857668">
-                                                            <conditions>
-                                                                <condition id="-7" name="Compare instance variable" sid="9773683541550554" type="henCage">
-                                                                    <param id="0" name="Instance variable">type</param>
-                                                                    <param id="1" name="Comparison">0</param>
-                                                                    <param id="2" name="Value">&quot;c&quot;</param>
-                                                                </condition>
-                                                            </conditions>
-                                                            <actions>
-                                                                <action id="4" name="Set animation" sid="7129118471104445" type="iconType">
-                                                                    <param id="0" name="Animation">&quot;Water&quot;</param>
-                                                                    <param id="1" name="From">1</param>
-                                                                </action>
-                                                            </actions>
-                                                        </event-block>
-                                                        <event-block sid="1972550049657218">
-                                                            <conditions>
-                                                                <condition id="-7" name="Compare instance variable" sid="3250911651303376" type="henCage">
-                                                                    <param id="0" name="Instance variable">type</param>
-                                                                    <param id="1" name="Comparison">0</param>
-                                                                    <param id="2" name="Value">&quot;d&quot;</param>
-                                                                </condition>
-                                                            </conditions>
-                                                            <actions>
-                                                                <action id="4" name="Set animation" sid="343039251284921" type="iconType">
-                                                                    <param id="0" name="Animation">&quot;Grass&quot;</param>
-                                                                    <param id="1" name="From">1</param>
-                                                                </action>
-                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="51818846280931">
+                                                                    <conditions>
+                                                                        <condition id="-15" name="Pick nearest/furthest" sid="372359232979401" type="cageSelection">
+                                                                            <param id="0" name="Which">0</param>
+                                                                            <param id="1" name="X">henCage.X</param>
+                                                                            <param id="2" name="Y">henCage.Y</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-9" name="Destroy" sid="4814395841413822" type="cageSelection" />
+                                                                    </actions>
+                                                                    <sub-events>
+                                                                        <event-block sid="8838084551148673">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="2645743987047019" type="System">
+                                                                                    <param id="0" name="Variable">sellPrice</param>
+                                                                                    <param id="1" name="Comparison">3</param>
+                                                                                    <param id="2" name="Value">0</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="0" name="Set text" sid="449427282321733" type="systemText">
+                                                                                    <param id="0" name="Text">&quot;[판매] 판매하고 싶은 닭들을 고르고 OK를 누르면 닭을 팝니다.&quot;</param>
+                                                                                </action>
+                                                                                <action id="-15" name="Set visible" sid="2510523139084018" type="cageViewOkButton">
+                                                                                    <param id="0" name="Visibility">0</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                        <event-block sid="470908066226133">
+                                                                            <conditions>
+                                                                                <condition id="-22" name="Else" sid="9534401214477914" type="System" />
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="0" name="Set text" sid="8882198396956338" type="systemText">
+                                                                                    <param id="0" name="Text">&quot;[판매] &quot;&amp;sellPrice&amp;&quot;골드를 얻을 수 있습니다. 판매하시겠어요?&quot;</param>
+                                                                                </action>
+                                                                                <action id="-15" name="Set visible" sid="3751544976555665" type="cageViewOkButton">
+                                                                                    <param id="0" name="Visibility">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                            </sub-events>
                                                         </event-block>
                                                     </sub-events>
+                                                </event-block>
+                                                <event-block sid="6855508734851537">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="1858461428485446" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Set text" sid="7109349746826098" type="systemText">
+                                                            <param id="0" name="Text">&quot;[판매] 엔트리에 포함된 닭은 판매할 수 없습니다.&quot;</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="3518715934188049" type="cageViewOkButton">
+                                                            <param id="0" name="Visibility">0</param>
+                                                        </action>
+                                                    </actions>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
@@ -7751,6 +7889,14 @@
                                     <param id="0" name="Variable">cageState</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="2738255556608752" type="System">
+                                    <param id="0" name="Variable">sellPrice</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="3758702761031801" type="henCage">
+                                    <param id="0" name="Instance variable">sell</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
                                 <action id="4" name="Set animation" sid="6749570666280784" type="entryButton">
                                     <param id="0" name="Animation">&quot;Default&quot;</param>
                                     <param id="1" name="From">1</param>
@@ -7765,7 +7911,7 @@
                                 </action>
                                 <action id="-9" name="Destroy" sid="4824153002558588" type="cageSelection" />
                                 <action id="0" name="Set text" sid="157871016433122" type="systemText">
-                                    <param id="0" name="Text">&quot;[판매] 판매하고 싶은 닭을 고르고 OK를 누르면 닭을 팝니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;[판매] 판매하고 싶은 닭들을 고르고 OK를 누르면 닭을 팝니다.&quot;</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="7252828232889597" type="cageViewOkButton">
                                     <param id="0" name="Animation">&quot;Sell&quot;</param>
@@ -7945,17 +8091,17 @@
                                 <comment>엔트리에 없는 닭일때.</comment>
                                 <event-block sid="4178836786876737">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="2204360338603604" type="cageSelection">
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="2204360338603604" type="cageSelection">
                                             <param id="0" name="Instance variable">select</param>
                                             <param id="1" name="Comparison">1</param>
                                             <param id="2" name="Value">int(WebStorage.LocalValue(&quot;entry1&quot;))</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="7881303306311922" type="cageSelection">
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="7881303306311922" type="cageSelection">
                                             <param id="0" name="Instance variable">select</param>
                                             <param id="1" name="Comparison">1</param>
                                             <param id="2" name="Value">int(WebStorage.LocalValue(&quot;entry2&quot;))</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="6419974658197022" type="cageSelection">
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="6419974658197022" type="cageSelection">
                                             <param id="0" name="Instance variable">select</param>
                                             <param id="1" name="Comparison">1</param>
                                             <param id="2" name="Value">int(WebStorage.LocalValue(&quot;entry3&quot;))</param>
@@ -7967,37 +8113,64 @@
                                         <event-block sid="7188183162234358">
                                             <conditions>
                                                 <condition id="-8" name="Compare two values" sid="1129405492029326" type="System">
-                                                    <param id="0" name="First value">tokencount(WebStorage.LocalValue(&quot;henList&quot;),&quot;/&quot;)-1</param>
+                                                    <param id="0" name="First value">tokencount(WebStorage.LocalValue(&quot;henList&quot;),&quot;/&quot;)-cageSelection.Count</param>
                                                     <param id="1" name="Comparison">4</param>
                                                     <param id="2" name="Second value">4</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="-9" name="Destroy" sid="7451409140678857" type="henCage" />
-                                            </actions>
+                                            <actions />
                                             <sub-events>
                                                 <comment>정상처리</comment>
-                                                <event-block sid="5293383851829809">
+                                                <variable constant="0" name="sellCount" sid="4689556279579544" static="0" type="number">0</variable>
+                                                <variable constant="0" name="sellId" sid="1161991569574057" static="0" type="number">0</variable>
+                                                <event-block sid="7226685719388887">
                                                     <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="891382960325927" type="henCage">
-                                                            <param id="0" name="Instance variable">id</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">cageSelection.select</param>
+                                                        <condition id="-24" name="For Each (ordered)" sid="139874344746276" type="System">
+                                                            <param id="0" name="Object">henCage</param>
+                                                            <param id="1" name="Expression">henCage.id</param>
+                                                            <param id="2" name="Order">0</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="3451518514683073" type="henCage">
+                                                            <param id="0" name="Instance variable">sell</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="0" name="Call function" sid="2907677563636982" type="Function">
-                                                            <param id="0" name="Name">&quot;addGold&quot;</param>
-                                                            <param id="1" name="Parameter {n}">henDB.Get(henCage.kind&amp;&quot;price&quot;)+henCage.bonus*PRICEPERBONUS</param>
+                                                        <action id="-9" name="Set value" sid="5249059101868584" type="System">
+                                                            <param id="0" name="Variable">sellId</param>
+                                                            <param id="1" name="Value">henCage.id-sellCount</param>
                                                         </action>
                                                         <action id="0" name="Set local value" sid="1600474039016114" type="WebStorage">
                                                             <param id="0" name="Key">&quot;henList&quot;</param>
-                                                            <param id="1" name="Value">left(WebStorage.LocalValue(&quot;henList&quot;),cageSelection.select*6)&amp;right(WebStorage.LocalValue(&quot;henList&quot;),len(WebStorage.LocalValue(&quot;henList&quot;))-(cageSelection.select+1)*6)</param>
+                                                            <param id="1" name="Value">left(WebStorage.LocalValue(&quot;henList&quot;),sellId*6)&amp;right(WebStorage.LocalValue(&quot;henList&quot;),len(WebStorage.LocalValue(&quot;henList&quot;))-(sellId+1)*6)</param>
                                                         </action>
-                                                        <action id="-9" name="Destroy" sid="5794032900865887" type="cageSelection" />
                                                         <action id="0" name="Call function" sid="7766188202587719" type="Function">
                                                             <param id="0" name="Name">&quot;henSellEntryChange&quot;</param>
-                                                            <param id="1" name="Parameter {n}">henCage.id</param>
+                                                            <param id="1" name="Parameter {n}">sellId</param>
+                                                        </action>
+                                                        <action id="-10" name="Add to" sid="6606353170098493" type="System">
+                                                            <param id="0" name="Variable">sellCount</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="5293383851829809">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="-16" name="Wait" sid="6971540530096874" type="System">
+                                                            <param id="0" name="Seconds">0</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="2907677563636982" type="Function">
+                                                            <param id="0" name="Name">&quot;addGold&quot;</param>
+                                                            <param id="1" name="Parameter {n}">sellPrice</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="9157315115910837" type="System">
+                                                            <param id="0" name="Variable">sellPrice</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="7451409140678857" type="henCage" />
+                                                        <action id="-9" name="Destroy" sid="5794032900865887" type="cageSelection" />
+                                                        <action id="-15" name="Set visible" sid="8769085461970987" type="cageViewOkButton">
+                                                            <param id="0" name="Visibility">0</param>
                                                         </action>
                                                         <action id="0" name="Call function" sid="4422036492363773" type="Function">
                                                             <param id="0" name="Name">&quot;henCageCreate&quot;</param>
@@ -8005,9 +8178,6 @@
                                                         </action>
                                                         <action id="0" name="Set text" sid="4581694738301798" type="systemText">
                                                             <param id="0" name="Text">&quot;[판매] 판매완료!&quot;</param>
-                                                        </action>
-                                                        <action id="-15" name="Set visible" sid="8769085461970987" type="cageViewOkButton">
-                                                            <param id="0" name="Visibility">0</param>
                                                         </action>
                                                         <action id="0" name="Play" sid="4786888213718445" type="Audio">
                                                             <param id="0" name="Audio file">coinClatter</param>
@@ -8033,7 +8203,7 @@
                                     </sub-events>
                                 </event-block>
                                 <comment>엔트리에 있는 닭일 때.</comment>
-                                <event-block sid="926567974268994">
+                                <event-block disabled="1" sid="926567974268994">
                                     <conditions>
                                         <condition id="-22" name="Else" sid="3343643967166516" type="System" />
                                     </conditions>

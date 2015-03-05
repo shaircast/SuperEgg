@@ -11,14 +11,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">sprites</layout>
-        <layout order="7">opening</layout>
-        <layout order="9">battleView</layout>
+        <layout active="1" order="4">opening</layout>
         <event-sheet order="1">stageView</event-sheet>
         <event-sheet order="2">cageView</event-sheet>
         <event-sheet order="3">optionView</event-sheet>
-        <event-sheet order="4">opening</event-sheet>
-        <event-sheet order="5">general</event-sheet>
-        <event-sheet active="1" order="6">function</event-sheet>
+        <event-sheet order="5">opening</event-sheet>
+        <event-sheet order="6">general</event-sheet>
+        <event-sheet order="7">function</event-sheet>
         <event-sheet order="8">battleView</event-sheet>
     </open-tabs>
     <properties>
@@ -45,9 +44,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/battleView/bgDeco/" />
         <folder expanded="0" path="object-folder/battleView/henButton/" />
         <folder expanded="0" path="object-folder/DBDic/" />
-        <folder expanded="1" path="object-folder/stageView/" />
+        <folder expanded="0" path="object-folder/stageView/" />
         <folder expanded="0" path="object-folder/menuButton/" />
-        <folder expanded="0" path="object-folder/cageView/" />
+        <folder expanded="1" path="object-folder/cageView/" />
         <folder expanded="0" path="object-folder/cageView/textbox/" />
         <folder expanded="0" path="object-folder/cageView/modeButton/" />
         <folder expanded="0" path="object-folder/opening/" />

@@ -886,7 +886,7 @@
                     </conditions>
                     <actions>
                         <action id="-2" name="Set Y" sid="2173170722995933" type="focus">
-                            <param id="0" name="Y">(eggBullet.Y*2.2+(ViewportBottom(&quot;hud&quot;)+ViewportTop(&quot;hud&quot;))/2)/3.2</param>
+                            <param id="0" name="Y">eggBullet.Y</param>
                         </action>
                         <action id="-8" name="Set angle" sid="8312750490682173" type="eggBulletBonusEffect">
                             <param id="0" name="Angle">eggBullet.Bullet.AngleOfMotion+180</param>
@@ -906,7 +906,7 @@
                         </event-block>
                         <comment>알이 화면 밖을 벗어나면 텔레포트</comment>
                         <variable constant="0" name="eggLerpRate" sid="3371866763539894" static="0" type="number">0.25</variable>
-                        <event-block sid="5533874764932308">
+                        <event-block disabled="1" sid="5533874764932308">
                             <conditions>
                                 <condition id="-4" name="Is outside layout" sid="3872263448130862" type="eggBullet" />
                                 <condition id="-4" name="Trigger once while true" sid="6468475499288316" type="System" />
@@ -917,7 +917,7 @@
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="5808889986337037">
+                                <event-block disabled="1" sid="5808889986337037">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="5718256690745031" type="eggBullet">
                                             <param id="0" name="Instance variable">targetX</param>
@@ -931,7 +931,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="9816749336822286">
+                                <event-block disabled="1" sid="9816749336822286">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="9859736103854652" type="eggBullet">
                                             <param id="0" name="Instance variable">targetX</param>
@@ -945,7 +945,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="168682644472299">
+                                <event-block disabled="1" sid="168682644472299">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="9930415177814466" type="eggBullet">
                                             <param id="0" name="Instance variable">targetX</param>
@@ -959,7 +959,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="1006628585725343">
+                                <event-block disabled="1" sid="1006628585725343">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="4456891655657364" type="eggBullet">
                                             <param id="0" name="Instance variable">targetX</param>
@@ -973,7 +973,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="3601919152590035">
+                                <event-block disabled="1" sid="3601919152590035">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="5649751375290809" type="eggBullet">
                                             <param id="0" name="Instance variable">targetX</param>
@@ -987,7 +987,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="1830702028611684">
+                                <event-block disabled="1" sid="1830702028611684">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="2191154355872837" type="eggBullet">
                                             <param id="0" name="Instance variable">targetX</param>
@@ -1001,7 +1001,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="5076384684692069">
+                                <event-block disabled="1" sid="5076384684692069">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="7668095334572873" type="eggBullet">
                                             <param id="0" name="Instance variable">targetX</param>
@@ -1015,7 +1015,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="1324282135308021">
+                                <event-block disabled="1" sid="1324282135308021">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="4637556946532868" type="eggBullet">
                                             <param id="0" name="Instance variable">targetX</param>
@@ -1029,7 +1029,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="5999773768132082">
+                                <event-block disabled="1" sid="5999773768132082">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="5119389048858922" type="eggBullet">
                                             <param id="0" name="Instance variable">targetX</param>
@@ -1043,7 +1043,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="9356031495747486">
+                                <event-block disabled="1" sid="9356031495747486">
                                     <conditions />
                                     <actions>
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="9535435793827718" type="eggBullet">

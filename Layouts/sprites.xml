@@ -778,6 +778,7 @@
                         <kind></kind>
                         <type></type>
                         <bonus>0</bonus>
+                        <sell>false</sell>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Anchor">

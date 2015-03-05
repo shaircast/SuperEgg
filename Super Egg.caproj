@@ -2732,6 +2732,7 @@
                     <instance-variable name="kind" sid="5025875932455066" type="string" />
                     <instance-variable name="type" sid="1551835680912684" type="string" />
                     <instance-variable name="bonus" sid="1437285869018058" type="number" />
+                    <instance-variable name="sell" sid="6895740916868633" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="Anchor" sid="3658374338841887">
