@@ -108,7 +108,7 @@
                         </action>
                         <action id="-9" name="Set value" sid="6834725309204599" type="System">
                             <param id="0" name="Variable">randomText</param>
-                            <param id="1" name="Value">floor(random(45))</param>
+                            <param id="1" name="Value">floor(random(50))</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -220,7 +220,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="8920699874999169" type="tipText">
-                                    <param id="0" name="Text">&quot;교배해서 나온 닭은 일정 확률로 강화됩니다(덜 강화된 부모 기준).&quot;</param>
+                                    <param id="0" name="Text">&quot;비슷한 강화 정도의 닭을 교배하는 것이 강화 수를 높이는데에 좋습니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -402,7 +402,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="5442778078227171" type="tipText">
-                                    <param id="0" name="Text">&quot;사료는 매 턴 하나씩 충전되니, 알 낳기는 계획적으로.&quot;</param>
+                                    <param id="0" name="Text">&quot;사료는 매 턴 하나씩 충전되니, 식량분배는 계획적으로.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -710,7 +710,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Append text" sid="578160553112609" type="tipText">
-                                    <param id="0" name="Text">&quot;게임에서 지거나 무단으로 전투를 이탈하면 달걀을 잃게 됩니다.&quot;</param>
+                                    <param id="0" name="Text">&quot;게임에서 지거나 전투를 이탈하면 달걀을 잃게 됩니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -739,6 +739,76 @@
                             <actions>
                                 <action id="1" name="Append text" sid="7860497201365505" type="tipText">
                                     <param id="0" name="Text">&quot;여러분도 달걀을 이케이케 잘 던지면 바위를 쳐서 깰 수 있습니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5016043960579483">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7737222938035447" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">45</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="7804922785962464" type="tipText">
+                                    <param id="0" name="Text">&quot;골렘의 정보를 알고 싶으면? 옵션의 골렘 도감으로!&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2961575386872845">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7903078771406883" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">46</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="5966167173507812" type="tipText">
+                                    <param id="0" name="Text">&quot;닭의 정보를 알고 싶다면? 옵션의 닭 도감으로!&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4553944777696682">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5287008544430423" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">47</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="7992537490479897" type="tipText">
+                                    <param id="0" name="Text">&quot;속성을 잘 맞추고 강화를 잘 해 두면 못 깰 거점도 깹니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5725392820503054">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2998657090910789" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">48</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="3100262877304595" type="tipText">
+                                    <param id="0" name="Text">&quot;매일 치킨을 먹으면 영혼이 풍부해집니다.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2407762803735276">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4355908301279386" type="System">
+                                    <param id="0" name="Variable">randomText</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">49</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="8566116113070514" type="tipText">
+                                    <param id="0" name="Text">&quot;SNUGDC는 서울대학교 게임 개발 동아리입니다.&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

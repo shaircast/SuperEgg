@@ -2,7 +2,7 @@
 <c2project>
     <name>Super Egg</name>
     <description>Game(Puzzle)</description>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
     <author>shaircast</author>
     <author-email>shaircast@gmail.com</author-email>
     <author-website>http://</author-website>
@@ -2202,7 +2202,10 @@
                     <behavior-type name="PinToImagePoint" sid="4883306848640097">
                         <behavior id="Rex_pin2imgpt" />
                     </behavior-type>
-                    <behavior-type name="Sine" sid="519816295390129">
+                    <behavior-type name="SizeSine" sid="519816295390129">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                    <behavior-type name="SwingSine" sid="1312495484930771">
                         <behavior id="Sin" />
                     </behavior-type>
                 </behaviors>
@@ -3581,32 +3584,6 @@
                 <object-type name="golemReward" sid="1999877296990647">
                     <plugin id="Text" />
                 </object-type>
-                <object-type name="golemSpritePage" sid="5545631360205361">
-                    <plugin id="Sprite" />
-                    <behaviors>
-                        <behavior-type name="PinToImagePoint" sid="7701348078063368">
-                            <behavior id="Rex_pin2imgpt" />
-                        </behavior-type>
-                    </behaviors>
-                    <animation-folder>
-                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2914596772468899" speed="5">
-                            <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
-                                <image-point name="Imagepoint 1" x="0.2175" y="0.155" />
-                                <image-point name="Imagepoint 2" x="0.4875" y="0.178333" />
-                                <image-point name="Imagepoint 3" x="0.7625" y="0.15" />
-                                <image-point name="Imagepoint 4" x="0.52" y="0.328333" />
-                                <image-point name="Imagepoint 5" x="0.2025" y="0.315" />
-                                <image-point name="Imagepoint 6" x="0.5" y="0.555" />
-                                <image-point name="Imagepoint 7" x="0.815" y="0.368333" />
-                                <image-point name="Imagepoint 8" x="0.2" y="0.56" />
-                                <image-point name="Imagepoint 9" x="0.8125" y="0.61" />
-                                <image-point name="Imagepoint 10" x="0.24" y="0.785" />
-                                <image-point name="Imagepoint 11" x="0.56" y="0.816667" />
-                                <image-point name="Imagepoint 12" x="0.8375" y="0.835" />
-                            </frame>
-                        </animation>
-                    </animation-folder>
-                </object-type>
             </object-folder>
             <object-folder name="credit">
                 <object-type name="credit1" sid="632449964399079">
@@ -3782,7 +3759,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4983868482588988" speed="5">
-                        <frame duration="1" format="png8" hotspotX="0.502959" hotspotY="0.500832" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933579.jpg" />
+                        <frame duration="1" format="png8" hotspotX="0.502959" hotspotY="0.500826" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933579.jpg" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -3829,6 +3806,75 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="optionViewHenDic" sid="2503285940093817">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1687071404120916" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.502959" hotspotY="0.500826" original-source="D:\2014WNexon_SuperEgg\Super Egg Art\Super Egg Art\original\option\KakaoTalk_20150222_130933579.jpg" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="spritePage" sid="5545631360205361">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="PinToImagePoint" sid="7701348078063368">
+                        <behavior id="Rex_pin2imgpt" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2914596772468899" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="golem1" x="0.2025" y="0.19" />
+                            <image-point name="golem2" x="0.485" y="0.166667" />
+                            <image-point name="golem3" x="0.81" y="0.213333" />
+                            <image-point name="golem4" x="0.52" y="0.328333" />
+                            <image-point name="golem5" x="0.2" y="0.348333" />
+                            <image-point name="golem6" x="0.5" y="0.555" />
+                            <image-point name="golem7" x="0.815" y="0.368333" />
+                            <image-point name="golem8" x="0.2" y="0.56" />
+                            <image-point name="golem9" x="0.8125" y="0.61" />
+                            <image-point name="golem10" x="0.24" y="0.785" />
+                            <image-point name="golem11" x="0.56" y="0.816667" />
+                            <image-point name="golem12" x="0.8375" y="0.835" />
+                            <image-point name="hen1" x="0.175" y="0.211667" />
+                            <image-point name="hen2" x="0.5325" y="0.181667" />
+                            <image-point name="hen3" x="0.865" y="0.265" />
+                            <image-point name="hen4" x="0.1425" y="0.445" />
+                            <image-point name="hen5" x="0.4925" y="0.458333" />
+                            <image-point name="hen6" x="0.835" y="0.458333" />
+                            <image-point name="hen7" x="0.15" y="0.631667" />
+                            <image-point name="hen8" x="0.505" y="0.71" />
+                            <image-point name="hen9" x="0.82" y="0.661667" />
+                            <image-point name="hen10" x="0.1625" y="0.926667" />
+                            <image-point name="hen11" x="0.5075" y="0.91" />
+                            <image-point name="hen12" x="0.845" y="0.931667" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="dicSelection" sid="4081631483976383">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="select" sid="247432038033105" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Sine" sid="6667821969100301">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2393661704202134" speed="5">
+                        <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="test">
             <object-type name="alpha" sid="5888354361640028">
@@ -3859,6 +3905,14 @@
             <object-type name="Text3" sid="136546670488618">
                 <plugin id="Text" />
             </object-type>
+            <object-type name="heartdown" sid="1640845493575793">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4013118483795398" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-type name="Text2" sid="9244127702308912">
             <plugin id="Text" />
@@ -3873,14 +3927,6 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4232872001806188" speed="5">
                     <frame duration="1" format="png8" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="heartdown" sid="1640845493575793">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4013118483795398" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>

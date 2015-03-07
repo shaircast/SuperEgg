@@ -154,19 +154,19 @@
                         <event-block sid="4666692716281236">
                             <conditions />
                             <actions>
-                                <action id="0" name="Set local value" sid="2103628046832876" type="WebStorage">
+                                <action id="0" name="Set local value" sid="5475755037958852" type="WebStorage">
                                     <param id="0" name="Key">&quot;henList&quot;</param>
                                     <param id="1" name="Value">&quot;01a00/02a00/03a00/04a00/&quot;</param>
                                 </action>
-                                <action id="0" name="Set local value" sid="4316238530735664" type="WebStorage">
+                                <action id="0" name="Set local value" sid="1710916172440384" type="WebStorage">
                                     <param id="0" name="Key">&quot;chapter&quot;</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="0" name="Set local value" sid="3645545715772576" type="WebStorage">
+                                <action id="0" name="Set local value" sid="7919802607086937" type="WebStorage">
                                     <param id="0" name="Key">&quot;maxStage&quot;</param>
                                     <param id="1" name="Value">&quot;1_1&quot;</param>
                                 </action>
-                                <action id="0" name="Set local value" sid="71699616378047" type="WebStorage">
+                                <action id="0" name="Set local value" sid="2119140636185613" type="WebStorage">
                                     <param id="0" name="Key">&quot;gold&quot;</param>
                                     <param id="1" name="Value">3000</param>
                                 </action>
@@ -200,7 +200,7 @@
                                     <param id="1" name="Delay">60*60*24-int((Date.UnixTimestamp-int(WebStorage.LocalValue(&quot;lastGoldRewardTimeStamp&quot;)))/1000)</param>
                                     <param id="2" name="Message">&quot;골드 선물이 도착했습니다!&quot;</param>
                                     <param id="3" name="Expanded Title">&quot;슈퍼에그&quot;</param>
-                                    <param id="4" name="Expanded Body">&quot;24시간마다 500골드를 받아가세요!&quot;</param>
+                                    <param id="4" name="Expanded Body">&quot;24시간마다 1000골드를 받아가세요!&quot;</param>
                                     <param id="5" name="Sound enabled">1</param>
                                 </action>
                             </actions>
@@ -579,7 +579,7 @@
                                     <param id="1" name="Delay">60*60*24-int((Date.UnixTimestamp-int(WebStorage.LocalValue(&quot;lastGoldRewardTimeStamp&quot;)))/1000)</param>
                                     <param id="2" name="Message">&quot;골드 선물이 도착했습니다!&quot;</param>
                                     <param id="3" name="Expanded Title">&quot;슈퍼에그&quot;</param>
-                                    <param id="4" name="Expanded Body">&quot;24시간마다 500골드를 받아가세요!&quot;</param>
+                                    <param id="4" name="Expanded Body">&quot;24시간마다 1000골드를 받아가세요!&quot;</param>
                                     <param id="5" name="Sound enabled">1</param>
                                 </action>
                                 <action id="2" name="Send a local notification." sid="5736383977113373" type="CocoonJSNotifications">
@@ -909,7 +909,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="4834320340368416" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;11&quot;{###}&quot;반죽었닭&quot;{###}3{###}&quot;?&quot;{###}0{###}45{###}4{###}&quot;털이 반쯤 뽑혀있다. 원래 겁나 잘생긴 닭이었는데 복날에 친구들과 놀러나갔다가 죽을 뻔했다고. 트라우마에서 나오는 절망은 알 투척 지점에 있는 적의 체력을 반으로 깎는다. 복날엔 조심 또 조심.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;11&quot;{###}&quot;반죽었닭&quot;{###}3{###}&quot;?&quot;{###}0{###}45{###}4{###}&quot;털이 반쯤 뽑혀있다. 원래 겁나 잘생긴 닭이었는데 복날에 친구들과 놀러나갔다가 죽을 뻔했다고. 트라우마에서 나오는 절망은 알 투척 지점에 있는 적의 체력을 반으로 깎는다. 파워샷은 거의 다 깎는다.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="7977997339212036" type="Function">
                                     <param id="0" name="Name">&quot;henDBInput&quot;</param>
@@ -962,7 +962,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="7949965449402433" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;08&quot;{###}&quot;딱지골렘&quot;{###}2{###}1{###}30{###}&quot;매 턴 뒤집어지며 움직이는 골렘. 복근을 빼서 등에다 몰빵했다. 등에 왕자가 있다고.&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;08&quot;{###}&quot;딱지골렘&quot;{###}2{###}1{###}30{###}&quot;매 턴 뒤집어지며 움직이는 골렘. 엎드려 있을 때는 공격을 방어한다. 복근을 빼서 등에다 몰빵해서 등에 왕자가 있다고.&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="2348100012865494" type="Function">
                                     <param id="0" name="Name">&quot;golemDBInput&quot;</param>
@@ -6174,7 +6174,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="6380520670171719">
+                        <event-block disabled="1" sid="6380520670171719">
                             <conditions>
                                 <condition id="-21" name="Is between values" sid="6522226100230305" type="System">
                                     <param id="0" name="Value">int(Function.Param(1))</param>
@@ -6189,7 +6189,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="5879488570015268">
+                        <event-block disabled="1" sid="5879488570015268">
                             <conditions>
                                 <condition id="-21" name="Is between values" sid="1857560728013319" type="System">
                                     <param id="0" name="Value">int(Function.Param(1))</param>
@@ -6204,7 +6204,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="2707667817842805">
+                        <event-block disabled="1" sid="2707667817842805">
                             <conditions>
                                 <condition id="-21" name="Is between values" sid="8819316688897716" type="System">
                                     <param id="0" name="Value">int(Function.Param(1))</param>
@@ -6219,7 +6219,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="8367518240678183">
+                        <event-block disabled="1" sid="8367518240678183">
                             <conditions>
                                 <condition id="-21" name="Is between values" sid="9380103452997378" type="System">
                                     <param id="0" name="Value">int(Function.Param(1))</param>
@@ -6865,6 +6865,9 @@
                                     <param id="0" name="Animation">WebStorage.LocalValue(&quot;chapter&quot;)&amp;&quot;_&quot;&amp;loopindex</param>
                                     <param id="1" name="From">1</param>
                                 </action>
+                                <action behavior="SwingSine" id="0" name="Set active" sid="7452119378939181" type="chapterStage">
+                                    <param id="0" name="State">1</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <comment>maxStage랑 같은 챕터고 최고 진행 챕터 이상이면 frame 1(locked), 굳이 손 안대면 frame 0(unlocked)</comment>
@@ -6888,6 +6891,9 @@
                                         <action id="-10" name="Set value" sid="7612092556831413" type="chapterStage">
                                             <param id="0" name="Instance variable">oriHeight</param>
                                             <param id="1" name="Value">Self.Height</param>
+                                        </action>
+                                        <action behavior="SwingSine" id="0" name="Set active" sid="5107528505933602" type="chapterStage">
+                                            <param id="0" name="State">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -6915,6 +6921,9 @@
                                         <action id="-10" name="Set value" sid="9382332949654621" type="chapterStage">
                                             <param id="0" name="Instance variable">oriHeight</param>
                                             <param id="1" name="Value">Self.Height</param>
+                                        </action>
+                                        <action behavior="SwingSine" id="0" name="Set active" sid="9378624768293866" type="chapterStage">
+                                            <param id="0" name="State">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -7228,7 +7237,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Sine" id="0" name="Set active" sid="4993265196168587" type="chapterStage">
+                                        <action behavior="SizeSine" id="0" name="Set active" sid="4993265196168587" type="chapterStage">
                                             <param id="0" name="State">1</param>
                                         </action>
                                     </actions>
@@ -7238,10 +7247,10 @@
                                         <condition id="-22" name="Else" sid="7775238695107558" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action behavior="Sine" id="5" name="Set cycle position" sid="6272580715012802" type="chapterStage">
+                                        <action behavior="SizeSine" id="5" name="Set cycle position" sid="6272580715012802" type="chapterStage">
                                             <param id="0" name="Cycle position">0</param>
                                         </action>
-                                        <action behavior="Sine" id="0" name="Set active" sid="504035871188351" type="chapterStage">
+                                        <action behavior="SizeSine" id="0" name="Set active" sid="504035871188351" type="chapterStage">
                                             <param id="0" name="State">0</param>
                                         </action>
                                         <action id="-7" name="Set size" sid="6647570399438001" type="chapterStage">

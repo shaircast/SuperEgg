@@ -310,7 +310,7 @@
                 </instance>
                 <instance type="cprtText" uid="165">
                     <properties>
-                        <text>2015 SNUGDC</text>
+                        <text>2015 SNUGDC v1.0.0</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>배달의민족 주아,-37,400,0</font>
                         <color>240,240,240</color>

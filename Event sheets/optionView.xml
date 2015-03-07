@@ -85,7 +85,7 @@
                     <param id="1" name="ImagePoint">&quot;GolemReward&quot;</param>
                     <param id="2" name="Mode">0</param>
                 </action>
-                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="5054355646328479" type="golemSpritePage">
+                <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="5054355646328479" type="spritePage">
                     <param id="0" name="Pin to">optionViewBook</param>
                     <param id="1" name="ImagePoint">&quot;GolemSpritePage&quot;</param>
                     <param id="2" name="Mode">0</param>
@@ -95,7 +95,8 @@
                 <variable constant="0" name="row" sid="4011628691854775" static="0" type="number">4</variable>
                 <variable constant="0" name="column" sid="5988743692431219" static="0" type="number">3</variable>
                 <variable constant="0" name="golemKindCount" sid="4221804290793351" static="0" type="number">12</variable>
-                <comment>golemSpritePage에서 ImagePoint 바꿔서 정렬하면 됨.</comment>
+                <variable constant="0" name="henKindCount" sid="6465576585752359" static="0" type="number">12</variable>
+                <comment>spritePage에서 ImagePoint 바꿔서 정렬하면 됨.</comment>
                 <event-block sid="9025545163743178">
                     <conditions>
                         <condition id="-10" name="For" sid="9795986271529697" type="System">
@@ -105,7 +106,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="1492059382405806" type="golemSpritePage">
+                        <action id="0" name="Spawn another object" sid="1492059382405806" type="spritePage">
                             <param id="0" name="Object">golem</param>
                             <param id="1" name="Layer">&quot;effect&quot;</param>
                             <param id="2" name="Image point">loopindex</param>
@@ -142,8 +143,8 @@
                             <param id="0" name="State">0</param>
                         </action>
                         <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="4164541372389634" type="golem">
-                            <param id="0" name="Pin to">golemSpritePage</param>
-                            <param id="1" name="ImagePoint">loopindex</param>
+                            <param id="0" name="Pin to">spritePage</param>
+                            <param id="1" name="ImagePoint">&quot;golem&quot;&amp;loopindex</param>
                             <param id="2" name="Mode">0</param>
                         </action>
                         <action id="-16" name="Wait" sid="6699369520641384" type="System">
@@ -157,6 +158,57 @@
                         </action>
                         <action id="5" name="Set frame" sid="956192895189511" type="golem">
                             <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>spritePage에서 ImagePoint 바꿔서 정렬하면 됨. </comment>
+                <event-block sid="9736149633749785">
+                    <conditions>
+                        <condition id="-10" name="For" sid="7819338172968456" type="System">
+                            <param id="0" name="Name">&quot;hen&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">henKindCount</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="9005574011070726" type="spritePage">
+                            <param id="0" name="Object">henCage</param>
+                            <param id="1" name="Layer">&quot;effect&quot;</param>
+                            <param id="2" name="Image point">loopindex</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="3158413200525044" type="henCage">
+                            <param id="0" name="Animation">zeropad(loopindex,2)&amp;&quot;eyeopened&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5167899267424977" type="henCage">
+                            <param id="0" name="Instance variable">kind</param>
+                            <param id="1" name="Value">zeropad(loopindex,2)</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="353591642378798" type="henCage">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="1966442900691574" type="henCage">
+                            <param id="0" name="Pin to">spritePage</param>
+                            <param id="1" name="ImagePoint">&quot;hen&quot;&amp;loopindex</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="7033881546637141" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="3479252982720691" type="henCage">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="9579849965210953" type="henCage">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="3520286441153792" type="henCage">
+                            <param id="0" name="Scale">1.2</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3015746456140686" type="powerupHUD">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="5837142794945677" type="iconTypeHUD">
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -316,9 +368,17 @@
             <actions />
             <sub-events>
                 <event-block sid="6039394445726144">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="3933838028208096" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7657922694376783" type="dicSelection" />
+                    </actions>
+                </event-block>
+                <event-block sid="9499156394414343">
                     <conditions />
                     <actions>
-                        <action id="-2" name="Set Y" sid="7897424294326095" type="optionViewBook">
+                        <action id="-2" name="Set Y" sid="4879830637436167" type="optionViewBook">
                             <param id="0" name="Y">lerp(self.y,1500,0.05)</param>
                         </action>
                     </actions>
@@ -708,6 +768,23 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>닭도감으로</comment>
+                <event-block sid="7643859020431804">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="8664630263982887" type="Touch">
+                            <param id="0" name="Object">optionViewHenDic</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="494582259891349" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1565359095122868" type="System">
+                            <param id="0" name="Variable">optionViewState</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
         <comment>크레딧</comment>
@@ -733,6 +810,9 @@
                             <param id="0" name="Visibility">0</param>
                         </action>
                         <action id="-15" name="Set visible" sid="3030758620666194" type="golem">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="7416010433760805" type="henCage">
                             <param id="0" name="Visibility">0</param>
                         </action>
                         <action id="-15" name="Set visible" sid="4194112453621876" type="optionViewReward">
@@ -780,9 +860,9 @@
             </sub-events>
         </event-block>
         <comment>골렘도감</comment>
-        <event-block sid="4332894524603847">
+        <event-block sid="3896754027777511">
             <conditions>
-                <condition id="-14" name="Compare variable" sid="3987946673369022" type="System">
+                <condition id="-14" name="Compare variable" sid="9300650359498484" type="System">
                     <param id="0" name="Variable">optionViewState</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">2</param>
@@ -790,47 +870,53 @@
             </conditions>
             <actions />
             <sub-events>
-                <variable constant="0" name="golemSelected" sid="3023255793303144" static="1" type="text"></variable>
-                <event-block sid="7913767410585627">
+                <variable constant="0" name="golemSelected" sid="9868967131813605" static="1" type="text"></variable>
+                <event-block sid="644252407738802">
                     <conditions>
-                        <condition id="-4" name="Trigger once while true" sid="83418779887531" type="System" />
+                        <condition id="-4" name="Trigger once while true" sid="6830509934988586" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="7480530282567371" type="System">
+                        <action id="-9" name="Set value" sid="2304062743255995" type="System">
                             <param id="0" name="Variable">golemSelected</param>
                             <param id="1" name="Value">&quot;&quot;</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="955246353187657" type="optionViewCreditText">
+                        <action id="-15" name="Set visible" sid="8124541060705693" type="optionViewCreditText">
                             <param id="0" name="Visibility">0</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="9860318034014885" type="optionViewGolemDicText">
+                        <action id="-15" name="Set visible" sid="7153414393493206" type="optionViewGolemDicText">
                             <param id="0" name="Visibility">1</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="9771377601393698" type="golem">
+                        <action id="-15" name="Set visible" sid="5000516721313191" type="golem">
                             <param id="0" name="Visibility">1</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="2395644605935195" type="optionViewReward">
+                        <action id="-15" name="Set visible" sid="2777345869895173" type="henCage">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="1402403662546219" type="optionViewReward">
                             <param id="0" name="Visibility">1</param>
                         </action>
-                        <action id="0" name="Set text" sid="5610609425525344" type="golemName">
+                        <action id="0" name="Set text" sid="5362200353509911" type="golemName">
                             <param id="0" name="Text">&quot;&quot;</param>
                         </action>
-                        <action id="0" name="Set text" sid="2059298281653594" type="golemHp">
+                        <action id="0" name="Set text" sid="7054967860968846" type="golemHp">
                             <param id="0" name="Text">&quot;&quot;</param>
                         </action>
-                        <action id="0" name="Set text" sid="9135451722145314" type="golemSpeed">
+                        <action id="0" name="Set text" sid="1217486354414833" type="golemSpeed">
                             <param id="0" name="Text">&quot;&quot;</param>
                         </action>
-                        <action id="0" name="Set text" sid="8450579508653164" type="golemReward">
+                        <action id="0" name="Set text" sid="2264136323264526" type="golemReward">
                             <param id="0" name="Text">&quot;&quot;</param>
                         </action>
-                        <action id="0" name="Set text" sid="4565334437445823" type="golemDescription">
+                        <action id="0" name="Set text" sid="474904269463852" type="golemDescription">
                             <param id="0" name="Text">&quot;알고 싶은 골렘을 선택하세요.&quot;</param>
                         </action>
-                        <action id="-8" name="Set angle" sid="9184018192786778" type="golemReward">
+                        <action id="-8" name="Set angle" sid="8665233549546004" type="golemReward">
                             <param id="0" name="Angle">340</param>
                         </action>
-                        <action id="0" name="Play" sid="1266686868063191" type="Audio">
+                        <action id="3" name="Set font size" sid="3964891943217949" type="golemDescription">
+                            <param id="0" name="Size (pt)">24</param>
+                        </action>
+                        <action id="0" name="Play" sid="2913665290221301" type="Audio">
                             <param id="0" name="Audio file">bookOpen</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
@@ -838,22 +924,210 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="3403931124280693">
+                        <event-block sid="8721630755567367">
                             <conditions>
-                                <condition id="-19" name="Pick all" sid="2972086236786647" type="System">
+                                <condition id="-19" name="Pick all" sid="5837762800972206" type="System">
                                     <param id="0" name="Object">golem</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="BreathSine" id="0" name="Set active" sid="8700186128572808" type="golem">
+                                <action behavior="BreathSine" id="0" name="Set active" sid="7176573875038182" type="golem">
                                     <param id="0" name="State">0</param>
                                 </action>
-                                <action id="9" name="Set scale" sid="8128714859577689" type="golem">
+                                <action id="9" name="Set scale" sid="7095200048450894" type="golem">
                                     <param id="0" name="Scale">1.2</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="8266171556657283">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Set Y" sid="5833639928021766" type="optionViewBook">
+                            <param id="0" name="Y">lerp(self.y,focus.Y,0.1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1659046912861152">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6491291187614278" type="golem">
+                            <param id="0" name="Instance variable">kind</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">golemSelected</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Set scale" sid="365628780536511" type="golem">
+                            <param id="0" name="Scale">lerp(self.Height/self.ImageHeight, 1.5, 0.1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6581593071093793">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="6376546860389913" type="Touch" />
+                        <condition id="4" inverted="1" name="Is touching object" sid="7649433562775539" type="Touch">
+                            <param id="0" name="Object">optionViewBook</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="9409060733442145" type="Audio">
+                            <param id="0" name="Audio file">bookClose</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2608377568919115" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8322312865836645" type="System">
+                            <param id="0" name="Variable">optionViewState</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6884574544997315">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="3425121895045961" type="Touch">
+                            <param id="0" name="Object">golem</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7822962607567837">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="714904645613336" type="System">
+                                    <param id="0" name="First value">dicSelection.Count</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="4283195975670343" type="System">
+                                    <param id="0" name="Object to create">dicSelection</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="X">golem.X</param>
+                                    <param id="3" name="Y">golem.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6133286035110896">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="9906126784546102" type="System">
+                                    <param id="0" name="Object">golem</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="BreathSine" id="0" name="Set active" sid="7482625080242361" type="golem">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="3132124745406308" type="golem">
+                                    <param id="0" name="Scale">1.2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3251372429221467">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="4667272761578764" type="System">
+                                    <param id="0" name="Variable">golemSelected</param>
+                                    <param id="1" name="Value">golem.kind</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="698890791599315" type="dicSelection">
+                                    <param id="0" name="X">golem.X</param>
+                                    <param id="1" name="Y">golem.Y</param>
+                                </action>
+                                <action id="6" name="Set speed" sid="6118774714581126" type="golem">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="9289555328695733" type="golem">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="4460799514069268" type="golemName">
+                                    <param id="0" name="Text">&quot;이름 : &quot;&amp;golemDB.Get(golem.kind&amp;&quot;name&quot;)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8431062905256507" type="golemHp">
+                                    <param id="0" name="Text">&quot;체력 : &quot;&amp;golem.hp</param>
+                                </action>
+                                <action id="0" name="Set text" sid="6058579955643266" type="golemSpeed">
+                                    <param id="0" name="Text">&quot;속도 : 1턴에 &quot;&amp;golem.speed&amp;&quot;칸&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="3078017428997862" type="golemReward">
+                                    <param id="0" name="Text">golem.reward&amp;&quot;골드&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="7826112563417442" type="golemDescription">
+                                    <param id="0" name="Text">golemDB.Get(golem.kind&amp;&quot;description&quot;)</param>
+                                </action>
+                                <action behavior="BreathSine" id="0" name="Set active" sid="5009545997071489" type="golem">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>닭도감</comment>
+        <event-block sid="4332894524603847">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3987946673369022" type="System">
+                    <param id="0" name="Variable">optionViewState</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="chickSelected" sid="3023255793303144" static="1" type="text"></variable>
+                <event-block sid="7913767410585627">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="83418779887531" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7480530282567371" type="System">
+                            <param id="0" name="Variable">chickSelected</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2455987843072664" type="optionViewCreditText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9910770003025753" type="optionViewGolemDicText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="1821541051809751" type="golem">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="7385923026475747" type="henCage">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="7561212008976586" type="optionViewReward">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="7212137959854187" type="Audio">
+                            <param id="0" name="Audio file">bookOpen</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">float(WebStorage.LocalValue(&quot;sfx&quot;))</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6204079240629428" type="golemName">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6403369343476753" type="golemHp">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4728509019431889" type="golemSpeed">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9174034170275843" type="golemReward">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4424807555500243" type="golemDescription">
+                            <param id="0" name="Text">&quot;알고 싶은 닭을 선택하세요.&quot;</param>
+                        </action>
+                        <action id="3" name="Set font size" sid="9713100499041616" type="golemDescription">
+                            <param id="0" name="Size (pt)">22</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <event-block sid="121315639448374">
                     <conditions />
@@ -865,14 +1139,14 @@
                 </event-block>
                 <event-block sid="3182276152441986">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="5377930187134833" type="golem">
+                        <condition id="-7" name="Compare instance variable" sid="5377930187134833" type="henCage">
                             <param id="0" name="Instance variable">kind</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">golemSelected</param>
+                            <param id="2" name="Value">chickSelected</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="9" name="Set scale" sid="1745982607539414" type="golem">
+                        <action id="9" name="Set scale" sid="1745982607539414" type="henCage">
                             <param id="0" name="Scale">lerp(self.Height/self.ImageHeight, 1.5, 0.1)</param>
                         </action>
                     </actions>
@@ -903,22 +1177,39 @@
                 <event-block sid="4605895438906299">
                     <conditions>
                         <condition id="3" name="On touched object" sid="4486227579950798" type="Touch">
-                            <param id="0" name="Object">golem</param>
+                            <param id="0" name="Object">henCage</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="589711110462879">
+                        <event-block sid="8746723461859373">
                             <conditions>
-                                <condition id="-19" name="Pick all" sid="1342776560924479" type="System">
-                                    <param id="0" name="Object">golem</param>
+                                <condition id="-8" name="Compare two values" sid="2051022981959479" type="System">
+                                    <param id="0" name="First value">dicSelection.Count</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="BreathSine" id="0" name="Set active" sid="2638066029996354" type="golem">
+                                <action id="-3" name="Create object" sid="377896478357011" type="System">
+                                    <param id="0" name="Object to create">dicSelection</param>
+                                    <param id="1" name="Layer">&quot;hud&quot;</param>
+                                    <param id="2" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                    <param id="3" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="589711110462879">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="1342776560924479" type="System">
+                                    <param id="0" name="Object">henCage</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="2638066029996354" type="henCage">
                                     <param id="0" name="State">0</param>
                                 </action>
-                                <action id="9" name="Set scale" sid="9266214939196419" type="golem">
+                                <action id="9" name="Set scale" sid="9266214939196419" type="henCage">
                                     <param id="0" name="Scale">1.2</param>
                                 </action>
                             </actions>
@@ -927,32 +1218,33 @@
                             <conditions />
                             <actions>
                                 <action id="-9" name="Set value" sid="2899348270453382" type="System">
-                                    <param id="0" name="Variable">golemSelected</param>
-                                    <param id="1" name="Value">golem.kind</param>
+                                    <param id="0" name="Variable">chickSelected</param>
+                                    <param id="1" name="Value">henCage.kind</param>
                                 </action>
-                                <action id="6" name="Set speed" sid="5982621777881554" type="golem">
+                                <action id="-3" name="Set position" sid="8057214208109206" type="dicSelection">
+                                    <param id="0" name="X">henCage.ImagePointX(&quot;Center&quot;)</param>
+                                    <param id="1" name="Y">henCage.ImagePointY(&quot;Center&quot;)</param>
+                                </action>
+                                <action id="6" name="Set speed" sid="5982621777881554" type="henCage">
                                     <param id="0" name="Speed">0</param>
                                 </action>
-                                <action id="5" name="Set frame" sid="6365721094700998" type="golem">
+                                <action id="5" name="Set frame" sid="6365721094700998" type="henCage">
                                     <param id="0" name="Frame number">0</param>
                                 </action>
-                                <action id="0" name="Set text" sid="4100498943853525" type="golemName">
-                                    <param id="0" name="Text">&quot;이름 : &quot;&amp;golemDB.Get(golem.kind&amp;&quot;name&quot;)</param>
-                                </action>
-                                <action id="0" name="Set text" sid="5775626454331909" type="golemHp">
-                                    <param id="0" name="Text">&quot;체력 : &quot;&amp;golem.hp</param>
-                                </action>
-                                <action id="0" name="Set text" sid="7061417546620992" type="golemSpeed">
-                                    <param id="0" name="Text">&quot;속도 : 1턴에 &quot;&amp;golem.speed&amp;&quot;칸&quot;</param>
-                                </action>
-                                <action id="0" name="Set text" sid="5327488958902342" type="golemReward">
-                                    <param id="0" name="Text">golem.reward&amp;&quot;골드&quot;</param>
-                                </action>
-                                <action id="0" name="Set text" sid="182772459559944" type="golemDescription">
-                                    <param id="0" name="Text">golemDB.Get(golem.kind&amp;&quot;description&quot;)</param>
-                                </action>
-                                <action behavior="BreathSine" id="0" name="Set active" sid="4646205962577612" type="golem">
+                                <action behavior="Sine" id="0" name="Set active" sid="3618915098001685" type="henCage">
                                     <param id="0" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="4833813961381436" type="golemName">
+                                    <param id="0" name="Text">&quot;이름 : &quot;&amp;henDB.Get(henCage.kind&amp;&quot;name&quot;)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="3760959294000563" type="golemHp">
+                                    <param id="0" name="Text">&quot;먹는 먹이량 : &quot;&amp;henDB.Get(henCage.kind&amp;&quot;foodcost&quot;)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="6131826362322027" type="golemSpeed">
+                                    <param id="0" name="Text">&quot;먹는 시간 : &quot;&amp;henDB.Get(henCage.kind&amp;&quot;readyturn&quot;)&amp;&quot;턴&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="5251362043498635" type="golemDescription">
+                                    <param id="0" name="Text">henDB.Get(henCage.kind&amp;&quot;description&quot;)</param>
                                 </action>
                             </actions>
                         </event-block>

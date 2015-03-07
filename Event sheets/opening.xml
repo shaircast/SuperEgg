@@ -128,7 +128,7 @@
                     <actions>
                         <action id="0" name="Set local value" sid="7140236064213567" type="WebStorage">
                             <param id="0" name="Key">&quot;gold&quot;</param>
-                            <param id="1" name="Value">int(WebStorage.LocalValue(&quot;gold&quot;))+500</param>
+                            <param id="1" name="Value">int(WebStorage.LocalValue(&quot;gold&quot;))+1000</param>
                         </action>
                         <action id="0" name="Set local value" sid="7469902183247466" type="WebStorage">
                             <param id="0" name="Key">&quot;lastGoldRewardTimeStamp&quot;</param>
